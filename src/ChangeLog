@@ -1,3 +1,15 @@
+2001-12-03  Jens Finke <jens@triq.net>
+
+	* atomix-ui.xml: Hide 'edit' menu for now. 
+
+	* main.c (verb_GameScores_cb): Show highscores again.
+	(verb_HelpAbout_cb): Show about dialog.
+	(controller_handle_action): Log score if the user ends the game
+	and when he finished the last level.
+	(log_score),
+	(get_highscore_widget): New functions.
+	(save_score): Removed function.
+
 2001-12-02  Jens Finke <jens@triq.net>
 
 	* util.[ch]: Removed files.

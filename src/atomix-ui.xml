@@ -56,11 +56,11 @@
 
 	</submenu>
 
-	<submenu name="Edit" _label="_Edit">
+	<!-- submenu name="Edit" _label="_Edit">
 	        
 		<menuitem name="EditPreferences" verb=""/>
 
-	</submenu>
+	</submenu -->
 
 	<submenu name="Help" _label="_Help">
 

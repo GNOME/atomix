@@ -62,6 +62,8 @@ static void update_statistics (AtomixApp *app);
 static void update_menu_item_state (AtomixApp *app);
 static void view_congratulations (void);
 static void calculate_score (AtomixApp *app);
+static void log_score (AtomixApp *app);
+static GtkWidget* get_highscore_widget (AtomixApp *app);
 
 
 /* ===============================================================
@@ -116,10 +118,10 @@ verb_GameUndo_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 void
 verb_GameScores_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
-#if 0
-	gnome_scores_display("Atomix", "atomix", NULL, 0);	
+	GtkWidget *widget;
 
-#endif
+	widget = get_highscore_widget ((AtomixApp*) user_data);
+	gtk_widget_show (widget);
 }
 
 void
@@ -140,9 +142,21 @@ verb_EditPreferences_cb (BonoboUIComponent *uic, gpointer user_data, const char 
 void
 verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
-#if 0
-	show_about_dlg ();
-#endif
+	GtkWidget *dlg;
+	const char *authors[] = { "Jakub Steiner (GFX)", "Jens Finke (Code)", NULL };
+	const char *documenters [] = { NULL };
+
+	dlg = gnome_about_new ("Atomix",
+			       VERSION,
+			       "1999-2001 Jens Finke",
+			       "A mind game about atoms and molecules.",
+			       authors,
+			       documenters,
+			       NULL,
+			       NULL);
+
+	gtk_widget_set_usize (dlg, 460, 200);
+	gtk_widget_show (dlg);
 }
 
 gboolean
@@ -180,6 +194,7 @@ controller_handle_action (AtomixApp *app, GameAction action)
 	case GAME_STATE_LEVEL_RUNNING:
 		switch (action) {
 		case GAME_ACTION_END:
+			log_score (app);
 			level_cleanup_view (app);
 			set_game_not_running_state (app);
 			break;
@@ -204,6 +219,7 @@ controller_handle_action (AtomixApp *app, GameAction action)
 			calculate_score (app);
 			if (level_manager_is_last_level (app->lm, app->level)) {
 				view_congratulations (); 
+				log_score (app);
 				level_cleanup_view (app);
 				set_game_not_running_state (app);
 			}
@@ -421,6 +437,45 @@ calculate_score (AtomixApp *app)
 }
 
 static void
+log_score (AtomixApp *app)
+{
+	gint position;
+
+	if (app->score == 0) return;
+
+	position = gnome_score_log (app->score, NULL, TRUE);
+
+	if (position > 0) {
+		GtkWidget *widget;
+
+		widget = get_highscore_widget (app);
+		gnome_scores_set_current_player (GNOME_SCORES (widget), position);
+		gtk_widget_show (widget);
+	}
+}
+
+static GtkWidget*
+get_highscore_widget (AtomixApp *app)
+{
+	GtkWidget *widget;
+	gint n_scores;
+	gfloat *scores;
+	gchar **names;
+	time_t *times;
+
+	n_scores = gnome_score_get_notable (NULL,
+					    NULL,
+					    &names,
+					    &scores,
+					    &times);
+       
+	widget = gnome_scores_new (n_scores,
+				   names, scores, times,
+				   FALSE);
+	return widget;
+}
+
+static void
 view_congratulations (void)
 {
 	GtkWidget *dlg;
@@ -550,19 +605,6 @@ update_menu_item_state (AtomixApp *app)
 		g_free (path);
 	}
 }
-
-#if 0
-static void 
-save_score (AtomixApp *app)
-{
-	if(score > 0.0)
-	{
-		gint highscore_pos;
-		highscore_pos = gnome_score_log(score, NULL, TRUE);
-		gnome_scores_display("Atomix", "atomix", NULL, highscore_pos);	    
-	}
-}
-#endif
 
 static void
 create_user_config_dir (void)
