@@ -23,6 +23,4 @@ install-data-local:
 	-touch $(DESTDIR)$(scoredir)/atomix.scores
 	-chown games.games $(DESTDIR)$(scoredir)/atomix.scores
 	-chmod 664 $(DESTDIR)$(scoredir)/atomix.scores
-	-chgrp games $(DESTDIR)$(bindir)/atomix && chmod 2111 $(DESTDIR)$(bindir)/atomix
-
-
+	-chgrp games $(DESTDIR)$(bindir)/atomix && chmod 2755 $(DESTDIR)$(bindir)/atomix

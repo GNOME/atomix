@@ -17,6 +17,8 @@
 	* src/tile.h, src/undo.c, src/undo.h: changed all occurrences of
 	"mind game" to "puzzle game".
 
+	* Makefile.am: changed scores file permission from 2111 to 2755
+
 2005-03-18  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* ChangeLog: fixed some broken entries.
