@@ -1,3 +1,9 @@
+2002-05-29  Jens Finke  <jens@triq.net>
+
+	* src/main.c (create_gui): Supply DATADIR to
+	bonobo_ui_util_get_ui_fname to find the ui description even if the
+	prefix is different from the gnome installation path.
+
 2002-05-17  Jens Finke  <jens@triq.net>
 
 	* NEWS: Updated.

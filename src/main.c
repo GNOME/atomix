@@ -775,7 +775,7 @@ create_gui (GnomeProgram *prog)
 					   NULL);
 
 	/* find xml menu description */
-	ui_file =  bonobo_ui_util_get_ui_fname (NULL, "atomix-ui.xml");
+	ui_file =  bonobo_ui_util_get_ui_fname (DATADIR, "atomix-ui.xml");
 	if (ui_file && !g_file_test (ui_file, G_FILE_TEST_EXISTS)) {
 		g_error (_("Couldn't find file: %s"), ui_file);
 		return NULL;
