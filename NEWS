@@ -1,0 +1,18 @@
+2001-12-10: Released version 0.9.1
+
+	    * time counting
+	    * score counting and saving
+	    * arrows showing the possible movements of
+	      selected atoms
+	    * improved undo functionality
+	    * splash screen
+	    * about dialog
+	    * more shortcuts
+	    * code cleanup
+	    * translations work now
+	    * more/updated translations
+	    * bug fixes
+
+2001-11-27: Released version 0.9.0.
+	    
+	    * initial GNOME 2.0 port release

@@ -1,5 +1,11 @@
 2001-12-09  Jens Finke <jens@triq.net>
 
+	* Makefile.am (EXTRA_DIST): Added intl-tool-*.in files.
+
+	* NEWS: Updated.
+	
+2001-12-09  Jens Finke <jens@triq.net>
+
 	* configure.in: Call AC_PROG_INTLTOOL.
 
 2001-12-02  Jens Finke <jens@triq.net>
