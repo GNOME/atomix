@@ -2,33 +2,34 @@
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Christian Rose <menthos@menthos.com>, 2001.
 #
+# $Id$
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2001-11-28 00:00+0100\n"
-"PO-Revision-Date: 2001-02-27 02:35+0100\n"
+"POT-Creation-Date: 2001-11-30 21:01+0100\n"
+"PO-Revision-Date: 2001-11-30 21:02+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/board.c:159
+#: src/board.c:166
 msgid "Game Paused"
 msgstr "Spelet pausat"
 
-#: src/board.c:161
+#: src/board.c:168
 msgid "Game Over"
 msgstr "Spelet är slut"
 
-#: src/board.c:163
+#: src/board.c:170
 msgid "Atomix - Molecule Mind Game"
-msgstr ""
+msgstr "Atomix - Molekylminnesspel"
 
 #: src/main.c:271
-#, fuzzy
 msgid "Couldn't find at least one level."
-msgstr "Kunde inte hitta Atomixed-manualen!"
+msgstr "Kunde inte hitta åtminstone en nivå."
 
 #: src/main.c:283
 msgid "No more undo levels."
@@ -38,38 +39,64 @@ msgstr "Inga fler ångranivåer."
 msgid "This is the last level. You can't skip any further."
 msgstr "Detta är den sista nivån. Du kan inte hoppa över längre."
 
-#: src/main.c:459
-#, fuzzy
+#: src/main.c:460
 msgid "Do you want to finish the game?"
-msgstr "Vill du verkligen avsluta detta spel?"
+msgstr "Vill du verkligen avsluta spelet?"
 
-#: src/main.c:486
-#, fuzzy
+#: src/main.c:487
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Gratulerar! Du har lyckats klara alla nivåer i Atomix."
+msgstr "Gratulerar! Du har slutfört alla nivåer i Atomix."
+
+#: src/main.c:656 src/main.c:662 src/main.c:667
+#, c-format
+msgid "Couldn't create directory: %s"
+msgstr "Kunde inte skapa katalog: %s"
 
 #. create statistics frame
-#: src/main.c:776
-#, fuzzy
+#: src/main.c:736
 msgid "Statistics"
-msgstr " Statistik "
+msgstr "Statistik"
 
-#: src/main.c:782
+#: src/main.c:742
 msgid "Level:"
 msgstr "Nivå:"
 
-#: src/main.c:789
+#: src/main.c:749
 msgid "Name:"
 msgstr "Namn:"
 
-#: src/main.c:796
+#: src/main.c:756
 msgid "Score:"
 msgstr "Poäng:"
 
-#: src/main.c:847
-#, fuzzy, c-format
-msgid "XML file %s not found."
-msgstr "Nivån kunde inte hittas."
+#: src/main.c:802
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "Kunde inte hitta fil: %s"
+
+#~ msgid "Do you really want to clear the grid?"
+#~ msgstr "Vill du verkligen tömma rutnätet?"
+
+#~ msgid ""
+#~ "There does already a theme with this name exist.\n"
+#~ "So does the dir name."
+#~ msgstr ""
+#~ "Det finns redan ett tema med samma namn.\n"
+#~ "Även katalognamnet."
+
+#~ msgid ""
+#~ "There does already a theme with\n"
+#~ "this name exist."
+#~ msgstr ""
+#~ "Det finns redan ett tema med\n"
+#~ "samma namn."
+
+#~ msgid ""
+#~ "There does already a directory\n"
+#~ "with this name exist."
+#~ msgstr ""
+#~ "Det finns redan en katalog med\n"
+#~ "samma namn."
 
 #~ msgid "_New File"
 #~ msgstr "_Ny fil"
@@ -282,35 +309,41 @@ msgstr "Nivån kunde inte hittas."
 #~ msgid "New Theme"
 #~ msgstr "Nytt tema"
 
-#~ msgid "Do you really want to clear the grid?"
-#~ msgstr "Vill du verkligen tömma rutnätet?"
+#~ msgid "No tile to clear here."
+#~ msgstr "Ingen bricka att tömma här."
 
-#~ msgid ""
-#~ "There does already a theme with this name exist.\n"
-#~ "So does the dir name."
-#~ msgstr ""
-#~ "Det finns redan ett tema med samma namn.\n"
-#~ "Även katalognamnet."
+#~ msgid "No tile to move here."
+#~ msgstr "Ingen bricka att flytta här."
 
-#~ msgid ""
-#~ "There does already a theme with\n"
-#~ "this name exist."
-#~ msgstr ""
-#~ "Det finns redan ett tema med\n"
-#~ "samma namn."
+#~ msgid "Copy Goal"
+#~ msgstr "Kopiera mål"
 
-#~ msgid ""
-#~ "There does already a directory\n"
-#~ "with this name exist."
-#~ msgstr ""
-#~ "Det finns redan en katalog med\n"
-#~ "samma namn."
+#~ msgid "Copy the goal into the playfield."
+#~ msgstr "Kopiera målet på spelplanen."
+
+#~ msgid "Clear Grid"
+#~ msgstr "Töm rutnät"
+
+#~ msgid "Clears the whole grid."
+#~ msgstr "Tömmer hela rutnätet."
+
+#~ msgid "Add an image to the list."
+#~ msgstr "Lägg till en bild i listan."
+
+#~ msgid "Delete Image"
+#~ msgstr "Ta bort bild"
+
+#~ msgid "Delete selected image(s)."
+#~ msgstr "Ta bort de markerade bilderna."
+
+#~ msgid "Change the ID of the image."
+#~ msgstr "Ändra bildens ID."
 
 #~ msgid "Press Ctrl+N for a new Game"
 #~ msgstr "Tryck Ctrl+N för ett nytt spel"
 
-#~ msgid "Undo last move. This costs you 5% of your score."
-#~ msgstr "Ångra senaste flytt. Detta kostar dig 5% av din poäng."
+#~ msgid "Couldn't find the Atomix manual!"
+#~ msgstr "Kunde inte hitta Atomix-manualen!"
 
 #~ msgid "Skip _level"
 #~ msgstr "Hoppa över _nivå"
@@ -427,5 +460,8 @@ msgstr "Nivån kunde inte hittas."
 #~ "Ledsen att din tid är ute! Men detta var\n"
 #~ "bara en bonusnivå, så fortsätt nu."
 
-#~ msgid "Couldn't find the Atomix manual!"
-#~ msgstr "Kunde inte hitta Atomix-manualen!"
+#~ msgid "Level not found."
+#~ msgstr "Nivån kunde inte hittas."
+
+#~ msgid "Undo last move. This costs you 5% of your score."
+#~ msgstr "Ångra senaste flytt. Detta kostar dig 5% av din poäng."
