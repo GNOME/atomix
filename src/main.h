@@ -25,37 +25,37 @@
 #include "level-manager.h"
 #include "goal.h"
 
-typedef enum {
-	GAME_STATE_NOT_RUNNING,
-	GAME_STATE_LEVEL_RUNNING,
-	GAME_STATE_PAUSED
+typedef enum
+{
+  GAME_STATE_NOT_RUNNING,
+  GAME_STATE_LEVEL_RUNNING,
+  GAME_STATE_PAUSED
 } GameState;
 
-typedef struct 
+typedef struct
 {
-	GnomeProgram      *prog;
-	GtkWidget         *mainwin;
-	BonoboUIContainer *ui_container;
-	BonoboUIComponent *ui_component;
-	GtkWidget         *ca_matrix;
-	GtkWidget         *ca_goal;
-	GtkWidget         *lb_level;
-	GtkWidget         *lb_name;
-	GtkWidget         *lb_score;
-	GtkWidget         *clock;
+  GnomeProgram *prog;
+  GtkWidget *mainwin;
+  BonoboUIContainer *ui_container;
+  BonoboUIComponent *ui_component;
+  GtkWidget *ca_matrix;
+  GtkWidget *ca_goal;
+  GtkWidget *lb_level;
+  GtkWidget *lb_name;
+  GtkWidget *lb_score;
+  GtkWidget *clock;
 
-	LevelManager      *lm;
-	ThemeManager      *tm;
-	Theme             *theme;
+  LevelManager *lm;
+  ThemeManager *tm;
+  Theme *theme;
 
-	GameState         state;
-	Level             *level;
-	Goal              *goal;
-	gint              level_no;
-	guint             score;
+  GameState state;
+  Level *level;
+  Goal *goal;
+  gint level_no;
+  guint score;
 } AtomixApp;
 
-void
-game_level_finished (AtomixApp *app);
+void game_level_finished (AtomixApp * app);
 
 #endif /* _ATOMIX_MAIN_H_ */

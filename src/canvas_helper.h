@@ -21,20 +21,15 @@
 #include <gnome.h>
 #include "theme.h"
 
-void set_background_color (GtkWidget *canvas, GdkColor *color);
+void set_background_color (GtkWidget * canvas, GdkColor * color);
 
-void convert_to_playfield(Theme *theme, 
-			  gdouble x, gdouble y, 
-			  guint *row, guint *col);
+void convert_to_playfield (Theme * theme, gdouble x, gdouble y,
+			   guint * row, guint * col);
 
+void convert_to_canvas (Theme * theme, guint row, guint col,
+			gdouble * x, gdouble * y);
 
-void convert_to_canvas(Theme *theme, 
-		       guint row, guint col, 
-		       gdouble *x, gdouble *y);
-
-GnomeCanvasGroup* create_group (GnomeCanvas *canvas,
-				GnomeCanvasGroup *parent);
+GnomeCanvasGroup *create_group (GnomeCanvas * canvas,
+				GnomeCanvasGroup * parent);
 
 #endif /* _ATOMIX_CANVAS_HELPER_H_ */
-
-

@@ -21,18 +21,19 @@
 
 #include "playfield.h"
 
-struct _LevelPrivate {
-	gchar*       name;         /* name of the level */
-	PlayField*   environment; 
-	PlayField*   scenario;    /* starting situation */
-	PlayField*   goal;         /* determines the end of the level */
+struct _LevelPrivate
+{
+  gchar *name;			/* name of the level */
+  PlayField *environment;
+  PlayField *scenario;		/* starting situation */
+  PlayField *goal;		/* determines the end of the level */
 
-	/* the following fields are only used by atomixed */
-	gchar *file_name;          /* file name of the level */
-	gboolean modified;         /* whether the level is modified */
+  /* the following fields are only used by atomixed */
+  gchar *file_name;		/* file name of the level */
+  gboolean modified;		/* whether the level is modified */
 };
 
-Level* level_new (void);
+Level *level_new (void);
 
 
 #endif /* _ATOMIX_LEVEL_PRIVATE_H_ */

@@ -1,3 +1,8 @@
+2005-03-16  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* pt_BR.po: Fixed spelling mistake in the Brazilian
+	Portuguese translation
+
 2004-08-23 Alastair McKinstry <mckinstry@debian.org>
 
 	* ga.po: Added Irish translation.

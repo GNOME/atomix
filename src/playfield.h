@@ -16,8 +16,8 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef _ATOMIX_PLAY_FIELD_H 
-#define _ATOMIX_PLAY_FIELD_H 
+#ifndef _ATOMIX_PLAY_FIELD_H
+#define _ATOMIX_PLAY_FIELD_H
 
 #include <gnome.h>
 #include <libxml/tree.h>
@@ -32,60 +32,58 @@
 #define PLAYFIELD_GET_CLASS(o)(G_TYPE_INSTANCE_GET_CLASS ((o), PLAYFIELD_TYPE, PlayFieldClass))
 
 
-typedef struct _PlayFieldPrivate  PlayFieldPrivate;
+typedef struct _PlayFieldPrivate PlayFieldPrivate;
 
 typedef struct
 {
-	GObject parent;
-	PlayFieldPrivate *priv;
+  GObject parent;
+  PlayFieldPrivate *priv;
 } PlayField;
 
-typedef struct {
-	GObjectClass parent_class;
+typedef struct
+{
+  GObjectClass parent_class;
 } PlayFieldClass;
 
 GType playfield_get_type (void);
 
-PlayField* playfield_new(void);
+PlayField *playfield_new (void);
 
-PlayField* playfield_new_from_xml (xmlNodePtr node);
+PlayField *playfield_new_from_xml (xmlNodePtr node);
 
-guint playfield_get_n_rows (PlayField *pf);
+guint playfield_get_n_rows (PlayField * pf);
 
-guint playfield_get_n_cols (PlayField *pf);
+guint playfield_get_n_cols (PlayField * pf);
 
-void playfield_add_row(PlayField* pf);
+void playfield_add_row (PlayField * pf);
 
-void playfield_add_column(PlayField* pf);
+void playfield_add_column (PlayField * pf);
 
-Tile* playfield_get_tile(PlayField *pf, guint row, 
-				   guint col);
+Tile *playfield_get_tile (PlayField * pf, guint row, guint col);
 
-void playfield_set_tile(PlayField* pf, 
-			guint row, guint col, 
-			Tile *tile);
+void playfield_set_tile (PlayField * pf, guint row, guint col, Tile * tile);
 
-void playfield_set_matrix_size(PlayField *pf, guint n_rows, guint n_cols);
+void playfield_set_matrix_size (PlayField * pf, guint n_rows, guint n_cols);
 
-PlayField* playfield_strip (PlayField *pf);
+PlayField *playfield_strip (PlayField * pf);
 
-PlayField* playfield_copy (PlayField *pf);
+PlayField *playfield_copy (PlayField * pf);
 
-Tile* playfield_clear_tile(PlayField *pf, guint row, guint col);
+Tile *playfield_clear_tile (PlayField * pf, guint row, guint col);
 
-void playfield_swap_tiles(PlayField *pf, guint src_row, guint src_col,
-			  guint dest_row, guint dest_col);
+void playfield_swap_tiles (PlayField * pf, guint src_row, guint src_col,
+			   guint dest_row, guint dest_col);
 
-void playfield_print(PlayField *pf);
+void playfield_print (PlayField * pf);
 
-void playfield_clear(PlayField *pf);
+void playfield_clear (PlayField * pf);
 
-PlayField *playfield_generate_environment (PlayField *pf, Theme *theme);
+PlayField *playfield_generate_environment (PlayField * pf, Theme * theme);
 
-PlayField *playfield_generate_shadow (PlayField *pf);
+PlayField *playfield_generate_shadow (PlayField * pf);
 
 #if 0
-void playfield_save_xml(PlayField *pf, xmlNodePtr node);
+void playfield_save_xml (PlayField * pf, xmlNodePtr node);
 #endif
 
 #endif /* _ATOMIX_PLAY_FIELD_H */

@@ -1,8 +1,16 @@
-2004-08-23 Alastair McKinstry <mckinstry@debian.org>
+2005-03-18  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* ChangeLog: fixed some broken entries
+
+	* src/: enforced GNU coding style, with some very small
+	tweaks for better readability in specific situations
+
+2004-08-23  Alastair McKinstry  <mckinstry@debian.org>
 
 	* configure.in: Added "ga" (Irish) to ALL_LINGUAS.
 
-2004-06-06  Alexander Shopov <ash@contact.bg>
+2004-06-06  Alexander Shopov  <ash@contact.bg>
+
 	* configure.in: Added "bg" (Bulgarian)
 	to ALL_LINGUAS.
 

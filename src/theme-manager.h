@@ -31,23 +31,25 @@
 
 typedef struct _ThemeManagerPrivate ThemeManagerPrivate;
 
-typedef struct {
-	GObject parent;
-	ThemeManagerPrivate *priv;
+typedef struct
+{
+  GObject parent;
+  ThemeManagerPrivate *priv;
 } ThemeManager;
 
-typedef struct {
-	GObjectClass parent_class;
+typedef struct
+{
+  GObjectClass parent_class;
 } ThemeManagerClass;
 
 GType theme_manager_get_type (void);
 
-ThemeManager* theme_manager_new (void);
+ThemeManager *theme_manager_new (void);
 
-void theme_manager_init_themes (ThemeManager *tm);
+void theme_manager_init_themes (ThemeManager * tm);
 
-Theme* theme_manager_get_theme (ThemeManager *tm, const gchar *theme_name);
+Theme *theme_manager_get_theme (ThemeManager * tm, const gchar * theme_name);
 
-GList* theme_manager_get_available_themes (ThemeManager *tm);
+GList *theme_manager_get_available_themes (ThemeManager * tm);
 
 #endif /* _ATOMIX_THEME_MANAGER_H_ */

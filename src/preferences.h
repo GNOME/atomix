@@ -25,23 +25,23 @@ typedef struct _Preferences Preferences;
 
 struct _Preferences
 {
-	gboolean mouse_control;
-	gboolean keyboard_control;
-	gboolean hide_cursor;
-	gboolean lazy_dragging;
-	gint mouse_sensitivity;
-	gboolean score_time_enabled;
+  gboolean mouse_control;
+  gboolean keyboard_control;
+  gboolean hide_cursor;
+  gboolean lazy_dragging;
+  gint mouse_sensitivity;
+  gboolean score_time_enabled;
 };
 
 
-void preferences_init(void);
+void preferences_init (void);
 
-void preferences_destroy(void);
+void preferences_destroy (void);
 
-void preferences_save(void);
+void preferences_save (void);
 
-Preferences* preferences_get(void);
+Preferences *preferences_get (void);
 
-void preferences_show_dialog(void);
+void preferences_show_dialog (void);
 
 #endif /* _ATOMIX_PREFERENCES_H_ */

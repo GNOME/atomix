@@ -30,25 +30,28 @@
 
 typedef struct _LevelManagerPrivate LevelManagerPrivate;
 
-typedef struct {
-	GObject parent;
-	LevelManagerPrivate *priv;
+typedef struct
+{
+  GObject parent;
+  LevelManagerPrivate *priv;
 } LevelManager;
 
-typedef struct {
-	GObjectClass parent_class;
+typedef struct
+{
+  GObjectClass parent_class;
 } LevelManagerClass;
 
 GType level_manager_get_type (void);
 
-LevelManager* level_manager_new (void);
+LevelManager *level_manager_new (void);
 
-void level_manager_init_levels (LevelManager *lm);
+void level_manager_init_levels (LevelManager * lm);
 
-Level* level_manager_get_next_level (LevelManager *lm, Level *current_level);
+Level *level_manager_get_next_level (LevelManager * lm,
+				     Level * current_level);
 
-GList* level_manager_get_available_levels (LevelManager *lm);
+GList *level_manager_get_available_levels (LevelManager * lm);
 
-gboolean level_manager_is_last_level (LevelManager *lm, Level *level);
+gboolean level_manager_is_last_level (LevelManager * lm, Level * level);
 
 #endif /* _ATOMIX_LEVEL_MANAGER_H_ */

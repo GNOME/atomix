@@ -24,9 +24,9 @@
 #include "theme.h"
 #include "goal.h"
 
-void goal_view_init (Theme *theme, GnomeCanvas *canvas);
+void goal_view_init (Theme * theme, GnomeCanvas * canvas);
 
-void goal_view_render (Goal *goal);
+void goal_view_render (Goal * goal);
 
 void goal_view_clear ();
 

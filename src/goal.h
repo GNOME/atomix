@@ -30,30 +30,28 @@
 #define GOAL_GET_CLASS(o)(G_TYPE_INSTANCE_GET_CLASS ((o), GOAL_TYPE, GoalClass))
 
 
-typedef struct _GoalPrivate   GoalPrivate;
+typedef struct _GoalPrivate GoalPrivate;
 
-typedef struct 
+typedef struct
 {
-	GObject parent;
-	GoalPrivate *priv;
+  GObject parent;
+  GoalPrivate *priv;
 } Goal;
 
 typedef struct
 {
-	GObjectClass parent_class;
-
-	
+  GObjectClass parent_class;
 } GoalClass;
 
 GType goal_get_type (void);
 
-Goal* goal_new (PlayField* pf);
+Goal *goal_new (PlayField * pf);
 
-PlayField *goal_get_playfield (Goal *goal);
+PlayField *goal_get_playfield (Goal * goal);
 
-gboolean goal_reached(Goal* goal, PlayField* pf, guint row_anchor, 
-		      guint col_anchor);
+gboolean goal_reached (Goal * goal, PlayField * pf,
+		       guint row_anchor, guint col_anchor);
 
-void goal_print(Goal* goal);
+void goal_print (Goal * goal);
 
 #endif /* _ATOMIX_GOAL_H_ */

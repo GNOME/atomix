@@ -33,13 +33,15 @@
 
 typedef struct _ThemePrivate ThemePrivate;
 
-typedef struct {
-	GObject parent;
-	ThemePrivate *priv;
+typedef struct
+{
+  GObject parent;
+  ThemePrivate *priv;
 } Theme;
 
-typedef struct {
-	GObjectClass parent_class;
+typedef struct
+{
+  GObjectClass parent_class;
 } ThemeClass;
 
 GType theme_get_type (void);
@@ -48,22 +50,19 @@ GType theme_get_type (void);
  * ThemeManager to get an Theme object.
  */
 
-GdkPixbuf* theme_get_tile_image       (Theme* theme, 
-				       Tile *tile);
+GdkPixbuf *theme_get_tile_image (Theme * theme, Tile * tile);
 
-GdkColor*  theme_get_background_color (Theme *theme);
+GdkColor *theme_get_background_color (Theme * theme);
 
-GdkPixbuf* theme_get_selector_image   (Theme *theme);
+GdkPixbuf *theme_get_selector_image (Theme * theme);
 
-void       theme_get_selector_arrow_images (Theme *theme,
-					    GdkPixbuf **arrow_images);
+void theme_get_selector_arrow_images (Theme * theme,
+				      GdkPixbuf ** arrow_images);
 
-void       theme_get_tile_size        (Theme *theme, 
-				       gint *width, 
-				       gint *height);
-gchar*     theme_get_name (Theme *theme);
-gint       theme_get_animstep (Theme *theme);
+void theme_get_tile_size (Theme * theme, gint * width, gint * height);
+gchar *theme_get_name (Theme * theme);
+gint theme_get_animstep (Theme * theme);
 
-gboolean   theme_apply_decoration (Theme *theme, Tile *tile);
+gboolean theme_apply_decoration (Theme * theme, Tile * tile);
 
 #endif /* _ATOMIX_THEME_H_ */

@@ -21,19 +21,20 @@
 
 #include <gnome.h>
 
-typedef struct {
-	GnomeCanvasItem *item;
-	gint src_row;
-	gint src_col;
-	gint dest_row;
-	gint dest_col;
+typedef struct
+{
+  GnomeCanvasItem *item;
+  gint src_row;
+  gint src_col;
+  gint dest_row;
+  gint dest_col;
 } UndoMove;
 
-void undo_push_move (GnomeCanvasItem *item,
+void undo_push_move (GnomeCanvasItem * item,
 		     gint src_row, gint src_col,
 		     gint dest_row, gint dest_col);
 
-UndoMove* undo_pop_move (void);
+UndoMove *undo_pop_move (void);
 
 void undo_clear (void);
 

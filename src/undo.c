@@ -19,47 +19,44 @@
 
 static GSList *undo_stack = NULL;
 
-static void
-delete_move (UndoMove *move, gpointer data)
+static void delete_move (UndoMove *move, gpointer data)
 {
-	g_free (move);
+  g_free (move);
 }
 
-void
-undo_clear (void)
+void undo_clear (void)
 {
-	if (undo_stack == NULL) return;
+  if (undo_stack == NULL)
+    return;
 
-	g_slist_foreach (undo_stack, (GFunc) delete_move, NULL);
-	g_slist_free (undo_stack);
-	undo_stack = NULL;
+  g_slist_foreach (undo_stack, (GFunc) delete_move, NULL);
+  g_slist_free (undo_stack);
+  undo_stack = NULL;
 }
 
-
-void
-undo_push_move(GnomeCanvasItem *item, gint src_row, gint src_col,
-	       gint dest_row, gint dest_col)
+void undo_push_move (GnomeCanvasItem *item, gint src_row, gint src_col,
+		     gint dest_row, gint dest_col)
 {
-	UndoMove *move = g_new0(UndoMove, 1);
+  UndoMove *move = g_new0 (UndoMove, 1);
 
-	move->item = item;
-	move->src_row = src_row;
-	move->src_col = src_col;
-	move->dest_row = dest_row;
-	move->dest_col = dest_col;
+  move->item = item;
+  move->src_row = src_row;
+  move->src_col = src_col;
+  move->dest_row = dest_row;
+  move->dest_col = dest_col;
 
-	undo_stack = g_slist_prepend (undo_stack, move);
+  undo_stack = g_slist_prepend (undo_stack, move);
 }
 
-UndoMove*
-undo_pop_move(void)
+UndoMove *undo_pop_move (void)
 {
-	UndoMove *move;
+  UndoMove *move;
 
-	if (undo_stack == NULL) return NULL;
+  if (undo_stack == NULL)
+    return NULL;
 
-	move = (UndoMove*) undo_stack->data;
-	undo_stack = g_slist_delete_link (undo_stack, undo_stack);
+  move = (UndoMove *) undo_stack->data;
+  undo_stack = g_slist_delete_link (undo_stack, undo_stack);
 
-	return move;
+  return move;
 }

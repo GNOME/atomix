@@ -21,35 +21,35 @@
 
 #include "tile.h"
 
-typedef struct 
+typedef struct
 {
-	GQuark        id;             /* the id */
-	gchar        *file;           /* file name */
-	gboolean      loading_failed; /* if once the image loading failed.*/
-        GdkPixbuf    *image;          /* image */
-	gint          alpha;          /* alpha value to use for overy-/underlay */
-	GSList       *decorations;    /* possible decoration images */
+  GQuark id;			/* the id */
+  gchar *file;			/* file name */
+  gboolean loading_failed;	/* if once the image loading failed. */
+  GdkPixbuf *image;		/* image */
+  gint alpha;			/* alpha value to use for overy-/underlay */
+  GSList *decorations;		/* possible decoration images */
 } ThemeImage;
 
-struct _ThemePrivate 
+struct _ThemePrivate
 {
-	gchar         *name;          /* name of the theme */
-	gchar         *path;          /* full qualified path to the theme directory */
+  gchar *name;			/* name of the theme */
+  gchar *path;			/* full qualified path to the theme directory */
 
-	gint          tile_width;     /* width of each tile */
-	gint          tile_height;    /* height of each tile */
-	gint          animstep;       /* number of pixels to move a atom in one 
-				         animation step */
-	GdkColor      bg_color;       /* background color */
+  gint tile_width;		/* width of each tile */
+  gint tile_height;		/* height of each tile */
+  gint animstep;		/* number of pixels to move a atom in one 
+				   animation step */
+  GdkColor bg_color;		/* background color */
 
-	GData         *images;        /* key/data list for all the images */
+  GData *images;		/* key/data list for all the images */
 };
 
 
-Theme* theme_new (void);
+Theme *theme_new (void);
 
-GQuark theme_add_image (Theme *theme, const gchar *src, gint alpha);
+GQuark theme_add_image (Theme * theme, const gchar * src, gint alpha);
 
-void theme_add_image_decoration (Theme *theme, GQuark base, GQuark decor);
+void theme_add_image_decoration (Theme * theme, GQuark base, GQuark decor);
 
 #endif /* _ATOMIX_THEME_PRIVATE_H_ */
