@@ -1,184 +1,173 @@
 # Danish translation of atomix.
-# Copyright (C) 2001 Free Software Foundation, Inc.
+# Copyright (C) 2001, 02 Free Software Foundation, Inc.
 # Keld Simonsen <keld@dkuug.dk>, 2001.
+# Ole Laursen <olau@hardworking.dk>, 2002.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-02-17 10:30+0100\n"
-"PO-Revision-Date: 2001-09-22 12:32-05:00\n"
-"Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
+"POT-Creation-Date: 2002-03-08 22:36+0100\n"
+"PO-Revision-Date: 2002-03-08 22:45+0100\n"
+"Last-Translator: Ole Laursen <olau@hardworking.dk>\n"
 "Language-Team: Danish <dansk@kild.dk>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: src/atomix-ui.xml.in.h:1
-#, fuzzy
 msgid "Continue paused game"
-msgstr "_Fortsæt spil"
+msgstr "FortsÃ¦t spil"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
-msgstr ""
+msgstr "_Afslut"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
-msgstr ""
+msgstr "Afslut et spil"
 
 #: src/atomix-ui.xml.in.h:4
 msgid "Exit game"
-msgstr ""
+msgstr "Afslut spillet"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr ""
+msgstr "SÃ¦t spillet pÃ¥ pause"
 
 #: src/atomix-ui.xml.in.h:6
-#, fuzzy
 msgid "Reset level"
-msgstr "_Fjern niveau"
+msgstr "Nulstil niveau"
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr ""
+msgstr "Gendanner startsituationen"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
-msgstr ""
+msgstr "Angiv indstillinger"
 
 #: src/atomix-ui.xml.in.h:9
 msgid "Skip _level"
-msgstr "Overspring _niveau"
+msgstr "Spring _niveau over"
 
 #: src/atomix-ui.xml.in.h:10
-#, fuzzy
 msgid "Skip the current level"
-msgstr "Overspring _niveau"
+msgstr "Spring over det nuvÃ¦rende _niveau"
 
 #: src/atomix-ui.xml.in.h:11
 msgid "Start a new game"
-msgstr ""
+msgstr "Start et nyt spil"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
-msgstr ""
+msgstr "Fortryd det sidste spil"
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr ""
+msgstr "Vis tak til-oplysninger"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr ""
+msgstr "Vis top ti"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
-msgstr ""
+msgstr "_Om"
 
 #: src/atomix-ui.xml.in.h:16
 msgid "_Continue game"
-msgstr "_Fortsæt spil"
+msgstr "_FortsÃ¦t spil"
 
 #: src/atomix-ui.xml.in.h:17
 msgid "_Edit"
-msgstr ""
+msgstr "_RedigÃ©r"
 
 #: src/atomix-ui.xml.in.h:18
 msgid "_End Game"
-msgstr ""
+msgstr "_Afslut spil"
 
 #: src/atomix-ui.xml.in.h:19
-#, fuzzy
 msgid "_Game"
-msgstr "Navn"
+msgstr "_Spil"
 
 #: src/atomix-ui.xml.in.h:20
 msgid "_Help"
-msgstr ""
+msgstr "_HjÃ¦lp"
 
 #: src/atomix-ui.xml.in.h:21
-#, fuzzy
 msgid "_New Game"
-msgstr "Nyt navn:"
+msgstr "_Nyt spil"
 
 #: src/atomix-ui.xml.in.h:22
-#, fuzzy
 msgid "_Pause game"
-msgstr "_Fortsæt spil"
+msgstr "_Pause spil"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr ""
+msgstr "_Indstillinger..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr ""
+msgstr "_Point..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr ""
-
-#: src/board.c:168
-msgid "Game Paused"
-msgstr "Spillet midlertidigt afbrudt"
+msgstr "_Fortryd flytning"
 
 #: src/board.c:170
+msgid "Game Paused"
+msgstr "Spil pÃ¥ pause"
+
+#: src/board.c:172
 msgid "Game Over"
 msgstr "Spillet er slut"
 
-#: src/board.c:172
+#: src/board.c:174
 msgid "Atomix - Molecule Mind Game"
-msgstr ""
+msgstr "Atomix - molekylÃ¦rt tÃ¦nkespil"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr ""
+msgstr "Kunne ikke finde niveausekvensbeskrivelse."
 
 #: src/level-manager.c:185
-#, fuzzy
 msgid "No level found."
-msgstr "Niveau ikke fundet"
+msgstr "Intet niveau fundet."
 
 #: src/level-manager.c:285
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr ""
+msgstr "Fandt niveau '%s' i: %s"
 
 #: src/main.c:149
-#, fuzzy
 msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "(C) 1999-2001 Jens Finke"
+msgstr "Copyright Â© 1999-2002 Jens Finke"
 
 #: src/main.c:150
 msgid "A mind game about atoms and molecules."
-msgstr ""
+msgstr "Et tÃ¦nkespil om atomer og molekyler."
 
 #: src/main.c:484
-#, fuzzy
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Tillykke! Du har lykkes at klare alle niveauer i Atomix."
+msgstr "Tillykke! Du klaret alle niveauer i Atomix."
 
 #: src/main.c:495
-#, fuzzy
 msgid "Couldn't find at least one level."
-msgstr "Kunne ikke finde Atomixed-manualen!"
+msgstr "Kunne ikke finde blot Ã©t niveau."
 
 #: src/main.c:500
-#, fuzzy
 msgid "Do you want to finish the game?"
-msgstr "Vil du virkelig afslutte dette spil?"
+msgstr "Vil du virkelig afslutte spillet?"
 
 #: src/main.c:619 src/main.c:625 src/main.c:630
-#, fuzzy, c-format
+#, c-format
 msgid "Couldn't create directory: %s"
-msgstr "Kunne ikke oprette pixmappen fra filen: %s"
+msgstr "Kunne ikke oprette mappe: %s"
 
 #. create statistics frame
 #: src/main.c:733
-#, fuzzy
 msgid "Statistics"
-msgstr " Statistik "
+msgstr "Statistik"
 
 #: src/main.c:739
 msgid "Level:"
@@ -186,7 +175,7 @@ msgstr "Niveau:"
 
 #: src/main.c:740
 msgid "Molecule:"
-msgstr ""
+msgstr "Molekyle:"
 
 #: src/main.c:741
 msgid "Score:"
@@ -197,63 +186,30 @@ msgid "Time:"
 msgstr "Tid:"
 
 #: src/main.c:782
-#, fuzzy, c-format
+#, c-format
 msgid "Couldn't find file: %s"
-msgstr "Kunne ikke finde en pixmap-fil: %s"
+msgstr "Kunne ikke finde fil: %s"
 
 #: src/main.c:840
-#, fuzzy
 msgid "Atomix Splash"
 msgstr "Atomix"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
-msgstr ""
+msgstr "Ingen temaer fundet."
 
 #: src/theme-manager.c:204
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr ""
+msgstr "Fandt temaet '%s' i: %s"
 
 #: atomix.desktop.in.h:1
-#, fuzzy
 msgid "Atomix"
-msgstr "Atomixet"
+msgstr "Atomix"
 
 #: atomix.desktop.in.h:2
-#, fuzzy
 msgid "Molecule mind game"
-msgstr "Endnu et hukommelsesspil."
-
-#~ msgid "No more undo levels."
-#~ msgstr "Ikke flere fortrydelsesniveauer."
-
-#~ msgid "This is the last level. You can't skip any further."
-#~ msgstr "Dette er det sidste niveau. Du kan ikke overspringe længere."
-
-#~ msgid "Name:"
-#~ msgstr "Navn:"
-
-#, fuzzy
-#~ msgid "XML file %s not found."
-#~ msgstr "Niveau ikke fundet"
-
-#, fuzzy
-#~ msgid "Undo last move. This costs you 5 % of your score."
-#~ msgstr "Fortryd seneste træk. Dette koster dig 5% af dine point."
-
-#~ msgid "Couldn't find the Atomix manual!"
-#~ msgstr "Kunne ikke finde Atomix-manualen!"
-
-#~ msgid "Do you really want to clear the grid?"
-#~ msgstr "Vil du virkelig tømme gitteret?"
-
-#~ msgid ""
-#~ "There does already a theme with this name exist.\n"
-#~ "So does the dir name."
-#~ msgstr ""
-#~ "Det findes allerede et tema med samme navn.\n"
-#~ "Endog katalognavnet."
+msgstr "MolekyletÃ¦nkespil"
 
 #~ msgid ""
 #~ "There does already a theme with\n"
@@ -262,30 +218,11 @@ msgstr "Endnu et hukommelsesspil."
 #~ "Det findes allerede et tema med\n"
 #~ "samme navn."
 
-#~ msgid ""
-#~ "There does already a directory\n"
-#~ "with this name exist."
-#~ msgstr ""
-#~ "Det findes allerede et katalog med\n"
-#~ "samme navn."
-
 #~ msgid "_New File"
 #~ msgstr "_Ny fil"
 
-#~ msgid "Grid"
-#~ msgstr "Gitter"
-
-#~ msgid "Grid On/Off"
-#~ msgstr "Gitter til/fra"
-
 #~ msgid "Theme Window"
 #~ msgstr "Temavindue"
-
-#~ msgid "_Clear Grid"
-#~ msgstr "_Ryd gitter"
-
-#~ msgid "_Resize Grid"
-#~ msgstr "_Ændr størrelse på gitter"
 
 #~ msgid "_Delete Theme"
 #~ msgstr "_Fjern tema"
@@ -306,16 +243,13 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgstr "Ny fil"
 
 #~ msgid "Open"
-#~ msgstr "Åbn"
+#~ msgstr "Ã…bn"
 
 #~ msgid "Open File"
-#~ msgstr "Åbn fil"
+#~ msgstr "Ã…bn fil"
 
 #~ msgid "Save"
 #~ msgstr "Gem"
-
-#~ msgid "Save File"
-#~ msgstr "gem fil"
 
 #~ msgid "Theme Wnd"
 #~ msgstr "Temavindue"
@@ -327,7 +261,7 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgstr "Niveau"
 
 #~ msgid "Goal"
-#~ msgstr "Mål"
+#~ msgstr "MÃ¥l"
 
 #~ msgid "Themename:"
 #~ msgstr "Temanavn:"
@@ -347,9 +281,6 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgid "Seconds:"
 #~ msgstr "Sekunder:"
 
-#~ msgid "Properties"
-#~ msgstr "Egenskaber"
-
 #~ msgid "Leveleditor"
 #~ msgstr "Niveauredigering"
 
@@ -365,23 +296,14 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgid "Obstacles"
 #~ msgstr "Hindringer"
 
-#~ msgid "Directoryname:"
-#~ msgstr "Katalognavn:"
-
 #~ msgid "Background Color:"
 #~ msgstr "Baggrundsfarve:"
-
-#~ msgid "Selector Image:"
-#~ msgstr "Valgbillede:"
-
-#~ msgid "Browse ..."
-#~ msgstr "Bladr igennem..."
 
 #~ msgid "Animation Step:"
 #~ msgstr "Animationstrin:"
 
 #~ msgid "Tile Height:"
-#~ msgstr "Flisehøjde:"
+#~ msgstr "FlisehÃ¸jde:"
 
 #~ msgid "Tile Width:"
 #~ msgstr "Flisebredde:"
@@ -389,35 +311,29 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgid "Themeeditor"
 #~ msgstr "Temaredigering"
 
-#~ msgid "Atom Preview"
-#~ msgstr "Atomsmugkig"
-
 #~ msgid "Mouse functions"
 #~ msgstr "Musefunktioner"
 
 #~ msgid "Clear"
-#~ msgstr "Tøm"
+#~ msgstr "TÃ¸m"
 
 #~ msgid "Set"
-#~ msgstr "Sæt"
+#~ msgstr "SÃ¦t"
 
 #~ msgid "Move"
 #~ msgstr "Flyt"
 
-#~ msgid "Resize Grid"
-#~ msgstr "Ændr størrelse på gitter"
-
 #~ msgid "Current Values"
-#~ msgstr "Aktuelle værdier"
+#~ msgstr "Aktuelle vÃ¦rdier"
 
 #~ msgid "Rows:"
-#~ msgstr "Rækker:"
+#~ msgstr "RÃ¦kker:"
 
 #~ msgid "Columns:"
 #~ msgstr "Kolonner:"
 
 #~ msgid "New Values"
-#~ msgstr "Nye værdier"
+#~ msgstr "Nye vÃ¦rdier"
 
 #~ msgid "New Level"
 #~ msgstr "Nyt niveau"
@@ -426,38 +342,32 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgstr "Niveaunavn:"
 
 #~ msgid "Playfield Size"
-#~ msgstr "Størrelse på spillefelt"
+#~ msgstr "StÃ¸rrelse pÃ¥ spillefelt"
 
 #~ msgid "Goal Size"
-#~ msgstr "Størrelse på mål"
-
-#~ msgid "(C)  1999-2001 Jens Finke"
-#~ msgstr "© 1999-2001 Jens Finke"
-
-#~ msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
-#~ msgstr "Atomixed er niveau-/temaredigereren for hukommelsespillet Atomix."
+#~ msgstr "StÃ¸rrelse pÃ¥ mÃ¥l"
 
 #~ msgid "Change level name"
-#~ msgstr "Ændr navn på niveau"
+#~ msgstr "Ã†ndr navn pÃ¥ niveau"
 
 #~ msgid ""
 #~ "There is already a level with the same name. Please choose another\n"
 #~ "name for this level."
 #~ msgstr ""
-#~ "Det findes allerede et niveau med samme navn. Vær venlig og vælg et\n"
-#~ "andet navn på dette niveau."
+#~ "Det findes allerede et niveau med samme navn. VÃ¦r venlig og vÃ¦lg et\n"
+#~ "andet navn pÃ¥ dette niveau."
 
 #~ msgid "Current Name:"
-#~ msgstr "Nuværende navn:"
+#~ msgstr "NuvÃ¦rende navn:"
 
 #~ msgid "Add Image"
-#~ msgstr "Tilføj billede"
+#~ msgstr "TilfÃ¸j billede"
 
 #~ msgid "Text:"
 #~ msgstr "Tekst:"
 
 #~ msgid "Change ID"
-#~ msgstr "Ændr ID"
+#~ msgstr "Ã†ndr ID"
 
 #~ msgid "Current ID:"
 #~ msgstr "Aktivt ID:"
@@ -475,19 +385,19 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgstr "Ingen brik at flytte her."
 
 #~ msgid "Copy Goal"
-#~ msgstr "Kopiér mål"
+#~ msgstr "KopiÃ©r mÃ¥l"
 
 #~ msgid "Copy the goal into the playfield."
-#~ msgstr "Kopiér målet på spillepladen."
+#~ msgstr "KopiÃ©r mÃ¥let pÃ¥ spillepladen."
 
 #~ msgid "Clear Grid"
-#~ msgstr "Tøm gitter"
+#~ msgstr "TÃ¸m gitter"
 
 #~ msgid "Clears the whole grid."
-#~ msgstr "Tømmer hele gitteret."
+#~ msgstr "TÃ¸mmer hele gitteret."
 
 #~ msgid "Add an image to the list."
-#~ msgstr "Tilføj et billede til listen."
+#~ msgstr "TilfÃ¸j et billede til listen."
 
 #~ msgid "Delete Image"
 #~ msgstr "Slet billede"
@@ -496,7 +406,7 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgstr "Fjern de markerede billeder."
 
 #~ msgid "Change the ID of the image."
-#~ msgstr "Ændr billedets ID."
+#~ msgstr "Ã†ndr billedets ID."
 
 #~ msgid "Press Ctrl+N for a new Game"
 #~ msgstr "Tryk Ctrl+N for et nyt spil"
@@ -513,9 +423,9 @@ msgstr "Endnu et hukommelsesspil."
 #~ "or ~/.atomix/levels.)"
 #~ msgstr ""
 #~ "Niveauet kunne ikke findes.\n"
-#~ "Desværre, spillet slutter her.\n"
+#~ "DesvÃ¦rre, spillet slutter her.\n"
 #~ "\n"
-#~ "(Vær venlig og forsikr dig om at\n"
+#~ "(VÃ¦r venlig og forsikr dig om at\n"
 #~ "du har *.atomix-filer i enten\n"
 #~ "<prefix>/share/atomix/levels eller\n"
 #~ "~/.atomix/levels.)"
@@ -524,16 +434,16 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgstr "Information"
 
 #~ msgid "Atomix Next Level"
-#~ msgstr "Næste Atomixniveau"
+#~ msgstr "NÃ¦ste Atomixniveau"
 
 #~ msgid "Congratulations! You have successfully finished this level."
-#~ msgstr "Tillykke! Du har fuldført dette niveau."
+#~ msgstr "Tillykke! Du har fuldfÃ¸rt dette niveau."
 
 #~ msgid "Remaining Time:"
 #~ msgstr "Resterende tid:"
 
 #~ msgid "Are you ready for the next level?"
-#~ msgstr "Er du parat til næste niveau?"
+#~ msgstr "Er du parat til nÃ¦ste niveau?"
 
 #~ msgid "Atomix End"
 #~ msgstr "Atomix-slut"
@@ -541,11 +451,8 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgid "Do you want to play again?"
 #~ msgstr "Vil du spille igen?"
 
-#~ msgid "Constraints"
-#~ msgstr "Restriktioner"
-
 #~ msgid "enable score and time limit"
-#~ msgstr "anvend point- og tidsgrænse"
+#~ msgstr "anvend point- og tidsgrÃ¦nse"
 
 #~ msgid "General"
 #~ msgstr "Generelt"
@@ -559,17 +466,14 @@ msgstr "Endnu et hukommelsesspil."
 #~ msgid "Mouse Properties"
 #~ msgstr "Muse-egenskaber"
 
-#~ msgid "hide mouse cursor during dragging"
-#~ msgstr "skjul musepeger ved flytning"
-
 #~ msgid "enable lazy dragging"
 #~ msgstr "anvend langsom flytning"
 
 #~ msgid "Sensitivity:"
-#~ msgstr "Følsomhed:"
+#~ msgstr "FÃ¸lsomhed:"
 
 #~ msgid "high"
-#~ msgstr "høj"
+#~ msgstr "hÃ¸j"
 
 #~ msgid "low"
 #~ msgstr "lav"
@@ -587,13 +491,13 @@ msgstr "Endnu et hukommelsesspil."
 #~ "Do you want to retry?"
 #~ msgstr ""
 #~ "Tiden er slut! Dette koster dig 10% af dine point.\n"
-#~ "Bedre held næste gang.\n"
+#~ "Bedre held nÃ¦ste gang.\n"
 #~ "\n"
-#~ "Vil du forsøge igen?"
+#~ "Vil du forsÃ¸ge igen?"
 
 #~ msgid ""
 #~ "Sorry your time is up! But this was only\n"
 #~ "a bonus level so go further now."
 #~ msgstr ""
-#~ "Desværre, din tid er udløbet! Men dette var\n"
-#~ "bare et bonusniveau, så fortsæt nu."
+#~ "DesvÃ¦rre, din tid er udlÃ¸bet! Men dette var\n"
+#~ "bare et bonusniveau, sÃ¥ fortsÃ¦t nu."
