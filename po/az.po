@@ -5,77 +5,73 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix-game 0.9.1\n"
-"POT-Creation-Date: 2002-07-18 22:25+0200\n"
-"PO-Revision-Date: 2001-11-17 11:44GMT+0200\n"
-"Last-Translator: Vasif İsmayıloğlu MD <azerb_linux@hotmail.com>\n"
+"POT-Creation-Date: 2003-03-07 11:38+0100\n"
+"PO-Revision-Date: 2003-03-07 19:01+0200\n"
+"Last-Translator: Mətin Əmirov <metin@karegen.com>\n"
 "Language-Team: Azerbaijani Turkic <linuxaz@azerimail.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.5\n"
 
 #: src/atomix-ui.xml.in.h:1
-#, fuzzy
 msgid "Continue paused game"
-msgstr "Oyuna _Davam Et"
+msgstr "Oyuna davam et"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
-msgstr ""
+msgstr "Ç_ıx"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
-msgstr ""
+msgstr "Oyunu qurtar"
 
 #: src/atomix-ui.xml.in.h:4
 msgid "Exit game"
-msgstr ""
+msgstr "Oyundan Çıx"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr ""
+msgstr "Oyuna fasilə ver"
 
 #: src/atomix-ui.xml.in.h:6
-#, fuzzy
 msgid "Reset level"
-msgstr "Səviyyəni _Sil"
+msgstr "Səviyyəni sıfırla"
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr ""
+msgstr "Başlama vəziyyətini geri alar"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
-msgstr ""
+msgstr "Seçənəkləri dəyişdir"
 
 #: src/atomix-ui.xml.in.h:9
 msgid "Skip _level"
 msgstr "_Səviyyəni keç"
 
 #: src/atomix-ui.xml.in.h:10
-#, fuzzy
 msgid "Skip the current level"
-msgstr "_Səviyyəni keç"
+msgstr "Səviyyəni keç"
 
 #: src/atomix-ui.xml.in.h:11
 msgid "Start a new game"
-msgstr ""
+msgstr "Yeni oyun başlat"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
-msgstr ""
+msgstr "Axırıncı gedişi qaytar"
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr ""
+msgstr "Proqram müəllifləri haqqında"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr ""
+msgstr "Ən yüksək xalları toplayanları göstər"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
-msgstr ""
+msgstr "_Haqqında"
 
 #: src/atomix-ui.xml.in.h:16
 msgid "_Continue game"
@@ -83,136 +79,122 @@ msgstr "Oyuna _Davam Et"
 
 #: src/atomix-ui.xml.in.h:17
 msgid "_Edit"
-msgstr ""
+msgstr "_Düzəlt"
 
 #: src/atomix-ui.xml.in.h:18
 msgid "_End Game"
-msgstr ""
+msgstr "Oyunu Qu_rtar"
 
 #: src/atomix-ui.xml.in.h:19
-#, fuzzy
 msgid "_Game"
-msgstr "Ad"
+msgstr "_Oyun"
 
 #: src/atomix-ui.xml.in.h:20
 msgid "_Help"
-msgstr ""
+msgstr "_Yardım"
 
 #: src/atomix-ui.xml.in.h:21
-#, fuzzy
 msgid "_New Game"
-msgstr "Yeni Ad:"
+msgstr "_Yeni Oyun"
 
 #: src/atomix-ui.xml.in.h:22
-#, fuzzy
 msgid "_Pause game"
-msgstr "Oyuna _Davam Et"
+msgstr "Oyuna _fasilə ver"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr ""
+msgstr "_Seçənəklər..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr ""
+msgstr "_Xallar..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr ""
+msgstr "Gedişi _qaytar"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr ""
+msgstr "Səviyə ardıcıllıq təsvirini tapa bilmədim."
 
 #: src/level-manager.c:185
-#, fuzzy
 msgid "No level found."
 msgstr "Səviyyə tapılmadı."
 
 #: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr ""
+msgstr "'%s' səviyyəsini %s-da tapdım"
 
-#: src/main.c:149
+#: src/main.c:118
+#: src/main.c:444
+#: atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomiks"
+
+#: src/main.c:145
 msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr ""
+msgstr "Müəllif Haqqı (C) 1999-2002 Jens Finke"
 
-#: src/main.c:150
+#: src/main.c:146
 msgid "A mind game about atoms and molecules."
-msgstr ""
+msgstr "Molekullar və atomlar haqqında ağıl oyunu"
 
-#: src/main.c:488
-#, fuzzy
+#: src/main.c:456
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Təbriklər! Bütün atomiks səviyyələrini uğurla keçdiniz."
 
-#: src/main.c:499
-#, fuzzy
+#: src/main.c:467
 msgid "Couldn't find at least one level."
-msgstr "Atomiks bələdçisi tapıla bilmir!"
+msgstr "Ən az bir səviyyəni tapa bilmədim!"
 
-#: src/main.c:504
-#, fuzzy
+#: src/main.c:472
 msgid "Do you want to finish the game?"
 msgstr "Həqiqətən də bu oyundan çıxmaq istəyirsiniz?"
 
-#: src/main.c:623 src/main.c:629 src/main.c:634
-#, fuzzy, c-format
+#: src/main.c:591
+#: src/main.c:597
+#: src/main.c:602
+#, c-format
 msgid "Couldn't create directory: %s"
-msgstr "Fayldan rəsmi yarada bilmədim : %s"
+msgstr "Cərgəni yarada bilmədim : %s"
 
 #. create statistics frame
-#: src/main.c:733
-#, fuzzy
+#: src/main.c:701
 msgid "Statistics"
-msgstr " Statistikalar "
+msgstr "Statistikalar "
 
-#: src/main.c:739
+#: src/main.c:707
 msgid "Level:"
 msgstr "Səviyyə:"
 
-#: src/main.c:740
+#: src/main.c:708
 msgid "Molecule:"
-msgstr ""
+msgstr "Molekul:"
 
-#: src/main.c:741
+#: src/main.c:709
 msgid "Score:"
 msgstr "Xal:"
 
-#: src/main.c:742
+#: src/main.c:710
 msgid "Time:"
 msgstr "Vaxt:"
 
-#: src/main.c:782
-#, fuzzy, c-format
+#: src/main.c:750
+#, c-format
 msgid "Couldn't find file: %s"
-msgstr "Rəsm faylını tapa bilmədim: %s"
+msgstr "Faylı tapa bilmədim: %s"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
-msgstr ""
+msgstr "Heç örtük yoxdur."
 
 #: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr ""
-
-#: atomix.desktop.in.h:1
-#, fuzzy
-msgid "Atomix"
-msgstr "Atomiks"
+msgstr "'%s' örtüyünü %s-da tapdım"
 
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
-msgstr ""
+msgstr "Molekul ağıl oyunu"
 
-#, fuzzy
-#~ msgid "Atomix Splash"
-#~ msgstr "Atomiks"
-
-#~ msgid "Game Paused"
-#~ msgstr "Oyuna Fasilə Verildi"
-
-#~ msgid "Game Over"
-#~ msgstr "Oyun Qurtardı"
