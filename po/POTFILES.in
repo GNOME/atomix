@@ -1,4 +1,4 @@
-src/atomix-ui.xml.in
+src/atomix-ui.xml
 src/board.c
 src/level-manager.c
 src/main.c
