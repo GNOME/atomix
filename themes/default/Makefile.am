@@ -31,6 +31,10 @@ THEME = \
 	shadow4.png \
 	shadow5.png \
 	shadow6.png \
+	arrow-left.png \
+	arrow-top.png \
+	arrow-right.png \
+	arrow-bottom.png \
 	theme 
 
 theme_DATA = $(THEME)
