@@ -1,6 +1,11 @@
+2002-01-21  Wang Jian  <lark@linux.net.cn>
+
+	* zh_CN.po: Added Simplified Chinese translation by
+	 Wang Li <charlesw1234@163.com>.
+
 2002-01-19  Hasbullah Bin Pit <sebol@ikhlas.com>
 
-        * ms.po: Added Malay Malay Translation.
+	* ms.po: Added Malay Malay Translation.
 
 2002-01-13  Peteris Krisjanis <peteris.krisjanis@ttc.lv>
 
@@ -8,7 +13,7 @@
 
 2001-12-21  Duarte Loreto <happyguy_pt@hotmail.com>
 
-        * pt.po: Updated portuguese translation
+	* pt.po: Updated portuguese translation
 
 2001-12-12  Kjartan Maraas  <kmaraas@gnome.org>
 

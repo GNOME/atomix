@@ -1,0 +1,208 @@
+# Simplified Chinese translation for atomix.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+#  Wang Li <charlesw1234@163.com>, 2002
+#    Derived from translation from Abel Cheung <maddog@linux.org.hk>, 2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix\n"
+"POT-Creation-Date: 2002-01-21 21:35+0800\n"
+"PO-Revision-Date: 2002-01-21 14:06+0800\n"
+"Last-Translator: Wang Li <charlesw1234@163.com>\n"
+"Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=gb2312\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/atomix-ui.xml.in.h:1
+msgid "Continue paused game"
+msgstr "继续暂停的游戏"
+
+#: src/atomix-ui.xml.in.h:2
+msgid "E_xit"
+msgstr "退出(_X)"
+
+#: src/atomix-ui.xml.in.h:3
+msgid "End a game"
+msgstr "终止游戏"
+
+#: src/atomix-ui.xml.in.h:4
+msgid "Exit game"
+msgstr "退出游戏"
+
+#: src/atomix-ui.xml.in.h:5
+msgid "Pause the running game"
+msgstr "暂停进行中的游戏"
+
+#: src/atomix-ui.xml.in.h:6
+msgid "Reset level"
+msgstr "重置本级别"
+
+#: src/atomix-ui.xml.in.h:7
+msgid "Restores start situation"
+msgstr "回到起始位置"
+
+#: src/atomix-ui.xml.in.h:8
+msgid "Set preferences"
+msgstr "设定首选项"
+
+#: src/atomix-ui.xml.in.h:9
+msgid "Skip _level"
+msgstr "跳级(_L)"
+
+#: src/atomix-ui.xml.in.h:10
+msgid "Skip the current level"
+msgstr "跳过当前级别"
+
+#: src/atomix-ui.xml.in.h:11
+msgid "Start a new game"
+msgstr "开始新游戏"
+
+#: src/atomix-ui.xml.in.h:12
+msgid "Undo the last move"
+msgstr "撤消最后一着"
+
+#: src/atomix-ui.xml.in.h:13
+msgid "View game credits"
+msgstr "查看游戏所有者"
+
+#: src/atomix-ui.xml.in.h:14
+msgid "View highscores"
+msgstr "查看积分排行榜"
+
+#: src/atomix-ui.xml.in.h:15
+msgid "_About"
+msgstr "关于(_A)"
+
+#: src/atomix-ui.xml.in.h:16
+msgid "_Continue game"
+msgstr "继续游戏(_C)"
+
+#: src/atomix-ui.xml.in.h:17
+msgid "_Edit"
+msgstr "编辑(_E)"
+
+#: src/atomix-ui.xml.in.h:18
+msgid "_End Game"
+msgstr "终止游戏(_E)"
+
+#: src/atomix-ui.xml.in.h:19
+msgid "_Game"
+msgstr "游戏(_G)"
+
+#: src/atomix-ui.xml.in.h:20
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: src/atomix-ui.xml.in.h:21
+msgid "_New Game"
+msgstr "开始游戏(_N)"
+
+#: src/atomix-ui.xml.in.h:22
+msgid "_Pause game"
+msgstr "暂停游戏(_P)"
+
+#: src/atomix-ui.xml.in.h:23
+msgid "_Preferences ..."
+msgstr "首选项(_P)..."
+
+#: src/atomix-ui.xml.in.h:24
+msgid "_Scores ..."
+msgstr "积分(_S)..."
+
+#: src/atomix-ui.xml.in.h:25
+msgid "_Undo move"
+msgstr "撤消着法(_U)"
+
+#: src/board.c:165
+msgid "Game Paused"
+msgstr "游戏已暂停"
+
+#: src/board.c:167
+msgid "Game Over"
+msgstr "游戏结束"
+
+#: src/board.c:169
+msgid "Atomix - Molecule Mind Game"
+msgstr "Atomix - 分子组合智力游戏"
+
+#: src/level-manager.c:171
+msgid "Couldn't find level sequence description."
+msgstr "无法找到级别序列描述。"
+
+#: src/level-manager.c:185
+msgid "No level found."
+msgstr "找不到级别。"
+
+#: src/level-manager.c:285
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "在 %2$s 中找到级别“%1$s”"
+
+#: src/main.c:485
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "恭喜！你已完成所有 Atomix 级别。"
+
+#: src/main.c:496
+msgid "Couldn't find at least one level."
+msgstr "一个级别也找不到。"
+
+#: src/main.c:501
+msgid "Do you want to finish the game?"
+msgstr "是否要完成游戏？"
+
+#: src/main.c:620 src/main.c:626 src/main.c:631
+#, c-format
+msgid "Couldn't create directory: %s"
+msgstr "无法建立目录：%s"
+
+#. create statistics frame
+#: src/main.c:734
+msgid "Statistics"
+msgstr "统计"
+
+#: src/main.c:740
+msgid "Level:"
+msgstr "级别："
+
+#: src/main.c:741
+msgid "Molecule:"
+msgstr "分子："
+
+#: src/main.c:742
+msgid "Score:"
+msgstr "积分："
+
+#: src/main.c:743
+msgid "Time:"
+msgstr "时间："
+
+#: src/main.c:783
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "无法找到文件：%s"
+
+#: src/main.c:841
+msgid "Atomix Splash"
+msgstr "Atomix 启动画面"
+
+#: src/theme-manager.c:141
+msgid "No themes found."
+msgstr "无法找到场景。"
+
+#: src/theme-manager.c:204
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "在 %2$s 中找到场景“%1$s”"
+
+#~ msgid "No more undo levels."
+#~ msgstr "已不可再还原了。"
+
+#~ msgid "This is the last level. You can't skip any further."
+#~ msgstr "这是最后一关。不可以再跳到下一关了。"
+
+#~ msgid "XML file %s not found."
+#~ msgstr "找不到 XML 档案 %s。"
+
+#~ msgid "Undo last move. This costs you 5 % of your score."
+#~ msgstr "还原最后一步。这样会倒扣 5% 分数。"
