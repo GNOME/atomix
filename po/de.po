@@ -5,13 +5,119 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2001-12-05 10:07+0100\n"
+"POT-Creation-Date: 2001-12-09 19:47+0100\n"
 "PO-Revision-Date: 2001-03-14 14:42+0100\n"
 "Last-Translator: Christian Meyer <chrisime@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/atomix-ui.xml.in.h:1
+#, fuzzy
+msgid "Continue paused game"
+msgstr "Spiel _fortsetzen"
+
+#: src/atomix-ui.xml.in.h:2
+msgid "E_xit"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:3
+msgid "End a game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:4
+msgid "Exit game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:5
+msgid "Pause the running game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:6
+#, fuzzy
+msgid "Reset level"
+msgstr "Level _löschen"
+
+#: src/atomix-ui.xml.in.h:7
+msgid "Restores start situation"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:8
+msgid "Set preferences"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:9
+msgid "Skip _level"
+msgstr "_Level überspringen"
+
+#: src/atomix-ui.xml.in.h:10
+#, fuzzy
+msgid "Skip the current level"
+msgstr "_Level überspringen"
+
+#: src/atomix-ui.xml.in.h:11
+msgid "Start a new game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:12
+msgid "Undo the last move"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:13
+msgid "View game credits"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:14
+msgid "View highscores"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:15
+msgid "_About"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:16
+msgid "_Continue game"
+msgstr "Spiel _fortsetzen"
+
+#: src/atomix-ui.xml.in.h:17
+msgid "_Edit"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:18
+msgid "_End Game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:19
+#, fuzzy
+msgid "_Game"
+msgstr "Name"
+
+#: src/atomix-ui.xml.in.h:20
+msgid "_Help"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:21
+#, fuzzy
+msgid "_New Game"
+msgstr "Neuer Name:"
+
+#: src/atomix-ui.xml.in.h:22
+#, fuzzy
+msgid "_Pause game"
+msgstr "Spiel _fortsetzen"
+
+#: src/atomix-ui.xml.in.h:23
+msgid "_Preferences ..."
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:24
+msgid "_Scores ..."
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:25
+msgid "_Undo move"
+msgstr ""
 
 #: src/board.c:165
 msgid "Game Paused"
@@ -25,57 +131,80 @@ msgstr "Spiel zu Ende"
 msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
-#: src/main.c:487
+#: src/level-manager.c:171
+msgid "Couldn't find level sequence description."
+msgstr ""
+
+#: src/level-manager.c:185
+#, fuzzy
+msgid "No level found."
+msgstr "Level nicht gefunden."
+
+#: src/level-manager.c:285
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr ""
+
+#: src/main.c:485
 #, fuzzy
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Glückwunsch! Sie haben erfolgreich alle Atomix Level abgeschlossen."
 
-#: src/main.c:498
+#: src/main.c:496
 #, fuzzy
 msgid "Couldn't find at least one level."
 msgstr "Das Atomixed Handbuch wurde nicht gefunden!"
 
-#: src/main.c:503
+#: src/main.c:501
 #, fuzzy
 msgid "Do you want to finish the game?"
 msgstr "Wollen Sie das Spiel wirklich beenden?"
 
-#: src/main.c:622 src/main.c:628 src/main.c:633
+#: src/main.c:620 src/main.c:626 src/main.c:631
 #, fuzzy, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Es konnte kein Pixmap von Darei %s erstellt werden."
 
 #. create statistics frame
-#: src/main.c:736
+#: src/main.c:734
 #, fuzzy
 msgid "Statistics"
 msgstr " Statistik "
 
-#: src/main.c:742
+#: src/main.c:740
 msgid "Level:"
 msgstr "Level:"
 
-#: src/main.c:743
+#: src/main.c:741
 msgid "Molecule:"
 msgstr ""
 
-#: src/main.c:744
+#: src/main.c:742
 msgid "Score:"
 msgstr "Punktezahl:"
 
-#: src/main.c:745
+#: src/main.c:743
 msgid "Time:"
 msgstr "Zeit:"
 
-#: src/main.c:787
+#: src/main.c:783
 #, fuzzy, c-format
 msgid "Couldn't find file: %s"
 msgstr "Pixmap-Datei %s konnte nicht gefunden werden."
 
-#: src/main.c:844
+#: src/main.c:841
 #, fuzzy
 msgid "Atomix Splash"
 msgstr "Atomix"
+
+#: src/theme-manager.c:141
+msgid "No themes found."
+msgstr ""
+
+#: src/theme-manager.c:204
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr ""
 
 #~ msgid "No more undo levels."
 #~ msgstr "Keine weiteren Rückgängig-Ebenen."
@@ -89,9 +218,6 @@ msgstr "Atomix"
 
 #, fuzzy
 #~ msgid "XML file %s not found."
-#~ msgstr "Level nicht gefunden."
-
-#~ msgid "Level not found."
 #~ msgstr "Level nicht gefunden."
 
 #, fuzzy
@@ -143,9 +269,6 @@ msgstr "Atomix"
 #~ msgid "_Resize Grid"
 #~ msgstr "Gittergröße _verändern"
 
-#~ msgid "_Delete Level"
-#~ msgstr "Level _löschen"
-
 #~ msgid "_Delete Theme"
 #~ msgstr "_Thema löschen"
 
@@ -184,9 +307,6 @@ msgstr "Atomix"
 
 #~ msgid "No."
 #~ msgstr "Nein."
-
-#~ msgid "Name"
-#~ msgstr "Name"
 
 #~ msgid "Level"
 #~ msgstr "Level"
@@ -315,9 +435,6 @@ msgstr "Atomix"
 #~ msgid "Current Name:"
 #~ msgstr "Aktueller Name:"
 
-#~ msgid "New Name:"
-#~ msgstr "Neuer Name:"
-
 #~ msgid "Add Image"
 #~ msgstr "Bild hinzufügen"
 
@@ -368,12 +485,6 @@ msgstr "Atomix"
 
 #~ msgid "Press Ctrl+N for a new Game"
 #~ msgstr "Drücken Sie Strg+N für ein neues Spiel"
-
-#~ msgid "Skip _level"
-#~ msgstr "_Level überspringen"
-
-#~ msgid "_Continue game"
-#~ msgstr "Spiel _fortsetzen"
 
 #~ msgid "Atomix manual"
 #~ msgstr "Atomix Handbuch"
