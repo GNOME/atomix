@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Atomix 2.x\n"
+"POT-Creation-Date: 2003-01-03 04:50+0100\n"
+"PO-Revision-Date: 2003-01-03 18:26+0530\n"
+"Last-Translator: G Karunakar <karunakar@freedomink.org>\n"
+"Language-Team: Gnome Hindi Team<indlinux-hindi-gnome@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/atomix-ui.xml.in.h:1
+msgid "Continue paused game"
+msgstr "रुका हुआ खेल जारी करें"
+
+#: src/atomix-ui.xml.in.h:2
+msgid "E_xit"
+msgstr "बाहर (_x)"
+
+#: src/atomix-ui.xml.in.h:3
+msgid "End a game"
+msgstr "खेल खत्म करें"
+
+#: src/atomix-ui.xml.in.h:4
+msgid "Exit game"
+msgstr "खेल से बाहर"
+
+#: src/atomix-ui.xml.in.h:5
+msgid "Pause the running game"
+msgstr "चल रहे खेल को रोकें"
+
+#: src/atomix-ui.xml.in.h:6
+msgid "Reset level"
+msgstr "स्तर यथावत् करें"
+
+#: src/atomix-ui.xml.in.h:7
+msgid "Restores start situation"
+msgstr "खेल को "
+
+#: src/atomix-ui.xml.in.h:8
+msgid "Set preferences"
+msgstr "विकल्प समायोजित करें"
+
+#: src/atomix-ui.xml.in.h:9
+msgid "Skip _level"
+msgstr "स्तर छोडें (_l)"
+
+#: src/atomix-ui.xml.in.h:10
+msgid "Skip the current level"
+msgstr "वर्तमान स्तर छोडें"
+
+#: src/atomix-ui.xml.in.h:11
+msgid "Start a new game"
+msgstr "नया खेल शुरु करें"
+
+#: src/atomix-ui.xml.in.h:12
+msgid "Undo the last move"
+msgstr "पिछली चाल वापस लें"
+
+#: src/atomix-ui.xml.in.h:13
+msgid "View game credits"
+msgstr "खेल श्रेय देखें"
+
+#: src/atomix-ui.xml.in.h:14
+msgid "View highscores"
+msgstr "उच्चसकोर देखें"
+
+#: src/atomix-ui.xml.in.h:15
+msgid "_About"
+msgstr "के बारे मे (_A)"
+
+#: src/atomix-ui.xml.in.h:16
+msgid "_Continue game"
+msgstr "खेल जारी रखें (_C)"
+
+#: src/atomix-ui.xml.in.h:17
+msgid "_Edit"
+msgstr "संशोधन (_E)"
+
+#: src/atomix-ui.xml.in.h:18
+msgid "_End Game"
+msgstr "खेल समाप्त करें (_E)"
+
+#: src/atomix-ui.xml.in.h:19
+msgid "_Game"
+msgstr "खेल (_G)"
+
+#: src/atomix-ui.xml.in.h:20
+msgid "_Help"
+msgstr "सहायता (_H)"
+
+#: src/atomix-ui.xml.in.h:21
+msgid "_New Game"
+msgstr "नया खेल (_N)"
+
+#: src/atomix-ui.xml.in.h:22
+msgid "_Pause game"
+msgstr "खेल रोकें (_P)"
+
+#: src/atomix-ui.xml.in.h:23
+msgid "_Preferences ..."
+msgstr "विकल्प ...(_P)"
+
+#: src/atomix-ui.xml.in.h:24
+msgid "_Scores ..."
+msgstr "सकोर ...(_S)"
+
+#: src/atomix-ui.xml.in.h:25
+msgid "_Undo move"
+msgstr "चाल वापिस लें (_U)"
+
+#: src/level-manager.c:171
+msgid "Couldn't find level sequence description."
+msgstr "स्तर क्रम वर्णन नही मिला"
+
+#: src/level-manager.c:185
+msgid "No level found."
+msgstr "खेल स्तर नही मिला"
+
+#: src/level-manager.c:286
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "स्तर '%s' में '%s' मिला"
+
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "एटामिक्स"
+
+#: src/main.c:145
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "कापीराईट (c) १९९९-२००२ जेन्स् फिंके"
+
+#: src/main.c:146
+msgid "A mind game about atoms and molecules."
+msgstr "एटम ओर मालिक्यूल के बारे में एक दिमागी खेल"
+
+#: src/main.c:456
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "बधाई ! आपने एटामिक्स के सभी स्तर पार कर लिये"
+
+#: src/main.c:467
+msgid "Couldn't find at least one level."
+msgstr "कमसेकम एक स्तर नही मिला"
+
+#: src/main.c:472
+msgid "Do you want to finish the game?"
+msgstr "कया आप खेल समाप्त करना चाहेंगे ?"
+
+#: src/main.c:591 src/main.c:597 src/main.c:602
+#, c-format
+msgid "Couldn't create directory: %s"
+msgstr "डायरेकट्री '%s' नही बना पाए"
+
+#. create statistics frame
+#: src/main.c:701
+msgid "Statistics"
+msgstr "आंकडे"
+
+#: src/main.c:707
+msgid "Level:"
+msgstr "स्तर:"
+
+#: src/main.c:708
+msgid "Molecule:"
+msgstr "मालिक्यूल:"
+
+#: src/main.c:709
+msgid "Score:"
+msgstr "सकोर:"
+
+#: src/main.c:710
+msgid "Time:"
+msgstr "समय:"
+
+#: src/main.c:750
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "फाइल '%s' नही मिला"
+
+#: src/theme-manager.c:141
+msgid "No themes found."
+msgstr "कोइ थीम नही मिला"
+
+#: src/theme-manager.c:205
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "थीम '%s' में '%s'  मिला"
+
+#: atomix.desktop.in.h:2
+msgid "Molecule mind game"
+msgstr "मालिक्यूल दिमागी खेल"
+
+#~ msgid "Atomix Splash"
+#~ msgstr "एटामिक्स स्पलेश"
