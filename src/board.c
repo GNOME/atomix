@@ -204,7 +204,7 @@ board_init_level (PlayField *base_env, PlayField *sce, Goal *goal)
 	undo_clear ();
 	
 	/* init board */
-	board_env = playfield_generate_environment (base_env);
+	board_env = playfield_generate_environment (base_env, board_theme);
 	board_sce = playfield_copy (sce);
 	board_shadow = playfield_generate_shadow (base_env);
 	

@@ -1,3 +1,31 @@
+2002-01-24  Jens Finke <jens@triq.net>
+
+	* src/Makefile.am (pf_test_SOURCES), (level_convert_SOURCES): Both
+	need theme.[ch] now.
+
+	* src/board.c (board_init_level): Submitt theme to
+	playfield_generate_environment.
+
+	* src/playfield.[ch] (playfield_generate_environment): Add some
+	random decorations to basic wall/floor tiles.
+
+	* src/theme-manager.c (load_theme): Handle decor node.
+	(handle_tile_decor_node): New function.
+
+	* src/theme-private.h (theme_add_image): Return id of added image.
+	(theme_add_image_decoration): New function.
+
+	* src/theme.[ch] (destroy_theme_image): Free decoration list.
+	(theme_apply_decoration): New function.
+	(theme_add_image): Return id of added image, initialize decoration
+	list.
+	(theme_add_image_decoration): New function.
+
+	* themes/default/theme: Added decoration images.
+
+	* themes/default/decor-fence.png|decor-holes.png|decor-liquid.png:
+	New files. Test icons for decorations.
+	
 2002-01-23  Jens Finke <jens@triq.net>
 
 	* src/board.c (board_init), (board_init_level), (board_render),

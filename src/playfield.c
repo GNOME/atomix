@@ -712,14 +712,18 @@ convert_wall_tiles (Tile *tile, int tile_env[])
 
 
 PlayField*
-playfield_generate_environment (PlayField *pf)
+playfield_generate_environment (PlayField *pf, Theme *theme)
 {
 	PlayField *env_pf;
 	PlayFieldPrivate *priv;
 	gint row, col;
 	gint tile_env[8];
 	Tile *env_tile;
-	Tile *tile;
+	Tile *tile = NULL;
+	gint n_decor_tiles;
+	gint max_try;
+	gint min_wall[2];
+	gint max_wall[2];
 
 	g_return_val_if_fail (IS_PLAYFIELD (pf), NULL);
 
@@ -732,6 +736,11 @@ playfield_generate_environment (PlayField *pf)
 	playfield_set_matrix_size (env_pf, 
 				   playfield_get_n_rows (pf),
 				   playfield_get_n_cols (pf));
+	
+	min_wall[0] = 10000;
+	min_wall[1] = 10000;
+	max_wall[0] = 0;
+	max_wall[1] = 0;
 
 	/* determine the really used playfield size */
 	for (row = 0; row < priv->n_rows; row++) {
@@ -743,9 +752,27 @@ playfield_generate_environment (PlayField *pf)
 
 			playfield_set_tile (env_pf, row, col, env_tile);
 
-			if (env_tile)
+			if (env_tile) {
+				if (tile_get_tile_type (env_tile) == TILE_TYPE_WALL) {
+					min_wall [0] = MIN (min_wall[0], row);
+					min_wall [1] = MIN (min_wall[1], col);
+					max_wall [0] = MAX (max_wall[0], row);
+					max_wall [1] = MAX (max_wall[1], col);
+				}
 				g_object_unref (env_tile);
+			}
 		}
+	}
+
+	/* apply decoration to some of the tiles */
+	n_decor_tiles = (max_wall[0] - min_wall[0]) * (max_wall[1] - min_wall[1]) * 0.03;
+	while (n_decor_tiles--) {
+		max_try = 4; /* maximum number of tries */
+		do {
+			row = g_random_int_range (min_wall[0], max_wall[0]);
+			col = g_random_int_range (min_wall[1], max_wall[1]);
+			tile = get_tile (env_pf, row, col);
+		} while (!theme_apply_decoration (theme, tile) && max_try--);
 	}
 	
 	return env_pf;

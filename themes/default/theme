@@ -43,4 +43,8 @@
   <icon src="arrow-right.png"/>
   <icon src="arrow-top.png"/>
   <icon src="arrow-bottom.png"/>
+
+  <decor src="decor-liquid.png" base="floor" alpha="200"/>
+  <decor src="decor-holes.png" base="floor"/>
+  <decor src="decor-fence.png"  base="wall-horizontal"/>
 </theme>

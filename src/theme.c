@@ -168,6 +168,9 @@ destroy_theme_image (gpointer data)
 	if (ti->image)
 		gdk_pixbuf_unref (ti->image);
 
+	if (ti->decorations)
+		g_slist_free (ti->decorations);
+
 	g_free (ti);
 }
 
@@ -254,6 +257,27 @@ create_sub_images (Theme *theme, Tile *tile, TileSubType sub_type)
 	return pixbuf;
 }
 
+gboolean
+theme_apply_decoration (Theme *theme, Tile *tile)
+{
+	static int counter = 0;
+	ThemeImage *ti;
+	gint n_decorations;
+	GQuark decor_id;
+
+	g_return_val_if_fail (IS_THEME (theme), FALSE);
+	g_return_val_if_fail (IS_TILE (tile), FALSE);
+	
+	ti = g_datalist_id_get_data (&theme->priv->images, tile_get_base_id (tile));
+	if (ti->decorations == NULL) return FALSE;
+
+	n_decorations = g_slist_length (ti->decorations);
+	decor_id = (GQuark) g_slist_nth_data (ti->decorations,
+					      counter++ % n_decorations);
+	tile_add_sub_id (tile, decor_id, TILE_SUB_OVERLAY);
+
+	return TRUE;
+}
 
 GdkPixbuf*
 theme_get_tile_image (Theme* theme, Tile *tile)
@@ -388,22 +412,23 @@ GdkColor* theme_get_background_color(Theme *theme)
 }
 
 
-void 
+GQuark
 theme_add_image (Theme *theme, const gchar *src, gint alpha)
 {
 	ThemeImage *ti;
 	gchar *filename;
 	gchar *suffix;
 
-	g_return_if_fail (IS_THEME (theme));
-	g_return_if_fail (src != NULL);
-	g_return_if_fail (0 <= alpha && alpha <= 255);
+	g_return_val_if_fail (IS_THEME (theme), 0);
+	g_return_val_if_fail (src != NULL, 0);
+	g_return_val_if_fail (0 <= alpha && alpha <= 255, 0);
 
 	ti = g_new0 (ThemeImage, 1);
 	ti->file = g_strdup (src);
 	ti->loading_failed = FALSE;
 	ti->image = NULL;
 	ti->alpha = alpha;
+	ti->decorations = NULL;
 
 	filename = g_strdup (g_basename (src));
 	suffix = g_strrstr (filename, ".png");
@@ -422,8 +447,22 @@ theme_add_image (Theme *theme, const gchar *src, gint alpha)
 				     destroy_theme_image);
 
 	g_free (filename);
+	
+	return ti->id;
 }
 
+void 
+theme_add_image_decoration (Theme *theme, GQuark base, GQuark decor)
+{
+	ThemeImage *ti;
+
+	g_return_if_fail (IS_THEME (theme));
+	
+	ti = g_datalist_id_get_data (&theme->priv->images, base);
+	if (ti == NULL) return;
+
+	ti->decorations = g_slist_append (ti->decorations, (gpointer) decor);
+}
 
 #if 0
 void

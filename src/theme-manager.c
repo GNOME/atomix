@@ -38,6 +38,7 @@ static gchar* lookup_theme_name (gchar *theme_file);
 static void theme_manager_class_init (GObjectClass *class);
 static void theme_manager_init (ThemeManager *tm);
 static void theme_manager_finalize (GObject *object);
+static void handle_tile_decor_node (Theme *theme, xmlNodePtr node);
 
 struct _ThemeManagerPrivate {
 	gboolean   initialized;
@@ -293,6 +294,10 @@ load_theme (gchar *theme_dir)
 			{
 				handle_tile_icon_node (theme, node);
 			}
+			else if (!g_strcasecmp (node->name, "decor"))
+			{
+				handle_tile_decor_node (theme, node);
+			}
 			else if (!g_strcasecmp (node->name,"animstep"))
 			{
 				priv->animstep = atoi (xmlGetProp(node, "dist"));
@@ -327,6 +332,35 @@ load_theme (gchar *theme_dir)
 	xmlFreeDoc(doc);
 
 	return theme;
+}
+
+static void
+handle_tile_decor_node (Theme *theme, xmlNodePtr node)
+{
+	gchar *src;
+	gchar *base;
+	GQuark base_id;
+	GQuark decor_id;
+	gint alpha = 255;
+
+	g_return_if_fail (IS_THEME (theme));
+
+	src = g_build_filename (theme->priv->path, 
+				xmlGetProp (node, "src"), NULL);
+	if (xmlGetProp (node, "alpha") != NULL) {
+		alpha = atoi (xmlGetProp (node, "alpha"));
+		if (alpha < 0) alpha = 0;
+		if (alpha > 255) alpha = 255;
+	}
+
+	decor_id = theme_add_image (theme, src, alpha);
+	g_free (src);
+
+	base = xmlGetProp (node, "base");
+	if (base == NULL) return;
+
+	base_id = g_quark_from_string (base);
+	theme_add_image_decoration (theme, base_id, decor_id);
 }
 
 static void

@@ -64,4 +64,6 @@ void       theme_get_tile_size        (Theme *theme,
 gchar*     theme_get_name (Theme *theme);
 gint       theme_get_animstep (Theme *theme);
 
+gboolean   theme_apply_decoration (Theme *theme, Tile *tile);
+
 #endif /* _ATOMIX_THEME_H_ */

@@ -28,6 +28,7 @@ typedef struct
 	gboolean      loading_failed; /* if once the image loading failed.*/
         GdkPixbuf    *image;          /* image */
 	gint          alpha;          /* alpha value to use for overy-/underlay */
+	GSList       *decorations;    /* possible decoration images */
 } ThemeImage;
 
 struct _ThemePrivate 
@@ -47,6 +48,8 @@ struct _ThemePrivate
 
 Theme* theme_new (void);
 
-void theme_add_image (Theme *theme, const gchar *src, gint alpha);
+GQuark theme_add_image (Theme *theme, const gchar *src, gint alpha);
+
+void theme_add_image_decoration (Theme *theme, GQuark base, GQuark decor);
 
 #endif /* _ATOMIX_THEME_PRIVATE_H_ */

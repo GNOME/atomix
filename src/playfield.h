@@ -22,6 +22,7 @@
 #include <gnome.h>
 #include <libxml/tree.h>
 #include "tile.h"
+#include "theme.h"
 
 #define PLAYFIELD_TYPE        (playfield_get_type ())
 #define PLAYFIELD(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), PLAYFIELD_TYPE, PlayField))
@@ -79,7 +80,7 @@ void playfield_print(PlayField *pf);
 
 void playfield_clear(PlayField *pf);
 
-PlayField *playfield_generate_environment (PlayField *pf);
+PlayField *playfield_generate_environment (PlayField *pf, Theme *theme);
 
 PlayField *playfield_generate_shadow (PlayField *pf);
 

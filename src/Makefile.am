@@ -42,6 +42,7 @@ libatomix_a_SOURCES = \
 pf_test_SOURCES = \
 	playfield.h playfield.c \
 	tile.c tile.h \
+	theme.c theme.h \
 	pf-test.c
 
 pf_test_LDADD = \
@@ -52,7 +53,8 @@ level_convert_SOURCES = \
 	playfield.h playfield.c \
 	tile.c tile.h \
 	level.c level.h \
-	level-convert.c
+	level-convert.c \
+	theme.c theme.h
 
 level_convert_LDADD = \
 	-L$(top_builddir)/src \
