@@ -1,11 +1,11 @@
 # Spanish/Spain translation of ATOMIX.
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Álvaro Peña <cybdeep@bigfoot.com>, 2001.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ATOMIX 0.9.0\n"
-"POT-Creation-Date: 2002-07-18 22:25+0200\n"
+"POT-Creation-Date: 2003-01-08 01:34-0300\n"
 "PO-Revision-Date: 2001-11-28 11:46+0100\n"
 "Last-Translator: Álvaro Peña <cybdeep@bigfoot.com>\n"
 "Language-Team: Spanish/Spain\n"
@@ -15,201 +15,182 @@ msgstr ""
 
 #: src/atomix-ui.xml.in.h:1
 msgid "Continue paused game"
-msgstr ""
+msgstr "Continuar el juego"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
-msgstr ""
+msgstr "_Salir"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
-msgstr ""
+msgstr "Terminar el juego"
 
 #: src/atomix-ui.xml.in.h:4
 msgid "Exit game"
-msgstr ""
+msgstr "Salir del juego"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr ""
+msgstr "Detener el juego"
 
 #: src/atomix-ui.xml.in.h:6
 msgid "Reset level"
-msgstr ""
+msgstr "Reiniciar el nivel"
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr ""
+msgstr "Restaurar la situación inicial"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
-msgstr ""
+msgstr "Editar preferencias"
 
 #: src/atomix-ui.xml.in.h:9
 msgid "Skip _level"
-msgstr ""
+msgstr "Saltar el nive_l"
 
 #: src/atomix-ui.xml.in.h:10
 msgid "Skip the current level"
-msgstr ""
+msgstr "Saltar al siguiente nivel"
 
 #: src/atomix-ui.xml.in.h:11
 msgid "Start a new game"
-msgstr ""
+msgstr "Comenzar un juego nuevo"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
-msgstr ""
+msgstr "Deshacer el último movimiento."
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr ""
+msgstr "Ver los créditos del juego"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr ""
+msgstr "Ver puntuaciones"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
-msgstr ""
+msgstr "_Acerca de"
 
 #: src/atomix-ui.xml.in.h:16
 msgid "_Continue game"
-msgstr ""
+msgstr "_Continuar el juego"
 
 #: src/atomix-ui.xml.in.h:17
 msgid "_Edit"
-msgstr ""
+msgstr "_Editar"
 
 #: src/atomix-ui.xml.in.h:18
 msgid "_End Game"
-msgstr ""
+msgstr "_Fin del juego"
 
 #: src/atomix-ui.xml.in.h:19
 msgid "_Game"
-msgstr ""
+msgstr "_Juego"
 
 #: src/atomix-ui.xml.in.h:20
 msgid "_Help"
-msgstr ""
+msgstr "A_yuda"
 
 #: src/atomix-ui.xml.in.h:21
 msgid "_New Game"
-msgstr ""
+msgstr "_Nuevo juego"
 
 #: src/atomix-ui.xml.in.h:22
 msgid "_Pause game"
-msgstr ""
+msgstr "_Detener el juego"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr ""
+msgstr "Prefere_ncias ..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr ""
+msgstr "_Puntuación ..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr ""
+msgstr "Des_hacer movimiento"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr ""
+msgstr "No se pudo encontrar la descripción del nivel. "
 
 #: src/level-manager.c:185
 msgid "No level found."
-msgstr ""
+msgstr "Nivel no encontrado."
 
 #: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr ""
+msgstr "Se encontro el nivel «%s» en: %s"
 
-#: src/main.c:149
+#: atomix.desktop.in.h:1 src/main.c:118 src/main.c:444
+msgid "Atomix"
+msgstr "Atomix"
+
+#: src/main.c:145
 msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr ""
+msgstr "© 1999-2002 Jens Finke"
 
-#: src/main.c:150
+#: src/main.c:146
 msgid "A mind game about atoms and molecules."
-msgstr ""
+msgstr "Un juego de inteligencia sobre átomos y moléculas."
 
-#: src/main.c:488
+#: src/main.c:456
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "¡Felicidades! Ha terminado todos los niveles de Atomix."
+msgstr "¡Felicitaciones! Ha terminado todos los niveles de Atomix."
 
-#: src/main.c:499
+#: src/main.c:467
 msgid "Couldn't find at least one level."
-msgstr "No se pudo encontrar ni siquiera un nivel."
+msgstr "No se pudo encontrar ni siquiera un nivel. "
 
-#: src/main.c:504
+#: src/main.c:472
 msgid "Do you want to finish the game?"
-msgstr "Quiere terminar el juego?"
+msgstr "¿Quiere terminar el juego?"
 
-#: src/main.c:623 src/main.c:629 src/main.c:634
+#: src/main.c:591 src/main.c:597 src/main.c:602
 #, c-format
 msgid "Couldn't create directory: %s"
-msgstr ""
+msgstr "No se pudo crear el directorio: %s"
 
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:701
 msgid "Statistics"
 msgstr "Estadísticas"
 
-#: src/main.c:739
+#: src/main.c:707
 msgid "Level:"
 msgstr "Nivel:"
 
-#: src/main.c:740
+#: src/main.c:708
 msgid "Molecule:"
-msgstr ""
+msgstr "Molécula:"
 
-#: src/main.c:741
+#: src/main.c:709
 msgid "Score:"
 msgstr "Puntuación:"
 
-#: src/main.c:742
-#, fuzzy
+#: src/main.c:710
 msgid "Time:"
-msgstr "Nombre:"
+msgstr "Tiempo:"
 
-#: src/main.c:782
-#, fuzzy, c-format
+#: src/main.c:750
+#, c-format
 msgid "Couldn't find file: %s"
-msgstr "No se pudo encontrar ni siquiera un nivel."
+msgstr "No se pudo encontrar el archivo: %s"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
-msgstr ""
+msgstr "No se encontraron temas."
 
 #: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr ""
-
-#: atomix.desktop.in.h:1
-msgid "Atomix"
-msgstr ""
+msgstr "Se encontro el tema «%s» en: %s"
 
 #: atomix.desktop.in.h:2
-#, fuzzy
 msgid "Molecule mind game"
-msgstr "Atomix - Juego de Inteligencia con Moléculas"
+msgstr "Atomix - Juego de inteligencia con moléculas"
 
-#~ msgid "Game Paused"
-#~ msgstr "Juego Parado"
-
-#~ msgid "Game Over"
-#~ msgstr "Juego Terminado"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Juego de Inteligencia con Moléculas"
-
-#~ msgid "No more undo levels."
-#~ msgstr "No hay mas niveles por hacer."
-
-#~ msgid "This is the last level. You can't skip any further."
-#~ msgstr "Este es el último nivel. No puede saltar ninguno más."
-
-#~ msgid "XML file %s not found."
-#~ msgstr "No se pudo encontrar el fichero XML %s."
