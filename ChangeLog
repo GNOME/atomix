@@ -1,3 +1,7 @@
+2003-02-21  Roozbeh Pournader  <roozbeh@sharif.edu>
+
+	* configure.in: Added "fa" to ALL_LINGUAS.
+
 2003-01-24  Daniel Yacob <locales@geez.org>
 
 	* configure.in: Added am  to ALL_LINGUAS.
