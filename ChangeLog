@@ -1,3 +1,7 @@
+2001-11-30  Yuriy Syrota  <rasta@renome.rovno.ua>
+
+	* configure.in: Added uk (Ukrainian) to ALL_LINGUAS.
+
 2001-11-29  German Poo-Caaman~o  <gpoo@ubiobio.cl>
 
 	* configure.in: Added es (Spanish) to ALL_LINGUAS.

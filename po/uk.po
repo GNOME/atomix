@@ -1,0 +1,68 @@
+# Ukrainian translation of Atomix.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Yuriy Syrota <rasta@renome.rovno.ua>, 2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix 0.9\n"
+"POT-Creation-Date: 2001-11-30 11:54+0200\n"
+"PO-Revision-Date: 2001-11-30 12:00+0200\n"
+"Last-Translator: Yuriy Syrota <rasta@renome.rovno.ua>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=8bit\n"
+"Content-Transfer-Encoding: koi8-u\n"
+
+#: src/board.c:159
+msgid "Game Paused"
+msgstr "Гру призупинено"
+
+#: src/board.c:161
+msgid "Game Over"
+msgstr "Гру завершено"
+
+#: src/board.c:163
+msgid "Atomix - Molecule Mind Game"
+msgstr "Atimix - молекулярна гра"
+
+#: src/main.c:271
+msgid "Couldn't find at least one level."
+msgstr "Не вдалося знайти хоча б один р╕вень."
+
+#: src/main.c:283
+msgid "No more undo levels."
+msgstr "Б╕льше нема╓ р╕вн╕в повернення."
+
+#: src/main.c:293
+msgid "This is the last level. You can't skip any further."
+msgstr "Це останн╕й р╕вень. Ви б╕льше не можете пропускати р╕вн╕."
+
+#: src/main.c:459
+msgid "Do you want to finish the game?"
+msgstr "Ви хочете завершити гру?"
+
+#: src/main.c:486
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "В╕таю! Ви пройшли вс╕ р╕вн╕ Atomix."
+
+#. create statistics frame
+#: src/main.c:776
+msgid "Statistics"
+msgstr "Статистика"
+
+#: src/main.c:782
+msgid "Level:"
+msgstr "Р╕вень:"
+
+#: src/main.c:789
+msgid "Name:"
+msgstr "╤м'я:"
+
+#: src/main.c:796
+msgid "Score:"
+msgstr "Рахунок:"
+
+#: src/main.c:847
+#, c-format
+msgid "XML file %s not found."
+msgstr "Не знайдено файл XML %s."
