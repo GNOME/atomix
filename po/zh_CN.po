@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2003-12-03 18:47+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-11 03:07+0100\n"
 "PO-Revision-Date: 2002-03-03 15:22+0800\n"
 "Last-Translator: Wang Li <charlesw1234@163.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -171,7 +172,7 @@ msgstr "分子："
 
 #: src/main.c:709
 msgid "Score:"
-msgstr "积分："
+msgstr "得分："
 
 #: src/main.c:710
 msgid "Time:"
@@ -195,26 +196,3 @@ msgstr "在 %2$s 中找到场景“%1$s”"
 msgid "Molecule mind game"
 msgstr "分子组合智力游戏"
 
-#~ msgid "Game Paused"
-#~ msgstr "游戏已暂停"
-
-#~ msgid "Game Over"
-#~ msgstr "游戏结束"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - 分子组合智力游戏"
-
-#~ msgid "Atomix Splash"
-#~ msgstr "Atomix 启动画面"
-
-#~ msgid "No more undo levels."
-#~ msgstr "已不可再还原了。"
-
-#~ msgid "This is the last level. You can't skip any further."
-#~ msgstr "这是最后一关。不可以再跳到下一关了。"
-
-#~ msgid "XML file %s not found."
-#~ msgstr "找不到 XML 档案 %s。"
-
-#~ msgid "Undo last move. This costs you 5 % of your score."
-#~ msgstr "还原最后一步。这样会倒扣 5% 分数。"
