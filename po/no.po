@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2001-12-09 19:47+0100\n"
-"PO-Revision-Date: 2001-12-04 09:15+0100\n"
+"POT-Creation-Date: 2001-12-12 00:14+0100\n"
+"PO-Revision-Date: 2001-12-12 00:14+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -182,9 +182,8 @@ msgid "Couldn't find file: %s"
 msgstr "Kunne ikke finne fil: %s"
 
 #: src/main.c:841
-#, fuzzy
 msgid "Atomix Splash"
-msgstr "Atomix"
+msgstr "Atomix splash"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
