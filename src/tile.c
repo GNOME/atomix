@@ -355,6 +355,8 @@ tile_new_from_xml (xmlNodePtr node)
 			link = (TileLink) atoi (content);
 			tile_add_link (tile, link);
 		}
+		else if (!g_strcasecmp (child->name, "text")) {
+		}
 		else
 		{
 			g_warning ("Skipping unknown tag: %s.",

@@ -315,9 +315,9 @@ board_render ()
 	g_return_if_fail (board_theme != NULL);
 		
 	/* create canvas items */
-	for(row=0; row < playfield_get_n_rows (board_pf); row++) 
+	for(row = 0; row < playfield_get_n_rows (board_pf); row++) 
 	{
-		for(col=0; col < playfield_get_n_rows (board_pf); col++)
+		for(col = 0; col < playfield_get_n_cols (board_pf); col++)
 		{
 			tile = playfield_get_tile (board_pf, row, col);
 			if (tile != NULL) {

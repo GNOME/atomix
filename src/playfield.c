@@ -460,6 +460,8 @@ playfield_new_from_xml (xmlNodePtr pf_node)
 			playfield_set_tile (pf, row, col, tile);
 			g_object_unref (tile);
 		}
+		else if (!g_strcasecmp (tile_node->name, "text")) {
+		}
 		else {
 			g_warning("Skipping unexpected Tag %s.", 
 				  tile_node->name);

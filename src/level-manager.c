@@ -139,6 +139,8 @@ create_level_sequence (LevelManager *lm, gchar *file)
 				lm->priv->level_seq = g_list_append (lm->priv->level_seq,
 								     g_strdup (xmlGetProp (node, "name")));
 			}
+			else if (!g_strcasecmp (node->name, "text")) {
+			}
 			else {
 				g_warning ("Ignoring unknown xml tag: %s", node->name);
 			}
@@ -388,9 +390,11 @@ load_level (gchar *filename)
 				level->priv->goal = 
 					playfield_new_from_xml (pf_node);
 			}
+			else if (!g_strcasecmp (node->name, "text")) {
+			}
 			else
 			{
-				g_warning("Skipping unknown tag %s.",
+				g_message ("Skipping unknown tag %s.",
 					node->name);
 			}
 		

@@ -341,6 +341,8 @@ load_theme (gchar *theme_dir)
 				src = g_build_filename (theme_dir, xmlGetProp(node, "src"), NULL);
 				theme_set_selector_image(theme, src);
 			}
+			else if (!g_strcasecmp (node->name, "text")) {
+			}
 			else					
 			{
 				g_warning("Unknown theme tag, ignoring <%s>.", node->name);
@@ -372,6 +374,8 @@ handle_base_image_node (Theme *theme, xmlNodePtr node)
 		
 			theme_add_base_image_with_id (theme, name, src, tile_type, id);
 			g_free (src);
+		}
+		else if (!g_strcasecmp (node->name, "text")) {
 		}
 		else 
 			g_warning("Unknown theme tag, ignoring <%s>.", node->name);
@@ -414,6 +418,8 @@ handle_link_image_node (Theme *theme, xmlNodePtr node)
 			
 			theme_add_link_image (theme, name, src, tile_link);
 			g_free (src);
+		}
+		else if (!g_strcasecmp (node->name, "text")) {
 		}
 		else 
 			g_warning("Unknown theme tag, ignoring <%s>.", node->name);

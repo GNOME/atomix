@@ -1,5 +1,26 @@
 2001-11-14  Jens Finke <jens@triq.net>
 
+	* board.c (board_render): Use playfield_get_n_cols when iterating
+	over the columns.
+
+	* goal-view.c (clear_view): Check if item_group is != NULL.
+
+	* level-manager.c (create_level_sequence): Added dummy handler for
+	'text' tag.
+	(load_level): Added dummy handler for 'text' tag. Print just a
+	message about unknown tag not a warning.
+
+	* playfield.c (playfield_new_from_xml): Added dummy handler for
+	'text' tag.
+
+	* theme-manager.c (load_theme),
+	(handle_link_image_node),
+	(handle_base_image_node): Added dummy handler for 'text' tag.
+
+	* tile.c (tile_new_from_xml): Added dummy handler for 'text' tag.
+	
+2001-11-14  Jens Finke <jens@triq.net>
+
 	* level-private.h: Forgot to add this. So here it is. 
 
 2001-11-14  Jens Finke <jens@triq.net>

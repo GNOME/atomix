@@ -114,7 +114,8 @@ render_view (Goal *goal)
 static void
 clear_view ()
 {
-	gtk_object_destroy (GTK_OBJECT(item_group));
+	if (item_group)
+		gtk_object_destroy (GTK_OBJECT(item_group));
 	item_group = NULL;
 }
 
