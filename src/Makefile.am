@@ -1,5 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 scoredir = $(localstatedir)/games
+uidir = $(pkgdatadir)/ui
 
 INCLUDES = -Wall \
 	-DDEBUG	\
@@ -19,9 +20,7 @@ atomix_SOURCES = \
 	goal.c goal.h \
 	goal-view.c goal-view.h
 
-#	preferences.c preferences.h \
-#	callbacks.c callbacks.h \
-#	gtk-time-limit.c gtk-time-limit.h
+ui_DATA = atomix-ui.xml
 
 atomix_DEPENDENCIES = libatomix.a
 
@@ -61,9 +60,9 @@ level_convert_LDADD = \
 	-L$(top_builddir)/src \
 	$(ATOMIX_LIBS)
 
-install-data-local:
-	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
-	-touch $(DESTDIR)$(scoredir)/atomix.scores
-	-chown games.games $(DESTDIR)$(scoredir)/atomix.scores
-	-chmod 664 $(DESTDIR)$(scoredir)/atomix.scores
-	-chgrp games $(DESTDIR)$(bindir)/atomix && chmod 2111 $(DESTDIR)$(bindir)/atomix
+#install-data-local:
+#	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+#	-touch $(DESTDIR)$(scoredir)/atomix.scores
+#	-chown games.games $(DESTDIR)$(scoredir)/atomix.scores
+#	-chmod 664 $(DESTDIR)$(scoredir)/atomix.scores
+#	-chgrp games $(DESTDIR)$(bindir)/atomix && chmod 2111 $(DESTDIR)$(bindir)/atomix

@@ -158,16 +158,22 @@ level_manager_init_levels (LevelManager *lm)
 	g_return_if_fail (!lm->priv->initialized);
 
 	/* load the sequence of the levels */
-	sequence_file = g_build_filename (g_get_home_dir (), ".atomix/level/sequence", NULL);
+	sequence_file = g_build_filename (g_get_home_dir (), ".atomix", "level", "sequence", NULL);
 	create_level_sequence (lm, sequence_file);
 	g_free (sequence_file);
 
+	if (g_list_length (lm->priv->level_seq) == 0) {
+		sequence_file = g_build_filename (DATADIR, "atomix", "level", "sequence", NULL);
+		create_level_sequence (lm, sequence_file);
+		g_free (sequence_file);
+	}
+
 	/* search for all levels */
-        dir_path =  g_build_filename (g_get_home_dir (), ".atomix/level", NULL);
+        dir_path =  g_build_filename (g_get_home_dir (), ".atomix", "level", NULL);
 	search_level_in_dir (lm, dir_path);
 	g_free (dir_path);
 
-	dir_path = g_build_filename (DATADIR, "atomix/level", NULL);
+	dir_path = g_build_filename (DATADIR, "atomix", "level", NULL);
 	search_level_in_dir (lm, dir_path);
 	g_free (dir_path);
 

@@ -128,11 +128,11 @@ theme_manager_init_themes (ThemeManager *tm)
 	g_return_if_fail (IS_THEME_MANAGER (tm));
 	g_return_if_fail (!tm->priv->initialized);
 
-        dir_path =  g_build_filename (g_get_home_dir (), ".atomix/themes", NULL);
+        dir_path =  g_build_filename (g_get_home_dir (), ".atomix", "themes", NULL);
 	search_themes_in_dir (tm, dir_path);
 	g_free (dir_path);
 
-	dir_path = g_build_filename (DATADIR, "atomix/themes", NULL);
+	dir_path = g_build_filename (DATADIR, "atomix", "themes", NULL);
 	search_themes_in_dir (tm, dir_path);
 	g_free (dir_path);
 

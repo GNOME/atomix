@@ -837,8 +837,8 @@ create_gui (GnomeProgram *prog)
 					   NULL);
 
 	/* find xml menu description */
-	ui_file = gnome_program_locate_file (prog, GNOME_FILE_DOMAIN_DATADIR,
-						"atomix-ui.xml", TRUE, NULL);
+	ui_file = g_build_filename (DATADIR, "atomix", "ui", "atomix-ui.xml", NULL);
+
 	g_print ("ui_file: %s\n", ui_file);
 	if (!ui_file) {
 		ui_file = g_build_filename (".", "atomix-ui.xml", NULL);
