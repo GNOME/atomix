@@ -95,7 +95,6 @@ static void
 theme_manager_init (ThemeManager *tm)
 {
 	ThemeManagerPrivate *priv;
-	int i;
 
 	priv = g_new0 (ThemeManagerPrivate, 1);
 	priv->initialized = FALSE;
@@ -151,7 +150,6 @@ theme_manager_init_themes (ThemeManager *tm)
 static void 
 search_themes_in_dir (ThemeManager *tm, const gchar *dir_path)
 {
-	ThemeManagerPrivate *priv;
 	struct dirent *dent = NULL;
 	DIR* dir;
 	
@@ -275,7 +273,6 @@ load_theme (gchar *theme_dir)
 	ThemePrivate *priv;
 	gchar *theme_file;
 	gchar *prop_value;
-	gchar *file_path;
 	guint revision = 3;
 	xmlDocPtr doc;
 	xmlNodePtr node;
@@ -424,7 +421,7 @@ handle_link_image_node (Theme *theme, xmlNodePtr node)
 static TileLink
 string_to_tile_link (gchar *str)
 {
-	TileLink link;
+	TileLink link = TILE_LINK_LAST;
 	static int prefix_len = 0;
 	if (!prefix_len) prefix_len = strlen ("TILE_LINK_");
 	

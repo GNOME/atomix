@@ -175,6 +175,22 @@ theme_new (void)
 
   ---------------------------------------------------------------*/
 
+gchar*  
+theme_get_name (Theme *theme)
+{
+	g_return_val_if_fail (IS_THEME (theme), NULL);
+
+	return theme->priv->name;
+}
+
+gint
+theme_get_animstep (Theme *theme)
+{
+	g_return_val_if_fail (IS_THEME (theme), 0);
+
+	return theme->priv->animstep;
+}
+
 static void
 destroy_theme_image (ThemeImage *ti)
 {

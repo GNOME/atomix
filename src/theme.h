@@ -56,6 +56,8 @@ GdkPixbuf* theme_get_selector_image   (Theme *theme);
 void       theme_get_tile_size        (Theme *theme, 
 				       gint *width, 
 				       gint *height);
+gchar*     theme_get_name (Theme *theme);
+gint       theme_get_animstep (Theme *theme);
 
 /* editor functions */
 /* these aren't used yet */
