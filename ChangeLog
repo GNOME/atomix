@@ -1,3 +1,12 @@
+2001-12-02  Jens Finke <jens@triq.net>
+
+	* Makefile.am (EXTRA_DIST), (splash_DATA): Added atomix-splash.png
+	image.
+
+	* configure.in: Bumped version to 0.9.1.
+
+	* atomix-splash.png: New file.
+
 2001-11-30  Yuriy Syrota  <rasta@renome.rovno.ua>
 
 	* configure.in: Added uk (Ukrainian) to ALL_LINGUAS.
