@@ -202,7 +202,7 @@ add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath)
 				    g_strdup(themename),
 				    g_strdup(dirpath));
 		
-		g_message ("Found theme: %s\n", themename);
+		g_message ("Found theme: %s", themename);
 	}
 	else 
 		g_warning (_("Found theme %s twice."), themename);

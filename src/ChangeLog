@@ -1,3 +1,15 @@
+2001-11-25  Jens Finke <jens@triq.net>
+
+	* board.c (board_render): Center the playfield correctly. 
+
+	* level-manager.c (add_level): No newline after debug output.
+
+	* theme-manager.c (add_theme): No newline after debug output.
+
+	* main.c (create_canvas_widget): Don't create scrolled window
+	around gnome canvas.
+	(main): Set initial size of main window to 620/420.
+
 2001-11-22  Jens Finke <jens@triq.net>
 
 	This is the first time after the GNOME 2.0 port that you can play

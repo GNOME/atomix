@@ -729,10 +729,7 @@ static BonoboUIVerb verbs[] = {
 static GtkWidget*
 create_canvas_widget (GtkWidget **canvas)
 {
-	GtkWidget *scrollwin;
 	GtkWidget *frame;
-
-	scrollwin = gtk_scrolled_window_new (NULL, NULL);
 
         gtk_widget_push_visual (gdk_rgb_get_visual ());
         gtk_widget_push_colormap (gdk_rgb_get_cmap ());
@@ -740,12 +737,9 @@ create_canvas_widget (GtkWidget **canvas)
         gtk_widget_pop_visual ();
         gtk_widget_pop_colormap ();
 
-	gtk_container_add (GTK_CONTAINER (scrollwin), GTK_WIDGET (*canvas));
-	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrollwin),
-					GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 	frame = gtk_frame_new (NULL);
 	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
-	gtk_container_add (GTK_CONTAINER (frame), scrollwin);
+	gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (*canvas));
 
 	return frame;
 }
@@ -892,7 +886,7 @@ main (int argc, char *argv[])
 
 	game_init (app);
 
-	gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 600, 400); 
+	gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 620, 420); 
 	gtk_widget_show (app->mainwin);
 
 	gtk_main ();

@@ -257,8 +257,10 @@ board_destroy()
 void
 board_render ()
 {
-	gint row, col, width, height;
+	gint row, col;
 	gint tile_width, tile_height;
+	gint ca_width, ca_height;
+	gint x, y, width, height;
 	Tile *tile;
 
 	g_return_if_fail (board_theme != NULL);
@@ -288,11 +290,30 @@ board_render ()
 	playfield_print (board_sce);
 	
 	theme_get_tile_size (board_theme, &tile_width, &tile_height);
-	
+
 	/* center the whole thing */
+	ca_width = GTK_WIDGET (board_canvas)->allocation.width;
+	ca_height = GTK_WIDGET (board_canvas)->allocation.height;
+	
 	width = tile_width * playfield_get_n_cols (board_env);
 	height = tile_height * playfield_get_n_rows (board_env);
-	set_canvas_dimensions (board_canvas, width, height);
+	
+	if (width > ca_width) {
+		x = (width/2) - (ca_width/2);
+		width = ca_width;
+	}
+	else
+		x = 0;
+	
+	if (height > ca_height) {
+		y = (height/2) - (ca_height/2);
+		height = ca_height;
+	}
+	else
+		y = 0;
+
+	gnome_canvas_set_scroll_region (board_canvas, x, y,
+					width + x, height + y);
 
 	/* set background  color*/
 	set_background_color (GTK_WIDGET (board_canvas), 

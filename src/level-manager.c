@@ -275,7 +275,7 @@ add_level (LevelManager *lm, gchar *levelname, gchar *filename)
 				    g_strdup (levelname),
 				    g_strdup (filename));
 		
-		g_message ("Found Level: %s\n", levelname);
+		g_message ("Found Level: %s", levelname);
 	}
 	else 
 		g_warning (_("Found level %s twice."), levelname);
