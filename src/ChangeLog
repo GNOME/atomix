@@ -1,5 +1,9 @@
 2001-11-12  Jens Finke <jens@triq.net>
 
+	* playfield.[ch]: Rewrote this, usese glib object system now.
+
+2001-11-12  Jens Finke <jens@triq.net>
+
 	* theme-manager.c (theme_manager_init), (search_themes_in_dir),
 	(load_theme): Removed unneeded variables.
 	(string_to_tile_link): Initialize link with TILE_LINK_LAST.

@@ -1,5 +1,5 @@
 /* Atomix -- a little mind game about atoms and molecules.
- * Copyright (C) 1999 Jens Finke
+ * Copyright (C) 1999-2001 Jens Finke
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,23 +24,33 @@
 #include "global.h"
 #include "tile.h"
 
-typedef struct _PlayField  PlayField;
+#define PLAYFIELD_TYPE        (playfield_get_type ())
+#define PLAYFIELD(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), PLAYFIELD_TYPE, PlayField))
+#define PLAYFIELD_CLASS(k)    (G_TYPE_CHECK_CLASS_CAST((k), PLAYFIELD_TYPE, PlayFieldClass))
+#define IS_PLAYFIELD(o)       (G_TYPE_CHECK_INSTANCE_TYPE ((o), PLAYFIELD_TYPE))
+#define IS_PLAYFIELD_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), PLAYFIELD_TYPE))
+#define PLAYFIELD_GET_CLASS(o)(G_TYPE_INSTANCE_GET_CLASS ((o), PLAYFIELD_TYPE, PlayFieldClass))
 
-struct _PlayField
+
+typedef struct _PlayFieldPrivate  PlayFieldPrivate;
+
+typedef struct
 {
-	guint n_rows;
-	guint n_cols;
-	GPtrArray *matrix;   /* list of lists represents the matrix */
-};
+	GObject parent;
+	PlayFieldPrivate *priv;
+} PlayField;
 
+typedef struct {
+	GObjectClass parent_class;
+} PlayFieldClass;
+
+GType playfield_get_type (void);
 
 PlayField* playfield_new(void);
 
-void playfield_destroy(PlayField* m);
+void playfield_add_row(PlayField* pf);
 
-gboolean playfield_add_row(PlayField* pf);
-
-gboolean playfield_add_column(PlayField* pf);
+void playfield_add_column(PlayField* pf);
 
 Tile* playfield_get_tile(PlayField *pf, guint row, 
 				   guint col);
@@ -51,9 +61,9 @@ void playfield_set_tile(PlayField* pf,
 
 void playfield_set_matrix_size(PlayField *pf, guint n_rows, guint n_cols);
 
-PlayField* playfield_strip(PlayField *pf);
+PlayField* playfield_strip (PlayField *pf);
 
-PlayField* playfield_copy(PlayField *pf);
+PlayField* playfield_copy (PlayField *pf);
 
 Tile* playfield_clear_tile(PlayField *pf, guint row, guint col);
 
