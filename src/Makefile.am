@@ -1,7 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 scoredir = $(localstatedir)/games
 
-INCLUDES = \
+INCLUDES = -Wall \
 	-DDEBUG	\
 	-I$(top_srcdir)/intl \
 	$(ATOMIX_CFLAGS) \
@@ -31,7 +31,8 @@ noinst_LIBRARIES = libatomix.a
 
 libatomix_a_SOURCES = \
 	tile.c tile.h \
-	theme.c theme.h \
+	theme.c theme.h theme-private.h \
+	theme-manager.c theme-manager.h \
 	level.c level.h \
 	canvas_helper.c canvas_helper.h \
 	playfield.c playfield.h \

@@ -1,6 +1,20 @@
+2001-11-12  Jens Finke <jens@triq.net>
+
+	* src/theme.[ch]: Rewrote this. Adapted it to changes in
+	tile.[ch].
+
+	* src/theme-manager.[ch]: New files. Handle all the managing stuff
+	regarding to themes.
+
+	* src/theme-private.h: New file, contains the private attributes and
+	functions of a theme.
+
+	* Makefile.am (SOURCES): Added theme-manager.[ch] and theme-private.h.
+	(INCLUDES): Addded -Wall compiler option.
+	
 2001-11-11  Jens Finke <jens@triq.net>
 
-	* tile.[ch]: Rewrote this completely. There is a better
+	* src/tile.[ch]: Rewrote this completely. There is a better
 	handling of the available atom links.
 
 2001-11-10  Jens Finke <jens@triq.net>

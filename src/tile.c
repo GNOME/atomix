@@ -128,7 +128,7 @@ tile_copy(Tile *tile)
 gboolean
 tile_has_link (Tile *tile, TileLink link)
 {
-	g_return_if_fail (IS_TILE (tile));
+	g_return_val_if_fail (IS_TILE (tile), FALSE);
 
 	if (tile->priv->type == TILE_TYPE_MOVEABLE)
 		return tile->priv->link_id[link];
@@ -204,7 +204,6 @@ tile_print(Tile *tile)
 {
 	gchar *type_str;
 	gint16 link;
-	int i;
 	
 	g_return_if_fail (IS_TILE (tile));
 	
@@ -226,8 +225,6 @@ tile_print(Tile *tile)
 		type_str, tile->priv->base_id);
 
 	for (link = 0; link < TILE_LINK_LAST ; link++) {
-		gchar *tile_name;
-
 		if (tile->priv->link_id[link]){
 			switch (link) {
 			case TILE_LINK_LEFT: 

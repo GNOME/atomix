@@ -1,5 +1,5 @@
 /* Atomix -- a little mind game about atoms and molecules.
- * Copyright (C) 1999 Jens Finke
+ * Copyright (C) 1999-2001 Jens Finke
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,229 +16,158 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <dirent.h>
-#include <fcntl.h>
-#include <libxml/parser.h>
-#include <libxml/tree.h>
-
 #include "theme.h"
+#include "theme-private.h"
 
-GHashTable* available_themes;
 
 /*=================================================================
  
   Declaration of internal functions
 
   ---------------------------------------------------------------*/
-void 
-theme_fill_img_array(Theme *theme, xmlNodePtr node, TileType type,
-		     guint revision);
 
-gint 
-theme_load_last_id(xmlNodePtr node, gint revision);
+static void destroy_theme_image (ThemeImage *ti);
 
-gchar*
-theme_get_theme_name(gchar *filename);
+static void theme_class_init (GObjectClass *class);
+static void theme_init (Theme *theme);
+static void theme_finalize (GObject *object);
 
-gchar*
-theme_get_theme_name_xml(gchar *filename);
+GObjectClass *parent_class;
 
-void 
-theme_save_image_element_xml(gpointer key, gpointer value, gpointer user_data);
+GType
+theme_get_type (void)
+{
+  static GType object_type = 0;
 
-void
-theme_print_hash_table(gpointer key, gpointer value, gpointer user_data);
+  if (!object_type)
+    {
+      static const GTypeInfo object_info =
+      {
+	sizeof (TileClass),
+	(GBaseInitFunc) NULL,
+	(GBaseFinalizeFunc) NULL,
+	(GClassInitFunc) theme_class_init,
+	NULL,   /* clas_finalize */
+	NULL,   /* class_data */
+	sizeof(Theme),
+	0,      /* n_preallocs */
+	(GInstanceInitFunc) theme_init,
+      };
 
-void
-theme_destroy_name_table_item(gpointer key, gpointer value, gpointer user_data);
+      object_type = g_type_register_static (G_TYPE_OBJECT,
+					    "Theme",
+					    &object_info, 0);
+    }
 
-void
-theme_destroy_image_table_item(gpointer key, gpointer value, gpointer user_data);
+  return object_type;
+}
 
-void 
-theme_add_tile_image(Theme *theme, TileType type, ThemeElement *element);
-
-void
-theme_add_theme_name(gchar *themename, gchar *directory);
-
-void
-add_theme_to_list(gchar* key, gpointer value, GList **list);
-
-GdkPixbuf* theme_create_default_image(Theme *theme);
 
 /*=================================================================
  
   Theme creation, initialisation and clean up
 
   ---------------------------------------------------------------*/
-Theme*
-theme_new()
+
+static void 
+theme_class_init (GObjectClass *class)
 {
-	Theme* theme;
-	theme = g_malloc(sizeof(Theme));
+	parent_class = g_type_class_ref (G_TYPE_OBJECT);
+	class->finalize = theme_finalize;
+}
 
-	theme->name = NULL;
-	theme->path = NULL;
-	theme->image_list[THEME_IMAGE_OBSTACLE] = 
+static void 
+theme_init (Theme *theme)
+{
+	ThemePrivate *priv;
+	gint i;
+
+	priv = g_new0 (ThemePrivate, 1);
+
+	priv->name = NULL;
+	priv->path = NULL;
+	priv->tile_width = 0;
+	priv->tile_height = 0;
+	priv->animstep = 0;
+	priv->bg_color.red  = 0;
+	priv->bg_color.green = 0;
+	priv->bg_color.blue = 0;
+	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) priv->image_list[i] = NULL;
+	priv->selector = NULL;
+	priv->modified = FALSE;
+	priv->need_update = FALSE;
+	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) priv->last_id[i] = 0; 
+	
+	theme->priv = priv;
+}
+
+static void 
+theme_finalize (GObject *object)
+{
+	int i;
+	ThemePrivate *priv;
+	Theme* theme = THEME (object);
+	
+	g_return_if_fail (theme != NULL);
+
+	priv = theme->priv;
+
+	if (priv->name)
+		g_free (priv->name);
+	priv->name = NULL;
+	
+	if (priv->path)
+		g_free (priv->path);
+	priv->path = NULL;
+	
+	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) {
+		if (priv->image_list[i]) {
+			g_hash_table_foreach (priv->image_list[i], 
+					     (GHFunc) destroy_theme_image, NULL);
+			g_hash_table_destroy (priv->image_list[i]);
+			priv->image_list[i] = NULL;
+		}
+	}
+
+	if (priv->link_image_list) {
+		g_hash_table_foreach (priv->link_image_list, 
+				      (GHFunc) destroy_theme_image, NULL);
+		g_hash_table_destroy (priv->link_image_list);
+		priv->link_image_list = NULL;
+	}
+
+	if (priv->selector)
+		destroy_theme_image (priv->selector);
+	priv->selector = NULL;
+
+	g_free (theme->priv);
+	theme->priv = NULL;
+}
+
+Theme*
+theme_new (void)
+{
+	Theme *theme;
+	ThemePrivate *priv;
+	gint i;
+	theme = THEME (g_object_new (THEME_TYPE, NULL));
+	
+	priv = theme->priv;
+	
+	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) {
+		priv->image_list[i] = 
+			g_hash_table_new((GHashFunc) g_direct_hash, 
+					 (GCompareFunc) g_direct_equal);
+	}
+
+	priv->link_image_list = 
 		g_hash_table_new((GHashFunc) g_direct_hash, 
 				 (GCompareFunc) g_direct_equal);
-
-	theme->image_list[THEME_IMAGE_MOVEABLE] =
-		g_hash_table_new((GHashFunc) g_direct_hash, 
-				 (GCompareFunc) g_direct_equal);
-
-	theme->image_list[THEME_IMAGE_LINK] =
-		g_hash_table_new((GHashFunc) g_direct_hash, 
-				 (GCompareFunc) g_direct_equal);
-
-	theme->selector = NULL;
-	theme->tile_width = 0;
-	theme->tile_height = 0;
-	theme->animstep = 4;
-	theme->bg_color.red = 0;
-	theme->bg_color.green = 0;
-	theme->bg_color.blue = 0;
-
-	theme->modified = FALSE;
-	theme->need_update = FALSE;
-	theme->last_id[THEME_IMAGE_OBSTACLE] = 0;
-	theme->last_id[THEME_IMAGE_MOVEABLE] = 0;
-	theme->last_id[THEME_IMAGE_LINK] = 0;
 
 	return theme;
 }
 
-void
-theme_destroy(Theme* theme)
-{
-	if(theme) 
-	{	
-		int i;
 
-		if(theme->name)
-		{
-			g_free(theme->name);
-		}
-		if(theme->path)
-		{
-			g_free(theme->path);
-		}
-		for(i = 0; i < N_IMG_LISTS; i++)
-		{
-			if(theme->image_list[i]) 
-			{
-				g_hash_table_foreach(theme->image_list[i], 
-						     (GHFunc) theme_destroy_image_table_item, NULL);
-				g_hash_table_destroy(theme->image_list[i]);
-			}
-		}
-
-		if(theme->selector)
-		{
-			theme_destroy_element(theme->selector);
-		}
-		g_free(theme);
-	}
-}
-
-void
-theme_create_hash_table(void)
-{
-	gint i, n_dirs;
-	struct dirent *dent = NULL;
-	DIR* dir;
-	gchar* search_dirs[2];
-
-	/* init hash table */
-	available_themes = g_hash_table_new((GHashFunc) g_str_hash, 
-					    (GCompareFunc) g_str_equal);
-
-	/* define directorys where to search for themes */
-	search_dirs[0] = g_strjoin("/", g_get_home_dir (), ".atomix/themes", NULL);
-	search_dirs[1] = g_strjoin("/", DATADIR, "atomix/themes", NULL);
-	n_dirs = 2;
-    
-	/* search the dirs */
-	for(i = 0; i < n_dirs; i++)
-	{
-		dir = opendir(search_dirs[i]);
-		if(dir)
-		{
-			char* filename;
-			char* themename;
-			char* directory;
-			
-			g_print("looking for themes in %s\n", search_dirs[i]);
-
-			while((dent = readdir(dir)) != NULL)
-			{
-				if((g_strcasecmp(".", dent->d_name)!=0) &&
-				   (g_strcasecmp("..", dent->d_name)!=0))
-				{
-					/* is current file a directory? */
-					directory = g_concat_dir_and_file(search_dirs[i],
-									  dent->d_name);
-					if(g_file_test(directory, G_FILE_TEST_IS_DIR))
-					{
-						/* try to load file */
-						filename = g_concat_dir_and_file(directory, 
-										 "theme");
-						themename = theme_get_theme_name_xml(filename);
-						theme_add_theme_name(themename, directory);
-						g_free(filename);
-						g_free(themename);
-					}
-					g_free(directory);
-				}
-			}
-		}
-
-		g_free(dent);
-		closedir(dir);
-	}
-
-	if(g_hash_table_size(available_themes) == 0)
-	{
-		g_print("** Warning no themes found.\n");
-	}
-
-	for(i = 0; i < n_dirs; i++) g_free(search_dirs[i]);
-}
-
-void theme_add_theme_name(gchar *themename, gchar *directory)
-{
-	gchar *search_result;
-
-	if((themename != NULL) && 
-	   (directory != NULL))
-	{
-	
-		/* don't add a theme twice */
-		search_result = g_hash_table_lookup(available_themes, themename);
-		
-		if(search_result == NULL)
-		{
-			g_hash_table_insert(available_themes,
-					    g_strdup(themename),
-					    g_strdup(directory));
-
-			g_print("found theme: %s\n", themename);
-		}
-	}
-}
-
-void
-theme_destroy_hash_table(void)
-{
-	if(available_themes)
-	{
-		g_hash_table_foreach(available_themes, 
-				     (GHFunc) theme_destroy_name_table_item, NULL);
-		g_hash_table_destroy(available_themes);
-	}
-}
 
 /*=================================================================
  
@@ -246,206 +175,269 @@ theme_destroy_hash_table(void)
 
   ---------------------------------------------------------------*/
 
-GList* theme_get_available_themes(void)
+static void
+destroy_theme_image (ThemeImage *ti)
 {
-	GList *list = NULL;
+	if (ti == NULL) return;
 	
-	g_hash_table_foreach(available_themes,
-			     (GHFunc) add_theme_to_list, &list);
-			     
-	return list;
+	if (ti->name)
+		g_free (ti->name);
+	if (ti->file)
+		g_free (ti->file);
+	if (ti->image)
+		gdk_pixbuf_unref (ti->image);
+	g_free (ti);
 }
+
+static GdkPixbuf*
+get_theme_image_pixbuf (ThemeImage *ti)
+{
+	g_return_val_if_fail (ti != NULL, NULL);
+	
+	if (ti->loading_failed)
+		return NULL;
+	
+	if (ti->image == NULL) {
+		ti->image = gdk_pixbuf_new_from_file (ti->file, NULL);
+		if (ti->image == NULL) ti->loading_failed = TRUE;
+	}
+
+	return ti->image;
+}
+
+static GdkPixbuf*
+create_link_image (Theme *theme, Tile *tile)
+{
+	ThemePrivate *priv;
+	gint link;
+	ThemeImage *ti;
+	GdkPixbuf *pixbuf = NULL;
+	GdkPixbuf *link_pb;
+
+	g_return_val_if_fail(IS_THEME (theme), NULL);
+	g_return_val_if_fail(IS_TILE (tile), NULL);
+
+	priv = theme->priv;
+
+	for (link = 0; link < TILE_LINK_LAST; link++) {
+		if (tile_has_link (tile, link)) {
+
+			ti = g_hash_table_lookup (priv->link_image_list, 
+						    GINT_TO_POINTER (link));
+
+			link_pb = get_theme_image_pixbuf (ti);
+			if (link_pb == NULL) {
+				g_warning ("Couldn't load link image: %i", link);
+				continue;
+			}
+
+			if (pixbuf == NULL)
+				pixbuf = gdk_pixbuf_copy (link_pb);
+			
+			else {
+				gdk_pixbuf_composite (link_pb,
+						      pixbuf,
+						      0, 0,
+						      gdk_pixbuf_get_width (pixbuf),
+						      gdk_pixbuf_get_height (pixbuf),
+						      0.0, 0.0, 1.0, 1.0,
+						      GDK_INTERP_BILINEAR, 255);
+			}
+			gdk_pixbuf_unref (link_pb);
+		}
+	}
+
+	return pixbuf;
+}
+
 
 GdkPixbuf*
-theme_get_tile_image(Theme* theme, Tile *tile)
+theme_get_tile_image (Theme* theme, Tile *tile)
 {
-	gint type; 
+	ThemePrivate *priv;
+	TileType type; 
 	gint image_id;
-	ThemeElement *element = NULL;
+	ThemeImage *timg = NULL;
+	GdkPixbuf *link_pb = NULL;
+	GdkPixbuf *base_pb = NULL;
 
-	g_return_val_if_fail(theme != NULL, NULL);
-	g_return_val_if_fail(tile != NULL, NULL);
+	g_return_val_if_fail(IS_THEME (theme), NULL);
+	g_return_val_if_fail(IS_TILE (tile), NULL);
 
-	type = tile_get_type(tile);
-	image_id = tile_get_image_id(tile);
+	priv = theme->priv;
 
-	switch(type)
-	{
-	case TILE_OBSTACLE:
-		if(theme->image_list[THEME_IMAGE_OBSTACLE]!=NULL) 
-		{
-			element = g_hash_table_lookup(theme->image_list[THEME_IMAGE_OBSTACLE], 
-						      GINT_TO_POINTER(image_id));
-		}
-		break;
-	    
-	case TILE_MOVEABLE:
-		if(theme->image_list[THEME_IMAGE_MOVEABLE])
-		{
-			element = g_hash_table_lookup(theme->image_list[THEME_IMAGE_MOVEABLE], 
-						      GINT_TO_POINTER(image_id));
-		}
-		break;
-	default:
-	}
+	type = tile_get_tile_type (tile);
+	image_id = tile_get_base_id(tile);
 
-	return theme_get_element_image(theme, element);
-}
-
-
-GSList* theme_get_tile_link_images(Theme *theme, Tile *tile)
-{
-	gint i;
-	gint length;
-	GSList *image_list = NULL;
-	GdkPixbuf *image;
-	ThemeElement *element;
-	GSList *id_list;
-
-	g_return_val_if_fail(theme!=NULL, NULL);
-	g_return_val_if_fail(tile!=NULL, NULL);
-
-	id_list = tile_get_link_ids (tile);
+	link_pb = create_link_image (theme, tile);
 	
-	length = g_slist_length(id_list);
-	for(i = 0; i  < length; i++)
-	{
-		/* get id of link image */
-		gint id = GPOINTER_TO_INT(g_slist_nth_data(id_list, i));
+	timg = g_hash_table_lookup (priv->image_list[type], GINT_TO_POINTER (image_id));
 
-		/* get appropriate image name */
-		element = g_hash_table_lookup(theme->image_list[THEME_IMAGE_LINK],
-					      GINT_TO_POINTER(id));
-		image = theme_get_element_image(theme, element);
+	base_pb = get_theme_image_pixbuf (timg);
 
-		if(image)
-		{
-                       /* add image to list */
-			image_list = g_slist_append(image_list, (gpointer) image);
-		}
+	if (link_pb != NULL) {
+		gdk_pixbuf_composite (base_pb,
+				      link_pb,
+				      0, 0,
+				      gdk_pixbuf_get_width (link_pb),
+				      gdk_pixbuf_get_height (link_pb),
+				      0.0, 0.0, 1.0, 1.0,
+				      GDK_INTERP_BILINEAR, 255);
+		gdk_pixbuf_unref (base_pb);
+		return link_pb;
 	}
 
-	return image_list;
+	return base_pb;
 }
 
 GdkPixbuf* theme_get_selector_image(Theme *theme)
 {
-	g_return_val_if_fail(theme!=NULL, NULL);
+	g_return_val_if_fail ( IS_THEME (theme), NULL);
 
-	return theme_get_element_image(theme, theme->selector);
-}
-
-GdkPixbuf* theme_get_element_image(Theme *theme, ThemeElement *element)
-{
-	GdkPixbuf *image = NULL;
-
-	g_return_val_if_fail(theme!=NULL, NULL);       
-
-	if(element == NULL)
-	{
-		return theme_create_default_image(theme);
-	}
-
-	if(element->image == NULL)
-	{
-		if(!element->loading_failed)
-		{
-			GError *error = NULL;
-			/* try to load the image */
-			gchar *full_path;
-
-			/* add full path */
-			full_path = g_concat_dir_and_file (theme->path, element->file);
-			element->image = gdk_pixbuf_new_from_file (full_path, &error);
-
-			if(element->image == NULL)
-			{
-				/* loading failed */
-				g_print("** Warning: couldn't find file %s.\n", full_path);
-				element->loading_failed = TRUE;
-				element->image = theme_create_default_image(theme); 
-			}
-			image = element->image;
-
-			g_free(full_path);
-		}
-	}
-	else
-	{
-		image = element->image;
-	}
-	
-	return image;
+	return get_theme_image_pixbuf (theme->priv->selector);
 }
 
 void
 theme_get_tile_size(Theme *theme, gint *width, gint *height)
 {
-	if(theme)
-	{
-		*width = theme->tile_width;
-		*height = theme->tile_height;
-	}
-	else
-	{
-		*width = 0;
-		*height = 0;
-	}
+	*width = *height = 0;
+
+	g_return_if_fail (IS_THEME (theme));
+
+	*width = theme->priv->tile_width;
+	*height = theme->priv->tile_height;
 }
 
 GdkColor* theme_get_background_color(Theme *theme)
 {
-	return &(theme->bg_color);
+	return &(theme->priv->bg_color);
 }
 
 
-ThemeElement* theme_add_image(Theme *theme, const gchar *name, 
-			      const gchar *file, ThemeImageKind kind)
+
+void
+theme_add_base_image (Theme *theme, 
+		      const gchar *name, 
+		      const gchar *file, 
+		      TileType tile_type)
 {
-	ThemeElement *element;
+	g_return_if_fail (IS_THEME (theme));
 
-	g_return_val_if_fail(theme != NULL, NULL);
-	g_return_val_if_fail(name != NULL, NULL);
-	g_return_val_if_fail(file != NULL, NULL);
-	
-	/* create new theme element */
-	element = g_malloc(sizeof(ThemeElement));
-
-	element->id = ++(theme->last_id[kind]);
-	element->file = g_strdup(file);
-	element->name = g_strdup(name);
-	element->loading_failed = FALSE;
-	element->image = NULL;     
-
-	g_print("Adding image:\n");
-	g_print("  id: %i\n", element->id);
-	g_print("  file: %s\n", element->file);
-	g_print("  name: %s\n", element->name);
-
-	g_hash_table_insert(theme->image_list[kind], 
-			    GINT_TO_POINTER(element->id),
-			    (gpointer) element);
-
-	/* obtain the width and height of the images */
-	if((theme->tile_width == 0) || (theme->tile_height == 0))
-	{
-		GError *error = NULL;
-		gchar *full_path;
-
-		full_path = g_concat_dir_and_file(theme->path, file);
-		element->image = gdk_pixbuf_new_from_file (full_path, &error);
-		if(element->image != NULL)
-		{
-			theme->tile_width = gdk_pixbuf_get_width (element->image);
-			theme->tile_height = gdk_pixbuf_get_height (element->image);
-		}
-
-		g_error_free (error);
-		g_free(full_path);
-	}
-	
-	return element;
+	theme_add_base_image_with_id (theme, name, file, tile_type,
+				      theme->priv->last_id[tile_type] + 1);
 }
+
+
+void
+theme_add_base_image_with_id (Theme *theme, 
+			      const gchar *name, 
+			      const gchar *file, 
+			      TileType tile_type,
+			      int id)
+{
+	ThemePrivate *priv;
+	ThemeImage *ti;
+	
+	g_return_if_fail (IS_THEME (theme));
+	g_return_if_fail (name != NULL);
+	g_return_if_fail (file != NULL);
+	
+	priv = theme->priv;
+
+	/* create new theme element */
+	ti = g_new0 (ThemeImage, 1);
+
+	ti->id = id;
+	ti->file = g_strdup(file);
+	ti->name = g_strdup(name);
+	ti->loading_failed = FALSE;
+	ti->image = NULL;     
+
+        if(g_hash_table_lookup (priv->image_list[tile_type], GINT_TO_POINTER (id)) != NULL)
+		id = priv->last_id[tile_type] + 1;
+
+	/* insert into hash table */
+	g_hash_table_insert(priv->image_list[tile_type], 
+			    GINT_TO_POINTER(id),
+			    (gpointer) ti);
+
+	/* Obtain the width and height of the images. 
+	 * We assume here that all images of this theme have
+	 * the same dimension.
+	 */
+	if((priv->tile_width == 0) || (priv->tile_height == 0))
+	{
+		ti->image = gdk_pixbuf_new_from_file (file, NULL);
+		if(ti->image != NULL)
+		{
+			priv->tile_width = gdk_pixbuf_get_width (ti->image);
+			priv->tile_height = gdk_pixbuf_get_height (ti->image);
+		}
+		else
+			ti->loading_failed = TRUE;
+	}
+
+	priv->last_id[tile_type] = MAX (priv->last_id[tile_type], id);
+}
+
+void
+theme_add_link_image (Theme *theme, 
+		      const gchar *name, 
+		      const gchar *file, 
+		      TileLink link)
+{
+	ThemePrivate *priv;
+	ThemeImage *ti;
+	
+	g_return_if_fail (IS_THEME (theme));
+	g_return_if_fail (name != NULL);
+	g_return_if_fail (file != NULL);
+	
+	priv = theme->priv;
+
+	
+        ti = g_hash_table_lookup (priv->link_image_list, GINT_TO_POINTER (link));
+	if (ti != NULL)
+		destroy_theme_image (ti);
+
+	/* create new theme element */
+	ti = g_new0 (ThemeImage, 1);
+
+	ti->id = link;
+	ti->file = g_strdup(file);
+	ti->name = g_strdup(name);
+	ti->loading_failed = FALSE;
+	ti->image = NULL;     
+
+
+	/* insert into hash table */
+	g_hash_table_insert(priv->link_image_list, 
+			    GINT_TO_POINTER(link),
+			    (gpointer) ti);
+}
+
+
+void 
+theme_set_selector_image(Theme *theme, const gchar *file_name)
+{
+	ThemeImage *ti;
+	
+	g_return_if_fail(IS_THEME (theme));
+	g_return_if_fail(file_name != NULL);
+
+	if(theme->priv->selector != NULL)
+		destroy_theme_image (theme->priv->selector);
+
+	ti = g_new0 (ThemeImage, 1);
+	ti->id = 1;
+	ti->file = g_strdup(file_name);
+	ti->name = g_strdup("selector");
+	ti->loading_failed = FALSE;
+	ti->image = NULL;
+	theme->priv->selector = ti;
+}
+
+#if 0
 
 void 
 theme_remove_element(Theme *theme, ThemeImageKind kind, const ThemeElement *element)
@@ -490,26 +482,7 @@ gboolean theme_does_id_exist(Theme *theme, ThemeImageKind kind, gint id)
 			    GINT_TO_POINTER(id)) != NULL);
 }
 
-void theme_set_selector_image(Theme *theme, const gchar *file_name)
-{
-	ThemeElement *element;
-	
-	g_return_if_fail(theme != NULL);
-	g_return_if_fail(file_name != NULL);
 
-	if(theme->selector != NULL)
-	{
-		theme_destroy_element(theme->selector);
-	}
-
-	element = g_malloc(sizeof(ThemeElement));
-	element->id = 1;
-	element->file = g_strdup(file_name);
-	element->name = g_strdup("selector");
-	element->loading_failed = FALSE;
-	element->image = NULL;
-	theme->selector = element;
-}
 
 /*=================================================================
  
@@ -631,6 +604,7 @@ theme_load_xml(gchar *name/*, LoadResult *result*/)
 
 	return theme;
 }
+
 
 void
 theme_save_xml(Theme *theme, gchar *filename)
@@ -964,30 +938,5 @@ theme_destroy_image_table_item(gpointer key, gpointer value, gpointer user_data)
 }
 
 
-void
-theme_destroy_element(ThemeElement *element)
-{
-	g_return_if_fail(element != NULL);
-
-	if(element->file)
-	{
-		g_free(element->file);
-	}
-	if(element->image)
-	{
-		gdk_pixbuf_unref (element->image);
-	}
-	if(element->name)
-	{
-		g_free(element->name);
-	}
-	g_free(element);
-}
-
-void
-add_theme_to_list(gchar* key, gpointer value, GList **list)
-{
-	*list = g_list_insert_sorted(*list, key, (GCompareFunc) g_strcasecmp);	
-}
-
+#endif
 

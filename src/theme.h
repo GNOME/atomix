@@ -1,5 +1,5 @@
 /* Atomix -- a little mind game about atoms and molecules.
- * Copyright (C) 1999 Jens Finke
+ * Copyright (C) 1999-2001 Jens Finke
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,67 +22,44 @@
 #include <gnome.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include "tile.h"
-#include "global.h"
 
-typedef struct _Theme     Theme;
-typedef struct _ThemeElement ThemeElement;
 
-typedef enum
-{
-	THEME_IMAGE_OBSTACLE,
-	THEME_IMAGE_MOVEABLE,
-	THEME_IMAGE_LINK,
-	THEME_IMAGE_UNDEFINED
-} ThemeImageKind;
+#define THEME_TYPE        (theme_get_type ())
+#define THEME(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), THEME_TYPE, Theme))
+#define THEME_CLASS(k)    (G_TYPE_CHECK_CLASS_CAST((k), THEME_TYPE, ThemeClass))
+#define IS_THEME(o)       (G_TYPE_CHECK_INSTANCE_TYPE ((o), THEME_TYPE))
+#define IS_THEME_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), THEME_TYPE))
+#define THEME_GET_CLASS(o)(G_TYPE_INSTANCE_GET_CLASS ((o), THEME_TYPE, ThemeClass))
 
-static const int N_IMG_LISTS = 3;
+typedef struct _ThemePrivate ThemePrivate;
 
-/**
- * Theme structure.
+typedef struct {
+	GObject parent;
+	ThemePrivate *priv;
+} Theme;
+
+typedef struct {
+	GObjectClass parent_class;
+} ThemeClass;
+
+/* This class can't be directyl instantiated. Use
+ * ThemeManager to get an Theme object.
  */
-struct _Theme 
-{
-	gchar *name;              /* name of the theme */
-	gchar *path;              /* full qualified path to the theme directory */
-	GHashTable *image_list[3]; /* the different image lists */
-	ThemeElement *selector;   /* selector image */
-	
-	gint tile_width;        /* width of each tile */
-	gint tile_height;       /* height of each tile */
-	gint animstep;          /* number of pixels to move a atom in one 
-				   animation step */
-	GdkColor bg_color;      /* background color */
 
-	/* the following fields are only used by atomixed */
-	gboolean modified;       /* whether the theme is modified */
-	gboolean need_update;    /* whether the referenced levels needs an update */
-	gint last_id[3];         /* the appropriate last id for each image list*/
-};
+GdkPixbuf* theme_get_tile_image       (Theme* theme, 
+				       Tile *tile);
 
-struct _ThemeElement
-{
-	gint id;                /* the id */
-	gchar *file;            /* file name */
-	gboolean loading_failed;/* if once the image loading failed.*/
-        GdkPixbuf *image;       /* image */
-	gchar *name;            /* symbolic name */
-};
+GdkColor*  theme_get_background_color (Theme *theme);
 
-Theme* theme_new(void);
+GdkPixbuf* theme_get_selector_image   (Theme *theme);
 
-void theme_destroy(Theme* theme);
+void       theme_get_tile_size        (Theme *theme, 
+				       gint *width, 
+				       gint *height);
 
-void theme_destroy_element(ThemeElement *element);
-
-GdkPixbuf* theme_get_tile_image(Theme* theme, Tile *tile);
-
-GdkPixbuf* theme_get_element_image(Theme *theme, ThemeElement *element);
-
-GdkPixbuf* theme_get_selector_image(Theme *theme);
-
-/* returns list of images */
-GSList* theme_get_tile_link_images(Theme *theme, Tile *tile);
-
+/* editor functions */
+/* these aren't used yet */
+#if 0
 void theme_set_path(Theme* theme, gchar* path);
 
 void theme_set_selector_image(Theme *theme, const gchar *file_name);
@@ -93,7 +70,7 @@ ThemeElement* theme_add_image(Theme *theme, const gchar *name,
 void theme_remove_element(Theme *theme, ThemeImageKind kind, const ThemeElement *element);
 
 gboolean
- theme_change_element_id(Theme *theme, ThemeImageKind kind, ThemeElement *element, gint id);
+theme_change_element_id(Theme *theme, ThemeImageKind kind, ThemeElement *element, gint id);
 
 gboolean theme_does_id_exist(Theme *theme, ThemeImageKind kind, gint id);
 
@@ -105,10 +82,6 @@ void theme_create_hash_table(void);
 
 void theme_destroy_hash_table(void);
 
-GdkColor* theme_get_background_color(Theme *theme);
-
-void theme_get_tile_size(Theme *theme, gint *width, gint *height);
-
-GList* theme_get_available_themes(void);
+#endif
 
 #endif /* _ATOMIX_THEME_H_ */
