@@ -146,11 +146,16 @@ static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
       NULL
     };
 
+  const char *translators = _("translator_credits");
+
   dlg = gnome_about_new ("Atomix",
 			 VERSION,
 			 _("Copyright (C) 1999-2002 Jens Finke"),
 			 _("A puzzle game about atoms and molecules."),
-			 authors, documenters, NULL, NULL);
+			 authors,
+			 documenters,
+			 strcmp (translators, "translator_credits") == 0 ? NULL : translators,
+			 NULL);
 
   gtk_widget_show (dlg);
 }

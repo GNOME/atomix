@@ -1,6 +1,9 @@
 2005-03-19  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
-	* src/main.c: the name of the game is no longer translatable,
+	* src/main.c:
+	(verb_HelpAbout_cb): added the e-mails of the authors to the
+	credits, and a translator credits feature
+	(log_score): the name of the game is no longer translatable,
 	as it only takes space unnecessarily on the potfiles.
 
 	* README, atomix.desktop.in, src/board.c, src/board.h,
@@ -13,8 +16,6 @@
 	* src/theme-private.h, src/theme.c, src/theme.h, src/tile.c,
 	* src/tile.h, src/undo.c, src/undo.h: changed all occurrences of
 	"mind game" to "puzzle game".
-
-	* src/main.c: added the e-mails of the authors to the credits.
 
 2005-03-18  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
