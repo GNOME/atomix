@@ -1,3 +1,7 @@
+2001-12-12  Stanislav Visnovsky  <visnovsky@nenya.ms.mff.cuni.cz>
+
+	* sk.po: Added Slovak translation.
+
 2001-12-09  Jens Finke <jens@triq.net>
 
 	* POTFILES.in: Added src/atomix-ui.xml.in.
