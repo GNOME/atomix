@@ -55,6 +55,9 @@ GdkColor*  theme_get_background_color (Theme *theme);
 
 GdkPixbuf* theme_get_selector_image   (Theme *theme);
 
+void       theme_get_selector_arrow_images (Theme *theme,
+					    GdkPixbuf **arrow_images);
+
 void       theme_get_tile_size        (Theme *theme, 
 				       gint *width, 
 				       gint *height);

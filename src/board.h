@@ -55,8 +55,4 @@ void  board_hide_message(gint msg_id);
 
 void board_handle_key_event(GdkEventKey *event);
 
-void board_set_mouse_control(void);
-
-void board_set_keyboard_control(void);
-
 #endif /* _ATOMIX_BOARD_H_ */

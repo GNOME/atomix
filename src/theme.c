@@ -335,11 +335,22 @@ theme_get_tile_image (Theme* theme, Tile *tile)
 	return result;
 }
 
-GdkPixbuf* theme_get_selector_image(Theme *theme)
+GdkPixbuf* 
+theme_get_selector_image(Theme *theme)
 {
 	g_return_val_if_fail ( IS_THEME (theme), NULL);
 
 	return get_theme_image_pixbuf (theme->priv->selector);
+}
+
+void
+theme_get_selector_arrow_images (Theme *theme, GdkPixbuf **arrows)
+{
+	int i;
+
+	for (i = 0; i < 4; i++) {
+		arrows[i] = get_theme_image_pixbuf (theme->priv->selector_arrows[i]);
+	}
 }
 
 void
@@ -493,6 +504,43 @@ theme_set_selector_image(Theme *theme, const gchar *file_name)
 	ti->image = NULL;
 	theme->priv->selector = ti;
 }
+
+void 
+theme_set_selector_arrow_image (Theme *theme, const gchar *type, const gchar *file_name)
+{
+	ThemeImage *ti;
+	gint n;
+	
+	g_return_if_fail(IS_THEME (theme));
+	g_return_if_fail(file_name != NULL);
+	g_return_if_fail(type != NULL);
+	
+	if (!g_strcasecmp (type, "top")) {
+		n = 0;
+	}
+	else if (!g_strcasecmp (type, "right")) {
+		n = 1;
+	}
+	else if (!g_strcasecmp (type, "bottom")) {
+		n = 2;
+	}
+	else if (!g_strcasecmp (type, "left")) {
+		n = 3;
+	}
+	else
+		return;
+
+
+	ti = g_new0 (ThemeImage, 1);
+	ti->id = 0;
+	ti->file = g_strdup(file_name);
+	ti->name = g_strdup("arrow");
+	ti->loading_failed = FALSE;
+	ti->image = NULL;
+
+	theme->priv->selector_arrows[n] = ti;	
+}
+
 
 #if 0
 void

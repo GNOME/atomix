@@ -39,11 +39,17 @@ typedef struct {
 } AnimData;
 
 typedef struct {
-	guint             row;
-	guint             col;
-	gboolean          selected;
-	GnomeCanvasItem   *sel_item;
-	GnomeCanvasItem   *item;
+	guint                row;
+	guint                col;
+	gboolean             selected;
+	gint                 arrow_show_timeout;
+	GnomeCanvasItem      *sel_item;
+	GnomeCanvasItem      *selector;
+	GnomeCanvasGroup     *arrows;
+	GnomeCanvasItem      *arrow_left;
+	GnomeCanvasItem      *arrow_right;
+	GnomeCanvasItem      *arrow_top;
+	GnomeCanvasItem      *arrow_bottom;
 } SelectorData;
 
 typedef struct  {
@@ -57,7 +63,6 @@ typedef struct {
 	GnomeCanvasGroup *level;
 	GnomeCanvasGroup *obstacles;
 	GnomeCanvasGroup *moveables;
-	GnomeCanvasGroup *selector;
 	GnomeCanvasGroup *floor;    
 } LevelItems;
 
@@ -114,7 +119,10 @@ int move_item_anim (void *data);
 static void selector_move_to (SelectorData *data, guint row, guint col);
 static void selector_unselect (SelectorData *data);
 static void selector_select (SelectorData *data, GnomeCanvasItem *item);
-static SelectorData* selector_new (void);
+static SelectorData* selector_create (void);
+static void selector_destroy (SelectorData *data);
+static void selector_hide (SelectorData *data);
+static void selector_arrows_hide (SelectorData *data);
 
 /*=================================================================
  
@@ -150,7 +158,6 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 	level_items->obstacles = create_group (canvas, level_items->level);
 	level_items->floor     = create_group (canvas, level_items->level);
 	level_items->moveables = create_group (canvas, level_items->level);
-	level_items->selector  = create_group (canvas, level_items->level);
 	
 	/* create canvas group and items for the messages */
 	message_items = g_malloc(sizeof(MessageItems));
@@ -172,7 +179,7 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 	board_env = NULL;
 	board_sce = NULL;
 	board_goal = NULL;
-	selector_data = NULL;
+	selector_data = selector_create ();
 
 	set_background_color  (GTK_WIDGET (canvas), theme_get_background_color (theme));
 	gnome_canvas_item_show(message_items->new_game);	
@@ -181,6 +188,8 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 void
 board_init_level (PlayField *env, PlayField *sce, Goal *goal)
 {
+	gint row, col;
+
 	/* init item anim structure */
 	anim_data->timeout_id = -1;
 	anim_data->counter = 0;
@@ -202,11 +211,11 @@ board_init_level (PlayField *env, PlayField *sce, Goal *goal)
 	/* hide 'New Game' message */
 	gnome_canvas_item_hide (message_items->new_game);
 
-	/* initialise control */
-	if (selector_data == NULL)
-		selector_data = selector_new();
 
-	board_set_keyboard_control ();
+	row = playfield_get_n_rows (board_env)/2;
+	col = playfield_get_n_cols (board_env)/2;
+	selector_move_to (selector_data, row, col);
+	selector_unselect (selector_data);
 	
 	/* render level */
 	board_render ();
@@ -238,8 +247,7 @@ board_destroy()
 	}
 	
 	if(selector_data)
-		g_free (selector_data);
-	selector_data = NULL;
+		selector_destroy (selector_data);
 
 	if (board_theme)
 		g_object_unref (board_theme);
@@ -371,6 +379,7 @@ board_undo_move ()
 			     move->dest_col);
 	if(selector_data->selected)
 	{
+		selector_hide (selector_data);
 		selector_move_to (selector_data, move->src_row, 
 				  move->src_col);
 	}
@@ -438,11 +447,7 @@ board_clear()
 		board_sce = NULL;
 	}
 
-	if(selector_data)
-	{
-		g_free(selector_data);
-		selector_data = NULL;
-	}
+	selector_hide (selector_data);
 }
 
 void
@@ -513,15 +518,6 @@ board_show(void)
   Board atom handling functions
 
   ---------------------------------------------------------------*/
-void board_set_keyboard_control(void)
-{
-	gint row, col;
-	gnome_canvas_item_show (selector_data->item);
-	row = playfield_get_n_rows (board_env)/2;
-	col = playfield_get_n_cols (board_env)/2;
-	selector_move_to (selector_data, row, col);
-	gnome_canvas_item_show (GNOME_CANVAS_ITEM(level_items->selector));
-}
 
 static GnomeCanvasItem*
 get_item_by_row_col (gint row, gint col)
@@ -690,6 +686,7 @@ move_item (GnomeCanvasItem* item, ItemDirection direc)
 		convert_to_canvas (board_theme, dest_row, dest_col, &new_x1, &new_y1);
 		playfield_swap_tiles (board_sce, src_row, src_col, dest_row, dest_col);
 
+		selector_hide (selector_data);
 		selector_move_to (selector_data, dest_row, dest_col);
 		
 		animstep = theme_get_animstep (board_theme);
@@ -734,6 +731,9 @@ move_item_anim (void *data)
 		{
 			game_level_finished (NULL);
 		}
+		else
+			selector_select (selector_data, selector_data->sel_item);
+
 		return FALSE;
 	}
 }
@@ -749,13 +749,22 @@ selector_move_to (SelectorData *data, guint row, guint col)
 {
 	gdouble src_x, src_y;
 	gdouble dest_x, dest_y;
+	gint tile_width, tile_height;
 	
 	g_return_if_fail (data != NULL);
 
+	if (data->arrow_show_timeout > -1)
+		gtk_timeout_remove (data->arrow_show_timeout);
+	data->arrow_show_timeout = -1;
+
+	theme_get_tile_size (board_theme, &tile_width, &tile_height);
 	convert_to_canvas (board_theme, data->row, data->col, &src_x, &src_y);
 	convert_to_canvas (board_theme, row, col, &dest_x, &dest_y);
-	
-	gnome_canvas_item_move (data->item, dest_x - src_x, dest_y - src_y);
+
+	gnome_canvas_item_move (data->selector, dest_x - src_x, dest_y - src_y);	
+	gnome_canvas_item_move (GNOME_CANVAS_ITEM (data->arrows),
+				dest_x - src_x, dest_y - src_y);
+
 	data->row = row;
 	data->col = col;
 }
@@ -767,8 +776,101 @@ selector_unselect (SelectorData *data)
 
 	data->selected = FALSE;
 	data->sel_item = NULL;
-	gnome_canvas_item_show (data->item);
-	
+	gnome_canvas_item_show (data->selector);
+	selector_arrows_hide (data);
+}
+
+static void
+selector_arrows_hide (SelectorData *data)
+{
+	if (data->arrow_show_timeout > -1)
+		gtk_timeout_remove (data->arrow_show_timeout);
+	data->arrow_show_timeout = -1;
+	gnome_canvas_item_hide (GNOME_CANVAS_ITEM (data->arrows));
+}
+
+static void
+selector_hide (SelectorData *data)
+{
+	gnome_canvas_item_hide (data->selector);
+	selector_arrows_hide (data);
+}
+
+static gboolean
+show_arrow_group (SelectorData *data)
+{
+	gnome_canvas_item_show (GNOME_CANVAS_ITEM (data->arrows));
+	data->arrow_show_timeout = -1;
+	return FALSE;
+}
+
+static void
+selector_arrows_show (SelectorData *data)
+{
+	gint r, c;
+	Tile *tile;
+
+	if (board_sce == NULL) {
+		gnome_canvas_item_hide (GNOME_CANVAS_ITEM (data->arrows));
+		return;
+	}
+
+	r = data->row - 1;
+	c = data->col;
+	if (r >= 0) {
+		tile = playfield_get_tile (board_sce, r, c);
+		if (tile == NULL)
+			gnome_canvas_item_show (data->arrow_top);
+		else {
+			gnome_canvas_item_hide (data->arrow_top);
+			g_object_unref (tile);
+		}
+	}
+
+	r = data->row;
+	c = data->col + 1;
+	if (c < playfield_get_n_cols (board_sce)) {
+		tile = playfield_get_tile (board_sce, r, c);
+		if (tile == NULL)
+			gnome_canvas_item_show (data->arrow_right);
+		else {
+			gnome_canvas_item_hide (data->arrow_right);
+			g_object_unref (tile);
+		}
+	}
+
+	r = data->row + 1;
+	c = data->col;
+	if (r < playfield_get_n_rows (board_sce)) {
+		tile = playfield_get_tile (board_sce, r, c);
+		if (tile == NULL)
+			gnome_canvas_item_show (data->arrow_bottom);
+		else {
+			gnome_canvas_item_hide (data->arrow_bottom);
+			g_object_unref (tile);
+		}
+	}
+
+	r = data->row;
+	c = data->col - 1;
+	if (c >= 0) {
+		tile = playfield_get_tile (board_sce, r, c);
+		if (tile == NULL)
+			gnome_canvas_item_show (data->arrow_left);
+		else {
+			gnome_canvas_item_hide (data->arrow_left);
+			g_object_unref (tile);
+		}
+	}
+
+
+
+	if (data->arrow_show_timeout > -1)
+		gtk_timeout_remove (data->arrow_show_timeout);
+
+	data->arrow_show_timeout = gtk_timeout_add (800, 
+						    (GtkFunction) show_arrow_group,
+						    data);
 }
 
 static void 
@@ -778,41 +880,102 @@ selector_select (SelectorData *data, GnomeCanvasItem *item)
 
 	data->selected = TRUE;
 	data->sel_item = item;
-	gnome_canvas_item_hide (data->item);
+
+	gnome_canvas_item_hide (data->selector);
+	selector_arrows_show (data);
+}
+
+static void
+selector_destroy (SelectorData *data)
+{
+	if (data->selector) 
+		gtk_object_destroy (GTK_OBJECT (data->selector));
+	
+	if (data->arrows)
+		gtk_object_destroy (GTK_OBJECT (data->arrows));
+
+	g_free (data);
 }
 
 static SelectorData* 
-selector_new (void)
+selector_create (void)
 {
 	SelectorData *data;
 	GdkPixbuf *pixbuf;
-	gdouble x,y;
+	GdkPixbuf *sel_arrows[4];
+	gint tile_width, tile_height;
 	
 	data = g_new0 (SelectorData, 1);	
 
 	pixbuf = theme_get_selector_image (board_theme);
+	theme_get_selector_arrow_images (board_theme, &sel_arrows[0]);
+	theme_get_tile_size (board_theme, &tile_width, &tile_height);
+
 	g_return_val_if_fail(pixbuf != NULL, NULL);
 
-	data->row = playfield_get_n_rows (board_env)/2;
-	data->col = playfield_get_n_cols (board_env)/2;
+	data->row = 0;
+	data->col = 0;
 	data->sel_item = NULL;
 	data->selected = FALSE;
+	data->arrow_show_timeout = -1;
 
-	convert_to_canvas (board_theme, data->row, data->col, &x, &y);
+	data->selector = gnome_canvas_item_new(gnome_canvas_root (board_canvas),
+					       gnome_canvas_pixbuf_get_type(),
+					       "pixbuf", pixbuf,
+					       "x", 0.0,
+					       "x_in_pixels", TRUE,
+					       "y", 0.0,
+					       "y_in_pixels", TRUE,
+					       "width", (double) gdk_pixbuf_get_width (pixbuf),
+					       "height", (double) gdk_pixbuf_get_height (pixbuf),
+					       "anchor", GTK_ANCHOR_NW,
+					       NULL);
+	data->arrows = GNOME_CANVAS_GROUP (
+		gnome_canvas_item_new (gnome_canvas_root (board_canvas),
+				       gnome_canvas_group_get_type (), 
+				       "x", (double) -tile_width,
+				       "y", (double) -tile_height,
+				       NULL));
 
-	data->item = gnome_canvas_item_new(level_items->selector,
-					   gnome_canvas_pixbuf_get_type(),
-					   "pixbuf", pixbuf,
-					   "x", x,
-					   "x_in_pixels", TRUE,
-					   "y", y,
-					   "y_in_pixels", TRUE,
-					   "width", (double) gdk_pixbuf_get_width (pixbuf),
-					   "height", (double) gdk_pixbuf_get_height (pixbuf),
-					   "anchor", GTK_ANCHOR_NW,
-					   NULL);                              
-        board_canvas_items = g_slist_prepend (board_canvas_items, data->item);
-	gnome_canvas_item_hide(data->item);
+	data->arrow_top = gnome_canvas_item_new (GNOME_CANVAS_GROUP (data->arrows),
+						 gnome_canvas_pixbuf_get_type(),
+						 "pixbuf", sel_arrows[0],
+						 "x", (double) 1 * tile_width,
+						 "x_in_pixels", TRUE,
+						 "y", (double) 0 * tile_height,
+						 "y_in_pixels", TRUE,
+						 "anchor", GTK_ANCHOR_NW,
+						 NULL);	
+	data->arrow_right = gnome_canvas_item_new (GNOME_CANVAS_GROUP (data->arrows),
+						   gnome_canvas_pixbuf_get_type(),
+						   "pixbuf", sel_arrows[1],
+						   "x", (double) 2 * tile_width,
+						   "x_in_pixels", TRUE,
+						   "y", (double) 1 * tile_height,
+						   "y_in_pixels", TRUE,
+						   "anchor", GTK_ANCHOR_NW,
+						   NULL);	
+	data->arrow_bottom = gnome_canvas_item_new (GNOME_CANVAS_GROUP (data->arrows),
+						    gnome_canvas_pixbuf_get_type(),
+						    "pixbuf", sel_arrows[2],
+						    "x", (double) 1 * tile_width,
+						    "x_in_pixels", TRUE,
+						    "y", (double) 2 * tile_height,
+						    "y_in_pixels", TRUE,
+						    "anchor", GTK_ANCHOR_NW,
+						    NULL);	
+	data->arrow_left = gnome_canvas_item_new (GNOME_CANVAS_GROUP (data->arrows),
+						  gnome_canvas_pixbuf_get_type(),
+						  "pixbuf", sel_arrows[3],
+						  "x", (double) 0 * tile_width,
+						  "x_in_pixels", TRUE,
+						  "y", (double) 1 * tile_height,
+						  "y_in_pixels", TRUE,
+						  "anchor", GTK_ANCHOR_NW,
+						  NULL);	
+	
+	gnome_canvas_item_hide (GNOME_CANVAS_ITEM (data->selector));
+	gnome_canvas_item_hide (GNOME_CANVAS_ITEM (data->arrows));
 
 	return data;
 }
@@ -821,7 +984,7 @@ selector_new (void)
 /*=================================================================
  
   Internal creation functions
-
+s
   ---------------------------------------------------------------*/
 
 GnomeCanvasItem*

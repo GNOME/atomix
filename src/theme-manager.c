@@ -33,6 +33,7 @@ static void add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath);
 static void add_theme_to_list (gchar* key, gpointer value, GList **list);
 static Theme* load_theme (gchar *theme_dir);
 static void handle_tile_type_node (Theme *theme, xmlNodePtr node, TileType type);
+static void handle_selector_node (Theme *theme, xmlNodePtr node);
 static gchar* lookup_theme_name (gchar *theme_file);
 
 static void theme_manager_class_init (GObjectClass *class);
@@ -199,8 +200,8 @@ add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath)
 	if(search_result == NULL)
 	{
 		g_hash_table_insert(tm->priv->themes,
-				    g_strdup(themename),
-				    g_strdup(dirpath));
+				    g_strdup (themename),
+				    g_strdup (dirpath));
 		
 		g_message ("Found theme: %s", themename);
 	}
@@ -248,7 +249,6 @@ theme_manager_get_theme (ThemeManager *tm, const gchar *theme_name)
 	if (theme_dir == NULL) return NULL;
 		
 	theme = load_theme (theme_dir);
-	g_free (theme_dir);
 
 	return theme;
 }
@@ -332,9 +332,7 @@ load_theme (gchar *theme_dir)
 			}
 			else if (!g_strcasecmp(node->name,"selector"))
 			{
-				gchar *src;
-				src = g_build_filename (theme_dir, xmlGetProp(node, "src"), NULL);
-				theme_set_selector_image(theme, src);
+				handle_selector_node (theme, node->xmlChildrenNode);
 			}
 			else if (!g_strcasecmp (node->name, "text")) {
 			}
@@ -350,6 +348,33 @@ load_theme (gchar *theme_dir)
 	xmlFreeDoc(doc);
 
 	return theme;
+}
+
+static void
+handle_selector_node (Theme *theme, xmlNodePtr node)
+{
+	gchar *src;
+	gchar *arrow_type;
+
+	for (; node != NULL; node = node->next) {
+		if (!g_strcasecmp (node->name, "base")) {
+			src = g_build_filename (theme->priv->path, 
+						xmlGetProp (node, "src"), NULL);
+		
+			theme_set_selector_image (theme, src);
+			g_free (src);
+		}
+		else if (!g_strcasecmp (node->name, "arrow")) {
+			arrow_type = xmlGetProp (node, "type");
+			src = g_build_filename (theme->priv->path,
+						xmlGetProp (node, "src"), NULL);
+			theme_set_selector_arrow_image (theme, arrow_type, src);
+		}
+		else if (!g_strcasecmp (node->name, "text")) {
+		}
+		else
+			g_warning("Unknown theme tag, ignoring <%s>.", node->name);
+	}
 }
 
 static void

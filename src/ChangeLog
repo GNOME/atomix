@@ -1,3 +1,37 @@
+2001-11-30  Jens Finke <jens@triq.net>
+
+	* board.c (board_init): Create selector only once here not for
+	every level initialization.
+	(board_init_level): Place selector in the middle of the playfield.
+	(board_destroy): Call selector_destroy.
+	(board_undo_move): Hide selector during move.
+	(board_clear): Just hide the selector, don't destroy it.
+	(board_set_keyboard_control): Removed function.
+	(move_item): Hide selector during atom move.
+	(move_item_anim): Update status of selector after moving.
+	(selector_move_to): Move the selector arrows too.
+	(selector_unselect): Hide selector arrows.
+	(selector_arrows_hide),
+	(selector_hide),
+	(show_arrow_group),
+	(selector_arrows_show),
+	(selector_destroy): New functions. Indicate possible atom
+	directions through arrows.
+	(selector_select): Show arrows.
+	(selector_create): Create arrow canvas items too.
+
+	* board.h (board_set_mouse_control), (board_set_keyboard_control):
+	Removed declarations.
+
+	* theme-manager.c (handle_selector_node): New function.
+	(theme_manager_get_theme): Don't free theme_dir variable.
+	(load_theme): Call handle_selector_node on 'selector' node.
+
+	* theme-private.h (theme_set_selector_arrow_image): New declaration.
+
+	* theme.[ch] (theme_get_selector_arrow_images): New function.
+	(theme_set_selector_arrow_image): New function.
+
 2001-11-28  Jens Finke <jens@triq.net>
 
 	* main.c (create_gui): Use new bonobo_ui_util_set_ui

@@ -46,6 +46,7 @@ struct _ThemePrivate
 	gint          base_last_id [TILE_TYPE_LAST];
 	gint          sub_last_id [2][TILE_TYPE_LAST];
 	ThemeImage    *selector;                   /* selector image */
+	ThemeImage    *selector_arrows[4];         /* selector arrow images */
 		
 };
 
@@ -78,5 +79,6 @@ void theme_add_base_image_with_id (Theme *theme,
 				   guint id);
 
 void theme_set_selector_image (Theme *theme, const gchar *file_name);
+void theme_set_selector_arrow_image (Theme *theme, const gchar *type, const gchar *file_name);
 
 #endif /* _ATOMIX_THEME_PRIVATE_H_ */
