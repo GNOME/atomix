@@ -282,7 +282,9 @@ add_level (LevelManager *lm, gchar *levelname, gchar *filename)
 				    g_strdup (levelname),
 				    g_strdup (filename));
 		
+#ifdef DEBUG
 		g_message (_("Found level '%s' in: %s"), levelname, filename);
+#endif
 	}
 }
 

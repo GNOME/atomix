@@ -107,9 +107,11 @@ goal_finalize (GObject *object)
 	GSList *pos_it;
 	TileData *td;
 	Goal* goal = GOAL (object);
-	
-	g_message ("Finalize Goal");
 
+#ifdef DEBUG
+	g_message ("Finalize Goal");
+#endif
+	
 	if (goal->priv->pf)
 		g_object_unref (goal->priv->pf);
 

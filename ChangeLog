@@ -1,3 +1,20 @@
+2002-04-29  Jens Finke  <jens@triq.net>
+
+	* src/Makefile.am (INCLUDES): Removed -DDEBUG flag.
+
+	* src/goal-view.c (create_small_item): Use g_object_unref to free
+	pixbuf.
+	
+	* src/tile.c:
+	* src/level-convert.c: s/g_strcasecmp/g_ascii_strcasecmp
+
+	* src/goal.c (goal_finalize):
+	* src/level_manager.c (add_level):
+	* src/playfield.c (playfield_finalize):
+	* src/theme-manager.c (add_theme): 
+	* src/theme.c (theme_finalize), 
+	(create_sub_images): Guard debug messages with #ifdef DEBUG.
+
 2002-04-26  Jens Finke  <jens@triq.net>
 
 	* acconfig.h,

@@ -125,7 +125,7 @@ old_level_load_xml_file (gchar *file_path)
 	
 	while(node!=NULL)
 	{
-		if(g_strcasecmp(node->name,"LEVEL")==0)
+		if(g_ascii_strcasecmp(node->name,"LEVEL")==0)
 		{
 			/* handle level node */
 			prop_value = xmlGetProp (node, "name");
@@ -134,27 +134,27 @@ old_level_load_xml_file (gchar *file_path)
 		}			
 		else 
 		{
-			if(g_strcasecmp(node->name, "REVISION")==0)
+			if(g_ascii_strcasecmp(node->name, "REVISION")==0)
 			{
 				/* handle revision number */
 				gchar *content = xmlNodeGetContent(node);
 				revision = atoi(content);
 				g_free(content);
 			}
-			else if (!g_strcasecmp (node->name,"TIME"))
+			else if (!g_ascii_strcasecmp (node->name,"TIME"))
 			{
 				/* deprecated tag, overread it */
 			}
-			else if(!g_strcasecmp (node->name,"THEME"))
+			else if(!g_ascii_strcasecmp (node->name,"THEME"))
 			{
 				/* deprecated tag, overread it */
 			}
-			else if(!g_strcasecmp (node->name,"NEXT"))
+			else if(!g_ascii_strcasecmp (node->name,"NEXT"))
 			{
 				/* deprecated tag, overread it */
 			}
 			
-			else if(!g_strcasecmp (node->name,"PLAYFIELD"))
+			else if(!g_ascii_strcasecmp (node->name,"PLAYFIELD"))
 			{
 				/* handle playfield node */
 				level->priv->environment = 
@@ -163,22 +163,22 @@ old_level_load_xml_file (gchar *file_path)
 					old_playfield_load_xml (node, revision, FALSE);
 			}
 			
-			else if(!g_strcasecmp(node->name,"GOAL"))
+			else if(!g_ascii_strcasecmp(node->name,"GOAL"))
 			{
 				/* handle goal node */
 				level->priv->goal = 
 					old_playfield_load_xml (node, revision, FALSE);
 			}
 			
-			else if(!g_strcasecmp(node->name, "FIRST_LEVEL"))
+			else if(!g_ascii_strcasecmp(node->name, "FIRST_LEVEL"))
 			{
 				/* deprecated tag, overread it */
 			}
-			else if(g_strcasecmp(node->name, "BONUS_LEVEL")==0)
+			else if(g_ascii_strcasecmp(node->name, "BONUS_LEVEL")==0)
 			{
 				/* deprecated tag, overread it */
 			}
-			else if (!g_strcasecmp (node->name, "text")) {
+			else if (!g_ascii_strcasecmp (node->name, "text")) {
 			}
 			else
 			{
@@ -223,7 +223,7 @@ old_playfield_load_xml (xmlNodePtr pf_node, gint revision, gboolean is_env)
 	tile_node = pf_node->xmlChildrenNode;
 	while(tile_node)
 	{
-		if(g_strcasecmp(tile_node->name, "TILE")==0)
+		if(g_ascii_strcasecmp(tile_node->name, "TILE")==0)
 		{
 			prop_value = xmlGetProp(tile_node, "row");
 			row = atoi(prop_value);
@@ -238,7 +238,7 @@ old_playfield_load_xml (xmlNodePtr pf_node, gint revision, gboolean is_env)
 				playfield_set_tile (pf, row, col, tile);
 			g_object_unref (tile);
 		}
-		else if (!g_strcasecmp (tile_node->name, "text")) {
+		else if (!g_ascii_strcasecmp (tile_node->name, "text")) {
 		}
 		else
 		{
@@ -266,7 +266,7 @@ old_tile_load_xml (xmlNodePtr node, gint revision)
 	
 	while(child)
 	{
-		if(g_strcasecmp(child->name, "TYPE")==0)
+		if(g_ascii_strcasecmp(child->name, "TYPE")==0)
 		{
 			int otype;
 
@@ -290,7 +290,7 @@ old_tile_load_xml (xmlNodePtr node, gint revision)
 			g_free(content);
 		}
 			
-		else if(g_strcasecmp(child->name,"IMG_ID")==0)
+		else if(g_ascii_strcasecmp(child->name,"IMG_ID")==0)
 		{
 			/* handle img id node */
 			g_assert (tile != NULL);
@@ -306,7 +306,7 @@ old_tile_load_xml (xmlNodePtr node, gint revision)
 			g_free(content);
 		}
 		
-		else if(g_strcasecmp(child->name,"CONN_ID")==0)
+		else if(g_ascii_strcasecmp(child->name,"CONN_ID")==0)
 		{
 			g_assert (tile != NULL);
 
@@ -317,7 +317,7 @@ old_tile_load_xml (xmlNodePtr node, gint revision)
 					 TILE_SUB_UNDERLAY);
 			g_free(content);
 		}
-		else if (!g_strcasecmp (child->name, "text")) {
+		else if (!g_ascii_strcasecmp (child->name, "text")) {
 		}
 		else
 		{

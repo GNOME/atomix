@@ -4,7 +4,6 @@ uidir = $(datadir)/gnome-2.0/ui
 
 INCLUDES = -Wall \
 	-I$(top_srcdir) \
-	-DDEBUG \
 	$(ATOMIX_CFLAGS) \
 	$(EXTRA_WARNING_CFLAGS) \
 	-DDATADIR=\""$(datadir)"\" \

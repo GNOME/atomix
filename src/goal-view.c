@@ -147,7 +147,7 @@ create_small_item (GnomeCanvasGroup *group, gdouble x, gdouble y, Tile* tile)
 				     (gdouble)(gdk_pixbuf_get_height(small_pb)),
 				     "anchor", GTK_ANCHOR_NW,
 				     NULL);            
-	gdk_pixbuf_unref (pixbuf);
+	g_object_unref (pixbuf);
 	
 	return GNOME_CANVAS_ITEM(item);
 }

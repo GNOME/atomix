@@ -337,11 +337,11 @@ string_to_tile_type (gchar *str)
 
 	str += prefix_len;
 	
-	if (!g_strcasecmp (str, "FLOOR"))
+	if (!g_ascii_strcasecmp (str, "FLOOR"))
 		tile_type = TILE_TYPE_FLOOR;
-	else if (!g_strcasecmp (str, "WALL"))
+	else if (!g_ascii_strcasecmp (str, "WALL"))
 		tile_type = TILE_TYPE_WALL;
-	else if (!g_strcasecmp (str, "ATOM"))
+	else if (!g_ascii_strcasecmp (str, "ATOM"))
 		tile_type = TILE_TYPE_ATOM;
 	else 
 		tile_type = TILE_TYPE_UNKNOWN;
@@ -360,42 +360,42 @@ tile_new_from_xml (xmlNodePtr node)
 	gchar *content;
 
 	g_return_val_if_fail (node != NULL, NULL);
-	g_return_val_if_fail (!g_strcasecmp (node->name, "tile"), NULL);
+	g_return_val_if_fail (!g_ascii_strcasecmp (node->name, "tile"), NULL);
 
 	tile = NULL; 
 
 	for (child = node->xmlChildrenNode; 
 	     child != NULL; child = child->next) 
 	{
-		if(!g_strcasecmp(child->name, "type"))
+		if(!g_ascii_strcasecmp(child->name, "type"))
 		{
 			g_assert (tile == NULL);
 			content = xmlNodeGetContent(child);
 			type = string_to_tile_type (content);
 			tile = tile_new (type);
 		}
-		else if(!g_strcasecmp(child->name,"base"))
+		else if(!g_ascii_strcasecmp(child->name,"base"))
 		{
 			g_assert (tile != NULL);
 			content = xmlNodeGetContent (child);
 			base_id = g_quark_from_string (content);
 			tile_set_base_id (tile, base_id);
 		}
-		else if(!g_strcasecmp(child->name,"underlay"))
+		else if(!g_ascii_strcasecmp(child->name,"underlay"))
 		{
 			g_assert (tile != NULL);
 			content = xmlNodeGetContent (child);
 			sub_id = g_quark_from_string (content);
 			tile_add_sub_id (tile, sub_id, TILE_SUB_UNDERLAY);
 		}
-		else if(!g_strcasecmp(child->name,"overlay"))
+		else if(!g_ascii_strcasecmp(child->name,"overlay"))
 		{
 			g_assert (tile != NULL);
 			content = xmlNodeGetContent (child);
 			base_id = g_quark_from_string (content);
 			tile_add_sub_id (tile, base_id, TILE_SUB_OVERLAY);
 		}
-		else if (!g_strcasecmp (child->name, "text")) {
+		else if (!g_ascii_strcasecmp (child->name, "text")) {
 		}
 		else
 		{

@@ -103,7 +103,9 @@ theme_finalize (GObject *object)
 	
 	g_return_if_fail (theme != NULL);
 
+#ifdef DEBUG
 	g_message ("Finalize theme");
+#endif
 	priv = theme->priv;
 
 	if (priv->name)
@@ -234,8 +236,10 @@ create_sub_images (Theme *theme, Tile *tile, TileSubType sub_type)
 		
 		pb = get_theme_image_pixbuf (ti);
 		if (pb == NULL) {
+#ifdef DEBUG
 			g_warning ("Couldn't load sub image: %s", 
 				   g_quark_to_string ((GQuark) elem->data));
+#endif
 			continue;
 		}
 		

@@ -87,7 +87,9 @@ playfield_finalize (GObject *object)
 	gint row, col;
 	PlayField* pf = PLAYFIELD (object);
 
+#ifdef DEBUG
 	g_message ("Finalize Playfield.");
+#endif
 
 	for (row = 0; row < pf->priv->n_rows; row++) 
 		for (col = 0; col < pf->priv->n_cols; col++) {
