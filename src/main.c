@@ -146,8 +146,8 @@ verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname
 
 	dlg = gnome_about_new ("Atomix",
 			       VERSION,
-			       "1999-2002 Jens Finke",
-			       "A mind game about atoms and molecules.",
+			       _("Copyright (C) 1999-2002 Jens Finke"),
+			       _("A mind game about atoms and molecules."),
 			       authors,
 			       documenters,
 			       NULL,
