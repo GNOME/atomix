@@ -322,6 +322,7 @@ game_prepare_level (AtomixApp *app, Level *next_level)
 
 	/* init board */
 	board_clear ();
+	goal_view_clear ();
 	env_pf = level_get_environment (app->level);
 	sce_pf = level_get_scenario (app->level);
 	board_init_level (env_pf, sce_pf, app->goal);
@@ -505,6 +506,7 @@ game_clean_up (AtomixApp *app)
 	app->level = NULL;
 
 	board_clear ();
+	goal_view_clear ();
 }
 
 static void 

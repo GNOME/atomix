@@ -27,7 +27,6 @@ static GnomeCanvasGroup*  item_group;
 
 static GnomeCanvasItem* create_small_item (GnomeCanvasGroup *group, gdouble x, gdouble y, Tile* tile);
 static void render_view (Goal *goal);
-static void clear_view (void);
 
 void 
 goal_view_init (Theme *theme, GnomeCanvas *canvas)
@@ -45,7 +44,7 @@ goal_view_init (Theme *theme, GnomeCanvas *canvas)
 void
 goal_view_render (Goal* goal)
 {
-	clear_view ();
+	goal_view_clear ();
 
 	if (goal != NULL)
 		render_view (goal);
@@ -111,8 +110,8 @@ render_view (Goal *goal)
 	g_object_unref (pf);
 }
 
-static void
-clear_view ()
+void
+goal_view_clear ()
 {
 	if (item_group)
 		gtk_object_destroy (GTK_OBJECT(item_group));
