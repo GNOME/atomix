@@ -199,7 +199,7 @@ get_theme_image_pixbuf (ThemeImage *ti)
 					      gdk_pixbuf_get_width (pixbuf),
 					      gdk_pixbuf_get_height (pixbuf),
 					      0.0, 0.0, 1.0, 1.0,
-					      GDK_INTERP_BILINEAR, ti->alpha);
+					      GDK_INTERP_NEAREST, ti->alpha);
 			gdk_pixbuf_unref (ti->image);
 			ti->image = pixbuf;
 		}
@@ -249,7 +249,7 @@ create_sub_images (Theme *theme, Tile *tile, TileSubType sub_type)
 					      gdk_pixbuf_get_width (pixbuf),
 					      gdk_pixbuf_get_height (pixbuf),
 					      0.0, 0.0, 1.0, 1.0,
-					      GDK_INTERP_BILINEAR, 255);
+					      GDK_INTERP_NEAREST, 255);
 		}
 		gdk_pixbuf_unref (pb);
 	}
@@ -319,14 +319,14 @@ theme_get_tile_image (Theme* theme, Tile *tile)
 				      gdk_pixbuf_get_width (result),
 				      gdk_pixbuf_get_height (result),
 				      0.0, 0.0, 1.0, 1.0,
-				      GDK_INTERP_BILINEAR, 255);
+				      GDK_INTERP_NEAREST, 255);
 		gdk_pixbuf_composite (overlay_pb,
 				      result,
 				      0, 0,
 				      gdk_pixbuf_get_width (result),
 				      gdk_pixbuf_get_height (result),
 				      0.0, 0.0, 1.0, 1.0,
-				      GDK_INTERP_BILINEAR, 255);	
+				      GDK_INTERP_NEAREST, 255);	
 		gdk_pixbuf_unref (overlay_pb);
 		gdk_pixbuf_unref (underlay_pb);
 	}
@@ -338,7 +338,7 @@ theme_get_tile_image (Theme* theme, Tile *tile)
 				      gdk_pixbuf_get_width (result),
 				      gdk_pixbuf_get_height (result),
 				      0.0, 0.0, 1.0, 1.0,
-				      GDK_INTERP_BILINEAR, 255);	
+				      GDK_INTERP_NEAREST, 255);	
 		gdk_pixbuf_unref (overlay_pb);
 	}
 	else if (underlay_pb && !overlay_pb) {
@@ -349,7 +349,7 @@ theme_get_tile_image (Theme* theme, Tile *tile)
 				      gdk_pixbuf_get_width (result),
 				      gdk_pixbuf_get_height (result),
 				      0.0, 0.0, 1.0, 1.0,
-				      GDK_INTERP_BILINEAR, 255);	
+				      GDK_INTERP_NEAREST, 255);	
 		gdk_pixbuf_unref (underlay_pb);
 	}
 	else

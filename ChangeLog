@@ -1,3 +1,8 @@
+2002-02-11  Jens Finke <jens@triq.net>
+
+	* src/theme.c: s/GDK_INTERP_BILINEAR/GDK_INTERP_LINEAR needed to
+	make the alpha handling working again (!?).
+
 2002-01-24  Jens Finke <jens@triq.net>
 
 	* src/Makefile.am (pf_test_SOURCES), (level_convert_SOURCES): Both
