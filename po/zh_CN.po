@@ -6,203 +6,203 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-01-21 21:35+0800\n"
+"POT-Creation-Date: 2002-01-29 22:45+0800\n"
 "PO-Revision-Date: 2002-01-21 14:06+0800\n"
 "Last-Translator: Wang Li <charlesw1234@163.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=gb2312\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/atomix-ui.xml.in.h:1
 msgid "Continue paused game"
-msgstr "¼ÌĞøÔİÍ£µÄÓÎÏ·"
+msgstr "ç»§ç»­æš‚åœçš„æ¸¸æˆ"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
-msgstr "ÍË³ö(_X)"
+msgstr "é€€å‡º(_X)"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
-msgstr "ÖÕÖ¹ÓÎÏ·"
+msgstr "ç»ˆæ­¢æ¸¸æˆ"
 
 #: src/atomix-ui.xml.in.h:4
 msgid "Exit game"
-msgstr "ÍË³öÓÎÏ·"
+msgstr "é€€å‡ºæ¸¸æˆ"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr "ÔİÍ£½øĞĞÖĞµÄÓÎÏ·"
+msgstr "æš‚åœè¿›è¡Œä¸­çš„æ¸¸æˆ"
 
 #: src/atomix-ui.xml.in.h:6
 msgid "Reset level"
-msgstr "ÖØÖÃ±¾¼¶±ğ"
+msgstr "é‡ç½®æœ¬çº§åˆ«"
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr "»Øµ½ÆğÊ¼Î»ÖÃ"
+msgstr "å›åˆ°èµ·å§‹ä½ç½®"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
-msgstr "Éè¶¨Ê×Ñ¡Ïî"
+msgstr "è®¾å®šé¦–é€‰é¡¹"
 
 #: src/atomix-ui.xml.in.h:9
 msgid "Skip _level"
-msgstr "Ìø¼¶(_L)"
+msgstr "è·³çº§(_L)"
 
 #: src/atomix-ui.xml.in.h:10
 msgid "Skip the current level"
-msgstr "Ìø¹ıµ±Ç°¼¶±ğ"
+msgstr "è·³è¿‡å½“å‰çº§åˆ«"
 
 #: src/atomix-ui.xml.in.h:11
 msgid "Start a new game"
-msgstr "¿ªÊ¼ĞÂÓÎÏ·"
+msgstr "å¼€å§‹æ–°æ¸¸æˆ"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
-msgstr "³·Ïû×îºóÒ»×Å"
+msgstr "æ’¤æ¶ˆæœ€åä¸€ç€"
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr "²é¿´ÓÎÏ·ËùÓĞÕß"
+msgstr "æŸ¥çœ‹æ¸¸æˆæ‰€æœ‰è€…"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr "²é¿´»ı·ÖÅÅĞĞ°ñ"
+msgstr "æŸ¥çœ‹ç§¯åˆ†æ’è¡Œæ¦œ"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
-msgstr "¹ØÓÚ(_A)"
+msgstr "å…³äº(_A)"
 
 #: src/atomix-ui.xml.in.h:16
 msgid "_Continue game"
-msgstr "¼ÌĞøÓÎÏ·(_C)"
+msgstr "ç»§ç»­æ¸¸æˆ(_C)"
 
 #: src/atomix-ui.xml.in.h:17
 msgid "_Edit"
-msgstr "±à¼­(_E)"
+msgstr "ç¼–è¾‘(_E)"
 
 #: src/atomix-ui.xml.in.h:18
 msgid "_End Game"
-msgstr "ÖÕÖ¹ÓÎÏ·(_E)"
+msgstr "ç»ˆæ­¢æ¸¸æˆ(_E)"
 
 #: src/atomix-ui.xml.in.h:19
 msgid "_Game"
-msgstr "ÓÎÏ·(_G)"
+msgstr "æ¸¸æˆ(_G)"
 
 #: src/atomix-ui.xml.in.h:20
 msgid "_Help"
-msgstr "°ïÖú(_H)"
+msgstr "å¸®åŠ©(_H)"
 
 #: src/atomix-ui.xml.in.h:21
 msgid "_New Game"
-msgstr "¿ªÊ¼ÓÎÏ·(_N)"
+msgstr "å¼€å§‹æ¸¸æˆ(_N)"
 
 #: src/atomix-ui.xml.in.h:22
 msgid "_Pause game"
-msgstr "ÔİÍ£ÓÎÏ·(_P)"
+msgstr "æš‚åœæ¸¸æˆ(_P)"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr "Ê×Ñ¡Ïî(_P)..."
+msgstr "é¦–é€‰é¡¹(_P)..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr "»ı·Ö(_S)..."
+msgstr "ç§¯åˆ†(_S)..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr "³·Ïû×Å·¨(_U)"
+msgstr "æ’¤æ¶ˆç€æ³•(_U)"
 
-#: src/board.c:165
+#: src/board.c:168
 msgid "Game Paused"
-msgstr "ÓÎÏ·ÒÑÔİÍ£"
+msgstr "æ¸¸æˆå·²æš‚åœ"
 
-#: src/board.c:167
+#: src/board.c:170
 msgid "Game Over"
-msgstr "ÓÎÏ·½áÊø"
+msgstr "æ¸¸æˆç»“æŸ"
 
-#: src/board.c:169
+#: src/board.c:172
 msgid "Atomix - Molecule Mind Game"
-msgstr "Atomix - ·Ö×Ó×éºÏÖÇÁ¦ÓÎÏ·"
+msgstr "Atomix - åˆ†å­ç»„åˆæ™ºåŠ›æ¸¸æˆ"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr "ÎŞ·¨ÕÒµ½¼¶±ğĞòÁĞÃèÊö¡£"
+msgstr "æ— æ³•æ‰¾åˆ°çº§åˆ«åºåˆ—æè¿°ã€‚"
 
 #: src/level-manager.c:185
 msgid "No level found."
-msgstr "ÕÒ²»µ½¼¶±ğ¡£"
+msgstr "æ‰¾ä¸åˆ°çº§åˆ«ã€‚"
 
 #: src/level-manager.c:285
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "ÔÚ %2$s ÖĞÕÒµ½¼¶±ğ¡°%1$s¡±"
+msgstr "åœ¨ %2$s ä¸­æ‰¾åˆ°çº§åˆ«â€œ%1$sâ€"
 
-#: src/main.c:485
+#: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "¹§Ï²£¡ÄãÒÑÍê³ÉËùÓĞ Atomix ¼¶±ğ¡£"
+msgstr "æ­å–œï¼ä½ å·²å®Œæˆæ‰€æœ‰ Atomix çº§åˆ«ã€‚"
 
-#: src/main.c:496
+#: src/main.c:495
 msgid "Couldn't find at least one level."
-msgstr "Ò»¸ö¼¶±ğÒ²ÕÒ²»µ½¡£"
+msgstr "ä¸€ä¸ªçº§åˆ«ä¹Ÿæ‰¾ä¸åˆ°ã€‚"
 
-#: src/main.c:501
+#: src/main.c:500
 msgid "Do you want to finish the game?"
-msgstr "ÊÇ·ñÒªÍê³ÉÓÎÏ·£¿"
+msgstr "æ˜¯å¦è¦å®Œæˆæ¸¸æˆï¼Ÿ"
 
-#: src/main.c:620 src/main.c:626 src/main.c:631
+#: src/main.c:619 src/main.c:625 src/main.c:630
 #, c-format
 msgid "Couldn't create directory: %s"
-msgstr "ÎŞ·¨½¨Á¢Ä¿Â¼£º%s"
+msgstr "æ— æ³•å»ºç«‹ç›®å½•ï¼š%s"
 
 #. create statistics frame
-#: src/main.c:734
+#: src/main.c:733
 msgid "Statistics"
-msgstr "Í³¼Æ"
+msgstr "ç»Ÿè®¡"
+
+#: src/main.c:739
+msgid "Level:"
+msgstr "çº§åˆ«ï¼š"
 
 #: src/main.c:740
-msgid "Level:"
-msgstr "¼¶±ğ£º"
+msgid "Molecule:"
+msgstr "åˆ†å­ï¼š"
 
 #: src/main.c:741
-msgid "Molecule:"
-msgstr "·Ö×Ó£º"
+msgid "Score:"
+msgstr "ç§¯åˆ†ï¼š"
 
 #: src/main.c:742
-msgid "Score:"
-msgstr "»ı·Ö£º"
-
-#: src/main.c:743
 msgid "Time:"
-msgstr "Ê±¼ä£º"
+msgstr "æ—¶é—´ï¼š"
 
-#: src/main.c:783
+#: src/main.c:782
 #, c-format
 msgid "Couldn't find file: %s"
-msgstr "ÎŞ·¨ÕÒµ½ÎÄ¼ş£º%s"
+msgstr "æ— æ³•æ‰¾åˆ°æ–‡ä»¶ï¼š%s"
 
-#: src/main.c:841
+#: src/main.c:840
 msgid "Atomix Splash"
-msgstr "Atomix Æô¶¯»­Ãæ"
+msgstr "Atomix å¯åŠ¨ç”»é¢"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
-msgstr "ÎŞ·¨ÕÒµ½³¡¾°¡£"
+msgstr "æ— æ³•æ‰¾åˆ°åœºæ™¯ã€‚"
 
 #: src/theme-manager.c:204
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "ÔÚ %2$s ÖĞÕÒµ½³¡¾°¡°%1$s¡±"
+msgstr "åœ¨ %2$s ä¸­æ‰¾åˆ°åœºæ™¯â€œ%1$sâ€"
 
 #~ msgid "No more undo levels."
-#~ msgstr "ÒÑ²»¿ÉÔÙ»¹Ô­ÁË¡£"
+#~ msgstr "å·²ä¸å¯å†è¿˜åŸäº†ã€‚"
 
 #~ msgid "This is the last level. You can't skip any further."
-#~ msgstr "ÕâÊÇ×îºóÒ»¹Ø¡£²»¿ÉÒÔÔÙÌøµ½ÏÂÒ»¹ØÁË¡£"
+#~ msgstr "è¿™æ˜¯æœ€åä¸€å…³ã€‚ä¸å¯ä»¥å†è·³åˆ°ä¸‹ä¸€å…³äº†ã€‚"
 
 #~ msgid "XML file %s not found."
-#~ msgstr "ÕÒ²»µ½ XML µµ°¸ %s¡£"
+#~ msgstr "æ‰¾ä¸åˆ° XML æ¡£æ¡ˆ %sã€‚"
 
 #~ msgid "Undo last move. This costs you 5 % of your score."
-#~ msgstr "»¹Ô­×îºóÒ»²½¡£ÕâÑù»áµ¹¿Û 5% ·ÖÊı¡£"
+#~ msgstr "è¿˜åŸæœ€åä¸€æ­¥ã€‚è¿™æ ·ä¼šå€’æ‰£ 5% åˆ†æ•°ã€‚"
