@@ -21,8 +21,7 @@ static GSList *undo_stack = NULL;
 
 gboolean undo_exists (void)
 {
-  if (undo_stack == NULL)
-    return ((undo_stack == NULL) ? FALSE : TRUE);
+  return ((undo_stack == NULL) ? FALSE : TRUE);
 }
 
 static void delete_move (UndoMove *move, gpointer data)

@@ -1,3 +1,7 @@
+2005-03-21  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* src/undo.c (undo_exists): cleaned up.
+
 2005-03-20  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* src/main.c (atomix_exit): save score if game is running.
