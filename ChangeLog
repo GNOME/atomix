@@ -1,3 +1,7 @@
+2002-02-19  Simos Xenitellis  <simos@hellug.gr>
+
+	* configure.in: Added "el" (Greek) to ALL_LINGUAS.
+
 2002-02-17  Jens Finke <jens@triq.net>
 
 	* src/main.c (verb_HelpAbout_cb): Mark the strings in the about 
