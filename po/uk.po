@@ -1,10 +1,10 @@
 # Ukrainian translation of Atomix.
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# Copyright (C) 2001 Free Software Foundation, Inc.
 # Yuriy Syrota <rasta@renome.rovno.ua>, 2001.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: atomix 0.9\n"
+"Project-Id-Version: atomix\n"
 "POT-Creation-Date: 2001-11-30 11:54+0200\n"
 "PO-Revision-Date: 2001-11-30 12:00+0200\n"
 "Last-Translator: Yuriy Syrota <rasta@renome.rovno.ua>\n"
