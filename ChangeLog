@@ -1,6 +1,6 @@
 2005-03-18  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
-	* ChangeLog: fixed some broken entries
+	* ChangeLog: fixed some broken entries.
 
 	* src/: enforced GNU coding style, with some very small
 	tweaks for better readability in specific situations.
@@ -23,6 +23,15 @@
 	* AUTHORS,
 	* src/main.c: added myself to the credits, since I'm the
 	one responsible for atomix now.
+
+	* src/atomix-ui.xml.in: renamed to atomix-ui.xml
+	* src/atomix-ui.xml: added pertinent xml header	
+
+	* src/Makefile.am: don't merge translations into UI xml file,
+	because libbonoboui translates it on-the-fly, and having them
+	merged caused all the translations to be displayed on the menu.
+
+	* configure.in: bumped version to 1.1
 
 2004-08-23  Alastair McKinstry  <mckinstry@debian.org>
 
