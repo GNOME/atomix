@@ -1,0 +1,69 @@
+# Traditional chinese translation for atomix.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Abel Cheung <maddog@linux.org.hk>, 2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix 0.9\n"
+"POT-Creation-Date: 2001-11-13 07:43-0500\n"
+"PO-Revision-Date: 2001-11-15 23:34+0800\n"
+"Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
+"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/board.c:191
+msgid "Game Paused"
+msgstr "遊戲暫停"
+
+#: src/board.c:193
+msgid "Game Over"
+msgstr "遊戲完結"
+
+#: src/board.c:195
+msgid "Atomix - Molecule Mind Game"
+msgstr "Atomix - 分子組合智力遊戲"
+
+#: src/main.c:178
+msgid "Level not found."
+msgstr "找不到版圖。"
+
+#: src/main.c:188
+#, no-c-format
+msgid "Undo last move. This costs you 5 % of your score."
+msgstr "還原最後一步。這樣會倒扣 5% 分數。"
+
+#: src/main.c:194
+msgid "No more undo levels."
+msgstr "已不可再還原了。"
+
+#: src/main.c:204
+msgid "This is the last level. You can't skip any further."
+msgstr "這是最後一關。不可以再跳到下一關了。"
+
+#. create statistics frame
+#: src/main.c:874
+msgid "Statistics"
+msgstr "統計"
+
+#: src/main.c:880
+msgid "Level:"
+msgstr "版圖："
+
+#: src/main.c:887
+msgid "Name:"
+msgstr "名稱："
+
+#: src/main.c:894
+msgid "Score:"
+msgstr "分數："
+
+#: src/main.c:945
+#, c-format
+msgid "XML file %s not found."
+msgstr "找不到 XML 檔案 %s。"
+
+#: src/callbacks.c:233
+msgid "Couldn't find the Atomix manual!"
+msgstr "找不到 Atomix 手冊！"

@@ -1,3 +1,7 @@
+2001-11-21  Abel Cheung  <maddog@linux.org.hk>
+
+	* configure.in: Added zh_TW to ALL_LINGUAS.
+
 2001-11-12  Carlos Perelló Marín <carlos@gnome-db.org>
 
 	* configure.in: Added the new locales from GNOME 1.4 version.
