@@ -1,0 +1,443 @@
+<?xml version="1.0"?>
+<LEVEL name="Lactic Acid">
+  <REVISION>2</REVISION>
+  <TIME secs="600"/>
+  <THEME name="fabian"/>
+  <NEXT level="Glycerin"/>
+  <PLAYFIELD rows="13" cols="13">
+    <TILE row="0" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="1">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="2">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="3">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="4">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="5">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="6">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="7">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="8">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="9">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="10">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="11">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="0" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="1" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="1" col="1">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="1" col="3">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="1" col="11">
+      <TYPE>1</TYPE>
+      <IMG_ID>3</IMG_ID>
+      <CONN_ID>2</CONN_ID>
+      <CONN_ID>6</CONN_ID>
+      <CONN_ID>8</CONN_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="1" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="2" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="2" col="3">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="2" col="4">
+      <TYPE>1</TYPE>
+      <IMG_ID>2</IMG_ID>
+      <CONN_ID>8</CONN_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="2" col="7">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="2" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="3" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="3" col="6">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="3" col="10">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="3" col="11">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="3" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="4" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="4" col="6">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="4" col="10">
+      <TYPE>1</TYPE>
+      <IMG_ID>3</IMG_ID>
+      <CONN_ID>2</CONN_ID>
+      <CONN_ID>6</CONN_ID>
+      <CONN_ID>8</CONN_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="4" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="5" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="5" col="2">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="5" col="5">
+      <TYPE>1</TYPE>
+      <IMG_ID>3</IMG_ID>
+      <CONN_ID>6</CONN_ID>
+      <CONN_ID>9</CONN_ID>
+      <CONN_ID>3</CONN_ID>
+    </TILE>
+    <TILE row="5" col="6">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="5" col="7">
+      <TYPE>1</TYPE>
+      <IMG_ID>2</IMG_ID>
+      <CONN_ID>11</CONN_ID>
+    </TILE>
+    <TILE row="5" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="6" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="6" col="3">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="6" col="4">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="6" col="5">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="6" col="6">
+      <TYPE>2</TYPE>
+      <IMG_ID>3</IMG_ID>
+    </TILE>
+    <TILE row="6" col="7">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="6" col="8">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="6" col="9">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="6" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="7" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="7" col="5">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>7</CONN_ID>
+    </TILE>
+    <TILE row="7" col="6">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="7" col="7">
+      <TYPE>1</TYPE>
+      <IMG_ID>2</IMG_ID>
+      <CONN_ID>3</CONN_ID>
+      <CONN_ID>7</CONN_ID>
+    </TILE>
+    <TILE row="7" col="10">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="7" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="8" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="8" col="2">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="8" col="6">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="8" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="9" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="9" col="1">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="9" col="2">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="9" col="6">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="9" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="10" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="10" col="5">
+      <TYPE>2</TYPE>
+      <IMG_ID>2</IMG_ID>
+    </TILE>
+    <TILE row="10" col="8">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>8</CONN_ID>
+    </TILE>
+    <TILE row="10" col="9">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="10" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="11" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="11" col="1">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>2</CONN_ID>
+    </TILE>
+    <TILE row="11" col="9">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="11" col="11">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>8</CONN_ID>
+    </TILE>
+    <TILE row="11" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="0">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="1">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="2">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="3">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="4">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="5">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="6">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="7">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="8">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="9">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="10">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="11">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+    <TILE row="12" col="12">
+      <TYPE>2</TYPE>
+      <IMG_ID>1</IMG_ID>
+    </TILE>
+  </PLAYFIELD>
+  <GOAL rows="5" cols="6">
+    <TILE row="0" col="0">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="0" col="3">
+      <TYPE>1</TYPE>
+      <IMG_ID>2</IMG_ID>
+      <CONN_ID>11</CONN_ID>
+    </TILE>
+    <TILE row="1" col="1">
+      <TYPE>1</TYPE>
+      <IMG_ID>2</IMG_ID>
+      <CONN_ID>8</CONN_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="1" col="3">
+      <TYPE>1</TYPE>
+      <IMG_ID>3</IMG_ID>
+      <CONN_ID>6</CONN_ID>
+      <CONN_ID>9</CONN_ID>
+      <CONN_ID>3</CONN_ID>
+    </TILE>
+    <TILE row="1" col="4">
+      <TYPE>1</TYPE>
+      <IMG_ID>2</IMG_ID>
+      <CONN_ID>3</CONN_ID>
+      <CONN_ID>7</CONN_ID>
+    </TILE>
+    <TILE row="1" col="5">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>7</CONN_ID>
+    </TILE>
+    <TILE row="2" col="0">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="2" col="2">
+      <TYPE>1</TYPE>
+      <IMG_ID>3</IMG_ID>
+      <CONN_ID>2</CONN_ID>
+      <CONN_ID>6</CONN_ID>
+      <CONN_ID>8</CONN_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="3" col="1">
+      <TYPE>1</TYPE>
+      <IMG_ID>3</IMG_ID>
+      <CONN_ID>2</CONN_ID>
+      <CONN_ID>6</CONN_ID>
+      <CONN_ID>8</CONN_ID>
+      <CONN_ID>4</CONN_ID>
+    </TILE>
+    <TILE row="3" col="3">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>8</CONN_ID>
+    </TILE>
+    <TILE row="4" col="0">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>2</CONN_ID>
+    </TILE>
+    <TILE row="4" col="2">
+      <TYPE>1</TYPE>
+      <IMG_ID>1</IMG_ID>
+      <CONN_ID>8</CONN_ID>
+    </TILE>
+  </GOAL>
+</LEVEL>

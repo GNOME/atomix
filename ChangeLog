@@ -1,5 +1,26 @@
 2002-04-29  Jens Finke  <jens@triq.net>
 
+	* level/aceticacid.old,
+	* level/acetone.old,
+	* level/buthanol.old,
+	* level/cyclo-buthane.old,
+	* level/dimethylether.old,
+	* level/ethan.old,
+	* level/ethanal.old,
+	* level/ethanol.old,
+	* level/ethylene.old,
+	* level/formaldehyd.old,
+	* level/glycerin.old,
+	* level/lactic-acid.old,
+	* level/propanal.old,
+	* level/propylen.old,
+	* level/pyran.old,
+	* level/transbutylen.old: New files.
+
+	* level/sequence: Added new files.
+
+2002-04-29  Jens Finke  <jens@triq.net>
+
 	* src/Makefile.am (INCLUDES): Removed -DDEBUG flag.
 
 	* src/goal-view.c (create_small_item): Use g_object_unref to free
