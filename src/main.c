@@ -141,19 +141,18 @@ void
 verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	GtkWidget *dlg;
-	const char *authors[] = { "Jakub Steiner (GFX)", "Jens Finke (Code)", NULL };
+	const char *authors[] = { "Jens Finke (Code)", "Jakub Steiner (GFX)",  NULL };
 	const char *documenters [] = { NULL };
 
 	dlg = gnome_about_new ("Atomix",
 			       VERSION,
-			       "1999-2001 Jens Finke",
+			       "1999-2002 Jens Finke",
 			       "A mind game about atoms and molecules.",
 			       authors,
 			       documenters,
 			       NULL,
 			       NULL);
 
-	gtk_widget_set_usize (dlg, 460, 200);
 	gtk_widget_show (dlg);
 }
 

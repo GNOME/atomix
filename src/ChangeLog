@@ -1,3 +1,8 @@
+2002-01-21  Jens Finke <jens@tiq.net>
+
+	* main.c (verb_HelpAbout_cb): Updated about information. Don't
+	force about window to a certain size.
+
 2001-12-09  Jens Finke <jens@triq.net>
 
 	* Makefile.am (INCLUDES): Removed ../intl dir from path.  Use
