@@ -1,5 +1,9 @@
 2001-11-14  Jens Finke <jens@triq.net>
 
+	* level-private.h: Forgot to add this. So here it is. 
+
+2001-11-14  Jens Finke <jens@triq.net>
+
 	* board.c (board_render): Check for tile == NULL.
 
 	* goal.c (destroy_hash_value): Use g_slist_free to free the list.
