@@ -13,11 +13,21 @@ AC_HEADER_STDC
 
 GNOME_COMPILE_WARNINGS
 
+dnl ================= Requirements =======================
+LIBGNOME_REQUIRED=2.0.1
+LIBGNOMEUI_REQUIRED=2.0.1
+LIBXML_REQUIRED=2.4.23
+GDK_PIXBUF_REQUIRED=2.0.5
+LIBGLADE_REQUIRED=2.0.0
+LIBGNOMECANVAS_REQUIRED=2.0.1
+LIBBONOBOUI_REQUIRED=2.0.0
+
 dnl ******************************
 dnl pkg-config checks
 dnl ******************************
 
-PKG_CHECK_MODULES(ATOMIX, libgnome-2.0 libgnomeui-2.0 libxml-2.0 gdk-pixbuf-2.0 libglade-2.0 libgnomecanvas-2.0)
+ATOMIX_MODULES="libgnome-2.0 >= $LIBGNOME_REQUIRED libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED libxml-2.0 >= $LIBXML_REQUIRED gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED libglade-2.0 >= $LIBGLADE_REQUIRED libgnomecanvas-2.0 >= $LIBGNOMECANVAS_REQUIRED libbonoboui-2.0 >= $LIBBONOBOUI_REQUIRED"
+PKG_CHECK_MODULES(ATOMIX, $ATOMIX_MODULES)
 AC_SUBST(ATOMIX_CFLAGS)
 AC_SUBST(ATOMIX_LIBS)
 

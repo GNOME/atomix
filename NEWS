@@ -1,3 +1,10 @@
+2002-07-23: Released version 0.9.4
+
+	  * installable in different prefix than rest of gnome
+	  * .desktop clean ups
+	  * score fixes
+	  * nice logo at startup
+
 2002-05-17: Released version 0.9.3
 	    
 	  * more levels (19 now)

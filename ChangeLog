@@ -1,6 +1,13 @@
+2002-07-23  Jens Finke  <jens@triq.net>
+
+	* configure.in: Check required library versions.
+
+	* NEWS: Updated.
+
 2002-07-18  Jens Finke  <jens@triq.net>
 
-	* src/board.c (board_handle_item_event): Check if item is moving currently.
+	* src/board.c (board_handle_item_event): Check if item is moving
+	currently.
 
 	* src/main.c (verb_GamesScores_cb),
 	(log_score): Use gnome_scores_display
