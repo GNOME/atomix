@@ -1,5 +1,5 @@
 /* Atomix -- a little mind game about atoms and molecules.
- * Copyright (C) 1999 Jens Finke
+ * Copyright (C) 1999-2001 Jens Finke
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,47 +17,30 @@
  */
 #include "undo.h"
 
-#define MAX_UNDO_STEPS 10
+static GSList *undo_stack = NULL;
 
-static UndoMove *move_array[MAX_UNDO_STEPS];
-static gint head = -1;
-
-void
-undo_init()
+static void
+delete_move (UndoMove *move, gpointer data)
 {
-	gint i;
-
-	for(i = 0; i < MAX_UNDO_STEPS; i++)
-	{
-		move_array[i] = NULL;
-	}
-    
-	head = -1;
+	g_free (move);
 }
 
 void
-undo_free_all_moves(void)
+undo_clear (void)
 {
-	gint i;
+	if (undo_stack == NULL) return;
 
-	for(i = 0; i < MAX_UNDO_STEPS; i++)
-	{
-		if(move_array[i])
-		{
-			g_free(move_array[i]);
-			move_array[i] = NULL;
-		}
-	}
-    
-	head = -1;    
+	g_slist_foreach (undo_stack, (GFunc) delete_move, NULL);
+	g_slist_free (undo_stack);
+	undo_stack = NULL;
 }
 
 
-UndoMove*
-undo_create_move(GnomeCanvasItem *item, gint src_row, gint src_col,
-		 gint dest_row, gint dest_col)
+void
+undo_push_move(GnomeCanvasItem *item, gint src_row, gint src_col,
+	       gint dest_row, gint dest_col)
 {
-	UndoMove *move = g_malloc(sizeof(UndoMove));
+	UndoMove *move = g_new0(UndoMove, 1);
 
 	move->item = item;
 	move->src_row = src_row;
@@ -65,39 +48,18 @@ undo_create_move(GnomeCanvasItem *item, gint src_row, gint src_col,
 	move->dest_row = dest_row;
 	move->dest_col = dest_col;
 
-	return move;
-}
-
-void
-undo_add_move(UndoMove *move)
-{
-	if(move != NULL)
-	{
-		head = (++head) % MAX_UNDO_STEPS;
-		if(move_array[head])
-		{
-			g_free(move_array[head]);
-		}
-		move_array[head] = move;
-	}
+	undo_stack = g_slist_prepend (undo_stack, move);
 }
 
 UndoMove*
-undo_get_last_move(void)
+undo_pop_move(void)
 {
-	if(head >= 0)
-	{
-		UndoMove *move = move_array[head];
-		move_array[head] = NULL;
-		head--;
-		if(head == -1) head += MAX_UNDO_STEPS;
-	
-		return move;
-	}
-	else
-	{
-		return NULL;
-	}
+	UndoMove *move;
 
-	return NULL;
+	if (undo_stack == NULL) return NULL;
+
+	move = (UndoMove*) undo_stack->data;
+	undo_stack = g_slist_delete_link (undo_stack, undo_stack);
+
+	return move;
 }

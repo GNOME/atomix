@@ -1,3 +1,22 @@
+2001-12-01  Jens Finke <jens@triq.net>
+
+	* atomix-ui.xml: Added more command shortcuts.
+	Added 'Reset level' menu item.
+
+	* undo.[ch]: Rewrote this. Stores unlimited moves in a stack like
+	datastructure now.
+
+	* board.c: Adapted to new undo design.
+	(move_item_anim): Select item only if it was also selected before
+	the animation.
+
+	* main.c (verb_GameReset_cb): New callback function.
+	(game_init): Don't connect to main window key press event. This
+	enables the shortcuts again. 
+	(game_new): Grab focus for canvas widget.
+	(create_mainwin_content): Connect key handler to playfield canvas
+	key event.
+	
 2001-11-30  Jens Finke <jens@triq.net>
 
 	* board.c (board_init_level): Show atom items explicitely.

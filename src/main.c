@@ -88,6 +88,12 @@ verb_GameSkip_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 }
 
 void
+verb_GameReset_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+	game_reload_level ((AtomixApp*) user_data);
+}
+
+void
 verb_GamePause_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	game_pause ((AtomixApp*) user_data);
@@ -219,9 +225,6 @@ game_init (AtomixApp *app)
 	app->level_no = 0;
 	app->score = 0.0;
 
-	gtk_signal_connect (GTK_OBJECT (app->mainwin), "key_press_event", 
-			    (GtkSignalFunc) on_key_press_event, app);
-
 	/* init the board */
 	board_init (app->theme, GNOME_CANVAS (app->ca_matrix));
 
@@ -248,6 +251,8 @@ game_new (AtomixApp *app)
 	if (level) 
 	{
 		board_hide_message (BOARD_MSG_NEW_GAME);
+
+		gtk_widget_grab_focus (GTK_WIDGET (app->ca_matrix));
 
 		/* init level data */
 		app->level_no = 1;
@@ -676,6 +681,7 @@ static BonoboUIVerb verbs[] = {
 	BONOBO_UI_VERB ("GameNew", verb_GameNew_cb),
 	BONOBO_UI_VERB ("GameEnd", verb_GameEnd_cb),
 	BONOBO_UI_VERB ("GameSkip", verb_GameSkip_cb),
+	BONOBO_UI_VERB ("GameReset", verb_GameReset_cb),
 	BONOBO_UI_VERB ("GameUndo", verb_GameUndo_cb),
 	BONOBO_UI_VERB ("GamePause", verb_GamePause_cb),
 	BONOBO_UI_VERB ("GameContinue", verb_GameContinue_cb),
@@ -727,6 +733,8 @@ create_mainwin_content (AtomixApp *app)
 	hbox = gtk_hbox_new (FALSE, 6);
 	gtk_container_set_border_width (GTK_CONTAINER (hbox), 6);
 	gtk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (pf), TRUE, TRUE, 0);
+	gtk_signal_connect (GTK_OBJECT (app->ca_matrix), "key_press_event", 
+			    (GtkSignalFunc) on_key_press_event, app);
 	
 	/* create right window side */
 	vbox = gtk_vbox_new (FALSE, 6);

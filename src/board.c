@@ -145,8 +145,7 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 	anim_data->x_step = 0.0;
 	anim_data->y_step = 0.0;    
 		
-	/* init undo */
-	undo_init ();
+	undo_clear ();
 
 	/* Canvas setup */
 	level_items = g_new0 (LevelItems, 1);
@@ -199,7 +198,7 @@ board_init_level (PlayField *env, PlayField *sce, Goal *goal)
 	anim_data->y_step = 0.0;    
 	
 	/* reset undo of moves */
-	undo_free_all_moves ();
+	undo_clear ();
 	
 	/* init board */
 	board_env = g_object_ref (env);
@@ -228,7 +227,7 @@ board_destroy()
 	if (board_sce) g_object_unref (board_sce);
 	if (anim_data) g_free(anim_data);
     
-	undo_free_all_moves();
+	undo_clear ();
 	
 	if(level_items)
 	{
@@ -357,7 +356,6 @@ render_tile (Tile *tile, gint row, gint col)
 	}
 }
 
-
 gboolean
 board_undo_move ()
 {
@@ -369,7 +367,7 @@ board_undo_move ()
 
 	if (anim_data->timeout_id != -1) return FALSE;
 
-	move = undo_get_last_move();
+	move = undo_pop_move ();
 	if(move == NULL) return FALSE;
 
 	playfield_swap_tiles(board_sce, 
@@ -420,9 +418,9 @@ board_undo_move ()
 	anim_data->dest_col = move->src_col;
 	selector_data->sel_item = move->item;
 	
-	anim_data->timeout_id = gtk_timeout_add(ANIM_TIMEOUT, 
-						move_item_anim,
-						anim_data);
+	anim_data->timeout_id = gtk_timeout_add (ANIM_TIMEOUT, 
+						 move_item_anim,
+						 anim_data);
 	g_free(move);
 
 	return TRUE;
@@ -634,7 +632,6 @@ move_item (GnomeCanvasItem* item, ItemDirection direc)
 	guint src_row, src_col, dest_row, dest_col, tmp_row, tmp_col;
 	gint animstep;
 	Tile *tile;
-	UndoMove *move;
 	gint tw, th;
 	
 	gnome_canvas_item_get_bounds (item, &x1, &y1, &x2, &y2);
@@ -679,9 +676,8 @@ move_item (GnomeCanvasItem* item, ItemDirection direc)
 	/* move the item, if the new position is different */
 	if(src_row != dest_row || src_col != dest_col)
 	{
-		move = undo_create_move (item, src_row, src_col, 
-					 dest_row, dest_col);
-		undo_add_move (move);
+		undo_push_move (item, src_row, src_col, 
+				dest_row, dest_col);
 	
 		convert_to_canvas (board_theme, dest_row, dest_col, &new_x1, &new_y1);
 		playfield_swap_tiles (board_sce, src_row, src_col, dest_row, dest_col);
@@ -731,8 +727,10 @@ move_item_anim (void *data)
 		{
 			game_level_finished (NULL);
 		}
-		else
-			selector_select (selector_data, selector_data->sel_item);
+		else {
+			if (selector_data->selected)
+				selector_select (selector_data, selector_data->sel_item);
+		}
 
 		return FALSE;
 	}

@@ -21,26 +21,20 @@
 
 #include <gnome.h>
 
-typedef struct _UndoMove  UndoMove;
-
-struct _UndoMove
-{
+typedef struct {
 	GnomeCanvasItem *item;
 	gint src_row;
 	gint src_col;
 	gint dest_row;
 	gint dest_col;
-};
+} UndoMove;
 
-UndoMove* undo_create_move(GnomeCanvasItem *item, gint src_row, gint src_col,
-			   gint dest_row, gint dest_col);
+void undo_push_move (GnomeCanvasItem *item,
+		     gint src_row, gint src_col,
+		     gint dest_row, gint dest_col);
 
-void  undo_init(void);
+UndoMove* undo_pop_move (void);
 
-void undo_add_move(UndoMove *move);
-
-UndoMove* undo_get_last_move(void);
-
-void undo_free_all_moves(void);
+void undo_clear (void);
 
 #endif /* _ATOMIX_UNDO_H_ */

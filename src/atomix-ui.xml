@@ -6,14 +6,19 @@
 
 	<cmd name="GameEnd" _label="_End Game" _tip="End a game"/>
 
-	<cmd name="GameSkip" _label="Skip _level" _tip="Skip the current level"/>
+	<cmd name="GameSkip" _label="Skip _level" _tip="Skip the current level"
+	     accel="*Control*s"/>
 
         <cmd name="GameUndo" _label="_Undo move" _tip="Undo the last move"
 	     pixtype="stock" pixname="undo" accel="*Control*z"/>
-	
-        <cmd name="GamePause" _label="_Pause game" _tip="Pause the running game"/>
 
-        <cmd name="GameContinue" _label="_Continue game" _tip="Continue paused game"/>
+	<cmd name="GameReset" _label="Reset level" _tip="Restores start situation"/>
+	
+        <cmd name="GamePause" _label="_Pause game" _tip="Pause the running game"
+	     accel="*Control*p"/>
+
+        <cmd name="GameContinue" _label="_Continue game" _tip="Continue paused game"
+	     accel="*Control*c"/>
 
 	<cmd name="GameScores" _label="_Scores ..." _tip="View highscores"/>
 
@@ -36,6 +41,7 @@
 		<separator/>
 
 		<menuitem name="GameSkip" verb=""/>
+		<menuitem name="GameReset" verb=""/>
 		<menuitem name="GameUndo" verb=""/>
 		<menuitem name="GamePause" verb=""/>
 		<menuitem name="GameContinue" verb=""/>
