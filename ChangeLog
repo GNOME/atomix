@@ -1,5 +1,9 @@
 2002-05-15  Jens Finke  <jens@triq.net>
 
+	* configure.in: Bumped version to 0.9.3.
+
+2002-05-15  Jens Finke  <jens@triq.net>
+
 	* src/board.c:
 	(create_message): Removed.
 	(create_background_floor): New function.
