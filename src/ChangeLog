@@ -1,3 +1,8 @@
+2002-01-22  Jens Finke <jens@triq.net>
+
+	* level-convert.c (update_tile): Consider new walls images during
+	tile conversion.
+
 2002-01-21  Jens Finke <jens@tiq.net>
 
 	* main.c (verb_HelpAbout_cb): Updated about information. Don't

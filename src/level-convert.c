@@ -447,23 +447,99 @@ update_tile (Tile *tile, int tile_env[])
 	type = tile_get_tile_type (new_tile);
 	if (type == TILE_TYPE_WALL) {
 		gint wall_id = 0; 
-		if (tile_env[ENV_RIGHT] == TILE_TYPE_WALL && 
-		    tile_env[ENV_BOTTOM] == TILE_TYPE_WALL)
-			wall_id = 1; /* top -left */
-		else if (tile_env[ENV_LEFT] == TILE_TYPE_WALL &&
-			 tile_env[ENV_BOTTOM] == TILE_TYPE_WALL)
-			wall_id = 3; /* top-right */
-		else if (tile_env[ENV_LEFT] == TILE_TYPE_WALL &&
-			 tile_env[ENV_TOP] == TILE_TYPE_WALL)
-			wall_id = 5; /* bottom-right */
-		else if (tile_env[ENV_RIGHT] == TILE_TYPE_WALL &&
-			 tile_env[ENV_TOP] == TILE_TYPE_WALL)
-			wall_id = 7; /* bottom-left */
-		else if (tile_env[ENV_BOTTOM] == TILE_TYPE_WALL ||
-			 tile_env[ENV_TOP] == TILE_TYPE_WALL)
-			wall_id = 4; /* right */
+		if (tile_env[ENV_TOP]    != TILE_TYPE_WALL &&
+		    tile_env[ENV_RIGHT]  == TILE_TYPE_WALL &&
+		    tile_env[ENV_BOTTOM] == TILE_TYPE_WALL &&
+		    tile_env[ENV_LEFT]   != TILE_TYPE_WALL)
+		{
+			wall_id = 1;
+		}
+		else if	(tile_env[ENV_TOP]    != TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  == TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] != TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   == TILE_TYPE_WALL)
+		{
+			wall_id = 2;
+		}
+		else if	(tile_env[ENV_TOP]    != TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  != TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] == TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   == TILE_TYPE_WALL)
+		{
+			wall_id = 3;
+		}
+		else if	(tile_env[ENV_TOP]    == TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  != TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] == TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   != TILE_TYPE_WALL)
+		{
+			wall_id = 4;
+		}
+		else if	(tile_env[ENV_TOP]    == TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  != TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] != TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   == TILE_TYPE_WALL)
+		{
+			wall_id = 5;
+		}
+		else if	(tile_env[ENV_TOP]    == TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  == TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] != TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   != TILE_TYPE_WALL)
+		{
+			wall_id = 7;
+		}
+		else if	(tile_env[ENV_TOP]    != TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  != TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] != TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   != TILE_TYPE_WALL)
+		{
+			wall_id = 9;
+		}
+		else if	(tile_env[ENV_TOP]    == TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  == TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] != TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   == TILE_TYPE_WALL)
+		{
+			wall_id = 10;
+		}
+		else if	(tile_env[ENV_TOP]    != TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  == TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] == TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   == TILE_TYPE_WALL)
+		{
+			wall_id = 11;
+		}
+		else if	(tile_env[ENV_TOP]    == TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  == TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] == TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   != TILE_TYPE_WALL)
+		{
+			wall_id = 12;
+		}
+		else if	(tile_env[ENV_TOP]    == TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  != TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] == TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   == TILE_TYPE_WALL)
+		{
+			wall_id = 13;
+		}
+		else if	(tile_env[ENV_TOP]    != TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  != TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] == TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   != TILE_TYPE_WALL)
+		{
+			wall_id = 14;
+		}
+		else if	(tile_env[ENV_TOP]    == TILE_TYPE_WALL &&
+			 tile_env[ENV_RIGHT]  != TILE_TYPE_WALL &&
+			 tile_env[ENV_BOTTOM] != TILE_TYPE_WALL &&
+			 tile_env[ENV_LEFT]   != TILE_TYPE_WALL)
+		{
+			wall_id = 15;
+		}
 		else 
-			wall_id = 2; /* top */
+			wall_id = 9; /* single */
 		tile_set_base_id (new_tile, wall_id);
 	}
 	else if (type == TILE_TYPE_FLOOR) {
