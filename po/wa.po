@@ -1,0 +1,215 @@
+# Translation into the walloon language.
+#
+# Si vos voloz donner on côp di spale pol ratournaedje di Gnome (ou des
+# ôtes libes programes) sicrijhoz mu a l' adresse emile
+# <srtxg@chanae.alphanet.ch>; nos avans co bråmint di l' ovraedje a fé.
+#
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Lorint Hendschel <LorintHendschel@skynet.be>, 2002
+# Pablo Saratxaga <pablo@mandrakesoft.com> 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix 0.9.2\n"
+"POT-Creation-Date: 2002-04-21 03:14+0200\n"
+"PO-Revision-Date: 2002-04-21 03:14+0200\n"
+"Last-Translator: Lorint Hendschel <LorintHendschel@skynet.be>\n"
+"Language-Team: walon <linux-wa@chanae.alphanet.ch>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/atomix-ui.xml.in.h:1
+msgid "Continue paused game"
+msgstr "Continuwer li djeu k' a stî djoké?"
+
+#: src/atomix-ui.xml.in.h:2
+msgid "E_xit"
+msgstr "Moussî _foû"
+
+#: src/atomix-ui.xml.in.h:3
+msgid "End a game"
+msgstr "Fini on djeu"
+
+#: src/atomix-ui.xml.in.h:4
+msgid "Exit game"
+msgstr "Moussî foû do djeu"
+
+#: src/atomix-ui.xml.in.h:5
+msgid "Pause the running game"
+msgstr "Djoker li djeu do moumint"
+
+#: src/atomix-ui.xml.in.h:6
+msgid "Reset level"
+msgstr "Renonder l' livea"
+
+#: src/atomix-ui.xml.in.h:7
+msgid "Restores start situation"
+msgstr "Rimete li situwåcion come divant"
+
+#: src/atomix-ui.xml.in.h:8
+msgid "Set preferences"
+msgstr "Defini les preferinces"
+
+#: src/atomix-ui.xml.in.h:9
+msgid "Skip _level"
+msgstr "Passer houte do _livea"
+
+#: src/atomix-ui.xml.in.h:10
+msgid "Skip the current level"
+msgstr "Passer houte do livea do moumint"
+
+#: src/atomix-ui.xml.in.h:11
+msgid "Start a new game"
+msgstr "Comincî on novea djeu"
+
+#: src/atomix-ui.xml.in.h:12
+msgid "Undo the last move"
+msgstr "Rivni en erî, come vos n' årîz nén djowé"
+
+#: src/atomix-ui.xml.in.h:13
+msgid "View game credits"
+msgstr "Vey li fitchî d' gråces"
+
+#: src/atomix-ui.xml.in.h:14
+msgid "View highscores"
+msgstr "Vey les meyeus rzultats"
+
+#: src/atomix-ui.xml.in.h:15
+msgid "_About"
+msgstr "Å _dfait"
+
+#: src/atomix-ui.xml.in.h:16
+msgid "_Continue game"
+msgstr "_Continuwer l' djeu"
+
+#: src/atomix-ui.xml.in.h:17
+msgid "_Edit"
+msgstr "_Candjî"
+
+#: src/atomix-ui.xml.in.h:18
+msgid "_End Game"
+msgstr "_Fini l' djeu"
+
+#: src/atomix-ui.xml.in.h:19
+msgid "_Game"
+msgstr "_Djeu"
+
+#: src/atomix-ui.xml.in.h:20
+msgid "_Help"
+msgstr "_Aidance"
+
+#: src/atomix-ui.xml.in.h:21
+msgid "_New Game"
+msgstr "_Novea Djeu"
+
+#: src/atomix-ui.xml.in.h:22
+msgid "_Pause game"
+msgstr "_Djoker li djeu"
+
+#: src/atomix-ui.xml.in.h:23
+msgid "_Preferences ..."
+msgstr "_Preferinces..."
+
+#: src/atomix-ui.xml.in.h:24
+msgid "_Scores ..."
+msgstr "_Meyeus..."
+
+#: src/atomix-ui.xml.in.h:25
+msgid "_Undo move"
+msgstr "Ri_vni en erî"
+
+#: src/board.c:170
+msgid "Game Paused"
+msgstr "Djeu djoké"
+
+#: src/board.c:172
+msgid "Game Over"
+msgstr "Djeu fini"
+
+#: src/board.c:174
+msgid "Atomix - Molecule Mind Game"
+msgstr "Atomix - Djeu di tuzaedje di molecules"
+
+#: src/level-manager.c:171
+msgid "Couldn't find level sequence description."
+msgstr "Dji n' a savou trover li discrijhaedje del secwinde do livea."
+
+#: src/level-manager.c:185
+msgid "No level found."
+msgstr "Nou livea di trové."
+
+#: src/level-manager.c:285
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "Dj' a trové l' livea «%s» e: %s"
+
+#: src/main.c:149
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "Copyright © 1999-2002 Jens Finke"
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr "On djeu di tuzaedje so les atomes eyet les molecules."
+
+#: src/main.c:484
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Complumints! Vos avez fini tos les liveas d' Atomix."
+
+#: src/main.c:495
+msgid "Couldn't find at least one level."
+msgstr "Dji n' a savou trover di liveas, nén onk."
+
+#: src/main.c:500
+msgid "Do you want to finish the game?"
+msgstr "Voloz vs fini l' djeu?"
+
+#: src/main.c:619 src/main.c:625 src/main.c:630
+msgid "Couldn't create directory: %s"
+msgstr "Dji n' a savou askepyî li ridant: %s"
+
+#. create statistics frame
+#: src/main.c:733
+msgid "Statistics"
+msgstr "Sitatistikes"
+
+#: src/main.c:739
+msgid "Level:"
+msgstr "Livea:"
+
+#: src/main.c:740
+msgid "Molecule:"
+msgstr "Molecule:"
+
+#: src/main.c:741
+msgid "Score:"
+msgstr "Ponts:"
+
+#: src/main.c:742
+msgid "Time:"
+msgstr "Tins:"
+
+#: src/main.c:782
+msgid "Couldn't find file: %s"
+msgstr "Dji n' a savou trover l' fitchî: %s"
+
+#: src/main.c:840
+msgid "Atomix Splash"
+msgstr "Purnea d' enondaedje d' Atomix"
+
+#: src/theme-manager.c:141
+msgid "No themes found."
+msgstr "Nou tinme di trové."
+
+#: src/theme-manager.c:204
+msgid "Found theme '%s' in: %s"
+msgstr "Tinme «%s» trové e: %s"
+
+#: atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
+
+#: atomix.desktop.in.h:2
+msgid "Molecule mind game"
+msgstr "Djeu di tuzaedje di molecules"
+

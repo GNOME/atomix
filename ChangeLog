@@ -1,6 +1,6 @@
 2002-04-19  Pablo Saratxaga  <pablo@mandrakesoft.com>
 
-	* configure.in: Added ca to ALL_LINGUAS.
+	* configure.in: Added "ca" and "wa" to ALL_LINGUAS.
 
 2002-04-11  Takeshi Aihana <aihana@gnome.gr.jp>
 
