@@ -1,0 +1,68 @@
+# Spanish/Spain translation of ATOMIX.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Álvaro Peña <cybdeep@bigfoot.com>, 2001.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: ATOMIX 0.9.0\n"
+"POT-Creation-Date: 2001-11-29 11:18-0300\n"
+"PO-Revision-Date: 2001-11-28 11:46+0100\n"
+"Last-Translator: Álvaro Peña <cybdeep@bigfoot.com>\n"
+"Language-Team: Spanish/Spain\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/board.c:159
+msgid "Game Paused"
+msgstr "Juego Parado"
+
+#: src/board.c:161
+msgid "Game Over"
+msgstr "Juego Terminado"
+
+#: src/board.c:163
+msgid "Atomix - Molecule Mind Game"
+msgstr "Atomix - Juego de Inteligencia con Moléculas"
+
+#: src/main.c:271
+msgid "Couldn't find at least one level."
+msgstr "No se pudo encontrar ni siquiera un nivel."
+
+#: src/main.c:283
+msgid "No more undo levels."
+msgstr "No hay mas niveles por hacer."
+
+#: src/main.c:293
+msgid "This is the last level. You can't skip any further."
+msgstr "Este es el último nivel. No puede saltar ninguno más."
+
+#: src/main.c:459
+msgid "Do you want to finish the game?"
+msgstr "Quiere terminar el juego?"
+
+#: src/main.c:486
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "¡Felicidades! Ha terminado todos los niveles de Atomix."
+
+#. create statistics frame
+#: src/main.c:776
+msgid "Statistics"
+msgstr "Estadísticas"
+
+#: src/main.c:782
+msgid "Level:"
+msgstr "Nivel:"
+
+#: src/main.c:789
+msgid "Name:"
+msgstr "Nombre:"
+
+#: src/main.c:796
+msgid "Score:"
+msgstr "Puntuación:"
+
+#: src/main.c:847
+#, c-format
+msgid "XML file %s not found."
+msgstr "No se pudo encontrar el fichero XML %s."
