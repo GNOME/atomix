@@ -72,6 +72,8 @@ Tile* tile_copy (Tile *tile);
 
 gboolean tile_has_link (Tile *tile, TileLink link);
 
+gint tile_get_hash_value (Tile *tile);
+
 gint tile_get_base_id (Tile *tile);
 
 TileType tile_get_tile_type (Tile *tile);
@@ -87,6 +89,8 @@ void tile_set_base_id (Tile *tile, gint id);
 void tile_set_type (Tile *tile, TileType type);
 
 void tile_print (Tile *tile);
+
+gboolean tile_is_equal (Tile *tile, Tile *comp);
 
 /* ---------------------------------- */
 

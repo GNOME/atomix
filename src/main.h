@@ -73,6 +73,7 @@ typedef struct
 } AtomixApp;
 
 
+AtomixApp*    get_app (void);
 GladeXML*     get_gui(void);
 Level*        get_actual_level(void);
 Theme*        get_actual_theme(void);

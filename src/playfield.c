@@ -139,6 +139,20 @@ set_tile (PlayField *pf, gint row, gint col, Tile *new_tile)
 	priv->matrix [row * priv->n_cols + col] = new_tile;
 }
 
+guint 
+playfield_get_n_rows (PlayField *pf)
+{
+	g_return_val_if_fail (IS_PLAYFIELD (pf), 0);
+	return pf->priv->n_rows;
+}
+
+guint 
+playfield_get_n_cols (PlayField *pf);
+{
+	g_return_val_if_fail (IS_PLAYFIELD (pf), 0);
+	return pf->priv->n_cols;
+}
+
 void
 playfield_add_row (PlayField* pf)
 {

@@ -48,6 +48,10 @@ GType playfield_get_type (void);
 
 PlayField* playfield_new(void);
 
+guint playfield_get_n_rows (PlayField *pf);
+
+guint playfield_get_n_cols (PlayField *pf);
+
 void playfield_add_row(PlayField* pf);
 
 void playfield_add_column(PlayField* pf);

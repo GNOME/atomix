@@ -76,6 +76,12 @@ GladeXML* get_gui ()
 	return NULL;
 }
 
+
+AtomixApp* get_app ()
+{
+	return app;
+}
+
 Level* get_actual_level()
 {
 	return level_data->level;

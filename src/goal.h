@@ -24,20 +24,14 @@
 #include "main.h"
 
 typedef struct _Goal        Goal;
-typedef struct _ItemOffset  ItemOffset;
 
 struct _Goal
 {
 	PlayField*   pf;
-	GPtrArray*   index;
+	GHashTable*  index;
 	GnomeCanvasGroup*  item_group;
 };
 
-struct _ItemOffset
-{
-	gint horiz;
-	gint vert;
-};
 
 Goal* goal_new(PlayField* pf);
 

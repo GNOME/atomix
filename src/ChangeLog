@@ -1,6 +1,27 @@
 2001-11-12  Jens Finke <jens@triq.net>
 
-	* playfield.[ch]: Rewrote this, usese glib object system now.
+	* goal.[ch]: Reworked these files.
+
+	* main.[ch] (get_app): Added this function again temporary.
+
+	* playfield.[ch] (playfield_get_n_rows),
+	(playfield_get_n_cols): New functions.
+
+	* tile.[ch]: Added link_id_value attribute, which defines the
+	attached links as one single integer value.
+	(tile_init), 
+	(tile_copy), 
+	(tile_add_link), 
+	(tile_remove_link),
+	(tile_remove_all_links): Update link_id_value.
+	(tile_is_equal): New function, compares two tiles.
+	(tile_get_hash_value): New function, returns a single value, which
+	identifies a tile uniquely.
+	(tile_print): Made the output better fitting into playfield_print.
+
+2001-11-12  Jens Finke <jens@triq.net>
+
+	* playfield.[ch]: Rewrote this, uses glib object system now.
 
 2001-11-12  Jens Finke <jens@triq.net>
 
