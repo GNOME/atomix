@@ -24,6 +24,10 @@
 	* configure.in: Added "sk" to ALL_LINGUAS.
 	* po/sk.po: Added Slovak translation.
 
+2001-12-10  Jens Finke <jens@triq.net>
+
+	* Released version 0.9.1
+	
 2001-12-09  Jens Finke <jens@triq.net>
 
 	* Makefile.am (EXTRA_DIST): Added intl-tool-*.in files.
