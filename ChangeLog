@@ -1,3 +1,7 @@
+2003-01-24  Daniel Yacob <locales@geez.org>
+
+	* configure.in: Added am  to ALL_LINGUAS.
+
 2002-01-07  Naba Kumar  <naba@gnome.org>
 
 	* configure.in: Added hi (hindi) in ALL_LINGUAS
