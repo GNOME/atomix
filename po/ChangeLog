@@ -1,3 +1,7 @@
+2002-07-25  Christophe Merlet  <christophe@merlet.net>
+
+	* fr.po: Updated French translation.
+
 2002-07-18  Jens Finke <jens@triq.net>
 
 	* de.po: Updated German translation.
@@ -88,7 +92,7 @@
 
         * pt.po: Updated Portuguese translation.
 
-2002-03-01  Christophe Merlet  <redfox@eikonex.org>
+2002-03-01  Christophe Merlet  <christophe@merlet.net>
 
 	* fr.po: updated French translation and
 	converted to UTF-8.
