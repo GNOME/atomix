@@ -2,9 +2,15 @@
 
 	* src/main.c (atomix_exit): save score if game is running.
 
-	* src/board.c (board_hide),
-	(board_show): respectively, hide and show the movement arrows,
-	so that the user cannot move the atoms while the game is paused.
+	* src/board.c
+	(board_hide): hide the movement arrows, so that the user cannot
+	move the atoms while the game is paused.
+	(board_show): show the movement arrows, as they are now hidden
+	by board_hide, but *only* if undo_exists returns TRUE.
+
+	* src/undo.c, src/undo.h
+	(undo_exists): created, to check if the level has just begun or
+	not, by checking if there is something on the undo stack.
 
 2005-03-19  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 

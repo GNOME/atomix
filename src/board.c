@@ -545,7 +545,8 @@ void board_hide (void)
 void board_show (void)
 {
   gnome_canvas_item_show (GNOME_CANVAS_ITEM (level_items->moveables));
-  gnome_canvas_item_show (GNOME_CANVAS_ITEM (selector_data->arrows));
+  if (undo_exists())
+    gnome_canvas_item_show (GNOME_CANVAS_ITEM (selector_data->arrows));
 }
 
 void board_show_logo (gboolean visible)

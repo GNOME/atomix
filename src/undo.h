@@ -30,6 +30,8 @@ typedef struct
   gint dest_col;
 } UndoMove;
 
+gboolean undo_exists (void);
+
 void undo_push_move (GnomeCanvasItem * item,
 		     gint src_row, gint src_col,
 		     gint dest_row, gint dest_col);
