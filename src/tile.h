@@ -22,53 +22,73 @@
 #include <gnome.h>
 #include <libxml/tree.h>
 
+#define TILE_TYPE        (tile_get_type ())
+#define TILE(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), TILE_TYPE, Tile))
+#define TILE_CLASS(k)    (G_TYPE_CHECK_CLASS_CAST((k), TILE_TYPE, TileClass))
+#define IS_TILE(o)       (G_TYPE_CHECK_INSTANCE_TYPE ((o), TILE_TYPE))
+#define IS_TILE_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TILE_TYPE))
+#define TILE_GET_CLASS(o)(G_TYPE_INSTANCE_GET_CLASS ((o), TILE_TYPE, TileClass))
 
-typedef struct _Tile  Tile;
+typedef struct _TilePrivate  TilePrivate;
 
 typedef enum 
 {
-        TILE_NONE,
-	TILE_MOVEABLE,
-	TILE_OBSTACLE,
-	TILE_DECOR    
+	TILE_TYPE_MOVEABLE,
+	TILE_TYPE_OBSTACLE,
+	TILE_TYPE_DECOR,
+	TILE_TYPE_UNKNOWN
 } TileType;
 
+typedef enum  {
+	TILE_LINK_LEFT,
+	TILE_LINK_RIGHT,
+	TILE_LINK_TOP,
+	TILE_LINK_BOTTOM,
+	TILE_LINK_TOP_LEFT,
+	TILE_LINK_TOP_RIGHT,
+	TILE_LINK_BOTTOM_LEFT,
+	TILE_LINK_BOTTOM_RIGHT,
+	TILE_LINK_LEFT_DOUBLE,
+	TILE_LINK_RIGHT_DOUBLE,
+	TILE_LINK_TOP_DOUBLE,
+	TILE_LINK_BOTTOM_DOUBLE,
+	TILE_LINK_LAST
+} TileLink;
 
-struct _Tile
-{
-	TileType type;
-	guint    img_id;
-	GSList*  conn_ids;   
-};
+typedef struct {
+	GObject     parent;
+	TilePrivate *priv;
+} Tile;
 
+typedef struct {
+	GObjectClass parent_class;
+} TileClass;
 
-Tile* tile_new(void);
+GType tile_get_type (void);
 
-Tile* tile_new_args(TileType type, guint img_id, GSList *conn_id);
+Tile* tile_new (TileType type);
 
-void tile_destroy(Tile *tile);
+Tile* tile_copy (Tile *tile);
 
-Tile* tile_copy(Tile *tile);
+gboolean tile_has_link (Tile *tile, TileLink link);
 
-void tile_print(Tile *tile);
+gint tile_get_base_id (Tile *tile);
 
-GSList* tile_get_link_ids(Tile *tile);
+TileType tile_get_tile_type (Tile *tile);
 
-gint tile_get_image_id(Tile *tile);
+void tile_add_link (Tile *tile, TileLink link);
 
-guint tile_get_unique_id(Tile *tile);
+void tile_remove_link (Tile *tile, TileLink link);
 
-TileType tile_get_type(Tile *tile);
+void tile_remove_all_links (Tile *tile);
 
-void tile_add_link_id(Tile *tile, gint id);
+void tile_set_base_id (Tile *tile, gint id);
 
-void tile_remove_link_id(Tile *tile, gint id);
+void tile_set_type (Tile *tile, TileType type);
 
-void tile_delete_all_links(Tile *tile);
+void tile_print (Tile *tile);
 
-void tile_set_image_id(Tile *tile, gint id);
-
-void tile_set_type(Tile *tile, TileType type);
+/* ---------------------------------- */
 
 Tile* tile_load_xml(xmlNodePtr node, gint revision);
 
