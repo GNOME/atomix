@@ -5,14 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix for latvian\n"
-"POT-Creation-Date: 2002-02-17 10:30+0100\n"
-"PO-Revision-Date: 2002-01-12 21:30+0200\n"
-"Last-Translator: Peteris Krisjanis <peteris.krisjanis@ttc.lv>\n"
+"POT-Creation-Date: 2002-04-27 23:50-0400\n"
+"PO-Revision-Date: 2002-05-01 20:05+0200\n"
+"Last-Translator: Peteris Krisjanis <pecisk@inbox.lv>\n"
 "Language-Team: Latvian <ll10nt@ttc.lv>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.5\n"
 
 #: src/atomix-ui.xml.in.h:1
 msgid "Continue paused game"
@@ -114,15 +113,15 @@ msgstr "_Rezultāti ..."
 msgid "_Undo move"
 msgstr "_Atsaukt gājienu"
 
-#: src/board.c:168
+#: src/board.c:170
 msgid "Game Paused"
 msgstr "Spēle Nopauzēta"
 
-#: src/board.c:170
+#: src/board.c:172
 msgid "Game Over"
 msgstr "Spēles Beigas"
 
-#: src/board.c:172
+#: src/board.c:174
 msgid "Atomix - Molecule Mind Game"
 msgstr "Atomix - Molekulas Domāšanas Spēle"
 
@@ -141,11 +140,11 @@ msgstr "Atrasts līmenis '%s' iekš %s"
 
 #: src/main.c:149
 msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr ""
+msgstr "Autortiesības (C) 1999-2002 Jens Finke"
 
 #: src/main.c:150
 msgid "A mind game about atoms and molecules."
-msgstr ""
+msgstr "Prātošanas spēle par atomiem un molekulām"
 
 #: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
@@ -159,38 +158,40 @@ msgstr "Nevarēja atrast kaut vienu līmeni."
 msgid "Do you want to finish the game?"
 msgstr "Vai jūs vēlaties beigt spēli?"
 
-#: src/main.c:619 src/main.c:625 src/main.c:630
+#: src/main.c:619
+#: src/main.c:625
+#: src/main.c:630
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Nevarēja izveidot direktoriju: %s"
 
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:729
 msgid "Statistics"
 msgstr "Statistika"
 
-#: src/main.c:739
+#: src/main.c:735
 msgid "Level:"
 msgstr "Līmenis:"
 
-#: src/main.c:740
+#: src/main.c:736
 msgid "Molecule:"
 msgstr "Molekula:"
 
-#: src/main.c:741
+#: src/main.c:737
 msgid "Score:"
 msgstr "Rezultāts:"
 
-#: src/main.c:742
+#: src/main.c:738
 msgid "Time:"
 msgstr "Laiks:"
 
-#: src/main.c:782
+#: src/main.c:778
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Nevarēja atrast failu: %s"
 
-#: src/main.c:840
+#: src/main.c:835
 msgid "Atomix Splash"
 msgstr "Atomix Splash"
 
@@ -204,11 +205,10 @@ msgid "Found theme '%s' in: %s"
 msgstr "Atradām tēmu '%s' iekš %s"
 
 #: atomix.desktop.in.h:1
-#, fuzzy
 msgid "Atomix"
-msgstr "Atomix Splash"
+msgstr "Atomix"
 
 #: atomix.desktop.in.h:2
-#, fuzzy
 msgid "Molecule mind game"
-msgstr "Atomix - Molekulas Domāšanas Spēle"
+msgstr "Molekulu Domāšanas Spēle"
+
