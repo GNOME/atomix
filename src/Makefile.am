@@ -39,8 +39,7 @@ libatomix_a_SOURCES = \
 	level.c level.h level-private.h \
 	level-manager.c level-manager.h \
 	canvas_helper.c canvas_helper.h \
-	playfield.c playfield.h \
-	util.c util.h
+	playfield.c playfield.h
 
 pf_test_SOURCES = \
 	playfield.h playfield.c \

@@ -32,7 +32,6 @@
 #include "main.h"
 #include "goal.h"
 #include "level.h"
-#include "util.h"
 #include "goal-view.h"
 #include "gtk-clock.h"
 

@@ -1,3 +1,9 @@
+2001-12-02  Jens Finke <jens@triq.net>
+
+	* util.[ch]: Removed files.
+
+	* canvas_helper.[ch]: Removed canvas_map stuff. 
+
 2001-12-02  Jens Finke <jens@triq.net>		
 
 	* main.c (create_gui): Use g_signal_connect.
