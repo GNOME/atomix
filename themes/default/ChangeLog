@@ -1,0 +1,8 @@
+2001-11-30  Jens Finke <jens@triq.net>
+
+	* theme: New format for selector specification.
+
+	* arrow-left.png, 
+	arrow-right.png, 
+	arrow-top.png, 
+	arrow-bottom.png: New files

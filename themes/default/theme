@@ -38,5 +38,11 @@
     <base id="7" src="wall-corner2.png" name="test"/>
     <base id="8" src="wall2.png" name="test"/>
   </wall>
-  <selector src="selector.png"/>
+  <selector> 
+    <base src="selector.png"/>
+    <arrow type="left" src="arrow-left.png"/>
+    <arrow type="right" src="arrow-right.png"/>
+    <arrow type="top" src="arrow-top.png"/>
+    <arrow type="bottom" src="arrow-bottom.png"/>
+  </selector>
 </theme>
