@@ -93,7 +93,7 @@ msgstr "_Peli"
 
 #: src/atomix-ui.xml.in.h:20
 msgid "_Help"
-msgstr "_Ohje"
+msgstr "O_hje"
 
 #: src/atomix-ui.xml.in.h:21
 msgid "_New Game"
