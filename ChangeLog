@@ -1,3 +1,7 @@
+2003-05-06  Danilo Å egan  <dsegan@gmx.net>
+
+	* configure.in: Added "sr" and "sr@Latn" to ALL_LINGUAS.
+
 2003-03-20  Gil "Dolfin" Osher <dolfin@rpg.org.il>
 
 	* configure.in: Added 'he' to ALL_LINGUAS.
@@ -199,7 +203,7 @@
 
 	* configure.in: Added ja to ALL_LINGUAS.
 
-2002-03-22  T?µivo Leedj?¤rv  <toivo@linux.ee>
+2002-03-22  T?Âµivo Leedj?Â¤rv  <toivo@linux.ee>
 
 	* configure.in: Added et to ALL_LINGUAS.
 
@@ -959,7 +963,7 @@
 	(INCLUDES): Addded -Wall compiler option.
 	
 
-2001-11-12  Carlos Perell?³ Mar?­n <carlos@gnome-db.org>
+2001-11-12  Carlos Perell?Â³ Mar?Â­n <carlos@gnome-db.org>
 
 	* configure.in: Added the new locales from GNOME 1.4 version.
 
