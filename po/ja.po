@@ -1,0 +1,213 @@
+# atomix ja.po.
+# Copyright (C) 2001-2002 Free Software Foundation, Inc.
+# Takeshi Aihana <aihana@gnome.gr.jp>, 2001-2002.
+#
+#, no-wrap
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix 0.9.2\n"
+"POT-Creation-Date: 2002-04-11 21:06+0900\n"
+"PO-Revision-Date: 2002-04-11 21:28+0900\n"
+"Last-Translator: Takeshi Aihana <aihana@gnome.gr.jp>\n"
+"Language-Team: Japanese <translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/atomix-ui.xml.in.h:1
+msgid "Continue paused game"
+msgstr "一時停止していたゲームを再開します"
+
+#: src/atomix-ui.xml.in.h:2
+msgid "E_xit"
+msgstr "終了(_X)"
+
+#: src/atomix-ui.xml.in.h:3
+msgid "End a game"
+msgstr "ゲームを終了します"
+
+#: src/atomix-ui.xml.in.h:4
+msgid "Exit game"
+msgstr "ゲームの終了"
+
+#: src/atomix-ui.xml.in.h:5
+msgid "Pause the running game"
+msgstr "現在プレイ中のゲームを一時停止します"
+
+#: src/atomix-ui.xml.in.h:6
+msgid "Reset level"
+msgstr "レベルのクリア"
+
+#: src/atomix-ui.xml.in.h:7
+msgid "Restores start situation"
+msgstr "開始時の状態に戻します"
+
+#: src/atomix-ui.xml.in.h:8
+msgid "Set preferences"
+msgstr "設定のセット"
+
+#: src/atomix-ui.xml.in.h:9
+msgid "Skip _level"
+msgstr "レベルのスキップ(_L)"
+
+#: src/atomix-ui.xml.in.h:10
+msgid "Skip the current level"
+msgstr "現在のレベルをスキップします"
+
+#: src/atomix-ui.xml.in.h:11
+msgid "Start a new game"
+msgstr "新しいゲームを開始します"
+
+#: src/atomix-ui.xml.in.h:12
+msgid "Undo the last move"
+msgstr "最後の一手に戻します"
+
+#: src/atomix-ui.xml.in.h:13
+msgid "View game credits"
+msgstr "このゲームのクレジットを表示します"
+
+#: src/atomix-ui.xml.in.h:14
+msgid "View highscores"
+msgstr "最高得点を表示します"
+
+#: src/atomix-ui.xml.in.h:15
+msgid "_About"
+msgstr "情報(_A)"
+
+#: src/atomix-ui.xml.in.h:16
+msgid "_Continue game"
+msgstr "ゲームの再開(_C)"
+
+#: src/atomix-ui.xml.in.h:17
+msgid "_Edit"
+msgstr "編集(_E)"
+
+#: src/atomix-ui.xml.in.h:18
+msgid "_End Game"
+msgstr "終了(_E)"
+
+#: src/atomix-ui.xml.in.h:19
+msgid "_Game"
+msgstr "ゲーム(_G)"
+
+#: src/atomix-ui.xml.in.h:20
+msgid "_Help"
+msgstr "ヘルプ(_H)"
+
+#: src/atomix-ui.xml.in.h:21
+msgid "_New Game"
+msgstr "新規(_N)"
+
+#: src/atomix-ui.xml.in.h:22
+msgid "_Pause game"
+msgstr "一時停止(_P)"
+
+#: src/atomix-ui.xml.in.h:23
+msgid "_Preferences ..."
+msgstr "設定(_P)..."
+
+#: src/atomix-ui.xml.in.h:24
+msgid "_Scores ..."
+msgstr "スコア(_S)..."
+
+#: src/atomix-ui.xml.in.h:25
+msgid "_Undo move"
+msgstr "アンドゥ(_U)"
+
+#: src/board.c:170
+msgid "Game Paused"
+msgstr "ゲーム停止"
+
+#: src/board.c:172
+msgid "Game Over"
+msgstr "ゲーム終了"
+
+#: src/board.c:174
+msgid "Atomix - Molecule Mind Game"
+msgstr "Atomix - 分子構造の心理ゲーム"
+
+#: src/level-manager.c:171
+msgid "Couldn't find level sequence description."
+msgstr "レベル順序記述ファイルが見つかりませんでした。"
+
+#: src/level-manager.c:185
+msgid "No level found."
+msgstr "レベルがありません。"
+
+#: src/level-manager.c:285
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "レベル '%s' が %s の中にありました"
+
+#: src/main.c:149
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "Copyright (C) 1999-2002 Jens Finke"
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr "原子と分子の構造を使った心理ゲームです。"
+
+#: src/main.c:484
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "おめでとうございます！ Atomix の全てのレベルをクリアしました。"
+
+#: src/main.c:495
+msgid "Couldn't find at least one level."
+msgstr "一つもレベルが見つかりませんでした。"
+
+#: src/main.c:500
+msgid "Do you want to finish the game?"
+msgstr "本当にこのゲームを終了しても宜しいですか？"
+
+#: src/main.c:619 src/main.c:625 src/main.c:630
+#, c-format
+msgid "Couldn't create directory: %s"
+msgstr "ディレクトリを作成できませんでした: %s"
+
+#. create statistics frame
+#: src/main.c:733
+msgid "Statistics"
+msgstr "ゲームの成績"
+
+#: src/main.c:739
+msgid "Level:"
+msgstr "レベル:"
+
+#: src/main.c:740
+msgid "Molecule:"
+msgstr "分子:"
+
+#: src/main.c:741
+msgid "Score:"
+msgstr "スコア:"
+
+#: src/main.c:742
+msgid "Time:"
+msgstr "タイム:"
+
+#: src/main.c:782
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "ファイルが見つかりませんでした: %s"
+
+#: src/main.c:840
+msgid "Atomix Splash"
+msgstr "Atomix のスプラッシュスクリーン"
+
+#: src/theme-manager.c:141
+msgid "No themes found."
+msgstr "テーマが見つかりませんでした。"
+
+#: src/theme-manager.c:204
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "テーマ '%s' が %s の中にありました"
+
+#: atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
+
+#: atomix.desktop.in.h:2
+msgid "Molecule mind game"
+msgstr "分子構造の心理ゲーム"
+
