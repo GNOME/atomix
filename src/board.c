@@ -43,6 +43,7 @@ typedef struct {
 	guint                col;
 	gboolean             selected;
 	gint                 arrow_show_timeout;
+	gint                 mouse_steering;
 	GnomeCanvasItem      *sel_item;
 	GnomeCanvasItem      *selector;
 	GnomeCanvasGroup     *arrows;
@@ -124,6 +125,7 @@ static void selector_select (SelectorData *data, GnomeCanvasItem *item);
 static SelectorData* selector_create (void);
 static void selector_destroy (SelectorData *data);
 static void selector_hide (SelectorData *data);
+static void selector_show (SelectorData *data);
 static void selector_arrows_hide (SelectorData *data);
 
 /*=================================================================
@@ -557,6 +559,61 @@ get_item_by_row_col (gint row, gint col)
 	return gnome_canvas_get_item_at (board_canvas, x, y);
 }
 
+static void
+get_row_col_by_item (GnomeCanvasItem *item, guint *row, guint *col)
+{
+	gdouble x1, y1, x2, y2;
+	
+	gnome_canvas_item_get_bounds (item, &x1, &y1, &x2, &y2);
+
+        convert_to_playfield (board_theme, x1, y1, row, col);
+}
+
+static gboolean 
+board_handle_arrow_event (GnomeCanvasItem *item, GdkEvent *event, gpointer direction)
+{
+        /* is currently an object moved? */
+	if (anim_data->timeout_id != -1) return FALSE;
+
+	if (event->type == GDK_BUTTON_PRESS &&
+	    selector_data->selected) 
+	{
+		selector_data->mouse_steering = TRUE;
+		move_item (selector_data->sel_item, GPOINTER_TO_INT (direction));
+
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
+static gboolean 
+board_handle_item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
+{
+	gboolean just_unselect;
+	guint new_row, new_col;
+
+	if (event->type == GDK_BUTTON_PRESS) {
+		selector_data->mouse_steering = TRUE;
+		just_unselect = (item == selector_data->sel_item);
+
+		if (selector_data->selected) {
+			/* unselect item, show selector image */
+			selector_unselect (selector_data);
+		}
+
+		if (!just_unselect) {
+			get_row_col_by_item (item, &new_row, &new_col);
+
+			selector_move_to (selector_data, new_row, new_col);
+			selector_select (selector_data, item);
+		}
+
+		return TRUE;
+	}
+	return FALSE;
+}
+
 void 
 board_handle_key_event (GdkEventKey *event)
 {
@@ -575,6 +632,7 @@ board_handle_key_event (GdkEventKey *event)
 	switch(event->keyval)
 	{
 	case GDK_Return:
+		selector_data->mouse_steering = FALSE;
 		if (selector_data->selected) {
 			/* unselect item, show selector image */
 			selector_unselect (selector_data);
@@ -593,10 +651,13 @@ board_handle_key_event (GdkEventKey *event)
 		break;
 			
 	case GDK_Left:
+		selector_data->mouse_steering = FALSE;
 		if (!selector_data->selected) {
 			new_col--;
-			if (new_col >= 0)
+			if (new_col >= 0) {
+				selector_show (selector_data);
 				selector_move_to (selector_data, new_row, new_col);
+			}
 		}
 		else {
 			move_item (selector_data->sel_item, LEFT); /* selector will be
@@ -606,10 +667,13 @@ board_handle_key_event (GdkEventKey *event)
 		break;
 
 	case GDK_Right:
+		selector_data->mouse_steering = FALSE;
 		if (!selector_data->selected) {
 			new_col++;
-			if (new_col < playfield_get_n_cols (board_env))
+			if (new_col < playfield_get_n_cols (board_env)) {
+				selector_show (selector_data);
 				selector_move_to (selector_data, new_row, new_col);
+			}
 		}
 		else {
 			move_item (selector_data->sel_item, RIGHT); /* selector will be
@@ -619,10 +683,13 @@ board_handle_key_event (GdkEventKey *event)
 		break;
 		
 	case GDK_Up:
+		selector_data->mouse_steering = FALSE;
 		if(!selector_data->selected) {
 			new_row--;
-			if(new_row >= 0)
+			if(new_row >= 0) {
+				selector_show (selector_data);
 				selector_move_to (selector_data, new_row, new_col);
+			}
 		}
 		else {
 			move_item(selector_data->sel_item, UP); /* selector will be moved
@@ -631,10 +698,13 @@ board_handle_key_event (GdkEventKey *event)
 		break;
 		
 	case GDK_Down:
+		selector_data->mouse_steering = FALSE;
 		if(!selector_data->selected) {
 			new_row++;
-			if(new_row < playfield_get_n_rows (board_env))
+			if(new_row < playfield_get_n_rows (board_env)) {
+				selector_show (selector_data);
 				selector_move_to (selector_data, new_row, new_col);
+			}
 		}
 		else {
 			move_item (selector_data->sel_item, DOWN); /* selector will be
@@ -799,7 +869,9 @@ selector_unselect (SelectorData *data)
 
 	data->selected = FALSE;
 	data->sel_item = NULL;
-	gnome_canvas_item_show (data->selector);
+	if (!data->mouse_steering) {
+		gnome_canvas_item_show (data->selector);
+	}
 	selector_arrows_hide (data);
 }
 
@@ -817,6 +889,12 @@ selector_hide (SelectorData *data)
 {
 	gnome_canvas_item_hide (data->selector);
 	selector_arrows_hide (data);
+}
+
+static void
+selector_show (SelectorData *data)
+{
+	gnome_canvas_item_show (data->selector);
 }
 
 static gboolean
@@ -887,13 +965,17 @@ selector_arrows_show (SelectorData *data)
 	}
 
 
+	if (data->mouse_steering) {
+		show_arrow_group (data);
+	}
+	else {
+		if (data->arrow_show_timeout > -1)
+			gtk_timeout_remove (data->arrow_show_timeout);
 
-	if (data->arrow_show_timeout > -1)
-		gtk_timeout_remove (data->arrow_show_timeout);
-
-	data->arrow_show_timeout = gtk_timeout_add (800, 
-						    (GtkFunction) show_arrow_group,
-						    data);
+		data->arrow_show_timeout = gtk_timeout_add (800, 
+							    (GtkFunction) show_arrow_group,
+							    data);
+	}
 }
 
 static void 
@@ -941,6 +1023,7 @@ selector_create (void)
 	data->sel_item = NULL;
 	data->selected = FALSE;
 	data->arrow_show_timeout = -1;
+	data->mouse_steering = FALSE;
 
 	data->selector = gnome_canvas_item_new(gnome_canvas_root (board_canvas),
 					       gnome_canvas_pixbuf_get_type(),
@@ -969,6 +1052,9 @@ selector_create (void)
 						 "y_in_pixels", TRUE,
 						 "anchor", GTK_ANCHOR_NW,
 						 NULL);	
+	g_signal_connect (G_OBJECT (data->arrow_top), "event", 
+			  G_CALLBACK (board_handle_arrow_event), GINT_TO_POINTER (UP));
+
 	data->arrow_right = gnome_canvas_item_new (GNOME_CANVAS_GROUP (data->arrows),
 						   gnome_canvas_pixbuf_get_type(),
 						   "pixbuf", sel_arrows[1],
@@ -978,6 +1064,9 @@ selector_create (void)
 						   "y_in_pixels", TRUE,
 						   "anchor", GTK_ANCHOR_NW,
 						   NULL);	
+	g_signal_connect (G_OBJECT (data->arrow_right), "event", 
+			  G_CALLBACK (board_handle_arrow_event), GINT_TO_POINTER (RIGHT));
+
 	data->arrow_bottom = gnome_canvas_item_new (GNOME_CANVAS_GROUP (data->arrows),
 						    gnome_canvas_pixbuf_get_type(),
 						    "pixbuf", sel_arrows[2],
@@ -987,6 +1076,9 @@ selector_create (void)
 						    "y_in_pixels", TRUE,
 						    "anchor", GTK_ANCHOR_NW,
 						    NULL);	
+	g_signal_connect (G_OBJECT (data->arrow_bottom), "event", 
+			  G_CALLBACK (board_handle_arrow_event), GINT_TO_POINTER (DOWN));
+
 	data->arrow_left = gnome_canvas_item_new (GNOME_CANVAS_GROUP (data->arrows),
 						  gnome_canvas_pixbuf_get_type(),
 						  "pixbuf", sel_arrows[3],
@@ -996,6 +1088,8 @@ selector_create (void)
 						  "y_in_pixels", TRUE,
 						  "anchor", GTK_ANCHOR_NW,
 						  NULL);	
+	g_signal_connect (G_OBJECT (data->arrow_left), "event", 
+			  G_CALLBACK (board_handle_arrow_event), GINT_TO_POINTER (LEFT));
 	
 	gnome_canvas_item_hide (GNOME_CANVAS_ITEM (data->selector));
 	gnome_canvas_item_hide (GNOME_CANVAS_ITEM (data->arrows));
@@ -1031,6 +1125,11 @@ create_tile (double x, double y, Tile *tile,
 				     "anchor", GTK_ANCHOR_NW,
 				     NULL);
 	g_object_set_data (G_OBJECT (item), "tile", tile);
+	
+	if (tile_get_tile_type (tile) == TILE_TYPE_ATOM) {
+		g_signal_connect (G_OBJECT (item), "event", 
+				  G_CALLBACK (board_handle_item_event), NULL);
+	}
 
         board_canvas_items = g_slist_prepend(board_canvas_items, item);
 

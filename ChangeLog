@@ -1,3 +1,20 @@
+2002-02-27  Jens Finke <jens@triq.net>
+
+	This patch enables the concurrent usage of mouse and keyboard
+	for atom movements.
+	
+	* src/board.c (get_row_col_by_item),
+	(selector_show),
+	(board_handle_arrow_event),
+	(board_handle_item_event): New functions.
+	(board_handle_key_event): Set mouse steering flag to false and
+	show selector item explicitly.
+	(selector_unselect): Show selector only if keyboard is used.
+	(selector_arrows_show): Show arrows immediately if user uses
+	mouse.
+	(selector_create): Connect to arrow item event signal.
+	(create_tile): Connect to item event signal, if its an atom tile.
+	
 2002-02-19  Simos Xenitellis  <simos@hellug.gr>
 
 	* configure.in: Added "el" (Greek) to ALL_LINGUAS.
