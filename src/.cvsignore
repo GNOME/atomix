@@ -12,4 +12,5 @@ Makefile.in
 atomix
 pf-test
 level-convert
+atomix-ui.xml
 
