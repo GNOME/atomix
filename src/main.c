@@ -338,7 +338,9 @@ level_cleanup_view (AtomixApp *app)
 static void
 atomix_exit (AtomixApp *app)
 {
+#ifdef DEBUG
 	g_message ("Destroy application");
+#endif
 
 	g_return_if_fail (app != NULL);
 
@@ -833,7 +835,7 @@ create_splash (void)
 	gtk_container_add (GTK_CONTAINER (splash_window), img);
 
 	gtk_window_set_title (GTK_WINDOW (splash_window), _("Atomix Splash"));
- 	gtk_window_set_gravity (GTK_WINDOW (splash_window), GDK_GRAVITY_CENTER);
+	gtk_window_set_position (GTK_WINDOW (splash_window), GTK_WIN_POS_CENTER_ALWAYS);
 
 	gtk_widget_show_all (splash_window);
 

@@ -53,13 +53,6 @@ typedef struct {
 	GnomeCanvasItem      *arrow_bottom;
 } SelectorData;
 
-typedef struct  {
-	GnomeCanvasGroup *messages;
-	GnomeCanvasItem  *pause;
-	GnomeCanvasItem  *game_over;
-	GnomeCanvasItem  *new_game;
-} MessageItems;
-
 typedef struct {
 	GnomeCanvasGroup *level;
 	GnomeCanvasGroup *obstacles;
@@ -88,12 +81,10 @@ static PlayField   *board_sce = NULL;   /* the actual playfield */
 static PlayField   *board_shadow = NULL; /* the shadow positions */
 static Goal        *board_goal = NULL;    /* the goal of this level */
 
-
 static AnimData         *anim_data;      /* holds the date for the atom 
 					    animation */
 static GSList           *board_canvas_items = NULL; /* a list of all used 
 						       canvas items */
-static MessageItems     *message_items;  /* references to the messages */
 static LevelItems       *level_items;    /* references to the level groups */
 
 static SelectorData     *selector_data;  /* data about the selector */
@@ -106,10 +97,7 @@ static SelectorData     *selector_data;  /* data about the selector */
 GnomeCanvasItem* create_tile (double x, double y, Tile *tile,
 			      GnomeCanvasGroup* group);
 
-GnomeCanvasItem* create_message(GnomeCanvas *canvas, GnomeCanvasGroup* group, gchar* text);
-
-void
-board_render(void);
+void board_render(void);
 
 static void render_tile (Tile *tile, gint row, gint col);
 
@@ -123,7 +111,6 @@ static void selector_move_to (SelectorData *data, guint row, guint col);
 static void selector_unselect (SelectorData *data);
 static void selector_select (SelectorData *data, GnomeCanvasItem *item);
 static SelectorData* selector_create (void);
-static void selector_destroy (SelectorData *data);
 static void selector_hide (SelectorData *data);
 static void selector_show (SelectorData *data);
 static void selector_arrows_hide (SelectorData *data);
@@ -133,6 +120,81 @@ static void selector_arrows_hide (SelectorData *data);
   Board creation, initialisation and clean up
 
   ---------------------------------------------------------------*/
+
+#define BGR_FLOOR_ROWS 15
+#define BGR_FLOOR_COLS 15
+
+static void
+create_background_floor (void)
+{
+	int row, col;
+	Tile *tile;
+	GQuark quark;
+	int tile_width, tile_height;
+	double x, y;
+	GdkPixbuf *pixbuf = NULL;
+	GnomeCanvasItem *item;
+	int ca_width, ca_height;
+	int width, height;
+
+	quark = g_quark_from_static_string ("floor");
+	theme_get_tile_size (board_theme, &tile_width, &tile_height);
+
+	tile = tile_new (TILE_TYPE_FLOOR);
+	tile_set_base_id (tile, quark);
+	pixbuf = theme_get_tile_image (board_theme, tile);
+	g_object_unref (tile);
+
+	for (row = 0; row < BGR_FLOOR_ROWS; row++) 
+		for (col = 0; col < BGR_FLOOR_COLS; col++) {
+			
+			x = col * tile_width;
+			y = row * tile_height;
+			
+			item = gnome_canvas_item_new (level_items->floor,
+						      gnome_canvas_pixbuf_get_type(),
+						      "pixbuf", pixbuf,
+						      "x", x,
+						      "x_in_pixels", TRUE,
+						      "y", y,
+						      "y_in_pixels", TRUE,
+						      "width", (double) gdk_pixbuf_get_width (pixbuf),
+						      "height", (double) gdk_pixbuf_get_height (pixbuf),
+						      "anchor", GTK_ANCHOR_NW,
+						      NULL);
+		}
+
+	g_object_unref (pixbuf);
+
+	/* center the whole thing */
+	ca_width = GTK_WIDGET (board_canvas)->allocation.width;
+	ca_height = GTK_WIDGET (board_canvas)->allocation.height;
+	
+	width = tile_width * BGR_FLOOR_COLS;
+	height = tile_height * BGR_FLOOR_ROWS;
+	
+	if (width > ca_width) {
+		x = (width/2) - (ca_width/2);
+		width = ca_width;
+	}
+	else
+		x = 0;
+	
+	if (height > ca_height) {
+		y = (height/2) - (ca_height/2);
+		height = ca_height;
+	}
+	else
+		y = 0;
+
+	gnome_canvas_set_scroll_region (board_canvas, x, y,
+					width + x, height + y);
+
+	/* set background  color*/
+	set_background_color (GTK_WIDGET (board_canvas), 
+			      theme_get_background_color (board_theme));
+}
+
 
 void 
 board_init (Theme *theme, GnomeCanvas *canvas) 
@@ -157,22 +219,12 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 	/* create the canvas groups for the level
 	 * (note: the first created group will be the first drawn group)
 	 */	
+	level_items->floor     = create_group (canvas, NULL);
 	level_items->level     = create_group (canvas, NULL);
 	level_items->obstacles = create_group (canvas, level_items->level);
-	level_items->floor     = create_group (canvas, level_items->level);
 	level_items->moveables = create_group (canvas, level_items->level);
 	level_items->shadows   = create_group (canvas, level_items->level);
 	
-	/* create canvas group and items for the messages */
-	message_items = g_malloc(sizeof(MessageItems));
-	message_items->messages = create_group (canvas, NULL);
-	message_items->pause = create_message(canvas, message_items->messages,
-					      _("Game Paused"));
-	message_items->game_over = create_message(canvas, message_items->messages,
-						  _("Game Over"));
-	message_items->new_game = create_message(canvas, message_items->messages,
-						 _("Atomix - Molecule Mind Game"));
-
 	g_signal_connect (G_OBJECT (canvas), "key_press_event", 
 			  G_CALLBACK (board_handle_key_event), NULL); 
 	
@@ -183,10 +235,9 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 	board_env = NULL;
 	board_sce = NULL;
 	board_goal = NULL;
-	selector_data = selector_create ();
 
-	set_background_color  (GTK_WIDGET (canvas), theme_get_background_color (theme));
-	gnome_canvas_item_show(message_items->new_game);	
+	create_background_floor ();
+	selector_data = selector_create ();
 }
 
 void
@@ -213,9 +264,6 @@ board_init_level (PlayField *base_env, PlayField *sce, Goal *goal)
 	/* init goal */
 	board_goal = g_object_ref (goal);
 	
-	/* hide 'New Game' message */
-	gnome_canvas_item_hide (message_items->new_game);
-
 	row = playfield_get_n_rows (board_env)/2;
 	col = playfield_get_n_cols (board_env)/2;
 	selector_move_to (selector_data, row, col);
@@ -243,16 +291,8 @@ board_destroy()
 		g_free(level_items);
 	}
 	
-	if(message_items)
-	{
-		if(message_items->messages)
-			gtk_object_destroy(GTK_OBJECT(message_items->messages));
-		
-		g_free(message_items);
-	}
-	
 	if(selector_data)
-		selector_destroy (selector_data);
+		g_free (selector_data);
 
 	if (board_theme)
 		g_object_unref (board_theme);
@@ -272,30 +312,35 @@ board_render ()
 {
 	gint row, col;
 	gint tile_width, tile_height;
-	gint ca_width, ca_height;
-	gint x, y, width, height;
 	Tile *tile;
+	double x_offset, y_offset;
+	double dst[6];
 
 	g_return_if_fail (board_theme != NULL);
 		
-	/* create canvas items */
-	for(row = 0; row < playfield_get_n_rows (board_env); row++) 
+	/* render one row more than the actual environment because
+	   of the shadow, which is one row/col larger */
+	for(row = 0; row <= playfield_get_n_rows (board_env); row++) 
 	{
-		for(col = 0; col < playfield_get_n_cols (board_env); col++)
+		for(col = 0; col <= playfield_get_n_cols (board_env); col++)
 		{
-			tile = playfield_get_tile (board_sce, row, col);
-			if (tile != NULL) {
-				render_tile (tile, row, col);
-				g_object_unref (tile);
-			}
+			if (row < playfield_get_n_rows (board_env) &&
+			    col < playfield_get_n_cols (board_env)) 
+			{
+				tile = playfield_get_tile (board_sce, row, col);
+				if (tile != NULL) {
+					render_tile (tile, row, col);
+					g_object_unref (tile);
+				}
+				
+				tile = playfield_get_tile (board_env, row, col);
+				if (tile != NULL) {
+					render_tile (tile, row, col);
+					if (tile_get_tile_type (tile) == TILE_TYPE_WALL)
+						playfield_set_tile (board_sce, row, col, tile);
 
-			tile = playfield_get_tile (board_env, row, col);
-			if (tile != NULL) {
-				render_tile (tile, row, col);
-				if (tile_get_tile_type (tile) == TILE_TYPE_WALL)
-					playfield_set_tile (board_sce, row, col, tile);
-
-				g_object_unref (tile);
+					g_object_unref (tile);
+				}
 			}
 
 			tile = playfield_get_tile (board_shadow, row, col);
@@ -307,34 +352,13 @@ board_render ()
 	}
 
 	theme_get_tile_size (board_theme, &tile_width, &tile_height);
-
-	/* center the whole thing */
-	ca_width = GTK_WIDGET (board_canvas)->allocation.width;
-	ca_height = GTK_WIDGET (board_canvas)->allocation.height;
 	
-	width = tile_width * playfield_get_n_cols (board_env);
-	height = tile_height * playfield_get_n_rows (board_env);
-	
-	if (width > ca_width) {
-		x = (width/2) - (ca_width/2);
-		width = ca_width;
-	}
-	else
-		x = 0;
-	
-	if (height > ca_height) {
-		y = (height/2) - (ca_height/2);
-		height = ca_height;
-	}
-	else
-		y = 0;
+	x_offset = tile_width * (BGR_FLOOR_COLS/2 - playfield_get_n_cols (board_env)/2);
+	y_offset = tile_height * (BGR_FLOOR_ROWS/2 - playfield_get_n_rows (board_env)/2);
 
-	gnome_canvas_set_scroll_region (board_canvas, x, y,
-					width + x, height + y);
+	art_affine_translate (dst, x_offset, y_offset);
 
-	/* set background  color*/
-	set_background_color (GTK_WIDGET (board_canvas), 
-			      theme_get_background_color (board_theme));
+	gnome_canvas_item_affine_absolute (GNOME_CANVAS_ITEM (level_items->level), dst);
 }
 
 static void
@@ -357,7 +381,7 @@ render_tile (Tile *tile, gint row, gint col)
 		break;
 		
 	case TILE_TYPE_FLOOR:
-		group = level_items->floor;
+		group = NULL; /* level_items->floor; */
 		break;
 
 	case TILE_TYPE_SHADOW:
@@ -482,50 +506,6 @@ board_print()
 	playfield_print (board_env);
 }
 
-void board_view_message(gint msg_id)
-{
-	switch(msg_id)
-	{
-	case BOARD_MSG_NONE:
-		gnome_canvas_item_hide(message_items->pause);
-		gnome_canvas_item_hide(message_items->new_game);
-		gnome_canvas_item_hide(message_items->game_over);
-		break;
-	case BOARD_MSG_GAME_PAUSED:
-		gnome_canvas_item_show(message_items->pause);
-		break;
-	case BOARD_MSG_NEW_GAME:
-		gnome_canvas_item_show(message_items->new_game);
-		break;
-	case BOARD_MSG_GAME_OVER:
-		gnome_canvas_item_show(message_items->game_over);
-		break;
-	default:
-	}
-}
-
-void board_hide_message(gint msg_id)
-{
-	switch(msg_id)
-	{
-	case BOARD_MSG_NONE:
-		gnome_canvas_item_show(message_items->pause);
-		gnome_canvas_item_show(message_items->new_game);
-		gnome_canvas_item_show(message_items->game_over);
-		break;
-	case BOARD_MSG_GAME_PAUSED:
-		gnome_canvas_item_hide(message_items->pause);
-		break;
-	case BOARD_MSG_NEW_GAME:
-		gnome_canvas_item_hide(message_items->new_game);
-		break;
-	case BOARD_MSG_GAME_OVER:
-		gnome_canvas_item_hide(message_items->game_over);
-		break;
-	default:
-	}
-}
-
 void
 board_hide(void)
 {
@@ -547,23 +527,30 @@ board_show(void)
 static GnomeCanvasItem*
 get_item_by_row_col (gint row, gint col)
 {
-	gdouble x, y;
 	gint width, height;
+	ArtPoint item_point;
+	ArtPoint world_point;
+	double affine[6];
 
-	convert_to_canvas (board_theme, row, col, &x, &y);
+	convert_to_canvas (board_theme, row, col, &item_point.x, &item_point.y);
 	theme_get_tile_size (board_theme, &width, &height);
 	
-	x = x + (width/2);
-	y = y + (height/2);
+	item_point.x = item_point.x + (width/2);
+	item_point.y = item_point.y + (height/2);
 
-	return gnome_canvas_get_item_at (board_canvas, x, y);
+	gnome_canvas_item_i2w_affine (GNOME_CANVAS_ITEM (level_items->level), affine);
+	art_affine_point (&world_point, &item_point, affine);
+
+	return gnome_canvas_get_item_at (board_canvas, world_point.x, world_point.y);
 }
 
 static void
 get_row_col_by_item (GnomeCanvasItem *item, guint *row, guint *col)
 {
 	gdouble x1, y1, x2, y2;
-	
+
+	g_return_if_fail (GNOME_IS_CANVAS_ITEM (item));
+
 	gnome_canvas_item_get_bounds (item, &x1, &y1, &x2, &y2);
 
         convert_to_playfield (board_theme, x1, y1, row, col);
@@ -641,9 +628,9 @@ board_handle_key_event (GObject *canvas, GdkEventKey *event, gpointer data)
 			item = get_item_by_row_col (selector_data->row, 
 						    selector_data->col);
 			if (item == NULL) break;
-
+			if (g_object_get_data (G_OBJECT (item), "tile") == NULL) break;
+				
 			tile = TILE (g_object_get_data (G_OBJECT (item), "tile"));
-			if (tile == NULL) break;
 
 			if (tile_get_tile_type (tile) == TILE_TYPE_ATOM)
 				selector_select (selector_data, item);	
@@ -840,9 +827,11 @@ move_item_anim (void *data)
 static void 
 selector_move_to (SelectorData *data, guint row, guint col)
 {
-	gdouble src_x, src_y;
-	gdouble dest_x, dest_y;
+	ArtPoint dest;
+	ArtPoint dest_world;
 	gint tile_width, tile_height;
+	double affine[6];
+	double translate[6];
 	
 	g_return_if_fail (data != NULL);
 
@@ -851,12 +840,14 @@ selector_move_to (SelectorData *data, guint row, guint col)
 	data->arrow_show_timeout = -1;
 
 	theme_get_tile_size (board_theme, &tile_width, &tile_height);
-	convert_to_canvas (board_theme, data->row, data->col, &src_x, &src_y);
-	convert_to_canvas (board_theme, row, col, &dest_x, &dest_y);
 
-	gnome_canvas_item_move (data->selector, dest_x - src_x, dest_y - src_y);	
-	gnome_canvas_item_move (GNOME_CANVAS_ITEM (data->arrows),
-				dest_x - src_x, dest_y - src_y);
+	convert_to_canvas (board_theme, row, col, &dest.x, &dest.y);
+	art_affine_point (&dest_world, &dest, affine);
+
+	art_affine_translate (translate, dest.x, dest.y);
+	gnome_canvas_item_affine_absolute (data->selector, translate);
+	art_affine_translate (translate, dest.x - tile_width, dest.y - tile_height);
+	gnome_canvas_item_affine_absolute (GNOME_CANVAS_ITEM (data->arrows), translate);
 
 	data->row = row;
 	data->col = col;
@@ -990,18 +981,6 @@ selector_select (SelectorData *data, GnomeCanvasItem *item)
 	selector_arrows_show (data);
 }
 
-static void
-selector_destroy (SelectorData *data)
-{
-	if (data->selector) 
-		gtk_object_destroy (GTK_OBJECT (data->selector));
-	
-	if (data->arrows)
-		gtk_object_destroy (GTK_OBJECT (data->arrows));
-
-	g_free (data);
-}
-
 static SelectorData* 
 selector_create (void)
 {
@@ -1025,7 +1004,7 @@ selector_create (void)
 	data->arrow_show_timeout = -1;
 	data->mouse_steering = FALSE;
 
-	data->selector = gnome_canvas_item_new(gnome_canvas_root (board_canvas),
+	data->selector = gnome_canvas_item_new(level_items->level,
 					       gnome_canvas_pixbuf_get_type(),
 					       "pixbuf", pixbuf,
 					       "x", 0.0,
@@ -1037,7 +1016,7 @@ selector_create (void)
 					       "anchor", GTK_ANCHOR_NW,
 					       NULL);
 	data->arrows = GNOME_CANVAS_GROUP (
-		gnome_canvas_item_new (gnome_canvas_root (board_canvas),
+		gnome_canvas_item_new (level_items->level,
 				       gnome_canvas_group_get_type (), 
 				       "x", (double) -tile_width,
 				       "y", (double) -tile_height,
@@ -1136,51 +1115,5 @@ create_tile (double x, double y, Tile *tile,
 	return GNOME_CANVAS_ITEM (item);
 }
 
-GnomeCanvasItem*
-create_message(GnomeCanvas *canvas, GnomeCanvasGroup* group, gchar* text)
-{
-	GnomeCanvasItem* item;
-#if 0
-	PangoFontDescription *font;
-	gdouble x, y, x1, y1, x2, y2;
 
-	g_return_val_if_fail (canvas != NULL, NULL);
-	g_return_val_if_fail (GNOME_IS_CANVAS (canvas), NULL);
-	g_return_val_if_fail (group != NULL, NULL);
-	g_return_val_if_fail (GNOME_IS_CANVAS_GROUP (group), NULL);
-	
-	gnome_canvas_get_scroll_region(canvas, &x1, &y1, &x2, &y2);    
-	x = x1 + (x2-x1)/2;
-	y = y1 + (y2-y1)/2;    
-
-	font = pango_font_description_new ();
-	pango_font_description_set_family (font, "helvetica");
-	pango_font_description_set_size (font, 14);
-	pango_font_description_set_weight (font, PANGO_WEIGHT_BOLD);
-	
-	item = gnome_canvas_item_new(group,
-				     gnome_canvas_text_get_type(),
-				     "text", text,
-				     "x", x,
-				     "y", y,
-				     "anchor", GTK_ANCHOR_CENTER,
-				     "font_desc", font,
-				     "justification", GTK_JUSTIFY_CENTER,
-				     "fill_color", "black",
-				     NULL);       
-	
-	gnome_canvas_item_hide(item);
-#endif
-	item = gnome_canvas_item_new(group,
-				     gnome_canvas_re_get_type (),
-				     "x1", 0.0,
-				     "y1", 0.0,
-				     "x2", 20.0,
-				     "y2", 20.0,
-				     "fill_color", "black",
-				     NULL);       
-
-
-	return item;
-}
 

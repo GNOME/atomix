@@ -269,6 +269,8 @@ theme_apply_decoration (Theme *theme, Tile *tile)
 	gint n_decorations;
 	GQuark decor_id;
 
+	if (tile == NULL) return FALSE;
+
 	g_return_val_if_fail (IS_THEME (theme), FALSE);
 	g_return_val_if_fail (IS_TILE (tile), FALSE);
 	

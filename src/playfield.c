@@ -693,10 +693,9 @@ convert_wall_tiles (Tile *tile, int tile_env[])
 	gint wall_id = 0; 
 	gint i;
 
-	if (tile == NULL)
-		new_tile = tile_new (TILE_TYPE_FLOOR);
-	else 
-		new_tile = tile_copy (tile);
+	if (tile == NULL) return NULL;
+
+	new_tile = tile_copy (tile);
 
 	if (tile_get_tile_type (new_tile) != TILE_TYPE_WALL) return new_tile;
 	
@@ -856,14 +855,18 @@ playfield_generate_shadow (PlayField *pf)
 
 	env_pf = playfield_new ();
 	playfield_set_matrix_size (env_pf, 
-				   playfield_get_n_rows (pf),
-				   playfield_get_n_cols (pf));
+				   playfield_get_n_rows (pf)+1,
+				   playfield_get_n_cols (pf)+1);
 
 	/* determine the really used playfield size */
-	for (row = 0; row < priv->n_rows; row++) {
-		for (col = 0; col < priv->n_cols; col++) {
+	for (row = 0; row <= priv->n_rows; row++) {
+		for (col = 0; col <= priv->n_cols; col++) {
 			create_tile_env (pf, row, col, tile_env);
-			tile = get_tile (pf, row, col);
+			
+			if (row != priv->n_rows && col != priv->n_cols)
+				tile = get_tile (pf, row, col);
+			else
+				tile = NULL;
 
 			env_tile = convert_shadow_tiles (tile, tile_env);
 

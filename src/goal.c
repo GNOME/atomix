@@ -249,7 +249,11 @@ goal_reached (Goal* goal, PlayField* pf, guint row_anchor, guint col_anchor)
 		start_row =  row_anchor - po->vert;
 		start_col =  col_anchor - po->horiz;
 
-		comp_res = compare_playfield_with_goal (goal, pf, start_row, start_col);
+		if (start_row >= 0 && start_row < playfield_get_n_rows (pf) &&
+		    start_col >= 0 && start_col < playfield_get_n_cols (pf)) 
+		{
+			comp_res = compare_playfield_with_goal (goal, pf, start_row, start_col);
+		}
 	}
 
 	return comp_res;
@@ -268,8 +272,8 @@ compare_playfield_with_goal (Goal *goal, PlayField *pf, guint start_row, guint s
 	gint end_col;
 	gboolean result;
 	
-	end_row = start_row + playfield_get_n_rows (goal->priv->pf);
-	end_col = start_col + playfield_get_n_cols (goal->priv->pf);
+	end_row = MIN (start_row + playfield_get_n_rows (goal->priv->pf), playfield_get_n_rows (pf));
+	end_col = MIN (start_col + playfield_get_n_cols (goal->priv->pf), playfield_get_n_cols (pf));
 	result = TRUE;
 	
 	for(pf_row = start_row, goal_row = 0; 

@@ -1,3 +1,42 @@
+2002-05-15  Jens Finke  <jens@triq.net>
+
+	* src/board.c:
+	(create_message): Removed.
+	(create_background_floor): New function.
+	(board_init): No more message items. Call create_background_floor.
+	(board_init_level): Removed message_items handling.
+	(board_render): Render one more row/col for shadow layer, use
+	affine translation to center playfield.
+	(render_tile): Don't render floor tiles anymore.
+	(board_view_message): Removed.
+	(board_hide_message): Removed.
+	(get_item_by_row_col): Use affine transformation to obtain item.
+	(get_row_col_by_item): Added check for canvas item object.
+	(board_handle_key_event): Check if item data "tile" is NULL.
+	(selector_move_to): Use affine absolute transformation.
+	(selector_destroy): Removed.
+	(selector_create): Use level_items->level as parent group for
+	cursor and arrows.
+	(create_message): Removed.
+
+	* goal.c (goal_reached): Check if start_row/start_col are valid
+	positions.
+	(compare_playfield_with_goal): Ensure that end_row/end_col is
+	always a valid playfield position.
+
+	* level-convert.c (convert_environment): Set only non NULL tiles.
+	(update_tile): Ignore floor tiles and use NULL for them.
+	(save_environment): Write only tiles which are non NULL.
+
+	* main.c (atomix_exit): #ifdef'd debug output.
+	(create_splash): Center splash on screen.
+
+	* playfield.c (convert_wall_tiles): Return NULL for floor tiles.
+	(playfield_generate_shadow): Ensure row/col are not larger than
+	playfield.
+
+	* theme.c (theme_apply_decoration): Check for tile == NULL.
+	
 2002-05-05  Gustavo Maciel Dias Vieira  <gdvieira@zaz.com.br>
 
 	* configure.in (ALL_LINGUAS): Added pt_BR.

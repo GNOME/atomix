@@ -402,8 +402,11 @@ convert_environment (PlayField *pf)
 		for (c = 0; c < playfield_get_n_cols (result); c++) {
 			tile = playfield_get_tile (pf_border, r, c);
 			new_tile = update_tile (tile);
-			playfield_set_tile (result, r, c, new_tile);
-			g_object_unref (new_tile);
+	
+			if (new_tile) {
+				playfield_set_tile (result, r, c, new_tile);
+				g_object_unref (new_tile);
+			}
 			
 			if (tile)
 				g_object_unref (tile);
@@ -442,27 +445,18 @@ convert_scenario (PlayField *pf)
 static Tile*
 update_tile (Tile *tile)
 {
-	static GQuark floor_id = 0;
 	static GQuark wall_id = 0;
 	Tile *new_tile = NULL;
 	TileType type;
 
-	if (!floor_id) floor_id = g_quark_from_static_string ("floor");
 	if (!wall_id) wall_id = g_quark_from_static_string ("wall-single");
 	
-	if (tile == NULL) {
-		new_tile = tile_new (TILE_TYPE_FLOOR);
-	}
-	else 
-		new_tile = tile_copy (tile);
+	if (tile == NULL) return NULL;
 
-	type = tile_get_tile_type (new_tile);
+	type = tile_get_tile_type (tile);
 	if (type == TILE_TYPE_WALL) {
+		new_tile = tile_copy (tile);
 		tile_set_base_id (new_tile, wall_id);
-	}
-	else if (type == TILE_TYPE_FLOOR) {
-
-		tile_set_base_id (new_tile, floor_id);
 	}
 
 	return new_tile;
@@ -489,25 +483,28 @@ save_environment (PlayField *pf, xmlNodePtr parent)
 	node = xmlNewChild (parent, NULL, "n_columns", buffer);
 	
 	for (r = 0; r < playfield_get_n_rows (pf); r++) {
-		row_node = xmlNewChild (parent, NULL, "row", NULL);
-		g_snprintf (buffer, 5, "%i", r);
-		xmlSetProp (row_node, "no", buffer);
+		row_node = NULL; 
 		
 		for (c = 0; c < playfield_get_n_cols (pf); c++) {
-			col_node = xmlNewChild (row_node, NULL, "col", NULL);
-			g_snprintf (buffer, 5, "%i", c);
-			xmlSetProp (col_node, "no", buffer);
 
 			tile = playfield_get_tile (pf, r, c);
-			if (tile != NULL) {
-				TileType type = tile_get_tile_type (tile);
-				if (type != TILE_TYPE_ATOM)
-					save_tile (col_node, tile);
+			if (tile != NULL && tile_get_tile_type (tile) != TILE_TYPE_ATOM) {
 
-				g_object_unref (tile);
-			}
-			else
+				if (row_node == NULL) {
+					row_node = xmlNewChild (parent, NULL, "row", NULL);
+					g_snprintf (buffer, 5, "%i", r);
+					xmlSetProp (row_node, "no", buffer);
+				}
+
+				col_node = xmlNewChild (row_node, NULL, "col", NULL);
+				g_snprintf (buffer, 5, "%i", c);
+				xmlSetProp (col_node, "no", buffer);
+
 				save_tile (col_node, tile);
+			}
+
+			if (tile != NULL) 
+				g_object_unref (tile);
 		}
 	}
 }
