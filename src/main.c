@@ -260,6 +260,7 @@ controller_handle_action (AtomixApp *app, GameAction action)
 static void
 set_game_not_running_state (AtomixApp *app)
 {
+	board_show_logo (TRUE);
 	if (app->level)
 		g_object_unref (app->level);
 	if (app->goal)
@@ -312,6 +313,7 @@ setup_level (AtomixApp *app)
 	/* init board */
 	env_pf = level_get_environment (app->level);
 	sce_pf = level_get_scenario (app->level);
+	board_show_logo (FALSE);
 	board_init_level (env_pf, sce_pf, app->goal);
 
 	/* init goal */
@@ -798,61 +800,10 @@ create_gui (GnomeProgram *prog)
 	return app;
 }
 
-static gboolean
-splash_destroy (GtkWidget *widget)
-{
-	gtk_widget_destroy (widget);
-	return FALSE;
-}
-
-static gboolean
-splash_button_event (gpointer data)
-{
-	gtk_widget_hide (GTK_WIDGET (data));
-	return TRUE;
-}
-
-static GtkWidget*
-create_splash (void)
-{
-	GtkWidget *splash_window;
-	gchar *file;
-	GtkWidget *img;
-
-	file = g_build_filename (DATADIR, "atomix", "atomix-splash.png", NULL);
-	if (!g_file_test (file, G_FILE_TEST_EXISTS)) {
-		g_free (file);
-		return NULL;
-	}
-
-	splash_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-	gtk_widget_set_events (GTK_WIDGET (splash_window), GDK_BUTTON_PRESS_MASK);
-	g_signal_connect (G_OBJECT (splash_window), "button-press-event",
-			  (GCallback) splash_button_event, 
-			  splash_window);
-
-	img = gtk_image_new_from_file (file);
-	gtk_container_add (GTK_CONTAINER (splash_window), img);
-
-	gtk_window_set_title (GTK_WINDOW (splash_window), _("Atomix Splash"));
-	gtk_window_set_position (GTK_WINDOW (splash_window), GTK_WIN_POS_CENTER_ALWAYS);
-
-	gtk_widget_show_all (splash_window);
-
-	gtk_timeout_add (5000, (GtkFunction) splash_destroy, splash_window);
-
-	while (gtk_events_pending ())
-		gtk_main_iteration ();
-	
-	g_free (file);
-	return splash_window;
-}
-
 int
 main (int argc, char *argv[])
 {
 	GnomeProgram *prog;
-	GtkWidget *splash;
 	
 	gnome_score_init (PACKAGE);
 	
@@ -863,11 +814,6 @@ main (int argc, char *argv[])
 	prog = gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE, 
 				   argc, argv, NULL);
 
-	splash = create_splash ();
-
-	/* init preferences */
-	/* preferences_init(); */
-
 	/* make a few initalisations here */
 	create_user_config_dir();
 
@@ -877,8 +823,6 @@ main (int argc, char *argv[])
 
 	gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 660, 480); 
 	gtk_widget_show (app->mainwin);
-
-	gtk_window_present (GTK_WINDOW (splash));
 
 	gtk_main ();
 	return 0;

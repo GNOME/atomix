@@ -53,6 +53,8 @@ void  board_view_message(gint msg_id);
 
 void  board_hide_message(gint msg_id);
 
+void board_show_logo (gboolean visible);
+
 void board_handle_key_event (GObject *canvas, GdkEventKey *event, gpointer data);
 
 #endif /* _ATOMIX_BOARD_H_ */

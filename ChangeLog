@@ -1,5 +1,21 @@
 2002-07-18  Jens Finke  <jens@triq.net>
 
+	* atomix-logo.png: New file.
+	
+	* Makefile.am: s/splash/logo.
+
+	* src/board.c (create_logo),
+	(board_show_logo): New functions.
+
+	* src/main.c (set_game_not_running_state): Show logo.
+	(setup_level): Hide logo.
+	(splash_destroy),
+	(splash_button_event),
+	(create_splash): Removed.
+	(main): Removed splash stuff.
+
+2002-07-18  Jens Finke  <jens@triq.net>
+
 	* atomix.desktop.in: Made it more spec compliant.
 
 	* Makefile.am: Silent install data.

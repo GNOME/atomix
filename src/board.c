@@ -59,6 +59,7 @@ typedef struct {
 	GnomeCanvasGroup *moveables;
 	GnomeCanvasGroup *floor;    
 	GnomeCanvasGroup *shadows;
+	GnomeCanvasItem  *logo;
 } LevelItems;
 
 typedef enum 
@@ -195,6 +196,31 @@ create_background_floor (void)
 			      theme_get_background_color (board_theme));
 }
 
+static void
+create_logo (void)
+{
+	GdkPixbuf *pixbuf;
+	double x1, y1, x2, y2;
+
+	pixbuf = gdk_pixbuf_new_from_file (DATADIR "/atomix/atomix-logo.png", NULL);
+	gnome_canvas_item_get_bounds (GNOME_CANVAS_ITEM (level_items->floor),
+				      &x1, &y1, &x2, &y2);
+
+	level_items->logo = gnome_canvas_item_new (level_items->floor,
+						   gnome_canvas_pixbuf_get_type(),
+						   "pixbuf", pixbuf,
+						   "x", (x2 - x1) / 2,
+						   "x_in_pixels", TRUE,
+						   "y", (y2 - y1) / 2,
+						   "y_in_pixels", TRUE,
+						   "width", (double) gdk_pixbuf_get_width (pixbuf),
+						   "height", (double) gdk_pixbuf_get_height (pixbuf),
+						   "anchor", GTK_ANCHOR_CENTER,
+						   NULL);
+	gnome_canvas_item_raise_to_top (GNOME_CANVAS_ITEM (level_items->logo));
+
+	g_object_unref (pixbuf);
+}
 
 void 
 board_init (Theme *theme, GnomeCanvas *canvas) 
@@ -237,6 +263,7 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 	board_goal = NULL;
 
 	create_background_floor ();
+	create_logo ();
 	selector_data = selector_create ();
 }
 
@@ -516,6 +543,17 @@ void
 board_show(void)
 {
 	gnome_canvas_item_show(GNOME_CANVAS_ITEM(level_items->moveables));
+}
+
+void 
+board_show_logo (gboolean visible)
+{
+	if (visible) {
+		gnome_canvas_item_show (GNOME_CANVAS_ITEM (level_items->logo));
+	}
+	else {
+		gnome_canvas_item_hide (GNOME_CANVAS_ITEM (level_items->logo));
+	}
 }
 
 /*=================================================================

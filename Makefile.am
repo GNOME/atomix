@@ -2,13 +2,13 @@
 
 SUBDIRS = po src level themes
 
-splashdir = $(pkgdatadir)
-splash_DATA = atomix-splash.png
+logodir = $(pkgdatadir)
+logo_DATA = atomix-logo.png
 scoredir=$(localstatedir)/games
 Gamesdir = $(datadir)/applications
 
 EXTRA_DIST = \
-	atomix-splash.png   \
+	atomix-logo.png   \
 	atomix.desktop.in   \
         intltool-extract.in \
         intltool-merge.in   \
