@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.4.3\n"
-"POT-Creation-Date: 2001-11-28 00:00+0100\n"
+"POT-Creation-Date: 2001-12-05 10:07+0100\n"
 "PO-Revision-Date: 2001-MO-DA HO:MI+ZONE\n"
 "Last-Translator: A.Burak Ilgicioglu <ilgici@turk.net>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -14,74 +14,98 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # src/board.c:202
-#: src/board.c:159
+#: src/board.c:165
 msgid "Game Paused"
 msgstr "Oyun Duraklatýldý"
 
 # src/board.c:204
-#: src/board.c:161
+#: src/board.c:167
 msgid "Game Over"
 msgstr "Oyun Bitti"
 
-#: src/board.c:163
+#: src/board.c:169
 msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
-# editor/callbacks.c:1279
-#: src/main.c:271
-#, fuzzy
-msgid "Couldn't find at least one level."
-msgstr "Atomixed Yardým Dosyasý bulunamadý!"
-
-# src/main.c:177
-#: src/main.c:283
-msgid "No more undo levels."
-msgstr "Baþka geri alma seviyesi yok."
-
-# src/main.c:187
-#: src/main.c:293
-msgid "This is the last level. You can't skip any further."
-msgstr "Bu son seviye. Atlama yapamazsýnýz."
-
-# src/interface.c:908
-#: src/main.c:459
-#, fuzzy
-msgid "Do you want to finish the game?"
-msgstr "Gerçekten bu oyundan çýkmak istediðinize emin misiniz?"
-
 # src/interface.c:616
-#: src/main.c:486
+#: src/main.c:487
 #, fuzzy
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini baþarýyla bitirdiniz."
 
+# editor/callbacks.c:1279
+#: src/main.c:498
+#, fuzzy
+msgid "Couldn't find at least one level."
+msgstr "Atomixed Yardým Dosyasý bulunamadý!"
+
+# src/interface.c:908
+#: src/main.c:503
+#, fuzzy
+msgid "Do you want to finish the game?"
+msgstr "Gerçekten bu oyundan çýkmak istediðinize emin misiniz?"
+
+# editor/support.c:116 src/support.c:116
+#: src/main.c:622 src/main.c:628 src/main.c:633
+#, fuzzy, c-format
+msgid "Couldn't create directory: %s"
+msgstr "%s dosyasýndan pixmap yaratýlamadý"
+
 # src/interface.c:259
 #. create statistics frame
-#: src/main.c:776
+#: src/main.c:736
 #, fuzzy
 msgid "Statistics"
 msgstr "Ýstatistikler"
 
 # src/interface.c:317
-#: src/main.c:782
+#: src/main.c:742
 msgid "Level:"
 msgstr "Seviye:"
 
-# editor/interface.c:639 src/interface.c:328
-#: src/main.c:789
-msgid "Name:"
-msgstr "Ýsim:"
+#: src/main.c:743
+msgid "Molecule:"
+msgstr ""
 
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: src/main.c:796
+#: src/main.c:744
 msgid "Score:"
 msgstr "Skor:"
 
-# src/main.c:163
-#: src/main.c:847
+# src/interface.c:347
+#: src/main.c:745
+msgid "Time:"
+msgstr "Zaman:"
+
+# editor/support.c:100 editor/support.c:138 src/support.c:100
+# src/support.c:138
+#: src/main.c:787
 #, fuzzy, c-format
-msgid "XML file %s not found."
-msgstr "Seviye bulunamadý."
+msgid "Couldn't find file: %s"
+msgstr "Pixmap dosyasý %s bulunamadý"
+
+# src/interface.c:108
+#: src/main.c:844
+#, fuzzy
+msgid "Atomix Splash"
+msgstr "Atomix"
+
+# src/main.c:177
+#~ msgid "No more undo levels."
+#~ msgstr "Baþka geri alma seviyesi yok."
+
+# src/main.c:187
+#~ msgid "This is the last level. You can't skip any further."
+#~ msgstr "Bu son seviye. Atlama yapamazsýnýz."
+
+# editor/interface.c:639 src/interface.c:328
+#~ msgid "Name:"
+#~ msgstr "Ýsim:"
+
+# src/main.c:163
+#, fuzzy
+#~ msgid "XML file %s not found."
+#~ msgstr "Seviye bulunamadý."
 
 # src/main.c:163
 #~ msgid "Level not found."
@@ -430,15 +454,6 @@ msgstr "Seviye bulunamadý."
 #~ msgid "Clears the whole grid."
 #~ msgstr "Tüm çizgileri temizle"
 
-# editor/support.c:100 editor/support.c:138 src/support.c:100
-# src/support.c:138
-#~ msgid "Couldn't find pixmap file: %s"
-#~ msgstr "Pixmap dosyasý %s bulunamadý"
-
-# editor/support.c:116 src/support.c:116
-#~ msgid "Couldn't create pixmap from file: %s"
-#~ msgstr "%s dosyasýndan pixmap yaratýlamadý"
-
 # editor/theme_img_editor.c:215
 #~ msgid "Add an image to the list."
 #~ msgstr "Listeye bir resim ekle"
@@ -470,14 +485,6 @@ msgstr "Seviye bulunamadý."
 # src/interface.c:65
 #~ msgid "Atomix manual"
 #~ msgstr "Atomix Yardým Dosyasý"
-
-# src/interface.c:108
-#~ msgid "Atomix"
-#~ msgstr "Atomix"
-
-# src/interface.c:347
-#~ msgid "Time:"
-#~ msgstr "Zaman:"
 
 # src/interface.c:417
 #~ msgid ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2001-11-28 00:00+0100\n"
+"POT-Creation-Date: 2001-12-05 10:07+0100\n"
 "PO-Revision-Date: 2001-02-27 00:25+0100\n"
 "Last-Translator: Christophe Merlet (RedFox) <redfox@eikonex.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -13,58 +13,63 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/board.c:159
+#: src/board.c:165
 msgid "Game Paused"
 msgstr ""
 
-#: src/board.c:161
+#: src/board.c:167
 msgid "Game Over"
 msgstr ""
 
-#: src/board.c:163
+#: src/board.c:169
 msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
-#: src/main.c:271
-msgid "Couldn't find at least one level."
-msgstr ""
-
-#: src/main.c:283
-msgid "No more undo levels."
-msgstr ""
-
-#: src/main.c:293
-msgid "This is the last level. You can't skip any further."
-msgstr ""
-
-#: src/main.c:459
-msgid "Do you want to finish the game?"
-msgstr ""
-
-#: src/main.c:486
+#: src/main.c:487
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr ""
 
+#: src/main.c:498
+msgid "Couldn't find at least one level."
+msgstr ""
+
+#: src/main.c:503
+msgid "Do you want to finish the game?"
+msgstr ""
+
+#: src/main.c:622 src/main.c:628 src/main.c:633
+#, c-format
+msgid "Couldn't create directory: %s"
+msgstr ""
+
 #. create statistics frame
-#: src/main.c:776
+#: src/main.c:736
 msgid "Statistics"
 msgstr ""
 
-#: src/main.c:782
+#: src/main.c:742
 msgid "Level:"
 msgstr ""
 
-#: src/main.c:789
-msgid "Name:"
+#: src/main.c:743
+msgid "Molecule:"
 msgstr ""
 
-#: src/main.c:796
+#: src/main.c:744
 msgid "Score:"
 msgstr ""
 
-#: src/main.c:847
+#: src/main.c:745
+msgid "Time:"
+msgstr ""
+
+#: src/main.c:787
 #, c-format
-msgid "XML file %s not found."
+msgid "Couldn't find file: %s"
+msgstr ""
+
+#: src/main.c:844
+msgid "Atomix Splash"
 msgstr ""
 
 #~ msgid "_New File"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2001-11-28 00:00+0100\n"
+"POT-Creation-Date: 2001-12-05 10:07+0100\n"
 "PO-Revision-Date: 2001-03-24 20:05+0100\n"
 "Last-Translator: Meilof Veeningen <meilof@hotmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -13,63 +13,82 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: src/board.c:159
+#: src/board.c:165
 msgid "Game Paused"
 msgstr "Spel Gepauzeerd"
 
-#: src/board.c:161
+#: src/board.c:167
 msgid "Game Over"
 msgstr "Spel Voorbij"
 
-#: src/board.c:163
+#: src/board.c:169
 msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
-#: src/main.c:271
-#, fuzzy
-msgid "Couldn't find at least one level."
-msgstr "Kan de Axomixed-handleiding niet vinden!"
-
-#: src/main.c:283
-msgid "No more undo levels."
-msgstr "Geen ongedaan-maak-niveaus meer."
-
-#: src/main.c:293
-msgid "This is the last level. You can't skip any further."
-msgstr "Dit is het laatste niveau. U kunt niets meer overslaan."
-
-#: src/main.c:459
-#, fuzzy
-msgid "Do you want to finish the game?"
-msgstr "Weet u zeker dat u dit spel wilt afsluiten?"
-
-#: src/main.c:486
+#: src/main.c:487
 #, fuzzy
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gefeliciteerd! U heeft alle Atomix niveaus succesvol beeindigd."
 
+#: src/main.c:498
+#, fuzzy
+msgid "Couldn't find at least one level."
+msgstr "Kan de Axomixed-handleiding niet vinden!"
+
+#: src/main.c:503
+#, fuzzy
+msgid "Do you want to finish the game?"
+msgstr "Weet u zeker dat u dit spel wilt afsluiten?"
+
+#: src/main.c:622 src/main.c:628 src/main.c:633
+#, fuzzy, c-format
+msgid "Couldn't create directory: %s"
+msgstr "Kon geen pixmap maken van bestand: %s"
+
 #. create statistics frame
-#: src/main.c:776
+#: src/main.c:736
 #, fuzzy
 msgid "Statistics"
 msgstr " Statistieken "
 
-#: src/main.c:782
+#: src/main.c:742
 msgid "Level:"
 msgstr "Niveau:"
 
-#: src/main.c:789
-msgid "Name:"
-msgstr "Naam:"
+#: src/main.c:743
+msgid "Molecule:"
+msgstr ""
 
-#: src/main.c:796
+#: src/main.c:744
 msgid "Score:"
 msgstr "Score:"
 
-#: src/main.c:847
+#: src/main.c:745
+msgid "Time:"
+msgstr "Tijd:"
+
+#: src/main.c:787
 #, fuzzy, c-format
-msgid "XML file %s not found."
-msgstr "Niveau niet gevonden."
+msgid "Couldn't find file: %s"
+msgstr "Kon het pixmap-bestand niet vinden: %s"
+
+#: src/main.c:844
+#, fuzzy
+msgid "Atomix Splash"
+msgstr "Atomix"
+
+#~ msgid "No more undo levels."
+#~ msgstr "Geen ongedaan-maak-niveaus meer."
+
+#~ msgid "This is the last level. You can't skip any further."
+#~ msgstr "Dit is het laatste niveau. U kunt niets meer overslaan."
+
+#~ msgid "Name:"
+#~ msgstr "Naam:"
+
+#, fuzzy
+#~ msgid "XML file %s not found."
+#~ msgstr "Niveau niet gevonden."
 
 #~ msgid "Level not found."
 #~ msgstr "Niveau niet gevonden."
@@ -334,12 +353,6 @@ msgstr "Niveau niet gevonden."
 #~ msgid "Clears the whole grid."
 #~ msgstr "Maakt het hele raster leeg"
 
-#~ msgid "Couldn't find pixmap file: %s"
-#~ msgstr "Kon het pixmap-bestand niet vinden: %s"
-
-#~ msgid "Couldn't create pixmap from file: %s"
-#~ msgstr "Kon geen pixmap maken van bestand: %s"
-
 #~ msgid "Add an image to the list."
 #~ msgstr "Voeg een figuur toe aan de lijst."
 
@@ -363,12 +376,6 @@ msgstr "Niveau niet gevonden."
 
 #~ msgid "Atomix manual"
 #~ msgstr "Atomix handleiding"
-
-#~ msgid "Atomix"
-#~ msgstr "Atomix"
-
-#~ msgid "Time:"
-#~ msgstr "Tijd:"
 
 #~ msgid ""
 #~ "Level not found.\n"
