@@ -1,5 +1,13 @@
 2002-02-12  Jens Finke <jens@triq.net>
 
+	* themes/default/arrow-left.png,
+	* themes/default/arrow-top.png,
+	* themes/default/arrow-right.png,
+	* themes/default/arrow-bottom.png: Replaced dummy arrow icons with
+	better ones.
+
+2002-02-12  Jens Finke <jens@triq.net>
+
 	* themes/default/atom-o.png,
 	* themes/default/atom-h.png,
 	* themes/default/atom-c.png: Changed color to 0.4.x version style.
