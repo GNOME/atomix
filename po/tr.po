@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.4.3\n"
-"POT-Creation-Date: 2002-05-16 15:35+0200\n"
+"POT-Creation-Date: 2002-07-18 22:25+0200\n"
 "PO-Revision-Date: 2002-03-02 07:34-0500\n"
 "Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -145,62 +145,57 @@ msgid "A mind game about atoms and molecules."
 msgstr "Ýçinde atom ve moleküllerin geçtiði bir zeka oyunu."
 
 # src/interface.c:616
-#: src/main.c:486
+#: src/main.c:488
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini baþarýyla bitirdiniz."
 
 # editor/callbacks.c:1279
-#: src/main.c:497
+#: src/main.c:499
 msgid "Couldn't find at least one level."
 msgstr "Hiç oyun seviyesi bulunamadý."
 
 # src/interface.c:908
-#: src/main.c:502
+#: src/main.c:504
 msgid "Do you want to finish the game?"
 msgstr "Gerçekten bu oyundan çýkmak istiyor musunuz? "
 
 # editor/support.c:116 src/support.c:116
-#: src/main.c:621 src/main.c:627 src/main.c:632
+#: src/main.c:623 src/main.c:629 src/main.c:634
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Dizin yaratýlamadý: %s"
 
 # src/interface.c:259
 #. create statistics frame
-#: src/main.c:731
+#: src/main.c:733
 msgid "Statistics"
 msgstr "Ýstatistikler"
 
 # src/interface.c:317
-#: src/main.c:737
+#: src/main.c:739
 msgid "Level:"
 msgstr "Seviye:"
 
-#: src/main.c:738
+#: src/main.c:740
 msgid "Molecule:"
 msgstr "Molekül:"
 
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: src/main.c:739
+#: src/main.c:741
 msgid "Score:"
 msgstr "Skor:"
 
 # src/interface.c:347
-#: src/main.c:740
+#: src/main.c:742
 msgid "Time:"
 msgstr "Zaman:"
 
 # editor/support.c:100 editor/support.c:138 src/support.c:100
 # src/support.c:138
-#: src/main.c:780
+#: src/main.c:782
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Dosya bulunamadý: %s"
-
-# src/interface.c:108
-#: src/main.c:837
-msgid "Atomix Splash"
-msgstr "Atomix Baþlangýç Ekraný"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
@@ -220,6 +215,10 @@ msgstr "Atomix"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Molekül oyunu"
+
+# src/interface.c:108
+#~ msgid "Atomix Splash"
+#~ msgstr "Atomix Baþlangýç Ekraný"
 
 # src/board.c:202
 #~ msgid "Game Paused"

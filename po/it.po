@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.9.1\n"
-"POT-Creation-Date: 2002-05-16 15:35+0200\n"
+"POT-Creation-Date: 2002-07-18 22:25+0200\n"
 "PO-Revision-Date: 2000-10-25 22:43+0100\n"
 "Last-Translator: Colorio Mauro <linuxbox@interfree.it>\n"
 "Language-Team: IT <IT@li.org>\n"
@@ -141,57 +141,52 @@ msgstr "(C) 1999 Jens Finke"
 msgid "A mind game about atoms and molecules."
 msgstr ""
 
-#: src/main.c:486
+#: src/main.c:488
 #, fuzzy
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Congratulazioni! Hai concluso con successo tutti i livelli di Atomix."
 
-#: src/main.c:497
+#: src/main.c:499
 #, fuzzy
 msgid "Couldn't find at least one level."
 msgstr "Impossibile trovare il manuale i Atomixed!"
 
-#: src/main.c:502
+#: src/main.c:504
 #, fuzzy
 msgid "Do you want to finish the game?"
 msgstr "Si vuole veramente uscire dal gioco?"
 
-#: src/main.c:621 src/main.c:627 src/main.c:632
+#: src/main.c:623 src/main.c:629 src/main.c:634
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr ""
 
 #. create statistics frame
-#: src/main.c:731
+#: src/main.c:733
 #, fuzzy
 msgid "Statistics"
 msgstr "Statistiche "
 
-#: src/main.c:737
+#: src/main.c:739
 msgid "Level:"
 msgstr "Livello:"
 
-#: src/main.c:738
+#: src/main.c:740
 msgid "Molecule:"
 msgstr ""
 
-#: src/main.c:739
+#: src/main.c:741
 msgid "Score:"
 msgstr "Punti:"
 
-#: src/main.c:740
+#: src/main.c:742
 msgid "Time:"
 msgstr "Tempo:"
 
-#: src/main.c:780
+#: src/main.c:782
 #, fuzzy, c-format
 msgid "Couldn't find file: %s"
 msgstr "Impossibile trovare il manuale i Atomixed!"
-
-#: src/main.c:837
-#, fuzzy
-msgid "Atomix Splash"
-msgstr "Atomix"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
@@ -211,6 +206,10 @@ msgstr "Atomixed"
 #, fuzzy
 msgid "Molecule mind game"
 msgstr "Yet another mind game."
+
+#, fuzzy
+#~ msgid "Atomix Splash"
+#~ msgstr "Atomix"
 
 #~ msgid "No more undo levels."
 #~ msgstr "Non ci sono più livelli da annullare."

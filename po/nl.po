@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-05-16 15:35+0200\n"
+"POT-Creation-Date: 2002-07-18 22:25+0200\n"
 "PO-Revision-Date: 2002-03-08 21:44+0100\n"
 "Last-Translator: hemmes <marc_janh@hotmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -134,52 +134,48 @@ msgstr "Copyright (C) 1999-2002 Jens Finke"
 msgid "A mind game about atoms and molecules."
 msgstr "Een denk spel over atomen en moleculen."
 
-#: src/main.c:486
+#: src/main.c:488
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gefeliciteerd! U heeft alle Atomix niveaus succesvol afgelegt."
 
-#: src/main.c:497
+#: src/main.c:499
 msgid "Couldn't find at least one level."
 msgstr "Kan geen enkel level vinden."
 
-#: src/main.c:502
+#: src/main.c:504
 msgid "Do you want to finish the game?"
 msgstr "Weet u zeker dat u dit spel wilt bëndigen?"
 
-#: src/main.c:621 src/main.c:627 src/main.c:632
+#: src/main.c:623 src/main.c:629 src/main.c:634
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Kan geen map maken genaamt: %s"
 
 #. create statistics frame
-#: src/main.c:731
+#: src/main.c:733
 msgid "Statistics"
 msgstr "Overzichten."
 
-#: src/main.c:737
+#: src/main.c:739
 msgid "Level:"
 msgstr "Niveau:"
 
-#: src/main.c:738
+#: src/main.c:740
 msgid "Molecule:"
 msgstr "molecuul:"
 
-#: src/main.c:739
+#: src/main.c:741
 msgid "Score:"
 msgstr "Score:"
 
-#: src/main.c:740
+#: src/main.c:742
 msgid "Time:"
 msgstr "Tijd:"
 
-#: src/main.c:780
+#: src/main.c:782
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "kan bestan: '%s' niet vinden."
-
-#: src/main.c:837
-msgid "Atomix Splash"
-msgstr "Atomix "
 
 #: src/theme-manager.c:141
 msgid "No themes found."
@@ -197,6 +193,9 @@ msgstr "Atomix"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "molecuul denk spel."
+
+#~ msgid "Atomix Splash"
+#~ msgstr "Atomix "
 
 #~ msgid "Game Paused"
 #~ msgstr "Spel Gepauzeerd"

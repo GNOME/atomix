@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-07-18 20:21+0200\n"
+"POT-Creation-Date: 2002-07-18 22:51+0200\n"
 "PO-Revision-Date: 2001-07-18 14:42+0100\n"
 "Last-Translator: Jens Finke <jens@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -120,67 +120,67 @@ msgstr "Levelsequenz-Beschreibung konnte nicht gefunden werden."
 
 #: src/level-manager.c:185
 msgid "No level found."
-msgstr "Keine L	evel gefunden."
+msgstr "Keine L\tevel gefunden."
 
 #: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Level '%s' gefunden in: %s"
 
-#: src/main.c:149
+#: atomix.desktop.in.h:1 src/main.c:118 src/main.c:444
+msgid "Atomix"
+msgstr "Atomix"
+
+#: src/main.c:145
 msgid "Copyright (C) 1999-2002 Jens Finke"
 msgstr "Copyright (C) 1999-2002 Jens Finke"
 
-#: src/main.c:150
+#: src/main.c:146
 msgid "A mind game about atoms and molecules."
 msgstr "Ein Denkspiel über Atome und Moleküle"
 
-#: src/main.c:486
+#: src/main.c:456
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Glückwunsch! Sie haben erfolgreich alle Atomix Level abgeschlossen."
 
-#: src/main.c:497
+#: src/main.c:467
 msgid "Couldn't find at least one level."
 msgstr "Es konnte nicht wenigstens ein Level gefunden werden."
 
-#: src/main.c:502
+#: src/main.c:472
 msgid "Do you want to finish the game?"
 msgstr "Wollen Sie das Spiel wirklich beenden?"
 
-#: src/main.c:621 src/main.c:627 src/main.c:632
+#: src/main.c:591 src/main.c:597 src/main.c:602
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Das Verzeichnis %s konnte nicht erstellt werden."
 
 #. create statistics frame
-#: src/main.c:731
+#: src/main.c:701
 msgid "Statistics"
 msgstr "Statistik"
 
-#: src/main.c:737
+#: src/main.c:707
 msgid "Level:"
 msgstr "Level:"
 
-#: src/main.c:738
+#: src/main.c:708
 msgid "Molecule:"
 msgstr "Molekül:"
 
-#: src/main.c:739
+#: src/main.c:709
 msgid "Score:"
 msgstr "Punktezahl:"
 
-#: src/main.c:740
+#: src/main.c:710
 msgid "Time:"
 msgstr "Zeit:"
 
-#: src/main.c:780
+#: src/main.c:750
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Datei %s konnte nicht gefunden werden."
-
-#: src/main.c:837
-msgid "Atomix Splash"
-msgstr "Atomix Splash"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
@@ -191,13 +191,12 @@ msgstr "Keine Themen gefunden."
 msgid "Found theme '%s' in: %s"
 msgstr "Thema '%s' gefunden in: %s"
 
-#: atomix.desktop.in.h:1
-msgid "Atomix"
-msgstr "Atomix"
-
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Molekül-Denkspiel"
+
+#~ msgid "Atomix Splash"
+#~ msgstr "Atomix Splash"
 
 #~ msgid "Game Paused"
 #~ msgstr "Spiel angehalten"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Atomix\n"
-"POT-Creation-Date: 2002-05-16 15:35+0200\n"
+"POT-Creation-Date: 2002-07-18 22:25+0200\n"
 "PO-Revision-Date: 2002-03-01 01:16+0300\n"
 "Last-Translator: Valek Filippov <frob@df.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
@@ -133,52 +133,48 @@ msgstr "Авторское право (С) 1999-2002 Jens Finke"
 msgid "A mind game about atoms and molecules."
 msgstr "Головоломка с атомами и молекулами"
 
-#: src/main.c:486
+#: src/main.c:488
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Поздравляю! Вы успешно завершили все уровни Atiomix."
 
-#: src/main.c:497
+#: src/main.c:499
 msgid "Couldn't find at least one level."
 msgstr "Не найден ни один уровень."
 
-#: src/main.c:502
+#: src/main.c:504
 msgid "Do you want to finish the game?"
 msgstr "Хотите завершить игру?"
 
-#: src/main.c:621 src/main.c:627 src/main.c:632
+#: src/main.c:623 src/main.c:629 src/main.c:634
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Не удалось создать каталог: %s"
 
 #. create statistics frame
-#: src/main.c:731
+#: src/main.c:733
 msgid "Statistics"
 msgstr "Статистика"
 
-#: src/main.c:737
+#: src/main.c:739
 msgid "Level:"
 msgstr "Уровень:"
 
-#: src/main.c:738
+#: src/main.c:740
 msgid "Molecule:"
 msgstr "Молекула:"
 
-#: src/main.c:739
+#: src/main.c:741
 msgid "Score:"
 msgstr "Очки:"
 
-#: src/main.c:740
+#: src/main.c:742
 msgid "Time:"
 msgstr "Время:"
 
-#: src/main.c:780
+#: src/main.c:782
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Не удалось найти файл: %s"
-
-#: src/main.c:837
-msgid "Atomix Splash"
-msgstr "Заставка Atomix"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
@@ -196,6 +192,9 @@ msgstr "Atomix"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Головоломка с молекулами"
+
+#~ msgid "Atomix Splash"
+#~ msgstr "Заставка Atomix"
 
 #~ msgid "Game Paused"
 #~ msgstr "Игра приостановлена"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-05-16 15:35+0200\n"
+"POT-Creation-Date: 2002-07-18 22:25+0200\n"
 "PO-Revision-Date: 28.02.2002 11:11\n"
 "Last-Translator: Stanislav Višňovský <visnovsky@nenya.ms.mff.cuni.cz>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -135,52 +135,48 @@ msgstr "Copyright (C) 1999-2002 Jens Finke"
 msgid "A mind game about atoms and molecules."
 msgstr "Hra na rozmýšľanie o atómoch a molekulách."
 
-#: src/main.c:486
+#: src/main.c:488
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Blahoželáme! Dokončili ste všetky úrovne Atomix."
 
-#: src/main.c:497
+#: src/main.c:499
 msgid "Couldn't find at least one level."
 msgstr "Nepodarilo sa nájsť ani jednu úroveň."
 
-#: src/main.c:502
+#: src/main.c:504
 msgid "Do you want to finish the game?"
 msgstr "Chcete skončiť hru?"
 
-#: src/main.c:621 src/main.c:627 src/main.c:632
+#: src/main.c:623 src/main.c:629 src/main.c:634
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Nepodarilo sa vytvoriť priečinok: %s"
 
 #. create statistics frame
-#: src/main.c:731
+#: src/main.c:733
 msgid "Statistics"
 msgstr "Štatistika"
 
-#: src/main.c:737
+#: src/main.c:739
 msgid "Level:"
 msgstr "Úroveň:"
 
-#: src/main.c:738
+#: src/main.c:740
 msgid "Molecule:"
 msgstr "Molekula:"
 
-#: src/main.c:739
+#: src/main.c:741
 msgid "Score:"
 msgstr "Skóre:"
 
-#: src/main.c:740
+#: src/main.c:742
 msgid "Time:"
 msgstr "Čas:"
 
-#: src/main.c:780
+#: src/main.c:782
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Nepodarilo sa nájsť súbor: %s"
-
-#: src/main.c:837
-msgid "Atomix Splash"
-msgstr "Úvodná obrazovka Atomix"
 
 #: src/theme-manager.c:141
 msgid "No themes found."
@@ -198,6 +194,9 @@ msgstr "Atomix"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Molekulová hra na rozmýšľanie"
+
+#~ msgid "Atomix Splash"
+#~ msgstr "Úvodná obrazovka Atomix"
 
 #~ msgid "Game Paused"
 #~ msgstr "Hra pozastavená"
