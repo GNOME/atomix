@@ -1,3 +1,7 @@
+2001-11-12  Carlos Perelló Marín <carlos@gnome-db.org>
+
+	* configure.in: Added the new locales from GNOME 1.4 version.
+
 2001-11-12  Jens Finke <jens@triq.net>
 
 	* src/ChangeLog: New ChangeLog for all changes in the src dir. 
