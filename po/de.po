@@ -1,0 +1,467 @@
+# German translation for Atomix.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Christian Meyer <chrisime@gnome.org>, 2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix\n"
+"POT-Creation-Date: 2001-11-12 19:09+0100\n"
+"PO-Revision-Date: 2001-03-14 14:42+0100\n"
+"Last-Translator: Christian Meyer <chrisime@gnome.org>\n"
+"Language-Team: German <gnome-de@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/board.c:191
+msgid "Game Paused"
+msgstr "Spiel angehalten"
+
+#: src/board.c:193
+msgid "Game Over"
+msgstr "Spiel zu Ende"
+
+#: src/board.c:195
+msgid "Atomix - Molecule Mind Game"
+msgstr ""
+
+#: src/main.c:178
+msgid "Level not found."
+msgstr "Level nicht gefunden."
+
+#: src/main.c:188
+#, fuzzy, no-c-format
+msgid "Undo last move. This costs you 5 % of your score."
+msgstr "Letzten Zug zurücknehmen. Dies kostet Sie 5% Ihrer Punkte."
+
+#: src/main.c:194
+msgid "No more undo levels."
+msgstr "Keine weiteren Rückgängig-Ebenen."
+
+#: src/main.c:204
+msgid "This is the last level. You can't skip any further."
+msgstr "Dies ist das letzte Level. Sie können nicht mehr weiter überspringen."
+
+#. create statistics frame
+#: src/main.c:874
+#, fuzzy
+msgid "Statistics"
+msgstr " Statistik "
+
+#: src/main.c:880
+msgid "Level:"
+msgstr "Level:"
+
+#: src/main.c:887
+msgid "Name:"
+msgstr "Name:"
+
+#: src/main.c:894
+msgid "Score:"
+msgstr "Punktezahl:"
+
+#: src/main.c:945
+#, fuzzy, c-format
+msgid "XML file %s not found."
+msgstr "Level nicht gefunden."
+
+#: src/callbacks.c:233
+msgid "Couldn't find the Atomix manual!"
+msgstr "Das Atomix Handbuch konnte nicht gefunden werden!"
+
+#~ msgid "Do you really want to clear the grid?"
+#~ msgstr "Wollen Sie das Gitter wirklich löschen?"
+
+#~ msgid ""
+#~ "There does already a theme with this name exist.\n"
+#~ "So does the dir name."
+#~ msgstr ""
+#~ "Es gibt bereits ein Thema mit diesem Namen.\n"
+#~ "Gleiches gilt für den Verzeichnisnamen."
+
+#~ msgid ""
+#~ "There does already a theme with\n"
+#~ "this name exist."
+#~ msgstr ""
+#~ "Es gibt bereits ein Thema mit\n"
+#~ "diesem Namen."
+
+#~ msgid ""
+#~ "There does already a directory\n"
+#~ "with this name exist."
+#~ msgstr ""
+#~ "Es gibt bereits ein Verzeichnis\n"
+#~ "mit diesem Namen."
+
+#~ msgid "Couldn't find the Atomixed manual!"
+#~ msgstr "Das Atomixed Handbuch wurde nicht gefunden!"
+
+#~ msgid "_New File"
+#~ msgstr "_Neue Datei"
+
+#~ msgid "Grid"
+#~ msgstr "Gitter"
+
+#~ msgid "Grid On/Off"
+#~ msgstr "Gitter an/aus"
+
+#~ msgid "Theme Window"
+#~ msgstr "Themenfenster"
+
+#~ msgid "_Clear Grid"
+#~ msgstr "Gitter _löschen"
+
+#~ msgid "_Resize Grid"
+#~ msgstr "Gittergröße _verändern"
+
+#~ msgid "_Delete Level"
+#~ msgstr "Level _löschen"
+
+#~ msgid "_Delete Theme"
+#~ msgstr "_Thema löschen"
+
+#~ msgid "Atomixed manual"
+#~ msgstr "Atomixed Handbuch"
+
+#~ msgid "_Level"
+#~ msgstr "_Level"
+
+#~ msgid "_Theme"
+#~ msgstr "_Thema"
+
+#~ msgid "Atomixed"
+#~ msgstr "Atomixed"
+
+#~ msgid "New"
+#~ msgstr "Neu"
+
+#~ msgid "New File"
+#~ msgstr "Neue Datei"
+
+#~ msgid "Open"
+#~ msgstr "Öffnen"
+
+#~ msgid "Open File"
+#~ msgstr "Datei öffnen"
+
+#~ msgid "Save"
+#~ msgstr "Speichern"
+
+#~ msgid "Save File"
+#~ msgstr "Datei speichern"
+
+#~ msgid "Theme Wnd"
+#~ msgstr "Themenfenster"
+
+#~ msgid "No."
+#~ msgstr "Nein."
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Level"
+#~ msgstr "Level"
+
+#~ msgid "Goal"
+#~ msgstr "Ziel"
+
+#~ msgid "Themename:"
+#~ msgstr "Themenname:"
+
+#~ msgid "Filename:"
+#~ msgstr "Dateiname:"
+
+#~ msgid "Bonuslevel"
+#~ msgstr "Bonuslevel"
+
+#~ msgid "Time"
+#~ msgstr "Zeit"
+
+#~ msgid "Minutes: "
+#~ msgstr "Minuten:"
+
+#~ msgid "Seconds:"
+#~ msgstr "Sekunden:"
+
+#~ msgid "Properties"
+#~ msgstr "Eigenschaften"
+
+#~ msgid "Leveleditor"
+#~ msgstr "Leveleditor"
+
+#~ msgid "Images"
+#~ msgstr "Bilder"
+
+#~ msgid "Connections"
+#~ msgstr "Verbindungen"
+
+#~ msgid "Moveables"
+#~ msgstr "Verschiebare"
+
+#~ msgid "Obstacles"
+#~ msgstr "Hindernisse"
+
+#~ msgid "Directoryname:"
+#~ msgstr "Verzeichnisname:"
+
+#~ msgid "Background Color:"
+#~ msgstr "Hintergrundfarbe:"
+
+#~ msgid "Selector Image:"
+#~ msgstr "Bild für Auswähler:"
+
+#~ msgid "Browse ..."
+#~ msgstr "Auswählen..."
+
+#~ msgid "Animation Step:"
+#~ msgstr "Animationsschritt:"
+
+#~ msgid "Tile Height:"
+#~ msgstr "Kachelhöhe:"
+
+#~ msgid "Tile Width:"
+#~ msgstr "Kachelbreite:"
+
+#~ msgid "Themeeditor"
+#~ msgstr "Themen-Editor"
+
+#~ msgid "Atom Preview"
+#~ msgstr "Atom-Vorschau"
+
+#~ msgid "Mouse functions"
+#~ msgstr "Mausfunktionen"
+
+#~ msgid "Clear"
+#~ msgstr "Löschen"
+
+#~ msgid "Set"
+#~ msgstr "Festlegen"
+
+#~ msgid "Move"
+#~ msgstr "Bewegen"
+
+#~ msgid "Resize Grid"
+#~ msgstr "Gittergröße verändern"
+
+#~ msgid "Current Values"
+#~ msgstr "Aktuelle Werte"
+
+#~ msgid "Rows:"
+#~ msgstr "Reihen:"
+
+#~ msgid "Columns:"
+#~ msgstr "Spalten:"
+
+#~ msgid "New Values"
+#~ msgstr "Neue Werte"
+
+#~ msgid "New Level"
+#~ msgstr "Neues Level"
+
+#~ msgid "Levelname:"
+#~ msgstr "Levelname:"
+
+#~ msgid "Playfield Size"
+#~ msgstr "Spielfeldgröße"
+
+#~ msgid "Goal Size"
+#~ msgstr "Größe des Ziels"
+
+#~ msgid "(C)  1999-2001 Jens Finke"
+#~ msgstr "(C)  1999-2001 Jens Finke"
+
+#~ msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
+#~ msgstr "Atomixed ist der Level-/Themeneditor in dem Denkspiel Atomix."
+
+#~ msgid "Change level name"
+#~ msgstr "Levelname ändern"
+
+#~ msgid ""
+#~ "There is already a level with the same name. Please choose another\n"
+#~ "name for this level."
+#~ msgstr ""
+#~ "Es gibt bereits ein Level mit dem gleichen Namen. Bitte wählen Sie einen\n"
+#~ "anderen Namen für dieses Level."
+
+#~ msgid "Current Name:"
+#~ msgstr "Aktueller Name:"
+
+#~ msgid "New Name:"
+#~ msgstr "Neuer Name:"
+
+#~ msgid "Add Image"
+#~ msgstr "Bild hinzufügen"
+
+#~ msgid "Text:"
+#~ msgstr "Text:"
+
+#~ msgid "Change ID"
+#~ msgstr "ID ändern"
+
+#~ msgid "Current ID:"
+#~ msgstr "Aktuelle ID:"
+
+#~ msgid "New ID:"
+#~ msgstr "Neue ID:"
+
+#~ msgid "New Theme"
+#~ msgstr "Neues Thema"
+
+#~ msgid "No tile to clear here."
+#~ msgstr "Hier kann keine Kachel gelöscht werden."
+
+#~ msgid "No tile to move here."
+#~ msgstr "Hier kann keine Kachel verschoben werden."
+
+#~ msgid "Copy Goal"
+#~ msgstr "Ziel kopieren"
+
+#~ msgid "Copy the goal into the playfield."
+#~ msgstr "Das Ziel ins Spielfeld kopieren."
+
+#~ msgid "Clear Grid"
+#~ msgstr "Gitter löschen"
+
+#~ msgid "Clears the whole grid."
+#~ msgstr "Löscht das ganze Gitter."
+
+#~ msgid "Couldn't find pixmap file: %s"
+#~ msgstr "Pixmap-Datei %s konnte nicht gefunden werden."
+
+#~ msgid "Couldn't create pixmap from file: %s"
+#~ msgstr "Es konnte kein Pixmap von Darei %s erstellt werden."
+
+#~ msgid "Add an image to the list."
+#~ msgstr "Ein Bild zur Liste hinzufügen."
+
+#~ msgid "Delete Image"
+#~ msgstr "Bild löschen"
+
+#~ msgid "Delete selected image(s)."
+#~ msgstr "Gewählte(s) Bild(er) löschen."
+
+#~ msgid "Change the ID of the image."
+#~ msgstr "Die ID des Bildes ändern."
+
+#~ msgid "Press Ctrl+N for a new Game"
+#~ msgstr "Drücken Sie Strg+N für ein neues Spiel"
+
+#~ msgid "Skip _level"
+#~ msgstr "_Level überspringen"
+
+#~ msgid "_Continue game"
+#~ msgstr "Spiel _fortsetzen"
+
+#~ msgid "Atomix manual"
+#~ msgstr "Atomix Handbuch"
+
+#~ msgid "Atomix"
+#~ msgstr "Atomix"
+
+#~ msgid "Time:"
+#~ msgstr "Zeit:"
+
+#~ msgid ""
+#~ "Level not found.\n"
+#~ "Sorry, but the game ends here.\n"
+#~ "\n"
+#~ "(Please make sure you have *.atomix\n"
+#~ "files either in <prefix>/share/atomix/levels\n"
+#~ "or ~/.atomix/levels.)"
+#~ msgstr ""
+#~ "Level nicht gefuden.\n"
+#~ "Tut mir Leid, das Spiel endet hier.\n"
+#~ "\n"
+#~ "(Stellen Sie sicher, dass Sie*.atomix-Dateien\n"
+#~ "entweder in <Präfix>/share/atomix/levels\n"
+#~ "oder ~/.atomix/levels haben.)"
+
+#~ msgid "Information"
+#~ msgstr "Information"
+
+#~ msgid "(C) 1999-2001 Jens Finke"
+#~ msgstr "(C) 1999-2001 Jens Finke"
+
+#~ msgid "Yet another mind game."
+#~ msgstr "Noch ein Denkspiel."
+
+#~ msgid "Atomix Next Level"
+#~ msgstr "Atomix nächstes Level"
+
+#~ msgid "Congratulations! You have successfully finished this level."
+#~ msgstr "Glückwunsch! Sie haben das Level erfolgreich abgeschlossen."
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Verbleibende Zeit:"
+
+#~ msgid "Are you ready for the next level?"
+#~ msgstr "Sind Sie für das nächste Level bereit?"
+
+#~ msgid "Atomix End"
+#~ msgstr "Atomix Ende"
+
+#~ msgid "Congratulations! You have successfully finished all Atomix levels."
+#~ msgstr "Glückwunsch! Sie haben erfolgreich alle Atomix Level abgeschlossen."
+
+#~ msgid "Do you want to play again?"
+#~ msgstr "Wollen Sie noch einmal spielen?"
+
+#~ msgid "Constraints"
+#~ msgstr "Einschränkungen"
+
+#~ msgid "enable score and time limit"
+#~ msgstr "Punkte- und Zeitlimit aktivieren"
+
+#~ msgid "General"
+#~ msgstr "Allgemein"
+
+#~ msgid "Keyboard (return and cursor keys)"
+#~ msgstr "Tastatur (Return-und Pfeiltasten)"
+
+#~ msgid "Mouse"
+#~ msgstr "Maus"
+
+#~ msgid "Mouse Properties"
+#~ msgstr "Mauseigenschaften"
+
+#~ msgid "hide mouse cursor during dragging"
+#~ msgstr "Mauszeiger während Ziehen verbergen"
+
+#~ msgid "enable lazy dragging"
+#~ msgstr "`faules' Ziehen aktivieren"
+
+#~ msgid "Sensitivity:"
+#~ msgstr "Empfindlichkeit:"
+
+#~ msgid "high"
+#~ msgstr "hoch"
+
+#~ msgid "low"
+#~ msgstr "niedrig"
+
+#~ msgid "Control"
+#~ msgstr "Kontrolle"
+
+#~ msgid "Do you really want to quit this game?"
+#~ msgstr "Wollen Sie das Spiel wirklich beenden?"
+
+#~ msgid "Do you really want to exit the program?"
+#~ msgstr "Wollen Sie das Programm wirklich verlassen?"
+
+#~ msgid ""
+#~ "Your time is up! This costs you 10% of your score. \n"
+#~ "More luck next time. \n"
+#~ "\n"
+#~ "Do you want to retry?"
+#~ msgstr ""
+#~ "Ihre Zeit ist um! Dies kostet Sie 10% Ihrer Punkte. \n"
+#~ "Mehr Glück das nächste Mal. \n"
+#~ "\n"
+#~ "Wollen Sie es noch einmal versuchen?"
+
+#~ msgid ""
+#~ "Sorry your time is up! But this was only\n"
+#~ "a bonus level so go further now."
+#~ msgstr ""
+#~ "Oh, Ihre Zeit ist um! Aber dies war nur ein Bonuslevel,\n"
+#~ "also machen Sie weiter."

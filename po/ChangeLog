@@ -1,0 +1,5 @@
+2001-11-12  Carlos Perelló Marín <carlos@gnome-db.org>
+
+	* da.po, de.po, fr.po, nl.po, no.po, , pl.po, pt.po, ru.po, tr.po:
+	Added from GNOME 1.4 version.
+	* it.gmo, po2tbl.sed.in, sv.gmo: Removed, generated files.

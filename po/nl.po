@@ -1,0 +1,467 @@
+# Dutch Translation of Atomix
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Meilof Veeningen <meilof@hotmail.com>, 2001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix\n"
+"POT-Creation-Date: 2001-11-12 19:09+0100\n"
+"PO-Revision-Date: 2001-03-24 20:05+0100\n"
+"Last-Translator: Meilof Veeningen <meilof@hotmail.com>\n"
+"Language-Team: Dutch <nl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: src/board.c:191
+msgid "Game Paused"
+msgstr "Spel Gepauzeerd"
+
+#: src/board.c:193
+msgid "Game Over"
+msgstr "Spel Voorbij"
+
+#: src/board.c:195
+msgid "Atomix - Molecule Mind Game"
+msgstr ""
+
+#: src/main.c:178
+msgid "Level not found."
+msgstr "Niveau niet gevonden."
+
+#: src/main.c:188
+#, fuzzy, no-c-format
+msgid "Undo last move. This costs you 5 % of your score."
+msgstr "Laatste zet ongedaan maken (kost 5% van score)."
+
+#: src/main.c:194
+msgid "No more undo levels."
+msgstr "Geen ongedaan-maak-niveaus meer."
+
+#: src/main.c:204
+msgid "This is the last level. You can't skip any further."
+msgstr "Dit is het laatste niveau. U kunt niets meer overslaan."
+
+#. create statistics frame
+#: src/main.c:874
+#, fuzzy
+msgid "Statistics"
+msgstr " Statistieken "
+
+#: src/main.c:880
+msgid "Level:"
+msgstr "Niveau:"
+
+#: src/main.c:887
+msgid "Name:"
+msgstr "Naam:"
+
+#: src/main.c:894
+msgid "Score:"
+msgstr "Score:"
+
+#: src/main.c:945
+#, fuzzy, c-format
+msgid "XML file %s not found."
+msgstr "Niveau niet gevonden."
+
+#: src/callbacks.c:233
+msgid "Couldn't find the Atomix manual!"
+msgstr "Kan de Atomix handleiding niet vinden!"
+
+#~ msgid "Do you really want to clear the grid?"
+#~ msgstr "Wilt u het raster echt leegmaken?"
+
+#~ msgid ""
+#~ "There does already a theme with this name exist.\n"
+#~ "So does the dir name."
+#~ msgstr ""
+#~ "Er bestaat al een thema met deze naam, en de\n"
+#~ "directorynaam ook."
+
+#~ msgid ""
+#~ "There does already a theme with\n"
+#~ "this name exist."
+#~ msgstr ""
+#~ "Er bestaat al een thema met deze\n"
+#~ "naam."
+
+#~ msgid ""
+#~ "There does already a directory\n"
+#~ "with this name exist."
+#~ msgstr ""
+#~ "Er bestaat al een directory met\n"
+#~ "deze naam."
+
+#~ msgid "Couldn't find the Atomixed manual!"
+#~ msgstr "Kan de Axomixed-handleiding niet vinden!"
+
+#~ msgid "_New File"
+#~ msgstr "_Nieuw Bestand"
+
+#~ msgid "Grid"
+#~ msgstr "Raster"
+
+#~ msgid "Grid On/Off"
+#~ msgstr "Raster Aan/Uit"
+
+#~ msgid "Theme Window"
+#~ msgstr "Thema Venster"
+
+#~ msgid "_Clear Grid"
+#~ msgstr "Raster _Leegmaken"
+
+#~ msgid "_Resize Grid"
+#~ msgstr "Raster_grootte wijzigen"
+
+#~ msgid "_Delete Level"
+#~ msgstr "Niveau Ver_wijderen"
+
+#~ msgid "_Delete Theme"
+#~ msgstr "_Thema Verwijderen"
+
+#~ msgid "Atomixed manual"
+#~ msgstr "Atomixed handleing"
+
+#~ msgid "_Level"
+#~ msgstr "Ni_veau"
+
+#~ msgid "_Theme"
+#~ msgstr "T_hema"
+
+#~ msgid "Atomixed"
+#~ msgstr "Atomixed"
+
+#~ msgid "New"
+#~ msgstr "Nieuw"
+
+#~ msgid "New File"
+#~ msgstr "Nieuw Bestand"
+
+#~ msgid "Open"
+#~ msgstr "Openen"
+
+#~ msgid "Open File"
+#~ msgstr "Open bestand"
+
+#~ msgid "Save"
+#~ msgstr "Opslaan"
+
+#~ msgid "Save File"
+#~ msgstr "Bestand Opslaan"
+
+#~ msgid "Theme Wnd"
+#~ msgstr "Thema Wnd"
+
+#~ msgid "No."
+#~ msgstr "Nee."
+
+#~ msgid "Name"
+#~ msgstr "Naam"
+
+#~ msgid "Level"
+#~ msgstr "Niveau"
+
+#~ msgid "Goal"
+#~ msgstr "Doel"
+
+#~ msgid "Themename:"
+#~ msgstr "Themanaam:"
+
+#~ msgid "Filename:"
+#~ msgstr "Bestandsnaam:"
+
+#~ msgid "Bonuslevel"
+#~ msgstr "Bonuslevel"
+
+#~ msgid "Time"
+#~ msgstr "Tijd"
+
+#~ msgid "Minutes: "
+#~ msgstr "Minuten: "
+
+#~ msgid "Seconds:"
+#~ msgstr "Seconden:"
+
+#~ msgid "Properties"
+#~ msgstr "Eigenschappen"
+
+#~ msgid "Leveleditor"
+#~ msgstr "Leveleditor"
+
+#~ msgid "Images"
+#~ msgstr "Figuren"
+
+#~ msgid "Connections"
+#~ msgstr "Verbindingen"
+
+#~ msgid "Moveables"
+#~ msgstr "Beweegbaren"
+
+#~ msgid "Obstacles"
+#~ msgstr "Obstakels"
+
+#~ msgid "Directoryname:"
+#~ msgstr "Directorynamen:"
+
+#~ msgid "Background Color:"
+#~ msgstr "Achtergrondkleur:"
+
+#~ msgid "Selector Image:"
+#~ msgstr "Figuurselector:"
+
+#~ msgid "Browse ..."
+#~ msgstr "Bladeren ..."
+
+#~ msgid "Animation Step:"
+#~ msgstr "Animatie Stap:"
+
+#~ msgid "Tile Height:"
+#~ msgstr "Tile Hoogte:"
+
+#~ msgid "Tile Width:"
+#~ msgstr "Tile Breedte:"
+
+#~ msgid "Themeeditor"
+#~ msgstr "Themaeditor"
+
+#~ msgid "Atom Preview"
+#~ msgstr "Atoom Voorbeeld"
+
+#~ msgid "Mouse functions"
+#~ msgstr "Muisfuncties"
+
+#~ msgid "Clear"
+#~ msgstr "Leegmaken"
+
+#~ msgid "Set"
+#~ msgstr "Instellen"
+
+#~ msgid "Move"
+#~ msgstr "Bewegen"
+
+#~ msgid "Resize Grid"
+#~ msgstr "Rastergrootte wijzigen"
+
+#~ msgid "Current Values"
+#~ msgstr "Huidige Waarden"
+
+#~ msgid "Rows:"
+#~ msgstr "Rijen:"
+
+#~ msgid "Columns:"
+#~ msgstr "Kolommen:"
+
+#~ msgid "New Values"
+#~ msgstr "Nieuwe Waarden"
+
+#~ msgid "New Level"
+#~ msgstr "Nieuw Niveau"
+
+#~ msgid "Levelname:"
+#~ msgstr "Niveaunaam"
+
+#~ msgid "Playfield Size"
+#~ msgstr "Grootte Speelveld"
+
+#~ msgid "Goal Size"
+#~ msgstr "Doelgrotte"
+
+#~ msgid "(C)  1999-2001 Jens Finke"
+#~ msgstr "(C)  1999-2001 Jens Finke"
+
+#~ msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
+#~ msgstr "Atomixed is de Niveau-/Themaeditor voor het denkspel Atomix."
+
+#~ msgid "Change level name"
+#~ msgstr "Verander niveaunaam"
+
+#~ msgid ""
+#~ "There is already a level with the same name. Please choose another\n"
+#~ "name for this level."
+#~ msgstr ""
+#~ "Er bestaat al een niveau met dezelfde naam. Kies een andere naam\n"
+#~ "voor dit niveau."
+
+#~ msgid "Current Name:"
+#~ msgstr "Huidige Naam:"
+
+#~ msgid "New Name:"
+#~ msgstr "Nieuwe Naam:"
+
+#~ msgid "Add Image"
+#~ msgstr "Figuur Toevoegen"
+
+#~ msgid "Text:"
+#~ msgstr "Tekst:"
+
+#~ msgid "Change ID"
+#~ msgstr "Verander ID"
+
+#~ msgid "Current ID:"
+#~ msgstr "Huidig ID:"
+
+#~ msgid "New ID:"
+#~ msgstr "Nieuw ID:"
+
+#~ msgid "New Theme"
+#~ msgstr "Nieuw Thema"
+
+#~ msgid "No tile to clear here."
+#~ msgstr "Hier kan geen tile worden verwijderd."
+
+#~ msgid "No tile to move here."
+#~ msgstr "Hier kan geen tile worden verplaatst."
+
+#~ msgid "Copy Goal"
+#~ msgstr "Doel kopieren"
+
+#~ msgid "Copy the goal into the playfield."
+#~ msgstr "Kopieer het doel naar het speelveld"
+
+#~ msgid "Clear Grid"
+#~ msgstr "Raster leegmaken"
+
+#~ msgid "Clears the whole grid."
+#~ msgstr "Maakt het hele raster leeg"
+
+#~ msgid "Couldn't find pixmap file: %s"
+#~ msgstr "Kon het pixmap-bestand niet vinden: %s"
+
+#~ msgid "Couldn't create pixmap from file: %s"
+#~ msgstr "Kon geen pixmap maken van bestand: %s"
+
+#~ msgid "Add an image to the list."
+#~ msgstr "Voeg een figuur toe aan de lijst."
+
+#~ msgid "Delete Image"
+#~ msgstr "Verwijder Figuur"
+
+#~ msgid "Delete selected image(s)."
+#~ msgstr "Verwijder geselecteerd figuur/figuren"
+
+#~ msgid "Change the ID of the image."
+#~ msgstr "Verander ID van figuur"
+
+#~ msgid "Press Ctrl+N for a new Game"
+#~ msgstr "Druk Ctrl+N in voor een nieuw Spel"
+
+#~ msgid "Skip _level"
+#~ msgstr "_Niveau overslaan"
+
+#~ msgid "_Continue game"
+#~ msgstr "Spel _hervatten"
+
+#~ msgid "Atomix manual"
+#~ msgstr "Atomix handleiding"
+
+#~ msgid "Atomix"
+#~ msgstr "Atomix"
+
+#~ msgid "Time:"
+#~ msgstr "Tijd:"
+
+#~ msgid ""
+#~ "Level not found.\n"
+#~ "Sorry, but the game ends here.\n"
+#~ "\n"
+#~ "(Please make sure you have *.atomix\n"
+#~ "files either in <prefix>/share/atomix/levels\n"
+#~ "or ~/.atomix/levels.)"
+#~ msgstr ""
+#~ "Niveau niet gevonden.\n"
+#~ "Sorry, maar het spel eindigt hier.\n"
+#~ "\n"
+#~ "(Zorg ervoor dat u de *.atomix\n"
+#~ "bestanden of in <prefix>/share/atomix/levels\n"
+#~ "of in ~/.atomix/levels heeft.)"
+
+#~ msgid "Information"
+#~ msgstr "Informatie"
+
+#~ msgid "(C) 1999-2001 Jens Finke"
+#~ msgstr "(C) 1999-2001 Jens Finke"
+
+#~ msgid "Yet another mind game."
+#~ msgstr "Toch nog maar een denkspel."
+
+#~ msgid "Atomix Next Level"
+#~ msgstr "Atomix Volgend Niveau"
+
+#~ msgid "Congratulations! You have successfully finished this level."
+#~ msgstr "Gefeliciteerd! U heeft dit niveau succesvol beeindigd."
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Tijd Over:"
+
+#~ msgid "Are you ready for the next level?"
+#~ msgstr "Bent u klaar voor het volgend niveau?"
+
+#~ msgid "Atomix End"
+#~ msgstr "Atomix Eind"
+
+#~ msgid "Congratulations! You have successfully finished all Atomix levels."
+#~ msgstr "Gefeliciteerd! U heeft alle Atomix niveaus succesvol beeindigd."
+
+#~ msgid "Do you want to play again?"
+#~ msgstr "Wilt u opnieuw spelen?"
+
+#~ msgid "Constraints"
+#~ msgstr "Beperkingen"
+
+#~ msgid "enable score and time limit"
+#~ msgstr "score en tijdslimiet inschakelen"
+
+#~ msgid "General"
+#~ msgstr "Algemeen"
+
+#~ msgid "Keyboard (return and cursor keys)"
+#~ msgstr "Toetsenbord (return en cursortoetsen)"
+
+#~ msgid "Mouse"
+#~ msgstr "Muis"
+
+#~ msgid "Mouse Properties"
+#~ msgstr "Muis Eigenschappen"
+
+#~ msgid "hide mouse cursor during dragging"
+#~ msgstr "verberg muiscursor tijdens slepen"
+
+#~ msgid "enable lazy dragging"
+#~ msgstr "lui slepen inschakelen"
+
+#~ msgid "Sensitivity:"
+#~ msgstr "Gevoeligheid:"
+
+#~ msgid "high"
+#~ msgstr "hoog"
+
+#~ msgid "low"
+#~ msgstr "laag"
+
+#~ msgid "Control"
+#~ msgstr "Besturing"
+
+#~ msgid "Do you really want to quit this game?"
+#~ msgstr "Weet u zeker dat u dit spel wilt afsluiten?"
+
+#~ msgid "Do you really want to exit the program?"
+#~ msgstr "Weet u zeker dat u het programma wilt afsluiten?"
+
+#~ msgid ""
+#~ "Your time is up! This costs you 10% of your score. \n"
+#~ "More luck next time. \n"
+#~ "\n"
+#~ "Do you want to retry?"
+#~ msgstr ""
+#~ "Uw tijd is op! Dit kost u 10% van uw score. \n"
+#~ "Volgende keer beter!\n"
+#~ "\n"
+#~ "Wilt u het nogeens proberen?"
+
+#~ msgid ""
+#~ "Sorry your time is up! But this was only\n"
+#~ "a bonus level so go further now."
+#~ msgstr ""
+#~ "Sorry, uw tijd is op! Maar dit was alleen\n"
+#~ "maar een bonusniveau, dus ga nu verder."

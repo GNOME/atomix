@@ -1,0 +1,96 @@
+# atomix fr.po.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Christophe Merlet (RedFox) <redfox@eikonex.org>, 2001.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix\n"
+"POT-Creation-Date: 2001-11-12 19:09+0100\n"
+"PO-Revision-Date: 2001-02-27 00:25+0100\n"
+"Last-Translator: Christophe Merlet (RedFox) <redfox@eikonex.org>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/board.c:191
+msgid "Game Paused"
+msgstr ""
+
+#: src/board.c:193
+msgid "Game Over"
+msgstr ""
+
+#: src/board.c:195
+msgid "Atomix - Molecule Mind Game"
+msgstr ""
+
+#: src/main.c:178
+msgid "Level not found."
+msgstr ""
+
+#: src/main.c:188
+#, no-c-format
+msgid "Undo last move. This costs you 5 % of your score."
+msgstr ""
+
+#: src/main.c:194
+msgid "No more undo levels."
+msgstr ""
+
+#: src/main.c:204
+msgid "This is the last level. You can't skip any further."
+msgstr ""
+
+#. create statistics frame
+#: src/main.c:874
+msgid "Statistics"
+msgstr ""
+
+#: src/main.c:880
+msgid "Level:"
+msgstr ""
+
+#: src/main.c:887
+msgid "Name:"
+msgstr ""
+
+#: src/main.c:894
+msgid "Score:"
+msgstr ""
+
+#: src/main.c:945
+#, c-format
+msgid "XML file %s not found."
+msgstr ""
+
+#: src/callbacks.c:233
+msgid "Couldn't find the Atomix manual!"
+msgstr ""
+
+#~ msgid "_New File"
+#~ msgstr "_Nouveau fichier"
+
+#~ msgid "Grid"
+#~ msgstr "Grille"
+
+#~ msgid "_Level"
+#~ msgstr "_Niveau"
+
+#~ msgid "_Theme"
+#~ msgstr "_Thème"
+
+#~ msgid "New"
+#~ msgstr "Nouveau"
+
+#~ msgid "New File"
+#~ msgstr "Nouveau fichier"
+
+#~ msgid "Open"
+#~ msgstr "Ouvrir"
+
+#~ msgid "Save"
+#~ msgstr "Enregistrer"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
