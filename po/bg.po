@@ -1,0 +1,200 @@
+# Bulgarian translation of atomix.
+# Copyright (C) 2004 THE atomix'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the atomix package.
+# Rostislav Raykov <zbrox@i-space.org>, 2004.
+#
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-06-03 03:15+0200\n"
+"PO-Revision-Date: 2004-06-03 13:02+0300\n"
+"Last-Translator: Rostislav Raykov <zbrox@i-space.org>\n"
+"Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: src/atomix-ui.xml.in.h:1
+msgid "Continue paused game"
+msgstr "Продължава паузирана игра"
+
+#: src/atomix-ui.xml.in.h:2
+msgid "E_xit"
+msgstr "Изход"
+
+#: src/atomix-ui.xml.in.h:3
+msgid "End a game"
+msgstr "Прекратява игра"
+
+#: src/atomix-ui.xml.in.h:4
+msgid "Exit game"
+msgstr "Излиза от игра"
+
+#: src/atomix-ui.xml.in.h:5
+msgid "Pause the running game"
+msgstr "Паузира вървящата игра"
+
+#: src/atomix-ui.xml.in.h:6
+msgid "Reset level"
+msgstr "Рестартира ниво"
+
+#: src/atomix-ui.xml.in.h:7
+msgid "Restores start situation"
+msgstr "Връща стартовата ситуация"
+
+#: src/atomix-ui.xml.in.h:8
+msgid "Set preferences"
+msgstr "Настройки"
+
+#: src/atomix-ui.xml.in.h:9
+msgid "Skip _level"
+msgstr "Пропуска ниво"
+
+#: src/atomix-ui.xml.in.h:10
+msgid "Skip the current level"
+msgstr "Пропуска текущото ниво"
+
+#: src/atomix-ui.xml.in.h:11
+msgid "Start a new game"
+msgstr "Започва нова игра"
+
+#: src/atomix-ui.xml.in.h:12
+msgid "Undo the last move"
+msgstr "Връща последния ход"
+
+#: src/atomix-ui.xml.in.h:13
+msgid "View game credits"
+msgstr "Показва заслугите за направата на играта"
+
+#: src/atomix-ui.xml.in.h:14
+msgid "View highscores"
+msgstr "Показва най-добрите резултати"
+
+#: src/atomix-ui.xml.in.h:15
+msgid "_About"
+msgstr "Относно"
+
+#: src/atomix-ui.xml.in.h:16
+msgid "_Continue game"
+msgstr "Продължава игра"
+
+#: src/atomix-ui.xml.in.h:17
+msgid "_Edit"
+msgstr "Редактира"
+
+#: src/atomix-ui.xml.in.h:18
+msgid "_End Game"
+msgstr "Спира игра"
+
+#: src/atomix-ui.xml.in.h:19
+msgid "_Game"
+msgstr "Игра"
+
+#: src/atomix-ui.xml.in.h:20
+msgid "_Help"
+msgstr "Помощ"
+
+#: src/atomix-ui.xml.in.h:21
+msgid "_New Game"
+msgstr "Нова игра"
+
+#: src/atomix-ui.xml.in.h:22
+msgid "_Pause game"
+msgstr "Паузира игра"
+
+#: src/atomix-ui.xml.in.h:23
+msgid "_Preferences ..."
+msgstr "Настройки..."
+
+#: src/atomix-ui.xml.in.h:24
+msgid "_Scores ..."
+msgstr "Резултати..."
+
+#: src/atomix-ui.xml.in.h:25
+msgid "_Undo move"
+msgstr "Един ход назад"
+
+#: src/level-manager.c:171
+msgid "Couldn't find level sequence description."
+msgstr "Не може да бъде открито описанието за последователността на нивата."
+
+#: src/level-manager.c:185
+msgid "No level found."
+msgstr "Не е открито ниво."
+
+#: src/level-manager.c:286
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "Открито ниво '%s' в: %s"
+
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
+
+#: src/main.c:145
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "Запазени права (C) 1999-2002 Jens Finke"
+
+#: src/main.c:146
+msgid "A mind game about atoms and molecules."
+msgstr "Игра за мислене относно атоми и молекули"
+
+#: src/main.c:456
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Поздравления! Завършихте всички нива на Atomix."
+
+#: src/main.c:467
+msgid "Couldn't find at least one level."
+msgstr "Не може да бъде открито дори едно ниво."
+
+#: src/main.c:472
+msgid "Do you want to finish the game?"
+msgstr "Искате ли да завършите играта?"
+
+#: src/main.c:591 src/main.c:597 src/main.c:602
+#, c-format
+msgid "Couldn't create directory: %s"
+msgstr "Не може да бъде създадена папка: %s"
+
+#. create statistics frame
+#: src/main.c:701
+msgid "Statistics"
+msgstr "Статистика"
+
+#: src/main.c:707
+msgid "Level:"
+msgstr "Ниво:"
+
+#: src/main.c:708
+msgid "Molecule:"
+msgstr "Молекула:"
+
+#: src/main.c:709
+msgid "Score:"
+msgstr "Резултат:"
+
+#: src/main.c:710
+msgid "Time:"
+msgstr "Време:"
+
+#: src/main.c:750
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "Не може да бъде открит файла: %s"
+
+#: src/theme-manager.c:141
+msgid "No themes found."
+msgstr "Няма открити теми."
+
+#: src/theme-manager.c:205
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "Открита тема '%s' в: %s"
+
+#: atomix.desktop.in.h:2
+msgid "Molecule mind game"
+msgstr "Молекулна игра за мислене"
+
