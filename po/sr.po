@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2003-05-06 04:36+0200\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2003-05-04 19:47+0200\n"
 "Last-Translator: Александар Урошевић <urke@sourceforge.net>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
@@ -129,7 +129,7 @@ msgstr "Ниво није пронађен."
 msgid "Found level '%s' in: %s"
 msgstr "Пронађен ниво „%s‟ у: %s"
 
-#: atomix.desktop.in.h:1 src/main.c:118 src/main.c:444
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Атмоикс"
 

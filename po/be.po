@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 2.0\n"
-"POT-Creation-Date: 2002-11-20 05:23+0100\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2002-11-20 11:17+0200\n"
 "Last-Translator: Ales Nyakhaychyk <i18n@infonet.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -194,4 +194,3 @@ msgstr "Адшукана тэма '%s' у: %s"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Галаваломка з малекулямі"
-

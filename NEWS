@@ -1,3 +1,15 @@
+2003-12-03: Released version 1.0
+	
+	  * Build fixes (Gtk+ & ranlib)
+  	  * New and updated translations:
+	Christophe Merlet (fr), Stanislav Brabec (cs), Fatih Demir (ta), 
+	Dmitry G. Mastrukov (be), Pablo Saratxaga (wa), Naba Kumar (hi),
+	Tatiana Gutierrez Bunster (es), Daniel Yacob (am), Roozbeh Pournader
+	(fa), Laurent Dhima (sq), Metin Amiroff (az), Gil "Dolfin" Osher (he),
+	Danilo Å egan (sr, sr@Latn), Alessio Frusciante (it), Abel Cheung
+	(ta),Vincent van Adrighem (nl), Andras Timar (hu), Álvaro Peña
+	González (es), Young nskystars-goo (ko).
+
 2002-07-23: Released version 0.9.4
 
 	  * installable in different prefix than rest of gnome

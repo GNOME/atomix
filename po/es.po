@@ -1,11 +1,11 @@
 # Spanish/Spain translation of ATOMIX.
 # Copyright (C) 2001 Free Software Foundation, Inc.
-# Álvaro Peña <cybdeep@bigfoot.com>, 2001.
-#
+# Álvaro Peña <alvaropg@mac.com>, 2001.
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: ATOMIX 0.9.0\n"
-"POT-Creation-Date: 2003-01-08 01:34-0300\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2001-11-28 11:46+0100\n"
 "Last-Translator: Álvaro Peña <cybdeep@bigfoot.com>\n"
 "Language-Team: Spanish/Spain\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: src/atomix-ui.xml.in.h:1
 msgid "Continue paused game"
-msgstr "Continuar el juego"
+msgstr "Continuar juego pausado"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
@@ -23,7 +23,7 @@ msgstr "_Salir"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
-msgstr "Terminar el juego"
+msgstr "Finalizar el juego"
 
 #: src/atomix-ui.xml.in.h:4
 msgid "Exit game"
@@ -31,39 +31,39 @@ msgstr "Salir del juego"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr "Detener el juego"
+msgstr "Detener juego"
 
 #: src/atomix-ui.xml.in.h:6
 msgid "Reset level"
-msgstr "Reiniciar el nivel"
+msgstr "Reiniciar nivel"
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr "Restaurar la situación inicial"
+msgstr "Volver a la situación inicial"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
-msgstr "Editar preferencias"
+msgstr "Establecer preferencias"
 
 #: src/atomix-ui.xml.in.h:9
 msgid "Skip _level"
-msgstr "Saltar el nive_l"
+msgstr "_Saltar nivel"
 
 #: src/atomix-ui.xml.in.h:10
 msgid "Skip the current level"
-msgstr "Saltar al siguiente nivel"
+msgstr "Saltar el nivel actual"
 
 #: src/atomix-ui.xml.in.h:11
 msgid "Start a new game"
-msgstr "Comenzar un juego nuevo"
+msgstr "Nuevo juego"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
-msgstr "Deshacer el último movimiento."
+msgstr "Deshacer el último movimiento"
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr "Ver los créditos del juego"
+msgstr "Ver creditos del juego"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
@@ -71,11 +71,11 @@ msgstr "Ver puntuaciones"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
-msgstr "_Acerca de"
+msgstr "_Acerca"
 
 #: src/atomix-ui.xml.in.h:16
 msgid "_Continue game"
-msgstr "_Continuar el juego"
+msgstr "_Continuar jugando"
 
 #: src/atomix-ui.xml.in.h:17
 msgid "_Edit"
@@ -83,7 +83,7 @@ msgstr "_Editar"
 
 #: src/atomix-ui.xml.in.h:18
 msgid "_End Game"
-msgstr "_Fin del juego"
+msgstr "_Finalizar Juego"
 
 #: src/atomix-ui.xml.in.h:19
 msgid "_Game"
@@ -91,60 +91,60 @@ msgstr "_Juego"
 
 #: src/atomix-ui.xml.in.h:20
 msgid "_Help"
-msgstr "A_yuda"
+msgstr "_Ayuda"
 
 #: src/atomix-ui.xml.in.h:21
 msgid "_New Game"
-msgstr "_Nuevo juego"
+msgstr "_Nuevo Juego"
 
 #: src/atomix-ui.xml.in.h:22
 msgid "_Pause game"
-msgstr "_Detener el juego"
+msgstr "_Detener juego"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr "Prefere_ncias ..."
+msgstr "_Preferencias ..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr "_Puntuación ..."
+msgstr "_Puntuaciones ..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr "Des_hacer movimiento"
+msgstr "D_eshacer movimiento"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr "No se pudo encontrar la descripción del nivel. "
+msgstr "No se puede encontrar sequencia de descripción del nivel"
 
 #: src/level-manager.c:185
 msgid "No level found."
-msgstr "Nivel no encontrado."
+msgstr "No se encontraron niveles"
 
 #: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Se encontro el nivel «%s» en: %s"
+msgstr "Encontrado nivel '%s' en: %s"
 
-#: atomix.desktop.in.h:1 src/main.c:118 src/main.c:444
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
 msgid "Atomix"
-msgstr "Atomix"
+msgstr ""
 
 #: src/main.c:145
 msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "© 1999-2002 Jens Finke"
+msgstr ""
 
 #: src/main.c:146
 msgid "A mind game about atoms and molecules."
-msgstr "Un juego de inteligencia sobre átomos y moléculas."
+msgstr "Un juego mental sobre atomos y moleculas"
 
 #: src/main.c:456
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "¡Felicitaciones! Ha terminado todos los niveles de Atomix."
+msgstr "¡Felicidades! Ha terminado todos los niveles de Atomix."
 
 #: src/main.c:467
 msgid "Couldn't find at least one level."
-msgstr "No se pudo encontrar ni siquiera un nivel. "
+msgstr "No se pudo encontrar ni siquiera un nivel."
 
 #: src/main.c:472
 msgid "Do you want to finish the game?"
@@ -153,7 +153,7 @@ msgstr "¿Quiere terminar el juego?"
 #: src/main.c:591 src/main.c:597 src/main.c:602
 #, c-format
 msgid "Couldn't create directory: %s"
-msgstr "No se pudo crear el directorio: %s"
+msgstr "No se puede crear el directorio: %s"
 
 #. create statistics frame
 #: src/main.c:701
@@ -173,24 +173,43 @@ msgid "Score:"
 msgstr "Puntuación:"
 
 #: src/main.c:710
+#, fuzzy
 msgid "Time:"
 msgstr "Tiempo:"
 
 #: src/main.c:750
-#, c-format
+#, fuzzy, c-format
 msgid "Couldn't find file: %s"
-msgstr "No se pudo encontrar el archivo: %s"
+msgstr "No se pudo encontrar ni siquiera un nivel."
 
 #: src/theme-manager.c:141
 msgid "No themes found."
-msgstr "No se encontraron temas."
+msgstr "No se encontraron temas"
 
 #: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Se encontro el tema «%s» en: %s"
+msgstr "Encontrado tema '%s' en: %s"
 
 #: atomix.desktop.in.h:2
+#, fuzzy
 msgid "Molecule mind game"
-msgstr "Atomix - Juego de inteligencia con moléculas"
+msgstr "Juego Mental con Moléculas"
 
+#~ msgid "Game Paused"
+#~ msgstr "Juego Parado"
+
+#~ msgid "Game Over"
+#~ msgstr "Juego Terminado"
+
+#~ msgid "Atomix - Molecule Mind Game"
+#~ msgstr "Atomix - Juego Mental con Moléculas"
+
+#~ msgid "No more undo levels."
+#~ msgstr "No hay mas niveles por hacer."
+
+#~ msgid "This is the last level. You can't skip any further."
+#~ msgstr "Este es el último nivel. No puede saltar ninguno más."
+
+#~ msgid "XML file %s not found."
+#~ msgstr "No se pudo encontrar el fichero XML %s."

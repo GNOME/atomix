@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.9.2\n"
-"POT-Creation-Date: 2002-12-29 15:07+0100\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2002-04-29 20:14MET\n"
 "Last-Translator: Pablo Saratxaga <pablo@mandrakesoft.com>\n"
 "Language-Team: Walon <linux-wa@chanae.alphanet.ch>\n"
@@ -132,7 +132,7 @@ msgstr "Nou livea di trové."
 msgid "Found level '%s' in: %s"
 msgstr "Dj' a trové l' livea «%s» e: %s"
 
-#: atomix.desktop.in.h:1 src/main.c:118 src/main.c:444
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.9.4\n"
-"POT-Creation-Date: 2002-07-25 00:20+0200\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2002-07-24 23:58+0200\n"
 "Last-Translator: Christophe Merlet (RedFox) <christophe@merlet.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix.txt\n"
-"POT-Creation-Date: 2003-03-19 11:33+0100\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2003-03-20 16:13+0200\n"
 "Last-Translator: Gil 'Dolfin' Osher <dolfin@rpg.org.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -195,4 +195,3 @@ msgstr "נמצאה ערכת נושא '%s' ב: %s"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "משחק חשיבה מולקולי"
-

@@ -5,14 +5,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix-game 0.9.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-23 03:31+0200\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2003-03-07 19:01+0200\n"
 "Last-Translator: Mətin Əmirov <metin@karegen.com>\n"
 "Language-Team: Azerbaijani Turkic <linuxaz@azerimail.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: \n"
 
 #: src/atomix-ui.xml.in.h:1
 msgid "Continue paused game"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2003-05-16 04:35+0200\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2003-05-26 17:24+0200\n"
 "Last-Translator: Paolo Sammicheli <xdatap1@siena.linux.it>\n"
 "Language-Team: Italiano <tp@lists.linux.it>\n"
@@ -127,7 +127,7 @@ msgstr "Nessun livello trovato."
 msgid "Found level '%s' in: %s"
 msgstr "Trovato livello «%s» in: %s"
 
-#: atomix.desktop.in.h:1 src/main.c:118 src/main.c:444
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -541,4 +541,3 @@ msgstr "Rompicapo molecolare"
 
 #~ msgid "(C) Jens Finke 1999-2000"
 #~ msgstr "(C) Jens Finke 1999-2000"
-

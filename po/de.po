@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-07-18 22:51+0200\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2001-07-18 14:42+0100\n"
 "Last-Translator: Jens Finke <jens@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -127,7 +127,7 @@ msgstr "Keine L\tevel gefunden."
 msgid "Found level '%s' in: %s"
 msgstr "Level '%s' gefunden in: %s"
 
-#: atomix.desktop.in.h:1 src/main.c:118 src/main.c:444
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 

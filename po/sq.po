@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2003-02-22 19:22+0100\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2003-02-22 21:19+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -195,4 +195,3 @@ msgstr "U gjet tema '%s' në %s"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Molecule mind game"
-

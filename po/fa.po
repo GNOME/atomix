@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2003-02-21 04:23+0100\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2003-02-23 16:24+0330\n"
 "Last-Translator: Roozbeh Pournader <roozbeh@sharif.edu>\n"
 "Language-Team: Persian <farsi@lists.sharif.edu>\n"
@@ -194,4 +194,3 @@ msgstr ""
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "بازی فکری مولکولی"
-

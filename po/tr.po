@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.4.3\n"
-"POT-Creation-Date: 2002-07-18 22:25+0200\n"
+"POT-Creation-Date: 2003-12-03 18:47+0100\n"
 "PO-Revision-Date: 2002-03-02 07:34-0500\n"
 "Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -135,64 +135,69 @@ msgstr "Seviye bulunamadý."
 msgid "Found level '%s' in: %s"
 msgstr "%s seviyesi bulundu: %s"
 
+# editor/interface.c:225
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
+
 # src/interface.c:457
-#: src/main.c:149
+#: src/main.c:145
 msgid "Copyright (C) 1999-2002 Jens Finke"
 msgstr "(C) 1999-2002 Jens Finke"
 
-#: src/main.c:150
+#: src/main.c:146
 msgid "A mind game about atoms and molecules."
 msgstr "Ýçinde atom ve moleküllerin geçtiði bir zeka oyunu."
 
 # src/interface.c:616
-#: src/main.c:488
+#: src/main.c:456
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini baþarýyla bitirdiniz."
 
 # editor/callbacks.c:1279
-#: src/main.c:499
+#: src/main.c:467
 msgid "Couldn't find at least one level."
 msgstr "Hiç oyun seviyesi bulunamadý."
 
 # src/interface.c:908
-#: src/main.c:504
+#: src/main.c:472
 msgid "Do you want to finish the game?"
 msgstr "Gerçekten bu oyundan çýkmak istiyor musunuz? "
 
 # editor/support.c:116 src/support.c:116
-#: src/main.c:623 src/main.c:629 src/main.c:634
+#: src/main.c:591 src/main.c:597 src/main.c:602
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Dizin yaratýlamadý: %s"
 
 # src/interface.c:259
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:701
 msgid "Statistics"
 msgstr "Ýstatistikler"
 
 # src/interface.c:317
-#: src/main.c:739
+#: src/main.c:707
 msgid "Level:"
 msgstr "Seviye:"
 
-#: src/main.c:740
+#: src/main.c:708
 msgid "Molecule:"
 msgstr "Molekül:"
 
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: src/main.c:741
+#: src/main.c:709
 msgid "Score:"
 msgstr "Skor:"
 
 # src/interface.c:347
-#: src/main.c:742
+#: src/main.c:710
 msgid "Time:"
 msgstr "Zaman:"
 
 # editor/support.c:100 editor/support.c:138 src/support.c:100
 # src/support.c:138
-#: src/main.c:782
+#: src/main.c:750
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Dosya bulunamadý: %s"
@@ -205,11 +210,6 @@ msgstr "Tema bulunamadý."
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "%s temasý bulundu: %s"
-
-# editor/interface.c:225
-#: atomix.desktop.in.h:1
-msgid "Atomix"
-msgstr "Atomix"
 
 # src/interface.c:459
 #: atomix.desktop.in.h:2

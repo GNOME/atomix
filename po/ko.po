@@ -1,130 +1,130 @@
-# Galician translation of Atomix game for GNOME.
-# Copyright (C) 2001-2002 Free Software Foundation, Inc.
-# Manuel A. Fernández Montecelo <manuel@sindominio.net>, 2001-2002.
+# Korean Translation for Atomix 0.9.4 
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Young Chol Song <nskystars_goo@yahoo.co.kr>, 2003.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Atomix\n"
+"Project-Id-Version: Atomix 0.9.4\n"
 "POT-Creation-Date: 2003-12-03 18:47+0100\n"
-"PO-Revision-Date: 2002-06-06 23:22+0200\n"
-"Last-Translator: Manuel A. Fernández Montecelo <manuel@sindominio.net>\n"
-"Language-Team: Galician <proxecto@trasno.net>\n"
+"PO-Revision-Date: 2003-05-20 23:01+0900\n"
+"Last-Translator: Young Chol Song <nskystars_goo@yahoo.co.kr>\n"
+"Language-Team: Korean <gnome-kr-translation@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/atomix-ui.xml.in.h:1
 msgid "Continue paused game"
-msgstr "Continuar xogo pausado"
+msgstr "일시 중지된 게임 계속하기"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
-msgstr "_Saír"
+msgstr "나가기(_x)"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
-msgstr "Rematar un xogo"
+msgstr "게임 마치기"
 
 #: src/atomix-ui.xml.in.h:4
 msgid "Exit game"
-msgstr "Saír do xogo"
+msgstr "게임에서 나가기"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr "Pausar o xogo"
+msgstr "실행중인 게임 일시 중지"
 
 #: src/atomix-ui.xml.in.h:6
 msgid "Reset level"
-msgstr "Reiniciar nivel"
+msgstr "현 단계 다시하기"
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr "Restaurar situación inicial"
+msgstr "초기 상황 복원"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
-msgstr "Establecer preferencias"
+msgstr "설정하기"
 
 #: src/atomix-ui.xml.in.h:9
 msgid "Skip _level"
-msgstr "Saltar _nivel"
+msgstr "다음 단계(_l)"
 
 #: src/atomix-ui.xml.in.h:10
 msgid "Skip the current level"
-msgstr "Saltar nivel actual"
+msgstr "현재 단계 건너뛰기"
 
 #: src/atomix-ui.xml.in.h:11
 msgid "Start a new game"
-msgstr "Comezar un novo xogo"
+msgstr "새 게임 시작하기"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
-msgstr "Desfacer o ultimo movemento"
+msgstr "지나간 움직임 되돌리기"
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr "Ver créditos do xogo"
+msgstr "게임 크레딧 보기"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr "Ver puntuacións máximas"
+msgstr "최고 점수 보기"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
-msgstr "_Sobre"
+msgstr "정보(_A)"
 
 #: src/atomix-ui.xml.in.h:16
 msgid "_Continue game"
-msgstr "_Continuar xogo"
+msgstr "게임 계속하기(_C)"
 
 #: src/atomix-ui.xml.in.h:17
 msgid "_Edit"
-msgstr "_Editar"
+msgstr "편집(_E)"
 
 #: src/atomix-ui.xml.in.h:18
 msgid "_End Game"
-msgstr "_Rematar Xogo"
+msgstr "게임 끝내기(_E)"
 
 #: src/atomix-ui.xml.in.h:19
 msgid "_Game"
-msgstr "_Xogo"
+msgstr "게임(_G)"
 
 #: src/atomix-ui.xml.in.h:20
 msgid "_Help"
-msgstr "_Axuda"
+msgstr "도움말(_H)"
 
 #: src/atomix-ui.xml.in.h:21
 msgid "_New Game"
-msgstr "_Novo Xogo"
+msgstr "새 게임(_N)"
 
 #: src/atomix-ui.xml.in.h:22
 msgid "_Pause game"
-msgstr "_Pausar xogo"
+msgstr "잠시 멈춤(_P)"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr "_Preferencias ..."
+msgstr "설정(_P)..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr "_Puntuacións ..."
+msgstr "점수(_S)..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr "_Desfacer movemento"
+msgstr "움직임 되돌리기(_U)"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr "Non se puido atopar descripción de secuencia de nivel."
+msgstr "레벨 순서 설명을 찾을 수 없습니다."
 
 #: src/level-manager.c:185
 msgid "No level found."
-msgstr "Non se atopou nivel."
+msgstr "레벨을 찾지 못했습니다."
 
 #: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Atopado nivel '%s' en: %s"
+msgstr "%s 에서 '%s' 레벨를 찾았습니다."
 
 #: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
 msgid "Atomix"
@@ -136,63 +136,60 @@ msgstr "Copyright (C) 1999-2002 Jens Finke"
 
 #: src/main.c:146
 msgid "A mind game about atoms and molecules."
-msgstr "Un xogo de estratexia sobre átomos e moléculas."
+msgstr "원자와 분자가 나오는 마인드 게임"
 
 #: src/main.c:456
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "¡Noraboa! Acabaches todos os niveis de Atomix."
+msgstr "축하합니다! Atomix의 모든 레벨을 마쳤습니다."
 
 #: src/main.c:467
 msgid "Couldn't find at least one level."
-msgstr "Non se puido atopar nin sequera un nivel."
+msgstr "레벨을 하나도 찾을 수 없었습니다."
 
 #: src/main.c:472
 msgid "Do you want to finish the game?"
-msgstr "¿Queres rematar o xogo?"
+msgstr "게임을 계속할까요?"
 
 #: src/main.c:591 src/main.c:597 src/main.c:602
 #, c-format
 msgid "Couldn't create directory: %s"
-msgstr "Non se puido crear o directorio: %s"
+msgstr "디렉토리 %s 를 만들 수 없습니다."
 
 #. create statistics frame
 #: src/main.c:701
 msgid "Statistics"
-msgstr "Estatísticas"
+msgstr "통계"
 
 #: src/main.c:707
 msgid "Level:"
-msgstr "Nivel:"
+msgstr "레벨:"
 
 #: src/main.c:708
 msgid "Molecule:"
-msgstr "Molécula:"
+msgstr "분자:"
 
 #: src/main.c:709
 msgid "Score:"
-msgstr "Puntuación:"
+msgstr "점수:"
 
 #: src/main.c:710
 msgid "Time:"
-msgstr "Tempo:"
+msgstr "시간:"
 
 #: src/main.c:750
 #, c-format
 msgid "Couldn't find file: %s"
-msgstr "Non se puido atopar o ficheiro: %s"
+msgstr "파일 %s 를 찾을 수 없습니다."
 
 #: src/theme-manager.c:141
 msgid "No themes found."
-msgstr "Non se atoparon temas."
+msgstr "테마를 찾을 수 없습니다."
 
 #: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Atopado tema '%s' en: %s"
+msgstr "%s 에서 테마 '%s'를 찾았습니다"
 
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
-msgstr "Xogo de estratexia con moléculas"
-
-#~ msgid "Atomix Splash"
-#~ msgstr "Pantalla inicial de Atomix"
+msgstr "분자 마인드 게임"
