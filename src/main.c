@@ -135,7 +135,8 @@ static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
   GtkWidget *dlg;
   const char *authors[] =
     {
-      "Jens Finke (Code)",
+      "Guilherme de S. Pastore",
+      "Jens Finke",
       "Jakub Steiner (GFX)",
       NULL
     };
