@@ -1,18 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# 
-# Gisela Carbonell (c)Softcatalà 2002
+# Catalan translation of atomix.
+# Copyright Â© 2002 Free Software Foundation, Inc.
+# This file is distributed under the same license as the atomix package.
+# Gisela Carbonell, 2002.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.9.2\n"
-"POT-Creation-Date: 2003-12-03 18:47+0100\n"
-"PO-Revision-Date: 2002-04-21 22:52-0500\n"
-"Last-Translator: Softcatala <tradgnome@softcatala.org>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-12-26 13:42+0100\n"
+"PO-Revision-Date: 2003-12-26 13:43+0100\n"
+"Last-Translator: Gisela Carbonell\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/atomix-ui.xml.in.h:1
@@ -33,7 +33,7 @@ msgstr "Surt del joc"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr "Atura el joc en execució"
+msgstr "Atura el joc en execuciÃ³"
 
 #: src/atomix-ui.xml.in.h:6
 msgid "Reset level"
@@ -41,11 +41,11 @@ msgstr "Reinicia el nivell"
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr "Restaura la situació inicial"
+msgstr "Restaura la situaciÃ³ inicial"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
-msgstr "Defineix les preferències"
+msgstr "Defineix les preferÃ¨ncies"
 
 #: src/atomix-ui.xml.in.h:9
 msgid "Skip _level"
@@ -61,15 +61,15 @@ msgstr "Inicia un joc nou"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
-msgstr "Desfés l'últim  moviment"
+msgstr "DesfÃ©s l'Ãºltim  moviment"
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr "Visualitza els crèdits del joc"
+msgstr "Visualitza els crÃ¨dits del joc"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr "Visualitza les puntuacions màximes"
+msgstr "Visualitza les puntuacions mÃ ximes"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
@@ -105,7 +105,7 @@ msgstr "_Atura el joc"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr "_Preferències ..."
+msgstr "_PreferÃ¨ncies ..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
@@ -113,11 +113,11 @@ msgstr "_Puntuacions ..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr "_Desfés la jugada"
+msgstr "_DesfÃ©s la jugada"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr "No s'ha trobat la descripció de la seqüència del nivell."
+msgstr "No s'ha trobat la descripciÃ³ de la seqÃ¼Ã¨ncia del nivell."
 
 #: src/level-manager.c:185
 msgid "No level found."
@@ -138,7 +138,7 @@ msgstr "Copyright (C) 1999-2002 Jens Finke"
 
 #: src/main.c:146
 msgid "A mind game about atoms and molecules."
-msgstr "Un joc mental sobre àtoms i mol·lècules."
+msgstr "Un joc mental sobre Ã toms i molÂ·lÃ¨cules."
 
 #: src/main.c:456
 msgid "Congratulations! You have finished all Atomix levels."
@@ -160,7 +160,7 @@ msgstr "No s'ha pogut crear el directori: %s"
 #. create statistics frame
 #: src/main.c:701
 msgid "Statistics"
-msgstr "Estadístiques"
+msgstr "EstadÃ­stiques"
 
 #: src/main.c:707
 msgid "Level:"
@@ -168,11 +168,11 @@ msgstr "Nivell:"
 
 #: src/main.c:708
 msgid "Molecule:"
-msgstr "Mol·lècula:"
+msgstr "MolÂ·lÃ¨cula:"
 
 #: src/main.c:709
 msgid "Score:"
-msgstr "Puntuació:"
+msgstr "PuntuaciÃ³:"
 
 #: src/main.c:710
 msgid "Time:"
@@ -194,16 +194,16 @@ msgstr "S'ha trobat el tema '%s' a: %s"
 
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
-msgstr "Joc mental de mol·lècules"
+msgstr "Joc mental de molÂ·lÃ¨cules"
 
 #~ msgid "Atomix Splash"
-#~ msgstr "Presentació de l'Atomix"
+#~ msgstr "PresentaciÃ³ de l'Atomix"
 
 #~ msgid "Game Paused"
-#~ msgstr "El joc està aturat"
+#~ msgstr "El joc estÃ  aturat"
 
 #~ msgid "Game Over"
 #~ msgstr "El joc ha finalitzat"
 
 #~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Joc mental de mol·lècules"
+#~ msgstr "Atomix - Joc mental de molÂ·lÃ¨cules"
