@@ -1,3 +1,9 @@
+2001-11-28  Jens Finke <jens@triq.net>
+
+	* main.c (create_gui): Use new bonobo_ui_util_set_ui
+	signature. Should be compilable now with the upcoming Gnome 2.0
+	beta version.
+
 2001-11-27  Jens Finke <jens@triq.net>
 
 	* Makefile.am (atomix_SOURCES): Removed global.h.

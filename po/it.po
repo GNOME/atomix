@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.4\n"
-"POT-Creation-Date: 2001-11-25 12:13+0100\n"
+"POT-Creation-Date: 2001-11-28 00:00+0100\n"
 "PO-Revision-Date: 2000-10-25 22:43+0100\n"
 "Last-Translator: Colorio Mauro <linuxbox@interfree.it>\n"
 "Language-Team: IT <IT@li.org>\n"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Atomix\n"
-"POT-Creation-Date: 2001-11-25 12:13+0100\n"
+"POT-Creation-Date: 2001-11-28 00:00+0100\n"
 "PO-Revision-Date: 2001-09-29 20:49+0400\n"
 "Last-Translator: Valek Filippov <frob@df.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"

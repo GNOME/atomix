@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Atomix 0.4.2\n"
-"POT-Creation-Date: 2001-11-26 07:30-0500\n"
+"POT-Creation-Date: 2001-11-28 00:00+0100\n"
 "PO-Revision-Date: 2001-11-26 20:30+0100\n"
 "Last-Translator: Manuel A. Fernández Montecelo <manuel@sindominio.net>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"

@@ -850,7 +850,7 @@ create_gui (GnomeProgram *prog)
 	/* set menus */
 	bonobo_ui_util_set_ui (app->ui_component,
 			       "", ui_file,
-			       "atomix");
+			       "atomix", NULL);
 	g_free (ui_file);
 
 	bonobo_ui_component_add_verb_list_with_data (app->ui_component, verbs, app);
