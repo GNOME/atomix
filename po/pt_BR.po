@@ -1,12 +1,12 @@
-# Brazilian Translation of atomix
+# atomix: translation to Brazilian Portuguese (pt_BR)
 # Copyright (C) 2002 Free Software Foundation, Inc.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.4.1\n"
-"POT-Creation-Date: 2002-05-05 20:27-0300\n"
-"PO-Revision-Date: 2002-05-05 20:22-0300\n"
+"POT-Creation-Date: 2002-05-12 12:55-0300\n"
+"PO-Revision-Date: 2002-05-08 23:45-0300\n"
 "Last-Translator: Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
@@ -125,7 +125,7 @@ msgstr "Jogo em Pausa"
 
 #: src/board.c:172
 msgid "Game Over"
-msgstr "Jogo Terminado"
+msgstr "Fim de Jogo"
 
 #: src/board.c:174
 msgid "Atomix - Molecule Mind Game"
@@ -167,7 +167,7 @@ msgstr "Incapaz de encontrar o manual do Atomixed!"
 #: src/main.c:500
 #, fuzzy
 msgid "Do you want to finish the game?"
-msgstr "Deseja mesmo terminar este jogo?"
+msgstr "Você deseja mesmo terminar este jogo?"
 
 #: src/main.c:619 src/main.c:625 src/main.c:630
 #, fuzzy, c-format
@@ -190,7 +190,7 @@ msgstr ""
 
 #: src/main.c:737
 msgid "Score:"
-msgstr "Pontuação:"
+msgstr "Pontos:"
 
 #: src/main.c:738
 msgid "Time:"
@@ -225,7 +225,7 @@ msgid "Molecule mind game"
 msgstr "Mais um jogo mental."
 
 #~ msgid "Do you really want to clear the grid?"
-#~ msgstr "Deseja mesmo limpar a grade?"
+#~ msgstr "Você quer mesmo limpar a grade?"
 
 #~ msgid ""
 #~ "There does already a theme with this name exist.\n"
@@ -270,7 +270,7 @@ msgstr "Mais um jogo mental."
 #~ msgstr "_Apagar Tema"
 
 #~ msgid "Atomixed manual"
-#~ msgstr "Manual Atomixed"
+#~ msgstr "Manual do Atomixed"
 
 #~ msgid "_Level"
 #~ msgstr "Níve_l"
@@ -294,10 +294,10 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Abrir Arquivo"
 
 #~ msgid "Save"
-#~ msgstr "Gravar"
+#~ msgstr "Salvar"
 
 #~ msgid "Save File"
-#~ msgstr "Gravar Arquivo"
+#~ msgstr "Salvar Arquivo"
 
 #~ msgid "Theme Wnd"
 #~ msgstr "Janela Tema"
@@ -315,13 +315,13 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Nome:"
 
 #~ msgid "Themename:"
-#~ msgstr "Nome Tema:"
+#~ msgstr "Nome do Tema:"
 
 #~ msgid "Filename:"
-#~ msgstr "Nome Arquivo:"
+#~ msgstr "Nome do Arquivo:"
 
 #~ msgid "Bonuslevel"
-#~ msgstr "Bônus Nível"
+#~ msgstr "Nível de Bônus"
 
 #~ msgid "Time"
 #~ msgstr "Tempo"
@@ -336,7 +336,7 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Propriedades"
 
 #~ msgid "Leveleditor"
-#~ msgstr "Editor Níveis"
+#~ msgstr "Editor de Níveis"
 
 #~ msgid "Images"
 #~ msgstr "Imagens"
@@ -344,6 +344,7 @@ msgstr "Mais um jogo mental."
 #~ msgid "Connections"
 #~ msgstr "Conexões"
 
+#, fuzzy
 #~ msgid "Moveables"
 #~ msgstr "Móveis"
 
@@ -351,13 +352,14 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Obstáculos"
 
 #~ msgid "Directoryname:"
-#~ msgstr "Nome Diretório:"
+#~ msgstr "Nome de Diretório:"
 
 #~ msgid "Background Color:"
-#~ msgstr "Cor Fundo:"
+#~ msgstr "Cor de Fundo:"
 
+#, fuzzy
 #~ msgid "Selector Image:"
-#~ msgstr "Selector de Imagens:"
+#~ msgstr "Imagem do Seletor:"
 
 #~ msgid "Browse ..."
 #~ msgstr "Pesquisar..."
@@ -366,16 +368,16 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Incremento de Animação:"
 
 #~ msgid "Tile Height:"
-#~ msgstr "Altura do Mosaico:"
+#~ msgstr "Altura do bloco:"
 
 #~ msgid "Tile Width:"
-#~ msgstr "Largura do Mosaico:"
+#~ msgstr "Largura do bloco:"
 
 #~ msgid "Themeeditor"
 #~ msgstr "Editor de Tema"
 
 #~ msgid "Atom Preview"
-#~ msgstr "Prever Atom"
+#~ msgstr "Visualizar Atom"
 
 #~ msgid "Mouse functions"
 #~ msgstr "Funções do mouse"
@@ -408,10 +410,10 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Novo Nível"
 
 #~ msgid "Levelname:"
-#~ msgstr "Nome Nível:"
+#~ msgstr "Nome do Nível:"
 
 #~ msgid "Playfield Size"
-#~ msgstr "Tamanho do Campo"
+#~ msgstr "Tamanho do Tabuleiro"
 
 #~ msgid "Goal Size"
 #~ msgstr "Tamanho do Objetivo"
@@ -419,18 +421,19 @@ msgstr "Mais um jogo mental."
 #~ msgid "(C)  1999-2001 Jens Finke"
 #~ msgstr "(C)  1999-2001 Jens Finke"
 
+#, fuzzy
 #~ msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
 #~ msgstr "Atomixed é o editor de Níveis/Temas para o jogo mental Atomix."
 
 #~ msgid "Change level name"
-#~ msgstr "Modificar nome de nível"
+#~ msgstr "Modificar nome do nível"
 
 #~ msgid ""
 #~ "There is already a level with the same name. Please choose another\n"
 #~ "name for this level."
 #~ msgstr ""
-#~ "Já existe um nível com o mesmo nome. Selecione outro nome\n"
-#~ "para este nível."
+#~ "Já existe um nível com o mesmo nome. Por favor selecione outro\n"
+#~ "nome para este nível."
 
 #~ msgid "Current Name:"
 #~ msgstr "Nome Atual:"
@@ -454,25 +457,25 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Novo Tema"
 
 #~ msgid "No tile to clear here."
-#~ msgstr "Nenhum mosaico para apagar aqui."
+#~ msgstr "Nenhum bloco para apagar aqui."
 
 #~ msgid "No tile to move here."
-#~ msgstr "Nenhum mosaico para mover aqui."
+#~ msgstr "Nenhum bloco para mover aqui."
 
 #~ msgid "Copy Goal"
 #~ msgstr "Copiar Objetivo"
 
 #~ msgid "Copy the goal into the playfield."
-#~ msgstr "Copiar o objetivo para o campo de jogo."
+#~ msgstr "Copiar o objetivo para o tabuleiro."
 
 #~ msgid "Clear Grid"
 #~ msgstr "Limpar Grade"
 
 #~ msgid "Clears the whole grid."
-#~ msgstr "Limpa a grade toda."
+#~ msgstr "Limpa toda a grade."
 
 #~ msgid "Add an image to the list."
-#~ msgstr "Adicionar imagem à lista."
+#~ msgstr "Adicionar uma imagem à lista."
 
 #~ msgid "Delete Image"
 #~ msgstr "Apagar Imagem"
@@ -481,7 +484,7 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Apagar imagem(ns) selecionada(s)."
 
 #~ msgid "Change the ID of the image."
-#~ msgstr "Modificar ID da imagem."
+#~ msgstr "Modificar o ID da imagem."
 
 #~ msgid "Press Ctrl+N for a new Game"
 #~ msgstr "Prima Ctrl+N para novo Jogo"
@@ -490,7 +493,7 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Incapaz de encontrar o manual do Atomix!"
 
 #~ msgid "Atomix manual"
-#~ msgstr "Manual Atomix"
+#~ msgstr "Manual do Atomix"
 
 #~ msgid ""
 #~ "Level not found.\n"
@@ -503,7 +506,7 @@ msgstr "Mais um jogo mental."
 #~ "Nível não encontrado.\n"
 #~ "Desculpe, mas o jogo termina aqui.\n"
 #~ "\n"
-#~ "(Certifique-se de que tem os arquivos\n"
+#~ "(Certifique-se de que você tem os arquivos\n"
 #~ "*.atomix ou em <prefix>/share/atomix/levels\n"
 #~ "ou em ~/.atomix/levels.)"
 
@@ -520,7 +523,7 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Tempo Remanescente:"
 
 #~ msgid "Are you ready for the next level?"
-#~ msgstr "Está preparado para o próximo nível?"
+#~ msgstr "Voc6e está pronto para o próximo nível?"
 
 #~ msgid "Atomix End"
 #~ msgstr "Fim do Atomix"
@@ -547,10 +550,11 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Propriedades do Mouse"
 
 #~ msgid "hide mouse cursor during dragging"
-#~ msgstr "esconder cursor durante o arrasto"
+#~ msgstr "esconder o cursor durante o arrasto"
 
+#, fuzzy
 #~ msgid "enable lazy dragging"
-#~ msgstr "activar arrasto preguiçoso"
+#~ msgstr "ativar arrasto preguiçoso"
 
 #~ msgid "Sensitivity:"
 #~ msgstr "Sensibilidade:"
@@ -565,7 +569,7 @@ msgstr "Mais um jogo mental."
 #~ msgstr "Controle"
 
 #~ msgid "Do you really want to exit the program?"
-#~ msgstr "Deseja mesmo sair da aplicação?"
+#~ msgstr "Você deseja mesmo sair da aplicação?"
 
 #~ msgid ""
 #~ "Your time is up! This costs you 10% of your score. \n"
@@ -588,6 +592,7 @@ msgstr "Mais um jogo mental."
 #~ msgid "Undo last move. This costs you 5% of your score."
 #~ msgstr "Desfazer última jogada. Isto custa 5% da sua pontuação."
 
+#, fuzzy
 #~ msgid "No more undo levels."
 #~ msgstr "Não há mais níves de desfazer."
 
