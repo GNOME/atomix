@@ -10,3 +10,6 @@
 Makefile
 Makefile.in
 atomix
+pf-test
+level-convert
+

@@ -1,5 +1,9 @@
 2001-11-20  Jens Finke <jens@triq.net>
 
+	* .cvsignore: Added level-convert and pf-test.
+
+2001-11-20  Jens Finke <jens@triq.net>
+
 	* Checked huge page in. There are three major tile types now:
 	ATOM, WALL and FLOOR. Each tile has a base image which may have
 	overlay and underlay images too. Level descriptions consist of
