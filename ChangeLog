@@ -1,11 +1,14 @@
 2005-03-20  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
-	* src/main.c:
-	(atomix_exit): save score if game is running.
+	* src/main.c (atomix_exit): save score if game is running.
+
+	* src/board.c (board_hide),
+	(board_show): respectively, hide and show the movement arrows,
+	so that the user cannot move the atoms while the game is paused.
 
 2005-03-19  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
-	* src/main.c:
+	* src/main.c
 	(log_score): the name of the game is no longer translatable,
 	as it only takes space unnecessarily on the potfiles.
 	(verb_HelpAbout_cb): added the e-mails of the authors to the
