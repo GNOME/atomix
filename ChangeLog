@@ -1,10 +1,15 @@
+2005-03-20  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* src/main.c:
+	(atomix_exit): save score if game is running.
+
 2005-03-19  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* src/main.c:
-	(verb_HelpAbout_cb): added the e-mails of the authors to the
-	credits, and a translator credits feature
 	(log_score): the name of the game is no longer translatable,
 	as it only takes space unnecessarily on the potfiles.
+	(verb_HelpAbout_cb): added the e-mails of the authors to the
+	credits, and a translator credits feature.
 
 	* README, atomix.desktop.in, src/board.c, src/board.h,
 	* src/canvas_helper.c, src/canvas_helper.h,
@@ -17,7 +22,7 @@
 	* src/tile.h, src/undo.c, src/undo.h: changed all occurrences of
 	"mind game" to "puzzle game".
 
-	* Makefile.am: changed scores file permission from 2111 to 2755
+	* Makefile.am: changed binary permissions from 2111 to 2755.
 
 2005-03-18  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 

@@ -361,6 +361,12 @@ static void atomix_exit (AtomixApp *app)
 
   g_return_if_fail (app != NULL);
 
+  if (app->state != GAME_STATE_NOT_RUNNING)
+    {
+      log_score (app);
+      set_game_not_running_state (app);
+    }
+
   board_destroy ();
 
   if (app->level)
