@@ -26,9 +26,9 @@
 #include "goal.h"
 
 typedef enum {
-	GAME_NOT_RUNNING,
-	GAME_RUNNING,
-	GAME_PAUSED
+	GAME_STATE_NOT_RUNNING,
+	GAME_STATE_LEVEL_RUNNING,
+	GAME_STATE_PAUSED
 } GameState;
 
 typedef struct 
@@ -52,10 +52,8 @@ typedef struct
 	Level             *level;
 	Goal              *goal;
 	gint              level_no;
-	gdouble           score;
+	guint             score;
 } AtomixApp;
-
-AtomixApp*    get_app (void);
 
 void
 game_level_finished (AtomixApp *app);

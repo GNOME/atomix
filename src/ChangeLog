@@ -1,5 +1,17 @@
 2001-12-02  Jens Finke <jens@triq.net>
 
+	* board.c (board_init_level): Ref goal object.
+	(board_clear): Unref goal object.
+
+	* main.c: Rewrote the control flow handling. There is now a
+	central function (controller_handle_action) which takes care of
+	all the game state changes and need actions. Lot's of code could
+	be removed because of this simplification.
+	(calculate_score): New function.
+	(update_player_info): Renamed to update_statistics.
+	
+2001-12-02  Jens Finke <jens@triq.net>
+
 	* Makefile.am (atomix_SOURCES): Added gtk-clock.[ch].
 
 	* gtk-clock.[ch]: New files.

@@ -205,7 +205,7 @@ board_init_level (PlayField *env, PlayField *sce, Goal *goal)
 	board_sce = playfield_copy (sce);
 	
 	/* init goal */
-	board_goal = goal;
+	board_goal = g_object_ref (goal);
 	
 	/* hide 'New Game' message */
 	gnome_canvas_item_hide (message_items->new_game);
@@ -443,6 +443,10 @@ board_clear()
 	{
 		g_object_unref (board_sce);
 		board_sce = NULL;
+	}
+	if (board_goal) {
+		g_object_unref (board_goal);
+		board_goal = NULL;
 	}
 
 	selector_hide (selector_data);
