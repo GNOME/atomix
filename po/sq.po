@@ -1,0 +1,198 @@
+# translation of atomix to albanian
+# This file is distributed under the same license as the atomix package.
+# Copyright (C) 2003, Free Software Foundation, Inc.
+# Laurent Dhima <laurenti@alblinux.net>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix\n"
+"POT-Creation-Date: 2003-02-22 19:22+0100\n"
+"PO-Revision-Date: 2003-02-22 21:19+0100\n"
+"Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
+"Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+
+#: src/atomix-ui.xml.in.h:1
+msgid "Continue paused game"
+msgstr "Vazhdo lojën e ndërprerë"
+
+#: src/atomix-ui.xml.in.h:2
+msgid "E_xit"
+msgstr "_Dil"
+
+#: src/atomix-ui.xml.in.h:3
+msgid "End a game"
+msgstr "Përfundo lojën"
+
+#: src/atomix-ui.xml.in.h:4
+msgid "Exit game"
+msgstr "Dil jashtë nga loja"
+
+#: src/atomix-ui.xml.in.h:5
+msgid "Pause the running game"
+msgstr "Ndërpre (pusho) lojën aktuale"
+
+#: src/atomix-ui.xml.in.h:6
+msgid "Reset level"
+msgstr "Rifillo nivelin"
+
+#: src/atomix-ui.xml.in.h:7
+msgid "Restores start situation"
+msgstr "Rivendos gjëndjen e nisjes"
+
+#: src/atomix-ui.xml.in.h:8
+msgid "Set preferences"
+msgstr "Rregullo preferimet"
+
+#: src/atomix-ui.xml.in.h:9
+msgid "Skip _level"
+msgstr "Kapërce _nivelin"
+
+#: src/atomix-ui.xml.in.h:10
+msgid "Skip the current level"
+msgstr "Kapërce nivelin aktual"
+
+#: src/atomix-ui.xml.in.h:11
+msgid "Start a new game"
+msgstr "Fillo një lojë të re"
+
+#: src/atomix-ui.xml.in.h:12
+msgid "Undo the last move"
+msgstr "Anullo lëvizjen e fundit"
+
+#: src/atomix-ui.xml.in.h:13
+msgid "View game credits"
+msgstr "Shiko kreditet e lojës"
+
+#: src/atomix-ui.xml.in.h:14
+msgid "View highscores"
+msgstr "Shiko pikët"
+
+#: src/atomix-ui.xml.in.h:15
+msgid "_About"
+msgstr "_Informacione"
+
+#: src/atomix-ui.xml.in.h:16
+msgid "_Continue game"
+msgstr "_Vazhdo lojën"
+
+#: src/atomix-ui.xml.in.h:17
+msgid "_Edit"
+msgstr "_Ndrysho"
+
+#: src/atomix-ui.xml.in.h:18
+msgid "_End Game"
+msgstr "_Përfundo lojën"
+
+#: src/atomix-ui.xml.in.h:19
+msgid "_Game"
+msgstr "_Lojë"
+
+#: src/atomix-ui.xml.in.h:20
+msgid "_Help"
+msgstr "_Ndihmë"
+
+#: src/atomix-ui.xml.in.h:21
+msgid "_New Game"
+msgstr "_Lojë e re"
+
+#: src/atomix-ui.xml.in.h:22
+msgid "_Pause game"
+msgstr "_Ndërprit (pusho) lojën"
+
+#: src/atomix-ui.xml.in.h:23
+msgid "_Preferences ..."
+msgstr "_Preferime ..."
+
+#: src/atomix-ui.xml.in.h:24
+msgid "_Scores ..."
+msgstr "_Pikët ..."
+
+#: src/atomix-ui.xml.in.h:25
+msgid "_Undo move"
+msgstr "_Anullo lëvizjen"
+
+#: src/level-manager.c:171
+msgid "Couldn't find level sequence description."
+msgstr "E pamundur gjetja e përshkrimit të sekuencës së nivelit"
+
+#: src/level-manager.c:185
+msgid "No level found."
+msgstr "Nuk u gjet asnjë nivel"
+
+#: src/level-manager.c:286
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "U gjet niveli '%s' në %s"
+
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
+
+#: src/main.c:145
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "Copyright © 1999-2002 Jens Finke"
+
+#: src/main.c:146
+msgid "A mind game about atoms and molecules."
+msgstr "Një ushtrim truri (lojë) mbi atomet dhe molekulat"
+
+#: src/main.c:456
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Ju lumtë! Sapo kapërcyet të gjithë nivelet e Atomix."
+
+#: src/main.c:467
+msgid "Couldn't find at least one level."
+msgstr "Nuk arrij të gjej të paktën një nivel."
+
+#: src/main.c:472
+msgid "Do you want to finish the game?"
+msgstr "Dëshironi ta mbyllni lojën?"
+
+#: src/main.c:591 src/main.c:597 src/main.c:602
+#, c-format
+msgid "Couldn't create directory: %s"
+msgstr "I pamundur krijimi i directory: %s"
+
+#. create statistics frame
+#: src/main.c:701
+msgid "Statistics"
+msgstr "Statistikat"
+
+#: src/main.c:707
+msgid "Level:"
+msgstr "Niveli:"
+
+#: src/main.c:708
+msgid "Molecule:"
+msgstr "Molekula:"
+
+#: src/main.c:709
+msgid "Score:"
+msgstr "Pikë:"
+
+#: src/main.c:710
+msgid "Time:"
+msgstr "Koha:"
+
+#: src/main.c:750
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "E pamundur gjetja e file: %s"
+
+#: src/theme-manager.c:141
+msgid "No themes found."
+msgstr "Nuk u gjet asnjë temë."
+
+#: src/theme-manager.c:205
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "U gjet tema '%s' në %s"
+
+#: atomix.desktop.in.h:2
+msgid "Molecule mind game"
+msgstr "Molecule mind game"
+
