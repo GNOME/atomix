@@ -41,4 +41,10 @@ macros
 themes
 editor
 doc
+intltool-extract.in
+intltool-extract
+intltool-merge.in
+intltool-merge
+intltool-update.in
+intltool-update
 

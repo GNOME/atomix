@@ -4,6 +4,8 @@ AC_INIT(configure.in)
 AM_INIT_AUTOMAKE(atomix, 0.9.1)
 AM_CONFIG_HEADER(config.h)
 
+AC_PROG_INTLTOOL
+
 AC_ISC_POSIX
 AC_PROG_CC
 AM_PROG_CC_STDC
@@ -22,10 +24,9 @@ AC_SUBST(ATOMIX_LIBS)
 dnl *******************************
 dnl Internationalization
 dnl ******************************* 
-
 GETTEXT_PACKAGE=atomix
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE")
 AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE")
 
 dnl Add the languages which your application supports here.
 ALL_LINGUAS="az da de es fr gl it nl no pl pt ru sv tr uk zh_TW"
