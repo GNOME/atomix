@@ -1,18 +1,17 @@
 # Malay Translation for atomix
 # Copyright (C) 2002 Free Software Foundation, Inc.
-# Mohamad Afifi Omar (App) <mr_mohd_afifi@yahoo.com>, 2002
-#
+# 1. Mohamad Afifi Omar (App) <mr_mohd_afifi@yahoo.com>, 2002.
+# 2. Hasbullah Bin Pit <sebol@ikhlas.com> ,2002.
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
-"POT-Creation-Date: 2002-02-17 10:30+0100\n"
-"PO-Revision-Date: 2002-01-09 23:45+0800\n"
-"Last-Translator: Mohamad Afifi Omar (App) <mr_mohd_afifi@yahoo.com>\n"
+"POT-Creation-Date: 2002-02-20 09:49+0800\n"
+"PO-Revision-Date: 2002-02-20 09:49+0800\n"
+"Last-Translator: Hasbullah Bin Pit <sebol@ikhlas.com>\n"
 "Language-Team: Bahasa Melayu <gabai-penyumbang@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.8\n"
 
 #: src/atomix-ui.xml.in.h:1
 msgid "Continue paused game"
@@ -141,11 +140,11 @@ msgstr "Menjumpai aras '%s' didalam: %s"
 
 #: src/main.c:149
 msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr ""
+msgstr "Hakcipta (C) 1999-2002 Jens Finke"
 
 #: src/main.c:150
 msgid "A mind game about atoms and molecules."
-msgstr ""
+msgstr "Permainan minda perihal atom and molekul."
 
 #: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
@@ -206,11 +205,9 @@ msgid "Found theme '%s' in: %s"
 msgstr "Menjumpai tema '%s' didalam: %s"
 
 #: atomix.desktop.in.h:1
-#, fuzzy
 msgid "Atomix"
-msgstr "Atomix Splash"
+msgstr "Atomix"
 
 #: atomix.desktop.in.h:2
-#, fuzzy
 msgid "Molecule mind game"
-msgstr "Atomix - Permainan Minda Molekul"
+msgstr "Permainan Minda Molekul"
