@@ -9,7 +9,7 @@ level_DATA = \
 	$(level_old_files:.old=.atomix) \
 	sequence
 
-EXTRA_DIST = $(level_old_files)
+EXTRA_DIST = $(level_old_files) sequence
 
 SUFFIXES = .old .atomix
 

@@ -1,3 +1,12 @@
+2002-02-16  Jens Finke <jens@triq.net>
+
+	* atomix.desktop.in: New file.
+	
+	* Makefile.am: Install desktop file and setup scores.
+	(EXTRA_DIST): Added atomix.desktop.in file
+
+	* level/Makefile.am (EXTRA_DIST): Added sequence file.
+
 2002-02-12  Jens Finke <jens@triq.net>
 
 	* configure.in: bumped version to 0.9.2
