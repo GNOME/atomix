@@ -7,72 +7,79 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2001-11-30 21:01+0100\n"
-"PO-Revision-Date: 2001-11-30 21:02+0100\n"
+"POT-Creation-Date: 2001-12-02 15:26+0100\n"
+"PO-Revision-Date: 2001-12-02 15:26+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/board.c:166
+#: src/board.c:165
 msgid "Game Paused"
 msgstr "Spelet pausat"
 
-#: src/board.c:168
+#: src/board.c:167
 msgid "Game Over"
 msgstr "Spelet är slut"
 
-#: src/board.c:170
+#: src/board.c:169
 msgid "Atomix - Molecule Mind Game"
 msgstr "Atomix - Molekylminnesspel"
 
-#: src/main.c:271
+#: src/main.c:275
 msgid "Couldn't find at least one level."
 msgstr "Kunde inte hitta åtminstone en nivå."
 
-#: src/main.c:283
+#: src/main.c:287
 msgid "No more undo levels."
 msgstr "Inga fler ångranivåer."
 
-#: src/main.c:293
+#: src/main.c:297
 msgid "This is the last level. You can't skip any further."
 msgstr "Detta är den sista nivån. Du kan inte hoppa över längre."
 
-#: src/main.c:460
+#: src/main.c:393
 msgid "Do you want to finish the game?"
 msgstr "Vill du verkligen avsluta spelet?"
 
-#: src/main.c:487
+#: src/main.c:420
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulerar! Du har slutfört alla nivåer i Atomix."
 
-#: src/main.c:656 src/main.c:662 src/main.c:667
+#: src/main.c:591 src/main.c:597 src/main.c:602
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Kunde inte skapa katalog: %s"
 
 #. create statistics frame
-#: src/main.c:736
+#: src/main.c:700
 msgid "Statistics"
 msgstr "Statistik"
 
-#: src/main.c:742
+#: src/main.c:706
 msgid "Level:"
 msgstr "Nivå:"
 
-#: src/main.c:749
-msgid "Name:"
-msgstr "Namn:"
+#: src/main.c:707
+msgid "Molecule:"
+msgstr "Molekyl:"
 
-#: src/main.c:756
+#: src/main.c:708
 msgid "Score:"
 msgstr "Poäng:"
 
-#: src/main.c:802
+#: src/main.c:709
+msgid "Time:"
+msgstr "Tid:"
+
+#: src/main.c:751
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Kunde inte hitta fil: %s"
+
+#~ msgid "Name:"
+#~ msgstr "Namn:"
 
 #~ msgid "Do you really want to clear the grid?"
 #~ msgstr "Vill du verkligen tömma rutnätet?"
@@ -356,9 +363,6 @@ msgstr "Kunde inte hitta fil: %s"
 
 #~ msgid "Atomix"
 #~ msgstr "Atomix"
-
-#~ msgid "Time:"
-#~ msgstr "Tid:"
 
 #~ msgid ""
 #~ "Level not found.\n"
