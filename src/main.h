@@ -42,6 +42,7 @@ typedef struct
 	GtkWidget         *lb_level;
 	GtkWidget         *lb_name;
 	GtkWidget         *lb_score;
+	GtkWidget         *clock;
 
 	LevelManager      *lm;
 	ThemeManager      *tm;

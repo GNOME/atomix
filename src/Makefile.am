@@ -18,7 +18,8 @@ atomix_SOURCES = \
 	board.c board.h	\
 	undo.c undo.h \
 	goal.c goal.h \
-	goal-view.c goal-view.h
+	goal-view.c goal-view.h \
+	gtk-clock.c gtk-clock.h
 
 ui_DATA = atomix-ui.xml
 

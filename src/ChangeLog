@@ -1,3 +1,22 @@
+2001-12-02  Jens Finke <jens@triq.net>
+
+	* Makefile.am (atomix_SOURCES): Added gtk-clock.[ch].
+
+	* gtk-clock.[ch]: New files.
+
+	* gtk-time-limit.[ch]: Removed files.
+
+	* main.c (get_app): Removed function.
+	(game_init): Initialize the clock format.
+	(game_prepare_level): Set clock to 0 seconds and start it.
+	(game_level_timeout): Removed function.
+	(game_bonus_level_timeout): Removed function.
+	(game_level_finished): Stop clock and set to 0 seconds.
+	(game_pause): Stop clock.
+	(game_continue): Start clock.
+	(add_statistics_table_entry): New utility function.
+	(create_mainwin_content): Use add_statistics_table_entry.
+
 2001-12-01  Jens Finke <jens@triq.net>
 
 	* atomix.h: Removed file.

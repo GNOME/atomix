@@ -34,6 +34,7 @@
 #include "level.h"
 #include "util.h"
 #include "goal-view.h"
+#include "gtk-clock.h"
 
 /****************************
  *    global variables
@@ -159,12 +160,6 @@ on_app_destroy_event(GtkWidget       *widget,
 
 /****************************************************************************/
 
-AtomixApp* 
-get_app ()
-{
-	return app;
-}
-
 static void
 atomix_exit (AtomixApp *app)
 {
@@ -221,9 +216,13 @@ game_init (AtomixApp *app)
 	/* init level manager */
 	app->lm = level_manager_new ();
 	level_manager_init_levels (app->lm);
+
+	/* init level statistics */ 
 	app->level = NULL;
 	app->level_no = 0;
 	app->score = 0.0;
+	gtk_clock_set_format (GTK_CLOCK (app->clock), "%M:%S");
+	gtk_clock_set_seconds (GTK_CLOCK (app->clock), 0);
 
 	/* init the board */
 	board_init (app->theme, GNOME_CANVAS (app->ca_matrix));
@@ -337,6 +336,10 @@ game_prepare_level (AtomixApp *app, Level *next_level)
 
 	update_player_info (app);
 
+	/* init clock */
+	gtk_clock_set_seconds (GTK_CLOCK (app->clock), 0);
+	gtk_clock_start (GTK_CLOCK (app->clock));
+
  	g_object_unref (goal_pf);
 	g_object_unref (env_pf);
 	g_object_unref (sce_pf);
@@ -349,90 +352,15 @@ game_reload_level (AtomixApp *app)
 	game_prepare_level (app, app->level);
 }
 
-#if 0
-void game_level_timeout(GtkWidget *widget, gpointer data)
-{
-	GtkWidget *dlg;
-	GladeXML *dlg_xml;
-	GtkWidget* clock;
-	gint button_nr;
-
-	/* stop the clock */
-	clock = get_time_limit_widget();
-	gtk_time_limit_stop(GTK_TIME_LIMIT(clock));      
-        gtk_clock_set_seconds(GTK_CLOCK(clock), 0);
-
-	/* handle bonus level if neccessary */
-	if(level_data->level->bonus_level)
-	{
-		game_bonus_level_timeout(widget, data);
-		return;
-	}
-
-	/* update score */
-	level_data->score = level_data->score * 0.9;
-	update_player_info(level_data);
-
-	/* show dialog "Do you want to try again?" */
-	dlg_xml = glade_xml_new ("../atomix2.glade", "dlg_timeout", NULL);
-	dlg =  glade_xml_get_widget (dlg_xml, "dlg_timeout");
-	button_nr = gnome_dialog_run(GNOME_DIALOG (dlg));
-
-	if(button_nr == 0)
-	{
-		/* restart level */
-		game_reload_level();
-	}
-	else
-	{	
-		/* player want to quit */
-		game_clean_up();
-		save_score(level_data->score);
-		game_state = GAME_NOT_RUNNING;
-		update_menu_item_state(game_state);
-		board_view_message(BOARD_MSG_NEW_GAME);
-	}
-}
-
-void game_bonus_level_timeout(GtkWidget *widget, gpointer user_data)
-{
-	GladeXML *dlg_xml;
-        GtkWidget *dlg;
-	
-	/* show dialog to inform the player */
-	dlg_xml = glade_xml_new ("../atomix2.glade", "dlg_bonus_timeout", NULL);
-	dlg = glade_xml_get_widget (dlg_xml, "dlg_bonus_timeout");
-	gnome_dialog_run(GNOME_DIALOG(dlg));
-
-	if(!level_is_last_level(level_data->level))
-	{
-		gchar *next;
-
-		/* retrieve next level */
-		next = g_strdup(level_data->level->next);    
-		
-		/* update level data */
-		level_destroy(level_data->level);
-		level_data->level = level_load_xml(next);
-		level_data->no_level++;
-		g_free(next);
-
-		/* load level */
-		game_prepare_level(level_data);
-	}
-	else
-	{
-		game_finished();
-	}
-}
-#endif 
-
 void 
 game_level_finished (AtomixApp *local_app)
 {
 	Level *next_level;
 
 	g_return_if_fail (app != NULL);
+
+	gtk_clock_stop (GTK_CLOCK (app->clock));
+	gtk_clock_set_seconds (GTK_CLOCK (app->clock), 0);
 
 	next_level = level_manager_get_next_level (app->lm, app->level);
 
@@ -519,7 +447,8 @@ game_pause (AtomixApp *app)
 {
 	g_return_if_fail (app != NULL);
 	g_return_if_fail (app->state == GAME_RUNNING);
-	
+
+	gtk_clock_stop (GTK_CLOCK (app->clock));
 	board_hide ();
 	board_view_message (BOARD_MSG_GAME_PAUSED);
 	app->state = GAME_PAUSED;
@@ -537,6 +466,7 @@ game_continue (AtomixApp *app)
 	board_show ();
 		
 	app->state = GAME_RUNNING;
+	gtk_clock_start (GTK_CLOCK (app->clock));
 	update_menu_item_state (app);
 }
 
@@ -713,6 +643,33 @@ create_canvas_widget (GtkWidget **canvas)
 	return frame;
 }
 
+static void
+add_statistics_table_entry (GtkWidget *table, gint row, gchar *label_str, gboolean is_clock,
+			   GtkWidget **return_widget)
+{
+	GtkWidget *label;
+	GtkWidget *lb_align;
+	GtkWidget *align;
+
+	label = gtk_label_new (label_str);
+	lb_align = gtk_alignment_new (1.0, 0.5, 0.0, 0.0);
+	gtk_container_add (GTK_CONTAINER (lb_align), GTK_WIDGET (label));
+	gtk_table_attach (GTK_TABLE (table), GTK_WIDGET (lb_align),
+			  0, 1, row, row + 1,
+			  GTK_FILL, GTK_FILL, 0, 0); 
+
+	if (is_clock)
+		*return_widget = gtk_clock_new (GTK_CLOCK_INCREASING);
+	else
+		*return_widget = gtk_label_new ("NO CONTENT");
+	align = gtk_alignment_new (0.0, 0.5, 0.0, 0.0);
+	gtk_container_add (GTK_CONTAINER (align), GTK_WIDGET (*return_widget));
+	gtk_table_attach (GTK_TABLE (table), GTK_WIDGET (align),
+			  1, 2, row, row + 1,
+			  GTK_FILL, GTK_FILL, 6, 0);
+}
+
+
 static GtkWidget*
 create_mainwin_content (AtomixApp *app)
 {
@@ -722,7 +679,6 @@ create_mainwin_content (AtomixApp *app)
 	GtkWidget *goal;
 	GtkWidget *frame;
 	GtkWidget *table;
-	GtkWidget *label;
 
 	/* create canvas widgets */
 	pf = create_canvas_widget (&app->ca_matrix);
@@ -742,31 +698,16 @@ create_mainwin_content (AtomixApp *app)
 
 	/* create statistics frame */
 	frame = gtk_frame_new (_("Statistics"));
-	table = gtk_table_new (3, 2, FALSE);
-	gtk_table_set_row_spacings (GTK_TABLE (table), 4);
-	gtk_table_set_col_spacings (GTK_TABLE (table), 4);
+	table = gtk_table_new (4, 2, FALSE);
+	gtk_table_set_row_spacings (GTK_TABLE (table), 6);
+	gtk_table_set_col_spacings (GTK_TABLE (table), 6);
 	gtk_container_set_border_width (GTK_CONTAINER (table), 6);
 	
-	label = gtk_label_new (_("Level:"));
-	app->lb_level = gtk_label_new ("NO LEVEL NAME");
-	gtk_table_attach_defaults (GTK_TABLE (table), GTK_WIDGET (label),
-				   0, 1, 0, 1);
-	gtk_table_attach_defaults (GTK_TABLE (table), GTK_WIDGET (app->lb_level),
-				   1, 2, 0, 1);
+	add_statistics_table_entry (table, 0, N_("Level:"), FALSE, &app->lb_level);
+	add_statistics_table_entry (table, 1, N_("Molecule:"), FALSE, &app->lb_name);
+	add_statistics_table_entry (table, 2, N_("Score:"), FALSE, &app->lb_score);
+	add_statistics_table_entry (table, 3, N_("Time:"), TRUE, &app->clock);
 
-	label = gtk_label_new (_("Name:"));
-	app->lb_name = gtk_label_new ("");
-	gtk_table_attach_defaults (GTK_TABLE (table), GTK_WIDGET (label),
-				   0, 1, 1, 2);
-	gtk_table_attach_defaults (GTK_TABLE (table), GTK_WIDGET (app->lb_name),
-				   1, 2, 1, 2);
-	
-	label = gtk_label_new (_("Score:"));
-	app->lb_score = gtk_label_new ("");
-	gtk_table_attach_defaults (GTK_TABLE (table), GTK_WIDGET (label),
-				   0, 1, 2, 3);
-	gtk_table_attach_defaults (GTK_TABLE (table), GTK_WIDGET (app->lb_score),
-				   1, 2, 2, 3);
 	gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (table));
 
 	/* add frame and goal canvas to left side */
