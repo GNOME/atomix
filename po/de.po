@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-02-27 21:47+0100\n"
+"POT-Creation-Date: 2002-05-16 15:35+0200\n"
 "PO-Revision-Date: 2001-03-14 14:42+0100\n"
 "Last-Translator: Jens Finke <jens@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -114,18 +114,6 @@ msgstr "Punkte..."
 msgid "_Undo move"
 msgstr "Zug zurücknehmen"
 
-#: src/board.c:170
-msgid "Game Paused"
-msgstr "Spiel angehalten"
-
-#: src/board.c:172
-msgid "Game Over"
-msgstr "Spiel zu Ende"
-
-#: src/board.c:174
-msgid "Atomix - Molecule Mind Game"
-msgstr "Atomix - Molekül-Denkspiel"
-
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
 msgstr "Levelsequenz-Beschreibung konnte nicht gefunden werden."
@@ -134,7 +122,7 @@ msgstr "Levelsequenz-Beschreibung konnte nicht gefunden werden."
 msgid "No level found."
 msgstr "Keine Level gefunden."
 
-#: src/level-manager.c:285
+#: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Level '%s' gefunden in: %s"
@@ -147,50 +135,50 @@ msgstr "Copyright (C) 1999-2002 Jens Finke"
 msgid "A mind game about atoms and molecules."
 msgstr "Ein Denkspiel über Atome und Moleküle"
 
-#: src/main.c:484
+#: src/main.c:486
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Glückwunsch! Sie haben erfolgreich alle Atomix Level abgeschlossen."
 
-#: src/main.c:495
+#: src/main.c:497
 msgid "Couldn't find at least one level."
 msgstr "Es konnte nicht wenigstens ein Level gefunden werden."
 
-#: src/main.c:500
+#: src/main.c:502
 msgid "Do you want to finish the game?"
 msgstr "Wollen Sie das Spiel wirklich beenden?"
 
-#: src/main.c:619 src/main.c:625 src/main.c:630
+#: src/main.c:621 src/main.c:627 src/main.c:632
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Das Verzeichnis %s konnte nicht erstellt werden."
 
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:731
 msgid "Statistics"
 msgstr "Statistik"
 
-#: src/main.c:739
+#: src/main.c:737
 msgid "Level:"
 msgstr "Level:"
 
-#: src/main.c:740
+#: src/main.c:738
 msgid "Molecule:"
 msgstr "Molekül:"
 
-#: src/main.c:741
+#: src/main.c:739
 msgid "Score:"
 msgstr "Punktezahl:"
 
-#: src/main.c:742
+#: src/main.c:740
 msgid "Time:"
 msgstr "Zeit:"
 
-#: src/main.c:782
+#: src/main.c:780
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Datei %s konnte nicht gefunden werden."
 
-#: src/main.c:840
+#: src/main.c:837
 msgid "Atomix Splash"
 msgstr "Atomix Splash"
 
@@ -198,7 +186,7 @@ msgstr "Atomix Splash"
 msgid "No themes found."
 msgstr "Keine Themen gefunden."
 
-#: src/theme-manager.c:204
+#: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Thema '%s' gefunden in: %s"
@@ -210,6 +198,15 @@ msgstr "Atomix"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Molekül-Denkspiel"
+
+#~ msgid "Game Paused"
+#~ msgstr "Spiel angehalten"
+
+#~ msgid "Game Over"
+#~ msgstr "Spiel zu Ende"
+
+#~ msgid "Atomix - Molecule Mind Game"
+#~ msgstr "Atomix - Molekül-Denkspiel"
 
 #~ msgid "No more undo levels."
 #~ msgstr "Keine weiteren Rückgängig-Ebenen."

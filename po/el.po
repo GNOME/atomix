@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.9.3\n"
-"POT-Creation-Date: 2001-09-28 15:50+0200\n"
+"POT-Creation-Date: 2002-05-16 15:35+0200\n"
 "PO-Revision-Date: 2002-02-19 16:49+0000\n"
 "Last-Translator: Simos Xenitellis <simos@hellug.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -132,18 +132,6 @@ msgstr "_Βαθμολογίες ..."
 msgid "_Undo move"
 msgstr "_Ακύρωση κίνησης"
 
-#: src/board.c:168
-msgid "Game Paused"
-msgstr "Το Παιχνίδι Σταμάτησε"
-
-#: src/board.c:170
-msgid "Game Over"
-msgstr "Τέλος Παιγνιδιού"
-
-#: src/board.c:172
-msgid "Atomix - Molecule Mind Game"
-msgstr "Atomix - Παιχνίδι Σπαζοκεφαλιά Μορίων"
-
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
 msgstr "Δε βρέθηκε περιγραφή ακολουθίας επιπέδου."
@@ -152,7 +140,7 @@ msgstr "Δε βρέθηκε περιγραφή ακολουθίας επιπέδ
 msgid "No level found."
 msgstr "Δε βρέθηκαν επίπεδα."
 
-#: src/level-manager.c:285
+#: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Βρέθηκε επίπεδο '%s' στο: %s"
@@ -166,50 +154,50 @@ msgid "A mind game about atoms and molecules."
 msgstr "Παιχνίδι σπαζοκεφαλιά με άτομα και μόρια."
 
 #
-#: src/main.c:484
+#: src/main.c:486
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Συγχαρητήρια! Έχετε τερματίσει όλα τα επίπεδα του Atomix."
 
-#: src/main.c:495
+#: src/main.c:497
 msgid "Couldn't find at least one level."
 msgstr "Δε μπόρεσε να βρεθεί τουλάχιστον ένα επίπεδο."
 
-#: src/main.c:500
+#: src/main.c:502
 msgid "Do you want to finish the game?"
 msgstr "Θέλετε να τερματίσετε το παιχνίδι;"
 
-#: src/main.c:619 src/main.c:625 src/main.c:630
+#: src/main.c:621 src/main.c:627 src/main.c:632
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Aδύνατη η δημιουργία καταλόγου %s"
 
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:731
 msgid "Statistics"
 msgstr "Στατιστικά"
 
-#: src/main.c:739
+#: src/main.c:737
 msgid "Level:"
 msgstr "Επίπεδο:"
 
-#: src/main.c:740
+#: src/main.c:738
 msgid "Molecule:"
 msgstr "Μόριο:"
 
-#: src/main.c:741
+#: src/main.c:739
 msgid "Score:"
 msgstr "Βαθμολογία:"
 
-#: src/main.c:742
+#: src/main.c:740
 msgid "Time:"
 msgstr "Χρόνος:"
 
-#: src/main.c:782
+#: src/main.c:780
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Αδύνατη η εύρεση του αρχείου: %s"
 
-#: src/main.c:840
+#: src/main.c:837
 msgid "Atomix Splash"
 msgstr "Παφλασμός Atomix"
 
@@ -217,7 +205,7 @@ msgstr "Παφλασμός Atomix"
 msgid "No themes found."
 msgstr "Δε βρέθηκαν θέματα."
 
-#: src/theme-manager.c:204
+#: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Βρέθηκε θέμα '%s' στο: %s"
@@ -230,3 +218,11 @@ msgstr "Atomix"
 msgid "Molecule mind game"
 msgstr "Παιχνίδι σπαζοκεφαλιά μορίων"
 
+#~ msgid "Game Paused"
+#~ msgstr "Το Παιχνίδι Σταμάτησε"
+
+#~ msgid "Game Over"
+#~ msgstr "Τέλος Παιγνιδιού"
+
+#~ msgid "Atomix - Molecule Mind Game"
+#~ msgstr "Atomix - Παιχνίδι Σπαζοκεφαλιά Μορίων"

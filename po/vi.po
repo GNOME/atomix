@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix VERSION\n"
-"POT-Creation-Date: 2002-03-29 18:51-0500\n"
+"POT-Creation-Date: 2002-05-16 15:35+0200\n"
 "PO-Revision-Date: 2002-04-22 08:28-0400\n"
 "Last-Translator: pclouds <pclouds@gmx.net>\n"
 "Language-Team: GnomeVI <gnomevi-list@lists.sourceforge.net>\n"
@@ -113,18 +113,6 @@ msgstr "Đ_iểm..."
 msgid "_Undo move"
 msgstr "_Hoàn lại nước đi"
 
-#: src/board.c:170
-msgid "Game Paused"
-msgstr "Trò chơi tạm dừng"
-
-#: src/board.c:172
-msgid "Game Over"
-msgstr "Kết thúc trò chơi"
-
-#: src/board.c:174
-msgid "Atomix - Molecule Mind Game"
-msgstr ""
-
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
 msgstr ""
@@ -133,7 +121,7 @@ msgstr ""
 msgid "No level found."
 msgstr ""
 
-#: src/level-manager.c:285
+#: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr ""
@@ -146,50 +134,50 @@ msgstr "Copyright (C) 1999-2002 Jens Finke"
 msgid "A mind game about atoms and molecules."
 msgstr ""
 
-#: src/main.c:484
+#: src/main.c:486
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Xin chúc mừng! Bạn đã hoàn tất mọi cấp độ của Atomix."
 
-#: src/main.c:495
+#: src/main.c:497
 msgid "Couldn't find at least one level."
 msgstr ""
 
-#: src/main.c:500
+#: src/main.c:502
 msgid "Do you want to finish the game?"
 msgstr "Bạn có muốn hoàn tất trò chơi?"
 
-#: src/main.c:619 src/main.c:625 src/main.c:630
+#: src/main.c:621 src/main.c:627 src/main.c:632
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Không thể tạo thư mục: %s"
 
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:731
 msgid "Statistics"
 msgstr "Thống kê"
 
-#: src/main.c:739
+#: src/main.c:737
 msgid "Level:"
 msgstr "Cấp độ:"
 
-#: src/main.c:740
+#: src/main.c:738
 msgid "Molecule:"
 msgstr "Phân tử:"
 
-#: src/main.c:741
+#: src/main.c:739
 msgid "Score:"
 msgstr "Điểm:"
 
-#: src/main.c:742
+#: src/main.c:740
 msgid "Time:"
 msgstr "Thời gian:"
 
-#: src/main.c:782
+#: src/main.c:780
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Không thể tìm tập tin: %s"
 
-#: src/main.c:840
+#: src/main.c:837
 msgid "Atomix Splash"
 msgstr ""
 
@@ -197,7 +185,7 @@ msgstr ""
 msgid "No themes found."
 msgstr "Không tìm thấy theme."
 
-#: src/theme-manager.c:204
+#: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Tìm thấy theme '%s' trong: %s"
@@ -209,3 +197,9 @@ msgstr "Atomix"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr ""
+
+#~ msgid "Game Paused"
+#~ msgstr "Trò chơi tạm dừng"
+
+#~ msgid "Game Over"
+#~ msgstr "Kết thúc trò chơi"

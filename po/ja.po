@@ -2,11 +2,10 @@
 # Copyright (C) 2001-2002 Free Software Foundation, Inc.
 # Takeshi Aihana <aihana@gnome.gr.jp>, 2001-2002.
 #
-#, no-wrap
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.9.2\n"
-"POT-Creation-Date: 2002-04-11 21:06+0900\n"
+"POT-Creation-Date: 2002-05-16 15:35+0200\n"
 "PO-Revision-Date: 2002-04-11 21:28+0900\n"
 "Last-Translator: Takeshi Aihana <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
@@ -114,18 +113,6 @@ msgstr "スコア(_S)..."
 msgid "_Undo move"
 msgstr "アンドゥ(_U)"
 
-#: src/board.c:170
-msgid "Game Paused"
-msgstr "ゲーム停止"
-
-#: src/board.c:172
-msgid "Game Over"
-msgstr "ゲーム終了"
-
-#: src/board.c:174
-msgid "Atomix - Molecule Mind Game"
-msgstr "Atomix - 分子構造の心理ゲーム"
-
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
 msgstr "レベル順序記述ファイルが見つかりませんでした。"
@@ -134,7 +121,7 @@ msgstr "レベル順序記述ファイルが見つかりませんでした。"
 msgid "No level found."
 msgstr "レベルがありません。"
 
-#: src/level-manager.c:285
+#: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "レベル '%s' が %s の中にありました"
@@ -147,50 +134,50 @@ msgstr "Copyright (C) 1999-2002 Jens Finke"
 msgid "A mind game about atoms and molecules."
 msgstr "原子と分子の構造を使った心理ゲームです。"
 
-#: src/main.c:484
+#: src/main.c:486
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "おめでとうございます！ Atomix の全てのレベルをクリアしました。"
 
-#: src/main.c:495
+#: src/main.c:497
 msgid "Couldn't find at least one level."
 msgstr "一つもレベルが見つかりませんでした。"
 
-#: src/main.c:500
+#: src/main.c:502
 msgid "Do you want to finish the game?"
 msgstr "本当にこのゲームを終了しても宜しいですか？"
 
-#: src/main.c:619 src/main.c:625 src/main.c:630
+#: src/main.c:621 src/main.c:627 src/main.c:632
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "ディレクトリを作成できませんでした: %s"
 
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:731
 msgid "Statistics"
 msgstr "ゲームの成績"
 
-#: src/main.c:739
+#: src/main.c:737
 msgid "Level:"
 msgstr "レベル:"
 
-#: src/main.c:740
+#: src/main.c:738
 msgid "Molecule:"
 msgstr "分子:"
 
-#: src/main.c:741
+#: src/main.c:739
 msgid "Score:"
 msgstr "スコア:"
 
-#: src/main.c:742
+#: src/main.c:740
 msgid "Time:"
 msgstr "タイム:"
 
-#: src/main.c:782
+#: src/main.c:780
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "ファイルが見つかりませんでした: %s"
 
-#: src/main.c:840
+#: src/main.c:837
 msgid "Atomix Splash"
 msgstr "Atomix のスプラッシュスクリーン"
 
@@ -198,7 +185,7 @@ msgstr "Atomix のスプラッシュスクリーン"
 msgid "No themes found."
 msgstr "テーマが見つかりませんでした。"
 
-#: src/theme-manager.c:204
+#: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "テーマ '%s' が %s の中にありました"
@@ -211,3 +198,11 @@ msgstr "Atomix"
 msgid "Molecule mind game"
 msgstr "分子構造の心理ゲーム"
 
+#~ msgid "Game Paused"
+#~ msgstr "ゲーム停止"
+
+#~ msgid "Game Over"
+#~ msgstr "ゲーム終了"
+
+#~ msgid "Atomix - Molecule Mind Game"
+#~ msgstr "Atomix - 分子構造の心理ゲーム"

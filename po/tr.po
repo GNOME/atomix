@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.4.3\n"
-"POT-Creation-Date: 2002-03-02 07:34-0500\n"
+"POT-Creation-Date: 2002-05-16 15:35+0200\n"
 "PO-Revision-Date: 2002-03-02 07:34-0500\n"
 "Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -121,20 +121,6 @@ msgstr "_Yüksek puanlar..."
 msgid "_Undo move"
 msgstr "Hareketi _geri al"
 
-# src/board.c:202
-#: src/board.c:170
-msgid "Game Paused"
-msgstr "Oyun Duraklatýldý"
-
-# src/board.c:204
-#: src/board.c:172
-msgid "Game Over"
-msgstr "Oyun Bitti"
-
-#: src/board.c:174
-msgid "Atomix - Molecule Mind Game"
-msgstr "Atomix - Moleküler Zeka Oyunu "
-
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
 msgstr "Seviye sýra açýklamasý bulunamadý."
@@ -144,7 +130,7 @@ msgstr "Seviye sýra açýklamasý bulunamadý."
 msgid "No level found."
 msgstr "Seviye bulunamadý."
 
-#: src/level-manager.c:285
+#: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "%s seviyesi bulundu: %s"
@@ -159,58 +145,60 @@ msgid "A mind game about atoms and molecules."
 msgstr "Ýçinde atom ve moleküllerin geçtiði bir zeka oyunu."
 
 # src/interface.c:616
-#: src/main.c:484
+#: src/main.c:486
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini baþarýyla bitirdiniz."
 
 # editor/callbacks.c:1279
-#: src/main.c:495
+#: src/main.c:497
 msgid "Couldn't find at least one level."
 msgstr "Hiç oyun seviyesi bulunamadý."
 
 # src/interface.c:908
-#: src/main.c:500
+#: src/main.c:502
 msgid "Do you want to finish the game?"
 msgstr "Gerçekten bu oyundan çýkmak istiyor musunuz? "
 
 # editor/support.c:116 src/support.c:116
-#: src/main.c:619 src/main.c:625 src/main.c:630
+#: src/main.c:621 src/main.c:627 src/main.c:632
+#, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Dizin yaratýlamadý: %s"
 
 # src/interface.c:259
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:731
 msgid "Statistics"
 msgstr "Ýstatistikler"
 
 # src/interface.c:317
-#: src/main.c:739
+#: src/main.c:737
 msgid "Level:"
 msgstr "Seviye:"
 
-#: src/main.c:740
+#: src/main.c:738
 msgid "Molecule:"
 msgstr "Molekül:"
 
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: src/main.c:741
+#: src/main.c:739
 msgid "Score:"
 msgstr "Skor:"
 
 # src/interface.c:347
-#: src/main.c:742
+#: src/main.c:740
 msgid "Time:"
 msgstr "Zaman:"
 
 # editor/support.c:100 editor/support.c:138 src/support.c:100
 # src/support.c:138
-#: src/main.c:782
+#: src/main.c:780
+#, c-format
 msgid "Couldn't find file: %s"
 msgstr "Dosya bulunamadý: %s"
 
 # src/interface.c:108
-#: src/main.c:840
+#: src/main.c:837
 msgid "Atomix Splash"
 msgstr "Atomix Baþlangýç Ekraný"
 
@@ -218,7 +206,7 @@ msgstr "Atomix Baþlangýç Ekraný"
 msgid "No themes found."
 msgstr "Tema bulunamadý."
 
-#: src/theme-manager.c:204
+#: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "%s temasý bulundu: %s"
@@ -233,3 +221,13 @@ msgstr "Atomix"
 msgid "Molecule mind game"
 msgstr "Molekül oyunu"
 
+# src/board.c:202
+#~ msgid "Game Paused"
+#~ msgstr "Oyun Duraklatýldý"
+
+# src/board.c:204
+#~ msgid "Game Over"
+#~ msgstr "Oyun Bitti"
+
+#~ msgid "Atomix - Molecule Mind Game"
+#~ msgstr "Atomix - Moleküler Zeka Oyunu "

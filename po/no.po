@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-03-04 23:38+0100\n"
+"POT-Creation-Date: 2002-05-16 15:35+0200\n"
 "PO-Revision-Date: 2002-03-04 23:39+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
@@ -113,18 +113,6 @@ msgstr "_Poeng..."
 msgid "_Undo move"
 msgstr "_Angre trekk"
 
-#: src/board.c:170
-msgid "Game Paused"
-msgstr "Spillet pauset"
-
-#: src/board.c:172
-msgid "Game Over"
-msgstr "Spillet er ferdig"
-
-#: src/board.c:174
-msgid "Atomix - Molecule Mind Game"
-msgstr "Atomix - tankespill med molekyler"
-
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
 msgstr "Kunne ikke finne beskrivelse av nivåsekvens."
@@ -133,7 +121,7 @@ msgstr "Kunne ikke finne beskrivelse av nivåsekvens."
 msgid "No level found."
 msgstr "Ingen nivåer funnet."
 
-#: src/level-manager.c:285
+#: src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Fant nivå «%s» i: %s"
@@ -146,50 +134,50 @@ msgstr "Opphavsrett © 1999-2002 Jens Finke"
 msgid "A mind game about atoms and molecules."
 msgstr "Et tenkespill om atomer og molekyler."
 
-#: src/main.c:484
+#: src/main.c:486
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulerer! Du har fullført alle nivåer i Atomix."
 
-#: src/main.c:495
+#: src/main.c:497
 msgid "Couldn't find at least one level."
 msgstr "Kunne ikke finne minst ett nivå."
 
-#: src/main.c:500
+#: src/main.c:502
 msgid "Do you want to finish the game?"
 msgstr "Vil du avslutte dette spillet?"
 
-#: src/main.c:619 src/main.c:625 src/main.c:630
+#: src/main.c:621 src/main.c:627 src/main.c:632
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Kunne ikke opprette katalog: %s"
 
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:731
 msgid "Statistics"
 msgstr "Statistikk"
 
-#: src/main.c:739
+#: src/main.c:737
 msgid "Level:"
 msgstr "Nivå:"
 
-#: src/main.c:740
+#: src/main.c:738
 msgid "Molecule:"
 msgstr "Molekyl:"
 
-#: src/main.c:741
+#: src/main.c:739
 msgid "Score:"
 msgstr "Poeng:"
 
-#: src/main.c:742
+#: src/main.c:740
 msgid "Time:"
 msgstr "Tid:"
 
-#: src/main.c:782
+#: src/main.c:780
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Kunne ikke finne fil: %s"
 
-#: src/main.c:840
+#: src/main.c:837
 msgid "Atomix Splash"
 msgstr "Atomix splash"
 
@@ -197,7 +185,7 @@ msgstr "Atomix splash"
 msgid "No themes found."
 msgstr "Ingen tema funnet."
 
-#: src/theme-manager.c:204
+#: src/theme-manager.c:205
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Fant tema «%s» i: %s"
@@ -209,3 +197,12 @@ msgstr "Atomix"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Tenkespill med molekyler"
+
+#~ msgid "Game Paused"
+#~ msgstr "Spillet pauset"
+
+#~ msgid "Game Over"
+#~ msgstr "Spillet er ferdig"
+
+#~ msgid "Atomix - Molecule Mind Game"
+#~ msgstr "Atomix - tankespill med molekyler"
