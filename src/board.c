@@ -27,7 +27,7 @@
 #include "tile.h"
 #include "canvas_helper.h"
 
-#define                  ANIM_TIMEOUT     7  /* time in milliseconds between 
+#define                  ANIM_TIMEOUT     8  /* time in milliseconds between 
 						two atom movements */
 typedef struct {
 	gint              timeout_id;
@@ -480,13 +480,13 @@ void board_hide_message(gint msg_id)
 void
 board_hide(void)
 {
-	gnome_canvas_item_hide(GNOME_CANVAS_ITEM(level_items->level));
+	gnome_canvas_item_hide(GNOME_CANVAS_ITEM(level_items->moveables));
 }
 
 void
 board_show(void)
 {
-	gnome_canvas_item_show(GNOME_CANVAS_ITEM(level_items->level));
+	gnome_canvas_item_show(GNOME_CANVAS_ITEM(level_items->moveables));
 }
 
 /*=================================================================
@@ -620,8 +620,12 @@ move_item (GnomeCanvasItem* item, ItemDirection direc)
 	gint animstep;
 	Tile *tile;
 	UndoMove *move;
+	gint tw, th;
 	
 	gnome_canvas_item_get_bounds (item, &x1, &y1, &x2, &y2);
+	theme_get_tile_size (board_theme, &tw, &th);
+	x1 = x1 - (((gint)x1) % tw); /* I don't have a clue why we must do
+					this here. */
 	convert_to_playfield (board_theme, x1, y1, &src_row, &src_col);
 
 	/* find destination row/col */
@@ -666,7 +670,6 @@ move_item (GnomeCanvasItem* item, ItemDirection direc)
 	
 		convert_to_canvas (board_theme, dest_row, dest_col, &new_x1, &new_y1);
 		playfield_swap_tiles (board_sce, src_row, src_col, dest_row, dest_col);
-		playfield_print (board_sce);
 
 		selector_move_to (selector_data, dest_row, dest_col);
 		
@@ -675,26 +678,18 @@ move_item (GnomeCanvasItem* item, ItemDirection direc)
 		{
 			anim_data->counter = (gint)(fabs(new_y1 - y1) / animstep);
 			anim_data->x_step = 0;
-			anim_data->y_step = animstep;
-			if(direc == UP)
-			{
-				anim_data->y_step = -(anim_data->y_step);
-			}
+			anim_data->y_step = (direc == DOWN) ? animstep : -animstep;
 		}
 		else
 		{
 			anim_data->counter = (gint)(fabs(new_x1 - x1) / animstep);
-			anim_data->x_step = animstep;
+			anim_data->x_step = (direc == RIGHT) ? animstep : -animstep;
 			anim_data->y_step =  0;    
-			if(direc == LEFT)
-			{
-				anim_data->x_step = -(anim_data->x_step);
-			}
 		}
 		
 		anim_data->dest_row = dest_row;
 		anim_data->dest_col = dest_col;
-		
+
 		anim_data->timeout_id = gtk_timeout_add(ANIM_TIMEOUT, move_item_anim, 
 							anim_data);
 	}
@@ -817,7 +812,7 @@ create_tile (double x, double y, Tile *tile,
 	GnomeCanvasItem *item = NULL;
 	
 	pixbuf = theme_get_tile_image (board_theme, tile);
-		
+
 	item = gnome_canvas_item_new(group,
 				     gnome_canvas_pixbuf_get_type(),
 				     "pixbuf", pixbuf,

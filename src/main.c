@@ -316,21 +316,21 @@ game_prepare_level (AtomixApp *app, Level *next_level)
 
 	if (app->goal)
 		g_object_unref (app->goal);
-/* 	goal_pf = level_get_goal (app->level); */
-/* 	app->goal = goal_new (goal_pf); */
+ 	goal_pf = level_get_goal (app->level);
+ 	app->goal = goal_new (goal_pf); 
 
 	/* init board */
 	board_clear ();
 	env_pf = level_get_environment (app->level);
 	sce_pf = level_get_scenario (app->level);
-	board_init_level (env_pf, sce_pf, NULL /* app->goal */);
+	board_init_level (env_pf, sce_pf, app->goal);
 
 	/* init goal */
-/* 	goal_view_render (app->goal); */
+ 	goal_view_render (app->goal);
 
 	update_player_info (app);
 
-/* 	g_object_unref (goal_pf); */
+ 	g_object_unref (goal_pf);
 	g_object_unref (env_pf);
 	g_object_unref (sce_pf);
 }
@@ -421,7 +421,7 @@ void game_bonus_level_timeout(GtkWidget *widget, gpointer user_data)
 #endif 
 
 void 
-game_level_finished (AtomixApp *app)
+game_level_finished (AtomixApp *local_app)
 {
 	Level *next_level;
 

@@ -32,21 +32,25 @@ static void goal_finalize (GObject *object);
 
 struct _GoalPrivate {
 	PlayField*   pf;
-	GHashTable*  index;
+	GSList*  index;
 };
 
 void goal_print_offset(gpointer ptr, gpointer data);
 GnomeCanvasItem* create_small_item (GnomeCanvasGroup *group, gdouble x, gdouble y, Tile* tile);
-static void destroy_hash_value (gpointer value);
 static gboolean compare_playfield_with_goal (Goal *goal, PlayField *pf, 
 					     guint start_row, guint start_col);
 
+
+typedef struct {
+	Tile   *tile;
+	GSList *position;
+} TileData;
 
 typedef struct 
 {
 	gint horiz;
 	gint vert;
-} TileOffset;
+} PositionOffset;
 
 
 GType
@@ -99,6 +103,9 @@ goal_init (Goal *goal)
 static void 
 goal_finalize (GObject *object)
 {
+	GSList *td_it;
+	GSList *pos_it;
+	TileData *td;
 	Goal* goal = GOAL (object);
 	
 	g_message ("Finalize Goal");
@@ -106,10 +113,37 @@ goal_finalize (GObject *object)
 	if (goal->priv->pf)
 		g_object_unref (goal->priv->pf);
 
-	g_hash_table_destroy ((GHashTable*) goal->priv->index);
+	for (td_it = goal->priv->index; td_it != NULL; td_it = td_it->next) {
+		td = (TileData*) td_it->data;
+		g_object_unref (td->tile);
+		
+		for (pos_it = td->position; pos_it != NULL; pos_it = pos_it->next) 
+			g_free (pos_it->data);
+
+		g_slist_free (td->position);
+	}
+	g_slist_free (goal->priv->index);
 
 	g_free (goal->priv);
 	goal->priv = NULL;
+}
+
+static int
+find_tile (gconstpointer p1, gconstpointer p2)
+{
+	TileData *td1;
+	TileData *td2;
+
+	td1 = (TileData*) p1;
+	td2 = (TileData*) p2;
+
+	g_return_val_if_fail (IS_TILE (td1->tile), 1);
+	g_return_val_if_fail (IS_TILE (td2->tile), 1);
+
+	if (tile_is_equal (td1->tile, td2->tile))
+		return 0;
+	else
+		return 1;
 }
 
 Goal*
@@ -121,13 +155,10 @@ goal_new (PlayField *pf)
 
 	goal = GOAL (g_object_new (GOAL_TYPE, NULL));
 
-	g_object_ref (pf);
-	goal->priv->pf = pf;
+	goal->priv->pf = g_object_ref (pf);
     
 	/* initialise index */
-	goal->priv->index = g_hash_table_new_full ((GHashFunc) g_direct_hash, 
-						   (GCompareFunc) g_direct_equal,
-						   NULL, (GDestroyNotify) destroy_hash_value);
+	goal->priv->index = NULL;
 	
 	for(row = 0; row < playfield_get_n_rows (pf); row++)
 	{
@@ -138,28 +169,39 @@ goal_new (PlayField *pf)
 			if (tile &&
 			    tile_get_tile_type (tile) == TILE_TYPE_ATOM)
 			{
-				gint tile_id;
-				TileOffset *off;
-				GSList *list = NULL;
+				TileData pattern;
+				TileData *td;
+				PositionOffset *po;
+				GSList *result = NULL;
 
-				tile_id = 10; /* tile_get_hash_value (tile); */
-				
-				off = g_new0 (TileOffset, 1);
-				off->horiz = col;
-				off->vert = row;
-				
-				list = g_hash_table_lookup (goal->priv->index, 
-							    GINT_TO_POINTER (tile_id));
+				po = g_new0 (PositionOffset, 1);
+				po->horiz = col;
+				po->vert = row;
 
-				list = g_slist_append(list, off);
-				g_hash_table_insert (goal->priv->index, GINT_TO_POINTER (tile_id),
-						      (gpointer) list);
-				
+				pattern.tile = tile;
+				pattern.position = NULL;
+				result = g_slist_find_custom (goal->priv->index, 
+							      &pattern, 
+							      (GCompareFunc) find_tile);
+				if (result == NULL) {
+					td = g_new0 (TileData, 1);
+					td->tile = g_object_ref (tile);
+					td->position = NULL;
+					goal->priv->index = g_slist_append (goal->priv->index, 
+									    td);
+				}
+				else {
+					td = (TileData*) result->data;
+				}
+
+				td->position = g_slist_append (td->position, po);
 			}
-			g_object_unref (tile);
+
+			if (tile) 
+				g_object_unref (tile);
 		}
 	}
-
+ 
 	return goal;
 }
 
@@ -171,56 +213,18 @@ goal_get_playfield (Goal *goal)
 	return goal->priv->pf;
 }
 
-
-static void
-destroy_hash_value (gpointer value)
-{
-	GSList *list = (GSList*) value;
-	GSList *it;
-
-	for (it = list; it != NULL; it = it->next)
-		if (it->data) g_free (it->data);
-
-	g_slist_free (list);
-}
-
-
-static void
-print_hash_table (gpointer key, gpointer value, gpointer data)
-{
-	GSList *list = (GSList*) value;
-	GSList *it;
-
-	g_print ("HASH: %i ", GPOINTER_TO_INT (key));
-	for (it = list; it != NULL; it = it->next) {
-		TileOffset *off = (TileOffset*) it->data;
-		g_print("{%x|%x} ",off->horiz, off->vert);
-	}
-}
-
-void 
-goal_print (Goal* goal)
-{
-	g_return_if_fail (IS_GOAL (goal));
-	g_return_if_fail (IS_PLAYFIELD (goal->priv->pf));
-	g_return_if_fail (goal->priv->index != NULL);
-
-	g_print("GOAL:\n");
-	playfield_print(goal->priv->pf);
-
-	g_hash_table_foreach (goal->priv->index, (GHFunc) print_hash_table, NULL);
-
-	g_print ("\n");
-}
-
 gboolean
 goal_reached (Goal* goal, PlayField* pf, guint row_anchor, guint col_anchor)
 {
-	guint tile_id;
-	GSList *list;
+	GSList *result;
 	GSList *it;
-	gboolean result = FALSE;
+	gboolean comp_res = FALSE;
 	Tile *tile;
+	TileData *td;
+	TileData pattern;
+	PositionOffset *po;
+	gint start_row;
+	gint start_col;
 
 	g_return_val_if_fail (IS_GOAL (goal), FALSE);
 	g_return_val_if_fail (goal->priv->index != NULL, FALSE);
@@ -230,23 +234,30 @@ goal_reached (Goal* goal, PlayField* pf, guint row_anchor, guint col_anchor)
 	tile = playfield_get_tile (pf, row_anchor, col_anchor);
 	if (tile == NULL) return FALSE;
 
-	tile_id = 10; /* tile_get_hash_value (tile); */
-	list = (GSList*) g_hash_table_lookup (goal->priv->index, GINT_TO_POINTER (tile_id));
-    
-	for (it = list; it != NULL && !result; it = it->next) {
-		TileOffset *offset = (TileOffset*) it->data;
-		gint start_row =  row_anchor - offset->vert;
-		gint start_col =  col_anchor - offset->horiz;
+	pattern.tile = tile;
+	pattern.position = NULL;
+	result = g_slist_find_custom (goal->priv->index, &pattern, 
+				      (GCompareFunc) find_tile);
 
-		result = compare_playfield_with_goal (goal, pf, start_row, start_col);
+	if (result == NULL) return FALSE;
+	td = (TileData*) result->data;
+	
+	for (it = td->position; it != NULL && !comp_res; it = it->next) {
+		po = (PositionOffset*) it->data;
+		start_row =  row_anchor - po->vert;
+		start_col =  col_anchor - po->horiz;
+
+		comp_res = compare_playfield_with_goal (goal, pf, start_row, start_col);
 	}
 
-	return result;
+	return comp_res;
 }
 
 static gboolean
 compare_playfield_with_goal (Goal *goal, PlayField *pf, guint start_row, guint start_col) 
 {
+	Tile *pf_tile;
+	Tile *goal_tile;
 	gint pf_row;
 	gint pf_col;
 	gint goal_row;
@@ -267,11 +278,8 @@ compare_playfield_with_goal (Goal *goal, PlayField *pf, guint start_row, guint s
 		    pf_col < end_col && result; 
 		    pf_col++, goal_col++)
 		{
-			Tile *pf_tile;
-			Tile *goal_tile;
-
 			goal_tile = playfield_get_tile(goal->priv->pf, goal_row, goal_col);
-			pf_tile = playfield_get_tile (pf, pf_row , pf_col);
+			pf_tile = playfield_get_tile (pf, pf_row, pf_col);
 
 			if (goal_tile) {
 				if (tile_get_tile_type (goal_tile) == TILE_TYPE_ATOM)
@@ -281,10 +289,11 @@ compare_playfield_with_goal (Goal *goal, PlayField *pf, guint start_row, guint s
 					else if (!tile_is_equal (goal_tile, pf_tile))
 						result = FALSE;
 				}
+				g_object_unref (goal_tile);
 			}
 
-			g_object_unref (goal_tile);
-			g_object_unref (pf_tile);
+			if (pf_tile)
+				g_object_unref (pf_tile);
 		}
 	}
 

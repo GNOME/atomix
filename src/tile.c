@@ -91,8 +91,6 @@ tile_finalize (GObject *object)
 {
 	Tile* tile = TILE (object);
 
-	g_message ("Finalize Tile");
-
 	g_slist_free (tile->priv->sub_id_list[TILE_SUB_OVERLAY]);
 	g_slist_free (tile->priv->sub_id_list[TILE_SUB_UNDERLAY]);
 	g_free (tile->priv);

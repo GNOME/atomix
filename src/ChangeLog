@@ -1,3 +1,27 @@
+2001-11-22  Jens Finke <jens@triq.net>
+
+	This is the first time after the GNOME 2.0 port that you can play
+	atomix again. Well, theoretically. I must add the themes and
+	levels to CVS yet.
+
+	* board.c (move_item): The calculation of the item pixel position
+	is somehow wrong. Added an ugly hack to correct this. Simplified
+	control flow.
+
+	* goal.c: Big changes here. With the new tile.[ch] design we can't
+	use a hashtable as goal index anymore. There is now a gslist,
+	which shouldn't be a performance hit since it stores only a couple
+	of atom infos.
+	(find_tile): New function, for searching in the list.
+	(destroy_hash_value), (print_hash_table), (goal_print): removed
+	functions.
+
+	* main.c (game_prepare_level): Initialize the goal again.
+	(game_level_finished): This uses the globale instance of AtomixApp
+	now. This should be fixed.
+
+	* tile.c (tile_finalize): Removed debug output.
+	
 2001-11-21  Jens Finke <jens@triq.net>
 
 	* board.c: Reworked this completely. Removed all the mouse

@@ -41,6 +41,8 @@ typedef struct
 typedef struct
 {
 	GObjectClass parent_class;
+
+	
 } GoalClass;
 
 GType goal_get_type (void);
