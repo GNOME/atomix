@@ -813,6 +813,7 @@ selector_new (void)
 					   "height", (double) gdk_pixbuf_get_height (pixbuf),
 					   "anchor", GTK_ANCHOR_NW,
 					   NULL);                              
+        board_canvas_items = g_slist_prepend (board_canvas_items, data->item);
 	gnome_canvas_item_hide(data->item);
 
 	return data;

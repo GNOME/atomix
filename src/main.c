@@ -294,6 +294,7 @@ game_skip_level (AtomixApp *app)
 	}
 	else {
 		Level *next_level = level_manager_get_next_level (app->lm, app->level);
+		app->level_no++;
 		
 		/* load level */
 		game_prepare_level (app, next_level);
