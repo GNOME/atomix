@@ -4,42 +4,49 @@
   <animstep dist="8"/>
   <floor>
      <base id="1" src="floor.png" name="test"/>
-     <overlay id="1" src="shadow1.png" name="test"/>
-     <overlay id="2" src="shadow2.png" name="test"/>
-     <overlay id="3" src="shadow3.png" name="test"/>
-     <overlay id="4" src="shadow4.png" name="test"/>
-     <overlay id="5" src="shadow5.png" name="test"/>
-     <overlay id="6" src="shadow6.png" name="test"/>
+     <overlay id="1" src="shadow-top.png" name="test"/>
+     <overlay id="2" src="shadow-top-left.png" name="test"/>
+     <overlay id="3" src="shadow-left.png" name="test"/>
+     <overlay id="4" src="shadow-bottom-right.png" name="test"/>
+     <overlay id="5" src="shadow-left-top.png" name="test"/>
+     <overlay id="6" src="shadow-top-left-both.png" name="test"/>
   </floor>
   <atom>
-     <base id="1" src="h.png" name="test"/>
-     <base id="2" src="o.png" name="test"/>
-     <base id="3" src="c.png" name="test"/>
-     <underlay id="1" src="link1.png" name="test"/>
-     <underlay id="2" src="link5.png" name="test"/>
-     <underlay id="3" src="link3.png" name="test"/>
-     <underlay id="4" src="link8.png" name="test"/>
-     <underlay id="5" src="link2.png" name="test"/>
-     <underlay id="6" src="link7.png" name="test"/>
-     <underlay id="7" src="link4.png" name="test"/>
-     <underlay id="8" src="link6.png" name="test"/>
-     <underlay id="9" src="link9.png" name="test"/>
-     <underlay id="10" src="link12.png" name="test"/>
-     <underlay id="11" src="link10.png" name="test"/>
-     <underlay id="12" src="link11.png" name="test"/>
+     <base id="1" src="atom-h.png" name="test"/>
+     <base id="2" src="atom-o.png" name="test"/>
+     <base id="3" src="atom-c.png" name="test"/>
+     <underlay  id="1" src="link-top.png" name="test"/>
+     <underlay  id="2" src="link-top-right.png" name="test"/>
+     <underlay  id="3" src="link-right.png" name="test"/>
+     <underlay  id="4" src="link-bottom-right.png" name="test"/>
+     <underlay  id="5" src="link-bottom.png" name="test"/>
+     <underlay  id="6" src="link-bottom-left.png" name="test"/>
+     <underlay  id="7" src="link-left.png" name="test"/>
+     <underlay  id="8" src="link-top-left.png" name="test"/>
+     <underlay  id="9" src="link-top-double.png" name="test"/>
+     <underlay id="10" src="link-right-double.png" name="test"/>
+     <underlay id="11" src="link-bottom-double.png" name="test"/>
+     <underlay id="12" src="link-left-double.png" name="test"/>
   </atom>
   <wall>
-    <base id="1" src="wall-corner3.png" name="test"/>
-    <base id="2" src="wall1.png" name="test"/>
-    <base id="3" src="wall-corner1.png" name="test"/>
-    <base id="4" src="wall2.png" name="test"/>
-    <base id="5" src="wall-corner4.png" name="test"/>
-    <base id="6" src="wall1.png" name="test"/>
-    <base id="7" src="wall-corner2.png" name="test"/>
-    <base id="8" src="wall2.png" name="test"/>
+    <base id="1" src="wall-top-left.png" name="test"/>
+    <base id="2" src="wall-horizontal.png" name="test"/>
+    <base id="3" src="wall-top-right.png" name="test"/>
+    <base id="4" src="wall-vertical.png" name="test"/>
+    <base id="5" src="wall-bottom-right.png" name="test"/>
+    <base id="6" src="wall-horizontal.png" name="test"/>
+    <base id="7" src="wall-bottom-left.png" name="test"/>
+    <base id="8" src="wall-vertical.png" name="test"/>
+    <base id="9" src="wall-single.png" name="test"/>
+    <base id="10" src="wall-horizontal-topx.png" name="test"/>
+    <base id="11" src="wall-horizontal-bottomx.png" name="test"/>
+    <base id="12" src="wall-vertical-rightx.png" name="test"/>
+    <base id="13" src="wall-vertical-leftx.png" name="test"/>
+    <base id="14" src="wall-vertical-top-end.png" name="test"/>
+    <base id="15" src="wall-vertical-bottom-end.png" name="test"/>
   </wall>
   <selector> 
-    <base src="selector.png"/>
+    <base src="cursor.png"/>
     <arrow type="left" src="arrow-left.png"/>
     <arrow type="right" src="arrow-right.png"/>
     <arrow type="top" src="arrow-top.png"/>

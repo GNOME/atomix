@@ -1,3 +1,11 @@
+2002-01-22  Jens Finke <jens@triq.net>
+
+	* *.png: Renamed icons to new naming scheme, added wall-single.png
+	wall-horizontal-bottomx.png, wall-horizontal-topx.png,
+	wall-vertical-leftx.png wall-vertical-rightx.png.
+
+	* theme: Updated to new file naming scheme and added new files.
+
 2001-11-30  Jens Finke <jens@triq.net>
 
 	* Makefile.am (THEME): Added arrow-*.png files.
