@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-05-16 15:35+0200\n"
-"PO-Revision-Date: 2001-03-14 14:42+0100\n"
+"POT-Creation-Date: 2002-07-18 20:21+0200\n"
+"PO-Revision-Date: 2001-07-18 14:42+0100\n"
 "Last-Translator: Jens Finke <jens@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr "Spiel _fortsetzen"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
-msgstr "Beenden"
+msgstr "_Beenden"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
@@ -64,11 +64,11 @@ msgstr "Letzten Zug zurücknehmen"
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr "Spielcredits anzeigen"
+msgstr "Ruhmeshalle anzeigen"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr "Highscores anzeigen"
+msgstr "Ruhmeshalle anzeigen"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
@@ -100,7 +100,7 @@ msgstr "_Neues Spiel"
 
 #: src/atomix-ui.xml.in.h:22
 msgid "_Pause game"
-msgstr "Spiel _anhalten"
+msgstr "Spiel _pausieren"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
@@ -108,11 +108,11 @@ msgstr "Einstellungen..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr "Punkte..."
+msgstr "Ruhmes_halle..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr "Zug zurücknehmen"
+msgstr "Z_ug zurücknehmen"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
@@ -120,7 +120,7 @@ msgstr "Levelsequenz-Beschreibung konnte nicht gefunden werden."
 
 #: src/level-manager.c:185
 msgid "No level found."
-msgstr "Keine Level gefunden."
+msgstr "Keine L	evel gefunden."
 
 #: src/level-manager.c:286
 #, c-format
