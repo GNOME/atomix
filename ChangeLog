@@ -1,5 +1,9 @@
 2005-03-21  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
+	* configure.in: bumped version to 1.1.2
+
+2005-03-21  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
 	* src/undo.c (undo_exists): cleaned up.
 
 2005-03-20  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
