@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix for latvian\n"
-"POT-Creation-Date: 2002-02-12 22:23+0100\n"
+"POT-Creation-Date: 2002-02-17 10:30+0100\n"
 "PO-Revision-Date: 2002-01-12 21:30+0200\n"
 "Last-Translator: Peteris Krisjanis <peteris.krisjanis@ttc.lv>\n"
 "Language-Team: Latvian <ll10nt@ttc.lv>\n"
@@ -139,6 +139,14 @@ msgstr "Nav atrastu līmeņu."
 msgid "Found level '%s' in: %s"
 msgstr "Atrasts līmenis '%s' iekš %s"
 
+#: src/main.c:149
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr ""
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr ""
+
 #: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Apsveicam! Jūs esat pabeiguši visus Atomix līmeņus."
@@ -194,3 +202,13 @@ msgstr "Nav atrastu tēmu."
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Atradām tēmu '%s' iekš %s"
+
+#: atomix.desktop.in.h:1
+#, fuzzy
+msgid "Atomix"
+msgstr "Atomix Splash"
+
+#: atomix.desktop.in.h:2
+#, fuzzy
+msgid "Molecule mind game"
+msgstr "Atomix - Molekulas Domāšanas Spēle"

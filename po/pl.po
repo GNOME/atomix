@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-02-12 22:23+0100\n"
+"POT-Creation-Date: 2002-02-17 10:30+0100\n"
 "PO-Revision-Date: 2002-01-30 20:39+0100\n"
 "Last-Translator: GNOME PL Team <translators@gnome.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -142,6 +142,14 @@ msgstr "Nie odnaleziono poziomu."
 msgid "Found level '%s' in: %s"
 msgstr "Odnaleziono poziom \"%s\" w: %s"
 
+#: src/main.c:149
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr ""
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr ""
+
 #: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulacje! Udało ci się zakończyć wszystkie poziomy gry Atomix."
@@ -197,3 +205,13 @@ msgstr "Nie odnaleziono motywów."
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Odnaleziono motyw \"%s\" w: %s"
+
+#: atomix.desktop.in.h:1
+#, fuzzy
+msgid "Atomix"
+msgstr "Ekran powitalny Atomiksa"
+
+#: atomix.desktop.in.h:2
+#, fuzzy
+msgid "Molecule mind game"
+msgstr "Atomix - Gra logiczna w układanie molekuł"

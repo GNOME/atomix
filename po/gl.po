@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Atomix 0.4.2\n"
-"POT-Creation-Date: 2002-02-12 22:23+0100\n"
+"POT-Creation-Date: 2002-02-17 10:30+0100\n"
 "PO-Revision-Date: 2001-11-26 20:30+0100\n"
 "Last-Translator: Manuel A. Fernández Montecelo <manuel@sindominio.net>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -138,6 +138,14 @@ msgstr ""
 msgid "Found level '%s' in: %s"
 msgstr ""
 
+#: src/main.c:149
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr ""
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr ""
+
 #: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "¡Noraboa! Acabaches todos os niveis de Atomix."
@@ -194,6 +202,15 @@ msgstr ""
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr ""
+
+#: atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr ""
+
+#: atomix.desktop.in.h:2
+#, fuzzy
+msgid "Molecule mind game"
+msgstr "Atomix - Xogo de Intelixencia con Moléculas"
 
 #~ msgid "No more undo levels."
 #~ msgstr "Non hai máis niveis para desfacer."

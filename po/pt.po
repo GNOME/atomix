@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
-"POT-Creation-Date: 2002-02-12 22:23+0100\n"
+"POT-Creation-Date: 2002-02-17 10:30+0100\n"
 "PO-Revision-Date: 2001-12-21 01:50+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <none@none.org>\n"
@@ -138,6 +138,15 @@ msgstr "Nenhum nível encontrado."
 msgid "Found level '%s' in: %s"
 msgstr "Encontrado o nível '%s' em: %s"
 
+#: src/main.c:149
+#, fuzzy
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "(C) 1999-2001 Jens Finke"
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr ""
+
 #: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Parabéns! Terminou todos os níveis do Atomix."
@@ -194,6 +203,16 @@ msgstr "Nenhum tema encontrado."
 msgid "Found theme '%s' in: %s"
 msgstr "Encontrado o tema '%s' em: %s"
 
+#: atomix.desktop.in.h:1
+#, fuzzy
+msgid "Atomix"
+msgstr "Atomixed"
+
+#: atomix.desktop.in.h:2
+#, fuzzy
+msgid "Molecule mind game"
+msgstr "Atomix - Jogo de Pensamento Molecular"
+
 #~ msgid "Do you really want to clear the grid?"
 #~ msgstr "Deseja mesmo limpar a grelha?"
 
@@ -247,9 +266,6 @@ msgstr "Encontrado o tema '%s' em: %s"
 
 #~ msgid "_Theme"
 #~ msgstr "_Tema"
-
-#~ msgid "Atomixed"
-#~ msgstr "Atomixed"
 
 #~ msgid "New"
 #~ msgstr "Novo"
@@ -479,9 +495,6 @@ msgstr "Encontrado o tema '%s' em: %s"
 
 #~ msgid "Information"
 #~ msgstr "Informação"
-
-#~ msgid "(C) 1999-2001 Jens Finke"
-#~ msgstr "(C) 1999-2001 Jens Finke"
 
 #~ msgid "Yet another mind game."
 #~ msgstr "Mais um jogo de mente."

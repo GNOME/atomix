@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Atomix\n"
-"POT-Creation-Date: 2002-02-12 22:23+0100\n"
+"POT-Creation-Date: 2002-02-17 10:30+0100\n"
 "PO-Revision-Date: 2001-09-29 20:49+0400\n"
 "Last-Translator: Valek Filippov <frob@df.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -144,6 +144,15 @@ msgstr "Уровень не найден."
 msgid "Found level '%s' in: %s"
 msgstr ""
 
+#: src/main.c:149
+#, fuzzy
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "(С) 1999-2001 Jens Finke"
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr ""
+
 #: src/main.c:484
 #, fuzzy
 msgid "Congratulations! You have finished all Atomix levels."
@@ -204,6 +213,16 @@ msgstr ""
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr ""
+
+#: atomix.desktop.in.h:1
+#, fuzzy
+msgid "Atomix"
+msgstr "Atomixed"
+
+#: atomix.desktop.in.h:2
+#, fuzzy
+msgid "Molecule mind game"
+msgstr "Ещё одна логическая игра."
 
 #~ msgid "No more undo levels."
 #~ msgstr "Нет больше уровней отката."
@@ -278,9 +297,6 @@ msgstr ""
 
 #~ msgid "_Theme"
 #~ msgstr "Тема"
-
-#~ msgid "Atomixed"
-#~ msgstr "Atomixed"
 
 #~ msgid "New"
 #~ msgstr "Новый"
@@ -504,12 +520,6 @@ msgstr ""
 
 #~ msgid "Information"
 #~ msgstr "Информация"
-
-#~ msgid "(C) 1999-2001 Jens Finke"
-#~ msgstr "(С) 1999-2001 Jens Finke"
-
-#~ msgid "Yet another mind game."
-#~ msgstr "Ещё одна логическая игра."
 
 #~ msgid "Atomix Next Level"
 #~ msgstr "Следующий уровень Atomix"
