@@ -1,209 +1,206 @@
-# Translation into the walloon language.
-#
-# Si vos voloz donner on c�p di spale pol ratournaedje di Gnome (ou des
-# �tes libes programes) sicrijhoz mu a l' adresse emile
-# <srtxg@chanae.alphanet.ch>; nos avans co br�mint di l' ovraedje a f�.
-#
 # Copyright (C) 2002 Free Software Foundation, Inc.
-# Lorint Hendschel <LorintHendschel@skynet.be>, 2002
-# Pablo Saratxaga <pablo@mandrakesoft.com> 2002
+# This file is distributed under the same license as the atomix package.
+# pclouds <pclouds@gmx.net>, 2002.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: atomix 0.9.2\n"
-"POT-Creation-Date: 2002-04-21 03:14+0200\n"
-"PO-Revision-Date: 2002-04-29 20:14MET\n"
-"Last-Translator: Pablo Saratxaga <pablo@mandrakesoft.com>\n"
-"Language-Team: Walon <linux-wa@chanae.alphanet.ch>\n"
+"Project-Id-Version: atomix VERSION\n"
+"POT-Creation-Date: 2002-03-29 18:51-0500\n"
+"PO-Revision-Date: 2002-04-22 08:28-0400\n"
+"Last-Translator: pclouds <pclouds@gmx.net>\n"
+"Language-Team: GnomeVN\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/atomix-ui.xml.in.h:1
 msgid "Continue paused game"
-msgstr "Continuwer li djeu k'�a st� djok�?"
+msgstr "Tiếp tục chơi"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
-msgstr "Mouss� _fo�"
+msgstr "T_hoát"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
-msgstr "Fini on djeu"
+msgstr "Kết thúc trò chơi"
 
 #: src/atomix-ui.xml.in.h:4
 msgid "Exit game"
-msgstr "Mouss� fo� do djeu"
+msgstr "Thoát khỏi trò chơi"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr "Djoker li djeu do moumint"
+msgstr "Tạm dừng trò chơi"
 
 #: src/atomix-ui.xml.in.h:6
 msgid "Reset level"
-msgstr "Renonder l'�livea"
+msgstr ""
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr "Rimete li situw�cion come divant"
+msgstr "Phục hồi vị trí ban đầu"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
-msgstr "Defini les preferinces"
+msgstr "Thiết lập thông số"
 
 #: src/atomix-ui.xml.in.h:9
 msgid "Skip _level"
-msgstr "Passer houte do _livea"
+msgstr ""
 
 #: src/atomix-ui.xml.in.h:10
 msgid "Skip the current level"
-msgstr "Passer houte do livea do moumint"
+msgstr ""
 
 #: src/atomix-ui.xml.in.h:11
 msgid "Start a new game"
-msgstr "Cominc� on novea djeu"
+msgstr "Bắt đầu chơi"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
-msgstr "Rivni en er�, come vos n'��r�z n�n djow�"
+msgstr "Hoàn lại lần đi cuối"
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr "Vey li fitch� d'�gr�ces"
+msgstr ""
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr "Vey les meyeus rzultats"
+msgstr "Xem điểm"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
-msgstr "� _dfait"
+msgstr ""
 
 #: src/atomix-ui.xml.in.h:16
 msgid "_Continue game"
-msgstr "_Continuwer l'�djeu"
+msgstr "_Tiếp tục chơi"
 
 #: src/atomix-ui.xml.in.h:17
 msgid "_Edit"
-msgstr "_Candj�"
+msgstr "_Hiệu chỉnh"
 
 #: src/atomix-ui.xml.in.h:18
 msgid "_End Game"
-msgstr "_Fini l'�djeu"
+msgstr "_Kết thúc trò chơi"
 
 #: src/atomix-ui.xml.in.h:19
 msgid "_Game"
-msgstr "_Djeu"
+msgstr "_Trò chơi"
 
 #: src/atomix-ui.xml.in.h:20
 msgid "_Help"
-msgstr "_Aidance"
+msgstr "Trợ _giúp"
 
 #: src/atomix-ui.xml.in.h:21
 msgid "_New Game"
-msgstr "_Novea Djeu"
+msgstr "Trò chơi _mới"
 
 #: src/atomix-ui.xml.in.h:22
 msgid "_Pause game"
-msgstr "_Djoker li djeu"
+msgstr "Tạm _dừng trò chơi"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr "_Preferinces..."
+msgstr "_Thông số..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr "_Meyeus..."
+msgstr "Đ_iểm..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr "Ri_vni en er�"
+msgstr "_Hoàn lại nước đi"
 
 #: src/board.c:170
 msgid "Game Paused"
-msgstr "Djeu djok�"
+msgstr "Trò chơi tạm dừng"
 
 #: src/board.c:172
 msgid "Game Over"
-msgstr "Djeu fini"
+msgstr "Kết thúc trò chơi"
 
 #: src/board.c:174
 msgid "Atomix - Molecule Mind Game"
-msgstr "Atomix - Djeu di tuzaedje di molecules"
+msgstr ""
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr "Dji n'�a savou trover li discrijhaedje del secw�nce do livea."
+msgstr ""
 
 #: src/level-manager.c:185
 msgid "No level found."
-msgstr "Nou livea di trov�."
+msgstr ""
 
 #: src/level-manager.c:285
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Dj'�a trov� l'�livea �%s� e: %s"
+msgstr ""
 
 #: src/main.c:149
 msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "Copyright � 1999-2002 Jens Finke"
+msgstr "Copyright (C) 1999-2002 Jens Finke"
 
 #: src/main.c:150
 msgid "A mind game about atoms and molecules."
-msgstr "On djeu di tuzaedje so les atomes eyet les molecules."
+msgstr ""
 
 #: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Complumints! Vos avoz fini tos les liveas d'�Atomix."
+msgstr "Xin chúc mừng! Bạn đã hoàn tất mọi cấp độ của Atomix."
 
 #: src/main.c:495
 msgid "Couldn't find at least one level."
-msgstr "Dji n'�a savou trover di liveas, n�n onk."
+msgstr ""
 
 #: src/main.c:500
 msgid "Do you want to finish the game?"
-msgstr "Voloz vs fini l'�djeu?"
+msgstr "Bạn có muốn hoàn tất trò chơi?"
 
 #: src/main.c:619 src/main.c:625 src/main.c:630
+#, c-format
 msgid "Couldn't create directory: %s"
-msgstr "Dji n'�a savou askepy� li ridant: %s"
+msgstr "Không thể tạo thư mục: %s"
 
 #. create statistics frame
 #: src/main.c:733
 msgid "Statistics"
-msgstr "Sitatistikes"
+msgstr "Thống kê"
 
 #: src/main.c:739
 msgid "Level:"
-msgstr "Livea:"
+msgstr "Cấp độ:"
 
 #: src/main.c:740
 msgid "Molecule:"
-msgstr "Molecule:"
+msgstr "Phân tử:"
 
 #: src/main.c:741
 msgid "Score:"
-msgstr "Ponts:"
+msgstr "Điểm:"
 
 #: src/main.c:742
 msgid "Time:"
-msgstr "Tins:"
+msgstr "Thời gian:"
 
 #: src/main.c:782
+#, c-format
 msgid "Couldn't find file: %s"
-msgstr "Dji n'�a savou trover l'�fitch�: %s"
+msgstr "Không thể tìm tập tin: %s"
 
 #: src/main.c:840
 msgid "Atomix Splash"
-msgstr "Purnea d'�enondaedje d'�Atomix"
+msgstr ""
 
 #: src/theme-manager.c:141
 msgid "No themes found."
-msgstr "Nou tinme di trov�."
+msgstr "Không tìm thấy theme."
 
 #: src/theme-manager.c:204
+#, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Tinme �%s� trov� e: %s"
+msgstr "Tìm thấy theme '%s' trong: %s"
 
 #: atomix.desktop.in.h:1
 msgid "Atomix"
@@ -211,5 +208,4 @@ msgstr "Atomix"
 
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
-msgstr "Djeu di tuzaedje di molecules"
-
+msgstr ""
