@@ -34,6 +34,8 @@ THEME = \
 	theme \
 	wall-bottom-left.png \
 	wall-bottom-right.png \
+	wall-horizontal-left-end.png \
+	wall-horizontal-right-end.png \
 	wall-horizontal-bottomx.png \
 	wall-horizontal-topx.png \
 	wall-horizontal.png \

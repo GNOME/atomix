@@ -1,5 +1,18 @@
 2002-02-11  Jens Finke <jens@triq.net>
 
+	* src/playfield.c (wall_map): Replaced default strings with
+	"wall-horizontal-[left|right]-end".
+	
+	* themes/default/wall-horizontal-bottomx.png,
+	* themes/default/wall-horizontal-topx.png,
+	* themes/default/wall-single.png: Updated files.
+	* themes/default/wall-horizontal-left-end.png,
+	* themes/default/wall-horizontal-right-end.png: New files.
+	* themes/default/theme,
+	* themes/default/Makefile.am (THEME): Added new files.
+	
+2002-02-11  Jens Finke <jens@triq.net>
+
 	* src/theme.c: s/GDK_INTERP_BILINEAR/GDK_INTERP_LINEAR needed to
 	make the alpha handling working again (!?).
 

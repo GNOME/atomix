@@ -38,6 +38,8 @@
   <icon src="wall-top-right.png"/>
   <icon src="wall-vertical-leftx.png"/>
   <icon src="wall-horizontal-bottomx.png"/>
+  <icon src="wall-horizontal-right-end.png"/>
+  <icon src="wall-horizontal-left-end.png"/>
   <icon src="cursor.png"/>
   <icon src="arrow-left.png"/>
   <icon src="arrow-right.png"/>
