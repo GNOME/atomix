@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2001-11-12 19:09+0100\n"
+"POT-Creation-Date: 2001-11-25 12:13+0100\n"
 "PO-Revision-Date: 2001-03-24 20:05+0100\n"
 "Last-Translator: Meilof Veeningen <meilof@hotmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -13,61 +13,73 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: src/board.c:191
+#: src/board.c:159
 msgid "Game Paused"
 msgstr "Spel Gepauzeerd"
 
-#: src/board.c:193
+#: src/board.c:161
 msgid "Game Over"
 msgstr "Spel Voorbij"
 
-#: src/board.c:195
+#: src/board.c:163
 msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
-#: src/main.c:178
-msgid "Level not found."
-msgstr "Niveau niet gevonden."
+#: src/main.c:271
+#, fuzzy
+msgid "Couldn't find at least one level."
+msgstr "Kan de Axomixed-handleiding niet vinden!"
 
-#: src/main.c:188
-#, fuzzy, no-c-format
-msgid "Undo last move. This costs you 5 % of your score."
-msgstr "Laatste zet ongedaan maken (kost 5% van score)."
-
-#: src/main.c:194
+#: src/main.c:283
 msgid "No more undo levels."
 msgstr "Geen ongedaan-maak-niveaus meer."
 
-#: src/main.c:204
+#: src/main.c:293
 msgid "This is the last level. You can't skip any further."
 msgstr "Dit is het laatste niveau. U kunt niets meer overslaan."
 
+#: src/main.c:459
+#, fuzzy
+msgid "Do you want to finish the game?"
+msgstr "Weet u zeker dat u dit spel wilt afsluiten?"
+
+#: src/main.c:486
+#, fuzzy
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Gefeliciteerd! U heeft alle Atomix niveaus succesvol beeindigd."
+
 #. create statistics frame
-#: src/main.c:874
+#: src/main.c:776
 #, fuzzy
 msgid "Statistics"
 msgstr " Statistieken "
 
-#: src/main.c:880
+#: src/main.c:782
 msgid "Level:"
 msgstr "Niveau:"
 
-#: src/main.c:887
+#: src/main.c:789
 msgid "Name:"
 msgstr "Naam:"
 
-#: src/main.c:894
+#: src/main.c:796
 msgid "Score:"
 msgstr "Score:"
 
-#: src/main.c:945
+#: src/main.c:847
 #, fuzzy, c-format
 msgid "XML file %s not found."
 msgstr "Niveau niet gevonden."
 
-#: src/callbacks.c:233
-msgid "Couldn't find the Atomix manual!"
-msgstr "Kan de Atomix handleiding niet vinden!"
+#~ msgid "Level not found."
+#~ msgstr "Niveau niet gevonden."
+
+#, fuzzy
+#~ msgid "Undo last move. This costs you 5 % of your score."
+#~ msgstr "Laatste zet ongedaan maken (kost 5% van score)."
+
+#~ msgid "Couldn't find the Atomix manual!"
+#~ msgstr "Kan de Atomix handleiding niet vinden!"
 
 #~ msgid "Do you really want to clear the grid?"
 #~ msgstr "Wilt u het raster echt leegmaken?"
@@ -92,9 +104,6 @@ msgstr "Kan de Atomix handleiding niet vinden!"
 #~ msgstr ""
 #~ "Er bestaat al een directory met\n"
 #~ "deze naam."
-
-#~ msgid "Couldn't find the Atomixed manual!"
-#~ msgstr "Kan de Axomixed-handleiding niet vinden!"
 
 #~ msgid "_New File"
 #~ msgstr "_Nieuw Bestand"
@@ -400,9 +409,6 @@ msgstr "Kan de Atomix handleiding niet vinden!"
 #~ msgid "Atomix End"
 #~ msgstr "Atomix Eind"
 
-#~ msgid "Congratulations! You have successfully finished all Atomix levels."
-#~ msgstr "Gefeliciteerd! U heeft alle Atomix niveaus succesvol beeindigd."
-
 #~ msgid "Do you want to play again?"
 #~ msgstr "Wilt u opnieuw spelen?"
 
@@ -441,9 +447,6 @@ msgstr "Kan de Atomix handleiding niet vinden!"
 
 #~ msgid "Control"
 #~ msgstr "Besturing"
-
-#~ msgid "Do you really want to quit this game?"
-#~ msgstr "Weet u zeker dat u dit spel wilt afsluiten?"
 
 #~ msgid "Do you really want to exit the program?"
 #~ msgstr "Weet u zeker dat u het programma wilt afsluiten?"

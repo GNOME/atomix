@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.4.1\n"
-"POT-Creation-Date: 2001-11-12 19:10+0100\n"
+"POT-Creation-Date: 2001-11-25 12:13+0100\n"
 "PO-Revision-Date: 2001-10-17 22:56+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <none@none.org>\n"
@@ -13,61 +13,73 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/board.c:191
+#: src/board.c:159
 msgid "Game Paused"
 msgstr "Jogo em Pausa"
 
-#: src/board.c:193
+#: src/board.c:161
 msgid "Game Over"
 msgstr "Jogo Terminado"
 
-#: src/board.c:195
+#: src/board.c:163
 msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
-#: src/main.c:178
-msgid "Level not found."
-msgstr "Nível não encontrado."
+#: src/main.c:271
+#, fuzzy
+msgid "Couldn't find at least one level."
+msgstr "Incapaz de encontrar o manual do Atomixed!"
 
-#: src/main.c:188
-#, fuzzy, no-c-format
-msgid "Undo last move. This costs you 5 % of your score."
-msgstr "Desfazer última jogada. Isto custa-lhe 5% da sua pontuação."
-
-#: src/main.c:194
+#: src/main.c:283
 msgid "No more undo levels."
 msgstr "Não há mais níves de desfazer."
 
-#: src/main.c:204
+#: src/main.c:293
 msgid "This is the last level. You can't skip any further."
 msgstr "Este é o último nível. Não pode saltar mais."
 
+#: src/main.c:459
+#, fuzzy
+msgid "Do you want to finish the game?"
+msgstr "Deseja mesmo terminar este jogo?"
+
+#: src/main.c:486
+#, fuzzy
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Parabéns! Terminou com sucesso todos os níveis do Atomix."
+
 #. create statistics frame
-#: src/main.c:874
+#: src/main.c:776
 #, fuzzy
 msgid "Statistics"
 msgstr " Estatísticas "
 
-#: src/main.c:880
+#: src/main.c:782
 msgid "Level:"
 msgstr "Nível:"
 
-#: src/main.c:887
+#: src/main.c:789
 msgid "Name:"
 msgstr "Nome:"
 
-#: src/main.c:894
+#: src/main.c:796
 msgid "Score:"
 msgstr "Pontuação:"
 
-#: src/main.c:945
+#: src/main.c:847
 #, fuzzy, c-format
 msgid "XML file %s not found."
 msgstr "Nível não encontrado."
 
-#: src/callbacks.c:233
-msgid "Couldn't find the Atomix manual!"
-msgstr "Incapaz de encontrar o manual do Atomix!"
+#~ msgid "Level not found."
+#~ msgstr "Nível não encontrado."
+
+#, fuzzy
+#~ msgid "Undo last move. This costs you 5 % of your score."
+#~ msgstr "Desfazer última jogada. Isto custa-lhe 5% da sua pontuação."
+
+#~ msgid "Couldn't find the Atomix manual!"
+#~ msgstr "Incapaz de encontrar o manual do Atomix!"
 
 #~ msgid "Do you really want to clear the grid?"
 #~ msgstr "Deseja mesmo limpar a grelha?"
@@ -92,9 +104,6 @@ msgstr "Incapaz de encontrar o manual do Atomix!"
 #~ msgstr ""
 #~ "Já existe um directório com\n"
 #~ "este nome."
-
-#~ msgid "Couldn't find the Atomixed manual!"
-#~ msgstr "Incapaz de encontrar o manual do Atomixed!"
 
 #~ msgid "_New File"
 #~ msgstr "_Novo Ficheiro"
@@ -400,9 +409,6 @@ msgstr "Incapaz de encontrar o manual do Atomix!"
 #~ msgid "Atomix End"
 #~ msgstr "Fim do Atomix"
 
-#~ msgid "Congratulations! You have successfully finished all Atomix levels."
-#~ msgstr "Parabéns! Terminou com sucesso todos os níveis do Atomix."
-
 #~ msgid "Do you want to play again?"
 #~ msgstr "Deseja jogar novamente?"
 
@@ -441,9 +447,6 @@ msgstr "Incapaz de encontrar o manual do Atomix!"
 
 #~ msgid "Control"
 #~ msgstr "Controlo"
-
-#~ msgid "Do you really want to quit this game?"
-#~ msgstr "Deseja mesmo terminar este jogo?"
 
 #~ msgid "Do you really want to exit the program?"
 #~ msgstr "Deseja mesmo sair da aplicação?"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.4\n"
-"POT-Creation-Date: 2001-02-26 18:39+0100\n"
+"POT-Creation-Date: 2001-11-25 12:13+0100\n"
 "PO-Revision-Date: 2000-10-25 22:43+0100\n"
 "Last-Translator: Colorio Mauro <linuxbox@interfree.it>\n"
 "Language-Team: IT <IT@li.org>\n"
@@ -14,537 +14,421 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: editor/interface.c:22
-msgid "_New File"
-msgstr "File _nuovo"
-
-#: editor/interface.c:34 editor/interface.c:392
-msgid "Grid"
-msgstr "Griglia"
-
-#: editor/interface.c:35
-msgid "Grid On/Off"
-msgstr "Griglia On/off"
-
-#: editor/interface.c:41 editor/interface.c:1258
-msgid "Theme Window"
-msgstr "Finestra tema"
-
-#: editor/interface.c:53
-msgid "_Clear Grid"
-msgstr "_Pulisci griglia"
-
-#: editor/interface.c:60
-msgid "_Resize Grid"
-msgstr "_Ridimensiona griglia"
-
-#: editor/interface.c:68
-msgid "_Delete Level"
-msgstr "_Cancella Livello"
-
-#: editor/interface.c:80
-msgid "_Delete Theme"
-msgstr "_Cancella Tema"
-
-#: editor/interface.c:92
-msgid "Atomixed manual"
-msgstr "Atomixed manuale"
-
-#: editor/interface.c:107
-msgid "_Level"
-msgstr "_Livello"
-
-#: editor/interface.c:114
-msgid "_Theme"
-msgstr "_Tema"
-
-#: editor/interface.c:225
-msgid "Atomixed"
-msgstr "Atomixed"
-
-#: editor/interface.c:354
-msgid "New"
-msgstr "Nuovo"
-
-#: editor/interface.c:355
-msgid "New File"
-msgstr "Nuovo file"
-
-#: editor/interface.c:366
-msgid "Open"
-msgstr "Apri"
-
-#: editor/interface.c:367
-msgid "Open File"
-msgstr "Apri file"
-
-#: editor/interface.c:378
-msgid "Save"
-msgstr "Salva"
-
-#: editor/interface.c:379
-msgid "Save File"
-msgstr "Salva file"
-
-#: editor/interface.c:405
-msgid "Theme Wnd"
-msgstr "Fin Tema"
-
-#: editor/interface.c:454
-msgid "No."
-msgstr "No."
-
-#: editor/interface.c:461 editor/interface.c:767
-msgid "Name"
-msgstr "Nome"
-
-#: editor/interface.c:533
-msgid "Level"
-msgstr "Livello"
-
-#: editor/interface.c:570
-msgid "Goal"
-msgstr "Rete"
-
-#: editor/interface.c:639 src/interface.c:328
-msgid "Name:"
-msgstr "Nome_"
-
-#: editor/interface.c:649 editor/interface.c:893 editor/interface.c:1740
-#: editor/interface.c:2349
-msgid "Themename:"
-msgstr "NomeTema:"
-
-#: editor/interface.c:659 editor/interface.c:1720 editor/interface.c:2049
-msgid "Filename:"
-msgstr "Nomefile:"
-
-#: editor/interface.c:669
-msgid "Bonuslevel"
-msgstr "Livello bonus"
-
-#: editor/interface.c:676
-msgid "Time"
-msgstr "Tempo"
-
-#: editor/interface.c:692
-msgid "Minutes: "
-msgstr "Minuti: "
-
-#: editor/interface.c:708
-msgid "Seconds:"
-msgstr "Secondi:"
-
-#: editor/interface.c:726 editor/interface.c:1103 editor/interface.c:1703
-#: editor/interface.c:2322
-msgid "Properties"
-msgstr "Proprietà"
-
-#: editor/interface.c:734 src/interface.c:51
-msgid "Leveleditor"
-msgstr "Editor livelli"
-
-#: editor/interface.c:791 editor/interface.c:1371
-msgid "Images"
-msgstr "Immagini"
-
-#: editor/interface.c:814 editor/interface.c:1395
-msgid "Connections"
-msgstr "Connessioni"
-
-#: editor/interface.c:837 editor/interface.c:1418
-msgid "Moveables"
-msgstr "Movibilità"
-
-#: editor/interface.c:861 editor/interface.c:1440
-msgid "Obstacles"
-msgstr "Ostacoli"
-
-#: editor/interface.c:922 editor/interface.c:2339
-msgid "Directoryname:"
-msgstr "Nome directory:"
-
-#: editor/interface.c:949
-msgid "Background Color:"
-msgstr "Colore sfondo:"
-
-#: editor/interface.c:968
-msgid "Selector Image:"
-msgstr "Selettore immagine:"
-
-#: editor/interface.c:1018
-msgid "Browse ..."
-msgstr "Naviga ..."
-
-#: editor/interface.c:1043
-msgid "Animation Step:"
-msgstr "Passo animazione:"
-
-#: editor/interface.c:1053
-msgid "Tile Height:"
-msgstr "Altezza tassello:"
-
-#: editor/interface.c:1063
-msgid "Tile Width:"
-msgstr "Larghezza tassello:"
-
-#: editor/interface.c:1110
-msgid "Themeeditor"
-msgstr "Editor tema"
-
-#: editor/interface.c:1276
-msgid "Atom Preview"
-msgstr "Anteprima Atom"
-
-#: editor/interface.c:1303
-msgid "Mouse functions"
-msgstr "Funzioni Mouse"
-
-#: editor/interface.c:1320
-msgid "Clear"
-msgstr "Pulisci"
-
-#: editor/interface.c:1329
-msgid "Set"
-msgstr "Setta"
-
-#: editor/interface.c:1339
-msgid "Move"
-msgstr "Sposta"
-
-#: editor/interface.c:1499
-msgid "Resize Grid"
-msgstr "Ridimensiona Griglia"
-
-#: editor/interface.c:1514
-msgid "Current Values"
-msgstr "Valori correnti"
-
-#: editor/interface.c:1531 editor/interface.c:1588 editor/interface.c:1837
-#: editor/interface.c:1896
-msgid "Rows:"
-msgstr "Righe"
-
-#: editor/interface.c:1540 editor/interface.c:1597 editor/interface.c:1827
-#: editor/interface.c:1886
-msgid "Columns:"
-msgstr "Colonne:"
-
-#: editor/interface.c:1571
-msgid "New Values"
-msgstr "Valori nuovi"
-
-#: editor/interface.c:1688
-msgid "New Level"
-msgstr "Nuovo livello"
-
-#: editor/interface.c:1730
-msgid "Levelname:"
-msgstr "Nome livello:"
-
-#: editor/interface.c:1788
-msgid "Playfield Size"
-msgstr "Grandezza campo gioco"
-
-#: editor/interface.c:1847
-msgid "Goal Size"
-msgstr "Grandezza porta"
-
-#: editor/interface.c:1941
-#, fuzzy
-msgid "(C)  1999-2001 Jens Finke"
-msgstr "(C) 1999 Jens Finke"
-
-#: editor/interface.c:1943
-#, fuzzy
-msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
-msgstr "atomixed is the Level-/Themeeditor for the mind game atomix."
-
-#: editor/interface.c:1969
-msgid "Change level name"
-msgstr "Cambia nome livello"
-
-#: editor/interface.c:1986
-msgid ""
-"There is already a level with the same name. Please choose another\n"
-"name for this level."
-msgstr ""
-"C'è già un livello con lo stesso nome. Scegliere un altro nome\n"
-"per questo livello"
-
-#: editor/interface.c:2002
-msgid "Current Name:"
-msgstr "Nome attuale:"
-
-#: editor/interface.c:2030
-msgid "New Name:"
-msgstr "Nome nuovo:"
-
-#: editor/interface.c:2101
-msgid "Add Image"
-msgstr "Aggiungi immagine"
-
-#: editor/interface.c:2151
-msgid "Text:"
-msgstr "Testo:"
-
-#: editor/interface.c:2207
-msgid "Change ID"
-msgstr "Cambia ID"
-
-#: editor/interface.c:2243
-msgid "Current ID:"
-msgstr "ID attuale:"
-
-#: editor/interface.c:2253
-msgid "New ID:"
-msgstr "Nuovo ID:"
-
-#: editor/interface.c:2314
-msgid "New Theme"
-msgstr "Nuovo tema"
-
-#: editor/callbacks.c:161
-msgid "Do you really want to clear the grid?"
-msgstr "Si vuole veramente pulire la griglia?"
-
-#: editor/callbacks.c:497
-msgid ""
-"There does already a theme with this name exist.\n"
-"So does the dir name."
-msgstr ""
-"Esiste già un tema \n"
-"con questo nome."
-
-#: editor/callbacks.c:505
-msgid ""
-"There does already a theme with\n"
-"this name exist."
-msgstr ""
-"Esiste già un tema con \n"
-"questo nome."
-
-#: editor/callbacks.c:513
-msgid ""
-"There does already a directory\n"
-"with this name exist."
-msgstr ""
-"Esiste già una directory\n"
-"con questo nome."
-
-#: editor/callbacks.c:1279
-msgid "Couldn't find the Atomixed manual!"
-msgstr "Impossibile trovare il manuale i Atomixed!"
-
-#: src/board.c:202
+#: src/board.c:159
 msgid "Game Paused"
 msgstr ""
 
-#: src/board.c:204
+#: src/board.c:161
 msgid "Game Over"
 msgstr ""
 
-#: src/board.c:206
-msgid "Press Ctrl+N for a new Game"
+#: src/board.c:163
+msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
-#: src/main.c:163
-msgid "Level not found."
-msgstr "Livello non trovato."
+#: src/main.c:271
+#, fuzzy
+msgid "Couldn't find at least one level."
+msgstr "Impossibile trovare il manuale i Atomixed!"
 
-#: src/main.c:171
-#, c-format
-msgid "Undo last move. This costs you 5% of your score."
-msgstr "Annulla l'ultima mossa, questo costerà il 5% del tuo punteggio."
-
-#: src/main.c:177
+#: src/main.c:283
 msgid "No more undo levels."
 msgstr "Non ci sono più livelli da annullare."
 
-#: src/main.c:187
+#: src/main.c:293
 msgid "This is the last level. You can't skip any further."
 msgstr "Questo è l'ultimo livello. Impossibile saltarne altri."
 
-#: src/interface.c:26
-msgid "Skip _level"
-msgstr "Salta _livello"
+#: src/main.c:459
+#, fuzzy
+msgid "Do you want to finish the game?"
+msgstr "Si vuole veramente uscire dal gioco?"
 
-#: src/interface.c:35
-msgid "_Continue game"
-msgstr "_Continua gioco"
+#: src/main.c:486
+#, fuzzy
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Congratulazioni! Hai concluso con successo tutti i livelli di Atomix."
 
-#: src/interface.c:65
-msgid "Atomix manual"
-msgstr "Manuale Atomix"
-
-#: src/interface.c:108
-msgid "Atomix"
-msgstr "Atomix"
-
-#: src/interface.c:259
-msgid " Statistics "
+#. create statistics frame
+#: src/main.c:776
+#, fuzzy
+msgid "Statistics"
 msgstr "Statistiche "
 
-#: src/interface.c:317
+#: src/main.c:782
 msgid "Level:"
 msgstr "Livello:"
 
-#: src/interface.c:337 src/interface.c:523 src/interface.c:641
+#: src/main.c:789
+msgid "Name:"
+msgstr "Nome_"
+
+#: src/main.c:796
 msgid "Score:"
 msgstr "Punti:"
 
-#: src/interface.c:347
-msgid "Time:"
-msgstr "Tempo:"
+#: src/main.c:847
+#, fuzzy, c-format
+msgid "XML file %s not found."
+msgstr "Livello non trovato."
 
-#. We create it with an OK button, and then remove the button, to work
-#. around a bug in gnome-libs.
-#: src/interface.c:417
-msgid ""
-"Level not found.\n"
-"Sorry, but the game ends here.\n"
-"\n"
-"(Please make sure you have *.atomix\n"
-"files either in <prefix>/share/atomix/levels\n"
-"or ~/.atomix/levels.)"
-msgstr ""
-"Livello non trovato.\n"
-"Spiacente, ma il gioco finisce qui.\n"
-"\n"
-"(Attenzione, assicurarsi di avere i file\n"
-"*.atomix in <prefix>/share/atomix/levels\n"
-"o in ~/.atomix/levels.)"
+#~ msgid "_New File"
+#~ msgstr "File _nuovo"
 
-#: src/interface.c:423 src/interface.c:914 src/interface.c:962
-#: src/interface.c:1010 src/interface.c:1057
-msgid "Information"
-msgstr "Informationi"
+#~ msgid "Grid"
+#~ msgstr "Griglia"
 
-#: src/interface.c:457
+#~ msgid "Grid On/Off"
+#~ msgstr "Griglia On/off"
+
+#~ msgid "Theme Window"
+#~ msgstr "Finestra tema"
+
+#~ msgid "_Clear Grid"
+#~ msgstr "_Pulisci griglia"
+
+#~ msgid "_Resize Grid"
+#~ msgstr "_Ridimensiona griglia"
+
+#~ msgid "_Delete Level"
+#~ msgstr "_Cancella Livello"
+
+#~ msgid "_Delete Theme"
+#~ msgstr "_Cancella Tema"
+
+#~ msgid "Atomixed manual"
+#~ msgstr "Atomixed manuale"
+
+#~ msgid "_Level"
+#~ msgstr "_Livello"
+
+#~ msgid "_Theme"
+#~ msgstr "_Tema"
+
+#~ msgid "Atomixed"
+#~ msgstr "Atomixed"
+
+#~ msgid "New"
+#~ msgstr "Nuovo"
+
+#~ msgid "New File"
+#~ msgstr "Nuovo file"
+
+#~ msgid "Open"
+#~ msgstr "Apri"
+
+#~ msgid "Open File"
+#~ msgstr "Apri file"
+
+#~ msgid "Save"
+#~ msgstr "Salva"
+
+#~ msgid "Save File"
+#~ msgstr "Salva file"
+
+#~ msgid "Theme Wnd"
+#~ msgstr "Fin Tema"
+
+#~ msgid "No."
+#~ msgstr "No."
+
+#~ msgid "Name"
+#~ msgstr "Nome"
+
+#~ msgid "Level"
+#~ msgstr "Livello"
+
+#~ msgid "Goal"
+#~ msgstr "Rete"
+
+#~ msgid "Themename:"
+#~ msgstr "NomeTema:"
+
+#~ msgid "Filename:"
+#~ msgstr "Nomefile:"
+
+#~ msgid "Bonuslevel"
+#~ msgstr "Livello bonus"
+
+#~ msgid "Time"
+#~ msgstr "Tempo"
+
+#~ msgid "Minutes: "
+#~ msgstr "Minuti: "
+
+#~ msgid "Seconds:"
+#~ msgstr "Secondi:"
+
+#~ msgid "Properties"
+#~ msgstr "Proprietà"
+
+#~ msgid "Leveleditor"
+#~ msgstr "Editor livelli"
+
+#~ msgid "Images"
+#~ msgstr "Immagini"
+
+#~ msgid "Connections"
+#~ msgstr "Connessioni"
+
+#~ msgid "Moveables"
+#~ msgstr "Movibilità"
+
+#~ msgid "Obstacles"
+#~ msgstr "Ostacoli"
+
+#~ msgid "Directoryname:"
+#~ msgstr "Nome directory:"
+
+#~ msgid "Background Color:"
+#~ msgstr "Colore sfondo:"
+
+#~ msgid "Selector Image:"
+#~ msgstr "Selettore immagine:"
+
+#~ msgid "Browse ..."
+#~ msgstr "Naviga ..."
+
+#~ msgid "Animation Step:"
+#~ msgstr "Passo animazione:"
+
+#~ msgid "Tile Height:"
+#~ msgstr "Altezza tassello:"
+
+#~ msgid "Tile Width:"
+#~ msgstr "Larghezza tassello:"
+
+#~ msgid "Themeeditor"
+#~ msgstr "Editor tema"
+
+#~ msgid "Atom Preview"
+#~ msgstr "Anteprima Atom"
+
+#~ msgid "Mouse functions"
+#~ msgstr "Funzioni Mouse"
+
+#~ msgid "Clear"
+#~ msgstr "Pulisci"
+
+#~ msgid "Set"
+#~ msgstr "Setta"
+
+#~ msgid "Move"
+#~ msgstr "Sposta"
+
+#~ msgid "Resize Grid"
+#~ msgstr "Ridimensiona Griglia"
+
+#~ msgid "Current Values"
+#~ msgstr "Valori correnti"
+
+#~ msgid "Rows:"
+#~ msgstr "Righe"
+
+#~ msgid "Columns:"
+#~ msgstr "Colonne:"
+
+#~ msgid "New Values"
+#~ msgstr "Valori nuovi"
+
+#~ msgid "New Level"
+#~ msgstr "Nuovo livello"
+
+#~ msgid "Levelname:"
+#~ msgstr "Nome livello:"
+
+#~ msgid "Playfield Size"
+#~ msgstr "Grandezza campo gioco"
+
+#~ msgid "Goal Size"
+#~ msgstr "Grandezza porta"
+
 #, fuzzy
-msgid "(C) 1999-2001 Jens Finke"
-msgstr "(C) 1999 Jens Finke"
+#~ msgid "(C)  1999-2001 Jens Finke"
+#~ msgstr "(C) 1999 Jens Finke"
 
-#: src/interface.c:459
-msgid "Yet another mind game."
-msgstr "Yet another mind game."
+#, fuzzy
+#~ msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
+#~ msgstr "atomixed is the Level-/Themeeditor for the mind game atomix."
 
-#: src/interface.c:483
-msgid "Atomix Next Level"
-msgstr "Atomix prossimo livello"
+#~ msgid "Change level name"
+#~ msgstr "Cambia nome livello"
 
-#: src/interface.c:498
-msgid "Congratulations! You have successfully finished this level."
-msgstr "Congratulazioni! Hai concluso con successo questo livello."
+#~ msgid ""
+#~ "There is already a level with the same name. Please choose another\n"
+#~ "name for this level."
+#~ msgstr ""
+#~ "C'è già un livello con lo stesso nome. Scegliere un altro nome\n"
+#~ "per questo livello"
 
-#: src/interface.c:542 src/interface.c:632
-msgid "Remaining Time:"
-msgstr "Tempo rimanente:"
+#~ msgid "Current Name:"
+#~ msgstr "Nome attuale:"
 
-#: src/interface.c:559
-msgid "Are you ready for the next level?"
-msgstr "Sei pronto per il prossimo livello?"
+#~ msgid "New Name:"
+#~ msgstr "Nome nuovo:"
 
-#: src/interface.c:601
-msgid "Atomix End"
-msgstr "Fine Atomix"
+#~ msgid "Add Image"
+#~ msgstr "Aggiungi immagine"
 
-#: src/interface.c:616
-msgid "Congratulations! You have successfully finished all Atomix levels."
-msgstr "Congratulazioni! Hai concluso con successo tutti i livelli di Atomix."
+#~ msgid "Text:"
+#~ msgstr "Testo:"
 
-#: src/interface.c:675
-msgid "Do you want to play again?"
-msgstr "Vuoi giocare ancora?"
+#~ msgid "Change ID"
+#~ msgstr "Cambia ID"
 
-#: src/interface.c:748
-msgid "Constraints"
-msgstr "Contrasti"
+#~ msgid "Current ID:"
+#~ msgstr "ID attuale:"
 
-#: src/interface.c:764
-msgid "enable score and time limit"
-msgstr "abilita limiti di tempo e di punti"
+#~ msgid "New ID:"
+#~ msgstr "Nuovo ID:"
 
-#: src/interface.c:771
-msgid "General"
-msgstr "Generale"
+#~ msgid "New Theme"
+#~ msgstr "Nuovo tema"
 
-#: src/interface.c:786
-msgid "Keyboard (return and cursor keys)"
-msgstr "Tastiera (Invio e tasti cursore)"
+#~ msgid "Do you really want to clear the grid?"
+#~ msgstr "Si vuole veramente pulire la griglia?"
 
-#: src/interface.c:794
-msgid "Mouse"
-msgstr "Mouse"
+#~ msgid ""
+#~ "There does already a theme with this name exist.\n"
+#~ "So does the dir name."
+#~ msgstr ""
+#~ "Esiste già un tema \n"
+#~ "con questo nome."
 
-#: src/interface.c:802
-msgid "Mouse Properties"
-msgstr "Proprietà mouse"
+#~ msgid ""
+#~ "There does already a theme with\n"
+#~ "this name exist."
+#~ msgstr ""
+#~ "Esiste già un tema con \n"
+#~ "questo nome."
 
-#: src/interface.c:818
-msgid "hide mouse cursor during dragging"
-msgstr "nascondi il cursore durante il trascinamento"
+#~ msgid ""
+#~ "There does already a directory\n"
+#~ "with this name exist."
+#~ msgstr ""
+#~ "Esiste già una directory\n"
+#~ "con questo nome."
 
-#: src/interface.c:825
-msgid "enable lazy dragging"
-msgstr "enable lazy dragging"
+#~ msgid "Undo last move. This costs you 5% of your score."
+#~ msgstr "Annulla l'ultima mossa, questo costerà il 5% del tuo punteggio."
 
-#: src/interface.c:839
-msgid "Sensitivity:"
-msgstr "Sensitività"
+#~ msgid "Skip _level"
+#~ msgstr "Salta _livello"
 
-#: src/interface.c:854
-msgid "high"
-msgstr "alta"
+#~ msgid "_Continue game"
+#~ msgstr "_Continua gioco"
 
-#: src/interface.c:874
-msgid "low"
-msgstr "bassa"
+#~ msgid "Atomix manual"
+#~ msgstr "Manuale Atomix"
 
-#: src/interface.c:883
-msgid "Control"
-msgstr "Controllo"
+#~ msgid "Atomix"
+#~ msgstr "Atomix"
 
-#. We create it with an OK button, and then remove the button, to work
-#. around a bug in gnome-libs.
-#: src/interface.c:908
-msgid "Do you really want to quit this game?"
-msgstr "Si vuole veramente uscire dal gioco?"
+#~ msgid "Time:"
+#~ msgstr "Tempo:"
 
-#. We create it with an OK button, and then remove the button, to work
-#. around a bug in gnome-libs.
-#: src/interface.c:956
-msgid "Do you really want to exit the program?"
-msgstr "Si vuole veramente uscire dal programma?"
+#~ msgid ""
+#~ "Level not found.\n"
+#~ "Sorry, but the game ends here.\n"
+#~ "\n"
+#~ "(Please make sure you have *.atomix\n"
+#~ "files either in <prefix>/share/atomix/levels\n"
+#~ "or ~/.atomix/levels.)"
+#~ msgstr ""
+#~ "Livello non trovato.\n"
+#~ "Spiacente, ma il gioco finisce qui.\n"
+#~ "\n"
+#~ "(Attenzione, assicurarsi di avere i file\n"
+#~ "*.atomix in <prefix>/share/atomix/levels\n"
+#~ "o in ~/.atomix/levels.)"
 
-#. We create it with an OK button, and then remove the button, to work
-#. around a bug in gnome-libs.
-#: src/interface.c:1004
-#, c-format
-msgid ""
-"Your time is up! This costs you 10% of your score. \n"
-"More luck next time. \n"
-"\n"
-"Do you want to retry?"
-msgstr ""
-"Il tuo tempo è alto! Qeusto costa il 10% del tuo punteggio.\n"
-"Sarai più fortunato la prossima volta\n"
-"\n"
-"Vuoi riprovare?"
+#~ msgid "Information"
+#~ msgstr "Informationi"
 
-#. We create it with an OK button, and then remove the button, to work
-#. around a bug in gnome-libs.
-#: src/interface.c:1051
-msgid ""
-"Sorry your time is up! But this was only\n"
-"a bonus level so go further now."
-msgstr ""
-"Spiacente il tuo tempo era alto! ma questo era solo\n"
-"un livello bonus, vai pure avanti"
+#, fuzzy
+#~ msgid "(C) 1999-2001 Jens Finke"
+#~ msgstr "(C) 1999 Jens Finke"
 
-#: src/callbacks.c:243
-msgid "Couldn't find the Atomix manual!"
-msgstr "Impossibile trovare il manuale di Atomix!"
+#~ msgid "Yet another mind game."
+#~ msgstr "Yet another mind game."
+
+#~ msgid "Atomix Next Level"
+#~ msgstr "Atomix prossimo livello"
+
+#~ msgid "Congratulations! You have successfully finished this level."
+#~ msgstr "Congratulazioni! Hai concluso con successo questo livello."
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Tempo rimanente:"
+
+#~ msgid "Are you ready for the next level?"
+#~ msgstr "Sei pronto per il prossimo livello?"
+
+#~ msgid "Atomix End"
+#~ msgstr "Fine Atomix"
+
+#~ msgid "Do you want to play again?"
+#~ msgstr "Vuoi giocare ancora?"
+
+#~ msgid "Constraints"
+#~ msgstr "Contrasti"
+
+#~ msgid "enable score and time limit"
+#~ msgstr "abilita limiti di tempo e di punti"
+
+#~ msgid "General"
+#~ msgstr "Generale"
+
+#~ msgid "Keyboard (return and cursor keys)"
+#~ msgstr "Tastiera (Invio e tasti cursore)"
+
+#~ msgid "Mouse"
+#~ msgstr "Mouse"
+
+#~ msgid "Mouse Properties"
+#~ msgstr "Proprietà mouse"
+
+#~ msgid "hide mouse cursor during dragging"
+#~ msgstr "nascondi il cursore durante il trascinamento"
+
+#~ msgid "enable lazy dragging"
+#~ msgstr "enable lazy dragging"
+
+#~ msgid "Sensitivity:"
+#~ msgstr "Sensitività"
+
+#~ msgid "high"
+#~ msgstr "alta"
+
+#~ msgid "low"
+#~ msgstr "bassa"
+
+#~ msgid "Control"
+#~ msgstr "Controllo"
+
+#~ msgid "Do you really want to exit the program?"
+#~ msgstr "Si vuole veramente uscire dal programma?"
+
+#~ msgid ""
+#~ "Your time is up! This costs you 10% of your score. \n"
+#~ "More luck next time. \n"
+#~ "\n"
+#~ "Do you want to retry?"
+#~ msgstr ""
+#~ "Il tuo tempo è alto! Qeusto costa il 10% del tuo punteggio.\n"
+#~ "Sarai più fortunato la prossima volta\n"
+#~ "\n"
+#~ "Vuoi riprovare?"
+
+#~ msgid ""
+#~ "Sorry your time is up! But this was only\n"
+#~ "a bonus level so go further now."
+#~ msgstr ""
+#~ "Spiacente il tuo tempo era alto! ma questo era solo\n"
+#~ "un livello bonus, vai pure avanti"
+
+#~ msgid "Couldn't find the Atomix manual!"
+#~ msgstr "Impossibile trovare il manuale di Atomix!"
 
 #~ msgid "(C) Jens Finke 1999-2000"
 #~ msgstr "(C) Jens Finke 1999-2000"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.4.3\n"
-"POT-Creation-Date: 2001-11-12 19:10+0100\n"
+"POT-Creation-Date: 2001-11-25 12:13+0100\n"
 "PO-Revision-Date: 2001-MO-DA HO:MI+ZONE\n"
 "Last-Translator: A.Burak Ilgicioglu <ilgici@turk.net>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -14,72 +14,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # src/board.c:202
-#: src/board.c:191
+#: src/board.c:159
 msgid "Game Paused"
 msgstr "Oyun Duraklatýldý"
 
 # src/board.c:204
-#: src/board.c:193
+#: src/board.c:161
 msgid "Game Over"
 msgstr "Oyun Bitti"
 
-#: src/board.c:195
+#: src/board.c:163
 msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
-# src/main.c:163
-#: src/main.c:178
-msgid "Level not found."
-msgstr "Seviye bulunamadý."
-
-# src/main.c:171
-#: src/main.c:188
-#, fuzzy, no-c-format
-msgid "Undo last move. This costs you 5 % of your score."
-msgstr "Son hareketi geri al. Bu, skorunuzun %5'ini düþürecektir."
+# editor/callbacks.c:1279
+#: src/main.c:271
+#, fuzzy
+msgid "Couldn't find at least one level."
+msgstr "Atomixed Yardým Dosyasý bulunamadý!"
 
 # src/main.c:177
-#: src/main.c:194
+#: src/main.c:283
 msgid "No more undo levels."
 msgstr "Baþka geri alma seviyesi yok."
 
 # src/main.c:187
-#: src/main.c:204
+#: src/main.c:293
 msgid "This is the last level. You can't skip any further."
 msgstr "Bu son seviye. Atlama yapamazsýnýz."
 
+# src/interface.c:908
+#: src/main.c:459
+#, fuzzy
+msgid "Do you want to finish the game?"
+msgstr "Gerçekten bu oyundan çýkmak istediðinize emin misiniz?"
+
+# src/interface.c:616
+#: src/main.c:486
+#, fuzzy
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Tebrikler! Tüm Atomix seviyelerini baþarýyla bitirdiniz."
+
 # src/interface.c:259
 #. create statistics frame
-#: src/main.c:874
+#: src/main.c:776
 #, fuzzy
 msgid "Statistics"
 msgstr "Ýstatistikler"
 
 # src/interface.c:317
-#: src/main.c:880
+#: src/main.c:782
 msgid "Level:"
 msgstr "Seviye:"
 
 # editor/interface.c:639 src/interface.c:328
-#: src/main.c:887
+#: src/main.c:789
 msgid "Name:"
 msgstr "Ýsim:"
 
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: src/main.c:894
+#: src/main.c:796
 msgid "Score:"
 msgstr "Skor:"
 
 # src/main.c:163
-#: src/main.c:945
+#: src/main.c:847
 #, fuzzy, c-format
 msgid "XML file %s not found."
 msgstr "Seviye bulunamadý."
 
+# src/main.c:163
+#~ msgid "Level not found."
+#~ msgstr "Seviye bulunamadý."
+
+# src/main.c:171
+#, fuzzy
+#~ msgid "Undo last move. This costs you 5 % of your score."
+#~ msgstr "Son hareketi geri al. Bu, skorunuzun %5'ini düþürecektir."
+
 # src/callbacks.c:243
-#: src/callbacks.c:233
-msgid "Couldn't find the Atomix manual!"
-msgstr "Atomix Yardým Dosyasý bulunamadý!"
+#~ msgid "Couldn't find the Atomix manual!"
+#~ msgstr "Atomix Yardým Dosyasý bulunamadý!"
 
 # editor/callbacks.c:161
 #~ msgid "Do you really want to clear the grid?"
@@ -108,10 +123,6 @@ msgstr "Atomix Yardým Dosyasý bulunamadý!"
 #~ msgstr ""
 #~ "Bu isimli bir\n"
 #~ "dizin var."
-
-# editor/callbacks.c:1279
-#~ msgid "Couldn't find the Atomixed manual!"
-#~ msgstr "Atomixed Yardým Dosyasý bulunamadý!"
 
 # editor/interface.c:22
 #~ msgid "_New File"
@@ -516,10 +527,6 @@ msgstr "Atomix Yardým Dosyasý bulunamadý!"
 #~ msgid "Atomix End"
 #~ msgstr "Atomix Sonu"
 
-# src/interface.c:616
-#~ msgid "Congratulations! You have successfully finished all Atomix levels."
-#~ msgstr "Tebrikler! Tüm Atomix seviyelerini baþarýyla bitirdiniz."
-
 # src/interface.c:675
 #~ msgid "Do you want to play again?"
 #~ msgstr "Tekrar oynamak ister misiniz?"
@@ -571,10 +578,6 @@ msgstr "Atomix Yardým Dosyasý bulunamadý!"
 # src/interface.c:883
 #~ msgid "Control"
 #~ msgstr "Denetim"
-
-# src/interface.c:908
-#~ msgid "Do you really want to quit this game?"
-#~ msgstr "Gerçekten bu oyundan çýkmak istediðinize emin misiniz?"
 
 # src/interface.c:956
 #~ msgid "Do you really want to exit the program?"

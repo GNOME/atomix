@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Atomix\n"
-"POT-Creation-Date: 2001-11-12 19:10+0100\n"
+"POT-Creation-Date: 2001-11-25 12:13+0100\n"
 "PO-Revision-Date: 2001-09-29 20:49+0400\n"
 "Last-Translator: Valek Filippov <frob@df.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -12,61 +12,73 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: src/board.c:191
+#: src/board.c:159
 msgid "Game Paused"
 msgstr "Игра приостановлена"
 
-#: src/board.c:193
+#: src/board.c:161
 msgid "Game Over"
 msgstr "Игра окончена"
 
-#: src/board.c:195
+#: src/board.c:163
 msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
-#: src/main.c:178
-msgid "Level not found."
-msgstr "Уровень не найден."
+#: src/main.c:271
+#, fuzzy
+msgid "Couldn't find at least one level."
+msgstr "Не найдено руководство Atomixed!"
 
-#: src/main.c:188
-#, fuzzy, no-c-format
-msgid "Undo last move. This costs you 5 % of your score."
-msgstr "Отменить последний ход. Это обойдется вам в 5% ваших очков."
-
-#: src/main.c:194
+#: src/main.c:283
 msgid "No more undo levels."
 msgstr "Нет больше уровней отката."
 
-#: src/main.c:204
+#: src/main.c:293
 msgid "This is the last level. You can't skip any further."
 msgstr "Это последний уровень. Вы не можете проскочить дальше."
 
+#: src/main.c:459
+#, fuzzy
+msgid "Do you want to finish the game?"
+msgstr "Вы действительно хотите выйти из игры?"
+
+#: src/main.c:486
+#, fuzzy
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Поздравляю! Вы успешно завершили все уровни Atiomix."
+
 #. create statistics frame
-#: src/main.c:874
+#: src/main.c:776
 #, fuzzy
 msgid "Statistics"
 msgstr " Статистика"
 
-#: src/main.c:880
+#: src/main.c:782
 msgid "Level:"
 msgstr "Уровень:"
 
-#: src/main.c:887
+#: src/main.c:789
 msgid "Name:"
 msgstr "Название:"
 
-#: src/main.c:894
+#: src/main.c:796
 msgid "Score:"
 msgstr "Очки:"
 
-#: src/main.c:945
+#: src/main.c:847
 #, fuzzy, c-format
 msgid "XML file %s not found."
 msgstr "Уровень не найден."
 
-#: src/callbacks.c:233
-msgid "Couldn't find the Atomix manual!"
-msgstr "Не удалось найти руководство Atomix!"
+#~ msgid "Level not found."
+#~ msgstr "Уровень не найден."
+
+#, fuzzy
+#~ msgid "Undo last move. This costs you 5 % of your score."
+#~ msgstr "Отменить последний ход. Это обойдется вам в 5% ваших очков."
+
+#~ msgid "Couldn't find the Atomix manual!"
+#~ msgstr "Не удалось найти руководство Atomix!"
 
 #~ msgid "Do you really want to clear the grid?"
 #~ msgstr "Вы действительно хотите очистить сетку?"
@@ -91,9 +103,6 @@ msgstr "Не удалось найти руководство Atomix!"
 #~ msgstr ""
 #~ "Каталог с таким названием\n"
 #~ "уже существует."
-
-#~ msgid "Couldn't find the Atomixed manual!"
-#~ msgstr "Не найдено руководство Atomixed!"
 
 #~ msgid "_New File"
 #~ msgstr "Новый файл"
@@ -399,9 +408,6 @@ msgstr "Не удалось найти руководство Atomix!"
 #~ msgid "Atomix End"
 #~ msgstr "Конец Atomix"
 
-#~ msgid "Congratulations! You have successfully finished all Atomix levels."
-#~ msgstr "Поздравляю! Вы успешно завершили все уровни Atiomix."
-
 #~ msgid "Do you want to play again?"
 #~ msgstr "Хотите играть снова?"
 
@@ -440,9 +446,6 @@ msgstr "Не удалось найти руководство Atomix!"
 
 #~ msgid "Control"
 #~ msgstr "Управление"
-
-#~ msgid "Do you really want to quit this game?"
-#~ msgstr "Вы действительно хотите выйти из игры?"
 
 #~ msgid "Do you really want to exit the program?"
 #~ msgstr "Вы действительно хотите выйти из программы?"
