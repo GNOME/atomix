@@ -1,5 +1,9 @@
 2002-01-23  Jens Finke <jens@triq.net>
 
+	* arrow-*.png, floor.png: Oops, forgot to re-add these icons.
+
+2002-01-23  Jens Finke <jens@triq.net>
+
 	* shadow-*.png: Replaced them with Jakub's dark original versions.
 	
 	* theme: Set alpha value for the shadow images to 77. 
