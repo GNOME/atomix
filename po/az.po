@@ -5,7 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix-game 0.9.1\n"
-"POT-Creation-Date: 2003-03-07 11:38+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-08-23 03:31+0200\n"
 "PO-Revision-Date: 2003-03-07 19:01+0200\n"
 "Last-Translator: Mətin Əmirov <metin@karegen.com>\n"
 "Language-Team: Azerbaijani Turkic <linuxaz@azerimail.net>\n"
@@ -126,15 +127,13 @@ msgstr "Səviyyə tapılmadı."
 msgid "Found level '%s' in: %s"
 msgstr "'%s' səviyyəsini %s-da tapdım"
 
-#: src/main.c:118
-#: src/main.c:444
-#: atomix.desktop.in.h:1
+#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomiks"
 
 #: src/main.c:145
 msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "Müəllif Haqqı (C) 1999-2002 Jens Finke"
+msgstr "Müəllif Hüququ (C) 1999-2002 Jens Finke"
 
 #: src/main.c:146
 msgid "A mind game about atoms and molecules."
@@ -152,9 +151,7 @@ msgstr "Ən az bir səviyyəni tapa bilmədim!"
 msgid "Do you want to finish the game?"
 msgstr "Həqiqətən də bu oyundan çıxmaq istəyirsiniz?"
 
-#: src/main.c:591
-#: src/main.c:597
-#: src/main.c:602
+#: src/main.c:591 src/main.c:597 src/main.c:602
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Cərgəni yarada bilmədim : %s"
@@ -197,4 +194,3 @@ msgstr "'%s' örtüyünü %s-da tapdım"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Molekul ağıl oyunu"
-
