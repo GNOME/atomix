@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-02-17 22:44+0800\n"
-"PO-Revision-Date: 2002-02-17 22:46+0800\n"
+"POT-Creation-Date: 2002-03-03 15:21+0800\n"
+"PO-Revision-Date: 2002-03-03 15:22+0800\n"
 "Last-Translator: Wang Li <charlesw1234@163.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
@@ -114,15 +114,15 @@ msgstr "积分(_S)..."
 msgid "_Undo move"
 msgstr "撤消着法(_U)"
 
-#: src/board.c:168
+#: src/board.c:170
 msgid "Game Paused"
 msgstr "游戏已暂停"
 
-#: src/board.c:170
+#: src/board.c:172
 msgid "Game Over"
 msgstr "游戏结束"
 
-#: src/board.c:172
+#: src/board.c:174
 msgid "Atomix - Molecule Mind Game"
 msgstr "Atomix - 分子组合智力游戏"
 
@@ -138,6 +138,14 @@ msgstr "找不到级别。"
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "在 %2$s 中找到级别“%1$s”"
+
+#: src/main.c:149
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "版权所有 (C) 1999-2002 Jens Finke"
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr "原子和分子的思考游戏。"
 
 #: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
