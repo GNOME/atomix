@@ -131,13 +131,13 @@ create_level_sequence (LevelManager *lm, gchar *file)
 	if(doc == NULL) return;
 
 	node = doc->xmlRootNode;
-	if (!g_strcasecmp (node->name, "levelsequence")) {
+	if (!g_ascii_strcasecmp (node->name, "levelsequence")) {
 		for (node = node->xmlChildrenNode; node != NULL; node = node->next) {
-			if (!g_strcasecmp (node->name, "level")) {
+			if (!g_ascii_strcasecmp (node->name, "level")) {
 				lm->priv->level_seq = g_list_append (lm->priv->level_seq,
 								     g_strdup (xmlGetProp (node, "name")));
 			}
-			else if (!g_strcasecmp (node->name, "text")) {
+			else if (!g_ascii_strcasecmp (node->name, "text")) {
 			}
 			else {
 				g_warning ("Ignoring unknown xml tag: %s", node->name);
@@ -199,7 +199,7 @@ level_manager_is_last_level (LevelManager *lm, Level *level)
 	last = g_list_last (lm->priv->level_seq);
 	if (last == NULL) return TRUE;
 
-	return !g_strcasecmp ((gchar*)last->data, level_get_name (level));
+	return !g_ascii_strcasecmp ((gchar*)last->data, level_get_name (level));
 }
 
 static void
@@ -217,9 +217,9 @@ search_level_in_dir (LevelManager *lm, gchar *dir_path)
 		
 		while((dent = readdir(dir)) != NULL)
 		{
-			if(g_strcasecmp (".", dent->d_name) &&
-			   g_strcasecmp ("..", dent->d_name) &&
-			   g_strcasecmp ("sequence", dent->d_name))
+			if(g_ascii_strcasecmp (".", dent->d_name) &&
+			   g_ascii_strcasecmp ("..", dent->d_name) &&
+			   g_ascii_strcasecmp ("sequence", dent->d_name))
 			{
 				gchar *levelname;
 
@@ -256,7 +256,7 @@ lookup_level_name (gchar *filename)
 
 	node = doc->xmlRootNode;
 	
-	if (node && !g_strcasecmp (node->name, "level"))
+	if (node && !g_ascii_strcasecmp (node->name, "level"))
 	        name = g_strdup (xmlGetProp (node, "name"));
 	
 	xmlFreeDoc(doc);
@@ -308,7 +308,7 @@ level_manager_get_next_level (LevelManager *lm, Level *current_level)
 	else {
 		GList *result;
 		result = g_list_find_custom (priv->level_seq, level_get_name (current_level),
-					     (GCompareFunc) g_strcasecmp);
+					     (GCompareFunc) g_ascii_strcasecmp);
 		if (result != NULL) {
 			result = result->next;
 			if (result != NULL)
@@ -328,7 +328,7 @@ level_manager_get_next_level (LevelManager *lm, Level *current_level)
 static void
 add_level_to_list (gchar* key, gpointer value, GList **list)
 {
-	*list = g_list_insert_sorted (*list, key, (GCompareFunc) g_strcasecmp);	
+	*list = g_list_insert_sorted (*list, key, (GCompareFunc) g_ascii_strcasecmp);	
 }
 
 GList* 
@@ -372,7 +372,7 @@ load_level (gchar *filename)
 	
 	while (node != NULL)
 	{
-		if (!g_strcasecmp (node->name,"level"))
+		if (!g_ascii_strcasecmp (node->name,"level"))
 		{
 			prop_value = xmlGetProp(node, "name");
 			level->priv->name = g_strdup (prop_value);
@@ -380,23 +380,23 @@ load_level (gchar *filename)
 		}			
 		else 
 		{
-			if (!g_strcasecmp (node->name,"environment"))
+			if (!g_ascii_strcasecmp (node->name,"environment"))
 			{
 				level->priv->environment = 
 					playfield_new_from_xml (node->xmlChildrenNode);
 			}
 			
-			else if (!g_strcasecmp (node->name, "goal"))
+			else if (!g_ascii_strcasecmp (node->name, "goal"))
 			{
 				level->priv->goal = 
 					playfield_new_from_xml (node->xmlChildrenNode);
 			}
-			else if (!g_strcasecmp (node->name, "scenario"))
+			else if (!g_ascii_strcasecmp (node->name, "scenario"))
 			{
 				level->priv->scenario = 
 					playfield_new_from_xml (node->xmlChildrenNode);
 			}
-			else if (!g_strcasecmp (node->name, "text")) {
+			else if (!g_ascii_strcasecmp (node->name, "text")) {
 			}
 			else
 			{

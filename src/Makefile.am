@@ -6,6 +6,7 @@ INCLUDES = -Wall \
 	-I$(top_srcdir) \
 	-DDEBUG \
 	$(ATOMIX_CFLAGS) \
+	$(EXTRA_WARNING_CFLAGS) \
 	-DDATADIR=\""$(datadir)"\" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale\""
 

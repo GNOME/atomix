@@ -52,7 +52,7 @@ static gboolean set_next_level (AtomixApp *app);
 static void setup_level (AtomixApp *app);
 static void level_cleanup_view (AtomixApp *app);
 static void atomix_exit (AtomixApp *app);
-static gboolean on_key_press_event           (GtkWidget       *widget,
+static gboolean on_key_press_event           (GObject         *widget,
 					      GdkEventKey     *event,
 					      gpointer         user_data);
 static void game_init (AtomixApp *app);
@@ -69,51 +69,51 @@ static GtkWidget* get_highscore_widget (AtomixApp *app);
              Menu callback  functions 
 
 -------------------------------------------------------------- */
-void
+static void
 verb_GameNew_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
         controller_handle_action ((AtomixApp*) user_data, GAME_ACTION_NEW);
 }
 
-void
+static void
 verb_GameEnd_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	controller_handle_action ((AtomixApp*) user_data, GAME_ACTION_END);
 }
 
 
-void
+static void
 verb_GameSkip_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	controller_handle_action ((AtomixApp*) user_data, GAME_ACTION_SKIP);
 }
 
-void
+static void
 verb_GameReset_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	controller_handle_action ((AtomixApp*) user_data, GAME_ACTION_RESTART);
 }
 
-void
+static void
 verb_GamePause_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	controller_handle_action ((AtomixApp*) user_data, GAME_ACTION_PAUSE);
 }
 
-void
+static void
 verb_GameContinue_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	controller_handle_action ((AtomixApp*) user_data, GAME_ACTION_CONTINUE);
 }
 
-void
+static void
 verb_GameUndo_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	controller_handle_action ((AtomixApp*) user_data, GAME_ACTION_UNDO);
 }
 
 
-void
+static void
 verb_GameScores_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	GtkWidget *widget;
@@ -122,13 +122,13 @@ verb_GameScores_cb (BonoboUIComponent *uic, gpointer user_data, const char *cnam
 	gtk_widget_show (widget);
 }
 
-void
+static void
 verb_GameExit_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	atomix_exit ((AtomixApp*) user_data);
 }
 
-void
+static void
 verb_EditPreferences_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 #if 0
@@ -137,7 +137,7 @@ verb_EditPreferences_cb (BonoboUIComponent *uic, gpointer user_data, const char 
 }
 
 
-void
+static void
 verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
 	GtkWidget *dlg;
@@ -156,7 +156,7 @@ verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname
 	gtk_widget_show (dlg);
 }
 
-gboolean
+static gboolean
 on_app_destroy_event(GtkWidget       *widget,
                      GdkEvent        *event,
                      gpointer         user_data)
@@ -362,7 +362,7 @@ atomix_exit (AtomixApp *app)
 }
 
 static gboolean
-on_key_press_event           (GtkWidget       *widget,
+on_key_press_event           (GObject         *widget,
 			      GdkEventKey     *event,
 			      gpointer         user_data)
 {
@@ -370,7 +370,7 @@ on_key_press_event           (GtkWidget       *widget,
 
 	if(app->state == GAME_STATE_LEVEL_RUNNING)
 	{
-		board_handle_key_event (event);
+		board_handle_key_event (NULL, event, NULL);
 	}
 	
 	return TRUE;
@@ -663,11 +663,7 @@ create_canvas_widget (GtkWidget **canvas)
 {
 	GtkWidget *frame;
 
-        gtk_widget_push_visual (gdk_rgb_get_visual ());
-        gtk_widget_push_colormap (gdk_rgb_get_cmap ());
         *canvas = gnome_canvas_new_aa ();
-        gtk_widget_pop_visual ();
-        gtk_widget_pop_colormap ();
 
 	frame = gtk_frame_new (NULL);
 	gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
@@ -722,8 +718,8 @@ create_mainwin_content (AtomixApp *app)
 	hbox = gtk_hbox_new (FALSE, 6);
 	gtk_container_set_border_width (GTK_CONTAINER (hbox), 6);
 	gtk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (pf), TRUE, TRUE, 0);
-	gtk_signal_connect (GTK_OBJECT (app->ca_matrix), "key_press_event", 
-			    (GtkSignalFunc) on_key_press_event, app);
+	g_signal_connect (G_OBJECT (app->ca_matrix), "key_press_event", 
+			  G_CALLBACK (on_key_press_event), app);
 	
 	/* create right window side */
 	vbox = gtk_vbox_new (FALSE, 6);
@@ -836,7 +832,6 @@ create_splash (void)
 	img = gtk_image_new_from_file (file);
 	gtk_container_add (GTK_CONTAINER (splash_window), img);
 
-	gtk_window_set_policy (GTK_WINDOW (splash_window), FALSE, FALSE, TRUE);
 	gtk_window_set_title (GTK_WINDOW (splash_window), _("Atomix Splash"));
  	gtk_window_set_gravity (GTK_WINDOW (splash_window), GDK_GRAVITY_CENTER);
 

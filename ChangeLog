@@ -1,3 +1,16 @@
+2002-04-26  Jens Finke  <jens@triq.net>
+
+	* acconfig.h,
+	* src/Makefile.am,
+	* configure.in: Added EXTRA_WARNING_CFLAGS.
+
+	* src/board.[ch],
+	src/level_manager.c,
+	src/main.c,
+	src/playfield.c,
+	src/theme-manager.c,
+	src/theme.c: Removed deprecated Gtk/Gnome function calls.
+
 2002-04-19  Pablo Saratxaga  <pablo@mandrakesoft.com>
 
 	* configure.in: Added "ca" and "wa" to ALL_LINGUAS.
@@ -6,7 +19,7 @@
 
 	* configure.in: Added ja to ALL_LINGUAS.
 
-2002-03-22  T-Aõivo Leedjärv  <toivo@linux.ee>$)B
+2002-03-22  T.AŽõivo LeedjŽärv  <toivo@linux.ee>
 
 	* configure.in: Added et to ALL_LINGUAS.
 
@@ -766,7 +779,7 @@
 	(INCLUDES): Addded -Wall compiler option.
 	
 
-2001-11-12  Carlos Perell-Aó Marín <carlos@gnome-db.org>$)B
+2001-11-12  Carlos PerellŽó MarŽín <carlos@gnome-db.org>
 
 	* configure.in: Added the new locales from GNOME 1.4 version.
 

@@ -442,29 +442,29 @@ playfield_new_from_xml (xmlNodePtr node)
 	/* reading non empty tiles */
 	for (; node != NULL; node = node->next)
 	{
-		if (!g_strcasecmp (node->name, "n_rows")) {
+		if (!g_ascii_strcasecmp (node->name, "n_rows")) {
 			content = xmlNodeGetContent (node);
 			n_rows = atoi (content);
 		}
-		else if (!g_strcasecmp (node->name, "n_columns")) {
+		else if (!g_ascii_strcasecmp (node->name, "n_columns")) {
 			content = xmlNodeGetContent (node);
 			n_cols = atoi (content);
 			playfield_set_matrix_size (pf, n_rows, n_cols);
 		}
-		else if (!g_strcasecmp (node->name, "row")) {
+		else if (!g_ascii_strcasecmp (node->name, "row")) {
 			prop_value = xmlGetProp (node, "no");
 			row = atoi (prop_value);
 			for (child_node = node->xmlChildrenNode;
 			     child_node != NULL; child_node = child_node->next)
 			{
-				if (!g_strcasecmp (child_node->name, "col")) {
+				if (!g_ascii_strcasecmp (child_node->name, "col")) {
 					prop_value = xmlGetProp (child_node, "no");
 					col = atoi (prop_value);
 					read_tile (pf, row, col, child_node->xmlChildrenNode);
 				}
 			}
 		}
-		else if (!g_strcasecmp (node->name, "text")) {
+		else if (!g_ascii_strcasecmp (node->name, "text")) {
 		}
 		else {
 			g_warning("Skipping unexpected Tag %s.", 
@@ -481,7 +481,7 @@ read_tile (PlayField *pf, guint row, guint col, xmlNodePtr node)
 	Tile *tile;
 
 	for (; node != NULL; node = node->next) {
-		if (!g_strcasecmp (node->name, "tile")) {
+		if (!g_ascii_strcasecmp (node->name, "tile")) {
 			tile = tile_new_from_xml (node);
 			playfield_set_tile (pf, row, col, tile);
 			g_object_unref (tile);

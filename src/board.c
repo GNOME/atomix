@@ -173,8 +173,8 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 	message_items->new_game = create_message(canvas, message_items->messages,
 						 _("Atomix - Molecule Mind Game"));
 
-	gtk_signal_connect (GTK_OBJECT (canvas), "key_press_event", 
-			    (GtkSignalFunc) board_handle_key_event, NULL); 
+	g_signal_connect (G_OBJECT (canvas), "key_press_event", 
+			  G_CALLBACK (board_handle_key_event), NULL); 
 	
 	/* other initialistions */
 	board_canvas = canvas;
@@ -615,7 +615,7 @@ board_handle_item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 }
 
 void 
-board_handle_key_event (GdkEventKey *event)
+board_handle_key_event (GObject *canvas, GdkEventKey *event, gpointer data)
 {
 	GnomeCanvasItem *item;
 	gint new_row, new_col;

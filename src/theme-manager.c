@@ -158,8 +158,8 @@ search_themes_in_dir (ThemeManager *tm, const gchar *dir_path)
 		
 		while((dent = readdir(dir)) != NULL)
 		{
-			if((g_strcasecmp(".", dent->d_name)!=0) &&
-			   (g_strcasecmp("..", dent->d_name)!=0))
+			if((g_ascii_strcasecmp(".", dent->d_name)!=0) &&
+			   (g_ascii_strcasecmp("..", dent->d_name)!=0))
 			{
 				/* is current file a directory? */
 				subdirpath = g_build_filename (dir_path,
@@ -222,7 +222,7 @@ theme_manager_get_available_themes (ThemeManager *tm)
 static void
 add_theme_to_list (gchar* key, gpointer value, GList **list)
 {
-	*list = g_list_insert_sorted (*list, key, (GCompareFunc) g_strcasecmp);	
+	*list = g_list_insert_sorted (*list, key, (GCompareFunc) g_ascii_strcasecmp);	
 }
 
 /* =======================================================================
@@ -282,7 +282,7 @@ load_theme (gchar *theme_dir)
 	node = doc->xmlRootNode;
 	while (node != NULL)
 	{
-		if(!g_strcasecmp (node->name,"theme"))
+		if(!g_ascii_strcasecmp (node->name,"theme"))
 		{
 			/* handle theme node */
 			priv->name = g_strdup (xmlGetProp (node, "name"));
@@ -290,25 +290,25 @@ load_theme (gchar *theme_dir)
 		}
 		else 
 		{	
-			if (!g_strcasecmp (node->name, "icon"))
+			if (!g_ascii_strcasecmp (node->name, "icon"))
 			{
 				handle_tile_icon_node (theme, node);
 			}
-			else if (!g_strcasecmp (node->name, "decor"))
+			else if (!g_ascii_strcasecmp (node->name, "decor"))
 			{
 				handle_tile_decor_node (theme, node);
 			}
-			else if (!g_strcasecmp (node->name,"animstep"))
+			else if (!g_ascii_strcasecmp (node->name,"animstep"))
 			{
 				priv->animstep = atoi (xmlGetProp(node, "dist"));
 			}
-			else if (!g_strcasecmp(node->name,"bgcolor"))
+			else if (!g_ascii_strcasecmp(node->name,"bgcolor"))
 			{					
 				/* handle background color */
 				prop_value = xmlGetProp(node, "color");
 				gdk_color_parse (prop_value, &(priv->bg_color));
 			}
-			else if (!g_strcasecmp(node->name, "bgcolor_rgb"))
+			else if (!g_ascii_strcasecmp(node->name, "bgcolor_rgb"))
 			{
 				/* handle rgb color node */
 				prop_value = xmlGetProp(node, "red");
@@ -318,7 +318,7 @@ load_theme (gchar *theme_dir)
 				prop_value = xmlGetProp(node, "blue");
 				priv->bg_color.blue = (atof(prop_value)/255.0) * 65536;
 			}
-			else if (!g_strcasecmp (node->name, "text")) {
+			else if (!g_ascii_strcasecmp (node->name, "text")) {
 			}
 			else					
 			{
@@ -386,7 +386,7 @@ handle_tile_icon_node (Theme *theme, xmlNodePtr node)
 		if (pixbuf != NULL) {
 			theme->priv->tile_width = gdk_pixbuf_get_width (pixbuf);
 			theme->priv->tile_height = gdk_pixbuf_get_height (pixbuf);
-			gdk_pixbuf_unref (pixbuf);
+			g_object_unref (pixbuf);
 		}
 	}
 
@@ -415,7 +415,7 @@ lookup_theme_name (gchar *theme_file)
 
 	node = doc->xmlRootNode;
 	
-	if (node && !g_strcasecmp (node->name, "theme"))
+	if (node && !g_ascii_strcasecmp (node->name, "theme"))
 	        name = g_strdup (xmlGetProp (node, "name"));
 	
 	xmlFreeDoc(doc);

@@ -166,7 +166,7 @@ destroy_theme_image (gpointer data)
 		g_free (ti->file);
 
 	if (ti->image)
-		gdk_pixbuf_unref (ti->image);
+		g_object_unref (ti->image);
 
 	if (ti->decorations)
 		g_slist_free (ti->decorations);
@@ -200,13 +200,13 @@ get_theme_image_pixbuf (ThemeImage *ti)
 					      gdk_pixbuf_get_height (pixbuf),
 					      0.0, 0.0, 1.0, 1.0,
 					      GDK_INTERP_NEAREST, ti->alpha);
-			gdk_pixbuf_unref (ti->image);
+			g_object_unref (ti->image);
 			ti->image = pixbuf;
 		}
 	}
 
 	if (ti->image != NULL)
-		gdk_pixbuf_ref (ti->image);
+		g_object_ref (ti->image);
 
 	return ti->image;
 }
@@ -251,7 +251,7 @@ create_sub_images (Theme *theme, Tile *tile, TileSubType sub_type)
 					      0.0, 0.0, 1.0, 1.0,
 					      GDK_INTERP_NEAREST, 255);
 		}
-		gdk_pixbuf_unref (pb);
+		g_object_unref (pb);
 	}
 
 	return pixbuf;
@@ -327,8 +327,8 @@ theme_get_tile_image (Theme* theme, Tile *tile)
 				      gdk_pixbuf_get_height (result),
 				      0.0, 0.0, 1.0, 1.0,
 				      GDK_INTERP_NEAREST, 255);	
-		gdk_pixbuf_unref (overlay_pb);
-		gdk_pixbuf_unref (underlay_pb);
+		g_object_unref (overlay_pb);
+		g_object_unref (underlay_pb);
 	}
 	else if (!underlay_pb && overlay_pb) {
 		result = gdk_pixbuf_copy (base_pb);
@@ -339,7 +339,7 @@ theme_get_tile_image (Theme* theme, Tile *tile)
 				      gdk_pixbuf_get_height (result),
 				      0.0, 0.0, 1.0, 1.0,
 				      GDK_INTERP_NEAREST, 255);	
-		gdk_pixbuf_unref (overlay_pb);
+		g_object_unref (overlay_pb);
 	}
 	else if (underlay_pb && !overlay_pb) {
 		result = gdk_pixbuf_copy (underlay_pb);
@@ -350,12 +350,12 @@ theme_get_tile_image (Theme* theme, Tile *tile)
 				      gdk_pixbuf_get_height (result),
 				      0.0, 0.0, 1.0, 1.0,
 				      GDK_INTERP_NEAREST, 255);	
-		gdk_pixbuf_unref (underlay_pb);
+		g_object_unref (underlay_pb);
 	}
 	else
-		result = gdk_pixbuf_ref (base_pb);
+		result = g_object_ref (base_pb);
 	
-	gdk_pixbuf_unref (base_pb);
+	g_object_unref (base_pb);
 		
 	return result;
 }
@@ -430,7 +430,7 @@ theme_add_image (Theme *theme, const gchar *src, gint alpha)
 	ti->alpha = alpha;
 	ti->decorations = NULL;
 
-	filename = g_strdup (g_basename (src));
+	filename = g_path_get_basename (src);
 	suffix = g_strrstr (filename, ".png");
 	if (suffix != NULL)
 		*suffix = '\0';
