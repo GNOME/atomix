@@ -185,6 +185,22 @@ atomix_exit (AtomixApp *app)
 	gtk_main_quit();
 }
 
+static gboolean
+on_key_press_event           (GtkWidget       *widget,
+			      GdkEventKey     *event,
+			      gpointer         user_data)
+{
+	AtomixApp *app = (AtomixApp*) user_data;
+
+	if(app->state == GAME_RUNNING)
+	{
+		board_handle_key_event (event);
+	}
+	
+	return TRUE;
+}
+
+
 static void 
 game_init (AtomixApp *app)
 {
@@ -202,6 +218,9 @@ game_init (AtomixApp *app)
 	app->level = NULL;
 	app->level_no = 0;
 	app->score = 0.0;
+
+	gtk_signal_connect (GTK_OBJECT (app->mainwin), "key_press_event", 
+			    (GtkSignalFunc) on_key_press_event, app);
 
 	/* init the board */
 	board_init (app->theme, GNOME_CANVAS (app->ca_matrix));
@@ -311,7 +330,7 @@ game_prepare_level (AtomixApp *app, Level *next_level)
 
 	update_player_info (app);
 
-	g_object_unref (goal_pf);
+/* 	g_object_unref (goal_pf); */
 	g_object_unref (env_pf);
 	g_object_unref (sce_pf);
 }
@@ -335,9 +354,6 @@ void game_level_timeout(GtkWidget *widget, gpointer data)
 	clock = get_time_limit_widget();
 	gtk_time_limit_stop(GTK_TIME_LIMIT(clock));      
         gtk_clock_set_seconds(GTK_CLOCK(clock), 0);
-
-	/* show the cursor */
-	board_show_normal_cursor();
 
 	/* handle bonus level if neccessary */
 	if(level_data->level->bonus_level)
@@ -411,9 +427,6 @@ game_level_finished (AtomixApp *app)
 
 	g_return_if_fail (app != NULL);
 
-	/* show cursur */
-	board_show_normal_cursor ();
-	
 	next_level = level_manager_get_next_level (app->lm, app->level);
 
 	if (next_level) {

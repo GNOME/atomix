@@ -1,3 +1,15 @@
+2001-11-21  Jens Finke <jens@triq.net>
+
+	* board.c: Reworked this completely. Removed all the mouse
+	handling stuff and the need for the canvas_map_*
+	functions. Cleaned up the code.
+
+	* main.c (on_key_press_event): New key press handler.
+	(game_init): Register key event handler.
+	(game_prepare_level): Don't free goal_pf.
+	(game_level_timeout): Don't call board_show_normal_cursor.
+	(game_level_finished): dito.
+	
 2001-11-20  Jens Finke <jens@triq.net>
 
 	* .cvsignore: Added level-convert and pf-test.
