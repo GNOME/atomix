@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-31 15:25+0100\n"
+"POT-Creation-Date: 2004-06-23 14:05+0200\n"
 "PO-Revision-Date: 2004-01-31 15:24+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -20,9 +20,10 @@ msgstr ""
 msgid "Continue paused game"
 msgstr "Vazhdo lojën e ndërprerë"
 
+#. GRUT modified this item
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
-msgstr "_Dil"
+msgstr "D_il"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
@@ -163,9 +164,10 @@ msgstr "I pamundur krijimi i directory: %s"
 msgid "Statistics"
 msgstr "Statistikat"
 
+#. GRUT modified this item
 #: src/main.c:707
 msgid "Level:"
-msgstr "Niveli:"
+msgstr "Etiketa:"
 
 #: src/main.c:708
 msgid "Molecule:"
@@ -196,3 +198,4 @@ msgstr "U gjet tema '%s' në %s"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Molecule mind game"
+
