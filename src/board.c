@@ -211,7 +211,6 @@ board_init_level (PlayField *env, PlayField *sce, Goal *goal)
 	/* hide 'New Game' message */
 	gnome_canvas_item_hide (message_items->new_game);
 
-
 	row = playfield_get_n_rows (board_env)/2;
 	col = playfield_get_n_cols (board_env)/2;
 	selector_move_to (selector_data, row, col);
@@ -219,6 +218,7 @@ board_init_level (PlayField *env, PlayField *sce, Goal *goal)
 	
 	/* render level */
 	board_render ();
+	board_show ();
 }
 
 void

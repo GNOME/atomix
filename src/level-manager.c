@@ -124,10 +124,8 @@ create_level_sequence (LevelManager *lm, gchar *file)
 
 	g_return_if_fail (IS_LEVEL_MANAGER (lm));
 
- 	if (!g_file_test (file, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR)) {
-		g_warning (_("Couldn't find level sequence description."));
+ 	if (!g_file_test (file, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR))
 		return;
-	}
 	
 	doc = xmlParseFile (file);        
 	if(doc == NULL) return;
@@ -158,14 +156,20 @@ level_manager_init_levels (LevelManager *lm)
 	g_return_if_fail (!lm->priv->initialized);
 
 	/* load the sequence of the levels */
-	sequence_file = g_build_filename (g_get_home_dir (), ".atomix", "level", "sequence", NULL);
+	sequence_file = g_build_filename (g_get_home_dir (), 
+					  ".atomix", "level", "sequence", NULL);
 	create_level_sequence (lm, sequence_file);
 	g_free (sequence_file);
 
 	if (g_list_length (lm->priv->level_seq) == 0) {
-		sequence_file = g_build_filename (DATADIR, "atomix", "level", "sequence", NULL);
+		sequence_file = g_build_filename (DATADIR, 
+						  "atomix", "level", "sequence", NULL);
 		create_level_sequence (lm, sequence_file);
 		g_free (sequence_file);
+
+		if (g_list_length (lm->priv->level_seq) == 0) {
+			g_warning (_("Couldn't find level sequence description."));
+		}
 	}
 
 	/* search for all levels */
@@ -206,8 +210,6 @@ search_level_in_dir (LevelManager *lm, gchar *dir_path)
 
 	g_return_if_fail (IS_LEVEL_MANAGER (lm));
 
-	g_message ("looking for themes in %s", dir_path);
-
 	dir = opendir(dir_path);
 	if (dir)
 	{
@@ -223,7 +225,6 @@ search_level_in_dir (LevelManager *lm, gchar *dir_path)
 
 				filename = g_build_filename (dir_path,
 							     dent->d_name, NULL);
-				g_message ("Check level file: %s", filename);
 				levelname = lookup_level_name (filename);
 				add_level (lm, levelname, filename);
 				g_free (filename);
@@ -281,10 +282,8 @@ add_level (LevelManager *lm, gchar *levelname, gchar *filename)
 				    g_strdup (levelname),
 				    g_strdup (filename));
 		
-		g_message ("Found Level: %s", levelname);
+		g_message (_("Found level '%s' in: %s"), levelname, filename);
 	}
-	else 
-		g_warning (_("Found level %s twice."), levelname);
 }
 
 

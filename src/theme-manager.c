@@ -149,8 +149,6 @@ search_themes_in_dir (ThemeManager *tm, const gchar *dir_path)
 	struct dirent *dent = NULL;
 	DIR* dir;
 	
-	g_message ("looking for themes in %s", dir_path);
-
 	dir = opendir (dir_path);
 	if(dir)
 	{
@@ -203,10 +201,8 @@ add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath)
 				    g_strdup (themename),
 				    g_strdup (dirpath));
 		
-		g_message ("Found theme: %s", themename);
+		g_message (_("Found theme '%s' in: %s"), themename, dirpath);
 	}
-	else 
-		g_warning (_("Found theme %s twice."), themename);
 }
 
 
@@ -267,15 +263,14 @@ load_theme (gchar *theme_dir)
 
 	theme_file = g_build_filename (theme_dir, "theme", NULL);
 	if (!g_file_test (theme_file, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR)) {
-		g_warning ("File theme not found in %s", theme_dir);
+		g_warning ("File not found: %s.", theme_file);
+		g_free (theme_file);
 		return NULL;
 	}
 
-	g_message ("parse file: %s", theme_file);
-
 	doc = xmlParseFile (theme_file); 
 	if (doc == NULL) {
-		g_warning ("XML file %s couldn't be parsed.", theme_file);
+		g_warning ("Couldn't parse XML file: %s.", theme_file);
 		g_free (theme_file);
 		return NULL;
 	}

@@ -1,5 +1,19 @@
 2001-11-30  Jens Finke <jens@triq.net>
 
+	* board.c (board_init_level): Show atom items explicitely.
+
+	* level_manager.c: Removed debug messages.
+	(add_level): Made remaining output messages translateable.
+
+	* main.c (create_user_config_dir): Rewrote function.
+	(create_mainwin_content): Removed debug messages.
+	(create_gui): Check existance of ui xml file.
+	(main): Increased main window size.
+
+	* theme-manager.c: Removed debug messages.
+
+2001-11-30  Jens Finke <jens@triq.net>
+
 	* goal-view.[ch] (clear_view): Renamed to goal_view_clear and made it
 	a public function.
 

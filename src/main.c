@@ -641,75 +641,35 @@ save_score (AtomixApp *app)
 #endif
 }
 
-void create_user_config_dir(void)
+void create_user_config_dir (void)
 {
-	DIR* ds = NULL;
-	const char* home_dir = g_get_home_dir (); 
-	char* atomix_dir;
-	char* themes_dir;
-	char* levels_dir;
+	gchar* atomix_dir;
+	gchar* themes_dir;
+	gchar* level_dir;
 
-	atomix_dir = g_strjoin( "/", home_dir, ".atomix", NULL);
-	themes_dir = g_strjoin( "/", atomix_dir, "themes", NULL);
-	levels_dir = g_strjoin( "/", atomix_dir, "levels", NULL);
+	atomix_dir = g_build_filename (g_get_home_dir (), ".atomix", NULL);
+	themes_dir = g_build_filename (atomix_dir, "themes", NULL);
+	level_dir = g_build_filename (atomix_dir, "level", NULL);
 
-	/* first, check whether .atomix exists */    
-	ds = opendir(atomix_dir);
-	if(ds==NULL)
-	{
-		/* try to create one */
-		if(mkdir(atomix_dir, 0755 )!=0)
-		{
-			g_print("An error occured creating your .atomix dir!\n");
+	if (!g_file_test (atomix_dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR)) 
+		if (mkdir (atomix_dir, 0755) != 0) {
+			g_error (_("Couldn't create directory: %s"), atomix_dir);
 			return;
 		}
-		g_print(".atomix created.\n");
-	}
-	else
-	{
-		// g_print(".atomix already exists.\n");
-		closedir(ds);
-	}
 
-	/* check if .atomix/themes exists */
-	ds = opendir(themes_dir);
-	if(ds==NULL)
-	{
-		/* try to create one */
-		if(mkdir(themes_dir, 0755)!=0)
-		{
-			g_print("An error occured creating your .atomix/themes dir!\n");
-			return;
+	if (!g_file_test (themes_dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
+		if (mkdir (themes_dir, 0755) != 0) {
+			g_error (_("Couldn't create directory: %s"), themes_dir);
 		}
-		g_print(".atomix/themes created.\n");
-	}
-	else
-	{
-		// g_print(".atomix/themes already exists.\n");
-		closedir(ds);
-	}
+		
+	if (!g_file_test (level_dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
+		if (mkdir (level_dir, 0755) != 0) {
+			g_error (_("Couldn't create directory: %s"), level_dir);
+		}
 
-	/* check if .atomix/levels exists */
-	ds = opendir(levels_dir);
-	if(ds==NULL)
-	{
-		/* try to create one */
-		if(mkdir(levels_dir, 0755)!=0)
-		{
-			g_print("An error occured creating your .atomix/levels dir!\n");
-			return;
-		}
-		g_print(".atomix/levels created.\n");
-	}
-	else
-	{
-		// g_print(".atomix/levels already exists.\n");
-		closedir(ds);
-	}
-    
 	g_free(atomix_dir);
 	g_free(themes_dir);
-	g_free(levels_dir);
+	g_free(level_dir);
 }
 
 static BonoboUIVerb verbs[] = {
@@ -761,7 +721,7 @@ create_mainwin_content (AtomixApp *app)
 	/* create canvas widgets */
 	pf = create_canvas_widget (&app->ca_matrix);
 	goal = create_canvas_widget (&app->ca_goal);
-	gtk_widget_set_size_request (GTK_WIDGET (goal), 200, 50);
+	gtk_widget_set_size_request (GTK_WIDGET (goal), 180, 50);
 
 	/* add playfield canvas to left side */
 	hbox = gtk_hbox_new (FALSE, 6);
@@ -771,8 +731,6 @@ create_mainwin_content (AtomixApp *app)
 	/* create right window side */
 	vbox = gtk_vbox_new (FALSE, 6);
 	gtk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (vbox), FALSE, TRUE, 0);
-
-	g_message ("before frame");
 
 	/* create statistics frame */
 	frame = gtk_frame_new (_("Statistics"));
@@ -807,8 +765,6 @@ create_mainwin_content (AtomixApp *app)
 	gtk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (frame), FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (goal), TRUE, TRUE, 0);
 
-	g_message ("gui fertig");
-	
 	/* show all */
 	gtk_widget_show_all (GTK_WIDGET (hbox));
 	return hbox;
@@ -840,13 +796,10 @@ create_gui (GnomeProgram *prog)
 
 	/* find xml menu description */
 	ui_file = g_build_filename (DATADIR, "atomix", "ui", "atomix-ui.xml", NULL);
-
-	g_print ("ui_file: %s\n", ui_file);
-	if (!ui_file) {
+	if (!g_file_test (ui_file, G_FILE_TEST_EXISTS)) {
 		ui_file = g_build_filename (".", "atomix-ui.xml", NULL);
-		g_print ("ui_file: %s\n", ui_file);
 		if (!g_file_test (ui_file, G_FILE_TEST_EXISTS))
-			g_error (_("XML file %s not found."), "atomix-ui.xml");
+			g_error (_("Couldn't find file: %s"), ui_file);
 	}
 
 	/* set menus */
@@ -889,7 +842,7 @@ main (int argc, char *argv[])
 
 	game_init (app);
 
-	gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 620, 420); 
+	gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 660, 480); 
 	gtk_widget_show (app->mainwin);
 
 	gtk_main ();
