@@ -1,5 +1,15 @@
 2001-12-09  Jens Finke <jens@triq.net>
 
+	* Makefile.am (INCLUDES): Removed ../intl dir from path.  Use
+	intltool to generate atomix-ui.xml from atomix-ui.xml.in.
+
+	* atomix-ui.xml: Renamed to atomix-ui.xml.in
+
+	* main.c: Include config.h
+	(main): Set textdomain codeset to UTF-8.
+	
+2001-12-09  Jens Finke <jens@triq.net>
+
 	* Makefile.am (uidir): Install atomix-ui.xml in
 	$(datadir)/gnome-2.0/ui.
 

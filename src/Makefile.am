@@ -3,11 +3,11 @@ scoredir = $(localstatedir)/games
 uidir = $(datadir)/gnome-2.0/ui
 
 INCLUDES = -Wall \
-	-I$(top_srcdir)/intl \
+	-I$(top_srcdir) \
 	-DDEBUG \
 	$(ATOMIX_CFLAGS) \
 	-DDATADIR=\""$(datadir)"\" \
-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"
+	-DGNOMELOCALEDIR=\""$(datadir)/locale\""
 
 bin_PROGRAMS = atomix
 
@@ -20,8 +20,6 @@ atomix_SOURCES = \
 	goal.c goal.h \
 	goal-view.c goal-view.h \
 	gtk-clock.c gtk-clock.h
-
-ui_DATA = atomix-ui.xml
 
 atomix_DEPENDENCIES = libatomix.a
 
@@ -60,7 +58,12 @@ level_convert_LDADD = \
 	-L$(top_builddir)/src \
 	$(ATOMIX_LIBS)
 
-EXTRA_DIST = atomix-ui.xml
+ui_in_files = atomix-ui.xml.in
+ui_DATA = $(ui_in_files:.xml.in=.xml)
+
+@INTLTOOL_XML_RULE@
+
+EXTRA_DIST = $(ui_in_files)
 
 #install-data-local:
 #	-$(mkinstalldirs) $(DESTDIR)$(scoredir)

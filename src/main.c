@@ -16,9 +16,7 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifdef HAVE_CONFIG_H
-#  include <config.h>
-#endif
+#include "config.h"
 
 #include <sys/types.h>
 #include <dirent.h>
@@ -739,10 +737,10 @@ create_mainwin_content (AtomixApp *app)
 	gtk_table_set_col_spacings (GTK_TABLE (table), 6);
 	gtk_container_set_border_width (GTK_CONTAINER (table), 6);
 	
-	add_statistics_table_entry (table, 0, N_("Level:"), FALSE, &app->lb_level);
-	add_statistics_table_entry (table, 1, N_("Molecule:"), FALSE, &app->lb_name);
-	add_statistics_table_entry (table, 2, N_("Score:"), FALSE, &app->lb_score);
-	add_statistics_table_entry (table, 3, N_("Time:"), TRUE, &app->clock);
+	add_statistics_table_entry (table, 0, _("Level:"), FALSE, &app->lb_level);
+	add_statistics_table_entry (table, 1, _("Molecule:"), FALSE, &app->lb_name);
+	add_statistics_table_entry (table, 2, _("Score:"), FALSE, &app->lb_score);
+	add_statistics_table_entry (table, 3, _("Time:"), TRUE, &app->clock);
 
 	gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (table));
 
@@ -859,11 +857,12 @@ main (int argc, char *argv[])
 {
 	GnomeProgram *prog;
 	GtkWidget *splash;
-
+	
 	gnome_score_init (PACKAGE);
-
-	bindtextdomain (PACKAGE, GNOMELOCALEDIR);
-	textdomain (PACKAGE);
+	
+        bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+        textdomain (GETTEXT_PACKAGE);
 
 	prog = gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE, 
 				   argc, argv, NULL);
