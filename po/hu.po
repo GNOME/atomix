@@ -100,7 +100,7 @@ msgstr "Ú_j játék"
 
 #: src/atomix-ui.xml.in.h:22
 msgid "_Pause game"
-msgstr "_Játék szüneteltetése"
+msgstr "Játék _szüneteltetése"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
