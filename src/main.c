@@ -61,7 +61,6 @@ static void update_menu_item_state (AtomixApp *app);
 static void view_congratulations (void);
 static void calculate_score (AtomixApp *app);
 static void log_score (AtomixApp *app);
-static GtkWidget* get_highscore_widget (AtomixApp *app);
 
 
 /* ===============================================================
@@ -116,10 +115,7 @@ verb_GameUndo_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 static void
 verb_GameScores_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
-	GtkWidget *widget;
-
-	widget = get_highscore_widget ((AtomixApp*) user_data);
-	gtk_widget_show (widget);
+	gnome_scores_display (_("Atomix"), PACKAGE, NULL, 0);
 }
 
 static void
@@ -445,35 +441,7 @@ log_score (AtomixApp *app)
 	if (app->score == 0) return;
 
 	position = gnome_score_log (app->score, NULL, TRUE);
-
-	if (position > 0) {
-		GtkWidget *widget;
-
-		widget = get_highscore_widget (app);
-		gnome_scores_set_current_player (GNOME_SCORES (widget), position);
-		gtk_widget_show (widget);
-	}
-}
-
-static GtkWidget*
-get_highscore_widget (AtomixApp *app)
-{
-	GtkWidget *widget;
-	gint n_scores;
-	gfloat *scores;
-	gchar **names;
-	time_t *times;
-
-	n_scores = gnome_score_get_notable (NULL,
-					    NULL,
-					    &names,
-					    &scores,
-					    &times);
-       
-	widget = gnome_scores_new (n_scores,
-				   names, scores, times,
-				   FALSE);
-	return widget;
+	gnome_scores_display (_("Atomix"), PACKAGE, NULL, position);
 }
 
 static void

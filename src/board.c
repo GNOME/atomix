@@ -27,8 +27,8 @@
 #include "tile.h"
 #include "canvas_helper.h"
 
-#define                  ANIM_TIMEOUT     8  /* time in milliseconds between 
-						two atom movements */
+#define                  ANIM_TIMEOUT     10  /* time in milliseconds between 
+						 two atom movements */
 typedef struct {
 	gint              timeout_id;
 	gint              counter;
@@ -617,6 +617,9 @@ board_handle_item_event (GnomeCanvasItem *item, GdkEvent *event, gpointer data)
 {
 	gboolean just_unselect;
 	guint new_row, new_col;
+
+        /* is currently an object moved? */
+	if (anim_data->timeout_id != -1) return;
 
 	if (event->type == GDK_BUTTON_PRESS) {
 		selector_data->mouse_steering = TRUE;
