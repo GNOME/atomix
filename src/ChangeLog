@@ -1,3 +1,20 @@
+2001-11-20  Jens Finke <jens@triq.net>
+
+	* Checked huge page in. There are three major tile types now:
+	ATOM, WALL and FLOOR. Each tile has a base image which may have
+	overlay and underlay images too. Level descriptions consist of
+	three parts now: environment, scenario and goal. These changes
+	affects nearly all files.
+
+	* level-convert.c: New file, converts levels from the 0.4.3 format
+	to the new format.
+
+	* pf-test.c: New file, checks functions of the playfield data
+	type..
+	
+	* Makefile.am (noinst_PROGRAMS): Added programs level-convert and
+	pf-test.
+	
 2001-11-15  Jens Finke <jens@triq.net>
 
 	* goal-view.c (create_small_item): Scale the pixbuf with

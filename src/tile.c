@@ -27,8 +27,7 @@ static void tile_finalize (GObject *object);
 struct _TilePrivate {
 	TileType type;
 	guint    base_id;
-	gint16   link_id_value;
-        gboolean link_id[TILE_LINK_LAST];
+	GSList   *sub_id_list[2];
 };
 
 
@@ -77,14 +76,13 @@ static void
 tile_init (Tile *tile)
 {
 	TilePrivate *priv;
-	int i;
 
 	priv = g_new0 (TilePrivate, 1);
 	priv->type = TILE_TYPE_UNKNOWN;
 	priv->base_id = 0;
-	priv->link_id_value = 0;
-	for (i = 0; i < TILE_LINK_LAST; i++) priv->link_id[i] = FALSE;
-	
+	priv->sub_id_list[TILE_SUB_OVERLAY] = NULL;
+	priv->sub_id_list[TILE_SUB_UNDERLAY] = NULL;
+
 	tile->priv = priv;
 }
 
@@ -95,6 +93,8 @@ tile_finalize (GObject *object)
 
 	g_message ("Finalize Tile");
 
+	g_slist_free (tile->priv->sub_id_list[TILE_SUB_OVERLAY]);
+	g_slist_free (tile->priv->sub_id_list[TILE_SUB_UNDERLAY]);
 	g_free (tile->priv);
 	tile->priv = NULL;
 }
@@ -116,36 +116,39 @@ tile_new (TileType type)
 Tile*
 tile_copy(Tile *tile)
 {
+	GSList *sub_id;
 	Tile *tile_copy;
-	int i;
+	int id, i;
 	
 	g_return_val_if_fail (IS_TILE (tile), NULL);
 
 	tile_copy = tile_new (tile->priv->type); 
 	
 	tile_copy->priv->base_id = tile->priv->base_id;
-	tile_copy->priv->link_id_value = tile->priv->link_id_value;
-	for (i = 0; i < TILE_LINK_LAST; i++) 
-		tile_copy->priv->link_id[i] = tile->priv->link_id[i];
 
+	for (i = 0; i < 2; i++) {
+		sub_id = tile->priv->sub_id_list[i];
+		for (; sub_id != NULL; sub_id = sub_id->next) {
+			id = GPOINTER_TO_INT (sub_id->data);
+			tile_copy->priv->sub_id_list[i] = 
+				g_slist_append (tile_copy->priv->sub_id_list[i], 
+						GINT_TO_POINTER (id));
+		}
+	}
+		
 	return tile_copy;
 }
 
-gboolean
-tile_has_link (Tile *tile, TileLink link)
+GSList*
+tile_get_sub_ids (Tile *tile, TileSubType sub_type)
 {
-	g_return_val_if_fail (IS_TILE (tile), FALSE);
+	g_return_val_if_fail (IS_TILE (tile), NULL);
 	
-	if (link == TILE_LINK_LAST) return FALSE;
-
-	if (tile->priv->type == TILE_TYPE_MOVEABLE)
-		return tile->priv->link_id[link];
-	else
-		return FALSE;
+	return tile->priv->sub_id_list[sub_type];
 }
 
 gint 
-tile_get_base_id(Tile *tile)
+tile_get_base_id (Tile *tile)
 {
 	g_return_val_if_fail (IS_TILE (tile), 0);
 
@@ -160,45 +163,53 @@ tile_get_tile_type (Tile *tile)
 	return tile->priv->type;
 }
 
-void 
-tile_add_link (Tile *tile, TileLink link)
+static gint
+list_compare_func (gconstpointer a, gconstpointer b)
+{
+	return GPOINTER_TO_INT (a) - GPOINTER_TO_INT (b);
+}
+
+
+void
+tile_add_sub_id (Tile *tile, guint id, TileSubType sub_type)
 {
 	g_return_if_fail (IS_TILE (tile));
-	if (tile->priv->type != TILE_TYPE_MOVEABLE) return;
-	
-	tile->priv->link_id[link] = TRUE;
-	tile->priv->link_id_value |= (1 << link);
+
+	tile->priv->sub_id_list[sub_type] = 
+		g_slist_insert_sorted (tile->priv->sub_id_list[sub_type],
+				       GINT_TO_POINTER (id),
+				       list_compare_func);
 }
 
 
 void 
-tile_remove_link (Tile *tile, TileLink link)
+tile_remove_sub_id (Tile *tile, guint id, TileSubType sub_type)
 {
-	g_return_if_fail (IS_TILE (tile));
-	if (tile->priv->type != TILE_TYPE_MOVEABLE) return;
+	GSList *result;
 
-	tile->priv->link_id[link] = FALSE;
-	tile->priv->link_id_value = tile->priv->link_id_value & ~(1 << link);
+	g_return_if_fail (IS_TILE (tile));
+
+	result = g_slist_find (tile->priv->sub_id_list[sub_type],
+			       GINT_TO_POINTER (id));
+	if (result != NULL)
+		tile->priv->sub_id_list[sub_type] =
+			g_slist_delete_link (tile->priv->sub_id_list[sub_type],
+					     result);
 }
 
 
 void 
-tile_remove_all_links(Tile *tile)
+tile_remove_all_sub_ids (Tile *tile, TileSubType sub_type)
 {
-	int i;
-
 	g_return_if_fail (IS_TILE (tile));
-	if (tile->priv->type != TILE_TYPE_MOVEABLE) return;
 
-	for (i = 0; i < TILE_LINK_LAST; i++) 
-		tile->priv->link_id[i] = FALSE;
-
-	tile->priv->link_id_value = 0;
+	g_slist_free (tile->priv->sub_id_list[sub_type]);
+	tile->priv->sub_id_list[sub_type] = NULL;
 }
 
 
 void 
-tile_set_base_id(Tile *tile, gint id)
+tile_set_base_id (Tile *tile, gint id)
 {
 	g_return_if_fail (IS_TILE (tile));
 	
@@ -208,6 +219,10 @@ tile_set_base_id(Tile *tile, gint id)
 gboolean
 tile_is_equal (Tile *tile, Tile *comp)
 {
+	GSList *elem;
+	GSList *comp_elem;
+	gint i;
+
 	g_return_val_if_fail (IS_TILE (tile), FALSE);
 	g_return_val_if_fail (IS_TILE (comp), FALSE);
 
@@ -217,55 +232,48 @@ tile_is_equal (Tile *tile, Tile *comp)
 	if (tile->priv->base_id != comp->priv->base_id) 
 		return FALSE;
 
-	if (tile->priv->link_id_value != comp->priv->link_id_value) 
-		return FALSE;
+	for (i = 0; i < 2; i++) {
+		elem = tile->priv->sub_id_list[i];
+		comp_elem = comp->priv->sub_id_list[i];
+		for (; elem != NULL && comp_elem != NULL; 
+		     elem = elem->next, comp_elem = comp_elem->next) 
+		{
+			if (GPOINTER_TO_INT (elem->data) != 
+			    GPOINTER_TO_INT (comp_elem->data))
+			    return FALSE;
+		}
+
+		if (elem != NULL || comp_elem != NULL)
+			return FALSE;
+	}
 
 	return TRUE;
 }
 
-gint 
-tile_get_hash_value (Tile *tile)
-{
-	gint value;
-
-	g_return_val_if_fail (IS_TILE (tile), FALSE);
-
-	value = tile->priv->link_id_value;
-	value = value << 4;
-	value += tile->priv->base_id;
-
-	return value;
-}
-
-
-void tile_set_type(Tile *tile, TileType type)
+void tile_set_tile_type (Tile *tile, TileType type)
 {
 	g_return_if_fail (IS_TILE (tile));
 	
 	tile->priv->type = type;
-
-	if (type != TILE_TYPE_MOVEABLE)
-		tile_remove_all_links (tile);
 }
 
 void
-tile_print(Tile *tile)
+tile_print (Tile *tile)
 {
 	gchar *type_str;
-	gint16 link;
 	
 	g_return_if_fail (IS_TILE (tile));
 	
 	switch(tile->priv->type)
 	{
-	case TILE_TYPE_UNKNOWN:
-		type_str = "UKWN"; break;
-	case TILE_TYPE_MOVEABLE:
-		type_str = "MOVE"; break;
-	case TILE_TYPE_OBSTACLE:
-		type_str = "OBST"; break;
-	case TILE_TYPE_DECOR:
-		type_str = "DCOR"; break;
+	case TILE_TYPE_NONE:
+		type_str = "NONE"; break;
+	case TILE_TYPE_ATOM:
+		type_str = "ATOM"; break;
+	case TILE_TYPE_WALL:
+		type_str = "WALL"; break;
+	case TILE_TYPE_FLOOR:
+		type_str = "FLOR"; break;
 	default:
 		type_str = "UKWN"; break;
 	}
@@ -316,6 +324,30 @@ tile_print(Tile *tile)
   Tile load/save functions
 
   ---------------------------------------------------------------*/
+
+static TileType
+string_to_tile_type (gchar *str)
+{
+	TileType tile_type = TILE_TYPE_UNKNOWN;
+	static int prefix_len = 0;
+	if (!prefix_len) prefix_len = strlen ("TILE_TYPE_");
+	
+	g_return_val_if_fail (str != NULL, tile_type);
+
+	str += prefix_len;
+	
+	if (!g_strcasecmp (str, "FLOOR"))
+		tile_type = TILE_TYPE_FLOOR;
+	else if (!g_strcasecmp (str, "WALL"))
+		tile_type = TILE_TYPE_WALL;
+	else if (!g_strcasecmp (str, "ATOM"))
+		tile_type = TILE_TYPE_ATOM;
+	else 
+		tile_type = TILE_TYPE_UNKNOWN;
+	
+	return tile_type;
+}
+
 Tile*
 tile_new_from_xml (xmlNodePtr node)
 {
@@ -323,7 +355,7 @@ tile_new_from_xml (xmlNodePtr node)
 	Tile *tile = NULL;
 	TileType type;
 	gint base_id;
-	TileLink link;
+	gint sub_id;
 	gchar *content;
 
 	g_return_val_if_fail (node != NULL, NULL);
@@ -338,22 +370,29 @@ tile_new_from_xml (xmlNodePtr node)
 		{
 			g_assert (tile == NULL);
 			content = xmlNodeGetContent(child);
-			type = (TileType) atoi (content) - 1;
+			type = string_to_tile_type (content);
 			tile = tile_new (type);
 		}
-		else if(!g_strcasecmp(child->name,"base_id"))
+		else if(!g_strcasecmp(child->name,"base"))
 		{
 			g_assert (tile != NULL);
 			content = xmlNodeGetContent (child);
 			base_id = atoi (content);
 			tile_set_base_id (tile, base_id);
 		}
-		else if(!g_strcasecmp(child->name,"link_id"))
+		else if(!g_strcasecmp(child->name,"underlay"))
 		{
 			g_assert (tile != NULL);
 			content = xmlNodeGetContent (child);
-			link = (TileLink) atoi (content);
-			tile_add_link (tile, link);
+			sub_id = atoi (content);
+			tile_add_sub_id (tile, sub_id, TILE_SUB_UNDERLAY);
+		}
+		else if(!g_strcasecmp(child->name,"overlay"))
+		{
+			g_assert (tile != NULL);
+			content = xmlNodeGetContent (child);
+			base_id = atoi (content);
+			tile_add_sub_id (tile, base_id, TILE_SUB_OVERLAY);
 		}
 		else if (!g_strcasecmp (child->name, "text")) {
 		}

@@ -285,7 +285,8 @@ static void
 game_prepare_level (AtomixApp *app, Level *next_level)
 {
 	PlayField *goal_pf;
-	PlayField *level_pf;
+	PlayField *env_pf;
+	PlayField *sce_pf;
 
 	g_return_if_fail (app != NULL);
 	g_return_if_fail (IS_LEVEL (next_level));
@@ -296,21 +297,23 @@ game_prepare_level (AtomixApp *app, Level *next_level)
 
 	if (app->goal)
 		g_object_unref (app->goal);
-	goal_pf = level_get_goal (app->level);
-	app->goal = goal_new (goal_pf);
+/* 	goal_pf = level_get_goal (app->level); */
+/* 	app->goal = goal_new (goal_pf); */
 
 	/* init board */
 	board_clear ();
-	level_pf = level_get_playfield (app->level);
-	board_init_level (level_pf, app->goal);
+	env_pf = level_get_environment (app->level);
+	sce_pf = level_get_scenario (app->level);
+	board_init_level (env_pf, sce_pf, NULL /* app->goal */);
 
 	/* init goal */
-	goal_view_render (app->goal);
+/* 	goal_view_render (app->goal); */
 
 	update_player_info (app);
 
 	g_object_unref (goal_pf);
-	g_object_unref (level_pf);
+	g_object_unref (env_pf);
+	g_object_unref (sce_pf);
 }
 
 static void 

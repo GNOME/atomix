@@ -375,20 +375,21 @@ load_level (gchar *filename)
 		}			
 		else 
 		{
-			if (!g_strcasecmp (node->name,"playfield"))
+			if (!g_strcasecmp (node->name,"environment"))
 			{
-				level->priv->playfield = 
-					playfield_new_from_xml (node);
+				level->priv->environment = 
+					playfield_new_from_xml (node->xmlChildrenNode);
 			}
 			
-			else if (!g_strcasecmp(node->name,"goal"))
+			else if (!g_strcasecmp (node->name, "goal"))
 			{
-				xmlNodePtr pf_node;
-				for (pf_node = node->xmlChildrenNode;
-				     g_strcasecmp (pf_node->name, "playfield"); 
-				     pf_node = pf_node->next);
 				level->priv->goal = 
-					playfield_new_from_xml (pf_node);
+					playfield_new_from_xml (node->xmlChildrenNode);
+			}
+			else if (!g_strcasecmp (node->name, "scenario"))
+			{
+				level->priv->scenario = 
+					playfield_new_from_xml (node->xmlChildrenNode);
 			}
 			else if (!g_strcasecmp (node->name, "text")) {
 			}

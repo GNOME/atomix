@@ -32,12 +32,8 @@ static void search_themes_in_dir (ThemeManager *tm, const gchar *dir_path);
 static void add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath);
 static void add_theme_to_list (gchar* key, gpointer value, GList **list);
 static Theme* load_theme (gchar *theme_dir);
-static void handle_link_image_node (Theme *theme, xmlNodePtr node);
-static void handle_base_image_node (Theme *theme, xmlNodePtr node);
+static void handle_tile_type_node (Theme *theme, xmlNodePtr node, TileType type);
 static gchar* lookup_theme_name (gchar *theme_file);
-static TileLink string_to_tile_link (gchar *str);
-static TileType string_to_tile_type (gchar *str);
-
 
 static void theme_manager_class_init (GObjectClass *class);
 static void theme_manager_init (ThemeManager *tm);
@@ -264,7 +260,6 @@ load_theme (gchar *theme_dir)
 	ThemePrivate *priv;
 	gchar *theme_file;
 	gchar *prop_value;
-	guint revision = 3;
 	xmlDocPtr doc;
 	xmlNodePtr node;
 
@@ -300,20 +295,20 @@ load_theme (gchar *theme_dir)
 		}
 		else 
 		{	
-			if(!g_strcasecmp (node->name, "revision"))
+			if (!g_strcasecmp (node->name, "floor"))
 			{
-				/* handle revision node */
-				gchar *content = xmlNodeGetContent(node);
-				revision = atoi(content);
-				g_free(content);
+				handle_tile_type_node (theme, node->xmlChildrenNode,
+						       TILE_TYPE_FLOOR);
 			}
-			else if(!g_strcasecmp (node->name, "baseimages"))
+			else if (!g_strcasecmp (node->name, "atom"))
 			{
-				handle_base_image_node (theme, node->xmlChildrenNode);
+				handle_tile_type_node (theme, node->xmlChildrenNode,
+						       TILE_TYPE_ATOM);
 			}
-			else if (!g_strcasecmp (node->name, "linkimages"))
+			else if (!g_strcasecmp (node->name, "wall"))
 			{
-				handle_link_image_node (theme, node->xmlChildrenNode);
+				handle_tile_type_node (theme, node->xmlChildrenNode,
+						       TILE_TYPE_WALL);
 			}
 			else if (!g_strcasecmp (node->name,"animstep"))
 			{
@@ -329,11 +324,11 @@ load_theme (gchar *theme_dir)
 			{
 				/* handle rgb color node */
 				prop_value = xmlGetProp(node, "red");
-				priv->bg_color.red = atoi(prop_value);
+				priv->bg_color.red = (atof(prop_value)/255.0) * 65536;
 				prop_value = xmlGetProp(node, "green");
-				priv->bg_color.green = atoi(prop_value);
+				priv->bg_color.green = (atof(prop_value)/255.0) * 65536;
 				prop_value = xmlGetProp(node, "blue");
-				priv->bg_color.blue = atoi(prop_value);
+				priv->bg_color.blue = (atof(prop_value)/255.0) * 65536;
 			}
 			else if (!g_strcasecmp(node->name,"selector"))
 			{
@@ -358,65 +353,40 @@ load_theme (gchar *theme_dir)
 }
 
 static void
-handle_base_image_node (Theme *theme, xmlNodePtr node)
+handle_tile_type_node (Theme *theme, xmlNodePtr node, TileType type)
 {
-	TileType tile_type;
 	gint id;
 	gchar *src;
 	gchar *name;
+
+	g_return_if_fail (IS_THEME (theme));
 	
 	for (; node != NULL; node = node->next) {
-		if (!g_strcasecmp (node->name, "bimage")) {
-			tile_type = string_to_tile_type (xmlGetProp (node, "type"));
+		if (!g_strcasecmp (node->name, "base")) {
 			id = atoi (xmlGetProp (node, "id"));
-			src = g_build_filename (theme->priv->path, xmlGetProp (node, "src"), NULL);
+			src = g_build_filename (theme->priv->path, 
+						xmlGetProp (node, "src"), NULL);
 			name = xmlGetProp (node, "name");
 		
-			theme_add_base_image_with_id (theme, name, src, tile_type, id);
+			theme_add_base_image_with_id (theme, name, src, type, id);
 			g_free (src);
 		}
-		else if (!g_strcasecmp (node->name, "text")) {
-		}
-		else 
-			g_warning("Unknown theme tag, ignoring <%s>.", node->name);
-	}
-}
-
-static TileType
-string_to_tile_type (gchar *str)
-{
-	TileType tile_type = TILE_TYPE_UNKNOWN;
-	static int prefix_len = 0;
-	if (!prefix_len) prefix_len = strlen ("TILE_TYPE_");
-	
-	g_return_val_if_fail (str != NULL, tile_type);
-
-	str += prefix_len;
-
-	if (!g_strcasecmp (str, "OBSTACLE"))
-		tile_type = TILE_TYPE_OBSTACLE;
-	else if (!g_strcasecmp (str, "MOVEABLE"))
-		tile_type = TILE_TYPE_MOVEABLE;
-	else if (!g_strcasecmp (str, "DECOR"))
-		tile_type = TILE_TYPE_DECOR;
-	
-	return tile_type;
-}
-
-static void
-handle_link_image_node (Theme *theme, xmlNodePtr node)
-{
-	TileLink tile_link;
-	gchar *src;
-	gchar *name;
-	
-	for (; node != NULL; node = node->next ) {
-		if (!g_strcasecmp (node->name, "limage")) {		
-			tile_link = string_to_tile_link (xmlGetProp (node, "type"));
-			src = g_build_filename (theme->priv->path, xmlGetProp (node, "src"), NULL);
+		else if (!g_strcasecmp (node->name, "underlay")) {
+			id = atoi (xmlGetProp (node, "id"));
+			src = g_build_filename (theme->priv->path, 
+						xmlGetProp (node, "src"), NULL);
 			name = xmlGetProp (node, "name");
-			
-			theme_add_link_image (theme, name, src, tile_link);
+		
+			theme_add_sub_image_with_id (theme, name, src, type, TRUE, id);
+			g_free (src);
+		}
+		else if (!g_strcasecmp (node->name, "overlay")) {
+			id = atoi (xmlGetProp (node, "id"));
+			src = g_build_filename (theme->priv->path, 
+						xmlGetProp (node, "src"), NULL);
+			name = xmlGetProp (node, "name");
+		
+			theme_add_sub_image_with_id (theme, name, src, type, FALSE, id);
 			g_free (src);
 		}
 		else if (!g_strcasecmp (node->name, "text")) {
@@ -426,52 +396,6 @@ handle_link_image_node (Theme *theme, xmlNodePtr node)
 	}
 }
 
-static TileLink
-string_to_tile_link (gchar *str)
-{
-	TileLink link = TILE_LINK_LAST;
-	static int prefix_len = 0;
-	if (!prefix_len) prefix_len = strlen ("TILE_LINK_");
-	
-	str += prefix_len;
-	
-	switch (str[0]) {
-	case 'T':
-		if (!g_strcasecmp (str, "TOP"))
-			link = TILE_LINK_TOP;
-		else if (!g_strcasecmp (str, "TOP_RIGHT"))
-			link = TILE_LINK_TOP_RIGHT;
-		else if (!g_strcasecmp (str, "TOP_LEFT"))
-			link = TILE_LINK_TOP_LEFT;
-		else if (!g_strcasecmp (str, "TOP_DOUBLE"))
-			link = TILE_LINK_TOP_DOUBLE;
-		break;
-	case 'R':
-		if (!g_strcasecmp (str, "RIGHT"))
-			link = TILE_LINK_RIGHT;
-		else if (!g_strcasecmp (str, "RIGHT_DOUBLE"))
-			link = TILE_LINK_RIGHT_DOUBLE;
-		break;
-	case 'L':
-		if (!g_strcasecmp (str, "LEFT"))
-			link = TILE_LINK_LEFT;
-		else if (!g_strcasecmp (str, "LEFT_DOUBLE"))
-			link = TILE_LINK_LEFT_DOUBLE;
-		break;
-	case 'B':
-		if (!g_strcasecmp (str, "BOTTOM"))
-			link = TILE_LINK_BOTTOM;
-		else if (!g_strcasecmp (str, "BOTTOM_RIGHT"))
-			link = TILE_LINK_BOTTOM_RIGHT;
-		else if (!g_strcasecmp (str, "BOTTOM_LEFT"))
-			link = TILE_LINK_BOTTOM_LEFT;
-		else if (!g_strcasecmp (str, "BOTTOM_DOUBLE"))
-			link = TILE_LINK_BOTTOM_DOUBLE;
-		break;		
-	}
-
-	return link;
-}
 
 static gchar*
 lookup_theme_name (gchar *theme_file)

@@ -10,7 +10,7 @@ INCLUDES = -Wall \
 
 bin_PROGRAMS = atomix
 
-noinst_PROGRAMS = pf-test
+noinst_PROGRAMS = pf-test level-convert
 
 atomix_SOURCES = \
 	main.c main.h global.h \
@@ -51,6 +51,15 @@ pf_test_LDADD = \
 	-L$(top_builddir)/src \
 	$(ATOMIX_LIBS)
 
+level_convert_SOURCES = \
+	playfield.h playfield.c \
+	tile.c tile.h \
+	level.c level.h \
+	level-convert.c
+
+level_convert_LDADD = \
+	-L$(top_builddir)/src \
+	$(ATOMIX_LIBS)
 
 install-data-local:
 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)

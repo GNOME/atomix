@@ -45,7 +45,9 @@ GType level_get_type (void);
 
 gchar* level_get_name (Level *level);
 
-PlayField* level_get_playfield (Level *level);
+PlayField* level_get_environment (Level *level);
+
+PlayField* level_get_scenario (Level *level);
 
 PlayField* level_get_goal (Level *level);
 

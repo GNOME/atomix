@@ -41,23 +41,30 @@ struct _ThemePrivate
 				         animation step */
 	GdkColor      bg_color;       /* background color */
 
-	GHashTable    *image_list[TILE_TYPE_UNKNOWN]; /* the different image lists */
-	GHashTable    *link_image_list; /* the different link images */
-	ThemeImage    *selector;      /* selector image */
+	GHashTable    *base_list [TILE_TYPE_LAST]; /* the different image lists */
+	GHashTable    *sub_list [2][TILE_TYPE_LAST];  /* the different sub  images */
+	gint          base_last_id [TILE_TYPE_LAST];
+	gint          sub_last_id [2][TILE_TYPE_LAST];
+	ThemeImage    *selector;                   /* selector image */
 		
-	/* the following fields are only used by atomixed */
-	gboolean      modified;       /* whether the theme is modified */
-	gboolean      need_update;    /* whether the referenced levels needs an update */
-	gint          last_id[TILE_TYPE_UNKNOWN];  /* the appropriate last id for each image list */
 };
 
 
 Theme* theme_new (void);
 
-void theme_add_link_image (Theme *theme, 
-			   const gchar *name, 
-			   const gchar *file, 
-			   TileLink link);
+void theme_add_sub_image (Theme *theme, 
+			  const gchar *name, 
+			  const gchar *file, 
+			  TileType tile_type,
+			  gboolean underlay);
+
+void theme_add_sub_image_with_id (Theme *theme, 
+				  const gchar *name, 
+				  const gchar *file, 
+				  TileType tile_type,
+				  gboolean underlay,
+	                          guint id);
+
 
 void theme_add_base_image (Theme *theme, 
 			   const gchar *name, 
@@ -68,7 +75,7 @@ void theme_add_base_image_with_id (Theme *theme,
 				   const gchar *name, 
 				   const gchar *file, 
 				   TileType tile_type,
-				   int id);
+				   guint id);
 
 void theme_set_selector_image (Theme *theme, const gchar *file_name);
 

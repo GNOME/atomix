@@ -61,31 +61,4 @@ void       theme_get_tile_size        (Theme *theme,
 gchar*     theme_get_name (Theme *theme);
 gint       theme_get_animstep (Theme *theme);
 
-/* editor functions */
-/* these aren't used yet */
-#if 0
-void theme_set_path(Theme* theme, gchar* path);
-
-void theme_set_selector_image(Theme *theme, const gchar *file_name);
-
-ThemeElement* theme_add_image(Theme *theme, const gchar *name, 
-			      const gchar *file, ThemeImageKind kind);
-
-void theme_remove_element(Theme *theme, ThemeImageKind kind, const ThemeElement *element);
-
-gboolean
-theme_change_element_id(Theme *theme, ThemeImageKind kind, ThemeElement *element, gint id);
-
-gboolean theme_does_id_exist(Theme *theme, ThemeImageKind kind, gint id);
-
-Theme* theme_load_xml(char* name);
-
-void theme_save_xml(Theme *theme, gchar *filename);
-
-void theme_create_hash_table(void);
-
-void theme_destroy_hash_table(void);
-
-#endif
-
 #endif /* _ATOMIX_THEME_H_ */

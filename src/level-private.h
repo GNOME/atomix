@@ -23,8 +23,9 @@
 
 struct _LevelPrivate {
 	gchar*       name;         /* name of the level */
+	PlayField*   environment; 
+	PlayField*   scenario;    /* starting situation */
 	PlayField*   goal;         /* determines the end of the level */
-	PlayField*   playfield;    /* starting situation */
 
 	/* the following fields are only used by atomixed */
 	gchar *file_name;          /* file name of the level */

@@ -88,8 +88,9 @@ level_init (Level *level)
 
 	priv->name = NULL;
 	priv->goal = NULL;
-	priv->playfield = 0;
-	priv->file_name = 0;
+	priv->environment = NULL;
+	priv->scenario = NULL;
+	priv->file_name = NULL;
 	priv->modified = FALSE;
 
 	level->priv = priv;
@@ -107,8 +108,10 @@ level_finalize (GObject *object)
 		g_free (priv->name);
 	if (priv->goal)
 		g_object_unref (priv->goal);
-	if (priv->playfield)
-		g_object_unref (priv->playfield);
+	if (priv->environment)
+		g_object_unref (priv->environment);
+	if (priv->scenario)
+		g_object_unref (priv->scenario);
 	if (priv->file_name)
 		g_free (priv->file_name);
 
@@ -135,11 +138,11 @@ level_get_name (Level *level)
 }
 
 PlayField* 
-level_get_playfield (Level *level)
+level_get_environment (Level *level)
 {
 	g_return_val_if_fail (IS_LEVEL (level), NULL);
-	g_object_ref (level->priv->playfield);
-	return level->priv->playfield;
+	g_object_ref (level->priv->environment);
+	return level->priv->environment;
 }
 
 PlayField* 
@@ -150,6 +153,13 @@ level_get_goal (Level *level)
 	return level->priv->goal;
 }
 
+PlayField* 
+level_get_scenario (Level *level)
+{
+	g_return_val_if_fail (IS_LEVEL (level), NULL);
+	g_object_ref (level->priv->scenario);
+	return level->priv->scenario;
+}
 
 
 #if 0

@@ -33,7 +33,7 @@ enum
 
 void board_init (Theme *theme, GnomeCanvas *canvas);
 
-void board_init_level (PlayField *pf, Goal *goal);
+void board_init_level (PlayField *env, PlayField *sce, Goal *goal);
 
 void board_destroy(void);
 

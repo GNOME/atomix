@@ -19,6 +19,7 @@
 
 Tile* get_tile(PlayField *pf, gint row, gint col);
 void set_tile(PlayField *pf, gint row, gint col, Tile *tile);
+static void read_tile (PlayField *pf, guint row, guint col, xmlNodePtr node);
 
 static GObjectClass     *parent_class = NULL;
 
@@ -423,53 +424,71 @@ playfield_print(PlayField* pf)
 }
 
 PlayField* 
-playfield_new_from_xml (xmlNodePtr pf_node)
+playfield_new_from_xml (xmlNodePtr node)
 {
-	xmlNodePtr tile_node;
+	xmlNodePtr child_node;
 	PlayField *pf;
 	gint row, col;
-	gchar *prop_value;
 	gint n_rows, n_cols;
-	Tile *tile;
+	gchar *prop_value;
+	gchar *content;
 
-	g_return_val_if_fail (pf_node != NULL, NULL);
-	g_return_val_if_fail (!g_strcasecmp (pf_node->name, "playfield"), NULL);
+	g_return_val_if_fail (node != NULL, NULL);
 
 	pf = playfield_new ();
-    	row = col = 0;
+    	row = 0; col = 0;
+	n_rows = 0; n_cols = 0;
 		
-	/* increase matrix size  */
-	prop_value = xmlGetProp(pf_node, "rows");
-	n_rows = atoi (prop_value);
-	prop_value = xmlGetProp(pf_node, "cols");
-	n_cols = atoi (prop_value);
-	
-	playfield_set_matrix_size (pf, n_rows, n_cols);
-	
 	/* reading non empty tiles */
-	for (tile_node = pf_node->xmlChildrenNode;
-	     tile_node != NULL; tile_node = tile_node->next)
+	for (; node != NULL; node = node->next)
 	{
-		if (!g_strcasecmp(tile_node->name, "tile")) {
-			prop_value = xmlGetProp (tile_node, "row");
-			row = atoi (prop_value);
-			prop_value = xmlGetProp (tile_node, "col");
-			col = atoi (prop_value);
-			
-			tile = tile_new_from_xml (tile_node);
-			playfield_set_tile (pf, row, col, tile);
-			g_object_unref (tile);
+		if (!g_strcasecmp (node->name, "n_rows")) {
+			content = xmlNodeGetContent (node);
+			n_rows = atoi (content);
 		}
-		else if (!g_strcasecmp (tile_node->name, "text")) {
+		else if (!g_strcasecmp (node->name, "n_columns")) {
+			content = xmlNodeGetContent (node);
+			n_cols = atoi (content);
+			playfield_set_matrix_size (pf, n_rows, n_cols);
+		}
+		else if (!g_strcasecmp (node->name, "row")) {
+			prop_value = xmlGetProp (node, "no");
+			row = atoi (prop_value);
+			for (child_node = node->xmlChildrenNode;
+			     child_node != NULL; child_node = child_node->next)
+			{
+				if (!g_strcasecmp (child_node->name, "col")) {
+					prop_value = xmlGetProp (child_node, "no");
+					col = atoi (prop_value);
+					read_tile (pf, row, col, child_node->xmlChildrenNode);
+				}
+			}
+		}
+		else if (!g_strcasecmp (node->name, "text")) {
 		}
 		else {
 			g_warning("Skipping unexpected Tag %s.", 
-				  tile_node->name);
+				  node->name);
 		}
 	}
 
 	return pf;
 }
+
+static void
+read_tile (PlayField *pf, guint row, guint col, xmlNodePtr node)
+{
+	Tile *tile;
+
+	for (; node != NULL; node = node->next) {
+		if (!g_strcasecmp (node->name, "tile")) {
+			tile = tile_new_from_xml (node);
+			playfield_set_tile (pf, row, col, tile);
+			g_object_unref (tile);
+		}
+	}
+}
+
 
 #if 0
 /*

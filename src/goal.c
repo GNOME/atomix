@@ -91,7 +91,7 @@ goal_init (Goal *goal)
 
 	priv = g_new0 (GoalPrivate, 1);
 	priv->pf = NULL;
-	priv->index = 0;
+	priv->index = NULL;
 
 	goal->priv = priv;
 }
@@ -136,13 +136,13 @@ goal_new (PlayField *pf)
 			tile = playfield_get_tile(pf, row, col);
 
 			if (tile &&
-			    tile_get_tile_type (tile) == TILE_TYPE_MOVEABLE)
+			    tile_get_tile_type (tile) == TILE_TYPE_ATOM)
 			{
 				gint tile_id;
 				TileOffset *off;
 				GSList *list = NULL;
 
-				tile_id = tile_get_hash_value (tile);
+				tile_id = 10; /* tile_get_hash_value (tile); */
 				
 				off = g_new0 (TileOffset, 1);
 				off->horiz = col;
@@ -179,7 +179,7 @@ destroy_hash_value (gpointer value)
 	GSList *it;
 
 	for (it = list; it != NULL; it = it->next)
-		g_free (it->data);
+		if (it->data) g_free (it->data);
 
 	g_slist_free (list);
 }
@@ -230,7 +230,7 @@ goal_reached (Goal* goal, PlayField* pf, guint row_anchor, guint col_anchor)
 	tile = playfield_get_tile (pf, row_anchor, col_anchor);
 	if (tile == NULL) return FALSE;
 
-	tile_id = tile_get_hash_value (tile);
+	tile_id = 10; /* tile_get_hash_value (tile); */
 	list = (GSList*) g_hash_table_lookup (goal->priv->index, GINT_TO_POINTER (tile_id));
     
 	for (it = list; it != NULL && !result; it = it->next) {
@@ -274,7 +274,7 @@ compare_playfield_with_goal (Goal *goal, PlayField *pf, guint start_row, guint s
 			pf_tile = playfield_get_tile (pf, pf_row , pf_col);
 
 			if (goal_tile) {
-				if (tile_get_tile_type (goal_tile) == TILE_TYPE_MOVEABLE)
+				if (tile_get_tile_type (goal_tile) == TILE_TYPE_ATOM)
 				{
 					if (!pf_tile) 
 						result = FALSE;

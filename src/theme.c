@@ -27,6 +27,8 @@
   ---------------------------------------------------------------*/
 
 static void destroy_theme_image (gpointer data);
+static void add_theme_image_to_hashtable (GHashTable **hash_table, ThemeImage *ti);
+
 
 static void theme_class_init (GObjectClass *class);
 static void theme_init (Theme *theme);
@@ -80,7 +82,7 @@ static void
 theme_init (Theme *theme)
 {
 	ThemePrivate *priv;
-	gint i;
+	gint i, j;
 
 	priv = g_new0 (ThemePrivate, 1);
 
@@ -92,11 +94,11 @@ theme_init (Theme *theme)
 	priv->bg_color.red  = 0;
 	priv->bg_color.green = 0;
 	priv->bg_color.blue = 0;
-	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) priv->image_list[i] = NULL;
+	for (i = 0; i < TILE_TYPE_LAST; i++) priv->base_list[i] = NULL;
+	for (i = 0; i < TILE_TYPE_LAST; i++) for (j = 0; j < 2; j++) priv->sub_list[j][i] = NULL;
 	priv->selector = NULL;
-	priv->modified = FALSE;
-	priv->need_update = FALSE;
-	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) priv->last_id[i] = 0; 
+	for (i = 0; i < TILE_TYPE_LAST; i++) priv->base_last_id[i] = 0; 
+	for (i = 0; i < TILE_TYPE_LAST; i++) for (j = 0; j < 2; j++) priv->sub_last_id[j][i] = 0; 
 	
 	theme->priv = priv;
 }
@@ -104,7 +106,7 @@ theme_init (Theme *theme)
 static void 
 theme_finalize (GObject *object)
 {
-	int i;
+	int i, j;
 	ThemePrivate *priv;
 	Theme* theme = THEME (object);
 	
@@ -121,16 +123,17 @@ theme_finalize (GObject *object)
 		g_free (priv->path);
 	priv->path = NULL;
 	
-	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) {
-		if (priv->image_list[i]) {
-			g_hash_table_destroy (priv->image_list[i]);
-			priv->image_list[i] = NULL;
+	for (i = 0; i < TILE_TYPE_LAST; i++) {
+		if (priv->base_list[i]) {
+			g_hash_table_destroy (priv->base_list[i]);
+			priv->base_list[i] = NULL;
 		}
-	}
-
-	if (priv->link_image_list) {
-		g_hash_table_destroy (priv->link_image_list);
-		priv->link_image_list = NULL;
+		for (j = 0; j < 2; j++) {
+			if (priv->sub_list[j][i]) {
+				g_hash_table_destroy (priv->sub_list[j][i]);
+				priv->sub_list[j][i] = NULL;
+			}
+		}
 	}
 
 	if (priv->selector)
@@ -145,26 +148,7 @@ Theme*
 theme_new (void)
 {
 	Theme *theme;
-	ThemePrivate *priv;
-	gint i;
 	theme = THEME (g_object_new (THEME_TYPE, NULL));
-	
-	priv = theme->priv;
-	
-	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) {
-		priv->image_list[i] = 
-			g_hash_table_new_full ((GHashFunc) g_direct_hash, 
-					       (GCompareFunc) g_direct_equal,
-					       (GDestroyNotify) NULL,
-					       (GDestroyNotify) destroy_theme_image);
-	}
-
-	priv->link_image_list = 
-		g_hash_table_new_full ((GHashFunc) g_direct_hash, 
-				       (GCompareFunc) g_direct_equal,
-				       (GDestroyNotify) NULL,
-				       (GDestroyNotify) destroy_theme_image);
-	
 	return theme;
 }
 
@@ -230,45 +214,45 @@ get_theme_image_pixbuf (ThemeImage *ti)
 }
 
 static GdkPixbuf*
-create_link_image (Theme *theme, Tile *tile)
+create_sub_images (Theme *theme, Tile *tile, TileSubType sub_type)
 {
 	ThemePrivate *priv;
-	gint link;
+	GSList *elem;
 	ThemeImage *ti;
 	GdkPixbuf *pixbuf = NULL;
-	GdkPixbuf *link_pb;
+	GdkPixbuf *pb;
 
 	g_return_val_if_fail(IS_THEME (theme), NULL);
 	g_return_val_if_fail(IS_TILE (tile), NULL);
 
 	priv = theme->priv;
 
-	for (link = 0; link < TILE_LINK_LAST; link++) {
-		if (tile_has_link (tile, link)) {
+	elem = tile_get_sub_ids (tile, sub_type);
 
-			ti = g_hash_table_lookup (priv->link_image_list, 
-						    GINT_TO_POINTER (link));
-
-			link_pb = get_theme_image_pixbuf (ti);
-			if (link_pb == NULL) {
-				g_warning ("Couldn't load link image: %i", link);
-				continue;
-			}
-
-			if (pixbuf == NULL)
-				pixbuf = gdk_pixbuf_copy (link_pb);
-			
-			else {
-				gdk_pixbuf_composite (link_pb,
-						      pixbuf,
-						      0, 0,
-						      gdk_pixbuf_get_width (pixbuf),
-						      gdk_pixbuf_get_height (pixbuf),
-						      0.0, 0.0, 1.0, 1.0,
-						      GDK_INTERP_BILINEAR, 255);
-			}
-			gdk_pixbuf_unref (link_pb);
+	for (; elem != NULL; elem = elem->next) {
+		ti = g_hash_table_lookup (priv->sub_list[sub_type][tile_get_tile_type(tile)], 
+					  elem->data);
+		
+		pb = get_theme_image_pixbuf (ti);
+		if (pb == NULL) {
+			g_warning ("Couldn't load sub image: %i", 
+				   GPOINTER_TO_INT (elem->data));
+			continue;
 		}
+		
+		if (pixbuf == NULL)
+			pixbuf = gdk_pixbuf_copy (pb);
+		
+		else {
+			gdk_pixbuf_composite (pb,
+					      pixbuf,
+					      0, 0,
+					      gdk_pixbuf_get_width (pixbuf),
+					      gdk_pixbuf_get_height (pixbuf),
+					      0.0, 0.0, 1.0, 1.0,
+					      GDK_INTERP_BILINEAR, 255);
+		}
+		gdk_pixbuf_unref (pb);
 	}
 
 	return pixbuf;
@@ -282,8 +266,10 @@ theme_get_tile_image (Theme* theme, Tile *tile)
 	TileType type; 
 	gint image_id;
 	ThemeImage *timg = NULL;
-	GdkPixbuf *link_pb = NULL;
+	GdkPixbuf *underlay_pb = NULL;
+	GdkPixbuf *overlay_pb = NULL;
 	GdkPixbuf *base_pb = NULL;
+	GdkPixbuf *result = NULL;
 
 	g_return_val_if_fail(IS_THEME (theme), NULL);
 	g_return_val_if_fail(IS_TILE (tile), NULL);
@@ -291,27 +277,62 @@ theme_get_tile_image (Theme* theme, Tile *tile)
 	priv = theme->priv;
 
 	type = tile_get_tile_type (tile);
-	image_id = tile_get_base_id(tile);
+	image_id = tile_get_base_id (tile);
 
-	link_pb = create_link_image (theme, tile);
-	
-	timg = g_hash_table_lookup (priv->image_list[type], GINT_TO_POINTER (image_id));
+	underlay_pb = create_sub_images (theme, tile, TILE_SUB_UNDERLAY);
+	overlay_pb = create_sub_images (theme, tile, TILE_SUB_OVERLAY);
 
+	timg = g_hash_table_lookup (priv->base_list[type], GINT_TO_POINTER (image_id));
 	base_pb = get_theme_image_pixbuf (timg);
+	g_assert (base_pb != NULL);
 
-	if (link_pb != NULL) {
+	if (underlay_pb && overlay_pb) {
+		result = gdk_pixbuf_copy (underlay_pb);
 		gdk_pixbuf_composite (base_pb,
-				      link_pb,
+				      result,
 				      0, 0,
-				      gdk_pixbuf_get_width (link_pb),
-				      gdk_pixbuf_get_height (link_pb),
+				      gdk_pixbuf_get_width (result),
+				      gdk_pixbuf_get_height (result),
 				      0.0, 0.0, 1.0, 1.0,
 				      GDK_INTERP_BILINEAR, 255);
-		gdk_pixbuf_unref (base_pb);
-		return link_pb;
+		gdk_pixbuf_composite (overlay_pb,
+				      result,
+				      0, 0,
+				      gdk_pixbuf_get_width (result),
+				      gdk_pixbuf_get_height (result),
+				      0.0, 0.0, 1.0, 1.0,
+				      GDK_INTERP_BILINEAR, 255);	
+		gdk_pixbuf_unref (overlay_pb);
+		gdk_pixbuf_unref (underlay_pb);
 	}
-
-	return base_pb;
+	else if (!underlay_pb && overlay_pb) {
+		result = gdk_pixbuf_copy (base_pb);
+		gdk_pixbuf_composite (overlay_pb,
+				      result,
+				      0, 0,
+				      gdk_pixbuf_get_width (result),
+				      gdk_pixbuf_get_height (result),
+				      0.0, 0.0, 1.0, 1.0,
+				      GDK_INTERP_BILINEAR, 255);	
+		gdk_pixbuf_unref (overlay_pb);
+	}
+	else if (underlay_pb && !overlay_pb) {
+		result = gdk_pixbuf_copy (underlay_pb);
+		gdk_pixbuf_composite (base_pb,
+				      result,
+				      0, 0,
+				      gdk_pixbuf_get_width (result),
+				      gdk_pixbuf_get_height (result),
+				      0.0, 0.0, 1.0, 1.0,
+				      GDK_INTERP_BILINEAR, 255);	
+		gdk_pixbuf_unref (underlay_pb);
+	}
+	else
+		result = gdk_pixbuf_ref (base_pb);
+	
+	gdk_pixbuf_unref (base_pb);
+		
+	return result;
 }
 
 GdkPixbuf* theme_get_selector_image(Theme *theme)
@@ -348,7 +369,7 @@ theme_add_base_image (Theme *theme,
 	g_return_if_fail (IS_THEME (theme));
 
 	theme_add_base_image_with_id (theme, name, file, tile_type,
-				      theme->priv->last_id[tile_type] + 1);
+				      theme->priv->base_last_id[tile_type] + 1);
 }
 
 
@@ -357,7 +378,7 @@ theme_add_base_image_with_id (Theme *theme,
 			      const gchar *name, 
 			      const gchar *file, 
 			      TileType tile_type,
-			      int id)
+			      guint id)
 {
 	ThemePrivate *priv;
 	ThemeImage *ti;
@@ -377,13 +398,7 @@ theme_add_base_image_with_id (Theme *theme,
 	ti->loading_failed = FALSE;
 	ti->image = NULL;     
 
-        if(g_hash_table_lookup (priv->image_list[tile_type], GINT_TO_POINTER (id)) != NULL)
-		id = priv->last_id[tile_type] + 1;
-
-	/* insert into hash table */
-	g_hash_table_insert(priv->image_list[tile_type], 
-			    GINT_TO_POINTER(id),
-			    (gpointer) ti);
+	add_theme_image_to_hashtable (&priv->base_list[tile_type], ti);
 
 	/* Obtain the width and height of the images. 
 	 * We assume here that all images of this theme have
@@ -401,43 +416,61 @@ theme_add_base_image_with_id (Theme *theme,
 			ti->loading_failed = TRUE;
 	}
 
-	priv->last_id[tile_type] = MAX (priv->last_id[tile_type], id);
+	priv->base_last_id[tile_type] = MAX (priv->base_last_id[tile_type], id);
+}
+
+static void
+add_theme_image_to_hashtable (GHashTable **hash_table, ThemeImage *ti)
+{
+	if (*hash_table == NULL)
+		*hash_table = g_hash_table_new_full ((GHashFunc) g_direct_hash, 
+						     (GCompareFunc) g_direct_equal,
+						     (GDestroyNotify) NULL,
+						     (GDestroyNotify) destroy_theme_image);
+
+        if (g_hash_table_lookup (*hash_table, GINT_TO_POINTER (ti->id)) == NULL) {
+		g_hash_table_insert(*hash_table, 
+				    GINT_TO_POINTER (ti->id),
+				    (gpointer) ti);
+	}
+	else {
+		g_warning ("Couldn't register file %s, id %i already in use.",
+			   ti->file, ti->id);
+	}
 }
 
 void
-theme_add_link_image (Theme *theme, 
-		      const gchar *name, 
-		      const gchar *file, 
-		      TileLink link)
+theme_add_sub_image_with_id (Theme *theme, 
+			     const gchar *name, 
+			     const gchar *file, 
+			     TileType type,
+			     gboolean underlay,
+			     guint id)
 {
 	ThemePrivate *priv;
 	ThemeImage *ti;
+	gint layer;
 	
 	g_return_if_fail (IS_THEME (theme));
 	g_return_if_fail (name != NULL);
 	g_return_if_fail (file != NULL);
 	
 	priv = theme->priv;
-
+	layer = underlay ? 1 : 0;
 	
-        ti = g_hash_table_lookup (priv->link_image_list, GINT_TO_POINTER (link));
-	if (ti != NULL)
-		destroy_theme_image (ti);
-
 	/* create new theme element */
 	ti = g_new0 (ThemeImage, 1);
 
-	ti->id = link;
+	ti->id = id;
 	ti->file = g_strdup(file);
 	ti->name = g_strdup(name);
 	ti->loading_failed = FALSE;
 	ti->image = NULL;     
 
-
-	/* insert into hash table */
-	g_hash_table_insert(priv->link_image_list, 
-			    GINT_TO_POINTER(link),
-			    (gpointer) ti);
+	add_theme_image_to_hashtable (&priv->sub_list [layer][type], ti);
+	
+	priv->sub_last_id[layer][type] = 
+		MAX (priv->sub_last_id[layer][type], id);	
 }
 
 
@@ -462,174 +495,6 @@ theme_set_selector_image(Theme *theme, const gchar *file_name)
 }
 
 #if 0
-
-void 
-theme_remove_element(Theme *theme, ThemeImageKind kind, const ThemeElement *element)
-{
-	g_return_if_fail(theme != NULL);
-	g_return_if_fail(element != NULL);
-	
-	g_hash_table_remove(theme->image_list[kind], GINT_TO_POINTER(element->id));	
-}
-
-gboolean
-theme_change_element_id(Theme *theme, ThemeImageKind kind, ThemeElement *element, gint id)
-{
-	gboolean result = FALSE;
-
-	g_return_val_if_fail(theme != NULL, FALSE);
-	g_return_val_if_fail(element != NULL, FALSE);
-
-
-	if(!theme_does_id_exist(theme, kind, id))
-	{
-		theme_remove_element(theme, kind, element);
-		element->id = id;
-
-		g_hash_table_insert(theme->image_list[kind], GINT_TO_POINTER(element->id),
-				    (gpointer)element);
-		if(theme->last_id[kind] < id)
-		{
-			theme->last_id[kind] = id;
-		}
-		result = TRUE;
-	}
-
-	return result;
-}
-
-gboolean theme_does_id_exist(Theme *theme, ThemeImageKind kind, gint id)
-{
-	g_return_val_if_fail(theme != NULL, FALSE);
-	
-	return (g_hash_table_lookup(theme->image_list[kind], 
-			    GINT_TO_POINTER(id)) != NULL);
-}
-
-
-
-/*=================================================================
- 
-  Theme load/save functions
-
-  ---------------------------------------------------------------*/
-Theme*
-theme_load_xml(gchar *name/*, LoadResult *result*/)
-{
-	xmlDocPtr doc;
-	xmlNodePtr node;
-	Theme *theme;
-	gchar *prop_value;
-	gchar *dir_path;
-	gchar *file_path;
-	guint revision = 1;
-
-	theme = theme_new();
-
-	/* read file */
-	dir_path = (gchar*) g_hash_table_lookup(available_themes, name);
-	theme_set_path(theme, dir_path);
-	file_path = g_strjoin("/", dir_path, "theme", NULL);
-    
-	doc = xmlParseFile(file_path); 
-       
-	if(doc != NULL)
-	{
-		node = doc->xmlRootNode;
-		while(node!=NULL)
-		{
-			if(g_strcasecmp(node->name,"THEME")==0)
-			{
-				/* handle theme node */
-				prop_value = xmlGetProp(node, "name");
-				theme->name = g_strdup(prop_value);
-				node = node->xmlChildrenNode;
-			}
-			else 
-			{	
-				if(g_strcasecmp(node->name,"REVISION")==0)
-				{
-					/* handle revision node */
-					gchar *content = xmlNodeGetContent(node);
-					revision = atoi(content);
-					g_free(content);
-				}
-				else if(g_strcasecmp(node->name,"MOVEABLE")==0)
-				{
-					/* handle moveable node */
-					theme->last_id[THEME_IMAGE_MOVEABLE] = 
-						theme_load_last_id(node, revision);
-					theme_fill_img_array(theme, node->xmlChildrenNode, 
-							     THEME_IMAGE_MOVEABLE,
-							     revision);
-				}
-				else if(g_strcasecmp(node->name,"LINK")==0)
-				{
-					/* handle link node */
-					theme->last_id[THEME_IMAGE_LINK] = 
-						theme_load_last_id(node, revision);
-					theme_fill_img_array(theme, node->xmlChildrenNode,
-							     THEME_IMAGE_LINK,
-							     revision);
-				}
-				else if(g_strcasecmp(node->name,"OBSTACLE")==0)
-				{
-					/* handle obstacle node */
-					theme->last_id[THEME_IMAGE_OBSTACLE] = 
-						theme_load_last_id(node, revision);
-					theme_fill_img_array(theme, node->xmlChildrenNode,
-							     THEME_IMAGE_OBSTACLE,
-							     revision);
-				}
-				else if(g_strcasecmp(node->name,"ANIMSTEP")==0)
-				{
-					/* handle animstep node */
-					prop_value = xmlGetProp(node, "dist");
-					theme->animstep = atoi(prop_value);
-				}
-				else if(g_strcasecmp(node->name,"BGCOLOR")==0)
-				{					
-					/* handle background color */
-					prop_value = xmlGetProp(node, "color");
-					gdk_color_parse(prop_value, &(theme->bg_color));
-				}
-				else if(g_strcasecmp(node->name, "BGCOLOR_RGB")==0)
-				{
-					/* handle rgb color node */
-					prop_value = xmlGetProp(node, "red");
-					theme->bg_color.red = atoi(prop_value);
-					prop_value = xmlGetProp(node, "green");
-					theme->bg_color.green = atoi(prop_value);
-					prop_value = xmlGetProp(node, "blue");
-					theme->bg_color.blue = atoi(prop_value);
-				}
-				else if(g_strcasecmp(node->name,"SELECTOR")==0)
-				{
-					/* handle selector image */
-					prop_value = xmlGetProp(node, "src");
-					theme_set_selector_image(theme, prop_value);
-				}
-				else					
-				{
-					g_print("theme.c: Unknown TAG, ignoring <%s>\n",
-						node->name);
-				}
-		
-				node = node->next;
-			}
-		}
-	
-		xmlFreeDoc(doc);
-	}
-	else
-	{
-		return NULL;
-	}
-
-	return theme;
-}
-
-
 void
 theme_save_xml(Theme *theme, gchar *filename)
 {
@@ -724,243 +589,5 @@ void theme_save_image_element_xml(gpointer key, gpointer value, gpointer user_da
 		g_free(str_buffer);	
 	}
 }
-
-gchar*
-theme_get_theme_name_xml(gchar *filename)
-{
-	xmlDocPtr doc;
-	xmlNodePtr node;
-	gchar* name = NULL;
-	gchar *prop_value;
-
-	/* read file */
-	doc = xmlParseFile(filename); 
-       
-	if(doc != NULL)
-	{
-		node = doc->xmlRootNode;
-	
-		if((node!=NULL) &&
-		   (g_strcasecmp(node->name,"THEME")==0))
-		{
-			/* handle level node */
-			prop_value = xmlGetProp(node, "name");
-			name = g_strdup(prop_value);
-		}
-		
-		xmlFreeDoc(doc);
-	}
-
-	return name;
-}
-
-/*=================================================================
- 
-  Internal helper functions
-
-  ---------------------------------------------------------------*/
-
-GdkPixbuf* 
-theme_create_default_image(Theme *theme)
-{
-	GdkColor white;
-	GdkColor red;
-
-	if(gdk_color_parse("red", &red) && 
-	   gdk_color_alloc(gdk_colormap_get_system(), &red) &&
-	   gdk_color_parse("white", &white) &&
-	   gdk_color_alloc(gdk_colormap_get_system(), &white))
-	{	  
-		GdkPixmap *pixmap;
-		GdkPixbuf *image;
-		GdkGC *gc;
-		GdkVisual *visual;
-		gint tile_width, tile_height;
-
-		theme_get_tile_size(theme, &tile_width, &tile_height);
-		visual = gdk_visual_get_system();
-		pixmap = gdk_pixmap_new(NULL,
-					tile_width, tile_height,
-				        visual->depth);
-		gc = gdk_gc_new(pixmap);
-
-		if((tile_width > 5) && (tile_height > 5))
-		{
-			/* fill with red */
-			gdk_gc_set_foreground(gc, &red);
-			gdk_draw_rectangle(pixmap, gc,
-					   TRUE,
-					   0,0, tile_width, tile_height);
-		
-			/* draw white rectangle into the red area */
-			gdk_gc_set_foreground(gc, &white);
-			gdk_draw_rectangle(pixmap, gc,
-					   TRUE,
-					   2, 2, tile_width-4, tile_height-4);
-
-			/* draw X inside the white area */
-			gdk_gc_set_foreground(gc, &red);
-			gdk_draw_line(pixmap, gc,
-				      2, tile_height-3,
-				      tile_width-3, 2);
-			gdk_draw_line(pixmap, gc,
-				      2, 2,
-				      tile_width-3, tile_height-3);
-		}
-		else
-		{
-			gdk_gc_set_foreground(gc, &white);
-			gdk_draw_rectangle(pixmap, gc,
-					   TRUE,
-					   2, 2, tile_width-2, tile_height-2);
-		}
-
-		image = gdk_pixbuf_get_from_drawable (NULL, 
-						      pixmap,
-						      gdk_colormap_get_system (),
-						      0, 0, 0, 0,
-						      tile_width, tile_height);
-
-		gdk_pixmap_unref(pixmap);
-		gdk_gc_unref(gc);
-
-		return image;
-	}
-	
-	return NULL;
-}
-
-void
-theme_add_tile_image(Theme* theme, ThemeImageKind kind, ThemeElement *element)
-{
-	g_return_if_fail(theme!=NULL);	
-	g_return_if_fail(element!=NULL);
-
-		
-	/* check whether the id already exists */
-	if(g_hash_table_lookup(theme->image_list[kind], 
-			       GINT_TO_POINTER(element->id)) != NULL)
-	{
-		g_print("theme.c: Warning, duplicate id %i ... ignoring.\n", element->id);
-		theme_destroy_element(element);
-		return;
-	}
-
-	/* add element with key id */
-	g_hash_table_insert(theme->image_list[kind], GINT_TO_POINTER(element->id),
-			    (gpointer) element);
-
-	/* set last id counter right */
-	if(theme->last_id[kind] < element->id)
-	{
-		theme->last_id[kind] = element->id;
-	}
-
-
-	/* obtain the width and height of the images */
-	if((theme->tile_width == 0) || (theme->tile_height == 0))
-	{
-		GError *error = NULL;
-		gchar *full_path;
-
-		full_path = g_strjoin("/", theme->path, element->file, NULL);
-		element->image = gdk_pixbuf_new_from_file (full_path, &error);
-		if(element->image != NULL)
-		{
-			theme->tile_width = gdk_pixbuf_get_width (element->image);
-			theme->tile_height = gdk_pixbuf_get_height (element->image);
-		}
-
-		g_error_free (error);
-		g_free(full_path);
-	}
-}
-
-void
-theme_set_path(Theme* theme, gchar* path)
-{
-	theme->path = g_strdup(path);
-}
-
-void 
-theme_fill_img_array(Theme *theme, xmlNodePtr node, ThemeImageKind kind, guint revision)
-{
-	gchar *img_src;
-	gchar *id_str; 
-	gchar *img_name;
-	ThemeElement *element;
-	gint id; 
-
-	while(node != NULL)
-	{
-		/* get image number */
-		id_str = xmlGetProp(node, "no");
-		id = atoi(id_str);
-		g_free(id_str);
-
-		/* get image file */
-		img_src = xmlGetProp(node, "src");
-
-		/* get name */
-		img_name = xmlGetProp(node, "name");
-		if(img_name == NULL)
-		{
-			img_name = g_strdup("test");
-		}
-
-		/* create new theme element */
-		element = g_malloc(sizeof(ThemeElement));
-		element->id = id;
-		element->file = img_src;
-		element->name = img_name;
-		element->loading_failed = FALSE;
-		element->image = NULL;
-
-		theme_add_tile_image(theme, kind, element);
-		node = node->next;
-	}
-}
-
-gint 
-theme_load_last_id(xmlNodePtr node, gint revision)
-{
-	gchar *last_id_str;
-	gint value;
-	
-	last_id_str = xmlGetProp(node, "last_id");
-	if(last_id_str == NULL)
-	{
-		value = 0;
-	}
-	else
-	{
-		value = atoi(last_id_str);
-	}
-
-	return value;
-}
-
-void
-theme_print_hash_table(gpointer key, gpointer value, gpointer user_data)
-{
-	g_print("Key: %s, Value: %s\n",(gchar*) key, (gchar*) value);
-}
-
-
-
-void
-theme_destroy_name_table_item(gpointer key, gpointer value, gpointer user_data)
-{
-	g_free(key);
-	g_free(value);
-}
-
-void
-theme_destroy_image_table_item(gpointer key, gpointer value, gpointer user_data)
-{
-	theme_destroy_element((ThemeElement*) value);
-}
-
-
 #endif
 

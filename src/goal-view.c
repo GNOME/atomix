@@ -86,7 +86,7 @@ render_view (Goal *goal)
 			type = tile_get_tile_type(tile);
 			switch(type)
 			{
-			case TILE_TYPE_MOVEABLE:
+			case TILE_TYPE_ATOM:
 				x = col * tile_width * SCALE_FACTOR;
 				y = row * tile_height * SCALE_FACTOR;
 				item = create_small_item (item_group, 
@@ -94,7 +94,7 @@ render_view (Goal *goal)
 
 				break;
 		
-			case TILE_TYPE_OBSTACLE:
+			case TILE_TYPE_WALL:
 			case TILE_TYPE_UNKNOWN:
 			default:
 			}

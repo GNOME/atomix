@@ -1,5 +1,5 @@
 /* Atomix -- a little mind game about atoms and molecules.
- * Copyright (C) 1999 Jens Finke
+ * Copyright (C) 1999-2001 Jens Finke
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,27 +33,18 @@ typedef struct _TilePrivate  TilePrivate;
 
 typedef enum 
 {
-	TILE_TYPE_MOVEABLE,
-	TILE_TYPE_OBSTACLE,
-	TILE_TYPE_DECOR,
-	TILE_TYPE_UNKNOWN
+	TILE_TYPE_NONE,
+	TILE_TYPE_ATOM,
+	TILE_TYPE_WALL,
+	TILE_TYPE_FLOOR,
+	TILE_TYPE_UNKNOWN,
+	TILE_TYPE_LAST
 } TileType;
 
-typedef enum  {
-	TILE_LINK_LEFT,
-	TILE_LINK_RIGHT,
-	TILE_LINK_TOP,
-	TILE_LINK_BOTTOM,
-	TILE_LINK_TOP_LEFT,
-	TILE_LINK_TOP_RIGHT,
-	TILE_LINK_BOTTOM_LEFT,
-	TILE_LINK_BOTTOM_RIGHT,
-	TILE_LINK_LEFT_DOUBLE,
-	TILE_LINK_RIGHT_DOUBLE,
-	TILE_LINK_TOP_DOUBLE,
-	TILE_LINK_BOTTOM_DOUBLE,
-	TILE_LINK_LAST
-} TileLink;
+typedef enum {
+	TILE_SUB_OVERLAY,
+	TILE_SUB_UNDERLAY
+} TileSubType;
 
 typedef struct {
 	GObject     parent;
@@ -72,23 +63,21 @@ Tile* tile_new_from_xml (xmlNodePtr node);
 
 Tile* tile_copy (Tile *tile);
 
-gboolean tile_has_link (Tile *tile, TileLink link);
-
-gint tile_get_hash_value (Tile *tile);
+GSList* tile_get_sub_ids (Tile *tile, TileSubType sub_type);
 
 gint tile_get_base_id (Tile *tile);
 
 TileType tile_get_tile_type (Tile *tile);
 
-void tile_add_link (Tile *tile, TileLink link);
+void tile_add_sub_id (Tile *tile, guint id, TileSubType sub_type);
 
-void tile_remove_link (Tile *tile, TileLink link);
+void tile_remove_sub_id (Tile *tile, guint id, TileSubType sub_type);
 
-void tile_remove_all_links (Tile *tile);
+void tile_remove_all_sub_ids (Tile *tile, TileSubType sub_type);
 
 void tile_set_base_id (Tile *tile, gint id);
 
-void tile_set_type (Tile *tile, TileType type);
+void tile_set_tile_type (Tile *tile, TileType type);
 
 void tile_print (Tile *tile);
 
