@@ -1,0 +1,211 @@
+# atomixi eesti tõlge.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Tõivo Leedjärv <toivo@linux.ee>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix 0.9.2\n"
+"POT-Creation-Date: 2002-03-22 19:04+0200\n"
+"PO-Revision-Date: 2002-03-22 19:17+0200\n"
+"Last-Translator: Tõivo Leedjärv <toivo@linux.ee>\n"
+"Language-Team: Estonian <gnome-et@linux.ee>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/atomix-ui.xml.in.h:1
+msgid "Continue paused game"
+msgstr "Jätka peatatud mängu"
+
+#: src/atomix-ui.xml.in.h:2
+msgid "E_xit"
+msgstr "_Välju"
+
+#: src/atomix-ui.xml.in.h:3
+msgid "End a game"
+msgstr "Lõpeta mäng"
+
+#: src/atomix-ui.xml.in.h:4
+msgid "Exit game"
+msgstr "Välju mängust"
+
+#: src/atomix-ui.xml.in.h:5
+msgid "Pause the running game"
+msgstr "Peata aktiivne mäng"
+
+#: src/atomix-ui.xml.in.h:6
+msgid "Reset level"
+msgstr "Algväärtusta tase"
+
+#: src/atomix-ui.xml.in.h:7
+msgid "Restores start situation"
+msgstr "Taastab taseme algoleku"
+
+#: src/atomix-ui.xml.in.h:8
+msgid "Set preferences"
+msgstr "Määra eelistused"
+
+#: src/atomix-ui.xml.in.h:9
+msgid "Skip _level"
+msgstr "_Hüppa järgmisele tasemele"
+
+#: src/atomix-ui.xml.in.h:10
+msgid "Skip the current level"
+msgstr "Jäta praegune tase vahele"
+
+#: src/atomix-ui.xml.in.h:11
+msgid "Start a new game"
+msgstr "Alusta uut mängu"
+
+#: src/atomix-ui.xml.in.h:12
+msgid "Undo the last move"
+msgstr "Unusta viimane liigutus"
+
+#: src/atomix-ui.xml.in.h:13
+msgid "View game credits"
+msgstr "Mängu autorite info"
+
+#: src/atomix-ui.xml.in.h:14
+msgid "View highscores"
+msgstr "Vaata parimaid tulemusi"
+
+#: src/atomix-ui.xml.in.h:15
+msgid "_About"
+msgstr "_Info"
+
+#: src/atomix-ui.xml.in.h:16
+msgid "_Continue game"
+msgstr "_Jätka mängu"
+
+#: src/atomix-ui.xml.in.h:17
+msgid "_Edit"
+msgstr "_Redaktor"
+
+#: src/atomix-ui.xml.in.h:18
+msgid "_End Game"
+msgstr "_Lõpeta mäng"
+
+#: src/atomix-ui.xml.in.h:19
+msgid "_Game"
+msgstr "_Mäng"
+
+#: src/atomix-ui.xml.in.h:20
+msgid "_Help"
+msgstr "_Abi"
+
+#: src/atomix-ui.xml.in.h:21
+msgid "_New Game"
+msgstr "_Uus mäng"
+
+#: src/atomix-ui.xml.in.h:22
+msgid "_Pause game"
+msgstr "P_aus"
+
+#: src/atomix-ui.xml.in.h:23
+msgid "_Preferences ..."
+msgstr "_Häälestus ..."
+
+#: src/atomix-ui.xml.in.h:24
+msgid "_Scores ..."
+msgstr "_Punktid ..."
+
+#: src/atomix-ui.xml.in.h:25
+msgid "_Undo move"
+msgstr "U_nusta liigutus"
+
+#: src/board.c:170
+msgid "Game Paused"
+msgstr "Mäng on peatatud"
+
+#: src/board.c:172
+msgid "Game Over"
+msgstr "Mäng läbi"
+
+#: src/board.c:174
+msgid "Atomix - Molecule Mind Game"
+msgstr "Atomix - molekulide mõttemäng"
+
+#: src/level-manager.c:171
+msgid "Couldn't find level sequence description."
+msgstr ""
+
+#: src/level-manager.c:185
+msgid "No level found."
+msgstr ""
+
+#: src/level-manager.c:285
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr ""
+
+#: src/main.c:149
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "Copyright (C) 1999-2002 Jens Finke"
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr "Mõttemäng aatomitest ja molekulidest."
+
+#: src/main.c:484
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Õnnitlused! Sa läbisid kõik Atomixi tasemed."
+
+#: src/main.c:495
+msgid "Couldn't find at least one level."
+msgstr ""
+
+#: src/main.c:500
+msgid "Do you want to finish the game?"
+msgstr "Kas sa tahad mängu lõpetada?"
+
+#: src/main.c:619 src/main.c:625 src/main.c:630
+#, c-format
+msgid "Couldn't create directory: %s"
+msgstr ""
+
+#. create statistics frame
+#: src/main.c:733
+msgid "Statistics"
+msgstr "Statistika"
+
+#: src/main.c:739
+msgid "Level:"
+msgstr "Tase:"
+
+#: src/main.c:740
+msgid "Molecule:"
+msgstr "Molekul:"
+
+#: src/main.c:741
+msgid "Score:"
+msgstr "Punkte:"
+
+#: src/main.c:742
+msgid "Time:"
+msgstr "Aeg:"
+
+#: src/main.c:782
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr ""
+
+#: src/main.c:840
+msgid "Atomix Splash"
+msgstr ""
+
+#: src/theme-manager.c:141
+msgid "No themes found."
+msgstr ""
+
+#: src/theme-manager.c:204
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr ""
+
+#: atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
+
+#: atomix.desktop.in.h:2
+msgid "Molecule mind game"
+msgstr "Molekulide mõttemäng"
