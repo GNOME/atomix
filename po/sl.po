@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-05-16 15:35+0200\n"
+"POT-Creation-Date: 2002-03-12 10:18-0500\n"
 "PO-Revision-Date: 2002-03-13 14:43+0100\n"
 "Last-Translator: Nejc Novak <nejc.novak@guest.arnes.si>\n"
 "Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
@@ -114,6 +114,18 @@ msgstr "Re_zultati ..."
 msgid "_Undo move"
 msgstr "Razveljavi po_tezo"
 
+#: src/board.c:170
+msgid "Game Paused"
+msgstr "Igra zaustavljena"
+
+#: src/board.c:172
+msgid "Game Over"
+msgstr "Konec igre"
+
+#: src/board.c:174
+msgid "Atomix - Molecule Mind Game"
+msgstr "Atomix - Molekulska miselna igra"
+
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
 msgstr "Ne najdem opisa hitrosti stopnje."
@@ -122,7 +134,7 @@ msgstr "Ne najdem opisa hitrosti stopnje."
 msgid "No level found."
 msgstr "Ni najdenih stopenj."
 
-#: src/level-manager.c:286
+#: src/level-manager.c:285
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Našel stopnjo '%s' v: %s"
@@ -135,50 +147,50 @@ msgstr "Pravice pridržane (C) 1999-2002 Jens Finke"
 msgid "A mind game about atoms and molecules."
 msgstr "Miselna igra o atomih in molekulah"
 
-#: src/main.c:486
+#: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Čestitam! Končali ste vse stopnje Atomixa"
 
-#: src/main.c:497
+#: src/main.c:495
 msgid "Couldn't find at least one level."
 msgstr "Ne najdem niti ene stopnje."
 
-#: src/main.c:502
+#: src/main.c:500
 msgid "Do you want to finish the game?"
 msgstr "Želite končati igro?"
 
-#: src/main.c:621 src/main.c:627 src/main.c:632
+#: src/main.c:619 src/main.c:625 src/main.c:630
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Ne morem ustvariti imenika: %s"
 
 #. create statistics frame
-#: src/main.c:731
+#: src/main.c:733
 msgid "Statistics"
 msgstr "Statistike"
 
-#: src/main.c:737
+#: src/main.c:739
 msgid "Level:"
 msgstr "Stopnja:"
 
-#: src/main.c:738
+#: src/main.c:740
 msgid "Molecule:"
 msgstr "Molekula:"
 
-#: src/main.c:739
+#: src/main.c:741
 msgid "Score:"
 msgstr "Rezultat:"
 
-#: src/main.c:740
+#: src/main.c:742
 msgid "Time:"
 msgstr "Čas:"
 
-#: src/main.c:780
+#: src/main.c:782
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Ne najdem datoteke: %s"
 
-#: src/main.c:837
+#: src/main.c:840
 msgid "Atomix Splash"
 msgstr "Atomix Splash"
 
@@ -186,7 +198,7 @@ msgstr "Atomix Splash"
 msgid "No themes found."
 msgstr "Nisem našel tem"
 
-#: src/theme-manager.c:205
+#: src/theme-manager.c:204
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Našel temo '%s' v: %s"
@@ -198,12 +210,3 @@ msgstr "Atomix"
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
 msgstr "Miselna molekulska igra"
-
-#~ msgid "Game Paused"
-#~ msgstr "Igra zaustavljena"
-
-#~ msgid "Game Over"
-#~ msgstr "Konec igre"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Molekulska miselna igra"
