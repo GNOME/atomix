@@ -316,76 +316,56 @@ tile_print(Tile *tile)
   Tile load/save functions
 
   ---------------------------------------------------------------*/
-#if 0
 Tile*
-tile_load_xml(xmlNodePtr node, gint revision)
+tile_new_from_xml (xmlNodePtr node)
 {
 	xmlNodePtr child;
 	Tile *tile = NULL;
 	TileType type;
-	gint img_id;
-	gint conn_id;
-	gchar *prop_value;
+	gint base_id;
+	TileLink link;
+	gchar *content;
 
-	if(revision < 2)
-	{	    
-		prop_value = xmlGetProp(node, "type");
-		type = atoi(prop_value);
-		    
-		prop_value = xmlGetProp(node, "imgid");
-		img_id = atoi(prop_value);
+	g_return_val_if_fail (node != NULL, NULL);
+	g_return_val_if_fail (!g_strcasecmp (node->name, "tile"), NULL);
 
-		tile = tile_new_args(type, img_id, 0);
-	}
-	else
+	tile = NULL; 
+
+	for (child = node->xmlChildrenNode; 
+	     child != NULL; child = child->next) 
 	{
-		gchar *content;
-		child = node->xmlChildrenNode;
-		tile = tile_new();
-
-		while(child)
+		if(!g_strcasecmp(child->name, "type"))
 		{
-			if(g_strcasecmp(child->name, "TYPE")==0)
-			{
-				/* handle tile type */
-				content = xmlNodeGetContent(child);
-				type = atoi(content);
-				tile_set_type(tile, (TileType)type);
-				g_free(content);
-			}
-			
-			else if(g_strcasecmp(child->name,"IMG_ID")==0)
-			{
-				/* handle img id node */
-				content = xmlNodeGetContent(child);
-				img_id = atoi(content);
-				tile_set_image_id(tile, img_id);
-				g_free(content);
-			}
-
-			else if(g_strcasecmp(child->name,"CONN_ID")==0)
-			{
-				/* handle time node */
-				content = xmlNodeGetContent(child);
-				conn_id = atoi(content);
-				tile_add_link_id(tile, conn_id);
-				g_free(content);
-			}
-			
-			else
-			{
-				g_print("tile.c: Unknown TAG, ignoring <%s>\n",
-					child->name);
-			}
-
-			child = child->next;
+			g_assert (tile == NULL);
+			content = xmlNodeGetContent(child);
+			type = (TileType) atoi (content) - 1;
+			tile = tile_new (type);
 		}
-	}	
+		else if(!g_strcasecmp(child->name,"base_id"))
+		{
+			g_assert (tile != NULL);
+			content = xmlNodeGetContent (child);
+			base_id = atoi (content);
+			tile_set_base_id (tile, base_id);
+		}
+		else if(!g_strcasecmp(child->name,"link_id"))
+		{
+			g_assert (tile != NULL);
+			content = xmlNodeGetContent (child);
+			link = (TileLink) atoi (content);
+			tile_add_link (tile, link);
+		}
+		else
+		{
+			g_warning ("Skipping unknown tag: %s.",
+				   child->name);
+		}
+	}
 
 	return tile;
 }
 
-
+#if 0
 void tile_save_xml(Tile *tile, xmlNodePtr tile_node)
 {	
 	xmlNodePtr child;

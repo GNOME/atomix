@@ -68,6 +68,8 @@ GType tile_get_type (void);
 
 Tile* tile_new (TileType type);
 
+Tile* tile_new_from_xml (xmlNodePtr node);
+
 Tile* tile_copy (Tile *tile);
 
 gboolean tile_has_link (Tile *tile, TileLink link);
@@ -92,11 +94,8 @@ void tile_print (Tile *tile);
 
 gboolean tile_is_equal (Tile *tile, Tile *comp);
 
-/* ---------------------------------- */
+#if 0
+void tile_save_xml (Tile *tile, xmlNodePtr parent);
+#endif 
 
-Tile* tile_load_xml(xmlNodePtr node, gint revision);
-
-void tile_save_xml(Tile *tile, xmlNodePtr parent);
-
-void tile_set_values(Tile *dest, Tile *src);
 #endif /* _TILE_H */

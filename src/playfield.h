@@ -48,6 +48,8 @@ GType playfield_get_type (void);
 
 PlayField* playfield_new(void);
 
+PlayField* playfield_new_from_xml (xmlNodePtr node);
+
 guint playfield_get_n_rows (PlayField *pf);
 
 guint playfield_get_n_cols (PlayField *pf);
@@ -78,8 +80,8 @@ void playfield_print(PlayField *pf);
 
 void playfield_clear(PlayField *pf);
 
-PlayField* playfield_load_xml(xmlNodePtr pf_node, gint revision);
-
-void playfield_save_xml(PlayField *pf, xmlNodePtr pf_node);
+#if 0
+void playfield_save_xml(PlayField *pf, xmlNodePtr node);
+#endif
 
 #endif /* _ATOMIX_PLAY_FIELD_H */

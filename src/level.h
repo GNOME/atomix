@@ -1,5 +1,5 @@
 /* Atomix -- a little mind game about atoms and molecules.
- * Copyright (C) 1999 Jens Finke
+ * Copyright (C) 1999-2001 Jens Finke
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,55 +20,33 @@
 #define _ATOMIX_LEVEL_H 
 
 #include <gnome.h>
-#include "global.h"
 #include "playfield.h"
-#include "theme.h"
 
-typedef struct _Level       Level;
+#define LEVEL_TYPE        (level_get_type ())
+#define LEVEL(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), LEVEL_TYPE, Level))
+#define LEVEL_CLASS(k)    (G_TYPE_CHECK_CLASS_CAST((k), LEVEL_TYPE, LevelClass))
+#define IS_LEVEL(o)       (G_TYPE_CHECK_INSTANCE_TYPE ((o), LEVEL_TYPE))
+#define IS_LEVEL_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), LEVEL_TYPE))
+#define LEVEL_GET_CLASS(o)(G_TYPE_INSTANCE_GET_CLASS ((o), LEVEL_TYPE, LevelClass))
 
-struct _Level
-{
-	gchar*       name;         /* name of the level */
-	guint        time;         /* time to solve */
-	gchar*       theme_name;   /* name of the used theme */
-	PlayField*   goal;         /* determines the end of the level */
-	PlayField*   playfield;    /* starting situation */
-	gchar*       next;         /* name of the following level */
-	gboolean     first_level;  /* whether this is the first level */
-	gboolean     bonus_level;  /* whether this is a bonus level */
+typedef struct _LevelPrivate LevelPrivate;
 
-	/* the following fields are only used by atomixed */
-	gchar *file_name;          /* file name of the level */
-	gboolean modified;         /* whether the level is modified */
-};
+typedef struct  {
+	GObject parent;
+	LevelPrivate *priv;
+} Level;
 
-GHashTable* available_levels;
 
-Level* level_new(void);
+typedef struct {
+	GObjectClass parent_class;
+} LevelClass;
 
-void level_destroy(Level* l);
 
-void level_set_last_level(Level *level);
+gchar* level_get_name (Level *level);
 
-gboolean level_is_last_level(Level *level);
+PlayField* level_get_playfield (Level *level);
 
-Level* level_load_xml(gchar* name);
-
-Level* level_load_xml_file(gchar *file_path);
-
-void level_save_xml(Level* level, gchar* filename);
-
-/*-----------------------------------------------*/
-
-void level_create_hash_table(void);
-
-void level_add_to_hash_table(gchar *name, gchar *file_path);
-
-gboolean level_is_name_already_present(gchar *name);
-
-void level_destroy_hash_table(void);
-
-gchar* level_get_first_level(void);
+PlayField* level_get_goal (Level *level);
 
 
 #endif /* _ATOMIX_LEVEL_H */

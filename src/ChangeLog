@@ -1,3 +1,22 @@
+2001-11-13  Jens Finke <jens@triq.net>
+
+	* level-manager.[ch]: New files.
+
+	* level.[ch]: Reworked these files, moved a lot of the general
+	level handling to level-manager.[ch].
+
+	* playfield.[ch] (playfield_get_type): Fixed class type.
+	(playfield_new_from_xml): New function.
+
+	* theme-manager.c (theme_manager_init): Provide destroy functions
+	for hash table key and value objects.
+	(destroy_theme_item): Removed.
+	(load_theme): Create theme after xml document creation.
+
+	* theme.c (theme_get_type): Fixed class type.
+
+	* tile.[ch] (tile_new_from_xml): New function.
+
 2001-11-12  Jens Finke <jens@triq.net>
 
 	* goal.[ch]: Reworked these files.

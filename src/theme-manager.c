@@ -30,7 +30,6 @@ static GObjectClass     *parent_class = NULL;
 
 static void search_themes_in_dir (ThemeManager *tm, const gchar *dir_path);
 static void add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath);
-static void destroy_theme_item (gpointer key, gpointer value, gpointer user_data);
 static void add_theme_to_list (gchar* key, gpointer value, GList **list);
 static Theme* load_theme (gchar *theme_dir);
 static void handle_link_image_node (Theme *theme, xmlNodePtr node);
@@ -98,8 +97,10 @@ theme_manager_init (ThemeManager *tm)
 
 	priv = g_new0 (ThemeManagerPrivate, 1);
 	priv->initialized = FALSE;
-	priv->themes = g_hash_table_new ((GHashFunc) g_str_hash, 
-					 (GCompareFunc) g_str_equal);
+	priv->themes = g_hash_table_new_full ((GHashFunc) g_str_hash, 
+					      (GCompareFunc) g_str_equal,
+					      (GDestroyNotify) g_free,
+					      (GDestroyNotify) g_free);
 	
 	tm->priv = priv;
 }
@@ -108,8 +109,6 @@ static void
 theme_manager_finalize (GObject *object)
 {
 	ThemeManager* tm = THEME_MANAGER (object);
-	g_hash_table_foreach(tm->priv->themes, 
-			     (GHFunc) destroy_theme_item, NULL);
 	g_hash_table_destroy(tm->priv->themes);
 	
 	g_free (tm->priv);
@@ -233,14 +232,6 @@ add_theme_to_list (gchar* key, gpointer value, GList **list)
 	*list = g_list_insert_sorted (*list, key, (GCompareFunc) g_strcasecmp);	
 }
 
-static void
-destroy_theme_item (gpointer key, gpointer value, gpointer user_data)
-{
-	g_free (key);
-	g_free (value);
-}
-
-
 /* =======================================================================
   
                       Theme loading stuff
@@ -280,22 +271,21 @@ load_theme (gchar *theme_dir)
 	g_return_val_if_fail (theme_dir != NULL, NULL);
 
 	theme_file = g_build_filename (theme_dir, "theme", NULL);
-	if (!g_file_test (theme_file, G_FILE_TEST_EXISTS)) {
+	if (!g_file_test (theme_file, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR)) {
 		g_warning ("File theme not found in %s", theme_dir);
+		return NULL;
+	}
+
+	doc = xmlParseFile (theme_file); 
+	if (doc == NULL) {
+		g_warning ("XML file %s couldn't be parsed.", theme_file);
+		g_free (theme_file);
 		return NULL;
 	}
 
 	theme = theme_new ();
 	priv = theme->priv;
 	priv->path = g_strdup (theme_dir);
-    
-	doc = xmlParseFile (theme_file); 
-	if (doc == NULL) {
-		g_warning ("XML file %s couldn't be parsed.", theme_file);
-		g_free (theme_file);
-		g_object_unref (theme);
-		return NULL;
-	}
 	
 	node = doc->xmlRootNode;
 	while (node != NULL)

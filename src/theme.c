@@ -43,7 +43,7 @@ theme_get_type (void)
     {
       static const GTypeInfo object_info =
       {
-	sizeof (TileClass),
+	sizeof (ThemeClass),
 	(GBaseInitFunc) NULL,
 	(GBaseFinalizeFunc) NULL,
 	(GClassInitFunc) theme_class_init,
