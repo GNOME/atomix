@@ -1,5 +1,9 @@
 2001-11-12  Jens Finke <jens@triq.net>
 
+	* src/ChangeLog: New ChangeLog for all changes in the src dir. 
+
+2001-11-12  Jens Finke <jens@triq.net>
+
 	* src/theme.[ch]: Rewrote this. Adapted it to changes in
 	tile.[ch].
 
