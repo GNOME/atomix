@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "POT-Creation-Date: 2003-12-03 18:47+0100\n"
-"PO-Revision-Date: 2002-05-17 17:35-0300\n"
+"PO-Revision-Date: 2005-03-14 22:41-0300\n"
 "Last-Translator: Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
@@ -115,7 +115,7 @@ msgstr "_Desfazer jogada"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr "Incapaz de encontrar a descrição da seqüencia de níveis."
+msgstr "Incapaz de encontrar a descrição da seqüência de níveis."
 
 #: src/level-manager.c:185
 msgid "No level found."
