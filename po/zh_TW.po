@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.9\n"
-"POT-Creation-Date: 2001-11-25 12:13+0100\n"
-"PO-Revision-Date: 2001-11-15 23:34+0800\n"
+"POT-Creation-Date: 2001-11-27 07:29-0500\n"
+"PO-Revision-Date: 2001-11-28 09:16+0800\n"
 "Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
@@ -26,9 +26,8 @@ msgid "Atomix - Molecule Mind Game"
 msgstr "Atomix - 分子組合智力遊戲"
 
 #: src/main.c:271
-#, fuzzy
 msgid "Couldn't find at least one level."
-msgstr "找不到 Atomix 手冊！"
+msgstr "找不到任何版圖。"
 
 #: src/main.c:283
 msgid "No more undo levels."
@@ -40,11 +39,11 @@ msgstr "這是最後一關。不可以再跳到下一關了。"
 
 #: src/main.c:459
 msgid "Do you want to finish the game?"
-msgstr ""
+msgstr "是否要完成遊戲？"
 
 #: src/main.c:486
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr ""
+msgstr "恭喜！你已完成所有 Atomix 版圖了。"
 
 #. create statistics frame
 #: src/main.c:776
