@@ -1,3 +1,11 @@
+2002-07-18  Jens Finke  <jens@triq.net>
+
+	* atomix.desktop.in: Made it more spec compliant.
+
+	* Makefile.am: Silent install data.
+
+	* src/Makefile.am: Removed install data.
+
 2002-06-21  Andras Timar  <timar@gnome.hu>
 
 	* configure.in: Added "hu" to ALL_LINGUAS.

@@ -20,7 +20,7 @@ Games_DATA = $(Games_in_files:.desktop.in=.desktop)
 
 install-data-local:
 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
-	touch $(DESTDIR)$(scoredir)/atomix.scores
+	-touch $(DESTDIR)$(scoredir)/atomix.scores
 	-chown games.games $(DESTDIR)$(scoredir)/atomix.scores
 	-chmod 664 $(DESTDIR)$(scoredir)/atomix.scores
 	-chgrp games $(DESTDIR)$(bindir)/atomix && chmod 2111 $(DESTDIR)$(bindir)/atomix

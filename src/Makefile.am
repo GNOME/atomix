@@ -67,9 +67,3 @@ ui_DATA = $(ui_in_files:.xml.in=.xml)
 
 EXTRA_DIST = $(ui_in_files)
 
-#install-data-local:
-#	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
-#	-touch $(DESTDIR)$(scoredir)/atomix.scores
-#	-chown games.games $(DESTDIR)$(scoredir)/atomix.scores
-#	-chmod 664 $(DESTDIR)$(scoredir)/atomix.scores
-#	-chgrp games $(DESTDIR)$(bindir)/atomix && chmod 2111 $(DESTDIR)$(bindir)/atomix
