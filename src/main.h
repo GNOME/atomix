@@ -21,36 +21,15 @@
 
 #include <gnome.h>
 #include <bonobo.h>
-#include <glade/glade.h>
-#include "level.h"
 #include "theme-manager.h"
+#include "level-manager.h"
+#include "goal.h"
 
-typedef struct _NextLevelDlgInfo NextLevelDlgInfo;
-
-struct _NextLevelDlgInfo
-{
-	gint timer_id;
-	GtkWidget* lb_secs;
-	GtkWidget* lb_score;
-	gint secs;
-	gdouble score;
-};
-
-enum {
+typedef enum {
 	GAME_NOT_RUNNING,
 	GAME_RUNNING,
 	GAME_PAUSED
-};
-
-
-struct _LevelData
-{
-	gint    no_level;  /* number of level */
-	Level   *level;    /* actual level */
-	gdouble score;     /* players score */
-	Theme   *theme;    /* actual used theme */
-};
-typedef struct _LevelData LevelData;
+} GameState;
 
 typedef struct 
 {
@@ -64,36 +43,20 @@ typedef struct
 	GtkWidget         *lb_name;
 	GtkWidget         *lb_score;
 
+	LevelManager      *lm;
 	ThemeManager      *tm;
 	Theme             *theme;
 
-	gint              level_no;
+	GameState         state;
 	Level             *level;
+	Goal              *goal;
+	gint              level_no;
 	gdouble           score;
 } AtomixApp;
 
-
 AtomixApp*    get_app (void);
-GladeXML*     get_gui(void);
-Level*        get_actual_level(void);
-Theme*        get_actual_theme(void);
-gint          get_game_state(void);
 
-void game_new(void);
-
-void game_reload_level(void);
-void game_level_timeout(GtkWidget *widget, gpointer data);
-void game_level_finished(void);
-void game_finished(void);
-
-void game_pause(void);
-void game_continue(void);
-void game_undo_move(void);
-
-void game_user_quits(void);
-
-void game_skip_level(void);
-
-void show_about_dlg (void);
+void
+game_level_finished (AtomixApp *app);
 
 #endif /* _ATOMIX_MAIN_H_ */

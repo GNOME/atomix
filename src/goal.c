@@ -19,19 +19,24 @@
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 
-#include "global.h"
 #include "main.h"
 #include "theme.h"
 #include "goal.h"
 #include "canvas_helper.h"
 
-#define SCALE_FACTOR  0.6
+static GObjectClass     *parent_class = NULL;
 
-void
-goal_print_offset(gpointer ptr, gpointer data);
+static void goal_class_init (GObjectClass *class);
+static void goal_init (Goal *goal);
+static void goal_finalize (GObject *object);
 
+struct _GoalPrivate {
+	PlayField*   pf;
+	GHashTable*  index;
+};
+
+void goal_print_offset(gpointer ptr, gpointer data);
 GnomeCanvasItem* create_small_item (GnomeCanvasGroup *group, gdouble x, gdouble y, Tile* tile);
-
 static void destroy_hash_value (gpointer value);
 static gboolean compare_playfield_with_goal (Goal *goal, PlayField *pf, 
 					     guint start_row, guint start_col);
@@ -44,30 +49,91 @@ typedef struct
 } TileOffset;
 
 
+GType
+goal_get_type (void)
+{
+	static GType object_type = 0;
+	
+	if (!object_type)
+	{
+		static const GTypeInfo object_info =
+		{
+			sizeof (GoalClass),
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) goal_class_init,
+			NULL,   /* clas_finalize */
+			NULL,   /* class_data */
+			sizeof(Goal),
+			0,      /* n_preallocs */
+			(GInstanceInitFunc) goal_init,
+		};
+		
+		object_type = g_type_register_static (G_TYPE_OBJECT,
+						      "Goal",
+						      &object_info, 0);
+	}
+	
+	return object_type;
+}
+
+static void 
+goal_class_init (GObjectClass *class)
+{
+	parent_class = g_type_class_ref (G_TYPE_OBJECT);
+	class->finalize = goal_finalize;
+}
+
+static void 
+goal_init (Goal *goal)
+{
+	GoalPrivate *priv;
+
+	priv = g_new0 (GoalPrivate, 1);
+	priv->pf = NULL;
+	priv->index = 0;
+
+	goal->priv = priv;
+}
+
+static void 
+goal_finalize (GObject *object)
+{
+	Goal* goal = GOAL (object);
+	
+	g_message ("Finalize Goal");
+
+	if (goal->priv->pf)
+		g_object_unref (goal->priv->pf);
+
+	g_hash_table_destroy ((GHashTable*) goal->priv->index);
+
+	g_free (goal->priv);
+	goal->priv = NULL;
+}
 
 Goal*
-goal_new (PlayField* goal_pf)
+goal_new (PlayField *pf)
 {
-	Goal* goal;
+	Goal *goal;
 	gint row,col;
 	Tile *tile;
 
-	goal = g_new0 (Goal, 1);    
-    
-	goal->pf = goal_pf;
-	g_object_ref (goal->pf);
-	goal->item_group = NULL;
+	goal = GOAL (g_object_new (GOAL_TYPE, NULL));
+
+	g_object_ref (pf);
+	goal->priv->pf = pf;
     
 	/* initialise index */
-	goal->index = g_hash_table_new_full ((GHashFunc) g_direct_hash, 
-					     (GCompareFunc) g_direct_equal,
-					     NULL, (GDestroyNotify) destroy_hash_value);
+	goal->priv->index = g_hash_table_new_full ((GHashFunc) g_direct_hash, 
+						   (GCompareFunc) g_direct_equal,
+						   NULL, (GDestroyNotify) destroy_hash_value);
 	
-	for(row = 0; row < playfield_get_n_rows (goal_pf); row++)
+	for(row = 0; row < playfield_get_n_rows (pf); row++)
 	{
-		for(col = 0; col < playfield_get_n_cols (goal_pf); col++)
+		for(col = 0; col < playfield_get_n_cols (pf); col++)
 		{
-			tile = playfield_get_tile(goal_pf, row, col);
+			tile = playfield_get_tile(pf, row, col);
 
 			if (tile &&
 			    tile_get_tile_type (tile) == TILE_TYPE_MOVEABLE)
@@ -82,11 +148,11 @@ goal_new (PlayField* goal_pf)
 				off->horiz = col;
 				off->vert = row;
 				
-				list = g_hash_table_lookup (goal->index, 
+				list = g_hash_table_lookup (goal->priv->index, 
 							    GINT_TO_POINTER (tile_id));
 
 				list = g_slist_append(list, off);
-				g_hash_table_insert (goal->index, GINT_TO_POINTER (tile_id),
+				g_hash_table_insert (goal->priv->index, GINT_TO_POINTER (tile_id),
 						      (gpointer) list);
 				
 			}
@@ -96,6 +162,15 @@ goal_new (PlayField* goal_pf)
 
 	return goal;
 }
+
+PlayField*
+goal_get_playfield (Goal *goal)
+{
+	g_return_val_if_fail (IS_GOAL (goal), NULL);
+	g_object_ref (goal->priv->pf);
+	return goal->priv->pf;
+}
+
 
 static void
 destroy_hash_value (gpointer value)
@@ -109,18 +184,6 @@ destroy_hash_value (gpointer value)
 	g_free (list);
 }
 
-
-void
-goal_destroy (Goal* goal)
-{
-	g_object_unref (goal->pf);
-
-	if(goal->item_group)
-		gtk_object_destroy(GTK_OBJECT(goal->item_group));
-
-	g_hash_table_destroy ((GHashTable*) goal->index);
-	g_free (goal);
-}
 
 static void
 print_hash_table (gpointer key, gpointer value, gpointer data)
@@ -138,20 +201,20 @@ print_hash_table (gpointer key, gpointer value, gpointer data)
 void 
 goal_print (Goal* goal)
 {
-	g_return_if_fail (goal != NULL);
-	g_return_if_fail (goal->pf != NULL);
-	g_return_if_fail (goal->index != NULL);
+	g_return_if_fail (IS_GOAL (goal));
+	g_return_if_fail (IS_PLAYFIELD (goal->priv->pf));
+	g_return_if_fail (goal->priv->index != NULL);
 
 	g_print("GOAL:\n");
-	playfield_print(goal->pf);
+	playfield_print(goal->priv->pf);
 
-	g_hash_table_foreach (goal->index, (GHFunc) print_hash_table, NULL);
+	g_hash_table_foreach (goal->priv->index, (GHFunc) print_hash_table, NULL);
 
 	g_print ("\n");
 }
 
 gboolean
-goal_reached(Goal* goal, PlayField* pf, guint row_anchor, guint col_anchor)
+goal_reached (Goal* goal, PlayField* pf, guint row_anchor, guint col_anchor)
 {
 	guint tile_id;
 	GSList *list;
@@ -159,15 +222,16 @@ goal_reached(Goal* goal, PlayField* pf, guint row_anchor, guint col_anchor)
 	gboolean result = FALSE;
 	Tile *tile;
 
-	g_return_val_if_fail (goal != NULL, FALSE);
-	g_return_val_if_fail (goal->index != NULL, FALSE);
+	g_return_val_if_fail (IS_GOAL (goal), FALSE);
+	g_return_val_if_fail (goal->priv->index != NULL, FALSE);
+	g_return_val_if_fail (IS_PLAYFIELD (goal->priv->pf), FALSE);
 	g_return_val_if_fail (IS_PLAYFIELD (pf), FALSE);
 
 	tile = playfield_get_tile (pf, row_anchor, col_anchor);
 	if (tile == NULL) return FALSE;
 
 	tile_id = tile_get_hash_value (tile);
-	list = (GSList*) g_hash_table_lookup (goal->index, GINT_TO_POINTER (tile_id));
+	list = (GSList*) g_hash_table_lookup (goal->priv->index, GINT_TO_POINTER (tile_id));
     
 	for (it = list; it != NULL && !result; it = it->next) {
 		TileOffset *offset = (TileOffset*) it->data;
@@ -191,8 +255,8 @@ compare_playfield_with_goal (Goal *goal, PlayField *pf, guint start_row, guint s
 	gint end_col;
 	gboolean result;
 	
-	end_row = start_row + playfield_get_n_rows (goal->pf);
-	end_col = start_col + playfield_get_n_cols (goal->pf);
+	end_row = start_row + playfield_get_n_rows (goal->priv->pf);
+	end_col = start_col + playfield_get_n_cols (goal->priv->pf);
 	result = TRUE;
 	
 	for(pf_row = start_row, goal_row = 0; 
@@ -206,7 +270,7 @@ compare_playfield_with_goal (Goal *goal, PlayField *pf, guint start_row, guint s
 			Tile *pf_tile;
 			Tile *goal_tile;
 
-			goal_tile = playfield_get_tile(goal->pf, goal_row, goal_col);
+			goal_tile = playfield_get_tile(goal->priv->pf, goal_row, goal_col);
 			pf_tile = playfield_get_tile (pf, pf_row , pf_col);
 
 			if (goal_tile) {
@@ -225,102 +289,4 @@ compare_playfield_with_goal (Goal *goal, PlayField *pf, guint start_row, guint s
 	}
 
 	return result;
-}
-
-
-GnomeCanvasItem*
-create_small_item (GnomeCanvasGroup *group, gdouble x, gdouble y, Tile* tile)
-{
-	GdkPixbuf *pixbuf = NULL;
-	GnomeCanvasItem *item = NULL;
-	Theme* theme;
-    
-	theme = get_actual_theme ();
-	pixbuf = theme_get_tile_image (theme, tile);
-
-	item = gnome_canvas_item_new(group,
-				     gnome_canvas_pixbuf_get_type(),
-				     "pixbuf", pixbuf,
-				     "x", x,
-				     "x_in_pixels", TRUE,
-				     "y", y,
-				     "y_in_pixels", TRUE,
-				     "width", 
-				     (gdouble)(gdk_pixbuf_get_width (pixbuf))*SCALE_FACTOR,
-				     "height", 
-				     (gdouble)(gdk_pixbuf_get_height(pixbuf))*SCALE_FACTOR,
-				     "anchor", GTK_ANCHOR_NW,
-				     NULL);                              
-	
-	return GNOME_CANVAS_ITEM(item);
-}
-
-void
-goal_render(Goal* goal)
-{
-	GnomeCanvasItem *item;
-	GnomeCanvas *canvas;
-	gint row,col;
-	gdouble x;
-	gdouble y;
-	Tile *tile;
-	TileType type;
-	gint tile_width, tile_height;
-	gint width, height;
-
-	canvas = GNOME_CANVAS (get_app ()->ca_goal);
-	if(goal->item_group == NULL)
-	{
-		goal->item_group = create_group_ref(canvas, NULL);
-	}
-
-
-	theme_get_tile_size(get_actual_theme(), 
-			    &tile_width, 
-			    &tile_height);
-
-	for(row = 0; row < playfield_get_n_rows (goal->pf); row++) 
-	{
-		for(col = 0; col < playfield_get_n_cols (goal->pf); col++)
-		{
-			tile = playfield_get_tile (goal->pf, row, col);
-			if (!tile) continue;
-
-			type = tile_get_tile_type(tile);
-			switch(type)
-			{
-			case TILE_TYPE_MOVEABLE:
-				x = col * tile_width * SCALE_FACTOR;
-				y = row * tile_height * SCALE_FACTOR;
-				item = create_small_item (goal->item_group, 
-							  x, y, tile);
-
-				break;
-		
-			case TILE_TYPE_OBSTACLE:
-			case TILE_TYPE_UNKNOWN:
-			default:
-			}
-			g_object_unref (tile);
-		}
-	}
-
-	set_background_color_ref (GTK_WIDGET(canvas), 
-				  theme_get_background_color (get_actual_theme()));
-	
-	width = tile_width * playfield_get_n_cols (goal->pf) * SCALE_FACTOR;
-	height = tile_height * playfield_get_n_rows (goal->pf) * SCALE_FACTOR;
-	gnome_canvas_set_scroll_region(canvas, 0, 0, width, height);
-}
-
-void
-goal_clear(Goal* goal)
-{
-	gtk_object_destroy (GTK_OBJECT(goal->item_group));
-	goal->item_group = NULL;
-}
-
-void goal_init (AtomixApp *app)
-{
-	set_background_color_ref (app->ca_goal, theme_get_background_color (app->theme));
 }

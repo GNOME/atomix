@@ -34,9 +34,7 @@ struct _CanvasMap
 };
 
 
-void set_background_color(gchar *canvas_name, GdkColor *color);
-
-void set_background_color_ref(GtkWidget *canvas, GdkColor *color);
+void set_background_color (GtkWidget *canvas, GdkColor *color);
 
 void convert_to_playfield(Theme *theme, 
 			  gdouble x, gdouble y, 
@@ -47,14 +45,10 @@ void convert_to_canvas(Theme *theme,
 		       guint row, guint col, 
 		       gdouble *x, gdouble *y);
 
-void set_canvas_dimensions(gchar *canvas_name, gint width, gint height);
+void set_canvas_dimensions (GnomeCanvas *canvas, gint width, gint height);
 
-void set_canvas_dimensions_ref(GnomeCanvas *canvas, gint width, gint height);
-
-GnomeCanvasGroup* create_group(gchar *canvas_name, GnomeCanvasGroup *parent);
-
-GnomeCanvasGroup* create_group_ref(GnomeCanvas *canvas,
-				   GnomeCanvasGroup *parent);
+GnomeCanvasGroup* create_group (GnomeCanvas *canvas,
+				GnomeCanvasGroup *parent);
 
 void free_imlib_image (GtkObject *object, gpointer data);
 

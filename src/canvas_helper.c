@@ -19,14 +19,7 @@
 #include "math.h"
 #include "canvas_helper.h"
 
-void set_background_color(gchar *canvas_name, GdkColor *color)
-{
-	GtkWidget *canvas;
-	canvas = GTK_WIDGET (glade_xml_get_widget (get_gui (), canvas_name));
-	set_background_color_ref(canvas, color);
-}
-
-void set_background_color_ref(GtkWidget *canvas, GdkColor *color)
+void set_background_color (GtkWidget *canvas, GdkColor *color)
 {
 	/* try to alloc color */
 	if(gdk_color_alloc(gdk_colormap_get_system(), color))
@@ -40,9 +33,9 @@ void set_background_color_ref(GtkWidget *canvas, GdkColor *color)
 	}
 }
 
-void convert_to_playfield(Theme *theme, 
-			  gdouble x, gdouble y, 
-			  guint *row, guint *col)
+void convert_to_playfield (Theme *theme, 
+			   gdouble x, gdouble y, 
+			   guint *row, guint *col)
 {
 	guint int_y, int_x;
 	gint tile_width, tile_height;
@@ -69,30 +62,13 @@ void convert_to_canvas(Theme *theme,
 	*y = row * tile_height;
 }
 
-void set_canvas_dimensions(gchar *canvas_name, gint width, gint height)
-{
-	GnomeCanvas *canvas;
-	canvas = GNOME_CANVAS(glade_xml_get_widget(get_gui(), 
-					    canvas_name));
-	set_canvas_dimensions_ref(canvas, width, height);
-}
-
-
-void set_canvas_dimensions_ref(GnomeCanvas *canvas, gint width, gint height)
+void set_canvas_dimensions (GnomeCanvas *canvas, gint width, gint height)
 {
 	gnome_canvas_set_scroll_region(canvas, 0, 0, width, height);    
 }
 
-GnomeCanvasGroup* create_group(gchar *canvas_name, GnomeCanvasGroup *parent)
-{
-	GnomeCanvas *canvas;	
-	canvas = GNOME_CANVAS(glade_xml_get_widget (get_gui (), canvas_name));
-	return create_group_ref(canvas, parent);
-}
-
-
-GnomeCanvasGroup* create_group_ref(GnomeCanvas *canvas,
-				   GnomeCanvasGroup *parent)
+GnomeCanvasGroup* create_group (GnomeCanvas *canvas,
+				GnomeCanvasGroup *parent)
 {
 	GnomeCanvasGroup *group;
 	if(parent == NULL)
@@ -106,12 +82,6 @@ GnomeCanvasGroup* create_group_ref(GnomeCanvas *canvas,
 		"y", 0.0,
 		NULL));
 	return group;
-}
-
-void
-free_imlib_image (GtkObject *object, gpointer data)
-{
-	gdk_pixbuf_unref (data);
 }
 
 

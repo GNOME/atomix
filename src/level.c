@@ -138,6 +138,7 @@ PlayField*
 level_get_playfield (Level *level)
 {
 	g_return_val_if_fail (IS_LEVEL (level), NULL);
+	g_object_ref (level->priv->playfield);
 	return level->priv->playfield;
 }
 
@@ -145,6 +146,7 @@ PlayField*
 level_get_goal (Level *level)
 {
 	g_return_val_if_fail (IS_LEVEL (level), NULL);
+	g_object_ref (level->priv->goal);
 	return level->priv->goal;
 }
 

@@ -26,7 +26,7 @@
 
   ---------------------------------------------------------------*/
 
-static void destroy_theme_image (ThemeImage *ti);
+static void destroy_theme_image (gpointer data);
 
 static void theme_class_init (GObjectClass *class);
 static void theme_init (Theme *theme);
@@ -37,29 +37,29 @@ GObjectClass *parent_class;
 GType
 theme_get_type (void)
 {
-  static GType object_type = 0;
-
-  if (!object_type)
-    {
-      static const GTypeInfo object_info =
-      {
-	sizeof (ThemeClass),
-	(GBaseInitFunc) NULL,
-	(GBaseFinalizeFunc) NULL,
-	(GClassInitFunc) theme_class_init,
-	NULL,   /* clas_finalize */
-	NULL,   /* class_data */
-	sizeof(Theme),
-	0,      /* n_preallocs */
-	(GInstanceInitFunc) theme_init,
-      };
-
-      object_type = g_type_register_static (G_TYPE_OBJECT,
-					    "Theme",
-					    &object_info, 0);
-    }
-
-  return object_type;
+	static GType object_type = 0;
+	
+	if (!object_type)
+	{
+		static const GTypeInfo object_info =
+		{
+			sizeof (ThemeClass),
+			(GBaseInitFunc) NULL,
+			(GBaseFinalizeFunc) NULL,
+			(GClassInitFunc) theme_class_init,
+			NULL,   /* clas_finalize */
+			NULL,   /* class_data */
+			sizeof(Theme),
+			0,      /* n_preallocs */
+			(GInstanceInitFunc) theme_init,
+		};
+		
+		object_type = g_type_register_static (G_TYPE_OBJECT,
+						      "Theme",
+						      &object_info, 0);
+	}
+	
+	return object_type;
 }
 
 
@@ -110,6 +110,7 @@ theme_finalize (GObject *object)
 	
 	g_return_if_fail (theme != NULL);
 
+	g_message ("Finalize theme");
 	priv = theme->priv;
 
 	if (priv->name)
@@ -122,16 +123,12 @@ theme_finalize (GObject *object)
 	
 	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) {
 		if (priv->image_list[i]) {
-			g_hash_table_foreach (priv->image_list[i], 
-					     (GHFunc) destroy_theme_image, NULL);
 			g_hash_table_destroy (priv->image_list[i]);
 			priv->image_list[i] = NULL;
 		}
 	}
 
 	if (priv->link_image_list) {
-		g_hash_table_foreach (priv->link_image_list, 
-				      (GHFunc) destroy_theme_image, NULL);
 		g_hash_table_destroy (priv->link_image_list);
 		priv->link_image_list = NULL;
 	}
@@ -156,14 +153,18 @@ theme_new (void)
 	
 	for (i = 0; i < TILE_TYPE_UNKNOWN; i++) {
 		priv->image_list[i] = 
-			g_hash_table_new((GHashFunc) g_direct_hash, 
-					 (GCompareFunc) g_direct_equal);
+			g_hash_table_new_full ((GHashFunc) g_direct_hash, 
+					       (GCompareFunc) g_direct_equal,
+					       (GDestroyNotify) NULL,
+					       (GDestroyNotify) destroy_theme_image);
 	}
 
 	priv->link_image_list = 
-		g_hash_table_new((GHashFunc) g_direct_hash, 
-				 (GCompareFunc) g_direct_equal);
-
+		g_hash_table_new_full ((GHashFunc) g_direct_hash, 
+				       (GCompareFunc) g_direct_equal,
+				       (GDestroyNotify) NULL,
+				       (GDestroyNotify) destroy_theme_image);
+	
 	return theme;
 }
 
@@ -192,8 +193,12 @@ theme_get_animstep (Theme *theme)
 }
 
 static void
-destroy_theme_image (ThemeImage *ti)
+destroy_theme_image (gpointer data)
 {
+	ThemeImage *ti; 
+
+	ti = (ThemeImage*) data;
+
 	if (ti == NULL) return;
 	
 	if (ti->name)

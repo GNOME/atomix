@@ -42,6 +42,8 @@ typedef struct {
 	GObjectClass parent_class;
 } ThemeClass;
 
+GType theme_get_type (void);
+
 /* This class can't be directyl instantiated. Use
  * ThemeManager to get an Theme object.
  */

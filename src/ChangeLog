@@ -1,3 +1,52 @@
+2001-11-14  Jens Finke <jens@triq.net>
+
+	* Makefile.am: Added playfield test program 'pf-test'.
+	(atomix_SOURCES): Added goal-view.[ch], removed callbacks.[ch],
+	preferences.[ch].
+	(libatomix_a_SOURCES): Added level-manager.[ch]
+	
+	* board.[ch]: Reworked this, so that it works with the other new
+	classes.
+
+	* goal-view.[ch]: New files.
+
+	* goal.[ch]: Reworked this. It is now a seperate class with all
+	the gui stuff moved to goal-view.[ch].
+
+	* callbacks.[ch]: Removed files.
+
+	* canvas_helper.[ch]: Removed the non ref functions and removed
+	the function name suffix _ref from the rest.
+
+	* level-manager.[ch] (level_manager_is_last_level): New function.
+	(level_manager_get_next_level): Use the filname from the successor
+	of the search result.
+
+	* level.c (level_get_playfield): Ref the outgoing playfield reference.
+	(level_get_goal): dito.
+
+	* level.h (level_get_type): Moved here from level-private.h.
+
+	* main.[ch]: Reworked this and removed some of the functionality
+	for now. It's more clean and structured now. Contains all the
+	callbacks too.
+
+	* theme-manager.c (handle_base_image_node): Ignore non bimage xml
+	nodes.
+	(handle_link_image_node): Ignore non limage xml nodes.
+
+	* theme.h (theme_get_type): Moved here from theme-private.h.
+
+	* theme.c (theme_finalize): Don't iterate through the hash table
+	to free objects.
+	(theme_new): Provide destroy method for hash data with
+	g_hash_table_new_full.
+
+	* util.c: Commented out all the functionality for now. We havn't a
+	statusbar yet.
+
+	* global.h: Removed file.
+	
 2001-11-13  Jens Finke <jens@triq.net>
 
 	* level-manager.[ch]: New files.

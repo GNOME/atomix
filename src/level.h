@@ -41,6 +41,7 @@ typedef struct {
 	GObjectClass parent_class;
 } LevelClass;
 
+GType level_get_type (void);
 
 gchar* level_get_name (Level *level);
 

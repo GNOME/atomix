@@ -175,6 +175,21 @@ level_manager_init_levels (LevelManager *lm)
 	lm->priv->initialized = TRUE;
 }
 
+gboolean 
+level_manager_is_last_level (LevelManager *lm, Level *level)
+{
+	GList *last;
+
+	g_return_val_if_fail (IS_LEVEL_MANAGER (lm), TRUE);
+	g_return_val_if_fail (lm->priv->initialized, TRUE);
+	g_return_val_if_fail (IS_LEVEL (level), TRUE);
+
+	last = g_list_last (lm->priv->level_seq);
+	if (last == NULL) return TRUE;
+
+	return !g_strcasecmp ((gchar*)last->data, level_get_name (level));
+}
+
 static void
 search_level_in_dir (LevelManager *lm, gchar *dir_path)
 {
@@ -277,14 +292,17 @@ level_manager_get_next_level (LevelManager *lm, Level *current_level)
 	priv = lm->priv;
 
 	if (current_level == NULL) {
-		filename = (gchar*) priv->level_seq->data;
+		filename = (gchar*) g_list_first (priv->level_seq)->data;
 	}
 	else {
 		GList *result;
 		result = g_list_find_custom (priv->level_seq, level_get_name (current_level),
 					     (GCompareFunc) g_strcasecmp);
-		if (result != NULL)
-			filename = (gchar*) result->data;
+		if (result != NULL) {
+			result = result->next;
+			if (result != NULL)
+				filename = (gchar*) result->data;
+		}
 	}
 
 	if (filename != NULL)

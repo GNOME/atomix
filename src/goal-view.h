@@ -1,5 +1,5 @@
 /* Atomix -- a little mind game about atoms and molecules.
- * Copyright (C) 1999 Jens Finke
+ * Copyright (C) 2001 Jens Finke
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,15 +16,16 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef _ATOMIX_GLOBAL_H_
-#define _ATOMIX_GLOBAL_H_
+#ifndef _ATOMIX_GOAL_VIEW_H_
+#define _ATOMIX_GOAL_VIEW_H_
 
-typedef enum
-{
-	OK,
-	NOT_FOUND,
-	NOT_A_VALID_FILE
-} LoadResult;
+#include <gnome.h>
 
+#include "theme.h"
+#include "goal.h"
 
-#endif /*_ATOMIX_GLOBAL_H_ */
+void goal_view_init (Theme *theme, GnomeCanvas *canvas);
+
+void goal_view_render (Goal *goal);
+
+#endif /* _ATOMIX_GOAL_VIEW_H_ */

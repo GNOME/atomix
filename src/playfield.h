@@ -21,7 +21,6 @@
 
 #include <gnome.h>
 #include <libxml/tree.h>
-#include "global.h"
 #include "tile.h"
 
 #define PLAYFIELD_TYPE        (playfield_get_type ())

@@ -10,14 +10,17 @@ INCLUDES = -Wall \
 
 bin_PROGRAMS = atomix
 
+noinst_PROGRAMS = pf-test
+
 atomix_SOURCES = \
 	main.c main.h global.h \
-	callbacks.c callbacks.h \
-	preferences.c preferences.h \
 	board.c board.h	\
 	undo.c undo.h \
-	goal.c goal.h
+	goal.c goal.h \
+	goal-view.c goal-view.h
 
+#	preferences.c preferences.h \
+#	callbacks.c callbacks.h \
 #	gtk-time-limit.c gtk-time-limit.h
 
 atomix_DEPENDENCIES = libatomix.a
@@ -34,9 +37,20 @@ libatomix_a_SOURCES = \
 	theme.c theme.h theme-private.h \
 	theme-manager.c theme-manager.h \
 	level.c level.h \
+	level-manager.c level-manager.h \
 	canvas_helper.c canvas_helper.h \
 	playfield.c playfield.h \
 	util.c util.h
+
+pf_test_SOURCES = \
+	playfield.h playfield.c \
+	tile.c tile.h \
+	pf-test.c
+
+pf_test_LDADD = \
+	-L$(top_builddir)/src \
+	$(ATOMIX_LIBS)
+
 
 install-data-local:
 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)

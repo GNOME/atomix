@@ -19,33 +19,39 @@
 #ifndef _ATOMIX_GOAL_H_
 #define _ATOMIX_GOAL_H_
 
-#include <gnome.h>
+#include <glib-object.h>
 #include "playfield.h"
-#include "main.h"
 
-typedef struct _Goal        Goal;
+#define GOAL_TYPE        (goal_get_type ())
+#define GOAL(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), GOAL_TYPE, Goal))
+#define GOAL_CLASS(k)    (G_TYPE_CHECK_CLASS_CAST((k), GOAL_TYPE, GoalClass))
+#define IS_GOAL(o)       (G_TYPE_CHECK_INSTANCE_TYPE ((o), GOAL_TYPE))
+#define IS_GOAL_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), GOAL_TYPE))
+#define GOAL_GET_CLASS(o)(G_TYPE_INSTANCE_GET_CLASS ((o), GOAL_TYPE, GoalClass))
 
-struct _Goal
+
+typedef struct _GoalPrivate   GoalPrivate;
+
+typedef struct 
 {
-	PlayField*   pf;
-	GHashTable*  index;
-	GnomeCanvasGroup*  item_group;
-};
+	GObject parent;
+	GoalPrivate *priv;
+} Goal;
 
+typedef struct
+{
+	GObjectClass parent_class;
+} GoalClass;
 
-Goal* goal_new(PlayField* pf);
+GType goal_get_type (void);
 
-void goal_destroy(Goal* goal);
+Goal* goal_new (PlayField* pf);
+
+PlayField *goal_get_playfield (Goal *goal);
 
 gboolean goal_reached(Goal* goal, PlayField* pf, guint row_anchor, 
 		      guint col_anchor);
 
 void goal_print(Goal* goal);
-
-void goal_render(Goal* goal);
-
-void goal_clear(Goal* goal);
-
-void goal_init (AtomixApp *app);
 
 #endif /* _ATOMIX_GOAL_H_ */

@@ -16,8 +16,6 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#define ATOMIX_GLADE_FILE "atomix2.glade"
-
 #ifdef HAVE_CONFIG_H
 #  include <config.h>
 #endif
@@ -29,244 +27,300 @@
 #include <unistd.h>
 #include <errno.h>
 
-#include "global.h"
 #include "board.h"
 #include "playfield.h"
-#include "preferences.h"
 #include "main.h"
 #include "goal.h"
 #include "level.h"
-/* #include "gtk-time-limit.h" */
-#include "callbacks.h"
 #include "util.h"
+#include "goal-view.h"
 
 /****************************
  *    global variables
  */
 
-static GladeXML     *gui  = NULL;   /* xml gui representation    */
 static AtomixApp    *app; 
-static LevelData    *level_data;    /* all infos about a level   */
-gint game_state;                    /* current state of the game */
-
 
 /**
  *  dialog callbacks
  */
-gint next_level_dlg_cb(gpointer data);
-void save_score(gdouble score);
-void game_clean_up(void);
+static void save_score (AtomixApp *app);
+static void game_clean_up (AtomixApp *app);
 
-void game_load_level(LevelData *data);
-void update_menu_item_state (gint state);
-void update_player_info(LevelData *data);
+static void update_menu_item_state (AtomixApp *app);
+static void update_player_info (AtomixApp *app);
 static void clear_player_info (AtomixApp *app);
-void create_user_config_dir(void);
-#if 0
-GtkWidget* get_time_limit_widget(void);
-#endif
+void create_user_config_dir (void);
 
-void game_bonus_level_timeout(GtkWidget *widget, gpointer user_data);
+static void game_new (AtomixApp *app);
+static void game_init (AtomixApp *app);
+static void game_prepare_level (AtomixApp *app, Level *next_level);
+static void game_undo_move (AtomixApp *app);
+static void game_pause (AtomixApp *app);
+static void game_continue (AtomixApp *app);
+static void game_skip_level (AtomixApp *app);
+static void game_reload_level (AtomixApp *app);
+static void game_finished (AtomixApp *app);
+static void atomix_exit (AtomixApp *app);
+static void game_user_quits (AtomixApp *app);
 
-/***************************
- *    functions
+/*
+ *     Menu callbacks 
  */
-GladeXML* get_gui ()
+
+void
+verb_GameNew_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
 {
-	return NULL;
+	game_new ((AtomixApp*) user_data);
+}
+
+void
+verb_GameEnd_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+	game_user_quits ((AtomixApp*) user_data);
 }
 
 
-AtomixApp* get_app ()
+void
+verb_GameSkip_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+	game_skip_level ((AtomixApp*) user_data);
+}
+
+void
+verb_GamePause_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+	game_pause ((AtomixApp*) user_data);
+
+}
+
+void
+verb_GameContinue_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+	game_continue ((AtomixApp*) user_data);
+}
+
+void
+verb_GameUndo_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+	game_undo_move ((AtomixApp*) user_data);
+}
+
+
+void
+verb_GameScores_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+#if 0
+	gnome_scores_display("Atomix", "atomix", NULL, 0);	
+
+#endif
+}
+
+void
+verb_GameExit_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+	atomix_exit ((AtomixApp*) user_data);
+}
+
+void
+verb_EditPreferences_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+#if 0
+	preferences_show_dialog();
+#endif
+}
+
+
+void
+verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data, const char *cname)
+{
+#if 0
+	show_about_dlg ();
+#endif
+}
+
+gboolean
+on_app_destroy_event(GtkWidget       *widget,
+                     GdkEvent        *event,
+                     gpointer         user_data)
+{
+	AtomixApp *app = (AtomixApp*) user_data;
+	atomix_exit (app);
+	
+	return TRUE;
+}
+
+
+/****************************************************************************/
+
+AtomixApp* 
+get_app ()
 {
 	return app;
 }
 
-Level* get_actual_level()
+static void
+atomix_exit (AtomixApp *app)
 {
-	return level_data->level;
-}
+	g_message ("Destroy application");
 
-Theme* get_actual_theme()
-{
-	return app->theme;
-}
+	g_return_if_fail (app != NULL);
 
-gint get_game_state()
-{
-	return game_state;
-}
+	board_destroy ();
+	
+	if (app->level)
+		g_object_unref (app->level);
+	if (app->lm)
+		g_object_unref (app->lm);
 
-#if 0
-GtkWidget* get_time_limit_widget(void)
-{
-	GtkWidget *alignment;
-	alignment = glade_xml_get_widget (gui, "clock");
-	return GTK_BIN(alignment)->child;
-}
-#endif 
+	if (app->theme)
+		g_object_unref (app->theme);
+	if (app->tm)
+		g_object_unref (app->tm);
 
-void show_about_dlg (void) 
-{
-	GladeXML *dlg_xml = glade_xml_new ("../atomix2.glade", "dlg_about", NULL);
-	gtk_object_unref (GTK_OBJECT (dlg_xml));
-}
+	/* quit application */
+	bonobo_object_unref (BONOBO_OBJECT (app->ui_component));
+	gtk_widget_destroy (app->mainwin);
 
+	gtk_main_quit();
+}
 
 static void 
 game_init (AtomixApp *app)
 {
-	GtkWidget* clock;
-
-	/* init level data struct */
-	level_data = g_malloc(sizeof(LevelData));
-	level_data->no_level = 1;
-	level_data->level = NULL;
-	level_data->score = 0.0;
-	level_data->theme = NULL;
-
-	/* init the board */
-	board_init (app);
-
-	/* init goal */
-	goal_init (app);
+	g_return_if_fail (app != NULL);
 
 	/* init theme manager */
 	app->tm = theme_manager_new ();
 	theme_manager_init_themes (app->tm);
+	app->theme = theme_manager_get_theme (app->tm, "default");
+	g_assert (app->theme != NULL);
 
-#if 0
-	/* connect the timeout function */
-	clock = get_time_limit_widget();
-	gtk_signal_connect(GTK_OBJECT(clock), "timeout",
-			   GTK_SIGNAL_FUNC(game_level_timeout),NULL);
-#endif
+	/* init level manager */
+	app->lm = level_manager_new ();
+	level_manager_init_levels (app->lm);
+	app->level = NULL;
+	app->level_no = 0;
+	app->score = 0.0;
+
+	/* init the board */
+	board_init (app->theme, GNOME_CANVAS (app->ca_matrix));
+
+	/* init goal */
+	goal_view_init (app->theme, GNOME_CANVAS (app->ca_goal));
 
 	/* enable only usable menu items according to state */
-	game_state = GAME_NOT_RUNNING;
-	update_menu_item_state(game_state);
+	app->state = GAME_NOT_RUNNING;
+	update_menu_item_state (app);
 
 	/* clear the level info */
 	clear_player_info (app);
 }
 
-void game_new()
+static void 
+game_new (AtomixApp *app)
 {
-	level_data->level = level_load_xml(level_get_first_level());
+	Level *level;
 
-	if(level_data->level) 
+	g_return_if_fail (app != NULL);
+	
+	level = level_manager_get_next_level (app->lm, NULL);
+
+	if (level) 
 	{
-		board_hide_message(BOARD_MSG_NEW_GAME);
+		board_hide_message (BOARD_MSG_NEW_GAME);
 
 		/* init level data */
-		level_data->no_level = 1;
-		level_data->score = 0.0;
-
+		app->level_no = 1;
+		app->score = 0.0;
+		app->state = GAME_RUNNING;
+		
 		/* update game state */
-		game_state = GAME_RUNNING;
-		update_menu_item_state(game_state);
+		update_menu_item_state (app);
 
 		/* load the level */
-		game_load_level(level_data);    
-		
+		game_prepare_level (app, level);    
 	}
 	else
 	{
-		/* show level not found dialog */
-		GladeXML *dlg_xml;
-		dlg_xml = glade_xml_new ("../atomix2.glade", "dlg_level_not_found", NULL);
-		set_appbar_temporary(_("Level not found."));
-		gtk_object_unref (GTK_OBJECT (dlg_xml));
+		GtkWidget *dlg;
+		dlg = gtk_message_dialog_new (GTK_WINDOW (app->mainwin),
+					      GTK_DIALOG_MODAL,
+					      GTK_MESSAGE_ERROR,
+					      GTK_BUTTONS_OK,
+					      "%s",
+					      _("Couldn't find at least one level."));
+		gtk_dialog_run (GTK_DIALOG (dlg));
+		gtk_widget_destroy (GTK_WIDGET (dlg));
 	}
 }
 
-void game_undo_move()
+static void 
+game_undo_move (AtomixApp *app)
 {
-	if(board_undo_move())
-	{
-		/* xgettext:no-c-format */
-		set_appbar_temporary(_("Undo last move. This costs you 5 % of your score."));
-		level_data->score = level_data->score * 0.95;
-		update_player_info(level_data);
-	}
-	else
-	{
+	g_return_if_fail (app != NULL);
+
+	if (board_undo_move()) {
 		set_appbar_temporary(_("No more undo levels."));
 	}
 }
 
-void game_skip_level(void)
+static void 
+game_skip_level (AtomixApp *app)
 {
-	if(game_state == GAME_RUNNING)
-	{
-		if(level_is_last_level(level_data->level))
-		{
-			set_appbar_temporary(_("This is the last level. You can't skip any further."));
-		}
-		else
-		{
-			gchar *next;
-			GtkWidget *clock;
+	g_return_if_fail (app != NULL);
+	g_assert (app->state == GAME_RUNNING);
+	if (level_manager_is_last_level (app->lm, app->level)) {
+		set_appbar_temporary(_("This is the last level. You can't skip any further."));
+	}
+	else {
+		Level *next_level = level_manager_get_next_level (app->lm, app->level);
+		
+		/* load level */
+		game_prepare_level (app, next_level);
+	}
+}
+
+static void 
+game_prepare_level (AtomixApp *app, Level *next_level)
+{
+	PlayField *goal_pf;
+	PlayField *level_pf;
+
+	g_return_if_fail (app != NULL);
+	g_return_if_fail (IS_LEVEL (next_level));
+
+	if (app->level)
+		g_object_unref (app->level);
+	app->level = next_level;
+
+	if (app->goal)
+		g_object_unref (app->goal);
+	goal_pf = level_get_goal (app->level);
+	app->goal = goal_new (goal_pf);
+
+	/* init board */
+	board_clear ();
+	level_pf = level_get_playfield (app->level);
+	board_init_level (level_pf, app->goal);
+
+	/* init goal */
+	goal_view_render (app->goal);
+
+	update_player_info (app);
+
+	g_object_unref (goal_pf);
+	g_object_unref (level_pf);
+}
+
+static void 
+game_reload_level (AtomixApp *app)
+{
+	g_object_ref (app->level);
+	game_prepare_level (app, app->level);
+}
 
 #if 0
-			clock = get_time_limit_widget();
-			gtk_time_limit_stop(GTK_TIME_LIMIT(clock));
-#endif 
-			
-			next = g_strdup(level_data->level->next);    
-			level_destroy(level_data->level);
-			level_data->level = level_load_xml(next);
-			level_data->no_level++;
-			g_free(next);
-			
-			/* load level */
-			game_load_level(level_data);
-		}
-	}
-}
-
-void game_load_level(LevelData *data)
-{
-	g_return_if_fail(data != NULL);
-	g_return_if_fail(data->level != NULL);
-
-	/* load theme if necessary */
-	if(data->theme)
-	{
-		if (!g_strcasecmp(theme_get_name (app->theme), data->level->theme_name))
-		{
-			/* the theme changed for this level */
-			g_object_unref (app->theme);
-			app->theme = theme_manager_get_theme (app->tm, data->level->theme_name);
-			data->theme = app->theme;
-		}
-	}    
-	else
-	{
-		app->theme = theme_manager_get_theme (app->tm, data->level->theme_name);    
-		data->theme = app->theme;
-	}
-
-	/* init the level */
-	board_clear();
-	board_init_level(data->level);
-
-	update_player_info(data);
-
-#if 0
-	if((data->level->time > 0) &&  preferences_get()->score_time_enabled)
-	{			
-		gtk_time_limit_start(GTK_TIME_LIMIT(get_time_limit_widget()));
-	}
-#endif 
-}
-
-
-void game_reload_level()
-{
-	game_load_level(level_data);
-}
-
 void game_level_timeout(GtkWidget *widget, gpointer data)
 {
 	GtkWidget *dlg;
@@ -275,11 +329,9 @@ void game_level_timeout(GtkWidget *widget, gpointer data)
 	gint button_nr;
 
 	/* stop the clock */
-#if 0
 	clock = get_time_limit_widget();
 	gtk_time_limit_stop(GTK_TIME_LIMIT(clock));      
         gtk_clock_set_seconds(GTK_CLOCK(clock), 0);
-#endif 
 
 	/* show the cursor */
 	board_show_normal_cursor();
@@ -340,313 +392,150 @@ void game_bonus_level_timeout(GtkWidget *widget, gpointer user_data)
 		g_free(next);
 
 		/* load level */
-		game_load_level(level_data);
+		game_prepare_level(level_data);
 	}
 	else
 	{
 		game_finished();
 	}
 }
-
-void game_level_finished(void)
-{
-	GtkWidget* clock;
-	gchar* next;
-	gint secs;
-	GtkWidget* dlg = NULL;
-	NextLevelDlgInfo* dlg_info;
-
-#if 0
-	/* stop clock */
-	clock = get_time_limit_widget();
-	gtk_time_limit_stop(GTK_TIME_LIMIT(clock));
-#endif
-
-	/* show cursur */
-	board_show_normal_cursor();
-
-	/* retrieve next level */
-	next = g_strdup(level_data->level->next);    
-    
-	if(!level_is_last_level(level_data->level))
-	{
-		/* prepare next level */
-
-		if(preferences_get()->score_time_enabled)
-		{
-			GladeXML *dlg_xml;
-
-			/* show statistics dialog */     
-			secs = 0; /* gtk_time_limit_get_seconds(GTK_TIME_LIMIT(clock)); */
-			dlg_xml = glade_xml_new ("../atomix2.glade", "dlg_next_level", NULL);
-			dlg_info = g_malloc(sizeof(NextLevelDlgInfo));
-			dlg_info->timer_id = -1;
-			dlg_info->secs = secs;
-			dlg_info->score = level_data->score;
-			dlg_info->lb_secs = glade_xml_get_widget (dlg_xml, "time");
-			dlg_info->lb_score = glade_xml_get_widget (dlg_xml, "score");
-			dlg_info->timer_id = gtk_timeout_add(60, next_level_dlg_cb, 
-							     dlg_info);
-	    
-			dlg = glade_xml_get_widget (dlg_xml, "dlg_next_level");
-			gnome_dialog_run(GNOME_DIALOG(dlg));
-			gtk_widget_destroy(GTK_WIDGET(dlg));
-	    
-			if(dlg_info->timer_id != -1)
-			{
-				gtk_timeout_remove(dlg_info->timer_id);
-			}
-			g_free(dlg_info);
-    
-			/* set new score */
-			level_data->score = level_data->score + secs;
-		}
-
-		/* update level data */
-		level_destroy(level_data->level);
-		level_data->level = level_load_xml(next);
-		level_data->no_level++;
-       
-		/* load level */
-		game_load_level(level_data);
-	}
-	else
-	{
-		/* player reached game end */
-		game_finished();
-	}
-	g_free(next);
-}
-
-void game_user_quits()
-{
-	GtkWidget *dlg;
-	GladeXML *dlg_xml;
-	gint button_nr;
-	game_pause();
-	
-	dlg_xml = glade_xml_new ("../atomix2.glade", "dlg_quit_game", NULL);
-	dlg = glade_xml_get_widget (dlg_xml, "dlg_quit_game");
-	button_nr = gnome_dialog_run (GNOME_DIALOG(dlg));
-	
-	game_continue();
-	if(button_nr == 0 /* yes */)
-	{
-#if 0
-		GtkWidget *clock;
-		/* stop the clock */
-		clock = get_time_limit_widget();
-		gtk_time_limit_stop(GTK_TIME_LIMIT(clock));
-		gtk_clock_set_seconds(GTK_CLOCK(clock), 0);
 #endif 
 
-		save_score(level_data->score);
-		game_clean_up();
-		game_state = GAME_NOT_RUNNING;
-		board_view_message(BOARD_MSG_NEW_GAME);
-		update_menu_item_state(game_state);
+void 
+game_level_finished (AtomixApp *app)
+{
+	Level *next_level;
+
+	g_return_if_fail (app != NULL);
+
+	/* show cursur */
+	board_show_normal_cursor ();
+	
+	next_level = level_manager_get_next_level (app->lm, app->level);
+
+	if (next_level) {
+		app->level_no++;
+       
+		game_prepare_level (app, next_level);
+	}
+	else {
+		/* player reached game end */
+		game_finished (app);
 	}
 }
 
-gint next_level_dlg_cb(gpointer data)
+static void 
+game_user_quits (AtomixApp *app)
 {
-	NextLevelDlgInfo* dlg_info = (NextLevelDlgInfo*) data;
-	gint minutes, secs;
-	gchar* time_str = g_malloc(6*sizeof(gchar));
-	gchar* score_str = g_malloc(10*sizeof(gchar));
-    
-	if(dlg_info->secs > 0)
-	{
-		dlg_info->secs--;
-		dlg_info->score = dlg_info->score + 1.0;
-	}
-	else
-	{
-		gtk_timeout_remove(dlg_info->timer_id);
-		dlg_info->timer_id = -1;
-	}
+	GtkWidget *dlg;
+	gint response;
 
-	minutes = (dlg_info->secs)/60;
-	secs = (dlg_info->secs)%60;
+	g_return_if_fail (app != NULL);
 
-	if(secs < 10)
-	{
-		g_snprintf(time_str, 6, "%i:0%i", minutes, secs);
-	}
-	else
-	{
-		g_snprintf(time_str, 6, "%i:%i", minutes, secs);
-	}
-	g_snprintf(score_str, 10, "%.2f", dlg_info->score);
+	game_pause (app);
+
+	dlg = gtk_message_dialog_new (GTK_WINDOW (app->mainwin),
+				      GTK_DIALOG_MODAL,
+				      GTK_MESSAGE_QUESTION,
+				      GTK_BUTTONS_YES_NO,
+				      "%s",
+				      _("Do you want to finish the game?"));
+	response = gtk_dialog_run (GTK_DIALOG (dlg));
+	gtk_object_unref (GTK_OBJECT (dlg));
 	
-	gtk_label_set_text(GTK_LABEL(dlg_info->lb_secs), time_str);
-	gtk_label_set_text(GTK_LABEL(dlg_info->lb_score), score_str);
-    
-
-	return TRUE;
+	if (response == GTK_RESPONSE_OK) {
+		save_score (app);
+		game_clean_up (app);
+		app->state = GAME_NOT_RUNNING;
+		board_view_message (BOARD_MSG_NEW_GAME);
+		update_menu_item_state (app);
+	}
+	else
+		game_continue (app);
 }
 
-
-void game_finished(void)
+static void 
+game_finished (AtomixApp *app)
 {
-	GtkWidget* clock = NULL;
-	gint secs;
-	GtkWidget* dlg = NULL;
-	NextLevelDlgInfo* dlg_info;
-	gint button_nr = -1;
+	GtkWidget* dlg;
 
-#if 0
-	/* stop clock */
-	clock = get_time_limit_widget();
-#endif
-	
-	if(preferences_get()->score_time_enabled)
-	{
-		GladeXML *dlg_xml;
+	g_return_if_fail (app != NULL);
 
-		/* show statistics dialog */     
-		secs = 0; /* gtk_time_limit_get_seconds(GTK_TIME_LIMIT(clock)); */
-		dlg_xml = glade_xml_new ("../atomix2.glade", "dlg_last_level", NULL);
-		dlg = glade_xml_get_widget (dlg_xml, "dlg_last_level");
-		dlg_info = g_malloc(sizeof(NextLevelDlgInfo));
-		dlg_info->timer_id = -1;
-		dlg_info->secs = secs;
-		dlg_info->score = level_data->score;
-		dlg_info->lb_secs = glade_xml_get_widget (dlg_xml, "time");
-		dlg_info->lb_score = glade_xml_get_widget (dlg_xml, "score");       
-		dlg_info->timer_id = gtk_timeout_add(60, next_level_dlg_cb, dlg_info);
-	
-		gtk_widget_show(GTK_WIDGET(dlg));
-		button_nr = gnome_dialog_run(GNOME_DIALOG(dlg));
-		gtk_widget_destroy(GTK_WIDGET(dlg));
+	dlg = gtk_message_dialog_new (GTK_WINDOW (app->mainwin),
+				      GTK_DIALOG_MODAL,
+				      GTK_MESSAGE_INFO,
+				      GTK_BUTTONS_CLOSE,
+				      "%s",
+				      _("Congratulations! You have finished all Atomix levels."));
+        gtk_dialog_run (GTK_DIALOG (dlg));
+	gtk_object_unref (GTK_OBJECT (dlg));
 
-		if(dlg_info->timer_id != -1)
-		{
-			gtk_timeout_remove(dlg_info->timer_id);
-		}
-		g_free(dlg_info);
-
-		/* calculate final score */
-		level_data->score = level_data->score + secs;
-		save_score(level_data->score);
-	}
-
-	if(button_nr == 0)
-	{
-		/* player wants new game */
-		game_new();
-	}
-	else
-	{
-		/* no new game */
-		game_clean_up();
-		game_state = GAME_NOT_RUNNING;
-		board_view_message(BOARD_MSG_NEW_GAME);
-		update_menu_item_state(game_state);				
-	}
+	game_clean_up (app);
+	app->state = GAME_NOT_RUNNING;
+	board_view_message (BOARD_MSG_NEW_GAME);
+	update_menu_item_state (app);				
 }
 
-void game_clean_up(void)
+static void 
+game_clean_up (AtomixApp *app)
 {
+	g_return_if_fail (app != NULL);
+
 	clear_player_info (app);
 
-	if(level_data->level) level_destroy(level_data->level);
-	level_data->level = NULL;
+	if (app->level)
+		g_object_unref (app->level);
+	app->level = NULL;
 
-	board_clear();
+	board_clear ();
 }
 
-void game_pause(void)
+static void 
+game_pause (AtomixApp *app)
 {
-	if(game_state == GAME_RUNNING)
-	{
-#if 0
-		if((level_data->level->time > 0) &&
-		   preferences_get()->score_time_enabled)
-		{
-			GtkWidget *tl;
-			tl = get_time_limit_widget();
-			gtk_time_limit_stop(GTK_TIME_LIMIT(tl));
-		}
-#endif
+	g_return_if_fail (app != NULL);
+	g_return_if_fail (app->state == GAME_RUNNING);
 	
-		board_hide();
-		board_view_message(BOARD_MSG_GAME_PAUSED);
-		game_state = GAME_PAUSED;
-		update_menu_item_state(game_state);
-	}
+	board_hide ();
+	board_view_message (BOARD_MSG_GAME_PAUSED);
+	app->state = GAME_PAUSED;
+	update_menu_item_state (app);
 }
 
 
-void game_continue(void)
+static void 
+game_continue (AtomixApp *app)
 {
-	if(game_state == GAME_PAUSED)
-	{
-		board_hide_message(BOARD_MSG_GAME_PAUSED);
-		board_show();
-	
-#if 0
-		if((level_data->level->time > 0) && 
-		   preferences_get()->score_time_enabled)
-		{
-			GtkWidget *tl;
-			tl = get_time_limit_widget();
-			gtk_time_limit_start(GTK_TIME_LIMIT(tl));
-		}
-#endif
+	g_return_if_fail (app != NULL);
+	g_return_if_fail (app->state == GAME_PAUSED);
 
-		game_state = GAME_RUNNING;
-		update_menu_item_state(game_state);
-	}
+	board_hide_message (BOARD_MSG_GAME_PAUSED);
+	board_show ();
+		
+	app->state = GAME_RUNNING;
+	update_menu_item_state (app);
 }
 
-void update_player_info(LevelData *data)
+static void 
+update_player_info (AtomixApp *app)
 {
-	GtkWidget *lb_number;
-	GtkWidget *lb_name;
-	GtkWidget *lb_score;
-	GtkWidget *clock;
 	gchar *str_buffer;
     
-	g_return_if_fail(data != NULL);
-	g_return_if_fail(data->level != NULL);
-
-	str_buffer = g_malloc(10*sizeof(str_buffer));
+	g_return_if_fail (app != NULL);
 	
 	/* set level number */
-	lb_number = GTK_WIDGET(glade_xml_get_widget (gui, "lb_number"));
-	g_snprintf(str_buffer, 10, "%i", data->no_level);
-	gtk_label_set_text(GTK_LABEL(lb_number), str_buffer);
+	str_buffer = g_new0 (gchar, 10);
+	g_snprintf (str_buffer, 10, "%i", app->level_no);
+	gtk_label_set_text (GTK_LABEL (app->lb_level), str_buffer);
+	g_free (str_buffer);
 
 	/* set levelname */
-	lb_name = GTK_WIDGET(glade_xml_get_widget (gui, "lb_level"));
-	gtk_label_set_text(GTK_LABEL(lb_name), data->level->name);
+	gtk_label_set_text (GTK_LABEL (app->lb_name), 
+			    level_get_name (app->level));
 
 	/* set score and time*/
-	lb_score = GTK_WIDGET(glade_xml_get_widget (gui, "lb_score"));
-#if 0
-	clock = get_time_limit_widget();
-	gtk_widget_show(clock);
-#endif
-
-	if(preferences_get()->score_time_enabled)
-	{
-		g_snprintf(str_buffer, 10, "%.2f", data->score);
-		gtk_label_set_text(GTK_LABEL(lb_score), str_buffer);
-
-#if 0
-		gtk_clock_set_seconds(GTK_CLOCK(clock), data->level->time);
-#endif
-	}
-	else
-	{
-		gtk_label_set_text(GTK_LABEL(lb_score), "");
-#if 0
-		gtk_clock_set_seconds(GTK_CLOCK(clock), 0);
-#endif
-	}
-
-	g_free(str_buffer);
+	gtk_label_set_text (GTK_LABEL (app->lb_score), 
+			    "0.0");
 }
 
 static void 
@@ -660,13 +549,6 @@ clear_player_info(AtomixApp *app)
     
 	/* level score */
 	gtk_label_set_text(GTK_LABEL(app->lb_score), "");
-    
-#if 0
-	/* time */
-	clock = get_time_limit_widget();
-	gtk_widget_hide(clock);
-	gtk_clock_set_seconds(GTK_CLOCK(clock), 0);
-#endif
 }
 
 typedef struct {
@@ -712,11 +594,12 @@ static const CmdEnable paused[] =
 
 static const CmdEnable* state_sensitivity[] = { not_running, running, paused };
 
-void update_menu_item_state (gint state)
+static void 
+update_menu_item_state (AtomixApp *app)
 {
 	gchar *path;
 	gint i;
-	const CmdEnable *cmd_list = state_sensitivity [state];
+	const CmdEnable *cmd_list = state_sensitivity [app->state];
 
 	for (i = 0; cmd_list[i].cmd != NULL; i++) {
 		path = g_strconcat ("/commands/", cmd_list[i].cmd, NULL);
@@ -727,14 +610,17 @@ void update_menu_item_state (gint state)
 	}
 }
 
-void save_score(gdouble score)
+static void 
+save_score (AtomixApp *app)
 {
+#if 0
 	if(score > 0.0)
 	{
 		gint highscore_pos;
 		highscore_pos = gnome_score_log(score, NULL, TRUE);
 		gnome_scores_display("Atomix", "atomix", NULL, highscore_pos);	    
 	}
+#endif
 }
 
 void create_user_config_dir(void)
@@ -975,14 +861,11 @@ main (int argc, char *argv[])
 	prog = gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE, 
 				   argc, argv, NULL);
 
-	glade_gnome_init ();
-
 	/* init preferences */
-	preferences_init();
+	/* preferences_init(); */
 
 	/* make a few initalisations here */
 	create_user_config_dir();
-	level_create_hash_table();
 
 	app = create_gui (prog);
 

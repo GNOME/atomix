@@ -51,7 +51,6 @@ struct _ThemePrivate
 	gint          last_id[TILE_TYPE_UNKNOWN];  /* the appropriate last id for each image list */
 };
 
-GType theme_get_type (void);
 
 Theme* theme_new (void);
 

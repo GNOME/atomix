@@ -20,21 +20,25 @@
 
 void set_appbar_temporary(gchar *txt)
 {
+#if 0
 	static gint id = -1;
 	GnomeAppBar* appbar = GNOME_APPBAR(glade_xml_get_widget (get_gui (), "appbar"));
 	if(id != -1) gtk_timeout_remove(id);
 	gnome_appbar_set_status(appbar, txt);
 	id = gtk_timeout_add(2000, clear_appbar, &id);    
+#endif
 }
 
 int
 clear_appbar(void *data)
 {
+#if 0
 	int *id = data;
 	GnomeAppBar* appbar = GNOME_APPBAR(glade_xml_get_widget (get_gui (), "appbar"));
 	gnome_appbar_refresh(appbar);
 	gtk_timeout_remove(*id);
 	*id = -1;
 
-	return 1;
+#endif
+	return TRUE;
 }

@@ -276,6 +276,8 @@ load_theme (gchar *theme_dir)
 		return NULL;
 	}
 
+	g_message ("parse file: %s", theme_file);
+
 	doc = xmlParseFile (theme_file); 
 	if (doc == NULL) {
 		g_warning ("XML file %s couldn't be parsed.", theme_file);
@@ -336,7 +338,7 @@ load_theme (gchar *theme_dir)
 			else if (!g_strcasecmp(node->name,"selector"))
 			{
 				gchar *src;
-				src = g_build_filename (theme_dir, xmlGetProp(node, "src"));
+				src = g_build_filename (theme_dir, xmlGetProp(node, "src"), NULL);
 				theme_set_selector_image(theme, src);
 			}
 			else					
@@ -360,15 +362,19 @@ handle_base_image_node (Theme *theme, xmlNodePtr node)
 	gint id;
 	gchar *src;
 	gchar *name;
-
+	
 	for (; node != NULL; node = node->next) {
-		tile_type = string_to_tile_type (xmlGetProp (node, "type"));
-		id = atoi (xmlGetProp (node, "id"));
-		src = g_build_filename (theme->priv->path, xmlGetProp (node, "src"), NULL);
-		name = xmlGetProp (node, "name");
+		if (!g_strcasecmp (node->name, "bimage")) {
+			tile_type = string_to_tile_type (xmlGetProp (node, "type"));
+			id = atoi (xmlGetProp (node, "id"));
+			src = g_build_filename (theme->priv->path, xmlGetProp (node, "src"), NULL);
+			name = xmlGetProp (node, "name");
 		
-		theme_add_base_image_with_id (theme, name, src, tile_type, id);
-		g_free (src);
+			theme_add_base_image_with_id (theme, name, src, tile_type, id);
+			g_free (src);
+		}
+		else 
+			g_warning("Unknown theme tag, ignoring <%s>.", node->name);
 	}
 }
 
@@ -379,6 +385,8 @@ string_to_tile_type (gchar *str)
 	static int prefix_len = 0;
 	if (!prefix_len) prefix_len = strlen ("TILE_TYPE_");
 	
+	g_return_val_if_fail (str != NULL, tile_type);
+
 	str += prefix_len;
 
 	if (!g_strcasecmp (str, "OBSTACLE"))
@@ -399,12 +407,16 @@ handle_link_image_node (Theme *theme, xmlNodePtr node)
 	gchar *name;
 	
 	for (; node != NULL; node = node->next ) {
-		tile_link = string_to_tile_link (xmlGetProp (node, "type"));
-		src = g_build_filename (theme->priv->path, xmlGetProp (node, "src"), NULL);
-		name = xmlGetProp (node, "name");
-	
-		theme_add_link_image (theme, name, src, tile_link);
-		g_free (src);
+		if (!g_strcasecmp (node->name, "limage")) {		
+			tile_link = string_to_tile_link (xmlGetProp (node, "type"));
+			src = g_build_filename (theme->priv->path, xmlGetProp (node, "src"), NULL);
+			name = xmlGetProp (node, "name");
+			
+			theme_add_link_image (theme, name, src, tile_link);
+			g_free (src);
+		}
+		else 
+			g_warning("Unknown theme tag, ignoring <%s>.", node->name);
 	}
 }
 

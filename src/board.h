@@ -19,8 +19,9 @@
 #ifndef _ATOMIX_BOARD_H_
 #define _ATOMIX_BOARD_H_
 
-#include "level.h"
-#include "main.h"
+#include "theme.h"
+#include "playfield.h"
+#include "goal.h"
 
 enum
 {
@@ -30,9 +31,9 @@ enum
 	BOARD_MSG_GAME_OVER
 };
 
-void board_init (AtomixApp *app);
+void board_init (Theme *theme, GnomeCanvas *canvas);
 
-void board_init_level(Level *l);
+void board_init_level (PlayField *pf, Goal *goal);
 
 void board_destroy(void);
 
