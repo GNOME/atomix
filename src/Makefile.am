@@ -3,8 +3,8 @@ scoredir = $(localstatedir)/games
 uidir = $(pkgdatadir)/ui
 
 INCLUDES = -Wall \
-	-DDEBUG	\
 	-I$(top_srcdir)/intl \
+	-DDEBUG \
 	$(ATOMIX_CFLAGS) \
 	-DDATADIR=\""$(datadir)"\" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"
@@ -14,7 +14,7 @@ bin_PROGRAMS = atomix
 noinst_PROGRAMS = pf-test level-convert
 
 atomix_SOURCES = \
-	main.c main.h global.h \
+	main.c main.h \
 	board.c board.h	\
 	undo.c undo.h \
 	goal.c goal.h \
@@ -35,7 +35,7 @@ libatomix_a_SOURCES = \
 	tile.c tile.h \
 	theme.c theme.h theme-private.h \
 	theme-manager.c theme-manager.h \
-	level.c level.h \
+	level.c level.h level-private.h \
 	level-manager.c level-manager.h \
 	canvas_helper.c canvas_helper.h \
 	playfield.c playfield.h \
@@ -59,6 +59,8 @@ level_convert_SOURCES = \
 level_convert_LDADD = \
 	-L$(top_builddir)/src \
 	$(ATOMIX_LIBS)
+
+EXTRA_DIST = atomix-ui.xml
 
 #install-data-local:
 #	-$(mkinstalldirs) $(DESTDIR)$(scoredir)

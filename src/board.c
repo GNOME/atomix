@@ -287,8 +287,6 @@ board_render ()
 		}
 	}
 
-	playfield_print (board_sce);
-	
 	theme_get_tile_size (board_theme, &tile_width, &tile_height);
 
 	/* center the whole thing */
