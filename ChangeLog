@@ -20,6 +20,10 @@
 	force users to keep empty directories that might never be
 	used.
 
+	* AUTHORS,
+	* src/main.c: added myself to the credits, since I'm the
+	one responsible for atomix now.
+
 2004-08-23  Alastair McKinstry  <mckinstry@debian.org>
 
 	* configure.in: Added "ga" (Irish) to ALL_LINGUAS.
