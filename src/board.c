@@ -111,20 +111,10 @@ static GdkCursor        *hidden_cursor;  /* stores the transparent cursor */
   Declaration of internal functions
 
   ---------------------------------------------------------------*/
-GnomeCanvasItem*
-create_obstacle (double x, double y, Tile *tile,
-		 GnomeCanvasGroup* group);
+GnomeCanvasItem* create_tile (double x, double y, Tile *tile,
+			      GnomeCanvasGroup* group);
 
-GnomeCanvasItem*
-create_moveable (double x, double y, Tile *tile,
-		 GnomeCanvasGroup* group);
-
-GnomeCanvasItem*
-create_item (GdkPixbuf* img, double x, double y,
-	     GnomeCanvasGroup* group);
-
-GnomeCanvasItem*
-create_message(GnomeCanvas *canvas, GnomeCanvasGroup* group, gchar* text);
+GnomeCanvasItem* create_message(GnomeCanvas *canvas, GnomeCanvasGroup* group, gchar* text);
 
 void
 create_hidden_cursor(void);
@@ -325,24 +315,23 @@ board_render(void)
 		for(col=0; col < board->n_cols; col++)
 		{
 			tile = playfield_get_tile(board, row, col);
-			type = tile_get_type(tile);
+			type = tile_get_tile_type (tile);
 			switch(type)
 			{
-			case TILE_MOVEABLE:
+			case TILE_TYPE_MOVEABLE:
 				convert_to_canvas(theme, row, col, &x, &y);
-				item = create_moveable(x, y, tile, 
-						       level_items->moveables);
+				item = create_tile(x, y, tile, 
+						   level_items->moveables);
 				canvas_map_set_item(canvas_map, 
 						    row, col, item);
 				break;
 				
-			case TILE_OBSTACLE:
+			case TILE_TYPE_OBSTACLE:
 				convert_to_canvas(theme, row, col, &x, &y);
-				item = create_obstacle(x, y, tile, 
-						       level_items->obstacles);
+				item = create_tile(x, y, tile, level_items->obstacles);
 				break;
 				
-			case TILE_NONE:
+			case TILE_TYPE_UNKNOWN:
 			default:
 			}
 		}
@@ -398,7 +387,7 @@ board_undo_move()
 					  move->dest_col, &x_dest, 
 					  &y_dest);
 			
-			animstep = theme->animstep;
+			animstep = theme_get_animstep (theme);
 			if(move->src_col == move->dest_col)
 			{
 				anim_data->counter = 
@@ -886,9 +875,9 @@ move_item(GnomeCanvasItem* item, ItemDirection direc)
 			dest_col = dest_col + 1; break;
 		}
 		tile = playfield_get_tile(board, dest_row, dest_col);
-		type = tile_get_type(tile);
+		type = tile_get_tile_type(tile);
 	}
-	while((tile != NULL) && (type==TILE_NONE));
+	while((tile != NULL) && (type==TILE_TYPE_UNKNOWN));
 	switch(direc)
 	{
 	case UP:
@@ -917,7 +906,7 @@ move_item(GnomeCanvasItem* item, ItemDirection direc)
 			selector_set(selector_data, dest_row, dest_col);
 		}
 		
-		animstep = get_actual_theme()->animstep;
+		animstep = theme_get_animstep (get_actual_theme());
 		if(direc == UP || direc == DOWN)
 		{
 			anim_data->counter = (gint)(fabs(new_y1 - y1) / animstep);
@@ -1017,16 +1006,16 @@ SelectorData* selector_new()
 {
 	SelectorData *data;
 	Theme *theme;
-	GdkPixbuf *image;
+	GdkPixbuf *pixbuf;
 	GnomeCanvas *canvas;
 	gdouble x,y;
 	
 	data = g_malloc(sizeof(SelectorData));	
 	theme = get_actual_theme();
 
-	image = theme_get_selector_image(theme);
+	pixbuf = theme_get_selector_image(theme);
 
-	g_return_val_if_fail(image != NULL, NULL);
+	g_return_val_if_fail(pixbuf != NULL, NULL);
 
 	canvas = GNOME_CANVAS(glade_xml_get_widget (get_gui (), "ca_matrix"));
 
@@ -1034,7 +1023,19 @@ SelectorData* selector_new()
 	data->col = board->n_cols/2;
 
 	convert_to_canvas(theme, data->row, data->col, &x, &y);
-	data->item = create_item(image, x, y, level_items->selector); 
+
+	data->item = gnome_canvas_item_new(level_items->selector,
+					   gnome_canvas_pixbuf_get_type(),
+					   "pixbuf", pixbuf,
+					   "x", x,
+					   "x_in_pixels", TRUE,
+					   "y", y,
+					   "y_in_pixels", TRUE,
+					   "width", (double) gdk_pixbuf_get_width (pixbuf),
+					   "height", (double) gdk_pixbuf_get_height (pixbuf),
+					   "anchor", GTK_ANCHOR_NW,
+					   NULL);                              
+
 	gnome_canvas_item_hide(data->item);
 
 	data->state = NOTHING_SELECTED;
@@ -1050,99 +1051,35 @@ SelectorData* selector_new()
   ---------------------------------------------------------------*/
 
 GnomeCanvasItem*
-create_obstacle (double x, double y, Tile *tile,
-		 GnomeCanvasGroup* group)
-{
-	GdkPixbuf *img = NULL;
-	GnomeCanvasItem *item = NULL;
-	Theme* theme;
-	
-	theme = get_actual_theme();
-	img = theme_get_tile_image(theme, tile);
-	
-	if(img) {
-		item = create_item (img, x, y, group);
-	} 
-#ifdef DEBUG
-	else {
-		g_print("Wall image not found!\n");
-	}
-#endif    
-	
-	return item;
-}
-
-GnomeCanvasItem*
-create_moveable (double x, double y, Tile *tile, 
-		 GnomeCanvasGroup* group)
-{
-	GdkPixbuf *img = NULL;
-	GdkPixbuf  *link_img = NULL;
-	GnomeCanvasItem *item = NULL;
-	GnomeCanvasGroup *moveable_group = NULL;
-	Theme *theme;
-	GSList *link_images;
-	
-	theme = get_actual_theme();
-	img = theme_get_tile_image(theme, tile);
-	link_images = theme_get_tile_link_images(theme, tile);
-		
-	if(img) 
-	{
-		gint i;
-
-		/* create new group at (0,0) */
-		moveable_group = create_group("ca_matrix", group);
-
-		/* add connection and moveable images */
-		if(link_images)
-		{
-			gint length = g_slist_length(link_images);
-			for(i = 0; i < length; i++)
-			{
-				link_img = (GdkPixbuf*)g_slist_nth_data(link_images, i);
-				item = create_item(link_img, 0.0, 0.0, moveable_group);
-			}
-		}
-		item = create_item (img, 0.0, 0.0, moveable_group);
-
-		/* move to the right location */
-		gnome_canvas_item_move(GNOME_CANVAS_ITEM(moveable_group), x, y);
-		
-		gtk_signal_connect (GTK_OBJECT (moveable_group), "event",
-				    (GtkSignalFunc) item_event,
-				    NULL);      
-	} 
-#ifdef DEBUG
-	else {
-		g_print("Atom image not found!\n");
-	}
-#endif    
-	g_slist_free(link_images);
-
-	return GNOME_CANVAS_ITEM(moveable_group);
-}
-
-GnomeCanvasItem*
-create_item (GdkPixbuf* img, double x, double y,
+create_tile (double x, double y, Tile *tile, 
 	     GnomeCanvasGroup* group)
 {
-	GnomeCanvasItem *item;
+	GdkPixbuf *pixbuf = NULL;
+	GnomeCanvasItem *item = NULL;
+	Theme *theme;
 	
+	theme = get_actual_theme ();
+	pixbuf = theme_get_tile_image (theme, tile);
+		
 	item = gnome_canvas_item_new(group,
 				     gnome_canvas_pixbuf_get_type(),
-				     "pixbuf", img,
+				     "pixbuf", pixbuf,
 				     "x", x,
 				     "x_in_pixels", TRUE,
 				     "y", y,
 				     "y_in_pixels", TRUE,
-				     "width", (double) gdk_pixbuf_get_width (img),
-				     "height", (double) gdk_pixbuf_get_height (img),
+				     "width", (double) gdk_pixbuf_get_width (pixbuf),
+				     "height", (double) gdk_pixbuf_get_height (pixbuf),
 				     "anchor", GTK_ANCHOR_NW,
 				     NULL);                              
 
         board_canvas_items = g_slist_prepend(board_canvas_items, item);
-	return item;
+	
+	gtk_signal_connect (GTK_OBJECT (item), "event",
+			    (GtkSignalFunc) item_event,
+			    NULL);      
+
+	return GNOME_CANVAS_ITEM (item);
 }
 
 GnomeCanvasItem*

@@ -1,0 +1,13 @@
+2001-11-12  Jens Finke <jens@triq.net>
+
+	* board.c: Adaptions to make it work with the new tile.[ch].
+	(create_obstacle), (create_moveable), (create_item):
+	Removed deprecated functions.
+	(create_tile): New function, which uses the new theme interface.
+
+	* callbacks.c (atomix_exit): Use g_object_unref to free the theme.
+
+	* main.[ch]: Adaptions to the new theme[-manager] interface.
+
+	* tile.c (tile_has_link): Return always false on TILE_LINK_LAST.
+	

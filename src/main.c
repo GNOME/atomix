@@ -83,7 +83,7 @@ Level* get_actual_level()
 
 Theme* get_actual_theme()
 {
-	return level_data->theme;
+	return app->theme;
 }
 
 gint get_game_state()
@@ -124,7 +124,11 @@ game_init (AtomixApp *app)
 
 	/* init goal */
 	goal_init (app);
-	
+
+	/* init theme manager */
+	app->tm = theme_manager_new ();
+	theme_manager_init_themes (app->tm);
+
 #if 0
 	/* connect the timeout function */
 	clock = get_time_limit_widget();
@@ -223,15 +227,18 @@ void game_load_level(LevelData *data)
 	/* load theme if necessary */
 	if(data->theme)
 	{
-		if(g_strcasecmp(data->theme->name, data->level->theme_name) != 0)
+		if (!g_strcasecmp(theme_get_name (app->theme), data->level->theme_name))
 		{
 			/* the theme changed for this level */
-			data->theme = theme_load_xml(data->level->theme_name);
+			g_object_unref (app->theme);
+			app->theme = theme_manager_get_theme (app->tm, data->level->theme_name);
+			data->theme = app->theme;
 		}
 	}    
 	else
 	{
-		data->theme = theme_load_xml(data->level->theme_name);    
+		app->theme = theme_manager_get_theme (app->tm, data->level->theme_name);    
+		data->theme = app->theme;
 	}
 
 	/* init the level */
@@ -613,8 +620,9 @@ void update_player_info(LevelData *data)
 	lb_score = GTK_WIDGET(glade_xml_get_widget (gui, "lb_score"));
 #if 0
 	clock = get_time_limit_widget();
-#endif
 	gtk_widget_show(clock);
+#endif
+
 	if(preferences_get()->score_time_enabled)
 	{
 		g_snprintf(str_buffer, 10, "%.2f", data->score);
@@ -700,9 +708,6 @@ static const CmdEnable* state_sensitivity[] = { not_running, running, paused };
 
 void update_menu_item_state (gint state)
 {
-	GSList *enable_item = NULL;
-	GSList *disable_item = NULL;
-	GSList *item = NULL;
 	gchar *path;
 	gint i;
 	const CmdEnable *cmd_list = state_sensitivity [state];
@@ -972,7 +977,6 @@ main (int argc, char *argv[])
 	/* make a few initalisations here */
 	create_user_config_dir();
 	level_create_hash_table();
-	theme_create_hash_table();
 
 	app = create_gui (prog);
 

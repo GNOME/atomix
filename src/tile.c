@@ -129,6 +129,8 @@ gboolean
 tile_has_link (Tile *tile, TileLink link)
 {
 	g_return_val_if_fail (IS_TILE (tile), FALSE);
+	
+	if (link == TILE_LINK_LAST) return FALSE;
 
 	if (tile->priv->type == TILE_TYPE_MOVEABLE)
 		return tile->priv->link_id[link];

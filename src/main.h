@@ -23,7 +23,7 @@
 #include <bonobo.h>
 #include <glade/glade.h>
 #include "level.h"
-#include "theme.h"
+#include "theme-manager.h"
 
 typedef struct _NextLevelDlgInfo NextLevelDlgInfo;
 
@@ -58,12 +58,18 @@ typedef struct
 	GtkWidget         *mainwin;
 	BonoboUIContainer *ui_container;
 	BonoboUIComponent *ui_component;
-	LevelData         *level;
 	GtkWidget         *ca_matrix;
 	GtkWidget         *ca_goal;
 	GtkWidget         *lb_level;
 	GtkWidget         *lb_name;
 	GtkWidget         *lb_score;
+
+	ThemeManager      *tm;
+	Theme             *theme;
+
+	gint              level_no;
+	Level             *level;
+	gdouble           score;
 } AtomixApp;
 
 

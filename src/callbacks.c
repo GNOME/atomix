@@ -43,11 +43,10 @@ atomix_exit (AtomixApp *app)
 	}
 	if(get_actual_theme())
 	{
-		theme_destroy(get_actual_theme());
+		g_object_unref (get_actual_theme());
 	}
 	preferences_destroy();
 	level_destroy_hash_table();
-	theme_destroy_hash_table();
 
 	/* quit application */
 	bonobo_object_unref (BONOBO_OBJECT (app->ui_component));
