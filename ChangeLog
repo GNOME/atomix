@@ -1,3 +1,7 @@
+2001-11-29  German Poo-Caaman~o  <gpoo@ubiobio.cl>
+
+	* configure.in: Added es (Spanish) to ALL_LINGUAS.
+
 2001-11-27  Jens Finke <jens@triq.net>
 
 	* configure.in: Bumped version to 0.9.0
