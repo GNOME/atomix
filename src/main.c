@@ -587,42 +587,6 @@ static void update_menu_item_state (AtomixApp *app)
     }
 }
 
-static void create_user_config_dir (void)
-{
-  gchar *atomix_dir;
-  gchar *themes_dir;
-  gchar *level_dir;
-
-  atomix_dir = g_build_filename (g_get_home_dir (), ".atomix", NULL);
-  themes_dir = g_build_filename (atomix_dir, "themes", NULL);
-  level_dir = g_build_filename (atomix_dir, "level", NULL);
-
-  if (!g_file_test (atomix_dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
-    {
-      if (mkdir (atomix_dir, 0755) != 0)
-	{
-	  g_error (_("Couldn't create directory: %s"), atomix_dir);
-	  return;
-	}
-    }
-
-  if (!g_file_test (themes_dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
-    {
-      if (mkdir (themes_dir, 0755) != 0)
-	g_error (_("Couldn't create directory: %s"), themes_dir);
-    }
-
-  if (!g_file_test (level_dir, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))
-    {
-      if (mkdir (level_dir, 0755) != 0)
-	g_error (_("Couldn't create directory: %s"), level_dir);
-    }
-
-  g_free (atomix_dir);
-  g_free (themes_dir);
-  g_free (level_dir);
-}
-
 /* ===============================================================
       
              GUI creation  functions 
@@ -792,8 +756,6 @@ int main (int argc, char *argv[])
 			     argc, argv, NULL);
 
   /* make a few initalisations here */
-  create_user_config_dir ();
-
   app = create_gui (prog);
 
   game_init (app);

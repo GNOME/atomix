@@ -3,7 +3,19 @@
 	* ChangeLog: fixed some broken entries
 
 	* src/: enforced GNU coding style, with some very small
-	tweaks for better readability in specific situations
+	tweaks for better readability in specific situations.
+
+	* src/level-convert.c,
+	* src/level-manager.c,
+	* src/main.c,
+	* src/theme-manager.c: don't pass more than one test to
+	g_file_test, it's unnecessary.
+
+	* src/main.c
+	(create_user_config_dir): removed, since we don't want to
+	force users to keep empty directories that might never be
+	used.
+	(main): removed call to create_user_config_dir.
 
 2004-08-23  Alastair McKinstry  <mckinstry@debian.org>
 
@@ -11,8 +23,7 @@
 
 2004-06-06  Alexander Shopov  <ash@contact.bg>
 
-	* configure.in: Added "bg" (Bulgarian)
-	to ALL_LINGUAS.
+	* configure.in: Added "bg" (Bulgarian) to ALL_LINGUAS.
 
 2004-05-12  Samúel Jón Gunnarsson  <sammi@techattack.nu>
 

@@ -249,7 +249,7 @@ static Theme *load_theme (gchar *theme_dir)
 
   theme_file = g_build_filename (theme_dir, "theme", NULL);
 
-  if (!g_file_test (theme_file, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR))
+  if (!g_file_test (theme_file, G_FILE_TEST_IS_REGULAR))
     {
       g_warning ("File not found: %s.", theme_file);
       g_free (theme_file);

@@ -118,7 +118,7 @@ static void create_level_sequence (LevelManager *lm, gchar *file)
 
   g_return_if_fail (IS_LEVEL_MANAGER (lm));
 
-  if (!g_file_test (file, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR))
+  if (!g_file_test (file, G_FILE_TEST_IS_REGULAR))
     return;
 
   doc = xmlParseFile (file);
@@ -356,7 +356,7 @@ static Level *load_level (gchar *filename)
 
   g_return_val_if_fail (filename != NULL, NULL);
 
-  if (!g_file_test (filename, G_FILE_TEST_IS_REGULAR | G_FILE_TEST_EXISTS))
+  if (!g_file_test (filename, G_FILE_TEST_IS_REGULAR))
     {
       g_warning ("Level not found %s.", filename);
       return NULL;

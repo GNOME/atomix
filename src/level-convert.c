@@ -634,7 +634,7 @@ int main (int argc, char** argv)
     }
   src_file = argv[1];
 
-  if (!g_file_test (src_file, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR))
+  if (!g_file_test (src_file, G_FILE_TEST_IS_REGULAR))
     g_error ("Couldn't find file %s.", src_file);
 
   level = old_level_load_xml_file (src_file);
