@@ -1,3 +1,7 @@
+2001-12-09  Jens Finke <jens@triq.net>
+
+	* POTFILES.in: Added src/atomix-ui.xml.in.
+
 2001-12-09  Abel Cheung  <maddog@linux.org.hk>
 
 	* zh_TW.po: Updated traditional Chinese translation.
