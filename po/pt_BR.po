@@ -1,0 +1,595 @@
+# Brazilian Translation of atomix
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.4.1\n"
+"POT-Creation-Date: 2002-05-05 20:27-0300\n"
+"PO-Revision-Date: 2002-05-05 20:22-0300\n"
+"Last-Translator: Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
+"Language-Team: Brazilian Portuguese <ldp-br@bazar.conectiva.com.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/atomix-ui.xml.in.h:1
+#, fuzzy
+msgid "Continue paused game"
+msgstr "_Continuar jogo"
+
+#: src/atomix-ui.xml.in.h:2
+msgid "E_xit"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:3
+msgid "End a game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:4
+msgid "Exit game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:5
+msgid "Pause the running game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:6
+#, fuzzy
+msgid "Reset level"
+msgstr "_Apagar Nível"
+
+#: src/atomix-ui.xml.in.h:7
+msgid "Restores start situation"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:8
+msgid "Set preferences"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:9
+msgid "Skip _level"
+msgstr "Pular níve_l"
+
+#: src/atomix-ui.xml.in.h:10
+#, fuzzy
+msgid "Skip the current level"
+msgstr "Pular níve_l"
+
+#: src/atomix-ui.xml.in.h:11
+msgid "Start a new game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:12
+msgid "Undo the last move"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:13
+msgid "View game credits"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:14
+msgid "View highscores"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:15
+msgid "_About"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:16
+msgid "_Continue game"
+msgstr "_Continuar jogo"
+
+#: src/atomix-ui.xml.in.h:17
+msgid "_Edit"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:18
+msgid "_End Game"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:19
+#, fuzzy
+msgid "_Game"
+msgstr "Nome"
+
+#: src/atomix-ui.xml.in.h:20
+msgid "_Help"
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:21
+#, fuzzy
+msgid "_New Game"
+msgstr "Novo Nome:"
+
+#: src/atomix-ui.xml.in.h:22
+#, fuzzy
+msgid "_Pause game"
+msgstr "_Continuar jogo"
+
+#: src/atomix-ui.xml.in.h:23
+msgid "_Preferences ..."
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:24
+msgid "_Scores ..."
+msgstr ""
+
+#: src/atomix-ui.xml.in.h:25
+msgid "_Undo move"
+msgstr ""
+
+#: src/board.c:170
+msgid "Game Paused"
+msgstr "Jogo em Pausa"
+
+#: src/board.c:172
+msgid "Game Over"
+msgstr "Jogo Terminado"
+
+#: src/board.c:174
+msgid "Atomix - Molecule Mind Game"
+msgstr ""
+
+#: src/level-manager.c:171
+msgid "Couldn't find level sequence description."
+msgstr ""
+
+#: src/level-manager.c:185
+#, fuzzy
+msgid "No level found."
+msgstr "Nível não encontrado."
+
+#: src/level-manager.c:286
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr ""
+
+#: src/main.c:149
+#, fuzzy
+msgid "Copyright (C) 1999-2002 Jens Finke"
+msgstr "(C) 1999-2001 Jens Finke"
+
+#: src/main.c:150
+msgid "A mind game about atoms and molecules."
+msgstr ""
+
+#: src/main.c:484
+#, fuzzy
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Parabéns! Você terminou com sucesso todos os níveis do Atomix."
+
+#: src/main.c:495
+#, fuzzy
+msgid "Couldn't find at least one level."
+msgstr "Incapaz de encontrar o manual do Atomixed!"
+
+#: src/main.c:500
+#, fuzzy
+msgid "Do you want to finish the game?"
+msgstr "Deseja mesmo terminar este jogo?"
+
+#: src/main.c:619 src/main.c:625 src/main.c:630
+#, fuzzy, c-format
+msgid "Couldn't create directory: %s"
+msgstr "Incapaz de criar imagem a partir de arquivo: %s"
+
+#. create statistics frame
+#: src/main.c:729
+#, fuzzy
+msgid "Statistics"
+msgstr " Estatísticas "
+
+#: src/main.c:735
+msgid "Level:"
+msgstr "Nível:"
+
+#: src/main.c:736
+msgid "Molecule:"
+msgstr ""
+
+#: src/main.c:737
+msgid "Score:"
+msgstr "Pontuação:"
+
+#: src/main.c:738
+msgid "Time:"
+msgstr "Tempo:"
+
+#: src/main.c:778
+#, fuzzy, c-format
+msgid "Couldn't find file: %s"
+msgstr "Incapaz de encontrar arquivo de imagem: %s"
+
+#: src/main.c:835
+#, fuzzy
+msgid "Atomix Splash"
+msgstr "Atomix"
+
+#: src/theme-manager.c:141
+msgid "No themes found."
+msgstr ""
+
+#: src/theme-manager.c:205
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr ""
+
+#: atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
+
+#: atomix.desktop.in.h:2
+#, fuzzy
+msgid "Molecule mind game"
+msgstr "Mais um jogo mental."
+
+#~ msgid "Do you really want to clear the grid?"
+#~ msgstr "Deseja mesmo limpar a grade?"
+
+#~ msgid ""
+#~ "There does already a theme with this name exist.\n"
+#~ "So does the dir name."
+#~ msgstr ""
+#~ "Já existe um tema com este nome.\n"
+#~ "E também um nome de diretório."
+
+#~ msgid ""
+#~ "There does already a theme with\n"
+#~ "this name exist."
+#~ msgstr ""
+#~ "Já existe um tema com este\n"
+#~ "nome."
+
+#~ msgid ""
+#~ "There does already a directory\n"
+#~ "with this name exist."
+#~ msgstr ""
+#~ "Já existe um diretório com\n"
+#~ "este nome."
+
+#~ msgid "_New File"
+#~ msgstr "_Novo Arquivo"
+
+#~ msgid "Grid"
+#~ msgstr "Grade"
+
+#~ msgid "Grid On/Off"
+#~ msgstr "Grade Ligada/Desligada"
+
+#~ msgid "Theme Window"
+#~ msgstr "Janela de Tema"
+
+#~ msgid "_Clear Grid"
+#~ msgstr "_Limpar Grade"
+
+#~ msgid "_Resize Grid"
+#~ msgstr "_Redimensionar Grade"
+
+#~ msgid "_Delete Theme"
+#~ msgstr "_Apagar Tema"
+
+#~ msgid "Atomixed manual"
+#~ msgstr "Manual Atomixed"
+
+#~ msgid "_Level"
+#~ msgstr "Níve_l"
+
+#~ msgid "_Theme"
+#~ msgstr "_Tema"
+
+#~ msgid "Atomixed"
+#~ msgstr "Atomixed"
+
+#~ msgid "New"
+#~ msgstr "Novo"
+
+#~ msgid "New File"
+#~ msgstr "Novo Arquivo"
+
+#~ msgid "Open"
+#~ msgstr "Abrir"
+
+#~ msgid "Open File"
+#~ msgstr "Abrir Arquivo"
+
+#~ msgid "Save"
+#~ msgstr "Gravar"
+
+#~ msgid "Save File"
+#~ msgstr "Gravar Arquivo"
+
+#~ msgid "Theme Wnd"
+#~ msgstr "Janela Tema"
+
+#~ msgid "No."
+#~ msgstr "Nº"
+
+#~ msgid "Level"
+#~ msgstr "Nível"
+
+#~ msgid "Goal"
+#~ msgstr "Objetivo"
+
+#~ msgid "Name:"
+#~ msgstr "Nome:"
+
+#~ msgid "Themename:"
+#~ msgstr "Nome Tema:"
+
+#~ msgid "Filename:"
+#~ msgstr "Nome Arquivo:"
+
+#~ msgid "Bonuslevel"
+#~ msgstr "Bônus Nível"
+
+#~ msgid "Time"
+#~ msgstr "Tempo"
+
+#~ msgid "Minutes: "
+#~ msgstr "Minutos: "
+
+#~ msgid "Seconds:"
+#~ msgstr "Segundos:"
+
+#~ msgid "Properties"
+#~ msgstr "Propriedades"
+
+#~ msgid "Leveleditor"
+#~ msgstr "Editor Níveis"
+
+#~ msgid "Images"
+#~ msgstr "Imagens"
+
+#~ msgid "Connections"
+#~ msgstr "Conexões"
+
+#~ msgid "Moveables"
+#~ msgstr "Móveis"
+
+#~ msgid "Obstacles"
+#~ msgstr "Obstáculos"
+
+#~ msgid "Directoryname:"
+#~ msgstr "Nome Diretório:"
+
+#~ msgid "Background Color:"
+#~ msgstr "Cor Fundo:"
+
+#~ msgid "Selector Image:"
+#~ msgstr "Selector de Imagens:"
+
+#~ msgid "Browse ..."
+#~ msgstr "Pesquisar..."
+
+#~ msgid "Animation Step:"
+#~ msgstr "Incremento de Animação:"
+
+#~ msgid "Tile Height:"
+#~ msgstr "Altura do Mosaico:"
+
+#~ msgid "Tile Width:"
+#~ msgstr "Largura do Mosaico:"
+
+#~ msgid "Themeeditor"
+#~ msgstr "Editor de Tema"
+
+#~ msgid "Atom Preview"
+#~ msgstr "Prever Atom"
+
+#~ msgid "Mouse functions"
+#~ msgstr "Funções do mouse"
+
+#~ msgid "Clear"
+#~ msgstr "Limpar"
+
+#~ msgid "Set"
+#~ msgstr "Definir"
+
+#~ msgid "Move"
+#~ msgstr "Mover"
+
+#~ msgid "Resize Grid"
+#~ msgstr "Redimensionar Grade"
+
+#~ msgid "Current Values"
+#~ msgstr "Valores Atuais"
+
+#~ msgid "Rows:"
+#~ msgstr "Linhas:"
+
+#~ msgid "Columns:"
+#~ msgstr "Colunas:"
+
+#~ msgid "New Values"
+#~ msgstr "Novos Valores"
+
+#~ msgid "New Level"
+#~ msgstr "Novo Nível"
+
+#~ msgid "Levelname:"
+#~ msgstr "Nome Nível:"
+
+#~ msgid "Playfield Size"
+#~ msgstr "Tamanho do Campo"
+
+#~ msgid "Goal Size"
+#~ msgstr "Tamanho do Objetivo"
+
+#~ msgid "(C)  1999-2001 Jens Finke"
+#~ msgstr "(C)  1999-2001 Jens Finke"
+
+#~ msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
+#~ msgstr "Atomixed é o editor de Níveis/Temas para o jogo mental Atomix."
+
+#~ msgid "Change level name"
+#~ msgstr "Modificar nome de nível"
+
+#~ msgid ""
+#~ "There is already a level with the same name. Please choose another\n"
+#~ "name for this level."
+#~ msgstr ""
+#~ "Já existe um nível com o mesmo nome. Selecione outro nome\n"
+#~ "para este nível."
+
+#~ msgid "Current Name:"
+#~ msgstr "Nome Atual:"
+
+#~ msgid "Add Image"
+#~ msgstr "Adicionar Imagem"
+
+#~ msgid "Text:"
+#~ msgstr "Texto:"
+
+#~ msgid "Change ID"
+#~ msgstr "Modificar ID"
+
+#~ msgid "Current ID:"
+#~ msgstr "ID Atual:"
+
+#~ msgid "New ID:"
+#~ msgstr "Novo ID:"
+
+#~ msgid "New Theme"
+#~ msgstr "Novo Tema"
+
+#~ msgid "No tile to clear here."
+#~ msgstr "Nenhum mosaico para apagar aqui."
+
+#~ msgid "No tile to move here."
+#~ msgstr "Nenhum mosaico para mover aqui."
+
+#~ msgid "Copy Goal"
+#~ msgstr "Copiar Objetivo"
+
+#~ msgid "Copy the goal into the playfield."
+#~ msgstr "Copiar o objetivo para o campo de jogo."
+
+#~ msgid "Clear Grid"
+#~ msgstr "Limpar Grade"
+
+#~ msgid "Clears the whole grid."
+#~ msgstr "Limpa a grade toda."
+
+#~ msgid "Add an image to the list."
+#~ msgstr "Adicionar imagem à lista."
+
+#~ msgid "Delete Image"
+#~ msgstr "Apagar Imagem"
+
+#~ msgid "Delete selected image(s)."
+#~ msgstr "Apagar imagem(ns) selecionada(s)."
+
+#~ msgid "Change the ID of the image."
+#~ msgstr "Modificar ID da imagem."
+
+#~ msgid "Press Ctrl+N for a new Game"
+#~ msgstr "Prima Ctrl+N para novo Jogo"
+
+#~ msgid "Couldn't find the Atomix manual!"
+#~ msgstr "Incapaz de encontrar o manual do Atomix!"
+
+#~ msgid "Atomix manual"
+#~ msgstr "Manual Atomix"
+
+#~ msgid ""
+#~ "Level not found.\n"
+#~ "Sorry, but the game ends here.\n"
+#~ "\n"
+#~ "(Please make sure you have *.atomix\n"
+#~ "files either in <prefix>/share/atomix/levels\n"
+#~ "or ~/.atomix/levels.)"
+#~ msgstr ""
+#~ "Nível não encontrado.\n"
+#~ "Desculpe, mas o jogo termina aqui.\n"
+#~ "\n"
+#~ "(Certifique-se de que tem os arquivos\n"
+#~ "*.atomix ou em <prefix>/share/atomix/levels\n"
+#~ "ou em ~/.atomix/levels.)"
+
+#~ msgid "Information"
+#~ msgstr "Informação"
+
+#~ msgid "Atomix Next Level"
+#~ msgstr "Próximo Nível Atomix"
+
+#~ msgid "Congratulations! You have successfully finished this level."
+#~ msgstr "Parabéns! Você terminou este nível com sucesso."
+
+#~ msgid "Remaining Time:"
+#~ msgstr "Tempo Remanescente:"
+
+#~ msgid "Are you ready for the next level?"
+#~ msgstr "Está preparado para o próximo nível?"
+
+#~ msgid "Atomix End"
+#~ msgstr "Fim do Atomix"
+
+#~ msgid "Do you want to play again?"
+#~ msgstr "Deseja jogar novamente?"
+
+#~ msgid "Constraints"
+#~ msgstr "Restrições"
+
+#~ msgid "enable score and time limit"
+#~ msgstr "ativar limite de tempo e pontuação"
+
+#~ msgid "General"
+#~ msgstr "Genérico"
+
+#~ msgid "Keyboard (return and cursor keys)"
+#~ msgstr "Teclado (enter e teclas de cursor)"
+
+#~ msgid "Mouse"
+#~ msgstr "Mouse"
+
+#~ msgid "Mouse Properties"
+#~ msgstr "Propriedades do Mouse"
+
+#~ msgid "hide mouse cursor during dragging"
+#~ msgstr "esconder cursor durante o arrasto"
+
+#~ msgid "enable lazy dragging"
+#~ msgstr "activar arrasto preguiçoso"
+
+#~ msgid "Sensitivity:"
+#~ msgstr "Sensibilidade:"
+
+#~ msgid "high"
+#~ msgstr "alta"
+
+#~ msgid "low"
+#~ msgstr "baixa"
+
+#~ msgid "Control"
+#~ msgstr "Controle"
+
+#~ msgid "Do you really want to exit the program?"
+#~ msgstr "Deseja mesmo sair da aplicação?"
+
+#~ msgid ""
+#~ "Your time is up! This costs you 10% of your score. \n"
+#~ "More luck next time. \n"
+#~ "\n"
+#~ "Do you want to retry?"
+#~ msgstr ""
+#~ "Terminou o seu tempo! Isto custa 10% da sua pontuação. \n"
+#~ "Mais sorte da próxima vez. \n"
+#~ "\n"
+#~ "Deseja tentar novamente?"
+
+#~ msgid ""
+#~ "Sorry your time is up! But this was only\n"
+#~ "a bonus level so go further now."
+#~ msgstr ""
+#~ "Terminou o seu tempo! Mas isto era apenas\n"
+#~ "um nível de bônus, então continue."
+
+#~ msgid "Undo last move. This costs you 5% of your score."
+#~ msgstr "Desfazer última jogada. Isto custa 5% da sua pontuação."
+
+#~ msgid "No more undo levels."
+#~ msgstr "Não há mais níves de desfazer."
+
+#~ msgid "This is the last level. You can't skip any further."
+#~ msgstr "Este é o último nível. Você não pode pular mais."

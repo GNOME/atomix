@@ -1,3 +1,8 @@
+2002-05-05  Gustavo Maciel Dias Vieira <gdvieira@zaz.com.br>
+
+	* pt_BR.po: Added Brazilian Portuguese translation done by
+	Alexandre Folle de Menezes <afmenez@terra.com.br>.
+
 2002-05-04  Peteris Krisjanis <pecisk@inbox.lv>
 
 	*lv.po: Updated Latvian translation
@@ -28,11 +33,11 @@
 
 	* ja.po: Added Japanese Translation.
 
-2002-03-30  T-Aõivo Leedjärv  <toivo@linux.ee>$)B
+2002-03-30  T.AŽõivo LeedjŽärv  <toivo@linux.ee>
 
 	* et.po: Updated Estonian translation.
 
-2002-03-22  T-Aõivo Leedjärv  <toivo@linux.ee>$)B
+2002-03-22  TŽõivo LeedjŽärv  <toivo@linux.ee>
 
 	* et.po: Added Estonian translation.
 
@@ -42,11 +47,11 @@
 
 2002-03-04  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* no.po: Updated Norwegian (bokm-Aål) translation.$)B
+	* no.po: Updated Norwegian (bokmŽål) translation.
 
 2002-03-04  Fatih Demir <kabalak@gtranslator.org>
 
-	* tr.po: Committed updated Turkish translation by G-Aörkem.$)B
+	* tr.po: Committed updated Turkish translation by GŽörkem.
 
 2002-03-03  Wang Jian  <lark@linux.net.cn>
 
@@ -134,7 +139,7 @@
 
 2001-12-12  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* no.po: Updated Norwegian (bokm-Aål) translation.$)B
+	* no.po: Updated Norwegian (bokmŽål) translation.
 
 2001-12-12  Stanislav Visnovsky  <visnovsky@nenya.ms.mff.cuni.cz>
 
@@ -158,7 +163,7 @@
 
 2001-12-04  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* no.po: Updated Norwegian (bokm-Aål) translation.$)B
+	* no.po: Updated Norwegian (bokmŽål) translation.
 	* POTFILES.in: Update.
 	
 2001-12-02  Christian Rose  <menthos@menthos.com>
@@ -184,7 +189,7 @@
 2001-11-27  Jesus Bravo Alvarez  <jba@pobox.com>
 
 	* gl.po: Added Galician translation from
-	  Manuel A. Fern-Aández Montecelo <manuel@sindominio.net>$)B
+	  Manuel A. FernŽández Montecelo <manuel@sindominio.net>
 
 2001-11-24  Jens Finke <jens@triq.net>
 
@@ -194,7 +199,7 @@
 
 	* zh_TW.po: New traditional Chinese translation.
 
-2001-11-12  Carlos Perell-Aó Marín <carlos@gnome-db.org>$)B
+2001-11-12  Carlos PerellŽó MarŽín <carlos@gnome-db.org>
 
 	* da.po, de.po, fr.po, nl.po, no.po, , pl.po, pt.po, ru.po, tr.po:
 	Added from GNOME 1.4 version.
