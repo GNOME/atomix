@@ -1,4 +1,4 @@
-/* Atomix -- a little mind game about atoms and molecules.
+/* Atomix -- a little puzzle game about atoms and molecules.
  * Copyright (C) 1999 Jens Finke
  *
  * This program is free software; you can redistribute it and/or modify

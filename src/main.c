@@ -1,4 +1,4 @@
-/* Atomix -- a little mind game about atoms and molecules.
+/* Atomix -- a little puzzle game about atoms and molecules.
  * Copyright (C) 1999-2001 Jens Finke
  *
  * This program is free software; you can redistribute it and/or modify
@@ -112,7 +112,7 @@ static void verb_GameUndo_cb (BonoboUIComponent * uic, gpointer user_data,
 static void verb_GameScores_cb (BonoboUIComponent * uic, gpointer user_data,
 				const char *cname)
 {
-  gnome_scores_display (_("Atomix"), PACKAGE, NULL, 0);
+  gnome_scores_display ("Atomix", PACKAGE, NULL, 0);
 }
 
 static void verb_GameExit_cb (BonoboUIComponent * uic, gpointer user_data,
@@ -135,8 +135,8 @@ static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
   GtkWidget *dlg;
   const char *authors[] =
     {
-      "Guilherme de S. Pastore",
-      "Jens Finke",
+      "Guilherme de S. Pastore <gpastore@colband.com.br>",
+      "Jens Finke <jens@triq.net>",
       "Jakub Steiner (GFX)",
       NULL
     };
@@ -149,7 +149,7 @@ static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
   dlg = gnome_about_new ("Atomix",
 			 VERSION,
 			 _("Copyright (C) 1999-2002 Jens Finke"),
-			 _("A mind game about atoms and molecules."),
+			 _("A puzzle game about atoms and molecules."),
 			 authors, documenters, NULL, NULL);
 
   gtk_widget_show (dlg);

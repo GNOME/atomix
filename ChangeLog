@@ -1,3 +1,21 @@
+2005-03-19  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* src/main.c: the name of the game is no longer translatable,
+	as it only takes space unnecessarily on the potfiles.
+
+	* README, atomix.desktop.in, src/board.c, src/board.h,
+	* src/canvas_helper.c, src/canvas_helper.h,
+	* src/goal-view.c, src/goal-view.h, src/goal.c, src/goal.h,
+	* src/level-convert.c, src/level-manager.c, src/level-manager.h,
+	* src/level-private.h, src/level.c, src/level.h, src/main.c,
+	* src/main.h, src/playfield.c, src/playfield.h, src/preferences.c,
+	* src/preferences.h, src/theme-manager.c, src/theme-manager.h,
+	* src/theme-private.h, src/theme.c, src/theme.h, src/tile.c,
+	* src/tile.h, src/undo.c, src/undo.h: changed all occurrences of
+	"mind game" to "puzzle game".
+
+	* src/main.c: added the e-mails of the authors to the credits.
+
 2005-03-18  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* ChangeLog: fixed some broken entries.
