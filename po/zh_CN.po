@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-01-29 22:45+0800\n"
+"POT-Creation-Date: 2002-02-12 22:23+0100\n"
 "PO-Revision-Date: 2002-01-21 14:06+0800\n"
 "Last-Translator: Wang Li <charlesw1234@163.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"

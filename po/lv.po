@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix for latvian\n"
-"POT-Creation-Date: 2002-01-12 07:34-0500\n"
+"POT-Creation-Date: 2002-02-12 22:23+0100\n"
 "PO-Revision-Date: 2002-01-12 21:30+0200\n"
 "Last-Translator: Peteris Krisjanis <peteris.krisjanis@ttc.lv>\n"
 "Language-Team: Latvian <ll10nt@ttc.lv>\n"
@@ -114,15 +114,15 @@ msgstr "_Rezultāti ..."
 msgid "_Undo move"
 msgstr "_Atsaukt gājienu"
 
-#: src/board.c:165
+#: src/board.c:168
 msgid "Game Paused"
 msgstr "Spēle Nopauzēta"
 
-#: src/board.c:167
+#: src/board.c:170
 msgid "Game Over"
 msgstr "Spēles Beigas"
 
-#: src/board.c:169
+#: src/board.c:172
 msgid "Atomix - Molecule Mind Game"
 msgstr "Atomix - Molekulas Domāšanas Spēle"
 
@@ -139,50 +139,50 @@ msgstr "Nav atrastu līmeņu."
 msgid "Found level '%s' in: %s"
 msgstr "Atrasts līmenis '%s' iekš %s"
 
-#: src/main.c:485
+#: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Apsveicam! Jūs esat pabeiguši visus Atomix līmeņus."
 
-#: src/main.c:496
+#: src/main.c:495
 msgid "Couldn't find at least one level."
 msgstr "Nevarēja atrast kaut vienu līmeni."
 
-#: src/main.c:501
+#: src/main.c:500
 msgid "Do you want to finish the game?"
 msgstr "Vai jūs vēlaties beigt spēli?"
 
-#: src/main.c:620 src/main.c:626 src/main.c:631
+#: src/main.c:619 src/main.c:625 src/main.c:630
 #, c-format
 msgid "Couldn't create directory: %s"
 msgstr "Nevarēja izveidot direktoriju: %s"
 
 #. create statistics frame
-#: src/main.c:734
+#: src/main.c:733
 msgid "Statistics"
 msgstr "Statistika"
 
-#: src/main.c:740
+#: src/main.c:739
 msgid "Level:"
 msgstr "Līmenis:"
 
-#: src/main.c:741
+#: src/main.c:740
 msgid "Molecule:"
 msgstr "Molekula:"
 
-#: src/main.c:742
+#: src/main.c:741
 msgid "Score:"
 msgstr "Rezultāts:"
 
-#: src/main.c:743
+#: src/main.c:742
 msgid "Time:"
 msgstr "Laiks:"
 
-#: src/main.c:783
+#: src/main.c:782
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Nevarēja atrast failu: %s"
 
-#: src/main.c:841
+#: src/main.c:840
 msgid "Atomix Splash"
 msgstr "Atomix Splash"
 
@@ -194,4 +194,3 @@ msgstr "Nav atrastu tēmu."
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Atradām tēmu '%s' iekš %s"
-

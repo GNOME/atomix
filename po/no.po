@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2002-01-26 11:24+0100\n"
+"POT-Creation-Date: 2002-02-12 22:23+0100\n"
 "PO-Revision-Date: 2001-12-12 00:14+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"

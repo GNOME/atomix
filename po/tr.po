@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.4.3\n"
-"POT-Creation-Date: 2001-12-09 19:47+0100\n"
+"POT-Creation-Date: 2002-02-12 22:23+0100\n"
 "PO-Revision-Date: 2001-MO-DA HO:MI+ZONE\n"
 "Last-Translator: A.Burak Ilgicioglu <ilgici@turk.net>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
@@ -128,16 +128,16 @@ msgid "_Undo move"
 msgstr ""
 
 # src/board.c:202
-#: src/board.c:165
+#: src/board.c:168
 msgid "Game Paused"
 msgstr "Oyun Duraklatýldý"
 
 # src/board.c:204
-#: src/board.c:167
+#: src/board.c:170
 msgid "Game Over"
 msgstr "Oyun Bitti"
 
-#: src/board.c:169
+#: src/board.c:172
 msgid "Atomix - Molecule Mind Game"
 msgstr ""
 
@@ -157,64 +157,64 @@ msgid "Found level '%s' in: %s"
 msgstr ""
 
 # src/interface.c:616
-#: src/main.c:485
+#: src/main.c:484
 #, fuzzy
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini baþarýyla bitirdiniz."
 
 # editor/callbacks.c:1279
-#: src/main.c:496
+#: src/main.c:495
 #, fuzzy
 msgid "Couldn't find at least one level."
 msgstr "Atomixed Yardým Dosyasý bulunamadý!"
 
 # src/interface.c:908
-#: src/main.c:501
+#: src/main.c:500
 #, fuzzy
 msgid "Do you want to finish the game?"
 msgstr "Gerçekten bu oyundan çýkmak istediðinize emin misiniz?"
 
 # editor/support.c:116 src/support.c:116
-#: src/main.c:620 src/main.c:626 src/main.c:631
+#: src/main.c:619 src/main.c:625 src/main.c:630
 #, fuzzy, c-format
 msgid "Couldn't create directory: %s"
 msgstr "%s dosyasýndan pixmap yaratýlamadý"
 
 # src/interface.c:259
 #. create statistics frame
-#: src/main.c:734
+#: src/main.c:733
 #, fuzzy
 msgid "Statistics"
 msgstr "Ýstatistikler"
 
 # src/interface.c:317
-#: src/main.c:740
+#: src/main.c:739
 msgid "Level:"
 msgstr "Seviye:"
 
-#: src/main.c:741
+#: src/main.c:740
 msgid "Molecule:"
 msgstr ""
 
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: src/main.c:742
+#: src/main.c:741
 msgid "Score:"
 msgstr "Skor:"
 
 # src/interface.c:347
-#: src/main.c:743
+#: src/main.c:742
 msgid "Time:"
 msgstr "Zaman:"
 
 # editor/support.c:100 editor/support.c:138 src/support.c:100
 # src/support.c:138
-#: src/main.c:783
+#: src/main.c:782
 #, fuzzy, c-format
 msgid "Couldn't find file: %s"
 msgstr "Pixmap dosyasý %s bulunamadý"
 
 # src/interface.c:108
-#: src/main.c:841
+#: src/main.c:840
 #, fuzzy
 msgid "Atomix Splash"
 msgstr "Atomix"
