@@ -1,3 +1,7 @@
+2001-11-27  Jens Finke <jens@triq.net>
+
+	* configure.in: Bumped version to 0.9.0
+
 2001-11-27  Jesus Bravo Alvarez  <jba@pobox.com>
 
 	* configure.in: Added gl (Galician) to ALL_LINGUAS.
