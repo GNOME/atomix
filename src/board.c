@@ -611,16 +611,15 @@ static gboolean board_handle_arrow_event (GnomeCanvasItem *item,
   return FALSE;
 }
 
-static gboolean
-board_handle_item_event (GnomeCanvasItem * item,
-			 GdkEvent * event, gpointer data)
+static gboolean board_handle_item_event (GnomeCanvasItem *item,
+					 GdkEvent *event, gpointer data)
 {
   gboolean just_unselect;
   guint new_row, new_col;
 
   /* is currently an object moved? */
   if (anim_data->timeout_id != -1)
-    return;
+    return FALSE;
 
   if (event->type == GDK_BUTTON_PRESS)
     {

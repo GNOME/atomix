@@ -9,13 +9,16 @@
 	* src/level-manager.c,
 	* src/main.c,
 	* src/theme-manager.c: don't pass more than one test to
-	g_file_test, it's unnecessary.
+	g_file_test at once, it's unnecessary.
+
+	* src/board.c (board_handle_item_event): fix call to return,
+	using FALSE as value, as it's not a void-returning function.
 
 	* src/main.c
+	(main): removed call to create_user_config_dir.
 	(create_user_config_dir): removed, since we don't want to
 	force users to keep empty directories that might never be
 	used.
-	(main): removed call to create_user_config_dir.
 
 2004-08-23  Alastair McKinstry  <mckinstry@debian.org>
 
