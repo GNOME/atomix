@@ -6,17 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-06-21 11:48+0200\n"
-"PO-Revision-Date: 2002-03-08 21:44+0100\n"
+"POT-Creation-Date: 2003-06-23 03:45+0200\n"
+"PO-Revision-Date: 2003-06-23 07:30+0200\n"
 "Last-Translator: hemmes <marc_janh@hotmail.com>\n"
-"Language-Team: Dutch <nl@li.org>\n"
+"Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/atomix-ui.xml.in.h:1
 msgid "Continue paused game"
-msgstr "Spel  hervatten"
+msgstr "Spel hervatten"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
@@ -24,23 +24,23 @@ msgstr "A_fsluiten"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
-msgstr "Bëindig een spel."
+msgstr "Een spel beëindigen"
 
 #: src/atomix-ui.xml.in.h:4
 msgid "Exit game"
-msgstr "Verlaat het spel."
+msgstr "Het spel afsluiten"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr "Pauze het spel."
+msgstr "Het spel pauzeren"
 
 #: src/atomix-ui.xml.in.h:6
 msgid "Reset level"
-msgstr "Niveau Verwijderen"
+msgstr "Niveau resetten"
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr "Herstel alles naar start positie."
+msgstr "Herstelt alles naar startpositie"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
@@ -56,7 +56,7 @@ msgstr "Niveau overslaan"
 
 #: src/atomix-ui.xml.in.h:11
 msgid "Start a new game"
-msgstr "Start een nieuw spel."
+msgstr "Een nieuw spel starten"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
@@ -64,11 +64,11 @@ msgstr "Ga 1 stap terug."
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr "Bekijk de credits."
+msgstr "De credits bekijken"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr "Bekijk de scores "
+msgstr "De scores bekijken"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
@@ -88,7 +88,7 @@ msgstr "_Einde spel"
 
 #: src/atomix-ui.xml.in.h:19
 msgid "_Game"
-msgstr "_Naam"
+msgstr "_Spel"
 
 #: src/atomix-ui.xml.in.h:20
 msgid "_Help"
@@ -96,28 +96,29 @@ msgstr "_Hulp"
 
 #: src/atomix-ui.xml.in.h:21
 msgid "_New Game"
-msgstr "_Nieuwe Naam:"
+msgstr "_Nieuw spel"
 
 #: src/atomix-ui.xml.in.h:22
 msgid "_Pause game"
-msgstr "_Spel  hervatten"
+msgstr "Spel _pauzeren"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr "_Instellingen"
+msgstr "_Instellingen..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr "_Uitslagen"
+msgstr "_Scores..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
-msgstr "_Ga 1 stap terug."
+msgstr "_Ga 1 stap terug"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
 msgstr "Kan de Informatie over het level niet vinden."
 
+# niveau voor consistentie? level is toch mooier
 #: src/level-manager.c:185
 msgid "No level found."
 msgstr "Level niet gevonden."
@@ -133,15 +134,15 @@ msgstr "Atomix"
 
 #: src/main.c:145
 msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "Copyright (C) 1999-2002 Jens Finke"
+msgstr "Copyright © 1999-2002 Jens Finke"
 
 #: src/main.c:146
 msgid "A mind game about atoms and molecules."
-msgstr "Een denk spel over atomen en moleculen."
+msgstr "Een denkspel met atomen en moleculen."
 
 #: src/main.c:456
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Gefeliciteerd! U heeft alle Atomix niveaus succesvol afgelegt."
+msgstr "Gefeliciteerd! U heeft alle Atomix niveaus succesvol afgelegd."
 
 #: src/main.c:467
 msgid "Couldn't find at least one level."
@@ -149,17 +150,17 @@ msgstr "Kan geen enkel level vinden."
 
 #: src/main.c:472
 msgid "Do you want to finish the game?"
-msgstr "Weet u zeker dat u dit spel wilt bëndigen?"
+msgstr "Weet u zeker dat u dit spel wilt beëindigen?"
 
 #: src/main.c:591 src/main.c:597 src/main.c:602
 #, c-format
 msgid "Couldn't create directory: %s"
-msgstr "Kan geen map maken genaamt: %s"
+msgstr "Kan geen map aanmaken genaamd: %s"
 
 #. create statistics frame
 #: src/main.c:701
 msgid "Statistics"
-msgstr "Overzichten."
+msgstr "Statistieken"
 
 #: src/main.c:707
 msgid "Level:"
@@ -167,7 +168,7 @@ msgstr "Niveau:"
 
 #: src/main.c:708
 msgid "Molecule:"
-msgstr "molecuul:"
+msgstr "Molecuul:"
 
 #: src/main.c:709
 msgid "Score:"
@@ -180,7 +181,7 @@ msgstr "Tijd:"
 #: src/main.c:750
 #, c-format
 msgid "Couldn't find file: %s"
-msgstr "kan bestan: '%s' niet vinden."
+msgstr "kan bestand: %s niet vinden."
 
 #: src/theme-manager.c:141
 msgid "No themes found."
@@ -193,4 +194,4 @@ msgstr "Vond geluid '%s' in: %s"
 
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
-msgstr "molecuul denk spel."
+msgstr "Molecuul denkspel"
