@@ -581,3 +581,269 @@ void playfield_save_xml(PlayField *pf, xmlNodePtr pf_node)
 
 
 #endif
+
+/*=================================================================
+
+  Functions for generating playfields from basic level descriptions.
+
+ -----------------------------------------------------------------*/
+
+typedef struct {
+	GQuark id;
+	gchar *string;
+} TranslationItem;
+
+static TranslationItem wall_map [] = {
+	{  0, "wall-single" },
+	{  1, "wall-vertical-bottom-end" },
+	{  2, "wall-single" },
+	{  3, "wall-bottom-left" },
+	{  4, "wall-vertical-top-end" },
+	{  5, "wall-vertical" },
+	{  6, "wall-top-left" },
+	{  7, "wall-vertical-rightx" },
+	{  8, "wall-single" },
+	{  9, "wall-bottom-right" },
+	{ 10, "wall-horizontal" },
+	{ 11, "wall-horizontal-topx" },
+	{ 12, "wall-top-right" },
+	{ 13, "wall-vertical-leftx" },
+	{ 14, "wall-horizontal-bottomx" },
+	{ 15, "wall-single"},
+	{ 0, NULL }
+};
+
+static void 
+setup_translation_map (TranslationItem array[])
+{
+	gint i = 0;
+	for (; array[i].string != NULL; i++) {
+		array[i].id = g_quark_from_string (array[i].string);
+	}
+}
+
+enum {
+	ENV_TOP,
+	ENV_RIGHT,
+	ENV_BOTTOM,
+	ENV_LEFT,
+	ENV_TOP_RIGHT,
+	ENV_BOTTOM_RIGHT,
+	ENV_BOTTOM_LEFT,
+	ENV_TOP_LEFT,
+	ENV_LAST
+};
+
+typedef struct {
+	int row;
+	int col;
+} offset;
+
+static const offset env_offset[8] = { 
+	{ -1, 0},  /* ENV_TOP */
+	{ 0, 1 },  /* ENV_RIGHT */
+	{ 1, 0 },  /* ENV_BOTTOM */
+	{ 0, -1 }, /* ENV_LEFT */
+	{ -1, 1},  /* ENV_TOP_RIGHT */
+	{ 1, 1},   /* ENV_BOTTOM_RIGHT */
+	{ 1, -1},  /* ENV_BOTTOM_LEFT */
+	{ -1, -1}  /* ENV_TOP_LEFT */
+};
+
+static TileType
+get_env_tile_type (PlayField *pf, gint row, gint col)
+{
+	Tile *tile;
+	TileType type = TILE_TYPE_NONE;
+	
+	if (row < 0) return type;
+	if (col < 0) return type;
+	if (row >= playfield_get_n_rows (pf)) return type;
+	if (col >= playfield_get_n_cols (pf)) return type;
+	
+	tile = get_tile (pf, row, col);
+	if (tile) {
+		type = tile_get_tile_type (tile);
+	}
+	else
+		type = TILE_TYPE_FLOOR;
+
+	return type;
+}
+
+static void
+create_tile_env (PlayField *pf, gint row, gint col, int tile_env[])
+{
+	gint i;
+	TileType type;
+	
+	for (i = ENV_TOP; i < ENV_LAST; i++) {
+		type = get_env_tile_type (pf, row + env_offset[i].row, 
+					  col + env_offset[i].col);
+		tile_env[i] = (int) type;
+	}
+}
+
+static Tile*
+convert_wall_tiles (Tile *tile, int tile_env[])
+{
+	Tile *new_tile = NULL;
+	gint wall_id = 0; 
+	gint i;
+
+	if (tile == NULL)
+		new_tile = tile_new (TILE_TYPE_FLOOR);
+	else 
+		new_tile = tile_copy (tile);
+
+	if (tile_get_tile_type (new_tile) != TILE_TYPE_WALL) return new_tile;
+	
+	for (i = ENV_LEFT; i >= ENV_TOP; i--) {
+		if (tile_env[i] == TILE_TYPE_WALL)
+			wall_id = wall_id + 1;
+
+		if (i != ENV_TOP)
+			wall_id = wall_id << 1;
+	}
+	tile_set_base_id (new_tile, wall_map[wall_id].id);
+
+	return new_tile;
+}
+
+
+PlayField*
+playfield_generate_environment (PlayField *pf)
+{
+	PlayField *env_pf;
+	PlayFieldPrivate *priv;
+	gint row, col;
+	gint tile_env[8];
+	Tile *env_tile;
+	Tile *tile;
+
+	g_return_val_if_fail (IS_PLAYFIELD (pf), NULL);
+
+	priv = pf->priv;
+
+	if (wall_map[0].id == 0)
+		setup_translation_map (wall_map);
+
+	env_pf = playfield_new ();
+	playfield_set_matrix_size (env_pf, 
+				   playfield_get_n_rows (pf),
+				   playfield_get_n_cols (pf));
+
+	/* determine the really used playfield size */
+	for (row = 0; row < priv->n_rows; row++) {
+		for (col = 0; col < priv->n_cols; col++) {
+			create_tile_env (pf, row, col, tile_env);
+			tile = get_tile (pf, row, col);
+
+			env_tile = convert_wall_tiles (tile, tile_env);
+
+			playfield_set_tile (env_pf, row, col, env_tile);
+
+			if (env_tile)
+				g_object_unref (env_tile);
+		}
+	}
+	
+	return env_pf;
+}
+
+static GQuark shadow_id[6] = { 0, 0, 0, 0, 0, 0 };
+
+static Tile*
+convert_shadow_tiles (Tile *tile, int tile_env[])
+{
+	Tile *new_tile = NULL;
+	gint base_id = 0; 
+	TileType type;
+
+	if (tile != NULL) {
+		type = tile_get_tile_type (tile);
+		if (type != TILE_TYPE_FLOOR) return NULL;
+	}
+
+	if (tile_env[ENV_LEFT]     == TILE_TYPE_WALL && 
+	    tile_env[ENV_TOP]      == TILE_TYPE_WALL)
+		base_id = 6; /* top-left */
+	
+	else if (tile_env[ENV_TOP_LEFT] != TILE_TYPE_WALL &&
+		 tile_env[ENV_LEFT]     != TILE_TYPE_WALL && 
+		 tile_env[ENV_TOP]      == TILE_TYPE_WALL)
+		base_id = 2;
+	
+	else if (tile_env[ENV_TOP_LEFT] != TILE_TYPE_WALL &&
+		 tile_env[ENV_LEFT]     == TILE_TYPE_WALL && 
+		 tile_env[ENV_TOP]      != TILE_TYPE_WALL)
+		base_id = 5;
+	
+	else if (tile_env[ENV_TOP_LEFT] == TILE_TYPE_WALL &&
+		 tile_env[ENV_LEFT]     != TILE_TYPE_WALL && 
+		 tile_env[ENV_TOP]      != TILE_TYPE_WALL)
+		base_id = 4;
+	
+	else if (tile_env[ENV_TOP_LEFT] == TILE_TYPE_WALL &&
+		 tile_env[ENV_LEFT]     == TILE_TYPE_WALL && 
+		 tile_env[ENV_TOP]      != TILE_TYPE_WALL)
+		base_id = 3;
+	
+	else if (tile_env[ENV_TOP_LEFT] == TILE_TYPE_WALL &&
+		 tile_env[ENV_LEFT]     != TILE_TYPE_WALL && 
+		 tile_env[ENV_TOP]      == TILE_TYPE_WALL)
+		base_id = 1;
+	
+	if (base_id) {
+		new_tile = tile_new (TILE_TYPE_SHADOW);
+		tile_set_base_id (new_tile, shadow_id[base_id-1]);
+	}
+
+	return new_tile;
+}
+
+PlayField*
+playfield_generate_shadow (PlayField *pf)
+{
+	PlayField *env_pf;
+	PlayFieldPrivate *priv;
+	gint row, col;
+	gint tile_env[8];
+	Tile *env_tile;
+	Tile *tile;
+
+	g_return_val_if_fail (IS_PLAYFIELD (pf), NULL);
+
+	priv = pf->priv;
+
+	if (!shadow_id[0]) {
+		shadow_id[0] = g_quark_from_static_string ("shadow-top");
+		shadow_id[1] = g_quark_from_static_string ("shadow-top-left");
+		shadow_id[2] = g_quark_from_static_string ("shadow-left");
+		shadow_id[3] = g_quark_from_static_string ("shadow-bottom-right");
+		shadow_id[4] = g_quark_from_static_string ("shadow-left-top");
+		shadow_id[5] = g_quark_from_static_string ("shadow-top-left-both");
+	}
+
+	env_pf = playfield_new ();
+	playfield_set_matrix_size (env_pf, 
+				   playfield_get_n_rows (pf),
+				   playfield_get_n_cols (pf));
+
+	/* determine the really used playfield size */
+	for (row = 0; row < priv->n_rows; row++) {
+		for (col = 0; col < priv->n_cols; col++) {
+			create_tile_env (pf, row, col, tile_env);
+			tile = get_tile (pf, row, col);
+
+			env_tile = convert_shadow_tiles (tile, tile_env);
+
+			playfield_set_tile (env_pf, row, col, env_tile);
+
+			if (env_tile)
+				g_object_unref (env_tile);
+		}
+	}
+	
+	return env_pf;
+}

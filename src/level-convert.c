@@ -86,9 +86,7 @@ static TranslationItem wall_map [] = {
 
 
 static void calculate_translation_quark (TranslationItem array[]);
-static void create_tile_env (PlayField *pf, gint row, gint col, int tile_env[]);
-static Tile* update_tile (Tile *tile, int tile_env[]);
-static TileType get_env_tile_type (PlayField *pf, gint row, gint col);
+static Tile* update_tile (Tile *tile);
 static Tile* old_tile_load_xml (xmlNodePtr node, gint revision);
 static Level* old_level_load_xml_file (gchar *file_path);
 static PlayField* old_playfield_load_xml (xmlNodePtr pf_node, gint revision, gboolean is_env);
@@ -368,31 +366,6 @@ new_level_write_file (Level *level)
 	xmlFreeDoc(doc);
 }
 
-enum {
-	ENV_LEFT          ,
-	ENV_TOP_LEFT      ,
-	ENV_TOP           , 
-	ENV_TOP_RIGHT     ,
-	ENV_RIGHT         ,
-	ENV_BOTTOM_RIGHT  ,
-	ENV_BOTTOM        ,
-	ENV_BOTTOM_LEFT   ,
-	ENV_LAST
-};
-
-typedef struct {
-	int row;
-	int col;
-} offset;
-
-static const offset env_offset[8] = { { 0, -1 }, 
-				      { -1, -1 }, 
-				      { -1, 0 },
-				      { -1, 1 },
-				      { 0, 1 },
-				      { 1, 1 },
-				      { 1, 0 },
-				      { 1, -1 } };
 
 static PlayField*
 convert_environment (PlayField *pf)
@@ -400,7 +373,6 @@ convert_environment (PlayField *pf)
 	int r,c;
 	Tile *tile;
 	Tile *new_tile;
-	int tile_env [8]; 
 	PlayField *result;
 	PlayField *pf_border;
 
@@ -429,8 +401,7 @@ convert_environment (PlayField *pf)
 	for (r = 0; r < playfield_get_n_rows (result); r++) {		
 		for (c = 0; c < playfield_get_n_cols (result); c++) {
 			tile = playfield_get_tile (pf_border, r, c);
-			create_tile_env (pf_border, r, c, tile_env);
-			new_tile = update_tile (tile, tile_env);
+			new_tile = update_tile (tile);
 			playfield_set_tile (result, r, c, new_tile);
 			g_object_unref (new_tile);
 			
@@ -468,47 +439,17 @@ convert_scenario (PlayField *pf)
 	return pf_border;
 }
 
-static void
-create_tile_env (PlayField *pf, gint row, gint col, int tile_env[])
-{
-	gint i;
-	TileType type;
-	
-	for (i = ENV_LEFT; i < ENV_LAST; i++) {
-		type = get_env_tile_type (pf, row + env_offset[i].row, 
-					  col + env_offset[i].col);
-		tile_env[i] = (int) type;
-	}
-}
-
-static TileType
-get_env_tile_type (PlayField *pf, gint row, gint col)
-{
-	Tile *tile;
-	TileType type = TILE_TYPE_NONE;
-	
-	if (row < 0) return type;
-	if (col < 0) return type;
-	if (row >= playfield_get_n_rows (pf)) return type;
-	if (col >= playfield_get_n_cols (pf)) return type;
-	
-	tile = playfield_get_tile (pf, row, col);
-	if (tile) {
-		type = tile_get_tile_type (tile);
-		g_object_unref (tile);
-	}
-	else
-		type = TILE_TYPE_FLOOR;
-
-	return type;
-}
-
 static Tile*
-update_tile (Tile *tile, int tile_env[])
+update_tile (Tile *tile)
 {
+	static GQuark floor_id = 0;
+	static GQuark wall_id = 0;
 	Tile *new_tile = NULL;
 	TileType type;
 
+	if (!floor_id) floor_id = g_quark_from_static_string ("floor");
+	if (!wall_id) wall_id = g_quark_from_static_string ("wall-single");
+	
 	if (tile == NULL) {
 		new_tile = tile_new (TILE_TYPE_FLOOR);
 	}
@@ -517,86 +458,11 @@ update_tile (Tile *tile, int tile_env[])
 
 	type = tile_get_tile_type (new_tile);
 	if (type == TILE_TYPE_WALL) {
-		gint wall_id = 0; 
-		gint i;
-
-		for (i = 0; i < 4; i++) {
-			switch (i) {
-			case 0: 
-				if (tile_env[ENV_LEFT] == TILE_TYPE_WALL) {
-					wall_id = wall_id + 1;
-				}
-				break;
-			case 1: 
-				if (tile_env[ENV_BOTTOM] == TILE_TYPE_WALL) {
-					wall_id = wall_id + 1;
-				}
-				break;
-			case 2: 
-				if (tile_env[ENV_RIGHT] == TILE_TYPE_WALL) {
-					wall_id = wall_id + 1;
-				}
-				break;
-			case 3: 
-				if (tile_env[ENV_TOP] == TILE_TYPE_WALL) {
-					wall_id = wall_id + 1;
-				}
-				break;
-			}
-			if (i < 3)
-				wall_id = wall_id << 1;
-		}
-		g_assert (wall_id >= 0 && wall_id < 16);
-
-		tile_set_base_id (new_tile, wall_map[wall_id].id);
+		tile_set_base_id (new_tile, wall_id);
 	}
 	else if (type == TILE_TYPE_FLOOR) {
-		gint sub_id = 0;
-		static GQuark floor_id = 0;
-		static GQuark shadow_id[6] = { 0, 0, 0, 0, 0, 0 };
-		if (!floor_id) floor_id = g_quark_from_string ("floor");
- 		if (!shadow_id[0]) {
-			shadow_id[0] = g_quark_from_static_string ("shadow-top");
-			shadow_id[1] = g_quark_from_static_string ("shadow-top-left");
-			shadow_id[2] = g_quark_from_static_string ("shadow-left");
-			shadow_id[3] = g_quark_from_static_string ("shadow-bottom-right");
-			shadow_id[4] = g_quark_from_static_string ("shadow-left-top");
-			shadow_id[5] = g_quark_from_static_string ("shadow-top-left-both");
-		}
 
 		tile_set_base_id (new_tile, floor_id);
-
-		if (tile_env[ENV_LEFT]     == TILE_TYPE_WALL && 
-		    tile_env[ENV_TOP]      == TILE_TYPE_WALL)
-			sub_id = 6; /* top-left */
-		
-		else if (tile_env[ENV_TOP_LEFT] != TILE_TYPE_WALL &&
-			 tile_env[ENV_LEFT]     != TILE_TYPE_WALL && 
-			 tile_env[ENV_TOP]      == TILE_TYPE_WALL)
-			sub_id = 2;
-		
-		else if (tile_env[ENV_TOP_LEFT] != TILE_TYPE_WALL &&
-			 tile_env[ENV_LEFT]     == TILE_TYPE_WALL && 
-			 tile_env[ENV_TOP]      != TILE_TYPE_WALL)
-			sub_id = 5;
-		
-		else if (tile_env[ENV_TOP_LEFT] == TILE_TYPE_WALL &&
-			 tile_env[ENV_LEFT]     != TILE_TYPE_WALL && 
-			 tile_env[ENV_TOP]      != TILE_TYPE_WALL)
-			sub_id = 4;
-		
-		else if (tile_env[ENV_TOP_LEFT] == TILE_TYPE_WALL &&
-			 tile_env[ENV_LEFT]     == TILE_TYPE_WALL && 
-			 tile_env[ENV_TOP]      != TILE_TYPE_WALL)
-			sub_id = 3;
-		
-		else if (tile_env[ENV_TOP_LEFT] == TILE_TYPE_WALL &&
-			 tile_env[ENV_LEFT]     != TILE_TYPE_WALL && 
-			 tile_env[ENV_TOP]      == TILE_TYPE_WALL)
-			sub_id = 1;
-		
-		if (sub_id)
-			tile_add_sub_id (new_tile, shadow_id[sub_id-1], TILE_SUB_OVERLAY);
 	}
 
 	return new_tile;

@@ -64,6 +64,7 @@ typedef struct {
 	GnomeCanvasGroup *obstacles;
 	GnomeCanvasGroup *moveables;
 	GnomeCanvasGroup *floor;    
+	GnomeCanvasGroup *shadows;
 } LevelItems;
 
 typedef enum 
@@ -83,6 +84,7 @@ static Theme       *board_theme = NULL;
 static GnomeCanvas *board_canvas = NULL;
 static PlayField   *board_env = NULL;   /* the actual playfield */
 static PlayField   *board_sce = NULL;   /* the actual playfield */
+static PlayField   *board_shadow = NULL; /* the shadow positions */
 static Goal        *board_goal = NULL;    /* the goal of this level */
 
 
@@ -157,6 +159,7 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 	level_items->obstacles = create_group (canvas, level_items->level);
 	level_items->floor     = create_group (canvas, level_items->level);
 	level_items->moveables = create_group (canvas, level_items->level);
+	level_items->shadows   = create_group (canvas, level_items->level);
 	
 	/* create canvas group and items for the messages */
 	message_items = g_malloc(sizeof(MessageItems));
@@ -185,7 +188,7 @@ board_init (Theme *theme, GnomeCanvas *canvas)
 }
 
 void
-board_init_level (PlayField *env, PlayField *sce, Goal *goal)
+board_init_level (PlayField *base_env, PlayField *sce, Goal *goal)
 {
 	gint row, col;
 
@@ -201,8 +204,9 @@ board_init_level (PlayField *env, PlayField *sce, Goal *goal)
 	undo_clear ();
 	
 	/* init board */
-	board_env = g_object_ref (env);
+	board_env = playfield_generate_environment (base_env);
 	board_sce = playfield_copy (sce);
+	board_shadow = playfield_generate_shadow (base_env);
 	
 	/* init goal */
 	board_goal = g_object_ref (goal);
@@ -291,6 +295,12 @@ board_render ()
 
 				g_object_unref (tile);
 			}
+
+			tile = playfield_get_tile (board_shadow, row, col);
+			if (tile != NULL) {
+				render_tile (tile, row, col);
+				g_object_unref (tile);
+			}
 		}
 	}
 
@@ -329,6 +339,7 @@ static void
 render_tile (Tile *tile, gint row, gint col)
 {
 	GnomeCanvasItem *item;
+	GnomeCanvasGroup *group;
 	TileType type;
 	gdouble x,y;
 
@@ -336,23 +347,29 @@ render_tile (Tile *tile, gint row, gint col)
 	switch(type)
 	{
 	case TILE_TYPE_ATOM:
-		convert_to_canvas (board_theme, row, col, &x, &y);
-		item = create_tile (x, y, tile, 
-				    level_items->moveables);
+		group = level_items->moveables;
 		break;
 		
 	case TILE_TYPE_WALL:
-		convert_to_canvas (board_theme, row, col, &x, &y);
-		item = create_tile (x, y, tile, level_items->obstacles);
+		group = level_items->obstacles;
 		break;
 		
 	case TILE_TYPE_FLOOR:
-		convert_to_canvas (board_theme, row, col, &x, &y);
-		item = create_tile (x, y, tile, level_items->floor);
+		group = level_items->floor;
+		break;
+
+	case TILE_TYPE_SHADOW:
+		group = level_items->shadows;
 		break;
 		
 	case TILE_TYPE_UNKNOWN:
 	default:
+		group = NULL;
+	}
+
+	if (group != NULL) {
+		convert_to_canvas (board_theme, row, col, &x, &y);
+		item = create_tile (x, y, tile, group);
 	}
 }
 
@@ -447,6 +464,10 @@ board_clear()
 	if (board_goal) {
 		g_object_unref (board_goal);
 		board_goal = NULL;
+	}
+	if (board_shadow) {
+		g_object_unref (board_shadow);
+		board_shadow = NULL;
 	}
 
 	selector_hide (selector_data);
@@ -986,7 +1007,7 @@ selector_create (void)
 /*=================================================================
  
   Internal creation functions
-s
+
   ---------------------------------------------------------------*/
 
 GnomeCanvasItem*

@@ -1,5 +1,32 @@
 2002-01-23  Jens Finke <jens@triq.net>
 
+	* src/board.c (board_init), (board_init_level), (board_render),
+	(render_tile), (board_clear): Consider new shadow layer. It's
+	located above all other items, so that the atoms can now move into
+	the shadow of a wall. Looks rather cool.
+
+	* src/level-convert.c (convert_environment): Don't create tile
+	neigbour map anymore.
+	(update_tile): Simplified this method. Most of this will be done
+	dynamically at runtime now.
+	(create_tile_env), (get_env_tile_type): Removed functions.
+
+	* src/playfield.[ch] (setup_translation_map), (get_env_tile_type),
+	(create_tile_env), (convert_wall_tiles), (convert_shadow_tiles):
+	New helper functions.
+	(playfield_generate_environment),
+	(playfield_generate_shadow): The functionality which was in
+	level-convert.c before is now done dynamically at runtime with
+	these new functions.
+
+	* src/theme.c (get_theme_image_pixbuf): Transform image if there
+	has been an additional alpha value specified for it.
+	(create_sub_images): Don't care for alpha value here. 
+
+	* src/tile.h: Added new TileType TILE_TYPE_SHADOW.
+	
+2002-01-23  Jens Finke <jens@triq.net>
+
 	* themes/default/ChangeLog, src/ChangeLog: Removed and merged them
 	with this ChangeLog.
 

@@ -174,6 +174,8 @@ destroy_theme_image (gpointer data)
 static GdkPixbuf*
 get_theme_image_pixbuf (ThemeImage *ti)
 {
+	GdkPixbuf *pixbuf;
+
 	if (ti == NULL) return NULL;
 	
 	if (ti->loading_failed)
@@ -181,7 +183,23 @@ get_theme_image_pixbuf (ThemeImage *ti)
 	
 	if (ti->image == NULL) {
 		ti->image = gdk_pixbuf_new_from_file (ti->file, NULL);
-		if (ti->image == NULL) ti->loading_failed = TRUE;
+		if (ti->image == NULL) 
+			ti->loading_failed = TRUE;
+		else if (ti->alpha < 255) {
+			pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
+						 gdk_pixbuf_get_width (ti->image),
+						 gdk_pixbuf_get_height (ti->image));
+			gdk_pixbuf_fill (pixbuf, 0x00000000);
+			gdk_pixbuf_composite (ti->image, 
+					      pixbuf, 
+					      0, 0,
+					      gdk_pixbuf_get_width (pixbuf),
+					      gdk_pixbuf_get_height (pixbuf),
+					      0.0, 0.0, 1.0, 1.0,
+					      GDK_INTERP_BILINEAR, ti->alpha);
+			gdk_pixbuf_unref (ti->image);
+			ti->image = pixbuf;
+		}
 	}
 
 	if (ti->image != NULL)
@@ -219,21 +237,7 @@ create_sub_images (Theme *theme, Tile *tile, TileSubType sub_type)
 		}
 		
 		if (pixbuf == NULL) {
-			if (ti->alpha == 255) 
-				pixbuf = gdk_pixbuf_copy (pb);
-			else {
-				pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
-							 gdk_pixbuf_get_width (pb),
-							 gdk_pixbuf_get_height (pb));
-				gdk_pixbuf_fill (pixbuf, 0x00000000);
-				gdk_pixbuf_composite (pb, 
-						      pixbuf, 
-						      0, 0,
-						      gdk_pixbuf_get_width (pixbuf),
-						      gdk_pixbuf_get_height (pixbuf),
-						      0.0, 0.0, 1.0, 1.0,
-						      GDK_INTERP_BILINEAR, ti->alpha);
-			}
+			pixbuf = gdk_pixbuf_copy (pb);
 		}
 		else {
 			gdk_pixbuf_composite (pb,
@@ -242,7 +246,7 @@ create_sub_images (Theme *theme, Tile *tile, TileSubType sub_type)
 					      gdk_pixbuf_get_width (pixbuf),
 					      gdk_pixbuf_get_height (pixbuf),
 					      0.0, 0.0, 1.0, 1.0,
-					      GDK_INTERP_BILINEAR, ti->alpha);
+					      GDK_INTERP_BILINEAR, 255);
 		}
 		gdk_pixbuf_unref (pb);
 	}
