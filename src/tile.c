@@ -18,6 +18,9 @@
 
 #include "tile.h"
 
+#define GPOINTER_TO_QUARK(p)  ((GQuark) (p))
+#define GQUARK_TO_POINTER(p)  ((gpointer) (p))
+
 static GObjectClass     *parent_class = NULL;
 
 static void tile_class_init (GObjectClass *class);
@@ -26,7 +29,7 @@ static void tile_finalize (GObject *object);
 
 struct _TilePrivate {
 	TileType type;
-	guint    base_id;
+	GQuark   base_id;
 	GSList   *sub_id_list[2];
 };
 
@@ -127,10 +130,10 @@ tile_copy(Tile *tile)
 	for (i = 0; i < 2; i++) {
 		sub_id = tile->priv->sub_id_list[i];
 		for (; sub_id != NULL; sub_id = sub_id->next) {
-			id = GPOINTER_TO_INT (sub_id->data);
+			id = GPOINTER_TO_QUARK (sub_id->data);
 			tile_copy->priv->sub_id_list[i] = 
 				g_slist_append (tile_copy->priv->sub_id_list[i], 
-						GINT_TO_POINTER (id));
+						GQUARK_TO_POINTER (id));
 		}
 	}
 		
@@ -145,7 +148,7 @@ tile_get_sub_ids (Tile *tile, TileSubType sub_type)
 	return tile->priv->sub_id_list[sub_type];
 }
 
-gint 
+GQuark 
 tile_get_base_id (Tile *tile)
 {
 	g_return_val_if_fail (IS_TILE (tile), 0);
@@ -164,7 +167,7 @@ tile_get_tile_type (Tile *tile)
 static gint
 list_compare_func (gconstpointer a, gconstpointer b)
 {
-	return GPOINTER_TO_INT (a) - GPOINTER_TO_INT (b);
+	return GPOINTER_TO_QUARK (a) - GPOINTER_TO_QUARK (b);
 }
 
 
@@ -175,7 +178,7 @@ tile_add_sub_id (Tile *tile, guint id, TileSubType sub_type)
 
 	tile->priv->sub_id_list[sub_type] = 
 		g_slist_insert_sorted (tile->priv->sub_id_list[sub_type],
-				       GINT_TO_POINTER (id),
+				       GQUARK_TO_POINTER (id),
 				       list_compare_func);
 }
 
@@ -188,7 +191,7 @@ tile_remove_sub_id (Tile *tile, guint id, TileSubType sub_type)
 	g_return_if_fail (IS_TILE (tile));
 
 	result = g_slist_find (tile->priv->sub_id_list[sub_type],
-			       GINT_TO_POINTER (id));
+			       GQUARK_TO_POINTER (id));
 	if (result != NULL)
 		tile->priv->sub_id_list[sub_type] =
 			g_slist_delete_link (tile->priv->sub_id_list[sub_type],
@@ -207,7 +210,7 @@ tile_remove_all_sub_ids (Tile *tile, TileSubType sub_type)
 
 
 void 
-tile_set_base_id (Tile *tile, gint id)
+tile_set_base_id (Tile *tile, GQuark id)
 {
 	g_return_if_fail (IS_TILE (tile));
 	
@@ -236,8 +239,8 @@ tile_is_equal (Tile *tile, Tile *comp)
 		for (; elem != NULL && comp_elem != NULL; 
 		     elem = elem->next, comp_elem = comp_elem->next) 
 		{
-			if (GPOINTER_TO_INT (elem->data) != 
-			    GPOINTER_TO_INT (comp_elem->data))
+			if (GPOINTER_TO_QUARK (elem->data) != 
+			    GPOINTER_TO_QUARK (comp_elem->data))
 			    return FALSE;
 		}
 
@@ -352,8 +355,8 @@ tile_new_from_xml (xmlNodePtr node)
 	xmlNodePtr child;
 	Tile *tile = NULL;
 	TileType type;
-	gint base_id;
-	gint sub_id;
+	GQuark base_id;
+	GQuark sub_id;
 	gchar *content;
 
 	g_return_val_if_fail (node != NULL, NULL);
@@ -375,21 +378,21 @@ tile_new_from_xml (xmlNodePtr node)
 		{
 			g_assert (tile != NULL);
 			content = xmlNodeGetContent (child);
-			base_id = atoi (content);
+			base_id = g_quark_from_string (content);
 			tile_set_base_id (tile, base_id);
 		}
 		else if(!g_strcasecmp(child->name,"underlay"))
 		{
 			g_assert (tile != NULL);
 			content = xmlNodeGetContent (child);
-			sub_id = atoi (content);
+			sub_id = g_quark_from_string (content);
 			tile_add_sub_id (tile, sub_id, TILE_SUB_UNDERLAY);
 		}
 		else if(!g_strcasecmp(child->name,"overlay"))
 		{
 			g_assert (tile != NULL);
 			content = xmlNodeGetContent (child);
-			base_id = atoi (content);
+			base_id = g_quark_from_string (content);
 			tile_add_sub_id (tile, base_id, TILE_SUB_OVERLAY);
 		}
 		else if (!g_strcasecmp (child->name, "text")) {
@@ -432,7 +435,7 @@ void tile_save_xml(Tile *tile, xmlNodePtr tile_node)
 		conn_id = tile->conn_ids;
 		while(conn_id)
 		{
-			gint value = GPOINTER_TO_INT(conn_id->data);
+			gint value = GPOINTER_TO_QUARK(conn_id->data);
 			length = g_snprintf(str_buffer, 5, "%i", value);
 			child = xmlNewChild(tile_node, NULL, "CONN_ID", str_buffer);
 			conn_id = conn_id->next;

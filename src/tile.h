@@ -65,17 +65,17 @@ Tile* tile_copy (Tile *tile);
 
 GSList* tile_get_sub_ids (Tile *tile, TileSubType sub_type);
 
-gint tile_get_base_id (Tile *tile);
+GQuark tile_get_base_id (Tile *tile);
 
 TileType tile_get_tile_type (Tile *tile);
 
-void tile_add_sub_id (Tile *tile, guint id, TileSubType sub_type);
+void tile_add_sub_id (Tile *tile, GQuark id, TileSubType sub_type);
 
 void tile_remove_sub_id (Tile *tile, guint id, TileSubType sub_type);
 
 void tile_remove_all_sub_ids (Tile *tile, TileSubType sub_type);
 
-void tile_set_base_id (Tile *tile, gint id);
+void tile_set_base_id (Tile *tile, GQuark id);
 
 void tile_set_tile_type (Tile *tile, TileType type);
 

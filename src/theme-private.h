@@ -23,11 +23,11 @@
 
 typedef struct 
 {
-	gint          id;             /* the id */
-	gchar         *name;          /* symbolic name */
-	gchar         *file;          /* file name */
+	GQuark        id;             /* the id */
+	gchar        *file;           /* file name */
 	gboolean      loading_failed; /* if once the image loading failed.*/
-        GdkPixbuf     *image;         /* image */
+        GdkPixbuf    *image;          /* image */
+	gint          alpha;          /* alpha value to use for overy-/underlay */
 } ThemeImage;
 
 struct _ThemePrivate 
@@ -41,44 +41,12 @@ struct _ThemePrivate
 				         animation step */
 	GdkColor      bg_color;       /* background color */
 
-	GHashTable    *base_list [TILE_TYPE_LAST]; /* the different image lists */
-	GHashTable    *sub_list [2][TILE_TYPE_LAST];  /* the different sub  images */
-	gint          base_last_id [TILE_TYPE_LAST];
-	gint          sub_last_id [2][TILE_TYPE_LAST];
-	ThemeImage    *selector;                   /* selector image */
-	ThemeImage    *selector_arrows[4];         /* selector arrow images */
-		
+	GData         *images;        /* key/data list for all the images */
 };
 
 
 Theme* theme_new (void);
 
-void theme_add_sub_image (Theme *theme, 
-			  const gchar *name, 
-			  const gchar *file, 
-			  TileType tile_type,
-			  gboolean underlay);
-
-void theme_add_sub_image_with_id (Theme *theme, 
-				  const gchar *name, 
-				  const gchar *file, 
-				  TileType tile_type,
-				  gboolean underlay,
-	                          guint id);
-
-
-void theme_add_base_image (Theme *theme, 
-			   const gchar *name, 
-			   const gchar *file, 
-			   TileType tile_type);
-
-void theme_add_base_image_with_id (Theme *theme, 
-				   const gchar *name, 
-				   const gchar *file, 
-				   TileType tile_type,
-				   guint id);
-
-void theme_set_selector_image (Theme *theme, const gchar *file_name);
-void theme_set_selector_arrow_image (Theme *theme, const gchar *type, const gchar *file_name);
+void theme_add_image (Theme *theme, const gchar *src, gint alpha);
 
 #endif /* _ATOMIX_THEME_PRIVATE_H_ */

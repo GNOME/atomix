@@ -2,54 +2,45 @@
 <theme name="default">
   <bgcolor_rgb red="139" green="139" blue="139"/>
   <animstep dist="8"/>
-  <floor>
-     <base id="1" src="floor.png" name="test"/>
-     <overlay id="1" src="shadow-top.png" name="test"/>
-     <overlay id="2" src="shadow-top-left.png" name="test"/>
-     <overlay id="3" src="shadow-left.png" name="test"/>
-     <overlay id="4" src="shadow-bottom-right.png" name="test"/>
-     <overlay id="5" src="shadow-left-top.png" name="test"/>
-     <overlay id="6" src="shadow-top-left-both.png" name="test"/>
-  </floor>
-  <atom>
-     <base id="1" src="atom-h.png" name="test"/>
-     <base id="2" src="atom-o.png" name="test"/>
-     <base id="3" src="atom-c.png" name="test"/>
-     <underlay  id="1" src="link-top.png" name="test"/>
-     <underlay  id="2" src="link-top-right.png" name="test"/>
-     <underlay  id="3" src="link-right.png" name="test"/>
-     <underlay  id="4" src="link-bottom-right.png" name="test"/>
-     <underlay  id="5" src="link-bottom.png" name="test"/>
-     <underlay  id="6" src="link-bottom-left.png" name="test"/>
-     <underlay  id="7" src="link-left.png" name="test"/>
-     <underlay  id="8" src="link-top-left.png" name="test"/>
-     <underlay  id="9" src="link-top-double.png" name="test"/>
-     <underlay id="10" src="link-right-double.png" name="test"/>
-     <underlay id="11" src="link-bottom-double.png" name="test"/>
-     <underlay id="12" src="link-left-double.png" name="test"/>
-  </atom>
-  <wall>
-    <base id="1" src="wall-top-left.png" name="test"/>
-    <base id="2" src="wall-horizontal.png" name="test"/>
-    <base id="3" src="wall-top-right.png" name="test"/>
-    <base id="4" src="wall-vertical.png" name="test"/>
-    <base id="5" src="wall-bottom-right.png" name="test"/>
-    <base id="6" src="wall-horizontal.png" name="test"/>
-    <base id="7" src="wall-bottom-left.png" name="test"/>
-    <base id="8" src="wall-vertical.png" name="test"/>
-    <base id="9" src="wall-single.png" name="test"/>
-    <base id="10" src="wall-horizontal-topx.png" name="test"/>
-    <base id="11" src="wall-horizontal-bottomx.png" name="test"/>
-    <base id="12" src="wall-vertical-rightx.png" name="test"/>
-    <base id="13" src="wall-vertical-leftx.png" name="test"/>
-    <base id="14" src="wall-vertical-top-end.png" name="test"/>
-    <base id="15" src="wall-vertical-bottom-end.png" name="test"/>
-  </wall>
-  <selector> 
-    <base src="cursor.png"/>
-    <arrow type="left" src="arrow-left.png"/>
-    <arrow type="right" src="arrow-right.png"/>
-    <arrow type="top" src="arrow-top.png"/>
-    <arrow type="bottom" src="arrow-bottom.png"/>
-  </selector>
+
+  <icon src="floor.png"/>
+  <icon src="shadow-top.png"           alpha="10"/>
+  <icon src="shadow-top-left.png"      alpha="10"/>
+  <icon src="shadow-left.png"          alpha="10"/>
+  <icon src="shadow-bottom-right.png"  alpha="10"/>
+  <icon src="shadow-left-top.png"      alpha="10"/>
+  <icon src="shadow-top-left-both.png" alpha="10"/>
+  <icon src="atom-h.png"/>
+  <icon src="atom-o.png"/>
+  <icon src="atom-c.png"/>
+  <icon src="link-top.png"/>
+  <icon src="link-top-right.png"/>
+  <icon src="link-right.png"/>
+  <icon src="link-bottom-right.png"/>
+  <icon src="link-bottom.png"/>
+  <icon src="link-bottom-left.png"/>
+  <icon src="link-left.png"/>
+  <icon src="link-top-left.png"/>
+  <icon src="link-top-double.png"/>
+  <icon src="link-right-double.png"/>
+  <icon src="link-bottom-double.png"/>
+  <icon src="link-left-double.png"/>
+  <icon src="wall-single.png"/>
+  <icon src="wall-vertical-bottom-end.png"/>
+  <icon src="wall-bottom-left.png"/>
+  <icon src="wall-vertical-top-end.png"/>
+  <icon src="wall-vertical.png"/>
+  <icon src="wall-top-left.png"/>
+  <icon src="wall-vertical-rightx.png"/>
+  <icon src="wall-bottom-right.png"/>
+  <icon src="wall-horizontal.png"/>
+  <icon src="wall-horizontal-topx.png"/>
+  <icon src="wall-top-right.png"/>
+  <icon src="wall-vertical-leftx.png"/>
+  <icon src="wall-horizontal-bottomx.png"/>
+  <icon src="cursor.png"/>
+  <icon src="arrow-left.png"/>
+  <icon src="arrow-right.png"/>
+  <icon src="arrow-top.png"/>
+  <icon src="arrow-bottom.png"/>
 </theme>

@@ -32,8 +32,7 @@ static void search_themes_in_dir (ThemeManager *tm, const gchar *dir_path);
 static void add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath);
 static void add_theme_to_list (gchar* key, gpointer value, GList **list);
 static Theme* load_theme (gchar *theme_dir);
-static void handle_tile_type_node (Theme *theme, xmlNodePtr node, TileType type);
-static void handle_selector_node (Theme *theme, xmlNodePtr node);
+static void handle_tile_icon_node (Theme *theme, xmlNodePtr node);
 static gchar* lookup_theme_name (gchar *theme_file);
 
 static void theme_manager_class_init (GObjectClass *class);
@@ -290,20 +289,9 @@ load_theme (gchar *theme_dir)
 		}
 		else 
 		{	
-			if (!g_strcasecmp (node->name, "floor"))
+			if (!g_strcasecmp (node->name, "icon"))
 			{
-				handle_tile_type_node (theme, node->xmlChildrenNode,
-						       TILE_TYPE_FLOOR);
-			}
-			else if (!g_strcasecmp (node->name, "atom"))
-			{
-				handle_tile_type_node (theme, node->xmlChildrenNode,
-						       TILE_TYPE_ATOM);
-			}
-			else if (!g_strcasecmp (node->name, "wall"))
-			{
-				handle_tile_type_node (theme, node->xmlChildrenNode,
-						       TILE_TYPE_WALL);
+				handle_tile_icon_node (theme, node);
 			}
 			else if (!g_strcasecmp (node->name,"animstep"))
 			{
@@ -325,10 +313,6 @@ load_theme (gchar *theme_dir)
 				prop_value = xmlGetProp(node, "blue");
 				priv->bg_color.blue = (atof(prop_value)/255.0) * 65536;
 			}
-			else if (!g_strcasecmp(node->name,"selector"))
-			{
-				handle_selector_node (theme, node->xmlChildrenNode);
-			}
 			else if (!g_strcasecmp (node->name, "text")) {
 			}
 			else					
@@ -346,74 +330,32 @@ load_theme (gchar *theme_dir)
 }
 
 static void
-handle_selector_node (Theme *theme, xmlNodePtr node)
+handle_tile_icon_node (Theme *theme, xmlNodePtr node)
 {
 	gchar *src;
-	gchar *arrow_type;
-
-	for (; node != NULL; node = node->next) {
-		if (!g_strcasecmp (node->name, "base")) {
-			src = g_build_filename (theme->priv->path, 
-						xmlGetProp (node, "src"), NULL);
-		
-			theme_set_selector_image (theme, src);
-			g_free (src);
-		}
-		else if (!g_strcasecmp (node->name, "arrow")) {
-			arrow_type = xmlGetProp (node, "type");
-			src = g_build_filename (theme->priv->path,
-						xmlGetProp (node, "src"), NULL);
-			theme_set_selector_arrow_image (theme, arrow_type, src);
-		}
-		else if (!g_strcasecmp (node->name, "text")) {
-		}
-		else
-			g_warning("Unknown theme tag, ignoring <%s>.", node->name);
-	}
-}
-
-static void
-handle_tile_type_node (Theme *theme, xmlNodePtr node, TileType type)
-{
-	gint id;
-	gchar *src;
-	gchar *name;
+	GdkPixbuf *pixbuf;
+	gint alpha = 255;
 
 	g_return_if_fail (IS_THEME (theme));
-	
-	for (; node != NULL; node = node->next) {
-		if (!g_strcasecmp (node->name, "base")) {
-			id = atoi (xmlGetProp (node, "id"));
-			src = g_build_filename (theme->priv->path, 
-						xmlGetProp (node, "src"), NULL);
-			name = xmlGetProp (node, "name");
-		
-			theme_add_base_image_with_id (theme, name, src, type, id);
-			g_free (src);
+
+	src = g_build_filename (theme->priv->path, 
+				xmlGetProp (node, "src"), NULL);
+
+	if (xmlGetProp (node, "alpha") != NULL)
+		alpha = atoi (xmlGetProp (node, "alpha"));
+
+	if (theme->priv->tile_width == 0) {
+		pixbuf = gdk_pixbuf_new_from_file (src, NULL);
+		if (pixbuf != NULL) {
+			theme->priv->tile_width = gdk_pixbuf_get_width (pixbuf);
+			theme->priv->tile_height = gdk_pixbuf_get_height (pixbuf);
+			gdk_pixbuf_unref (pixbuf);
 		}
-		else if (!g_strcasecmp (node->name, "underlay")) {
-			id = atoi (xmlGetProp (node, "id"));
-			src = g_build_filename (theme->priv->path, 
-						xmlGetProp (node, "src"), NULL);
-			name = xmlGetProp (node, "name");
-		
-			theme_add_sub_image_with_id (theme, name, src, type, TRUE, id);
-			g_free (src);
-		}
-		else if (!g_strcasecmp (node->name, "overlay")) {
-			id = atoi (xmlGetProp (node, "id"));
-			src = g_build_filename (theme->priv->path, 
-						xmlGetProp (node, "src"), NULL);
-			name = xmlGetProp (node, "name");
-		
-			theme_add_sub_image_with_id (theme, name, src, type, FALSE, id);
-			g_free (src);
-		}
-		else if (!g_strcasecmp (node->name, "text")) {
-		}
-		else 
-			g_warning("Unknown theme tag, ignoring <%s>.", node->name);
 	}
+
+	theme_add_image (theme, src, alpha);
+
+	g_free (src);
 }
 
 

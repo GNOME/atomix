@@ -549,7 +549,7 @@ board_handle_key_event (GdkEventKey *event)
 	new_col = selector_data->col;
 
         /* is currently an object moved? */
-	if (anim_data->timeout_id!=-1) return;
+	if (anim_data->timeout_id != -1) return;
 
 	switch(event->keyval)
 	{

@@ -1,6 +1,36 @@
+2002-01-23  Jens Finke <jens@triq.net>
+
+	* level-convert.c: (old_level_load_xml_file), (old_tile_load_xml),
+	(calculate_translation_quark), (update_tile) (save_tile), (main):
+	Translate old id based scheme to new GQuark based identification
+	of icons.
+
+	* theme-manager.c (load_theme): Handle 'icon' node, removed
+	'floor', 'atom', 'wall' and 'selector' handler.
+	(handle_tile_icon_node): New function.
+	(handle_tile_type_node), 
+	(handle_selector_node): Removed.
+
+	* theme.c (theme_add_sub_image),
+	(theme_add_sub_image_with_id), (theme_add_base_image),
+	(add_theme_image_to_hashtable),
+	(theme_add_base_image_with_id): Removed.
+	(theme_add_image): New function.
+	(theme_init), (theme_finalize), (get_theme_image_pixbuf),
+	(create_sub_images), (theme_get_tile_image),
+	(theme_get_selector_image),
+	(theme_get_selector_images): Update to new GQuark based image
+	identification.
+
+	* tile.[ch] (tile_copy), (tile_get_base_id), (tile_add_sub_id),
+	(tile_remove_sub_id), (tile_remove_all_sub_ids),
+	(tile_set_base_id)
+	(tile_new_from_xml), (tile_save_xml): Update to new GQuark based
+	image identification.
+	
 2002-01-22  Jens Finke <jens@triq.net>
 
-	* level-convert.c (update_tile): Consider new walls images during
+	* level-convert.c (update_tile): Consider new wall images during
 	tile conversion.
 
 2002-01-21  Jens Finke <jens@tiq.net>
