@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 scoredir = $(localstatedir)/games
-uidir = $(pkgdatadir)/ui
+uidir = $(datadir)/gnome-2.0/ui
 
 INCLUDES = -Wall \
 	-I$(top_srcdir)/intl \

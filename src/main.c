@@ -780,11 +780,10 @@ create_gui (GnomeProgram *prog)
 					   NULL);
 
 	/* find xml menu description */
-	ui_file = g_build_filename (DATADIR, "atomix", "ui", "atomix-ui.xml", NULL);
-	if (!g_file_test (ui_file, G_FILE_TEST_EXISTS)) {
-		ui_file = g_build_filename (".", "atomix-ui.xml", NULL);
-		if (!g_file_test (ui_file, G_FILE_TEST_EXISTS))
-			g_error (_("Couldn't find file: %s"), ui_file);
+	ui_file =  bonobo_ui_util_get_ui_fname (NULL, "atomix-ui.xml");
+	if (ui_file && !g_file_test (ui_file, G_FILE_TEST_EXISTS)) {
+		g_error (_("Couldn't find file: %s"), ui_file);
+		return NULL;
 	}
 
 	/* set menus */
@@ -826,7 +825,6 @@ create_splash (void)
 	GtkWidget *img;
 
 	file = g_build_filename (DATADIR, "atomix", "atomix-splash.png", NULL);
-	g_print ("%s", file);
 	if (!g_file_test (file, G_FILE_TEST_EXISTS)) {
 		g_free (file);
 		return NULL;

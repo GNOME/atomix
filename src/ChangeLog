@@ -1,3 +1,12 @@
+2001-12-09  Jens Finke <jens@triq.net>
+
+	* Makefile.am (uidir): Install atomix-ui.xml in
+	$(datadir)/gnome-2.0/ui.
+
+	* main.c (create_gui): Use bonobo_ui_util_get_ui_fname to obtain
+	ui xml path.
+	(create_splash): Removed debug message.
+
 2001-12-03  Jens Finke <jens@triq.net>
 
 	* atomix-ui.xml: Hide 'edit' menu for now. 
