@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-06-23 03:45+0200\n"
+"POT-Creation-Date: 2003-07-16 11:16+0200\n"
 "PO-Revision-Date: 2003-06-23 07:30+0200\n"
 "Last-Translator: hemmes <marc_janh@hotmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
@@ -20,7 +20,7 @@ msgstr "Spel hervatten"
 
 #: src/atomix-ui.xml.in.h:2
 msgid "E_xit"
-msgstr "A_fsluiten"
+msgstr "_Afsluiten"
 
 #: src/atomix-ui.xml.in.h:3
 msgid "End a game"
