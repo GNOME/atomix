@@ -5,12 +5,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
-"POT-Creation-Date: 2002-03-02 01:38+0000\n"
+"POT-Creation-Date: 2002-04-29 01:50+0100\n"
 "PO-Revision-Date: 2002-03-02 01:40+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/atomix-ui.xml.in.h:1
@@ -31,43 +31,43 @@ msgstr "Sair do jogo"
 
 #: src/atomix-ui.xml.in.h:5
 msgid "Pause the running game"
-msgstr "Parar o jogo em execução"
+msgstr "Parar o jogo em execuÃ§Ã£o"
 
 #: src/atomix-ui.xml.in.h:6
 msgid "Reset level"
-msgstr "Reset nível"
+msgstr "Reset nÃ­vel"
 
 #: src/atomix-ui.xml.in.h:7
 msgid "Restores start situation"
-msgstr "Repõe a situação inicial"
+msgstr "RepÃµe a situaÃ§Ã£o inicial"
 
 #: src/atomix-ui.xml.in.h:8
 msgid "Set preferences"
-msgstr "Definir preferências"
+msgstr "Definir preferÃªncias"
 
 #: src/atomix-ui.xml.in.h:9
 msgid "Skip _level"
-msgstr "Saltar níve_l"
+msgstr "Saltar nÃ­ve_l"
 
 #: src/atomix-ui.xml.in.h:10
 msgid "Skip the current level"
-msgstr "Saltar o nível actual"
+msgstr "Saltar o nÃ­vel actual"
 
 #: src/atomix-ui.xml.in.h:11
 msgid "Start a new game"
-msgstr "Começar um jogo novo"
+msgstr "ComeÃ§ar um jogo novo"
 
 #: src/atomix-ui.xml.in.h:12
 msgid "Undo the last move"
-msgstr "Desfazer a última jogada"
+msgstr "Desfazer a Ãºltima jogada"
 
 #: src/atomix-ui.xml.in.h:13
 msgid "View game credits"
-msgstr "Ver os créditos do jogo"
+msgstr "Ver os crÃ©ditos do jogo"
 
 #: src/atomix-ui.xml.in.h:14
 msgid "View highscores"
-msgstr "Ver melhores pontuações"
+msgstr "Ver melhores pontuaÃ§Ãµes"
 
 #: src/atomix-ui.xml.in.h:15
 msgid "_About"
@@ -103,11 +103,11 @@ msgstr "_Parar jogo"
 
 #: src/atomix-ui.xml.in.h:23
 msgid "_Preferences ..."
-msgstr "_Preferências..."
+msgstr "_PreferÃªncias..."
 
 #: src/atomix-ui.xml.in.h:24
 msgid "_Scores ..."
-msgstr "_Pontuações..."
+msgstr "_PontuaÃ§Ãµes..."
 
 #: src/atomix-ui.xml.in.h:25
 msgid "_Undo move"
@@ -127,16 +127,16 @@ msgstr "Atomix - Jogo de Pensamento Molecular"
 
 #: src/level-manager.c:171
 msgid "Couldn't find level sequence description."
-msgstr "Incapaz de encontrar descrição de sequência de níveis."
+msgstr "Incapaz de encontrar descriÃ§Ã£o de sequÃªncia de nÃ­veis."
 
 #: src/level-manager.c:185
 msgid "No level found."
-msgstr "Nenhum nível encontrado."
+msgstr "Nenhum nÃ­vel encontrado."
 
 #: src/level-manager.c:285
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Encontrado o nível '%s' em: %s"
+msgstr "Encontrado o nÃ­vel '%s' em: %s"
 
 #: src/main.c:149
 msgid "Copyright (C) 1999-2002 Jens Finke"
@@ -144,15 +144,15 @@ msgstr "Copyright (C) 1999-2002 Jens Finke"
 
 #: src/main.c:150
 msgid "A mind game about atoms and molecules."
-msgstr "Um jogo de estratégia sobre átomos e moléculas."
+msgstr "Um jogo de estratÃ©gia sobre Ã¡tomos e molÃ©culas."
 
 #: src/main.c:484
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Parabéns! Terminou todos os níveis do Atomix."
+msgstr "ParabÃ©ns! Terminou todos os nÃ­veis do Atomix."
 
 #: src/main.c:495
 msgid "Couldn't find at least one level."
-msgstr "Incapaz de encontrar pelo menos um nível."
+msgstr "Incapaz de encontrar pelo menos um nÃ­vel."
 
 #: src/main.c:500
 msgid "Do you want to finish the game?"
@@ -161,35 +161,35 @@ msgstr "Deseja terminar este jogo?"
 #: src/main.c:619 src/main.c:625 src/main.c:630
 #, c-format
 msgid "Couldn't create directory: %s"
-msgstr "Incapaz de criar directório: %s"
+msgstr "Incapaz de criar directÃ³rio: %s"
 
 #. create statistics frame
-#: src/main.c:733
+#: src/main.c:729
 msgid "Statistics"
-msgstr "Estatísticas"
+msgstr "EstatÃ­sticas"
 
-#: src/main.c:739
+#: src/main.c:735
 msgid "Level:"
-msgstr "Nível:"
+msgstr "NÃ­vel:"
 
-#: src/main.c:740
+#: src/main.c:736
 msgid "Molecule:"
-msgstr "Molécula:"
+msgstr "MolÃ©cula:"
 
-#: src/main.c:741
+#: src/main.c:737
 msgid "Score:"
-msgstr "Pontuação:"
+msgstr "PontuaÃ§Ã£o:"
 
-#: src/main.c:742
+#: src/main.c:738
 msgid "Time:"
 msgstr "Tempo:"
 
-#: src/main.c:782
+#: src/main.c:778
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Incapaz de encontrar o ficheiro: %s"
 
-#: src/main.c:840
+#: src/main.c:835
 msgid "Atomix Splash"
 msgstr "Logotipo Atomix"
 
@@ -208,7 +208,7 @@ msgstr "Atomix"
 
 #: atomix.desktop.in.h:2
 msgid "Molecule mind game"
-msgstr "Jogo de estratégia molecular"
+msgstr "Jogo de estratÃ©gia molecular"
 
 #~ msgid "Do you really want to clear the grid?"
 #~ msgstr "Deseja mesmo limpar a grelha?"
@@ -217,21 +217,21 @@ msgstr "Jogo de estratégia molecular"
 #~ "There does already a theme with this name exist.\n"
 #~ "So does the dir name."
 #~ msgstr ""
-#~ "Já existe um tema com este nome.\n"
-#~ "E também um nome de directório."
+#~ "JÃ¡ existe um tema com este nome.\n"
+#~ "E tambÃ©m um nome de directÃ³rio."
 
 #~ msgid ""
 #~ "There does already a theme with\n"
 #~ "this name exist."
 #~ msgstr ""
-#~ "Já existe um tema com este\n"
+#~ "JÃ¡ existe um tema com este\n"
 #~ "nome."
 
 #~ msgid ""
 #~ "There does already a directory\n"
 #~ "with this name exist."
 #~ msgstr ""
-#~ "Já existe um directório com\n"
+#~ "JÃ¡ existe um directÃ³rio com\n"
 #~ "este nome."
 
 #~ msgid "_New File"
@@ -259,7 +259,7 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Manual Atomixed"
 
 #~ msgid "_Level"
-#~ msgstr "Níve_l"
+#~ msgstr "NÃ­ve_l"
 
 #~ msgid "_Theme"
 #~ msgstr "_Tema"
@@ -286,10 +286,10 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Janela Tema"
 
 #~ msgid "No."
-#~ msgstr "Nº"
+#~ msgstr "NÂº"
 
 #~ msgid "Level"
-#~ msgstr "Nível"
+#~ msgstr "NÃ­vel"
 
 #~ msgid "Goal"
 #~ msgstr "Objectivo"
@@ -304,7 +304,7 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Nome Ficheiro:"
 
 #~ msgid "Bonuslevel"
-#~ msgstr "Bónus Nível"
+#~ msgstr "BÃ³nus NÃ­vel"
 
 #~ msgid "Time"
 #~ msgstr "Tempo"
@@ -319,22 +319,22 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Propriedades"
 
 #~ msgid "Leveleditor"
-#~ msgstr "Editor Níveis"
+#~ msgstr "Editor NÃ­veis"
 
 #~ msgid "Images"
 #~ msgstr "Imagens"
 
 #~ msgid "Connections"
-#~ msgstr "Ligações"
+#~ msgstr "LigaÃ§Ãµes"
 
 #~ msgid "Moveables"
-#~ msgstr "Movíveis"
+#~ msgstr "MovÃ­veis"
 
 #~ msgid "Obstacles"
-#~ msgstr "Obstáculos"
+#~ msgstr "ObstÃ¡culos"
 
 #~ msgid "Directoryname:"
-#~ msgstr "Nome Directório:"
+#~ msgstr "Nome DirectÃ³rio:"
 
 #~ msgid "Background Color:"
 #~ msgstr "Cor Fundo:"
@@ -346,7 +346,7 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Pesquisar..."
 
 #~ msgid "Animation Step:"
-#~ msgstr "Incremento de Animação:"
+#~ msgstr "Incremento de AnimaÃ§Ã£o:"
 
 #~ msgid "Tile Height:"
 #~ msgstr "Altura do Mosaico:"
@@ -361,7 +361,7 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Prever Atom"
 
 #~ msgid "Mouse functions"
-#~ msgstr "Funções do rato"
+#~ msgstr "FunÃ§Ãµes do rato"
 
 #~ msgid "Clear"
 #~ msgstr "Limpar"
@@ -388,10 +388,10 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Novos Valores"
 
 #~ msgid "New Level"
-#~ msgstr "Novo Nível"
+#~ msgstr "Novo NÃ­vel"
 
 #~ msgid "Levelname:"
-#~ msgstr "Nome Nível:"
+#~ msgstr "Nome NÃ­vel:"
 
 #~ msgid "Playfield Size"
 #~ msgstr "Tamanho do Campo"
@@ -403,17 +403,17 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "(C)  1999-2001 Jens Finke"
 
 #~ msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
-#~ msgstr "Atomixed é o editor de Níveis/Temas para o jogo de mente Atomix."
+#~ msgstr "Atomixed Ã© o editor de NÃ­veis/Temas para o jogo de mente Atomix."
 
 #~ msgid "Change level name"
-#~ msgstr "Modificar nome de nível"
+#~ msgstr "Modificar nome de nÃ­vel"
 
 #~ msgid ""
 #~ "There is already a level with the same name. Please choose another\n"
 #~ "name for this level."
 #~ msgstr ""
-#~ "Já existe um nível com o mesmo nome. Seleccione outro nome\n"
-#~ "para este nível."
+#~ "JÃ¡ existe um nÃ­vel com o mesmo nome. Seleccione outro nome\n"
+#~ "para este nÃ­vel."
 
 #~ msgid "Current Name:"
 #~ msgstr "Nome Actual:"
@@ -455,7 +455,7 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Limpa a grelha toda."
 
 #~ msgid "Add an image to the list."
-#~ msgstr "Adicionar imagem à lista."
+#~ msgstr "Adicionar imagem Ã  lista."
 
 #~ msgid "Delete Image"
 #~ msgstr "Apagar Imagem"
@@ -483,7 +483,7 @@ msgstr "Jogo de estratégia molecular"
 #~ "files either in <prefix>/share/atomix/levels\n"
 #~ "or ~/.atomix/levels.)"
 #~ msgstr ""
-#~ "Nível não encontrado.\n"
+#~ "NÃ­vel nÃ£o encontrado.\n"
 #~ "Desculpe, mas o jogo termina aqui.\n"
 #~ "\n"
 #~ "(Certifique-se de que tem os ficheiros\n"
@@ -491,22 +491,22 @@ msgstr "Jogo de estratégia molecular"
 #~ "ou em ~/.atomix/levels.)"
 
 #~ msgid "Information"
-#~ msgstr "Informação"
+#~ msgstr "InformaÃ§Ã£o"
 
 #~ msgid "Yet another mind game."
 #~ msgstr "Mais um jogo de mente."
 
 #~ msgid "Atomix Next Level"
-#~ msgstr "Próximo Nível Atomix"
+#~ msgstr "PrÃ³ximo NÃ­vel Atomix"
 
 #~ msgid "Congratulations! You have successfully finished this level."
-#~ msgstr "Parabéns! Terminou este nível com sucesso."
+#~ msgstr "ParabÃ©ns! Terminou este nÃ­vel com sucesso."
 
 #~ msgid "Remaining Time:"
 #~ msgstr "Tempo Remanescente:"
 
 #~ msgid "Are you ready for the next level?"
-#~ msgstr "Está preparado para o próximo nível?"
+#~ msgstr "EstÃ¡ preparado para o prÃ³ximo nÃ­vel?"
 
 #~ msgid "Atomix End"
 #~ msgstr "Fim do Atomix"
@@ -515,13 +515,13 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Deseja jogar novamente?"
 
 #~ msgid "Constraints"
-#~ msgstr "Restrições"
+#~ msgstr "RestriÃ§Ãµes"
 
 #~ msgid "enable score and time limit"
-#~ msgstr "activar limite de tempo e pontuação"
+#~ msgstr "activar limite de tempo e pontuaÃ§Ã£o"
 
 #~ msgid "General"
-#~ msgstr "Genérico"
+#~ msgstr "GenÃ©rico"
 
 #~ msgid "Keyboard (return and cursor keys)"
 #~ msgstr "Teclado (return e teclas de cursor)"
@@ -536,7 +536,7 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "esconder cursor rato durante arrasto"
 
 #~ msgid "enable lazy dragging"
-#~ msgstr "activar arrasto preguiçoso"
+#~ msgstr "activar arrasto preguiÃ§oso"
 
 #~ msgid "Sensitivity:"
 #~ msgstr "Sensibilidade:"
@@ -551,7 +551,7 @@ msgstr "Jogo de estratégia molecular"
 #~ msgstr "Controlo"
 
 #~ msgid "Do you really want to exit the program?"
-#~ msgstr "Deseja mesmo sair da aplicação?"
+#~ msgstr "Deseja mesmo sair da aplicaÃ§Ã£o?"
 
 #~ msgid ""
 #~ "Your time is up! This costs you 10% of your score. \n"
@@ -559,8 +559,8 @@ msgstr "Jogo de estratégia molecular"
 #~ "\n"
 #~ "Do you want to retry?"
 #~ msgstr ""
-#~ "Terminou o seu tempo! Isto custa-lhe 10% da sua pontuação. \n"
-#~ "Mais sorte da próxima vez. \n"
+#~ "Terminou o seu tempo! Isto custa-lhe 10% da sua pontuaÃ§Ã£o. \n"
+#~ "Mais sorte da prÃ³xima vez. \n"
 #~ "\n"
 #~ "Deseja tentar novamente?"
 
@@ -569,13 +569,13 @@ msgstr "Jogo de estratégia molecular"
 #~ "a bonus level so go further now."
 #~ msgstr ""
 #~ "terminou o seu tempo! Mas isto era apenas\n"
-#~ "um nível de bonús pelo que continue."
+#~ "um nÃ­vel de bonÃºs pelo que continue."
 
 #~ msgid "Undo last move. This costs you 5% of your score."
-#~ msgstr "Desfazer última jogada. Isto custa-lhe 5% da sua pontuação."
+#~ msgstr "Desfazer Ãºltima jogada. Isto custa-lhe 5% da sua pontuaÃ§Ã£o."
 
 #~ msgid "No more undo levels."
-#~ msgstr "Não há mais níves de desfazer."
+#~ msgstr "NÃ£o hÃ¡ mais nÃ­ves de desfazer."
 
 #~ msgid "This is the last level. You can't skip any further."
-#~ msgstr "Este é o último nível. Não pode saltar mais."
+#~ msgstr "Este Ã© o Ãºltimo nÃ­vel. NÃ£o pode saltar mais."
