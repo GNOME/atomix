@@ -23,7 +23,7 @@ static GnomeCanvas *goal_canvas;
 static Theme       *goal_theme;
 static GnomeCanvasGroup*  item_group;
 
-#define SCALE_FACTOR  0.6
+#define SCALE_FACTOR  0.7
 
 static GnomeCanvasItem* create_small_item (GnomeCanvasGroup *group, gdouble x, gdouble y, Tile* tile);
 static void render_view (Goal *goal);
@@ -123,25 +123,32 @@ static GnomeCanvasItem*
 create_small_item (GnomeCanvasGroup *group, gdouble x, gdouble y, Tile* tile)
 {
 	GdkPixbuf *pixbuf = NULL;
+	GdkPixbuf *small_pb = NULL;
 	GnomeCanvasItem *item = NULL;
 
 	g_return_val_if_fail (IS_TILE (tile), NULL);
 
 	pixbuf = theme_get_tile_image (goal_theme, tile);
 
+	small_pb = gdk_pixbuf_scale_simple (pixbuf, 
+					    gdk_pixbuf_get_width (pixbuf) * SCALE_FACTOR,
+					    gdk_pixbuf_get_height (pixbuf) * SCALE_FACTOR,
+					    GDK_INTERP_BILINEAR);
+
 	item = gnome_canvas_item_new(group,
 				     gnome_canvas_pixbuf_get_type(),
-				     "pixbuf", pixbuf,
+				     "pixbuf", small_pb,
 				     "x", x,
 				     "x_in_pixels", TRUE,
 				     "y", y,
 				     "y_in_pixels", TRUE,
 				     "width", 
-				     (gdouble)(gdk_pixbuf_get_width (pixbuf))*SCALE_FACTOR,
+				     (gdouble)(gdk_pixbuf_get_width (small_pb)),
 				     "height", 
-				     (gdouble)(gdk_pixbuf_get_height(pixbuf))*SCALE_FACTOR,
+				     (gdouble)(gdk_pixbuf_get_height(small_pb)),
 				     "anchor", GTK_ANCHOR_NW,
-				     NULL);                              
+				     NULL);            
+	gdk_pixbuf_unref (pixbuf);
 	
 	return GNOME_CANVAS_ITEM(item);
 }

@@ -1,3 +1,10 @@
+2001-11-15  Jens Finke <jens@triq.net>
+
+	* goal-view.c (create_small_item): Scale the pixbuf with
+	gdk_pixbuf_scale_simple.
+
+	* main.c (create_canvas_widget): Create an aa canvas.
+	
 2001-11-14  Jens Finke <jens@triq.net>
 
 	* board.c (board_render): Use playfield_get_n_cols when iterating

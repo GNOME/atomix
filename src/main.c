@@ -717,7 +717,13 @@ create_canvas_widget (GtkWidget **canvas)
 	GtkWidget *frame;
 
 	scrollwin = gtk_scrolled_window_new (NULL, NULL);
-	*canvas = gnome_canvas_new ();
+
+        gtk_widget_push_visual (gdk_rgb_get_visual ());
+        gtk_widget_push_colormap (gdk_rgb_get_cmap ());
+        *canvas = gnome_canvas_new_aa ();
+        gtk_widget_pop_visual ();
+        gtk_widget_pop_colormap ();
+
 	gtk_container_add (GTK_CONTAINER (scrollwin), GTK_WIDGET (*canvas));
 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrollwin),
 					GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
