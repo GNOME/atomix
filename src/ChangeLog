@@ -1,3 +1,11 @@
+2001-12-02  Jens Finke <jens@triq.net>		
+
+	* main.c (create_gui): Use g_signal_connect.
+	(splash_destroy),
+	(splash_button_event),
+	(create_splash): New functions for splash screen handling.
+	(main): Create splash screen.
+
 2001-12-02  Jens Finke <jens@triq.net>
 
 	* board.c (board_init_level): Ref goal object.
