@@ -1,5 +1,9 @@
 2002-02-12  Jens Finke <jens@triq.net>
 
+	* configure.in: bumped version to 0.9.2
+
+2002-02-12  Jens Finke <jens@triq.net>
+
 	* themes/default/arrow-left.png,
 	* themes/default/arrow-top.png,
 	* themes/default/arrow-right.png,
