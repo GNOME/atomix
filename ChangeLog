@@ -1,3 +1,9 @@
+2002-01-19  Hasbullah Bin Pit <sebol@ikhlas.com>
+
+        * configure.ini: Added Malay (ms)to ALL_LINGUAS.
+        * po/ms.po: Added Malay Malay Translation
+	  by Mohamad Afifi Omar (App) <mr_mohd_afifi@yahoo.com>
+
 2001-12-12  Stanislav Visnovsky  <visnovsky@nenya.ms.mff.cuni.cz>
 
 	* configure.in: Added "sk" to ALL_LINGUAS.
