@@ -1,0 +1,12 @@
+*.lo
+*.la	
+.deps
+.libs
+.xvpics
+.thumbnails
+*.tar.gz
+*.o
+*~
+Makefile
+Makefile.in
+atomix

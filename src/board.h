@@ -1,0 +1,61 @@
+/* Atomix -- a little mind game about atoms and molecules.
+ * Copyright (C) 1999 Jens Finke
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+
+#ifndef _ATOMIX_BOARD_H_
+#define _ATOMIX_BOARD_H_
+
+#include "level.h"
+#include "main.h"
+
+enum
+{
+	BOARD_MSG_NONE,
+	BOARD_MSG_GAME_PAUSED,
+	BOARD_MSG_NEW_GAME,
+	BOARD_MSG_GAME_OVER
+};
+
+void board_init (AtomixApp *app);
+
+void board_init_level(Level *l);
+
+void board_destroy(void);
+
+void board_clear(void);
+
+void board_print(void);
+
+void board_hide(void);
+
+void board_show(void);
+
+void board_show_normal_cursor(void);
+
+gboolean board_undo_move(void);
+
+void  board_view_message(gint msg_id);
+
+void  board_hide_message(gint msg_id);
+
+void board_handle_key_event(GdkEventKey *event);
+
+void board_set_mouse_control(void);
+
+void board_set_keyboard_control(void);
+
+#endif /* _ATOMIX_BOARD_H_ */

@@ -1,0 +1,17 @@
+Atomix is a little mind game where you have to build molecules out of single 
+atoms. These are laying around between the walls and obstacles on the 
+playfield. Once you have pushed an atom in one direction it moves until it hits 
+an obstacle or another atom. It needs some thinking how to construct complex 
+molecules with this atom behaviour. The game is inspired by the original Amiga
+version. It uses the Gnome libraries and is distributed under the terms of
+the General Public License (GPL).
+
+To be able to compile this package you need at least the alpha release of the 
+GNOME 2.0 base libraries installed. For compilation and installation of this
+package see the generic installation notes in the INSTALL file.
+
+For the latest releases look here:
+http://triq.net/~pearl/atomix.php
+
+ 
+    Jens Finke <jens@triq.net>
