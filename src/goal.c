@@ -181,7 +181,7 @@ destroy_hash_value (gpointer value)
 	for (it = list; it != NULL; it = it->next)
 		g_free (it->data);
 
-	g_free (list);
+	g_slist_free (list);
 }
 
 

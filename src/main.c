@@ -441,9 +441,9 @@ game_user_quits (AtomixApp *app)
 				      "%s",
 				      _("Do you want to finish the game?"));
 	response = gtk_dialog_run (GTK_DIALOG (dlg));
-	gtk_object_unref (GTK_OBJECT (dlg));
+	gtk_widget_destroy (GTK_WIDGET (dlg));
 	
-	if (response == GTK_RESPONSE_OK) {
+	if (response == GTK_RESPONSE_YES) {
 		save_score (app);
 		game_clean_up (app);
 		app->state = GAME_NOT_RUNNING;
@@ -468,7 +468,7 @@ game_finished (AtomixApp *app)
 				      "%s",
 				      _("Congratulations! You have finished all Atomix levels."));
         gtk_dialog_run (GTK_DIALOG (dlg));
-	gtk_object_unref (GTK_OBJECT (dlg));
+	gtk_widget_destroy (GTK_WIDGET (dlg));
 
 	game_clean_up (app);
 	app->state = GAME_NOT_RUNNING;
@@ -603,7 +603,6 @@ update_menu_item_state (AtomixApp *app)
 
 	for (i = 0; cmd_list[i].cmd != NULL; i++) {
 		path = g_strconcat ("/commands/", cmd_list[i].cmd, NULL);
-		g_message ("Path: %s : %i", path, cmd_list[i].enabled);
 		bonobo_ui_component_set_prop (app->ui_component, path, "sensitive",
 					      cmd_list[i].enabled ? "1" : "0", NULL);
 		g_free (path);

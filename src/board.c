@@ -320,24 +320,26 @@ board_render ()
 		for(col=0; col < playfield_get_n_rows (board_pf); col++)
 		{
 			tile = playfield_get_tile (board_pf, row, col);
-			type = tile_get_tile_type (tile);
-			switch(type)
-			{
-			case TILE_TYPE_MOVEABLE:
-				convert_to_canvas (board_theme, row, col, &x, &y);
-				item = create_tile (x, y, tile, 
-						    level_items->moveables);
-				canvas_map_set_item (canvas_map, 
-						     row, col, item);
-				break;
-				
-			case TILE_TYPE_OBSTACLE:
-				convert_to_canvas (board_theme, row, col, &x, &y);
-				item = create_tile (x, y, tile, level_items->obstacles);
-				break;
-				
-			case TILE_TYPE_UNKNOWN:
-			default:
+			if (tile != NULL) {
+				type = tile_get_tile_type (tile);
+				switch(type)
+				{
+				case TILE_TYPE_MOVEABLE:
+					convert_to_canvas (board_theme, row, col, &x, &y);
+					item = create_tile (x, y, tile, 
+							    level_items->moveables);
+					canvas_map_set_item (canvas_map, 
+							     row, col, item);
+					break;
+					
+				case TILE_TYPE_OBSTACLE:
+					convert_to_canvas (board_theme, row, col, &x, &y);
+					item = create_tile (x, y, tile, level_items->obstacles);
+					break;
+					
+				case TILE_TYPE_UNKNOWN:
+				default:
+				}
 			}
 		}
 	}

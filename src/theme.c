@@ -223,6 +223,9 @@ get_theme_image_pixbuf (ThemeImage *ti)
 		if (ti->image == NULL) ti->loading_failed = TRUE;
 	}
 
+	if (ti->image != NULL)
+		gdk_pixbuf_ref (ti->image);
+
 	return ti->image;
 }
 

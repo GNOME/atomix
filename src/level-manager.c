@@ -156,7 +156,7 @@ level_manager_init_levels (LevelManager *lm)
 	g_return_if_fail (!lm->priv->initialized);
 
 	/* load the sequence of the levels */
-	sequence_file = g_build_filename (DATADIR, "atomix/level/sequence", NULL);
+	sequence_file = g_build_filename (g_get_home_dir (), ".atomix/level/sequence", NULL);
 	create_level_sequence (lm, sequence_file);
 	g_free (sequence_file);
 
@@ -207,13 +207,15 @@ search_level_in_dir (LevelManager *lm, gchar *dir_path)
 		
 		while((dent = readdir(dir)) != NULL)
 		{
-			if(!g_strcasecmp(".", dent->d_name) &&
-			   !g_strcasecmp("..", dent->d_name))
+			if(g_strcasecmp (".", dent->d_name) &&
+			   g_strcasecmp ("..", dent->d_name) &&
+			   g_strcasecmp ("sequence", dent->d_name))
 			{
 				gchar *levelname;
 
 				filename = g_build_filename (dir_path,
-							     dent->d_name);
+							     dent->d_name, NULL);
+				g_message ("Check level file: %s", filename);
 				levelname = lookup_level_name (filename);
 				add_level (lm, levelname, filename);
 				g_free (filename);
@@ -271,7 +273,7 @@ add_level (LevelManager *lm, gchar *levelname, gchar *filename)
 				    g_strdup (levelname),
 				    g_strdup (filename));
 		
-		g_message ("Found theme: %s\n", levelname);
+		g_message ("Found Level: %s\n", levelname);
 	}
 	else 
 		g_warning (_("Found level %s twice."), levelname);
@@ -282,17 +284,19 @@ Level*
 level_manager_get_next_level (LevelManager *lm, Level *current_level)
 {
 	LevelManagerPrivate *priv;
+	gchar *levelname = NULL;
 	gchar *filename = NULL;
 	Level *level = NULL;
 
 	g_return_val_if_fail (IS_LEVEL_MANAGER (lm), NULL);
 	g_return_val_if_fail (lm->priv->initialized, NULL);
-	g_return_val_if_fail (g_list_length (lm->priv->level_seq) > 0, NULL);
+	
+	if (g_list_length (lm->priv->level_seq) == 0) return NULL;
 
 	priv = lm->priv;
 
 	if (current_level == NULL) {
-		filename = (gchar*) g_list_first (priv->level_seq)->data;
+		levelname = (gchar*) g_list_first (priv->level_seq)->data;
 	}
 	else {
 		GList *result;
@@ -301,12 +305,15 @@ level_manager_get_next_level (LevelManager *lm, Level *current_level)
 		if (result != NULL) {
 			result = result->next;
 			if (result != NULL)
-				filename = (gchar*) result->data;
+			        levelname = (gchar*) result->data;
 		}
 	}
 
-	if (filename != NULL)
-		level = load_level (filename);
+	if (levelname != NULL) {
+		filename = g_hash_table_lookup (lm->priv->levels, levelname);
+		if (filename != NULL)
+			level = load_level (filename);
+	}
 
 	return level;
 }
@@ -374,7 +381,10 @@ load_level (gchar *filename)
 			
 			else if (!g_strcasecmp(node->name,"goal"))
 			{
-				xmlNodePtr pf_node = node->xmlChildrenNode;
+				xmlNodePtr pf_node;
+				for (pf_node = node->xmlChildrenNode;
+				     g_strcasecmp (pf_node->name, "playfield"); 
+				     pf_node = pf_node->next);
 				level->priv->goal = 
 					playfield_new_from_xml (pf_node);
 			}

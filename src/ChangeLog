@@ -1,5 +1,29 @@
 2001-11-14  Jens Finke <jens@triq.net>
 
+	* board.c (board_render): Check for tile == NULL.
+
+	* goal.c (destroy_hash_value): Use g_slist_free to free the list.
+
+	* level-manager.c (level_manager_init_levels): Look in
+	~/.atomix/levels/ for 'sequence' file for now.
+	(search_level_in_dir): Skip the dirs '.' and '..' correctly as
+	well as the 'sequence' file. Use g_build_filename with NULL as
+	last argument.
+	(level_manager_get_next_level): Number of levels > 0 isn't an
+	assertion anymore, but will be checked with a normal if statement.
+	Get the filename from the hash table not the sequence list.
+	(load_level): For a 'goal' node skip all other child nodes than
+	'playfield'.
+
+	* main.c (game_user_quits): Use gtk_widget_destroy to free the
+	dialog. Check user response against GTK_RESPONSE_YES.
+	(game_finished): Use gtk_widget_destroy to free the dialog.
+
+	* theme.c (get_theme_image_pixbuf): Ref every pixbuf before
+	returning.
+	
+2001-11-14  Jens Finke <jens@triq.net>
+
 	* Makefile.am: Added playfield test program 'pf-test'.
 	(atomix_SOURCES): Added goal-view.[ch], removed callbacks.[ch],
 	preferences.[ch].
