@@ -1,5 +1,13 @@
 2002-01-23  Jens Finke <jens@triq.net>
 
+	* theme-manager.c (handle_title_icon_node): Assure alpha value is
+	in the range [0,255].
+
+	* theme.c (create_sub_images): Apply alpha value on icon as
+	specified in the theme. This way shadows are easier to create.
+
+2002-01-23  Jens Finke <jens@triq.net>
+
 	* level-convert.c: (old_level_load_xml_file), (old_tile_load_xml),
 	(calculate_translation_quark), (update_tile) (save_tile), (main):
 	Translate old id based scheme to new GQuark based identification

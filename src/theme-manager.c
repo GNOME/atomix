@@ -341,8 +341,11 @@ handle_tile_icon_node (Theme *theme, xmlNodePtr node)
 	src = g_build_filename (theme->priv->path, 
 				xmlGetProp (node, "src"), NULL);
 
-	if (xmlGetProp (node, "alpha") != NULL)
+	if (xmlGetProp (node, "alpha") != NULL) {
 		alpha = atoi (xmlGetProp (node, "alpha"));
+		if (alpha < 0) alpha = 0;
+		if (alpha > 255) alpha = 255;
+	}
 
 	if (theme->priv->tile_width == 0) {
 		pixbuf = gdk_pixbuf_new_from_file (src, NULL);

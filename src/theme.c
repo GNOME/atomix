@@ -218,9 +218,23 @@ create_sub_images (Theme *theme, Tile *tile, TileSubType sub_type)
 			continue;
 		}
 		
-		if (pixbuf == NULL)
-			pixbuf = gdk_pixbuf_copy (pb);
-		
+		if (pixbuf == NULL) {
+			if (ti->alpha == 255) 
+				pixbuf = gdk_pixbuf_copy (pb);
+			else {
+				pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
+							 gdk_pixbuf_get_width (pb),
+							 gdk_pixbuf_get_height (pb));
+				gdk_pixbuf_fill (pixbuf, 0x00000000);
+				gdk_pixbuf_composite (pb, 
+						      pixbuf, 
+						      0, 0,
+						      gdk_pixbuf_get_width (pixbuf),
+						      gdk_pixbuf_get_height (pixbuf),
+						      0.0, 0.0, 1.0, 1.0,
+						      GDK_INTERP_BILINEAR, ti->alpha);
+			}
+		}
 		else {
 			gdk_pixbuf_composite (pb,
 					      pixbuf,

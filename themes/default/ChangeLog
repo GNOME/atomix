@@ -1,5 +1,11 @@
 2002-01-23  Jens Finke <jens@triq.net>
 
+	* shadow-*.png: Replaced them with Jakub's dark original versions.
+	
+	* theme: Set alpha value for the shadow images to 77. 
+
+2002-01-23  Jens Finke <jens@triq.net>
+
 	* theme: Use only icon tag to register image files. 
 
 2002-01-22  Jens Finke <jens@triq.net>

@@ -4,12 +4,12 @@
   <animstep dist="8"/>
 
   <icon src="floor.png"/>
-  <icon src="shadow-top.png"           alpha="10"/>
-  <icon src="shadow-top-left.png"      alpha="10"/>
-  <icon src="shadow-left.png"          alpha="10"/>
-  <icon src="shadow-bottom-right.png"  alpha="10"/>
-  <icon src="shadow-left-top.png"      alpha="10"/>
-  <icon src="shadow-top-left-both.png" alpha="10"/>
+  <icon src="shadow-top.png"           alpha="77"/>
+  <icon src="shadow-top-left.png"      alpha="77"/>
+  <icon src="shadow-left.png"          alpha="77"/>
+  <icon src="shadow-bottom-right.png"  alpha="77"/>
+  <icon src="shadow-left-top.png"      alpha="77"/>
+  <icon src="shadow-top-left-both.png" alpha="77"/>
   <icon src="atom-h.png"/>
   <icon src="atom-o.png"/>
   <icon src="atom-c.png"/>
