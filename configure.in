@@ -34,19 +34,7 @@ AM_GLIB_GNU_GETTEXT
 AC_OUTPUT([
 Makefile
 po/Makefile.in
-src/Makefile])
-
-dnl po/Makefile.in
-dnl editor/Makefile
-dnl macros/Makefile
-dnl levels/Makefile
-dnl themes/Makefile
-dnl dnl themes/default/Makefile
-dnl themes/fabian/Makefile
-dnl themes/katomic/Makefile
-dnl themes/fabonus/Makefile
-dnl themes/bjoern/Makefile
-dnl doc/Makefile
-dnl doc/C/Makefile
-dnl atomix.spec
-
+src/Makefile
+themes/Makefile
+themes/default/Makefile
+level/Makefile])

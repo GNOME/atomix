@@ -1,3 +1,9 @@
+2001-11-25  Jens Finke <jens@triq.net>
+
+	* Makefile.am (SUBDIRS): Added level and themes dir.
+
+	* configure.in: Generate Makefiles in level and themes dir.
+	
 2001-11-21  Abel Cheung  <maddog@linux.org.hk>
 
 	* configure.in: Added zh_TW to ALL_LINGUAS.
