@@ -24,6 +24,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <errno.h>
+#include <glib/gstdio.h> /* for g_fopen */
 
 #include "board.h"
 #include "playfield.h"
@@ -112,6 +113,23 @@ static void verb_GameUndo_cb (BonoboUIComponent * uic, gpointer user_data,
 static void verb_GameScores_cb (BonoboUIComponent * uic, gpointer user_data,
 				const char *cname)
 {
+  FILE *scores_file = g_fopen (SCORESDIR "/atomix.scores", "r");
+
+  if ((!scores_file) || (!getc (scores_file)))
+    {
+      GtkWidget *dlg = gtk_message_dialog_new (GTK_WINDOW (app->mainwin),
+					       GTK_DIALOG_MODAL,
+					       GTK_MESSAGE_INFO,
+					       GTK_BUTTONS_CLOSE,
+					       _("You have not achieved any "
+						 "scores yet. Play a little "
+						 "before coming back!"));
+      gtk_dialog_run (GTK_DIALOG (dlg));
+      gtk_widget_destroy (GTK_WIDGET (dlg));
+
+      return;
+    }
+
   gnome_scores_display ("Atomix", PACKAGE, NULL, 0);
 }
 

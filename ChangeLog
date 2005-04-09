@@ -1,3 +1,9 @@
+2005-04-09  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* main.c: display a warning when trying to view scores with
+	no or zero-sized scores file, instead of only silently
+	ignoring it.
+
 2005-03-21  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* configure.in: bumped version to 1.1.2

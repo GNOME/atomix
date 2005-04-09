@@ -7,7 +7,8 @@ INCLUDES = -Wall \
 	$(ATOMIX_CFLAGS) \
 	$(EXTRA_WARNING_CFLAGS) \
 	-DDATADIR=\""$(datadir)"\" \
-	-DGNOMELOCALEDIR=\""$(datadir)/locale\""
+	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+	-DSCORESDIR=\""$(scoredir)"\"
 
 bin_PROGRAMS = atomix
 
