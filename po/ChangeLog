@@ -1,3 +1,7 @@
+2005-04-23  Estêvão Samuel Procópio <tevaum@ig.com.br>
+
+	* pt_BR.po: Updated Brazilian Portuguese Translation.
+
 2005-03-26  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* POTFILES.in: src/atomix-ui.xml.in no longer exists, replaced
