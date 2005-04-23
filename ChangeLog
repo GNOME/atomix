@@ -1,3 +1,9 @@
+2005-04-23  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* src/goal-view.c, src/level-convert.c: apply patch
+	from Andreas Jochens to fix build failures with gcc 4,
+	and used the opportunity to clean the code up.
+
 2005-04-09  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* main.c: display a warning when trying to view scores with

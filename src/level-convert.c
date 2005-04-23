@@ -588,12 +588,14 @@ static void save_tile (xmlNodePtr parent, Tile *tile)
   switch (type)
     {
     case TILE_TYPE_ATOM:
-      type_str = "TILE_TYPE_ATOM"; break;
+      type_str = "TILE_TYPE_ATOM";
+      break;
     case TILE_TYPE_WALL:
-      type_str = "TILE_TYPE_WALL"; break;
+      type_str = "TILE_TYPE_WALL";
+      break;
     case TILE_TYPE_FLOOR:
-      type_str = "TILE_TYPE_FLOOR"; break;
-    default:
+      type_str = "TILE_TYPE_FLOOR";
+      break;
     }
 
   if (type_str == NULL)

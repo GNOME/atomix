@@ -94,6 +94,7 @@ static void render_view (Goal *goal)
 	    case TILE_TYPE_WALL:
 	    case TILE_TYPE_UNKNOWN:
 	    default:
+	      break;
 	    }
 	  g_object_unref (tile);
 	}
