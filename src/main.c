@@ -114,7 +114,7 @@ static void verb_GameScores_cb (BonoboUIComponent * uic, gpointer user_data,
 {
   struct stat scores_file;
 
-  g_stat (SCORES_DIR "atomix.scores", &scores_file);
+  g_stat (SCORESDIR "atomix.scores", &scores_file);
 
   if (scores_file.st_size == 0)
     {
