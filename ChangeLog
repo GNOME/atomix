@@ -1,7 +1,7 @@
 2005-04-24  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* src/main.c: replaced code to check if scores file is
-	zero sized with a cleaner one, using g_stat
+	zero sized with a cleaner one, using stat
 
 2005-04-23  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
