@@ -24,7 +24,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <errno.h>
-#include <glib/gstdio.h> /* for g_fopen */
 
 #include "board.h"
 #include "playfield.h"
@@ -113,9 +112,11 @@ static void verb_GameUndo_cb (BonoboUIComponent * uic, gpointer user_data,
 static void verb_GameScores_cb (BonoboUIComponent * uic, gpointer user_data,
 				const char *cname)
 {
-  FILE *scores_file = g_fopen (SCORESDIR "/atomix.scores", "r");
+  struct stat scores_file;
 
-  if ((!scores_file) || (!getc (scores_file)))
+  g_stat (SCORES_DIR "atomix.scores", &scores_file);
+
+  if (scores_file.st_size == 0)
     {
       GtkWidget *dlg = gtk_message_dialog_new (GTK_WINDOW (app->mainwin),
 					       GTK_DIALOG_MODAL,

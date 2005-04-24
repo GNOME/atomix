@@ -1,14 +1,16 @@
-# atomix: translation to Brazilian Portuguese (pt_BR)
-# Copyright (C) 2002 Free Software Foundation, Inc.
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2001
+# Brazilian Portuguese translation of Atomix.
+# This file is distributed under the same license as the Atomix package.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Estêvão Samuel Procópio <tevaum@ig.com.br>, 2005.
+# Guilherme de S. Pastore <gpastore@colband.com.br>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.0\n"
+"Project-Id-Version: atomix 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-04-23 09:38-0300\n"
-"PO-Revision-Date: 2005-04-23 10:10-0300\n"
-"Last-Translator: Estêvão Samuel Procópio <tevaum@ig.com.br>\n"
+"PO-Revision-Date: 2005-04-24 11:32-0300\n"
+"Last-Translator: Guilherme de S. Pastore <gpastore@colband.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -16,7 +18,7 @@ msgstr ""
 
 #: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
-msgstr "_Continuar o jogo parado"
+msgstr "_Continuar o jogo pausado"
 
 #: ../src/atomix-ui.xml.h:2
 msgid "E_xit"
@@ -32,7 +34,7 @@ msgstr "Sair do jogo"
 
 #: ../src/atomix-ui.xml.h:5
 msgid "Pause the running game"
-msgstr "Parar o jogo atual"
+msgstr "Pausar o jogo atual"
 
 #: ../src/atomix-ui.xml.h:6
 msgid "Reset level"
@@ -60,7 +62,7 @@ msgstr "Iniciar um novo jogo"
 
 #: ../src/atomix-ui.xml.h:12
 msgid "Undo the last move"
-msgstr "Desfazer a último movimento"
+msgstr "Desfazer o último movimento"
 
 #: ../src/atomix-ui.xml.h:13
 msgid "View game credits"
@@ -68,7 +70,7 @@ msgstr "Ver os créditos do jogo"
 
 #: ../src/atomix-ui.xml.h:14
 msgid "View highscores"
-msgstr "Ver os recordes"
+msgstr "Ver os recordes de pontuação"
 
 #: ../src/atomix-ui.xml.h:15
 msgid "_About"
@@ -100,7 +102,7 @@ msgstr "_Novo Jogo"
 
 #: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
-msgstr "_Parar o jogo"
+msgstr "_Pausar o jogo"
 
 #: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
@@ -108,7 +110,7 @@ msgstr "_Preferências..."
 
 #: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
-msgstr "_Ponuação..."
+msgstr "_Pontuação..."
 
 #: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
@@ -125,15 +127,17 @@ msgstr "Nenhum nível foi encontrado."
 #: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Encontrado nível '%s' em: %s"
+msgstr "Encontrado nível '%s' em %s"
 
 #: ../src/main.c:124
 msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr "Você ainda não conseguiu nenhum record. Jogue um pouco mais!"
+msgstr "Você ainda não conseguiu nenhum recorde. Jogue um pouco mais!"
 
 #: ../src/main.c:167
 msgid "translator_credits"
-msgstr "Estêvão Samuel Procópio <tevaum@ig.com.br>"
+msgstr ""
+"Estêvão Samuel Procópio <tevaum@ig.com.br>\n"
+"Guilherme de S. Pastore <gpastore@colband.com.br>"
 
 #: ../src/main.c:171
 msgid "Copyright (C) 1999-2002 Jens Finke"
@@ -157,7 +161,7 @@ msgstr "Não foi possível encontrar pelo menos um nível."
 
 #: ../src/main.c:511
 msgid "Do you want to finish the game?"
-msgstr "Você deseja sair do jogo?"
+msgstr "Você deseja terminar o jogo?"
 
 #. create statistics frame
 #: ../src/main.c:707
@@ -170,7 +174,7 @@ msgstr "Nível:"
 
 #: ../src/main.c:714
 msgid "Molecule:"
-msgstr "MolÃ©cula:"
+msgstr "Molécula:"
 
 #: ../src/main.c:715
 msgid "Score:"
@@ -183,7 +187,7 @@ msgstr "Tempo:"
 #: ../src/main.c:756
 #, c-format
 msgid "Couldn't find file: %s"
-msgstr "Não foi possível encontrar o arquivo: %s"
+msgstr "Não foi possível encontrar o arquivo %s"
 
 #: ../src/theme-manager.c:134
 msgid "No themes found."
@@ -192,14 +196,14 @@ msgstr "Nenhum tema encontrado."
 #: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Encontrado o tema '%s' em: %s"
+msgstr "Encontrado o tema '%s' em %s"
 
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
-msgstr "Jogo mental molecular"
+msgstr "Quebra-cabeça com moléculas"
 
 #~ msgid "Couldn't create directory: %s"
-#~ msgstr "Incapaz de criar diretÃ³rio: %s"
+#~ msgstr "Incapaz de criar diretório: %s"
 
 #~ msgid "Atomix Splash"
 #~ msgstr "Splash do Atomix"
