@@ -462,15 +462,17 @@ void game_level_finished (AtomixApp *tmp_app)
 
 static void calculate_score (AtomixApp *app)
 {
-  gint seconds, subfrom;
+  gint seconds;
 
   seconds = time (NULL) - GTK_CLOCK (app->clock)->seconds;
-  subfrom = 4*app->level_no*app->level_no;
 
-  if (seconds > subfrom)
+  if (seconds > 300)
     return;
 
-  app->score += subfrom - seconds;
+  if (app->score == 0)
+    app->score = 300 - seconds;
+  else
+    app->score = app->score * (2 - (seconds / 300));
 }
 
 static void log_score (AtomixApp *app)
