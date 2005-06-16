@@ -1,7 +1,13 @@
+2005-06-16  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* src/main.c: modified score calculation a bit, adding
+	increasing value to higher levels. Let's see what
+	people think about it.
+
 2005-04-24  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* src/main.c: replaced code to check if scores file is
-	zero sized with a cleaner one, using stat
+	zero sized with a cleaner one, using stat.
 
 2005-04-23  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
