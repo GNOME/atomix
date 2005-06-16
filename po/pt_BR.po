@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: atomix 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-06-16 17:32-0300\n"
-"PO-Revision-Date: 2005-06-16 17:35-0300\n"
+"PO-Revision-Date: 2005-06-16 18:16-0300\n"
 "Last-Translator: Guilherme de S. Pastore <gpastore@colband.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "Propileno"
 
 #: ../level/pyran.atomix.xml.h:1
 msgid "Pyran"
-msgstr ""
+msgstr "Pirano"
 
 #: ../level/transbutylen.atomix.xml.h:1
 msgid "Trans Butylen"
