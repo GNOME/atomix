@@ -3,13 +3,13 @@ level/acetone.atomix.xml
 level/buthanol.atomix.xml
 level/cyclo-buthane.atomix.xml
 level/dimethylether.atomix.xml
-level/ethanal.atomix.xml
 level/ethan.atomix.xml
+level/ethanal.atomix.xml
 level/ethanol.atomix.xml
 level/ethylene.atomix.xml
-level/formaldehyd.atomix.xml
 level/glycerin.atomix.xml
 level/lactic-acid.atomix.xml
+level/methanal.atomix.xml
 level/methane.atomix.xml
 level/methanol.atomix.xml
 level/propanal.atomix.xml

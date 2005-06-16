@@ -2,7 +2,8 @@
 
 	* POTFILES.in: added all level files to POTFILES.in
 	* pt_BR.po: first attempt to translate chemical
-	substances names, needs further checking.
+	substances names, proof-read by Leonardo Pereira
+	<leonardu_lopes@yahoo.com>. Thanks!
 
 2005-04-24  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 

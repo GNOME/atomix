@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-16 16:36-0300\n"
-"PO-Revision-Date: 2005-06-16 16:53-0300\n"
+"POT-Creation-Date: 2005-06-16 17:32-0300\n"
+"PO-Revision-Date: 2005-06-16 17:35-0300\n"
 "Last-Translator: Guilherme de S. Pastore <gpastore@colband.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -33,8 +33,8 @@ msgid "Cyclo-Buthane"
 msgstr "Ciclo-Butano"
 
 #: ../level/dimethylether.atomix.xml.h:1
-msgid "Dimethylether"
-msgstr "Dimetileno"
+msgid "Dymethil Ether"
+msgstr "Éter Dimetílico"
 
 #: ../level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
@@ -42,7 +42,7 @@ msgstr "Etanal"
 
 #: ../level/ethan.atomix.xml.h:1
 msgid "Ethan"
-msgstr ""
+msgstr "Etano"
 
 #: ../level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
@@ -51,10 +51,6 @@ msgstr "Etanol"
 #: ../level/ethylene.atomix.xml.h:1
 msgid "Ethylene"
 msgstr "Etileno"
-
-#: ../level/formaldehyd.atomix.xml.h:1
-msgid "Formaldehyd"
-msgstr "Formaldeído"
 
 #: ../level/glycerin.atomix.xml.h:1
 msgid "Glycerin"
@@ -86,7 +82,7 @@ msgstr ""
 
 #: ../level/transbutylen.atomix.xml.h:1
 msgid "Trans Butylen"
-msgstr "Transbutileno"
+msgstr "Trans-butileno"
 
 #: ../level/water.atomix.xml.h:1
 msgid "Water"
@@ -277,6 +273,9 @@ msgstr "Encontrado o tema '%s' em %s"
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Quebra-cabeça com moléculas"
+
+#~ msgid "Formaldehyd"
+#~ msgstr "Formaldeído"
 
 #~ msgid "Couldn't create directory: %s"
 #~ msgstr "Incapaz de criar diretório: %s"
