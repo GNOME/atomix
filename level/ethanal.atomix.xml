@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level name="Ethanal">
+<level _name="Ethanal">
   <environment>
     <n_rows>13</n_rows>
     <n_columns>13</n_columns>

@@ -6,6 +6,9 @@
 	* level/*.old, level/Makefile.in, level/Makefile.am:
 	moved from old level file format to the current one,
 	instead of converting at build-time.
+	* src/main.c, src/level-manager.c, level/*.atomix.xml:
+	made the name of the levels (which correspond to the
+	name of the molecules) translatable.
 
 2005-04-24  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 

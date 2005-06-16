@@ -538,7 +538,7 @@ static void update_statistics (AtomixApp *app)
 
       /* set levelname */
       gtk_label_set_text (GTK_LABEL (app->lb_name),
-			  level_get_name (app->level));
+			  _(level_get_name (app->level)));
 
       /* set score */
       g_snprintf (str_buffer, 10, "%i", app->score);

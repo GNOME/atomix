@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level name="Glycerin">
+<level _name="Glycerin">
   <environment>
     <n_rows>15</n_rows>
     <n_columns>13</n_columns>

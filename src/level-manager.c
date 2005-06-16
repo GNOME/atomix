@@ -257,7 +257,7 @@ static gchar *lookup_level_name (gchar *filename)
   node = doc->xmlRootNode;
 
   if (node && !g_ascii_strcasecmp (node->name, "level"))
-    name = g_strdup (xmlGetProp (node, "name"));
+    name = g_strdup (xmlGetProp (node, "_name"));
 
   xmlFreeDoc (doc);
 
@@ -378,7 +378,7 @@ static Level *load_level (gchar *filename)
     {
       if (!g_ascii_strcasecmp (node->name, "level"))
 	{
-	  prop_value = xmlGetProp (node, "name");
+	  prop_value = xmlGetProp (node, "_name");
 	  level->priv->name = g_strdup (prop_value);
 	  node = node->xmlChildrenNode;
 	}

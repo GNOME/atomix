@@ -8,13 +8,89 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-23 09:38-0300\n"
-"PO-Revision-Date: 2005-04-24 11:32-0300\n"
+"POT-Creation-Date: 2005-06-16 16:36-0300\n"
+"PO-Revision-Date: 2005-06-16 16:53-0300\n"
 "Last-Translator: Guilherme de S. Pastore <gpastore@colband.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Ácido Acético"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Acetona"
+
+#: ../level/buthanol.atomix.xml.h:1
+msgid "Buthanol"
+msgstr "Butanol"
+
+#: ../level/cyclo-buthane.atomix.xml.h:1
+msgid "Cyclo-Buthane"
+msgstr "Ciclo-Butano"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethylether"
+msgstr "Dimetileno"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Etanal"
+
+#: ../level/ethan.atomix.xml.h:1
+msgid "Ethan"
+msgstr ""
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Etanol"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Etileno"
+
+#: ../level/formaldehyd.atomix.xml.h:1
+msgid "Formaldehyd"
+msgstr "Formaldeído"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Glicerina"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Ácido Lático"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Metano"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Metanol"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Propanal"
+
+#: ../level/propylen.atomix.xml.h:1
+msgid "Propylen"
+msgstr "Propileno"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr ""
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Transbutileno"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Água"
 
 #: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
@@ -129,62 +205,62 @@ msgstr "Nenhum nível foi encontrado."
 msgid "Found level '%s' in: %s"
 msgstr "Encontrado nível '%s' em %s"
 
-#: ../src/main.c:124
+#: ../src/main.c:125
 msgid "You have not achieved any scores yet. Play a little before coming back!"
 msgstr "Você ainda não conseguiu nenhum recorde. Jogue um pouco mais!"
 
-#: ../src/main.c:167
+#: ../src/main.c:168
 msgid "translator_credits"
 msgstr ""
 "Estêvão Samuel Procópio <tevaum@ig.com.br>\n"
 "Guilherme de S. Pastore <gpastore@colband.com.br>"
 
-#: ../src/main.c:171
+#: ../src/main.c:172
 msgid "Copyright (C) 1999-2002 Jens Finke"
 msgstr "Copyright (C) 1999-2002 Jens Finke"
 
-#: ../src/main.c:172
+#: ../src/main.c:173
 msgid "A puzzle game about atoms and molecules."
 msgstr "Um jogo mental sobre átomos e moléculas"
 
-#: ../src/main.c:485 ../atomix.desktop.in.h:1
+#: ../src/main.c:484 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:496
+#: ../src/main.c:495
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Parabéns! Você completou todos os níveis do Atomix."
 
-#: ../src/main.c:506
+#: ../src/main.c:505
 msgid "Couldn't find at least one level."
 msgstr "Não foi possível encontrar pelo menos um nível."
 
-#: ../src/main.c:511
+#: ../src/main.c:510
 msgid "Do you want to finish the game?"
 msgstr "Você deseja terminar o jogo?"
 
 #. create statistics frame
-#: ../src/main.c:707
+#: ../src/main.c:706
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: ../src/main.c:713
+#: ../src/main.c:712
 msgid "Level:"
 msgstr "Nível:"
 
-#: ../src/main.c:714
+#: ../src/main.c:713
 msgid "Molecule:"
 msgstr "Molécula:"
 
-#: ../src/main.c:715
+#: ../src/main.c:714
 msgid "Score:"
 msgstr "Pontuação:"
 
-#: ../src/main.c:716
+#: ../src/main.c:715
 msgid "Time:"
 msgstr "Tempo:"
 
-#: ../src/main.c:756
+#: ../src/main.c:755
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Não foi possível encontrar o arquivo %s"
