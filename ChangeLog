@@ -1,5 +1,16 @@
 2005-06-17  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
+	* level/dimethylether.atomix.xml: molecule/level name
+	is "Dimethyl Ether", not "Dymethil Ether".
+
+	* level/sequence: replace "Dimethylether" with
+	"Dimethyl Ether".
+
+	* configure.in: change version to 1.2.1, due to minor
+	post-release fix.
+
+2005-06-17  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
 	* atomix.desktop.in, src/main.c (create_gui): use
 	atomix-icon.png as icon.Thanks to Leonardo Pereira
 	<leonardu_lopes@yahoo.com> for creating the image.
