@@ -10,9 +10,9 @@ level_files = \
 	ethanal.atomix.xml \
 	ethanol.atomix.xml \
 	ethylene.atomix.xml \
-	formaldehyd.atomix.xml \
 	glycerin.atomix.xml \
 	lactic-acid.atomix.xml \
+	methanal.atomix.xml \
 	methane.atomix.xml \
 	methanol.atomix.xml \
 	propanal.atomix.xml \

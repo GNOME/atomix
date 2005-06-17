@@ -2,7 +2,7 @@
 _Name=Atomix
 _Comment=Molecule puzzle game
 Exec=atomix
-Icon=
+Icon=/usr/share/pixmaps/atomix-icon.png
 Terminal=false
 Type=Application
 Categories=Application;Game;MindGame

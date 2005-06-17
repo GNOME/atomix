@@ -766,6 +766,14 @@ static AtomixApp *create_gui (GnomeProgram *prog)
 
   /* create window contents */
   content = create_mainwin_content (app);
+
+  gtk_window_set_icon_from_file (GTK_WINDOW (app->mainwin),
+				 g_build_filename (DATADIR,
+						   "pixmaps",
+						   "atomix-icon.png",
+						   NULL),
+				 NULL);
+
   gtk_widget_show (GTK_WIDGET (content));
 
   bonobo_window_set_contents (BONOBO_WINDOW (app->mainwin), content);

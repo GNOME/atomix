@@ -4,6 +4,8 @@ SUBDIRS = po src level themes
 
 logodir = $(pkgdatadir)
 logo_DATA = atomix-logo.png
+icondir = $(datadir)/pixmaps
+icon_DATA = atomix-icon.png
 scoredir=$(localstatedir)/games
 Gamesdir = $(datadir)/applications
 

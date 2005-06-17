@@ -1,3 +1,9 @@
+2005-06-17  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* atomix.desktop.in, src/main.c (create_gui): use
+	atomix-icon.png as icon.Thanks to Leonardo Pereira
+	<leonardu_lopes@yahoo.com> for creating the image.
+
 2005-06-16  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* level/*.old, level/Makefile.in, level/Makefile.am:
@@ -12,7 +18,8 @@
 	to Dymethil Ether.
 
 	* level/formaldehyd.atomix.xml: renamed to Methanal,
-	thanks to Leonardo Pereira <leonardu_lopes@yahoo.com>.
+	thanks to Leonardo Pereira <leonardu_lopes@yahoo.com>
+	for pointing this out.
 
 2005-04-24  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
