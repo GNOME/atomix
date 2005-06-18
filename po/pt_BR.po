@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-16 17:32-0300\n"
-"PO-Revision-Date: 2005-06-16 18:16-0300\n"
+"POT-Creation-Date: 2005-06-18 07:18-0300\n"
+"PO-Revision-Date: 2005-06-18 07:18-0300\n"
 "Last-Translator: Guilherme de S. Pastore <gpastore@colband.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -33,16 +33,16 @@ msgid "Cyclo-Buthane"
 msgstr "Ciclo-Butano"
 
 #: ../level/dimethylether.atomix.xml.h:1
-msgid "Dymethil Ether"
+msgid "Dimethyl Ether"
 msgstr "Éter Dimetílico"
-
-#: ../level/ethanal.atomix.xml.h:1
-msgid "Ethanal"
-msgstr "Etanal"
 
 #: ../level/ethan.atomix.xml.h:1
 msgid "Ethan"
 msgstr "Etano"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Etanal"
 
 #: ../level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
@@ -59,6 +59,10 @@ msgstr "Glicerina"
 #: ../level/lactic-acid.atomix.xml.h:1
 msgid "Lactic Acid"
 msgstr "Ácido Lático"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Metanal"
 
 #: ../level/methane.atomix.xml.h:1
 msgid "Methane"
@@ -219,44 +223,44 @@ msgstr "Copyright (C) 1999-2002 Jens Finke"
 msgid "A puzzle game about atoms and molecules."
 msgstr "Um jogo mental sobre átomos e moléculas"
 
-#: ../src/main.c:484 ../atomix.desktop.in.h:1
+#: ../src/main.c:486 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:495
+#: ../src/main.c:497
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Parabéns! Você completou todos os níveis do Atomix."
 
-#: ../src/main.c:505
+#: ../src/main.c:507
 msgid "Couldn't find at least one level."
 msgstr "Não foi possível encontrar pelo menos um nível."
 
-#: ../src/main.c:510
+#: ../src/main.c:512
 msgid "Do you want to finish the game?"
 msgstr "Você deseja terminar o jogo?"
 
 #. create statistics frame
-#: ../src/main.c:706
+#: ../src/main.c:708
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: ../src/main.c:712
+#: ../src/main.c:714
 msgid "Level:"
 msgstr "Nível:"
 
-#: ../src/main.c:713
+#: ../src/main.c:715
 msgid "Molecule:"
 msgstr "Molécula:"
 
-#: ../src/main.c:714
+#: ../src/main.c:716
 msgid "Score:"
 msgstr "Pontuação:"
 
-#: ../src/main.c:715
+#: ../src/main.c:717
 msgid "Time:"
 msgstr "Tempo:"
 
-#: ../src/main.c:755
+#: ../src/main.c:757
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Não foi possível encontrar o arquivo %s"
