@@ -1,6 +1,7 @@
 2005-06-18  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* MAINTAINERS: added.
+	* NEWS: updated (to catch up with changes since 1.1)
 	* README: rewritten from scratch.
 
 2005-06-17  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>

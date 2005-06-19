@@ -1,3 +1,36 @@
+2005-06-17: Released version 1.2.1
+
+	* Builds with GCC 4.0.
+	* Doesn't require libglade to build.
+	* Provides an icon, both for the window and the menu.
+	* Greatly improved internationalization, by allowing the translation
+	  of molecule names.
+	* Tries not to silently ignore the user when no action can be taken
+	  (e.g. viewing scores when no scores were achieved).
+	* Changes commercial namings of molecules to their original (correct?)
+	  names, such as Formaldehyd being renamed to Methanal.
+	* Finally moved to the new level file format, instead of converting
+	  old formats at build-time. That also means level-convert is likely
+	  to die pretty soon.
+
+2005-03-21: Released version 1.1.2
+
+	* Saves score if the application is closed but a game is running.
+	* Hide the movement arrows when the atoms are hidden, namely during
+	  a game pause (and, therefore, prevent them from moving).
+	* General improvements.
+
+2005-03-18: Released version 1.1
+
+	* New maintainer (Atomix is now developed by another person)
+	* Fixes the bug that made all the translations available be displayed
+	  on the main application menu at the same time, making the game pretty
+	  unusable for non-English speakers.
+	* Doesn't force the existance of an .atomix directory in the users'
+	  home directories, although it will still work if the users want
+	  and have one.
+	* General code improvements.
+
 2003-12-03: Released version 1.0
 	
 	  * Build fixes (Gtk+ & ranlib)
