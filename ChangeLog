@@ -1,3 +1,8 @@
+2005-06-18  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* MAINTAINERS: added.
+	* README: rewritten from scratch.
+
 2005-06-17  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* level/dimethylether.atomix.xml: molecule/level name

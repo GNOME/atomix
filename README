@@ -1,17 +1,23 @@
-Atomix is a puzzle mind game where you have to build molecules out of single 
-atoms. These are laying around between the walls and obstacles on the 
-playfield. Once you have pushed an atom in one direction it moves until it hits 
-an obstacle or another atom. It needs some thinking how to construct complex 
-molecules with this atom behaviour. The game is inspired by the original Amiga
-version. It uses the Gnome libraries and is distributed under the terms of
-the General Public License (GPL).
+Atomix is a puzzle game in which you have to build full molecules, from simple
+inorganic ones in the first levels to extremely complex organic ones in the
+last levels, out of isolated atoms, which are laying around among walls and
+other obstacles on the playfield.
 
-To be able to compile this package you need at least the alpha release of the 
-GNOME 2.0 base libraries installed. For compilation and installation of this
-package see the generic installation notes in the INSTALL file.
+Once you push an atom in a certain direction, it will move until it hits
+something that makes it stop, which could be a wall or another atom. This
+behaviour is exactly what makes playing it not trivial and, therefore, fun,
+as you need to think quite a lot about how to have your molecule organized.
 
-For the latest releases look here:
-http://triq.net/~pearl/atomix.php
+For compilation and installation instructions, see the notes in the INSTALL
+file. As for latest releases, they are always available on the GNOME official
+FTP site:
 
- 
-    Jens Finke <jens@triq.net>
+	http://ftp.gnome.org/pub/GNOME/sources/atomix/
+
+If you find any bugs or have any kind of feature requests, please, let me know
+by reporting them on the GNOME bugzilla, either by using bug-buddy or by 
+visiting http://bugzilla.gnome.org.
+
+--
+Guilherme de S. Pastore (fatalerror)
+<gpastore@colband.com.br>
