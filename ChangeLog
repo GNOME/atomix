@@ -1,3 +1,13 @@
+2005-06-20  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* src/main.[ch], src/board.c, undo.c: renamed
+	GAME_STATE_LEVEL_RUNNING to GAME_STATE_RUNNING and
+	introduced GAME_STATE_RUNNING_UNMOVED, which means no
+	atom has been moved yet (or, more precisely, that
+	there's no move in the undo stack), so neither "Undo"
+	or "Skip" should be available. Several tweaks on the
+	code structure had to be made to allow this.
+	
 2005-06-18  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* MAINTAINERS: added.

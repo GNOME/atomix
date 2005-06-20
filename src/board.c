@@ -78,6 +78,7 @@ typedef enum
   Global variables
   
   ---------------------------------------------------------------*/
+extern AtomixApp *app;
 static Theme *board_theme = NULL;
 static GnomeCanvas *board_canvas = NULL;
 static PlayField *board_env = NULL;	/* the actual playfield */
@@ -829,6 +830,12 @@ void move_item (GnomeCanvasItem *item, ItemDirection direc)
   /* move the item, if the new position is different */
   if (src_row != dest_row || src_col != dest_col)
     {
+      if (!undo_exists())
+	{
+	  app->state = GAME_STATE_RUNNING;
+	  update_menu_item_state (app);
+	}
+
       undo_push_move (item, src_row, src_col, dest_row, dest_col);
 
       convert_to_canvas (board_theme, dest_row, dest_col, &new_x1, &new_y1);

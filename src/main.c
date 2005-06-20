@@ -32,8 +32,9 @@
 #include "level.h"
 #include "goal-view.h"
 #include "gtk-clock.h"
+#include "undo.h"
 
-static AtomixApp *app;
+AtomixApp *app;
 
 typedef enum
   {
@@ -57,7 +58,7 @@ static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
 				    gpointer user_data);
 static void game_init (AtomixApp *app);
 static void update_statistics (AtomixApp *app);
-static void update_menu_item_state (AtomixApp *app);
+void update_menu_item_state (AtomixApp *aapp);
 static void view_congratulations (void);
 static void calculate_score (AtomixApp *app);
 static void log_score (AtomixApp *app);
@@ -206,12 +207,13 @@ static void controller_handle_action (AtomixApp *app, GameAction action)
 	      app->level_no = 1;
 	      app->score = 0;
 	      setup_level (app);
-	      app->state = GAME_STATE_LEVEL_RUNNING;
+	      app->state = GAME_STATE_RUNNING_UNMOVED;
 	    }
 	}
       break;
 
-    case GAME_STATE_LEVEL_RUNNING:
+    case GAME_STATE_RUNNING_UNMOVED:
+    case GAME_STATE_RUNNING:
       switch (action)
 	{
 	case GAME_ACTION_END:
@@ -255,11 +257,15 @@ static void controller_handle_action (AtomixApp *app, GameAction action)
 	  break;
 
 	case GAME_ACTION_RESTART:
+	  g_assert (app->state != GAME_STATE_RUNNING_UNMOVED);
+
 	  level_cleanup_view (app);
 	  setup_level (app);
 	  break;
 
 	case GAME_ACTION_UNDO:
+	  g_assert (app->state != GAME_STATE_RUNNING_UNMOVED);
+
 	  board_undo_move ();
 	  break;
 
@@ -273,7 +279,7 @@ static void controller_handle_action (AtomixApp *app, GameAction action)
 	{
 	  gtk_clock_start (GTK_CLOCK (app->clock));
 	  board_show ();
-	  app->state = GAME_STATE_LEVEL_RUNNING;
+	  app->state = (undo_exists())?GAME_STATE_RUNNING:GAME_STATE_RUNNING_UNMOVED;
 	}
       break;
 
@@ -412,7 +418,7 @@ static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
 {
   AtomixApp *app = (AtomixApp *) user_data;
 
-  if (app->state == GAME_STATE_LEVEL_RUNNING)
+  if ((app->state == GAME_STATE_RUNNING) || (app->state == GAME_STATE_RUNNING_UNMOVED))
     {
       board_handle_key_event (NULL, event, NULL);
     }
@@ -572,6 +578,19 @@ static const CmdEnable not_running[] =
     { NULL, FALSE }
   };
 
+static const CmdEnable running_unmoved[] =
+  {
+    { "GameNew",      FALSE },
+    { "GameEnd",      TRUE  },
+    { "GameSkip",     TRUE  },
+    { "GameReset",    FALSE },
+    { "GameUndo",     FALSE },
+    { "GamePause",    TRUE  },
+    { "GameContinue", FALSE },
+    { "EditPreferences", TRUE },
+    { NULL, FALSE }
+};
+
 static const CmdEnable running[] =
   {
     { "GameNew",      FALSE },
@@ -600,10 +619,10 @@ static const CmdEnable paused[] =
 
 static const CmdEnable *state_sensitivity[] =
   {
-    not_running, running, paused
+    not_running, running_unmoved, running, paused
   };
 
-static void update_menu_item_state (AtomixApp *app)
+void update_menu_item_state (AtomixApp *app)
 {
   gchar *path;
   gint i;

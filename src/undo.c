@@ -15,8 +15,10 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
+#include "main.h"
 #include "undo.h"
 
+extern AtomixApp *app;
 static GSList *undo_stack = NULL;
 
 gboolean undo_exists (void)
@@ -62,6 +64,12 @@ UndoMove *undo_pop_move (void)
 
   move = (UndoMove *) undo_stack->data;
   undo_stack = g_slist_delete_link (undo_stack, undo_stack);
+
+  if (undo_stack == NULL)
+    {
+      app->state = GAME_STATE_RUNNING_UNMOVED;
+      update_menu_item_state (app);
+    }
 
   return move;
 }

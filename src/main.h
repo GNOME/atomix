@@ -28,7 +28,8 @@
 typedef enum
 {
   GAME_STATE_NOT_RUNNING,
-  GAME_STATE_LEVEL_RUNNING,
+  GAME_STATE_RUNNING_UNMOVED,
+  GAME_STATE_RUNNING,
   GAME_STATE_PAUSED
 } GameState;
 
@@ -56,6 +57,7 @@ typedef struct
   guint score;
 } AtomixApp;
 
-void game_level_finished (AtomixApp * app);
+void game_level_finished (AtomixApp *app);
+void update_menu_item_state (AtomixApp *app);
 
 #endif /* _ATOMIX_MAIN_H_ */
