@@ -1,3 +1,8 @@
+2005-06-23  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* configure.in: changed to comply with the move to
+	autoconf 2.52.
+
 2005-06-20  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* src/main.[ch], src/board.c, undo.c: renamed

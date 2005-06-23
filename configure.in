@@ -1,7 +1,10 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT(configure.in)
-AM_INIT_AUTOMAKE(atomix, 1.2.1)
+AC_PREREQ(2.52)
+
+AC_INIT(atomix, 1.2.1, http://bugzilla.gnome.org/enter_bug.cgi?product=atomix)
+AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+AC_CONFIG_SRCDIR(src/board.c)
 AM_CONFIG_HEADER(config.h)
 
 AC_PROG_INTLTOOL
