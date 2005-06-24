@@ -1,3 +1,8 @@
+2005-06-24  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* Makefile.am: removed atomix-logo.png from EXTRA_DIST,
+	it's not necessary
+
 2005-06-23  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* configure.in: changed to comply with the move to

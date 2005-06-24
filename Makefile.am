@@ -10,7 +10,6 @@ scoredir=$(localstatedir)/games
 Gamesdir = $(datadir)/applications
 
 EXTRA_DIST = \
-	atomix-logo.png   \
 	atomix.desktop.in   \
         intltool-extract.in \
         intltool-merge.in   \
