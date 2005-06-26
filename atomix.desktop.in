@@ -1,9 +1,13 @@
 [Desktop Entry]
+Encoding=UTF-8
 _Name=Atomix
 _Comment=Molecule puzzle game
 Exec=atomix
-Icon=/usr/share/pixmaps/atomix-icon.png
+Icon=atomix-icon.png
 Terminal=false
 Type=Application
-Categories=Application;Game;MindGame
-
+Categories=GNOME;Application;Game;PuzzleGame
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=atomix
+X-GNOME-Bugzilla-Component=atomix
+X-GNOME-Bugzilla-Version=1.2.x
