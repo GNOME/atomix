@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: atomix 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-06-18 07:18-0300\n"
-"PO-Revision-Date: 2005-06-18 07:18-0300\n"
+"PO-Revision-Date: 2005-06-26 10:23-0300\n"
 "Last-Translator: Guilherme de S. Pastore <gpastore@colband.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr "Etanol"
 
 #: ../level/ethylene.atomix.xml.h:1
 msgid "Ethylene"
-msgstr "Etileno"
+msgstr "Eteno"
 
 #: ../level/glycerin.atomix.xml.h:1
 msgid "Glycerin"
