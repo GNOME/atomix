@@ -11,7 +11,7 @@
 	     accel="*Control*s"/>
 
         <cmd name="GameUndo" _label="_Undo move" _tip="Undo the last move"
-	     pixtype="stock" pixname="undo" accel="*Control*z"/>
+	     pixtype="stock" pixname="gtk-undo" accel="*Control*z"/>
 
 	<cmd name="GameReset" _label="Reset level" _tip="Restores start situation"/>
 	
@@ -24,12 +24,12 @@
 	<cmd name="GameScores" _label="_Scores ..." _tip="View highscores"/>
 
 	<cmd name="GameExit" _label="E_xit" _tip="Exit game"
-	     pixtype="stock" pixname="quit" accel="*Control*q"/>
+	     pixtype="stock" pixname="gtk-quit" accel="*Control*q"/>
 
 	<cmd name="EditPreferences" _label="_Preferences ..." _tip="Set preferences"
 	     pixtype="stock" pixname="preferences"/>
 
-	<cmd name="HelpAbout" _label="_About" _tip="View game credits"/>
+	<cmd name="HelpAbout" stockid="gtk-about"/>
 
 </commands>
 
@@ -63,10 +63,8 @@
 
 	</submenu -->
 
-	<submenu name="Help" _label="_Help">
-
+	<submenu name="Help" stock-id="gtk-help">
 	        <menuitem name="HelpAbout" verb=""/>
-	
 	</submenu>
 </menu>
 

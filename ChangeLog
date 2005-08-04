@@ -1,3 +1,8 @@
+2005-08-04  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* src/atomix-ui.xml: use more stock icons from GTK+,
+	partially addressing bug #312476
+
 2005-06-26  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* configure.in: release 1.2.2
