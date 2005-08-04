@@ -62,7 +62,7 @@
 
 	</submenu -->
 
-	<submenu name="Help" _label="_Help"/>
+	<submenu name="Help" _label="_Help">
 	        <menuitem name="HelpAbout" verb=""/>
 	</submenu>
 </menu>
