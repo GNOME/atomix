@@ -23,8 +23,7 @@
 
 	<cmd name="GameScores" _label="_Scores ..." _tip="View highscores"/>
 
-	<cmd name="GameExit" _label="E_xit" _tip="Exit game"
-	     pixtype="stock" pixname="gtk-quit" accel="*Control*q"/>
+	<cmd name="GameExit" stockid="gtk-quit"/>
 
 	<cmd name="EditPreferences" _label="_Preferences ..." _tip="Set preferences"
 	     pixtype="stock" pixname="preferences"/>
@@ -63,7 +62,7 @@
 
 	</submenu -->
 
-	<submenu name="Help" stock-id="gtk-help">
+	<submenu name="Help" _label="_Help"/>
 	        <menuitem name="HelpAbout" verb=""/>
 	</submenu>
 </menu>
