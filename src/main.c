@@ -153,29 +153,28 @@ static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
 			       const char *cname)
 {
   GtkWidget *dlg;
+
   const char *authors[] =
     {
       "Guilherme de S. Pastore <gpastore@colband.com.br>",
       "Jens Finke <jens@triq.net>",
-      "Jakub Steiner (GFX)",
       NULL
     };
 
-  const char *documenters[] =
+  char *artists[] =
     {
+      "Jakub Steiner <jimmac@ximian.com>",
       NULL
     };
 
-  const char *translators = _("translator_credits");
-
-  dlg = gnome_about_new ("Atomix",
-			 VERSION,
-			 _("Copyright (C) 1999-2002 Jens Finke"),
-			 _("A puzzle game about atoms and molecules."),
-			 authors,
-			 documenters,
-			 strcmp (translators, "translator_credits") == 0 ? NULL : translators,
-			 NULL);
+  dlg = gtk_about_dialog_new ();
+  gtk_about_dialog_set_name (GTK_ABOUT_DIALOG(dlg), "Atomix");
+  gtk_about_dialog_set_version (GTK_ABOUT_DIALOG(dlg), VERSION);
+  gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG(dlg), _("A puzzle game about atoms and molecules"));
+  gtk_about_dialog_set_website (GTK_ABOUT_DIALOG(dlg), "http://www.gnome.org/projects/atomix");
+  gtk_about_dialog_set_authors (GTK_ABOUT_DIALOG(dlg), authors);
+  gtk_about_dialog_set_artists (GTK_ABOUT_DIALOG(dlg), artists);
+  gtk_about_dialog_set_translator_credits (GTK_ABOUT_DIALOG(dlg), _("translator-credits"));
 
   gtk_widget_show (dlg);
 }

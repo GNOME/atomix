@@ -1,7 +1,9 @@
 2005-08-05  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
-	* src/main.c: set icon as default, so it can be used by
-	child windows with no icons, and mainly by GtkAbout
+	* src/main.c:
+	- move from GnomeAbout to GtkAbout
+	- set icon as default, so it can be used by child
+	windows with no icons, and mainly by GtkAbout
 
 2005-08-04  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
