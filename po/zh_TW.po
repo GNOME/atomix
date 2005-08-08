@@ -1,219 +1,263 @@
 # Traditional Chinese translation for atomix.
-# Copyright (C) 2001-2002 Free Software Foundation, Inc.
-# Abel Cheung <maddog@linux.org.hk>, 2001-2002.
+# Copyright (C) 2001,02,05 Free Software Foundation, Inc.
+# Abel Cheung <abel@oaka.org>, 2001, 02, 05.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: atomix 0.9.2\n"
-"POT-Creation-Date: 2003-12-03 18:47+0100\n"
-"PO-Revision-Date: 2002-04-14 12:29+0800\n"
-"Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
-"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"Project-Id-Version: atomix 1.2.2a\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-08-08 17:59+0800\n"
+"PO-Revision-Date: 2005-08-08 18:00+0800\n"
+"Last-Translator: Abel Cheung <abel@oaka.org>\n"
+"Language-Team: Traditional Chinese <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
-#: src/atomix-ui.xml.in.h:1
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "醋酸"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "丙酮"
+
+#: ../level/buthanol.atomix.xml.h:1
+msgid "Buthanol"
+msgstr "丁醇"
+
+#: ../level/cyclo-buthane.atomix.xml.h:1
+msgid "Cyclo-Buthane"
+msgstr "環丁烷"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "二甲醚"
+
+# (Abel) should be ethane
+#: ../level/ethan.atomix.xml.h:1
+msgid "Ethan"
+msgstr "乙烷"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "乙醛"
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "酒精 (乙醇)"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "乙烯"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "甘油 (丙三醇)"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "乳酸"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "甲醛"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "甲烷"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "甲醇"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "丙醛"
+
+# (Abel) should be "propene" or "propylene"
+#: ../level/propylen.atomix.xml.h:1
+msgid "Propylen"
+msgstr "丙烯"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "吡喃"
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "β-丁烯"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "水"
+
+#: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
 msgstr "繼續已暫停的遊戲"
 
-#: src/atomix-ui.xml.in.h:2
-msgid "E_xit"
-msgstr "離開(_X)"
-
-#: src/atomix-ui.xml.in.h:3
+#: ../src/atomix-ui.xml.h:2
 msgid "End a game"
 msgstr "終止遊戲"
 
-#: src/atomix-ui.xml.in.h:4
-msgid "Exit game"
-msgstr "離開此程式"
-
-#: src/atomix-ui.xml.in.h:5
+#: ../src/atomix-ui.xml.h:3
 msgid "Pause the running game"
 msgstr "暫停此遊戲"
 
-#: src/atomix-ui.xml.in.h:6
+#: ../src/atomix-ui.xml.h:4
 msgid "Reset level"
 msgstr "重新開始這一關"
 
-#: src/atomix-ui.xml.in.h:7
+#: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
 msgstr "重設版圖"
 
-#: src/atomix-ui.xml.in.h:8
+#: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
 msgstr "設定偏好"
 
-#: src/atomix-ui.xml.in.h:9
+#: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
 msgstr "跳過版圖(_L)"
 
-#: src/atomix-ui.xml.in.h:10
+#: ../src/atomix-ui.xml.h:8
 msgid "Skip the current level"
 msgstr "跳過這一關"
 
-#: src/atomix-ui.xml.in.h:11
+#: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
 msgstr "開始新遊戲"
 
-#: src/atomix-ui.xml.in.h:12
+#: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
 msgstr "還原上一步"
 
-#: src/atomix-ui.xml.in.h:13
-msgid "View game credits"
-msgstr "檢視著作權所有者列表"
-
-#: src/atomix-ui.xml.in.h:14
+#: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
 msgstr "檢視積分排行榜"
 
-#: src/atomix-ui.xml.in.h:15
-msgid "_About"
-msgstr "關於(_A)"
-
-#: src/atomix-ui.xml.in.h:16
+#: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
 msgstr "繼續遊戲(_C)"
 
-#: src/atomix-ui.xml.in.h:17
+#: ../src/atomix-ui.xml.h:13
 msgid "_Edit"
 msgstr "編輯(_E)"
 
-#: src/atomix-ui.xml.in.h:18
+#: ../src/atomix-ui.xml.h:14
 msgid "_End Game"
 msgstr "終止遊戲(_E)"
 
-#: src/atomix-ui.xml.in.h:19
+#: ../src/atomix-ui.xml.h:15
 msgid "_Game"
 msgstr "遊戲(_G)"
 
-#: src/atomix-ui.xml.in.h:20
+#: ../src/atomix-ui.xml.h:16
 msgid "_Help"
-msgstr "說明(_H)"
+msgstr "求助(_H)"
 
-#: src/atomix-ui.xml.in.h:21
+#: ../src/atomix-ui.xml.h:17
 msgid "_New Game"
 msgstr "開始遊戲(_N)"
 
-#: src/atomix-ui.xml.in.h:22
+#: ../src/atomix-ui.xml.h:18
 msgid "_Pause game"
 msgstr "暫停遊戲(_P)"
 
-#: src/atomix-ui.xml.in.h:23
+#: ../src/atomix-ui.xml.h:19
 msgid "_Preferences ..."
 msgstr "偏好設定(_P)..."
 
-#: src/atomix-ui.xml.in.h:24
+#: ../src/atomix-ui.xml.h:20
 msgid "_Scores ..."
 msgstr "分數(_S)..."
 
-#: src/atomix-ui.xml.in.h:25
+#: ../src/atomix-ui.xml.h:21
 msgid "_Undo move"
 msgstr "還原此步(_U)"
 
-#: src/level-manager.c:171
+#: ../src/level-manager.c:173
 msgid "Couldn't find level sequence description."
 msgstr "找不到版圖的次序。"
 
-#: src/level-manager.c:185
+#: ../src/level-manager.c:187
 msgid "No level found."
 msgstr "找不到版圖。"
 
-#: src/level-manager.c:286
+#: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "已找到版圖檔案 '%s'，位置在：%s"
+msgstr "已找到版圖檔案 ‘%s’，位置在：%s"
 
-#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr "您還未玩過，請試玩一下再看這裡！"
+
+#: ../src/main.c:173
+msgid "A puzzle game about atoms and molecules"
+msgstr "一個有關原子和分子組合的智力遊戲"
+
+#: ../src/main.c:177
+msgid "translator-credits"
+msgstr ""
+"如對翻譯有任何意見，請送一封電子郵件給\n"
+"以下地址，GNOME 翻譯團隊會盡快回覆您：\n"
+"community@linuxhall.org\n"
+"\n"
+"Abel Cheung <abel@oaka.org>, 2001, 02, 05"
+
+#: ../src/main.c:491 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: src/main.c:145
-msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "版權所有 (C) 1999-2002 Jens Finke"
-
-#: src/main.c:146
-msgid "A mind game about atoms and molecules."
-msgstr "一個有關原子和分子組合的智力遊戲。"
-
-#: src/main.c:456
+#: ../src/main.c:502
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "恭喜！已經完成所有 Atomix 版圖了。"
 
-#: src/main.c:467
+#: ../src/main.c:512
 msgid "Couldn't find at least one level."
 msgstr "找不到任何版圖。"
 
-#: src/main.c:472
+#: ../src/main.c:517
 msgid "Do you want to finish the game?"
 msgstr "是否要完成遊戲？"
 
-#: src/main.c:591 src/main.c:597 src/main.c:602
-#, c-format
-msgid "Couldn't create directory: %s"
-msgstr "無法建立目錄：%s"
-
 #. create statistics frame
-#: src/main.c:701
+#: ../src/main.c:726
 msgid "Statistics"
 msgstr "統計"
 
-#: src/main.c:707
+#: ../src/main.c:732
 msgid "Level:"
 msgstr "版圖："
 
-#: src/main.c:708
+#: ../src/main.c:733
 msgid "Molecule:"
 msgstr "分子："
 
-#: src/main.c:709
+#: ../src/main.c:734
 msgid "Score:"
 msgstr "分數："
 
-#: src/main.c:710
+#: ../src/main.c:735
 msgid "Time:"
 msgstr "時間："
 
-#: src/main.c:750
+#: ../src/main.c:775
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "找不到檔案：%s。"
 
-#: src/theme-manager.c:141
+#: ../src/theme-manager.c:134
 msgid "No themes found."
 msgstr "找不到佈景主題。"
 
-#: src/theme-manager.c:205
+#: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "已找到佈景主題 '%s'，位置在：%s"
+msgstr "已找到佈景主題 ‘%s’，位置在：%s"
 
-#: atomix.desktop.in.h:2
-msgid "Molecule mind game"
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
 msgstr "分子組合智力遊戲"
 
-#~ msgid "Atomix Splash"
-#~ msgstr "Atomix 版頭畫面"
-
-#~ msgid "Game Paused"
-#~ msgstr "遊戲已暫停"
-
-#~ msgid "Game Over"
-#~ msgstr "遊戲完結"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - 分子組合智力遊戲"
-
-#~ msgid "No more undo levels."
-#~ msgstr "已不可再還原了。"
-
-#~ msgid "This is the last level. You can't skip any further."
-#~ msgstr "這是最後一關。不可以再跳到下一關了。"
-
-#~ msgid "XML file %s not found."
-#~ msgstr "找不到 XML 檔案 %s。"
-
-#~ msgid "Undo last move. This costs you 5 % of your score."
-#~ msgstr "還原最後一步。這樣會倒扣 5% 分數。"
