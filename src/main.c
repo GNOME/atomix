@@ -156,12 +156,12 @@ static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
 
   const char *authors[] =
     {
-      "Guilherme de S. Pastore <gpastore@colband.com.br>",
+      "Guilherme de S. Pastore <guilherme.pastore@terra.com.br>",
       "Jens Finke <jens@triq.net>",
       NULL
     };
 
-  char *artists[] =
+  const char *artists[] =
     {
       "Jakub Steiner <jimmac@ximian.com>",
       NULL
