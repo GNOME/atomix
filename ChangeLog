@@ -1,3 +1,9 @@
+2005-09-12  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
+
+	* NEWS: updated
+	* README: updated e-mail address
+	* configure.in: released 1.2.3
+
 2005-09-10  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* src/main.c (verb_HelpAbout_cb): declare artists as const

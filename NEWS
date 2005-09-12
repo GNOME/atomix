@@ -1,3 +1,17 @@
+2005-09-12: Released version 1.2.3
+
+	* Fixes some bugs
+	* Brings up-to-date documentation
+	* Integrates better with the environment, mainly by making more
+	  use of GTK+ stock icons and the new default GtkAbout
+
+2005-06-26: Released version 1.2.2
+
+	* Build and installation improvements
+	* Better desktop integration through the .desktop file
+	* Usability improvements, by disabling menu items at times they
+	  cannot be used
+
 2005-06-17: Released version 1.2.1
 
 	* Builds with GCC 4.0.
