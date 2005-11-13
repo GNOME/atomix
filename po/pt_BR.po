@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-10 15:08-0300\n"
-"PO-Revision-Date: 2005-09-10 15:09-0300\n"
+"POT-Creation-Date: 2005-11-13 20:05-0200\n"
+"PO-Revision-Date: 2005-11-13 20:08-0200\n"
 "Last-Translator: Guilherme de S. Pastore <guilherme.pastore@terra.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -24,25 +24,25 @@ msgstr "Ácido Acético"
 msgid "Acetone"
 msgstr "Acetona"
 
-#: ../level/buthanol.atomix.xml.h:1
-msgid "Buthanol"
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
 msgstr "Butanol"
 
-#: ../level/cyclo-buthane.atomix.xml.h:1
-msgid "Cyclo-Buthane"
-msgstr "Ciclo-Butano"
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Ciclobutano"
 
 #: ../level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
 msgstr "Éter Dimetílico"
 
-#: ../level/ethan.atomix.xml.h:1
-msgid "Ethan"
-msgstr "Etano"
-
 #: ../level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
 msgstr "Etanal"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Etano"
 
 #: ../level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
@@ -76,8 +76,8 @@ msgstr "Metanol"
 msgid "Propanal"
 msgstr "Propanal"
 
-#: ../level/propylen.atomix.xml.h:1
-msgid "Propylen"
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
 msgstr "Propileno"
 
 #: ../level/pyran.atomix.xml.h:1
