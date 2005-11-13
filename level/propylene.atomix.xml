@@ -1,143 +1,9 @@
 <?xml version="1.0"?>
-<level _name="Ethan">
+<level _name="Propylene">
   <environment>
     <n_rows>13</n_rows>
-    <n_columns>13</n_columns>
+    <n_columns>14</n_columns>
     <row no="1">
-      <col no="3">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="4">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="5">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="6">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="7">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="8">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="9">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="10">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="11">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-    </row>
-    <row no="2">
-      <col no="3">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="11">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-    </row>
-    <row no="3">
-      <col no="3">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="6">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="8">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="11">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-    </row>
-    <row no="4">
-      <col no="3">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="8">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="9">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="10">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="11">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-    </row>
-    <row no="5">
-      <col no="1">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
       <col no="2">
         <tile>
           <type>TILE_TYPE_WALL</type>
@@ -162,6 +28,56 @@
           <base>wall-single</base>
         </tile>
       </col>
+      <col no="6">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="7">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="8">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="9">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="10">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+    </row>
+    <row no="2">
+      <col no="2">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="4">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="6">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
       <col no="8">
         <tile>
           <type>TILE_TYPE_WALL</type>
@@ -175,6 +91,114 @@
         </tile>
       </col>
     </row>
+    <row no="3">
+      <col no="2">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="4">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="6">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="8">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="10">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="11">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="12">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+    </row>
+    <row no="4">
+      <col no="1">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="2">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="6">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="8">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="10">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="12">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+    </row>
+    <row no="5">
+      <col no="1">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="8">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="10">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="12">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+    </row>
     <row no="6">
       <col no="1">
         <tile>
@@ -182,13 +206,19 @@
           <base>wall-single</base>
         </tile>
       </col>
-      <col no="5">
+      <col no="3">
         <tile>
           <type>TILE_TYPE_WALL</type>
           <base>wall-single</base>
         </tile>
       </col>
       <col no="10">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="12">
         <tile>
           <type>TILE_TYPE_WALL</type>
           <base>wall-single</base>
@@ -202,7 +232,19 @@
           <base>wall-single</base>
         </tile>
       </col>
-      <col no="10">
+      <col no="3">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="5">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="12">
         <tile>
           <type>TILE_TYPE_WALL</type>
           <base>wall-single</base>
@@ -216,13 +258,13 @@
           <base>wall-single</base>
         </tile>
       </col>
-      <col no="5">
+      <col no="3">
         <tile>
           <type>TILE_TYPE_WALL</type>
           <base>wall-single</base>
         </tile>
       </col>
-      <col no="6">
+      <col no="5">
         <tile>
           <type>TILE_TYPE_WALL</type>
           <base>wall-single</base>
@@ -234,13 +276,13 @@
           <base>wall-single</base>
         </tile>
       </col>
-      <col no="10">
+      <col no="11">
         <tile>
           <type>TILE_TYPE_WALL</type>
           <base>wall-single</base>
         </tile>
       </col>
-      <col no="11">
+      <col no="12">
         <tile>
           <type>TILE_TYPE_WALL</type>
           <base>wall-single</base>
@@ -266,7 +308,19 @@
           <base>wall-single</base>
         </tile>
       </col>
-      <col no="8">
+      <col no="5">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="7">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="9">
         <tile>
           <type>TILE_TYPE_WALL</type>
           <base>wall-single</base>
@@ -280,7 +334,25 @@
       </col>
     </row>
     <row no="10">
-      <col no="1">
+      <col no="3">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="5">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="7">
+        <tile>
+          <type>TILE_TYPE_WALL</type>
+          <base>wall-single</base>
+        </tile>
+      </col>
+      <col no="9">
         <tile>
           <type>TILE_TYPE_WALL</type>
           <base>wall-single</base>
@@ -294,18 +366,6 @@
       </col>
     </row>
     <row no="11">
-      <col no="1">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
-      <col no="2">
-        <tile>
-          <type>TILE_TYPE_WALL</type>
-          <base>wall-single</base>
-        </tile>
-      </col>
       <col no="3">
         <tile>
           <type>TILE_TYPE_WALL</type>
@@ -364,55 +424,17 @@
   </environment>
   <scenario>
     <n_rows>13</n_rows>
-    <n_columns>13</n_columns>
+    <n_columns>14</n_columns>
     <row no="2">
-      <col no="8">
+      <col no="3">
         <tile>
           <type>TILE_TYPE_ATOM</type>
           <base>atom-h</base>
-          <underlay>link-top-right</underlay>
-        </tile>
-      </col>
-    </row>
-    <row no="4">
-      <col no="4">
-        <tile>
-          <type>TILE_TYPE_ATOM</type>
-          <base>atom-h</base>
-          <underlay>link-bottom</underlay>
-        </tile>
-      </col>
-      <col no="6">
-        <tile>
-          <type>TILE_TYPE_ATOM</type>
-          <base>atom-c</base>
-          <underlay>link-top</underlay>
-          <underlay>link-bottom-right</underlay>
-          <underlay>link-bottom</underlay>
           <underlay>link-bottom-left</underlay>
         </tile>
       </col>
     </row>
-    <row no="5">
-      <col no="6">
-        <tile>
-          <type>TILE_TYPE_ATOM</type>
-          <base>atom-c</base>
-          <underlay>link-top</underlay>
-          <underlay>link-top-right</underlay>
-          <underlay>link-bottom</underlay>
-          <underlay>link-top-left</underlay>
-        </tile>
-      </col>
-      <col no="9">
-        <tile>
-          <type>TILE_TYPE_ATOM</type>
-          <base>atom-h</base>
-          <underlay>link-bottom-right</underlay>
-        </tile>
-      </col>
-    </row>
-    <row no="8">
+    <row no="4">
       <col no="3">
         <tile>
           <type>TILE_TYPE_ATOM</type>
@@ -420,7 +442,62 @@
           <underlay>link-top</underlay>
         </tile>
       </col>
-      <col no="8">
+      <col no="5">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-c</base>
+          <underlay>link-top-right</underlay>
+          <underlay>link-bottom-right</underlay>
+          <underlay>link-left-double</underlay>
+        </tile>
+      </col>
+      <col no="7">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-h</base>
+          <underlay>link-bottom</underlay>
+        </tile>
+      </col>
+    </row>
+    <row no="5">
+      <col no="2">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-h</base>
+          <underlay>link-bottom</underlay>
+        </tile>
+      </col>
+      <col no="4">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-h</base>
+          <underlay>link-right</underlay>
+        </tile>
+      </col>
+      <col no="9">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-c</base>
+          <underlay>link-top</underlay>
+          <underlay>link-left</underlay>
+          <underlay>link-right-double</underlay>
+        </tile>
+      </col>
+    </row>
+    <row no="7">
+      <col no="4">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-c</base>
+          <underlay>link-top</underlay>
+          <underlay>link-right</underlay>
+          <underlay>link-bottom</underlay>
+          <underlay>link-left</underlay>
+        </tile>
+      </col>
+    </row>
+    <row no="9">
+      <col no="6">
         <tile>
           <type>TILE_TYPE_ATOM</type>
           <base>atom-h</base>
@@ -428,27 +505,11 @@
         </tile>
       </col>
     </row>
-    <row no="9">
-      <col no="4">
-        <tile>
-          <type>TILE_TYPE_ATOM</type>
-          <base>atom-h</base>
-          <underlay>link-bottom-left</underlay>
-        </tile>
-      </col>
-    </row>
   </scenario>
   <goal>
-    <n_rows>4</n_rows>
-    <n_columns>3</n_columns>
+    <n_rows>3</n_rows>
+    <n_columns>5</n_columns>
     <row no="0">
-      <col no="0">
-        <tile>
-          <type>TILE_TYPE_ATOM</type>
-          <base>atom-h</base>
-          <underlay>link-bottom-right</underlay>
-        </tile>
-      </col>
       <col no="1">
         <tile>
           <type>TILE_TYPE_ATOM</type>
@@ -457,6 +518,13 @@
         </tile>
       </col>
       <col no="2">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-h</base>
+          <underlay>link-bottom</underlay>
+        </tile>
+      </col>
+      <col no="4">
         <tile>
           <type>TILE_TYPE_ATOM</type>
           <base>atom-h</base>
@@ -465,14 +533,39 @@
       </col>
     </row>
     <row no="1">
+      <col no="0">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-h</base>
+          <underlay>link-right</underlay>
+        </tile>
+      </col>
       <col no="1">
         <tile>
           <type>TILE_TYPE_ATOM</type>
           <base>atom-c</base>
           <underlay>link-top</underlay>
-          <underlay>link-top-right</underlay>
+          <underlay>link-right</underlay>
           <underlay>link-bottom</underlay>
-          <underlay>link-top-left</underlay>
+          <underlay>link-left</underlay>
+        </tile>
+      </col>
+      <col no="2">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-c</base>
+          <underlay>link-top</underlay>
+          <underlay>link-left</underlay>
+          <underlay>link-right-double</underlay>
+        </tile>
+      </col>
+      <col no="3">
+        <tile>
+          <type>TILE_TYPE_ATOM</type>
+          <base>atom-c</base>
+          <underlay>link-top-right</underlay>
+          <underlay>link-bottom-right</underlay>
+          <underlay>link-left-double</underlay>
         </tile>
       </col>
     </row>
@@ -480,30 +573,11 @@
       <col no="1">
         <tile>
           <type>TILE_TYPE_ATOM</type>
-          <base>atom-c</base>
-          <underlay>link-top</underlay>
-          <underlay>link-bottom-right</underlay>
-          <underlay>link-bottom</underlay>
-          <underlay>link-bottom-left</underlay>
-        </tile>
-      </col>
-    </row>
-    <row no="3">
-      <col no="0">
-        <tile>
-          <type>TILE_TYPE_ATOM</type>
-          <base>atom-h</base>
-          <underlay>link-top-right</underlay>
-        </tile>
-      </col>
-      <col no="1">
-        <tile>
-          <type>TILE_TYPE_ATOM</type>
           <base>atom-h</base>
           <underlay>link-top</underlay>
         </tile>
       </col>
-      <col no="2">
+      <col no="4">
         <tile>
           <type>TILE_TYPE_ATOM</type>
           <base>atom-h</base>

@@ -1,3 +1,10 @@
+2005-11-13  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* level/: renamed Propylen to Propylene, Ethan to Ethane,
+	Cyclo-buthane to Cyclobutane and Buthanol to Butanol (bugs
+	#321371, #321369, #321367 and #321365, respectively). Thanks
+	a lot for the revision, Christian Rose!
+
 2005-09-12  Guilherme de S. Pastore  <gpastore@cvs.gnome.org>
 
 	* NEWS: updated
