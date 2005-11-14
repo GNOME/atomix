@@ -1,7 +1,7 @@
 # translation of es.po to Spanish
 # Spanish/Spain translation of ATOMIX.
 # Copyright (C) 2001, 2003 Free Software Foundation, Inc.
-# Álvaro Peña <alvaropg@mac.com>, 2001.
+# ÃƒÂlvaro PeÃƒÂ±a <alvaropg@mac.com>, 2001.
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003.
 #
 msgid ""
@@ -9,17 +9,17 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-14 20:04+0100\n"
-"PO-Revision-Date: 2005-11-14 20:11+0100\n"
+"PO-Revision-Date: 2005-11-14 21:41-0200\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.2\n"
 
 #: ../level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
-msgstr "Ácido acético"
+msgstr "ÃƒÂcido acÃƒÂ©tico"
 
 #: ../level/acetone.atomix.xml.h:1
 msgid "Acetone"
@@ -35,7 +35,7 @@ msgstr "Ciclobutano"
 
 #: ../level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
-msgstr "Dimetil-éter"
+msgstr "Dimetil-ÃƒÂ©ter"
 
 #: ../level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
@@ -59,7 +59,7 @@ msgstr "Glicerina"
 
 #: ../level/lactic-acid.atomix.xml.h:1
 msgid "Lactic Acid"
-msgstr "Ácido láctico"
+msgstr "ÃƒÂcido lÃƒÂ¡ctico"
 
 #: ../level/methanal.atomix.xml.h:1
 msgid "Methanal"
@@ -111,7 +111,7 @@ msgstr "Reiniciar nivel"
 
 #: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
-msgstr "Restaura la situación inicial"
+msgstr "Restaura la situaciÃƒÂ³n inicial"
 
 #: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
@@ -131,7 +131,7 @@ msgstr "Inicia un juego"
 
 #: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
-msgstr "Deshacer el último movimiento"
+msgstr "Deshacer el ÃƒÂºltimo movimiento"
 
 #: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
@@ -179,24 +179,24 @@ msgstr "_Deshacer movimiento"
 
 #: ../src/level-manager.c:173
 msgid "Couldn't find level sequence description."
-msgstr "No se puede encontrar secuencia de descripción del nivel"
+msgstr "No se puede encontrar secuencia de descripciÃƒÂ³n del nivel"
 
 #: ../src/level-manager.c:187
 msgid "No level found."
-msgstr "No se encontó ningún nivel."
+msgstr "No se encontÃƒÂ³ ningÃƒÂºn nivel."
 
 #: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Encontrado nivel «%s» en: %s"
+msgstr "Encontrado nivel Ã‚Â«%sÃ‚Â» en: %s"
 
 #: ../src/main.c:126
 msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr "No ha conseguido ningún punto aún. Juegue un poco actes de volver."
+msgstr "No ha conseguido ningÃƒÂºn punto aÃƒÂºn. Juegue un poco actes de volver."
 
 #: ../src/main.c:173
 msgid "A puzzle game about atoms and molecules"
-msgstr "Un juego de puzzles sobre átomos y moléculas"
+msgstr "Un juego de puzzles sobre ÃƒÂ¡tomos y molÃƒÂ©culas"
 
 #: ../src/main.c:177
 msgid "translator-credits"
@@ -208,7 +208,7 @@ msgstr "Atomix"
 
 #: ../src/main.c:502
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "¡Felicidades! Ha terminado todos los niveles de Atomix."
+msgstr "Ã‚Â¡Felicidades! Ha terminado todos los niveles de Atomix."
 
 #: ../src/main.c:512
 msgid "Couldn't find at least one level."
@@ -216,12 +216,12 @@ msgstr "No se pudo encontrar al menos un nivel."
 
 #: ../src/main.c:517
 msgid "Do you want to finish the game?"
-msgstr "¿Quiere terminar el juego?"
+msgstr "Ã‚Â¿Quiere terminar el juego?"
 
 #. create statistics frame
 #: ../src/main.c:726
 msgid "Statistics"
-msgstr "Estadísticas"
+msgstr "EstadÃƒÂ­sticas"
 
 #: ../src/main.c:732
 msgid "Level:"
@@ -229,11 +229,11 @@ msgstr "Nivel:"
 
 #: ../src/main.c:733
 msgid "Molecule:"
-msgstr "Molécula:"
+msgstr "MolÃƒÂ©cula:"
 
 #: ../src/main.c:734
 msgid "Score:"
-msgstr "Puntuación:"
+msgstr "PuntuaciÃƒÂ³n:"
 
 #: ../src/main.c:735
 msgid "Time:"
@@ -251,11 +251,11 @@ msgstr "No se encontraron temas."
 #: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Se encontró el tema «%s» en: %s"
+msgstr "Se encontrÃƒÂ³ el tema Ã‚Â«%sÃ‚Â» en: %s"
 
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
-msgstr "Puzzle con moléculas"
+msgstr "Puzzle con molÃƒÂ©culas"
 
 #~ msgid "E_xit"
 #~ msgstr "_Salir"
@@ -270,7 +270,7 @@ msgstr "Puzzle con moléculas"
 #~ msgstr "_Acerca"
 
 #~ msgid "Copyright (C) 1999-2002 Jens Finke"
-#~ msgstr "Copyright © 1999-2002 Jens Finke"
+#~ msgstr "Copyright Ã‚Â© 1999-2002 Jens Finke"
 
 #~ msgid "Couldn't create directory: %s"
 #~ msgstr "No se puede crear el directorio: %s"
@@ -282,13 +282,13 @@ msgstr "Puzzle con moléculas"
 #~ msgstr "Juego Terminado"
 
 #~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Juego Mental con Moléculas"
+#~ msgstr "Atomix - Juego Mental con MolÃƒÂ©culas"
 
 #~ msgid "No more undo levels."
 #~ msgstr "No hay mas niveles por hacer."
 
 #~ msgid "This is the last level. You can't skip any further."
-#~ msgstr "Este es el último nivel. No puede saltar ninguno más."
+#~ msgstr "Este es el ÃƒÂºltimo nivel. No puede saltar ninguno mÃƒÂ¡s."
 
 #~ msgid "XML file %s not found."
 #~ msgstr "No se pudo encontrar el fichero XML %s."
