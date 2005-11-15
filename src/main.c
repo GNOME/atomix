@@ -1,5 +1,6 @@
 /* Atomix -- a little puzzle game about atoms and molecules.
  * Copyright (C) 1999-2001 Jens Finke
+ * Copyright (C) 2005 Guilherme de S. Pastore
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -156,7 +157,7 @@ static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
 
   const char *authors[] =
     {
-      "Guilherme de S. Pastore <guilherme.pastore@terra.com.br>",
+      "Guilherme de S. Pastore <gpastore@gnome.org>
       "Jens Finke <jens@triq.net>",
       NULL
     };

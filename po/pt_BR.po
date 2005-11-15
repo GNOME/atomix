@@ -2,15 +2,15 @@
 # This file is distributed under the same license as the Atomix package.
 # Copyright (C) 2005 Free Software Foundation, Inc.
 # Estêvão Samuel Procópio <tevaum@ig.com.br>, 2005.
-# Guilherme de S. Pastore <guilherme.pastore@terra.com.br>, 2005.
+# Guilherme de S. Pastore <gpastore@gnome.org>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-13 20:05-0200\n"
-"PO-Revision-Date: 2005-11-13 20:08-0200\n"
-"Last-Translator: Guilherme de S. Pastore <guilherme.pastore@terra.com.br>\n"
+"PO-Revision-Date: 2005-11-14 21:59-0200\n"
+"Last-Translator: Guilherme de S. Pastore <gpastore@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
