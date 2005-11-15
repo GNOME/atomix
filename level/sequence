@@ -3,7 +3,7 @@
 <level name="Methane"/>
 <level name="Methanol"/>
 <level name="Ethylene"/>
-<level name="Propylen"/>
+<level name="Propylene"/>
 <level name="Ethanal"/>
 <level name="Ethanol"/>
 <level name="Acetic Acid"/>
@@ -11,11 +11,11 @@
 <level name="Methanal"/>
 <level name="Acetone"/>
 <level name="Trans Butylen"/>
-<level name="Buthanol"/>
+<level name="Butanol"/>
 <level name="Propanal"/>
 <level name="Pyran"/>
-<level name="Cyclo-Buthane"/>
-<level name="Ethan"/>
+<level name="Cyclobutane"/>
+<level name="Ethane"/>
 <level name="Lactic Acid"/>
 <level name="Glycerin"/>
 </levelsequence>

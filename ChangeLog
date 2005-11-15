@@ -1,3 +1,8 @@
+2005-11-15  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* level/sequence: fixed level sequence to comply with the
+	new name of some levels.
+
 2005-11-14  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* level/Makefile.am: updated list of level files, needed due
