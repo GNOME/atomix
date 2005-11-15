@@ -5,6 +5,10 @@
 
 	* src/main.c: fix typo that prevented the build from happening.
 
+	* NEWS: updated.
+
+	* configure.in: bumped version to 1.2.4
+
 2005-11-13  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* level/: renamed Propylen to Propylene, Ethan to Ethane,
