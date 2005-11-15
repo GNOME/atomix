@@ -6,7 +6,7 @@ level_files = \
 	butanol.atomix.xml \
 	cyclobutane.atomix.xml \
 	dimethylether.atomix.xml \
-	ethan.atomix.xml \
+	ethane.atomix.xml \
 	ethanal.atomix.xml \
 	ethanol.atomix.xml \
 	ethylene.atomix.xml \
