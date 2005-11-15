@@ -3,8 +3,8 @@ leveldir = $(pkgdatadir)/level
 level_files = \
 	aceticacid.atomix.xml \
 	acetone.atomix.xml \
-	buthanol.atomix.xml \
-	cyclo-buthane.atomix.xml \
+	butanol.atomix.xml \
+	cyclobutane.atomix.xml \
 	dimethylether.atomix.xml \
 	ethan.atomix.xml \
 	ethanal.atomix.xml \
@@ -16,7 +16,7 @@ level_files = \
 	methane.atomix.xml \
 	methanol.atomix.xml \
 	propanal.atomix.xml \
-	propylen.atomix.xml \
+	propylene.atomix.xml \
 	pyran.atomix.xml \
 	transbutylen.atomix.xml \
 	water.atomix.xml

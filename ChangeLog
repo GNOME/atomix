@@ -1,3 +1,10 @@
+2005-11-14  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* level/Makefile.am: updated list of level files, needed due
+	to the rename of some of them.
+
+	* src/main.c: fix typo that prevented the build from happening.
+
 2005-11-13  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* level/: renamed Propylen to Propylene, Ethan to Ethane,
