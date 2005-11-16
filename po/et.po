@@ -1,208 +1,264 @@
-# atomixi eesti tõlge.
-# Copyright (C) 2002 Free Software Foundation, Inc.
+# Atomix'i eesti keele tõlge.
+# Estonian translation of atomix.
+#
+# Copyright (C) 2002, 2005 Free Software Foundation, Inc.
 # Tõivo Leedjärv <toivo@linux.ee>, 2002.
+# Ivar Smolin <okul@linux.ee>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: atomix 0.9.2\n"
+"Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-27 03:02+0100\n"
-"PO-Revision-Date: 2002-03-30 21:34+0200\n"
-"Last-Translator: Tõivo Leedjärv <toivo@linux.ee>\n"
+"POT-Creation-Date: 2005-11-14 13:30+0100\n"
+"PO-Revision-Date: 2005-11-15 00:27+0200\n"
+"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/atomix-ui.xml.in.h:1
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr ""
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr ""
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr ""
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr ""
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr ""
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr ""
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr ""
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Etanool"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr ""
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Glütseriin"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr ""
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr ""
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Metaan"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Metanool"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr ""
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr ""
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr ""
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr ""
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Vesi"
+
+#: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
 msgstr "Jätka peatatud mängu"
 
-#: src/atomix-ui.xml.in.h:2
-msgid "E_xit"
-msgstr "_Välju"
-
-#: src/atomix-ui.xml.in.h:3
+#: ../src/atomix-ui.xml.h:2
 msgid "End a game"
 msgstr "Lõpeta mäng"
 
-#: src/atomix-ui.xml.in.h:4
-msgid "Exit game"
-msgstr "Välju mängust"
-
-#: src/atomix-ui.xml.in.h:5
+#: ../src/atomix-ui.xml.h:3
 msgid "Pause the running game"
 msgstr "Peata aktiivne mäng"
 
-#: src/atomix-ui.xml.in.h:6
+#: ../src/atomix-ui.xml.h:4
 msgid "Reset level"
 msgstr "Algväärtusta tase"
 
-#: src/atomix-ui.xml.in.h:7
+#: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
 msgstr "Taastab taseme algoleku"
 
-#: src/atomix-ui.xml.in.h:8
+#: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
 msgstr "Määra eelistused"
 
-#: src/atomix-ui.xml.in.h:9
+#: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
 msgstr "_Hüppa järgmisele tasemele"
 
-#: src/atomix-ui.xml.in.h:10
+#: ../src/atomix-ui.xml.h:8
 msgid "Skip the current level"
 msgstr "Jäta praegune tase vahele"
 
-#: src/atomix-ui.xml.in.h:11
+#: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
 msgstr "Alusta uut mängu"
 
-#: src/atomix-ui.xml.in.h:12
+#: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
 msgstr "Unusta viimane liigutus"
 
-#: src/atomix-ui.xml.in.h:13
-msgid "View game credits"
-msgstr "Mängu autorite info"
-
-#: src/atomix-ui.xml.in.h:14
+#: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
 msgstr "Vaata parimaid tulemusi"
 
-#: src/atomix-ui.xml.in.h:15
-msgid "_About"
-msgstr "_Info"
-
-#: src/atomix-ui.xml.in.h:16
+#: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
 msgstr "_Jätka mängu"
 
-#: src/atomix-ui.xml.in.h:17
-msgid "_Edit"
-msgstr "_Redaktor"
-
-#: src/atomix-ui.xml.in.h:18
+#: ../src/atomix-ui.xml.h:13
 msgid "_End Game"
 msgstr "_Lõpeta mäng"
 
-#: src/atomix-ui.xml.in.h:19
+#: ../src/atomix-ui.xml.h:14
 msgid "_Game"
 msgstr "_Mäng"
 
-#: src/atomix-ui.xml.in.h:20
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
 msgid "_Help"
 msgstr "_Abi"
 
-#: src/atomix-ui.xml.in.h:21
+#: ../src/atomix-ui.xml.h:21
 msgid "_New Game"
 msgstr "_Uus mäng"
 
-#: src/atomix-ui.xml.in.h:22
+#: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
 msgstr "P_aus"
 
-#: src/atomix-ui.xml.in.h:23
+#: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
-msgstr "_Häälestus ..."
+msgstr "_Eelistused..."
 
-#: src/atomix-ui.xml.in.h:24
+#: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
 msgstr "_Punktid ..."
 
-#: src/atomix-ui.xml.in.h:25
+#: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
 msgstr "U_nusta liigutus"
 
-#: src/level-manager.c:171
+#: ../src/level-manager.c:173
 msgid "Couldn't find level sequence description."
 msgstr "Ei leia taseme kirjeldust."
 
-#: src/level-manager.c:185
+#: ../src/level-manager.c:187
 msgid "No level found."
 msgstr "Ei leia ühtegi taset."
 
-#: src/level-manager.c:286
+#: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Tase '%s' leitud failist: %s"
 
-#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr ""
+"Sa pole senimaani ühtegi tulemust saavutanud. Enne tulemuste saavutamist "
+"peaks natukene mängima!"
+
+#: ../src/main.c:173
+msgid "A puzzle game about atoms and molecules"
+msgstr "Mõistatus aatomitest ja molekulidest."
+
+#: ../src/main.c:177
+msgid "translator-credits"
+msgstr ""
+"Tõivo Leedjärv <toivo@linux.ee>, 2002.\n"
+"Ivar Smolin <okul@linux.ee>, 2005."
+
+#: ../src/main.c:491 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: src/main.c:145
-msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "Copyright (C) 1999-2002 Jens Finke"
-
-#: src/main.c:146
-msgid "A mind game about atoms and molecules."
-msgstr "Mõttemäng aatomitest ja molekulidest."
-
-#: src/main.c:456
+#: ../src/main.c:502
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr ""
+msgstr "Õnnitlused! Sa lõpetasid kõis Atomix tasemed."
 
-#: src/main.c:467
+#: ../src/main.c:512
 msgid "Couldn't find at least one level."
 msgstr "Ei leia vähemalt ühte taset."
 
-#: src/main.c:472
+#: ../src/main.c:517
 msgid "Do you want to finish the game?"
 msgstr "Kas sa tahad mängu lõpetada?"
 
-#: src/main.c:591 src/main.c:597 src/main.c:602
-#, c-format
-msgid "Couldn't create directory: %s"
-msgstr "Ei saa luua kataloogi: %s"
-
 #. create statistics frame
-#: src/main.c:701
+#: ../src/main.c:726
 msgid "Statistics"
 msgstr "Statistika"
 
-#: src/main.c:707
+#: ../src/main.c:732
 msgid "Level:"
 msgstr "Tase:"
 
-#: src/main.c:708
+#: ../src/main.c:733
 msgid "Molecule:"
 msgstr "Molekul:"
 
-#: src/main.c:709
+#: ../src/main.c:734
 msgid "Score:"
 msgstr "Punkte:"
 
-#: src/main.c:710
+#: ../src/main.c:735
 msgid "Time:"
 msgstr "Aeg:"
 
-#: src/main.c:750
+#: ../src/main.c:775
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Ei leia faili: %s"
 
-#: src/theme-manager.c:141
+#: ../src/theme-manager.c:134
 msgid "No themes found."
 msgstr "Ei leia ühtegi teemat."
 
-#: src/theme-manager.c:205
+#: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Teema '%s' leitud failist: %s"
 
-#: atomix.desktop.in.h:2
-msgid "Molecule mind game"
-msgstr "Molekulide mõttemäng"
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Mõttemäng molekulidest"
 
-#~ msgid "Atomix Splash"
-#~ msgstr "Atomix"
-
-#~ msgid "Game Paused"
-#~ msgstr "Mäng on peatatud"
-
-#~ msgid "Game Over"
-#~ msgstr "Mäng läbi"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - molekulide mõttemäng"
