@@ -168,10 +168,9 @@ static void search_themes_in_dir (ThemeManager *tm, const gchar *dir_path)
 	      g_free (subdirpath);
 	    }
 	}
+      g_free (dent);
+      closedir (dir);
     }
-
-  g_free (dent);
-  closedir (dir);
 }
 
 static void add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath)

@@ -232,10 +232,9 @@ static void search_level_in_dir (LevelManager *lm, gchar *dir_path)
 	      g_free (levelname);
 	    }
 	}
+      g_free (dent);
+      closedir (dir);
     }
-
-  g_free (dent);
-  closedir (dir);
 }
 
 static gchar *lookup_level_name (gchar *filename)

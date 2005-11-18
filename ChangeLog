@@ -1,3 +1,9 @@
+2005-11-17  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* src/level-manager.c, src/theme-manager.c: move g_free and
+	closedir calls to inside an if in both files, to avoid a crash
+	in weird environment (closes bug #321758)
+
 2005-11-15  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* level/sequence: fixed level sequence to comply with the
