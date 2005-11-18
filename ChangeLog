@@ -2,7 +2,7 @@
 
 	* src/level-manager.c, src/theme-manager.c: move g_free and
 	closedir calls to inside an if in both files, to avoid a crash
-	in weird environment (closes bug #321758)
+	in very weird environments (closes bug #321758)
 
 2005-11-15  Guilherme de S. Pastore  <gpastore@gnome.org>
 
