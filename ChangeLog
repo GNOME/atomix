@@ -1,3 +1,7 @@
+2005-11-20  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.in: Add nb to ALL_LINGUAS.
+
 2005-11-17  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* src/level-manager.c, src/theme-manager.c: move g_free and
