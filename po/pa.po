@@ -1,0 +1,259 @@
+# translation of pa.po to Punjabi
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Amanpreet Singh Alam <amanpreetalam@yahoo.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pa\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-11-20 20:18+0530\n"
+"PO-Revision-Date: 2005-11-20 20:26+0530\n"
+"Last-Translator: Amanpreet Singh Alam <amanpreetalam@yahoo.com>\n"
+"Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "ਸਿਰਕੇ ਦਾ ਤੇਜ਼ਾਬ"
+
+#: level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "ਐਸੀਟੋਨ"
+
+#: level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "ਬੁਟਨੋਲ"
+
+#: level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "ਸਾਇਕਲੋਬੁਟੀਨ"
+
+#: level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "ਡਾਈਮੀਥਲ ਈਥਰ"
+
+#: level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "ਈਥਨਲ"
+
+#: level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "ਈਥੇਨ"
+
+#: level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "ਈਥੇਨੋਲ"
+
+#: level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "ਈਥਨੀਲ"
+
+#: level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "ਗਲਿਸਰੀਨ"
+
+#: level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "ਲੈਟਿਕ ਤੇਜ਼ਾਬ"
+
+#: level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "ਮੀਥੇਨੋਲ"
+
+#: level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "ਮੀਥੇਨ"
+
+#: level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "ਮੀਥੇਨੋਲ"
+
+#: level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "ਪਰੋਨਲ"
+
+#: level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "ਪਰੋਪਲੀਨ"
+
+#: level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "ਪੀਰੇਨ"
+
+#: level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "ਟਰਾਂਸ ਬੁਟਲੀਨ"
+
+#: level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "ਪਾਣੀ"
+
+#: src/atomix-ui.xml.h:1
+msgid "Continue paused game"
+msgstr "ਰੁਕੀ ਖੇਡ ਜਾਰੀ ਰੱਖੋ"
+
+#: src/atomix-ui.xml.h:2
+msgid "End a game"
+msgstr "ਇੱਕ ਖੇਡ ਖਤਮ"
+
+#: src/atomix-ui.xml.h:3
+msgid "Pause the running game"
+msgstr "ਚੱਲ ਰਹੀ ਖੇਡ ਰੋਕੋ"
+
+#: src/atomix-ui.xml.h:4
+msgid "Reset level"
+msgstr "ਪੱਧਰ ਮੁੜ-ਸੈੱਟ"
+
+#: src/atomix-ui.xml.h:5
+msgid "Restores start situation"
+msgstr "ਸ਼ੁਰੂਆਤੀ ਹਾਲਤ ਮੁੜ-ਪ੍ਰਾਪਤ"
+
+#: src/atomix-ui.xml.h:6
+msgid "Set preferences"
+msgstr "ਪਸੰਦ ਦਿਓ"
+
+#: src/atomix-ui.xml.h:7
+msgid "Skip _level"
+msgstr "ਛੱਡਣ ਪੱਧਰ(_l)"
+
+#: src/atomix-ui.xml.h:8
+msgid "Skip the current level"
+msgstr "ਮੌਜੂਦਾ ਪੱਧਰ ਅਧੂਰਾ ਛੱਡੋ"
+
+#: src/atomix-ui.xml.h:9
+msgid "Start a new game"
+msgstr "ਇੱਕ ਨਵੀਂ ਖੇਡ ਸ਼ੁਰੂ"
+
+#: src/atomix-ui.xml.h:10
+msgid "Undo the last move"
+msgstr "ਆਖਰੀ ਚਾਲ ਵਾਪਿਸ"
+
+#: src/atomix-ui.xml.h:11
+msgid "View highscores"
+msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਸਕੋਰ ਵੇਖਾਓ"
+
+#: src/atomix-ui.xml.h:12
+msgid "_Continue game"
+msgstr "ਖੇਡ ਜਾਰੀ ਰੱਖੋ(_C)"
+
+#: src/atomix-ui.xml.h:13
+msgid "_Edit"
+msgstr "ਸੋਧ(_E)"
+
+#: src/atomix-ui.xml.h:14
+msgid "_End Game"
+msgstr "ਖੇਡ ਖਤਮ(_E)"
+
+#: src/atomix-ui.xml.h:15
+msgid "_Game"
+msgstr "ਖੇਡ(_G)"
+
+#: src/atomix-ui.xml.h:16
+msgid "_Help"
+msgstr "ਸਹਾਇਤਾ(_H)"
+
+#: src/atomix-ui.xml.h:17
+msgid "_New Game"
+msgstr "ਨਵੀਂ ਖੇਡ(_N)"
+
+#: src/atomix-ui.xml.h:18
+msgid "_Pause game"
+msgstr "ਖੇਡ ਵਿਰਾਮ(_P)"
+
+#: src/atomix-ui.xml.h:19
+msgid "_Preferences ..."
+msgstr "ਮੇਰੀ ਪਸੰਦ(_P) ..."
+
+#: src/atomix-ui.xml.h:20
+msgid "_Scores ..."
+msgstr "ਸਕੋਰ(_S) ..."
+
+#: src/atomix-ui.xml.h:21
+msgid "_Undo move"
+msgstr "ਆਖਰੀ ਚਾਲ ਵਾਪਿਸ(_U)"
+
+#: src/level-manager.c:174
+msgid "Couldn't find level sequence description."
+msgstr "ਪੱਧਰ ਕਰਮ ਵੇਰਵਾ ਖੋਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ ਹੈ।"
+
+#: src/level-manager.c:188
+msgid "No level found."
+msgstr "ਕੋਈ ਪੱਧਰ ਨਹੀਂ ਲੱਭਿਆ ਹੈ।"
+
+#: src/level-manager.c:284
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "ਪੱਧਰ '%s' ਇਸ 'ਚ ਲੱਭਿਆ ਹੈ: %s"
+
+#: src/main.c:127
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr "ਤੁਸੀਂ ਹਾਲੇ ਤੱਕ ਕੋਈ ਸਕੋਰ ਨਹੀਂ ਬਣਾਇਆ ਹੈ। ਆਉਣ ਤੋਂ ਪਹਿਲਾਂ ਕੁਝ ਖੇਡੋ ਵੀ!"
+
+#: src/main.c:174
+msgid "A puzzle game about atoms and molecules"
+msgstr "ਪਰਮਾਣੂ ਅਤੇ ਅਣੂ ਬਾਰੇ ਇੱਕ ਪਹੇਲੀ ਹੈ"
+
+#: src/main.c:178
+msgid "translator-credits"
+msgstr "ਅਨੁਵਾਦ ਮਾਣ"
+
+#: src/main.c:492 atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "ਐਟਮਿਕਸ"
+
+#: src/main.c:503
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "ਮੁਬਾਰਕਾਂ! ਤੁਸੀਂ ਐਟਮਿਕਸ ਦੇ ਸਭ ਪੱਧਰ ਖਤਮ ਕਰ ਦਿੱਤੇ ਹਨ।"
+
+#: src/main.c:513
+msgid "Couldn't find at least one level."
+msgstr "ਘੱਟੋ-ਘੱਟ ਇੱਕ ਪੱਧਰ ਪ੍ਰਾਪਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ ਹੈ!"
+
+#: src/main.c:518
+msgid "Do you want to finish the game?"
+msgstr "ਕੀ ਤੁਸੀਂ ਖੇਡ ਖਤਮ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#. create statistics frame
+#: src/main.c:727
+msgid "Statistics"
+msgstr "ਅੰਕੜੇ"
+
+#: src/main.c:733
+msgid "Level:"
+msgstr "ਪੱਧਰ:"
+
+#: src/main.c:734
+msgid "Molecule:"
+msgstr "ਅਣੂ:"
+
+#: src/main.c:735
+msgid "Score:"
+msgstr "ਸਕੋਰ:"
+
+#: src/main.c:736
+msgid "Time:"
+msgstr "ਸਮਾਂ:"
+
+#: src/main.c:776
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "ਫਾਇਲ ਨਹੀਂ ਲੱਭਿਆ: %s"
+
+#: src/theme-manager.c:135
+msgid "No themes found."
+msgstr "ਕੋਈ ਸਰੂਪ ਨਹੀਂ ਲੱਭਿਆ ਹੈ।"
+
+#: src/theme-manager.c:193
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "ਸਰੂਪ '%s' ਲੱਭਿਆ ਹੈ: %s"
+
+#: atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "ਅਣੂ ਪਹੇਲੀ ਖੇਡ"
+
