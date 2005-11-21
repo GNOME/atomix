@@ -2,15 +2,18 @@
 # Estonian translation of atomix.
 #
 # Copyright (C) 2002, 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the atomix package.
+#
 # Tõivo Leedjärv <toivo@linux.ee>, 2002.
 # Ivar Smolin <okul@linux.ee>, 2005.
+# Jüri Ruut, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-14 13:30+0100\n"
-"PO-Revision-Date: 2005-11-15 00:27+0200\n"
+"PO-Revision-Date: 2005-11-18 23:38+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -19,31 +22,31 @@ msgstr ""
 
 #: ../level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
-msgstr ""
+msgstr "Etaanhape"
 
 #: ../level/acetone.atomix.xml.h:1
 msgid "Acetone"
-msgstr ""
+msgstr "Atsetoon"
 
 #: ../level/butanol.atomix.xml.h:1
 msgid "Butanol"
-msgstr ""
+msgstr "Butanool"
 
 #: ../level/cyclobutane.atomix.xml.h:1
 msgid "Cyclobutane"
-msgstr ""
+msgstr "Tsüklobutaan"
 
 #: ../level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
-msgstr ""
+msgstr "Dimetüüleeter"
 
 #: ../level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
-msgstr ""
+msgstr "Etanaal"
 
 #: ../level/ethane.atomix.xml.h:1
 msgid "Ethane"
-msgstr ""
+msgstr "Etaan"
 
 #: ../level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
@@ -51,7 +54,7 @@ msgstr "Etanool"
 
 #: ../level/ethylene.atomix.xml.h:1
 msgid "Ethylene"
-msgstr ""
+msgstr "Eteen"
 
 #: ../level/glycerin.atomix.xml.h:1
 msgid "Glycerin"
@@ -59,11 +62,11 @@ msgstr "Glütseriin"
 
 #: ../level/lactic-acid.atomix.xml.h:1
 msgid "Lactic Acid"
-msgstr ""
+msgstr "Piimhape"
 
 #: ../level/methanal.atomix.xml.h:1
 msgid "Methanal"
-msgstr ""
+msgstr "Metanaal"
 
 #: ../level/methane.atomix.xml.h:1
 msgid "Methane"
@@ -75,19 +78,19 @@ msgstr "Metanool"
 
 #: ../level/propanal.atomix.xml.h:1
 msgid "Propanal"
-msgstr ""
+msgstr "Propanaal"
 
 #: ../level/propylene.atomix.xml.h:1
 msgid "Propylene"
-msgstr ""
+msgstr "Propeen"
 
 #: ../level/pyran.atomix.xml.h:1
 msgid "Pyran"
-msgstr ""
+msgstr "Püraan"
 
 #: ../level/transbutylen.atomix.xml.h:1
 msgid "Trans Butylen"
-msgstr ""
+msgstr "Trans-buteen"
 
 #: ../level/water.atomix.xml.h:1
 msgid "Water"
@@ -205,7 +208,8 @@ msgstr "Mõistatus aatomitest ja molekulidest."
 msgid "translator-credits"
 msgstr ""
 "Tõivo Leedjärv <toivo@linux.ee>, 2002.\n"
-"Ivar Smolin <okul@linux.ee>, 2005."
+"Ivar Smolin <okul@linux.ee>, 2005.\n"
+"Jüri Ruut, 2005."
 
 #: ../src/main.c:491 ../atomix.desktop.in.h:1
 msgid "Atomix"
