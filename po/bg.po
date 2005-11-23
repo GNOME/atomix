@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-23 09:36+0200\n"
-"PO-Revision-Date: 2005-11-23 09:36+0200\n"
+"POT-Creation-Date: 2005-11-23 11:06+0200\n"
+"PO-Revision-Date: 2005-11-23 11:04+0200\n"
 "Last-Translator: Alexander Shopov <ash@contact.bg>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Циклобутан"
 
 #: ../level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
-msgstr "Метоксиметан (диметилов етер)"
+msgstr "Диметилов етер"
 
 #: ../level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
@@ -47,7 +47,7 @@ msgstr "Етан"
 
 #: ../level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
-msgstr "Етанол (етолов алкохол)"
+msgstr "Етанол (етилов алкохол)"
 
 #: ../level/ethylene.atomix.xml.h:1
 msgid "Ethylene"
@@ -55,7 +55,7 @@ msgstr "Етен (етилен)"
 
 #: ../level/glycerin.atomix.xml.h:1
 msgid "Glycerin"
-msgstr "Пропан-1,2,3-триол (глицерин)"
+msgstr "1,2,3-пропантриол (глицерин)"
 
 #: ../level/lactic-acid.atomix.xml.h:1
 msgid "Lactic Acid"
@@ -67,7 +67,7 @@ msgstr "Метанал (формалин)"
 
 #: ../level/methane.atomix.xml.h:1
 msgid "Methane"
-msgstr "Метан (Гризу)"
+msgstr "Метан"
 
 #: ../level/methanol.atomix.xml.h:1
 msgid "Methanol"
@@ -91,7 +91,7 @@ msgstr "Транс бутен"
 
 #: ../level/water.atomix.xml.h:1
 msgid "Water"
-msgstr "Диводороден оксид (вода)"
+msgstr "Диводороден моноксид (вода)"
 
 #: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
