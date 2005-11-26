@@ -1,3 +1,11 @@
+2005-11-26  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* gtk-clock.[ch]: replaced with a more specific implementation,
+	only designed to suit Atomix's needs, removing bloat and lots
+	of unnecessary overheads.
+
+	* main.c: adapted for the change above.
+
 2005-11-20  Amanpreet Singh Alam <amanpreetalam@yahoo.com>
 
 	* configure.in: Add pa to ALL_LINGUAS.
