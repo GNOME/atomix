@@ -20,7 +20,7 @@ atomix_SOURCES = \
 	undo.c undo.h \
 	goal.c goal.h \
 	goal-view.c goal-view.h \
-	gtk-clock.c gtk-clock.h
+	clock.c clock.h
 
 atomix_DEPENDENCIES = libatomix.a
 

@@ -19,7 +19,7 @@
 #include <time.h>
 #include <gtk/gtk.h>
 #include <string.h>
-#include "gtk-clock.h"
+#include "clock.h"
 
 static void clock_class_init (ClockClass *klass);
 static void clock_init (Clock *clock);

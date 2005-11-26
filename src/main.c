@@ -32,7 +32,7 @@
 #include "goal.h"
 #include "level.h"
 #include "goal-view.h"
-#include "gtk-clock.h"
+#include "clock.h"
 #include "undo.h"
 
 AtomixApp *app;
