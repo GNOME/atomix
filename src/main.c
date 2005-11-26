@@ -223,7 +223,7 @@ static void controller_handle_action (AtomixApp *app, GameAction action)
 	  break;
 
 	case GAME_ACTION_PAUSE:
-	  gtk_clock_stop (GTK_CLOCK (app->clock));
+	  clock_stop (CLOCK (app->clock));
 	  board_hide ();
 	  app->state = GAME_STATE_PAUSED;
 	  break;
@@ -277,7 +277,7 @@ static void controller_handle_action (AtomixApp *app, GameAction action)
     case GAME_STATE_PAUSED:
       if (action == GAME_ACTION_CONTINUE)
 	{
-	  gtk_clock_start (GTK_CLOCK (app->clock));
+	  clock_start (CLOCK(app->clock));
 	  board_show ();
 	  app->state = (undo_exists())?GAME_STATE_RUNNING:GAME_STATE_RUNNING_UNMOVED;
 	}
@@ -363,8 +363,8 @@ static void setup_level (AtomixApp *app)
   goal_view_render (app->goal);
 
   /* init clock */
-  gtk_clock_set_seconds (GTK_CLOCK (app->clock), 0);
-  gtk_clock_start (GTK_CLOCK (app->clock));
+  clock_set_seconds (CLOCK(app->clock), 0);
+  clock_start (CLOCK(app->clock));
 
   g_object_unref (env_pf);
   g_object_unref (sce_pf);
@@ -375,7 +375,7 @@ static void level_cleanup_view (AtomixApp *app)
   board_clear ();
   goal_view_clear ();
 
-  gtk_clock_stop (GTK_CLOCK (app->clock));
+  clock_stop (CLOCK(app->clock));
 }
 
 static void atomix_exit (AtomixApp *app)
@@ -444,8 +444,8 @@ static void game_init (AtomixApp *app)
   app->level = NULL;
   app->level_no = 0;
   app->score = 0;
-  gtk_clock_set_format (GTK_CLOCK (app->clock), "%M:%S");
-  gtk_clock_set_seconds (GTK_CLOCK (app->clock), 0);
+  clock_set_format (CLOCK(app->clock), "%M:%S");
+  clock_set_seconds (CLOCK(app->clock), 0);
 
   /* init the board */
   board_init (app->theme, GNOME_CANVAS (app->ca_matrix));
@@ -470,7 +470,7 @@ static void calculate_score (AtomixApp *app)
 {
   gint seconds;
 
-  seconds = time (NULL) - GTK_CLOCK (app->clock)->seconds;
+  seconds = time (NULL) - CLOCK(app->clock)->seconds;
 
   if (seconds > 300)
     return;
@@ -688,7 +688,7 @@ static void add_statistics_table_entry (GtkWidget *table, gint row,
 		    0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 0);
 
   if (is_clock)
-    *return_widget = gtk_clock_new (GTK_CLOCK_INCREASING);
+    *return_widget = clock_new ();
   else
     *return_widget = gtk_label_new ("NO CONTENT");
 
