@@ -69,7 +69,7 @@ UndoMove *undo_pop_move (void)
   if (undo_stack == NULL)
     {
       app->state = GAME_STATE_RUNNING_UNMOVED;
-      update_menu_item_state (app);
+      update_menu_item_state ();
     }
 
   return move;

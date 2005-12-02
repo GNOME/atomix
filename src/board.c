@@ -834,7 +834,7 @@ void move_item (GnomeCanvasItem *item, ItemDirection direc)
       if (!undo_exists())
 	{
 	  app->state = GAME_STATE_RUNNING;
-	  update_menu_item_state (app);
+	  update_menu_item_state ();
 	}
 
       undo_push_move (item, src_row, src_col, dest_row, dest_col);
@@ -887,7 +887,7 @@ int move_item_anim (void *data)
       if (goal_reached (board_goal, board_sce, anim_data->dest_row,
 			anim_data->dest_col))
 	{
-	  game_level_finished (NULL);
+	  game_level_finished ();
 	}
 
       else

@@ -1,3 +1,27 @@
+2005-12-01  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* NEWS: updated
+	* configure.in: released 2.13.2
+
+2005-12-01  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* src/board.c, src/main.c, src/main.h, src/undo.c: stop giving
+	a pointer to the AtomixApp structure as argument to function
+	calls: it only uses the stack unnecessarily, as it's a global
+	variable. Also clean up the code a bit.
+
+2005-12-01  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* src/Makefile.am: don't fail when symbols are resolved in
+	order (Cygwin). Thanks to yselkowitz@users.sourceforge.net.
+	Closes bug #314130.
+
+2005-12-01  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* Makefile.am, src/Makefile.am, level/Makefile.am:
+	fixes (actually work-arounds) to make the build process work
+	and not	break make distcheck.
+
 2005-11-26  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* gtk-clock.[ch]: replaced with a more specific implementation,

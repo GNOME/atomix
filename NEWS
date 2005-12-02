@@ -1,3 +1,21 @@
+2005-12-01: Released version 2.13.2
+
+	* Bumped version number to catch up with the GNOME release
+	  it is targettin
+	* Fixes build on Cygwin
+	* Fixes several bugs in the last release
+	* Atomix now uses less CPU time and features greatly
+	  reduced memory consumption
+	* Updated translations:
+	  - Albanian [Laurent Dhima]
+	  - Bulgarian [Alexander Shopov]
+	  - Canadian English [Adam Weinberger]
+	  - Estonian [Ivar Smolin]
+	  - Japanese [Takeshi AIHANA]
+	  - Norwegian (bokmål) [Kjartan Maraas]
+	  - Punjabi [Amanpreet Singh Alam]
+	  - Slovak [Marcel Telka]
+
 2005-11-14: Released version 1.2.4
 
 	* Not many news, but great ones will follow

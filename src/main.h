@@ -58,7 +58,7 @@ typedef struct
   guint score;
 } AtomixApp;
 
-void game_level_finished (AtomixApp *app);
-void update_menu_item_state (AtomixApp *app);
+void game_level_finished (void);
+void update_menu_item_state (void);
 
 #endif /* _ATOMIX_MAIN_H_ */

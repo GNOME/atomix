@@ -49,20 +49,19 @@ typedef enum
     GAME_ACTION_RESTART,
   } GameAction;
 
-static void controller_handle_action (AtomixApp *app, GameAction action);
-static void set_game_not_running_state (AtomixApp *app);
-static gboolean set_next_level (AtomixApp *app);
-static void setup_level (AtomixApp *app);
-static void level_cleanup_view (AtomixApp *app);
-static void atomix_exit (AtomixApp *app);
+static void controller_handle_action (GameAction action);
+static void set_game_not_running_state (void);
+static gboolean set_next_level (void);
+static void setup_level (void);
+static void level_cleanup_view (void);
+static void atomix_exit (void);
 static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
 				    gpointer user_data);
-static void game_init (AtomixApp *app);
-static void update_statistics (AtomixApp *app);
-void update_menu_item_state (AtomixApp *aapp);
+static void game_init (void);
+static void update_statistics (void);
 static void view_congratulations (void);
-static void calculate_score (AtomixApp *app);
-static void log_score (AtomixApp *app);
+static void calculate_score (void);
+static void log_score (void);
 
 /* ===============================================================
       
@@ -72,43 +71,43 @@ static void log_score (AtomixApp *app);
 static void verb_GameNew_cb (BonoboUIComponent *uic, gpointer user_data,
 			     const char *cname)
 {
-  controller_handle_action ((AtomixApp *) user_data, GAME_ACTION_NEW);
+  controller_handle_action (GAME_ACTION_NEW);
 }
 
 static void verb_GameEnd_cb (BonoboUIComponent * uic, gpointer user_data,
 			     const char *cname)
 {
-  controller_handle_action ((AtomixApp *) user_data, GAME_ACTION_END);
+  controller_handle_action (GAME_ACTION_END);
 }
 
 static void verb_GameSkip_cb (BonoboUIComponent * uic, gpointer user_data,
 			      const char *cname)
 {
-  controller_handle_action ((AtomixApp *) user_data, GAME_ACTION_SKIP);
+  controller_handle_action (GAME_ACTION_SKIP);
 }
 
 static void verb_GameReset_cb (BonoboUIComponent * uic, gpointer user_data,
 			       const char *cname)
 {
-  controller_handle_action ((AtomixApp *) user_data, GAME_ACTION_RESTART);
+  controller_handle_action (GAME_ACTION_RESTART);
 }
 
 static void verb_GamePause_cb (BonoboUIComponent * uic, gpointer user_data,
 			       const char *cname)
 {
-  controller_handle_action ((AtomixApp *) user_data, GAME_ACTION_PAUSE);
+  controller_handle_action (GAME_ACTION_PAUSE);
 }
 
 static void verb_GameContinue_cb (BonoboUIComponent * uic,
 				  gpointer user_data, const char *cname)
 {
-  controller_handle_action ((AtomixApp *) user_data, GAME_ACTION_CONTINUE);
+  controller_handle_action (GAME_ACTION_CONTINUE);
 }
 
 static void verb_GameUndo_cb (BonoboUIComponent * uic, gpointer user_data,
 			      const char *cname)
 {
-  controller_handle_action ((AtomixApp *) user_data, GAME_ACTION_UNDO);
+  controller_handle_action (GAME_ACTION_UNDO);
 }
 
 static void verb_GameScores_cb (BonoboUIComponent * uic, gpointer user_data,
@@ -139,7 +138,7 @@ static void verb_GameScores_cb (BonoboUIComponent * uic, gpointer user_data,
 static void verb_GameExit_cb (BonoboUIComponent * uic, gpointer user_data,
 			      const char *cname)
 {
-  atomix_exit ((AtomixApp *) user_data);
+  atomix_exit ();
 }
 
 static void verb_EditPreferences_cb (BonoboUIComponent * uic,
@@ -183,8 +182,7 @@ static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
 static gboolean on_app_destroy_event (GtkWidget *widget, GdkEvent *event,
 				      gpointer user_data)
 {
-  AtomixApp *app = (AtomixApp *) user_data;
-  atomix_exit (app);
+  atomix_exit ();
 
   return TRUE;
 }
@@ -195,18 +193,18 @@ static gboolean on_app_destroy_event (GtkWidget *widget, GdkEvent *event,
 
 -------------------------------------------------------------- */
 
-static void controller_handle_action (AtomixApp *app, GameAction action)
+static void controller_handle_action (GameAction action)
 {
   switch (app->state)
     {
     case GAME_STATE_NOT_RUNNING:
       if (action == GAME_ACTION_NEW)
 	{
-	  if (set_next_level (app))
+	  if (set_next_level ())
 	    {
 	      app->level_no = 1;
 	      app->score = 0;
-	      setup_level (app);
+	      setup_level ();
 	      app->state = GAME_STATE_RUNNING_UNMOVED;
 	    }
 	}
@@ -217,9 +215,9 @@ static void controller_handle_action (AtomixApp *app, GameAction action)
       switch (action)
 	{
 	case GAME_ACTION_END:
-	  log_score (app);
-	  level_cleanup_view (app);
-	  set_game_not_running_state (app);
+	  log_score ();
+	  level_cleanup_view ();
+	  set_game_not_running_state ();
 	  break;
 
 	case GAME_ACTION_PAUSE:
@@ -229,38 +227,38 @@ static void controller_handle_action (AtomixApp *app, GameAction action)
 	  break;
 
 	case GAME_ACTION_SKIP:
-	  level_cleanup_view (app);
+	  level_cleanup_view ();
 
-	  if (set_next_level (app))
-	    setup_level (app);
+	  if (set_next_level ())
+	    setup_level ();
 
 	  else
-	    set_game_not_running_state (app);
+	    set_game_not_running_state ();
 
 	  break;
 
 	case GAME_ACTION_FINISHED:
-	  calculate_score (app);
+	  calculate_score ();
 	  if (level_manager_is_last_level (app->lm, app->level))
 	    {
 	      view_congratulations ();
-	      log_score (app);
-	      level_cleanup_view (app);
-	      set_game_not_running_state (app);
+	      log_score ();
+	      level_cleanup_view ();
+	      set_game_not_running_state ();
 	    }
 	  else
 	    {
-	      level_cleanup_view (app);
-	      set_next_level (app);
-	      setup_level (app);
+	      level_cleanup_view ();
+	      set_next_level ();
+	      setup_level ();
 	    }
 	  break;
 
 	case GAME_ACTION_RESTART:
 	  g_assert (app->state != GAME_STATE_RUNNING_UNMOVED);
 
-	  level_cleanup_view (app);
-	  setup_level (app);
+	  level_cleanup_view ();
+	  setup_level ();
 	  break;
 
 	case GAME_ACTION_UNDO:
@@ -287,11 +285,11 @@ static void controller_handle_action (AtomixApp *app, GameAction action)
       g_assert_not_reached ();
     }
 
-  update_menu_item_state (app);
-  update_statistics (app);
+  update_menu_item_state ();
+  update_statistics ();
 }
 
-static void set_game_not_running_state (AtomixApp *app)
+static void set_game_not_running_state (void)
 {
   board_show_logo (TRUE);
 
@@ -307,7 +305,7 @@ static void set_game_not_running_state (AtomixApp *app)
   app->state = GAME_STATE_NOT_RUNNING;
 }
 
-static gboolean set_next_level (AtomixApp *app)
+static gboolean set_next_level (void)
 {
   Level *next_level;
   PlayField *goal_pf;
@@ -341,7 +339,7 @@ static gboolean set_next_level (AtomixApp *app)
   return TRUE;
 }
 
-static void setup_level (AtomixApp *app)
+static void setup_level (void)
 {
   PlayField *env_pf;
   PlayField *sce_pf;
@@ -370,7 +368,7 @@ static void setup_level (AtomixApp *app)
   g_object_unref (sce_pf);
 }
 
-static void level_cleanup_view (AtomixApp *app)
+static void level_cleanup_view (void)
 {
   board_clear ();
   goal_view_clear ();
@@ -378,7 +376,7 @@ static void level_cleanup_view (AtomixApp *app)
   clock_stop (CLOCK(app->clock));
 }
 
-static void atomix_exit (AtomixApp *app)
+static void atomix_exit (void)
 {
 #ifdef DEBUG
   g_message ("Destroy application");
@@ -388,8 +386,8 @@ static void atomix_exit (AtomixApp *app)
 
   if (app->state != GAME_STATE_NOT_RUNNING)
     {
-      log_score (app);
-      set_game_not_running_state (app);
+      log_score ();
+      set_game_not_running_state ();
     }
 
   board_destroy ();
@@ -416,8 +414,6 @@ static void atomix_exit (AtomixApp *app)
 static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
 				    gpointer user_data)
 {
-  AtomixApp *app = (AtomixApp *) user_data;
-
   if ((app->state == GAME_STATE_RUNNING) || (app->state == GAME_STATE_RUNNING_UNMOVED))
     {
       board_handle_key_event (NULL, event, NULL);
@@ -426,7 +422,7 @@ static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
   return TRUE;
 }
 
-static void game_init (AtomixApp *app)
+static void game_init ()
 {
   g_return_if_fail (app != NULL);
 
@@ -455,18 +451,18 @@ static void game_init (AtomixApp *app)
 
   /* update user visible information */
   app->state = GAME_STATE_NOT_RUNNING;
-  update_menu_item_state (app);
-  update_statistics (app);
+  update_menu_item_state ();
+  update_statistics ();
 
   gtk_widget_grab_focus (GTK_WIDGET (app->ca_matrix));
 }
 
-void game_level_finished (AtomixApp *tmp_app)
+void game_level_finished (void)
 {
-  controller_handle_action (app, GAME_ACTION_FINISHED);
+  controller_handle_action (GAME_ACTION_FINISHED);
 }
 
-static void calculate_score (AtomixApp *app)
+static void calculate_score (void)
 {
   gint seconds;
 
@@ -481,7 +477,7 @@ static void calculate_score (AtomixApp *app)
     app->score = app->score * (2 - (seconds / 300));
 }
 
-static void log_score (AtomixApp *app)
+static void log_score (void)
 {
   gint position;
 
@@ -523,7 +519,7 @@ _("Do you want to finish the game?"));
              UI update functions
 
 -------------------------------------------------------------- */
-static void update_statistics (AtomixApp *app)
+static void update_statistics (void)
 {
   gchar *str_buffer;
 
@@ -622,7 +618,7 @@ static const CmdEnable *state_sensitivity[] =
     not_running, running_unmoved, running, paused
   };
 
-void update_menu_item_state (AtomixApp *app)
+void update_menu_item_state (void)
 {
   gchar *path;
   gint i;
@@ -815,7 +811,7 @@ int main (int argc, char *argv[])
   /* make a few initalisations here */
   app = create_gui (prog);
 
-  game_init (app);
+  game_init ();
 
   gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 660, 480);
   gtk_widget_show (app->mainwin);

@@ -25,9 +25,8 @@ atomix_SOURCES = \
 atomix_DEPENDENCIES = libatomix.a
 
 atomix_LDADD = \
-	-L$(top_builddir)/src \
-	$(ATOMIX_LIBS) \
-	-latomix
+	libatomix.a \
+	$(ATOMIX_LIBS)
 
 noinst_LIBRARIES = libatomix.a
 
@@ -61,8 +60,6 @@ level_convert_LDADD = \
 	-L$(top_builddir)/src \
 	$(ATOMIX_LIBS)
 
-ui_in_files = atomix-ui.xml.in
-ui_DATA = $(ui_in_files:.xml.in=.xml)
-
-EXTRA_DIST = $(ui_in_files)
+ui_DATA = atomix-ui.xml
+EXTRA_DIST = $(ui_DATA)
 

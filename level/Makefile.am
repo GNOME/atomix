@@ -22,3 +22,4 @@ level_files = \
 	water.atomix.xml
 
 level_DATA = $(level_files) sequence
+EXTRA_DIST = $(level_DATA)
