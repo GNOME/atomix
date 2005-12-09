@@ -1,200 +1,263 @@
+# translation of atomix.HEAD.gu.po to Gujarati
 # translation of atomix.HEAD.po to Gujarati
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Ankit Patel <ankit@redhat.com>, 2004.
+# Ankit Patel <ankit644@yahoo.com>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: atomix.HEAD\n"
+"Project-Id-Version: atomix.HEAD.gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-10 02:58+0200\n"
-"PO-Revision-Date: 2004-08-10 11:41+0530\n"
-"Last-Translator: Ankit Patel <ankit@redhat.com>\n"
-"Language-Team: Gujarati\n"
+"POT-Creation-Date: 2005-12-09 05:36+0100\n"
+"PO-Revision-Date: 2005-12-09 12:42+0530\n"
+"Last-Translator: Ankit Patel <ankit644@yahoo.com>\n"
+"Language-Team: Gujarati <indianoss-gujarati@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
 
-#: src/atomix-ui.xml.in.h:1
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "એસેટિક એસિડ"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "એસિટોન"
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "બ્યુટેનોલ"
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "સાયક્લોબ્યુટેન"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "ડાયમિથાઈલ ઈથર"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "ઈથેનાલ"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "ઈથેન"
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "ઈથેનોલ"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "ઈથીલીન"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "ગ્લાયસીરીન"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "લેક્ટિક એસિડ"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "મિથેનાલ"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "મિથેન"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "મિથેનોલ"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "પ્રોપેનાલ"
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "પ્રોપીલીન"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "પાયરેન"
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "ટ્રાન્સ બ્યુટીલીન"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "પાણી"
+
+#: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
 msgstr "અટકાવાયેલ રમત ચાલુ રાખો"
 
-#: src/atomix-ui.xml.in.h:2
-msgid "E_xit"
-msgstr "બહાર નીકળો (_x)"
-
-#: src/atomix-ui.xml.in.h:3
+#: ../src/atomix-ui.xml.h:2
 msgid "End a game"
 msgstr "રમતનો અંત કરો"
 
-#: src/atomix-ui.xml.in.h:4
-msgid "Exit game"
-msgstr "રમતમાંથી બહાર નીકળો"
-
-#: src/atomix-ui.xml.in.h:5
+#: ../src/atomix-ui.xml.h:3
 msgid "Pause the running game"
 msgstr "ચાલતી રમત અટકાવો"
 
-#: src/atomix-ui.xml.in.h:6
+#: ../src/atomix-ui.xml.h:4
 msgid "Reset level"
 msgstr "સ્તર ફરીથી સુયોજિત કરો"
 
-#: src/atomix-ui.xml.in.h:7
+#: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
 msgstr "શરુઆતની પરિસ્થિતિ ફરીથી સંગ્રહિત કરો"
 
-#: src/atomix-ui.xml.in.h:8
+#: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
 msgstr "પસંદગીઓ સુયોજિત કરો"
 
-#: src/atomix-ui.xml.in.h:9
+#: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
 msgstr "સ્તર અવગણો (_l)"
 
-#: src/atomix-ui.xml.in.h:10
+#: ../src/atomix-ui.xml.h:8
 msgid "Skip the current level"
 msgstr "વર્તમાન સ્તર અવગણો"
 
-#: src/atomix-ui.xml.in.h:11
+#: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
 msgstr "નવી રમત શરુ કરો"
 
-#: src/atomix-ui.xml.in.h:12
+#: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
 msgstr "છેલ્લી ચાલ રદ કરો"
 
-#: src/atomix-ui.xml.in.h:13
-msgid "View game credits"
-msgstr "રમતની યશ જુઓ"
-
-#: src/atomix-ui.xml.in.h:14
+#: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
 msgstr "મહત્તમ ગુણ જુઓ"
 
-#: src/atomix-ui.xml.in.h:15
-msgid "_About"
-msgstr "વિશે (_A)"
-
-#: src/atomix-ui.xml.in.h:16
+#: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
 msgstr "રમત ચાલુ રાખો (_C)"
 
-#: src/atomix-ui.xml.in.h:17
-msgid "_Edit"
-msgstr "ફેરફાર કરો (_E)"
-
-#: src/atomix-ui.xml.in.h:18
+#: ../src/atomix-ui.xml.h:13
 msgid "_End Game"
 msgstr "રમતનો અંત કરો (_E)"
 
-#: src/atomix-ui.xml.in.h:19
+#: ../src/atomix-ui.xml.h:14
 msgid "_Game"
 msgstr "રમત (_G)"
 
-#: src/atomix-ui.xml.in.h:20
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
 msgid "_Help"
 msgstr "મદદ (_H)"
 
-#: src/atomix-ui.xml.in.h:21
+#: ../src/atomix-ui.xml.h:21
 msgid "_New Game"
 msgstr "નવી રમત (_N)"
 
-#: src/atomix-ui.xml.in.h:22
+#: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
 msgstr "રમત અટકાવો (_P)"
 
-#: src/atomix-ui.xml.in.h:23
+#: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
 msgstr "પસંદગીઓ (_P) ..."
 
-#: src/atomix-ui.xml.in.h:24
+#: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
 msgstr "ગુણ (_S) ..."
 
-#: src/atomix-ui.xml.in.h:25
+#: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
 msgstr "ચાલ રદ કરો (_U)"
 
-#: src/level-manager.c:171
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
 msgstr "સ્તરના ક્રમનું વર્ણન શોધી શક્યા નહિં."
 
-#: src/level-manager.c:185
+#: ../src/level-manager.c:188
 msgid "No level found."
 msgstr "કોઈ સ્તર મળ્યું નથી."
 
-#: src/level-manager.c:286
+#: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "મા સ્તર '%s' મળી આવ્યું: %s"
 
-#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr "તમે કોઈપણ ગુણો હજુ સુધી પ્રાપ્ત કર્યા નથી. પાછા આવવા પહેલાં થોડું રમો!"
+
+#: ../src/main.c:173
+msgid "A puzzle game about atoms and molecules"
+msgstr "અણુઓ અને પરમાણુઓ વિશે કોયડાવાળી રમત"
+
+#: ../src/main.c:177
+msgid "translator-credits"
+msgstr "અંકિત પટેલ <ankit644@yahoo.com>"
+
+#: ../src/main.c:488 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "એટોમિક્સ"
 
-#: src/main.c:145
-msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "મુદ્રણાધિકાર (C) ૧૯૯૯-૨૦૦૨ જેન્સ ફિન્ક"
-
-#: src/main.c:146
-msgid "A mind game about atoms and molecules."
-msgstr "અણુઓ અને પરમાણુઓ માટેની રમત."
-
-#: src/main.c:456
+#: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "અભિનંદન! તમે એટોમિક્સના બધા સ્તરો પૂર્ણ કરી દીધા છે."
 
-#: src/main.c:467
+#: ../src/main.c:509
 msgid "Couldn't find at least one level."
 msgstr "ઓછામાં ઓછું એક સ્તર પણ શોધી શક્યા નથી."
 
-#: src/main.c:472
+#: ../src/main.c:514
 msgid "Do you want to finish the game?"
 msgstr "શું તમે રમત પૂર્ણ કરવા માંગો છો?"
 
-#: src/main.c:591 src/main.c:597 src/main.c:602
-#, c-format
-msgid "Couldn't create directory: %s"
-msgstr "ડિરેક્ટરી બનાવી શક્યા નહિં: %s"
-
 #. create statistics frame
-#: src/main.c:701
+#: ../src/main.c:723
 msgid "Statistics"
 msgstr "પરિસ્થિતિઓ"
 
-#: src/main.c:707
+#: ../src/main.c:729
 msgid "Level:"
 msgstr "સ્તર:"
 
-#: src/main.c:708
+#: ../src/main.c:730
 msgid "Molecule:"
 msgstr "અણુ:"
 
-#: src/main.c:709
+#: ../src/main.c:731
 msgid "Score:"
 msgstr "ગુણ:"
 
-#: src/main.c:710
+#: ../src/main.c:732
 msgid "Time:"
 msgstr "સમય:"
 
-#: src/main.c:750
+#: ../src/main.c:772
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "ફાઈલ શોધી શક્યા નહિં: %s"
 
-#: src/theme-manager.c:141
+#: ../src/theme-manager.c:135
 msgid "No themes found."
 msgstr "કોઈ થીમ મળી નથી."
 
-#: src/theme-manager.c:205
+#: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "મા થીમ '%s' મળી: %s"
 
-#: atomix.desktop.in.h:2
-msgid "Molecule mind game"
-msgstr "અણુ માઈન્ડ રમત"
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "પરમાણું કોયડા રમત"
 
