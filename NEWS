@@ -1,3 +1,11 @@
+2005-12-12: Released version 2.13.3
+
+	* Updated translations:
+	  - Dutch [Vincent van Adrighem]
+	  - Gujarati [Ankit Patel]
+	  - Lithuanian [Žygimantas Beručka]
+	  - Norwegian bokmål [Kjartan Maraas]
+
 2005-12-01: Released version 2.13.2
 
 	* Bumped version number to catch up with the GNOME release
@@ -12,7 +20,7 @@
 	  - Canadian English [Adam Weinberger]
 	  - Estonian [Ivar Smolin]
 	  - Japanese [Takeshi AIHANA]
-	  - Norwegian (bokm�l) [Kjartan Maraas]
+	  - Norwegian (bokmål) [Kjartan Maraas]
 	  - Punjabi [Amanpreet Singh Alam]
 	  - Slovak [Marcel Telka]
 
@@ -82,9 +90,9 @@
 	Dmitry G. Mastrukov (be), Pablo Saratxaga (wa), Naba Kumar (hi),
 	Tatiana Gutierrez Bunster (es), Daniel Yacob (am), Roozbeh Pournader
 	(fa), Laurent Dhima (sq), Metin Amiroff (az), Gil "Dolfin" Osher (he),
-	Danilo Šegan (sr, sr@Latn), Alessio Frusciante (it), Abel Cheung
-	(ta),Vincent van Adrighem (nl), Andras Timar (hu), �lvaro Pe�a
-	Gonz�lez (es), Young nskystars-goo (ko).
+	Danilo Å egan (sr, sr@Latn), Alessio Frusciante (it), Abel Cheung
+	(ta),Vincent van Adrighem (nl), Andras Timar (hu), Álvaro Peña
+	González (es), Young nskystars-goo (ko).
 
 2002-07-23: Released version 0.9.4
 
