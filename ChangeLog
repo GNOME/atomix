@@ -1,3 +1,7 @@
+2005-12-20  Abel Cheung  <maddog@linuxhall.org>
+
+	* configure.in: Added "fi" "mk" "ml" to ALL_LINGUAS.
+
 2005-12-12  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* NEWS: updated.
