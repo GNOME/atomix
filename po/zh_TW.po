@@ -6,13 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix 1.2.2a\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-08 17:59+0800\n"
-"PO-Revision-Date: 2005-08-08 18:00+0800\n"
+"POT-Creation-Date: 2005-12-01 01:26+0800\n"
+"PO-Revision-Date: 2005-11-23 05:29+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Traditional Chinese <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: ../level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
@@ -22,26 +22,25 @@ msgstr "醋酸"
 msgid "Acetone"
 msgstr "丙酮"
 
-#: ../level/buthanol.atomix.xml.h:1
-msgid "Buthanol"
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
 msgstr "丁醇"
 
-#: ../level/cyclo-buthane.atomix.xml.h:1
-msgid "Cyclo-Buthane"
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
 msgstr "環丁烷"
 
 #: ../level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
 msgstr "二甲醚"
 
-# (Abel) should be ethane
-#: ../level/ethan.atomix.xml.h:1
-msgid "Ethan"
-msgstr "乙烷"
-
 #: ../level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
 msgstr "乙醛"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "乙烷"
 
 #: ../level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
@@ -75,9 +74,8 @@ msgstr "甲醇"
 msgid "Propanal"
 msgstr "丙醛"
 
-# (Abel) should be "propene" or "propylene"
-#: ../level/propylen.atomix.xml.h:1
-msgid "Propylen"
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
 msgstr "丙烯"
 
 #: ../level/pyran.atomix.xml.h:1
@@ -141,46 +139,47 @@ msgid "_Continue game"
 msgstr "繼續遊戲(_C)"
 
 #: ../src/atomix-ui.xml.h:13
-msgid "_Edit"
-msgstr "編輯(_E)"
-
-#: ../src/atomix-ui.xml.h:14
 msgid "_End Game"
 msgstr "終止遊戲(_E)"
 
-#: ../src/atomix-ui.xml.h:15
+#: ../src/atomix-ui.xml.h:14
 msgid "_Game"
 msgstr "遊戲(_G)"
 
-#: ../src/atomix-ui.xml.h:16
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
 msgid "_Help"
 msgstr "求助(_H)"
 
-#: ../src/atomix-ui.xml.h:17
+#: ../src/atomix-ui.xml.h:21
 msgid "_New Game"
 msgstr "開始遊戲(_N)"
 
-#: ../src/atomix-ui.xml.h:18
+#: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
 msgstr "暫停遊戲(_P)"
 
-#: ../src/atomix-ui.xml.h:19
+#: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
 msgstr "偏好設定(_P)..."
 
-#: ../src/atomix-ui.xml.h:20
+#: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
 msgstr "分數(_S)..."
 
-#: ../src/atomix-ui.xml.h:21
+#: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
 msgstr "還原此步(_U)"
 
-#: ../src/level-manager.c:173
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
 msgstr "找不到版圖的次序。"
 
-#: ../src/level-manager.c:187
+#: ../src/level-manager.c:188
 msgid "No level found."
 msgstr "找不到版圖。"
 
@@ -189,15 +188,15 @@ msgstr "找不到版圖。"
 msgid "Found level '%s' in: %s"
 msgstr "已找到版圖檔案 ‘%s’，位置在：%s"
 
-#: ../src/main.c:126
+#: ../src/main.c:127
 msgid "You have not achieved any scores yet. Play a little before coming back!"
 msgstr "您還未玩過，請試玩一下再看這裡！"
 
-#: ../src/main.c:173
+#: ../src/main.c:174
 msgid "A puzzle game about atoms and molecules"
 msgstr "一個有關原子和分子組合的智力遊戲"
 
-#: ../src/main.c:177
+#: ../src/main.c:178
 msgid "translator-credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -206,49 +205,49 @@ msgstr ""
 "\n"
 "Abel Cheung <abel@oaka.org>, 2001, 02, 05"
 
-#: ../src/main.c:491 ../atomix.desktop.in.h:1
+#: ../src/main.c:492 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:502
+#: ../src/main.c:503
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "恭喜！已經完成所有 Atomix 版圖了。"
 
-#: ../src/main.c:512
+#: ../src/main.c:513
 msgid "Couldn't find at least one level."
 msgstr "找不到任何版圖。"
 
-#: ../src/main.c:517
+#: ../src/main.c:518
 msgid "Do you want to finish the game?"
 msgstr "是否要完成遊戲？"
 
 #. create statistics frame
-#: ../src/main.c:726
+#: ../src/main.c:727
 msgid "Statistics"
 msgstr "統計"
 
-#: ../src/main.c:732
+#: ../src/main.c:733
 msgid "Level:"
 msgstr "版圖："
 
-#: ../src/main.c:733
+#: ../src/main.c:734
 msgid "Molecule:"
 msgstr "分子："
 
-#: ../src/main.c:734
+#: ../src/main.c:735
 msgid "Score:"
 msgstr "分數："
 
-#: ../src/main.c:735
+#: ../src/main.c:736
 msgid "Time:"
 msgstr "時間："
 
-#: ../src/main.c:775
+#: ../src/main.c:776
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "找不到檔案：%s。"
 
-#: ../src/theme-manager.c:134
+#: ../src/theme-manager.c:135
 msgid "No themes found."
 msgstr "找不到佈景主題。"
 
@@ -260,4 +259,3 @@ msgstr "已找到佈景主題 ‘%s’，位置在：%s"
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "分子組合智力遊戲"
-
