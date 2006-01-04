@@ -1,5 +1,5 @@
 # Serbian translation of atomix
-# Courtesy of Prevod.org team (http://www.prevod.org/) -- 2003.
+# Courtesy of Prevod.org team (http://www.prevod.org/) -- 2003, 2004, 2005, 2006
 # 
 # This file is distributed under the same license as the atomix package.
 # 
@@ -8,191 +8,280 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2003-12-03 18:47+0100\n"
-"PO-Revision-Date: 2003-05-04 19:47+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-01-04 17:31+0000\n"
+"PO-Revision-Date: 2006-01-04 17:49+0100\n"
 "Last-Translator: Александар Урошевић <urke@sourceforge.net>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/atomix-ui.xml.in.h:1
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Ацетна киселина"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Ацетин"
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "Бутанол"
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Циклобутан"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "Диметил Етер"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Етанал"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Етан"
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Етанол"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Еталин"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Глицерин"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Лактозна киселина"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Метанал"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Метан"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Метанол"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Пропанол"
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "Пропилен"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "Пиран"
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Транс-бутелин"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Вода"
+
+#: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
 msgstr "Наставак паузиране игре"
 
-#: src/atomix-ui.xml.in.h:2
-msgid "E_xit"
-msgstr "И_злаз"
-
-#: src/atomix-ui.xml.in.h:3
+#: ../src/atomix-ui.xml.h:2
 msgid "End a game"
 msgstr "Крај игре"
 
-#: src/atomix-ui.xml.in.h:4
-msgid "Exit game"
-msgstr "Напуштање игре"
-
-#: src/atomix-ui.xml.in.h:5
+#: ../src/atomix-ui.xml.h:3
 msgid "Pause the running game"
 msgstr "Паузирање покренуте игре"
 
-#: src/atomix-ui.xml.in.h:6
+#: ../src/atomix-ui.xml.h:4
 msgid "Reset level"
-msgstr "Ресетовање нивоа"
+msgstr "Поништи ниво"
 
-#: src/atomix-ui.xml.in.h:7
+#: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
 msgstr "Повраћај почетне позиције"
 
-#: src/atomix-ui.xml.in.h:8
+#: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
-msgstr "Примена подешавања"
+msgstr "Обави подешавања"
 
-#: src/atomix-ui.xml.in.h:9
+#: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
 msgstr "Прескочи _ниво"
 
-#: src/atomix-ui.xml.in.h:10
+#: ../src/atomix-ui.xml.h:8
 msgid "Skip the current level"
 msgstr "Прескочи тренутни ниво"
 
-#: src/atomix-ui.xml.in.h:11
+#: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
 msgstr "Покрени нову игру"
 
-#: src/atomix-ui.xml.in.h:12
+#: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
 msgstr "Опозови последњи потез"
 
-#: src/atomix-ui.xml.in.h:13
-msgid "View game credits"
-msgstr "Погледај захвале"
-
-#: src/atomix-ui.xml.in.h:14
+#: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
 msgstr "Табела најбољих играча"
 
-#: src/atomix-ui.xml.in.h:15
-msgid "_About"
-msgstr "_О игри"
-
-#: src/atomix-ui.xml.in.h:16
+#: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
 msgstr "_Настави игру"
 
-#: src/atomix-ui.xml.in.h:17
-msgid "_Edit"
-msgstr "_Уреди"
-
-#: src/atomix-ui.xml.in.h:18
+#: ../src/atomix-ui.xml.h:13
 msgid "_End Game"
 msgstr "_Крај игре"
 
-#: src/atomix-ui.xml.in.h:19
+#: ../src/atomix-ui.xml.h:14
 msgid "_Game"
 msgstr "_Игра"
 
-#: src/atomix-ui.xml.in.h:20
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
 msgid "_Help"
 msgstr "_Помоћ"
 
-#: src/atomix-ui.xml.in.h:21
+#: ../src/atomix-ui.xml.h:21
 msgid "_New Game"
 msgstr "_Нова игра"
 
-#: src/atomix-ui.xml.in.h:22
+#: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
-msgstr "_Паузирај игру"
+msgstr "Пау_зирај игру"
 
-#: src/atomix-ui.xml.in.h:23
+#: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
 msgstr "_Подешавања ..."
 
-#: src/atomix-ui.xml.in.h:24
+#: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
 msgstr "_Резултати ..."
 
-#: src/atomix-ui.xml.in.h:25
+#: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
-msgstr "_Опозови акцију"
+msgstr "_Опозови потез"
 
-#: src/level-manager.c:171
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
 msgstr "Не могу пронаћи опис акција нивоа."
 
-#: src/level-manager.c:185
+#: ../src/level-manager.c:188
 msgid "No level found."
 msgstr "Ниво није пронађен."
 
-#: src/level-manager.c:286
+#: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Пронађен ниво „%s‟ у: %s"
+msgstr "Пронађен ниво „%s“‟у: %s"
 
-#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+# note(slobo): без уобичајеног персирања, ово је за децу! Мада деци ТРЕБА
+# персирати!
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr ""
+"Још увек ниси постигао никакав резултат. Играј се прво па тек онда дођи "
+"да провериш резултат!"
+
+#: ../src/main.c:173
+msgid "A puzzle game about atoms and molecules"
+msgstr "Логичка слагалица са атомима и молекулима"
+
+#: ../src/main.c:177
+msgid "translator-credits"
+msgstr ""
+"Александар Урошевић <urke@gmx.net>\n"
+"\n"
+"http://prevod.org — преводи на српски језик"
+
+#: ../src/main.c:488 ../atomix.desktop.in.h:1
 msgid "Atomix"
-msgstr "Атмоикс"
+msgstr "Атомикс"
 
-#: src/main.c:145
-msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "Ауторска права (C) 1999-2002 Jens Finke"
-
-#: src/main.c:146
-msgid "A mind game about atoms and molecules."
-msgstr "Логичка игра о атомима и молекулима"
-
-#: src/main.c:456
+#: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Честитам! Прешли сте све нивое Атомикс-а."
 
-#: src/main.c:467
+#: ../src/main.c:509
 msgid "Couldn't find at least one level."
 msgstr "Не могу пронаћи макар један ниво."
 
-#: src/main.c:472
+#: ../src/main.c:514
 msgid "Do you want to finish the game?"
 msgstr "Желите ли да завршите игру?"
 
-#: src/main.c:591 src/main.c:597 src/main.c:602
-#, c-format
-msgid "Couldn't create directory: %s"
-msgstr "Не могу креирати директоријум: %s"
-
 #. create statistics frame
-#: src/main.c:701
+#: ../src/main.c:723
 msgid "Statistics"
 msgstr "Статистика"
 
-#: src/main.c:707
+#: ../src/main.c:729
 msgid "Level:"
 msgstr "Ниво:"
 
-#: src/main.c:708
+#: ../src/main.c:730
 msgid "Molecule:"
 msgstr "Молекул:"
 
-#: src/main.c:709
+#: ../src/main.c:731
 msgid "Score:"
 msgstr "Резултат:"
 
-#: src/main.c:710
+#: ../src/main.c:732
 msgid "Time:"
 msgstr "Време:"
 
-#: src/main.c:750
+#: ../src/main.c:772
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Не могу пронаћи датотеку: %s"
 
-#: src/theme-manager.c:141
+#: ../src/theme-manager.c:135
 msgid "No themes found."
 msgstr "Тема није пронађена."
 
-#: src/theme-manager.c:205
+#: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Пронађена тема „%s‟ у: %s"
 
-#: atomix.desktop.in.h:2
-msgid "Molecule mind game"
-msgstr "Логичка игра са молекулима"
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Логичка слагалица са молекулима"
+
+#~ msgid "E_xit"
+#~ msgstr "И_злаз"
+
+#~ msgid "Exit game"
+#~ msgstr "Напуштање игре"
+
+#~ msgid "View game credits"
+#~ msgstr "Погледај захвале"
+
+#~ msgid "_About"
+#~ msgstr "_О игри"
+
+#~ msgid "_Edit"
+#~ msgstr "_Уреди"
+
+#~ msgid "Copyright (C) 1999-2002 Jens Finke"
+#~ msgstr "Ауторска права (C) 1999-2002 Jens Finke"
+
+#~ msgid "Couldn't create directory: %s"
+#~ msgstr "Не могу креирати директоријум: %s"
