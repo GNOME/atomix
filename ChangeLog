@@ -1,5 +1,11 @@
 2006-01-05  Guilherme de S. Pastore  <gpastore@gnome.org>
 
+	* NEWS: updated.
+
+	* configure.in: release 2.13.4.
+
+2006-01-05  Guilherme de S. Pastore  <gpastore@gnome.org>
+
 	* level.c, level.h, level-manager.c, level-private.h, main.c, main.h:
 	  modified to read the compound formula from the level files and to
 	  show them on the interface. Closes bug #312603.

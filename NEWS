@@ -1,3 +1,13 @@
+2006-01-05: Released version 2.13.4
+
+	* Include formulas of all compounds in the interface
+	* Actually install Finnish, Macedonian and Malayalam translations
+	* Updated translations:
+	  - Brazilian Portuguese [Guilherme de S. Pastore]
+	  - Serbian [Slobodan D. Sredojevic]
+	  - Tradicional Chinese [Abel Cheung]
+	  - Vietnamese [Clytie Siddall]
+
 2005-12-12: Released version 2.13.3
 
 	* Updated translations:
