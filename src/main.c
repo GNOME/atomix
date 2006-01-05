@@ -530,6 +530,7 @@ static void update_statistics (void)
       /* don't show anything */
       gtk_label_set_text (GTK_LABEL (app->lb_level), "");
       gtk_label_set_text (GTK_LABEL (app->lb_name), "");
+      gtk_label_set_text (GTK_LABEL (app->lb_formula), "");
       gtk_label_set_text (GTK_LABEL (app->lb_score), "");
       gtk_widget_hide (GTK_WIDGET (app->clock));
     }
@@ -543,6 +544,10 @@ static void update_statistics (void)
       /* set levelname */
       gtk_label_set_text (GTK_LABEL (app->lb_name),
 			  _(level_get_name (app->level)));
+
+      /* set the formula of the compound */
+      gtk_label_set_markup (GTK_LABEL (app->lb_formula),
+			    level_get_formula (app->level));
 
       /* set score */
       g_snprintf (str_buffer, 10, "%i", app->score);
@@ -728,8 +733,9 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
 
   add_statistics_table_entry (table, 0, _("Level:"), FALSE, &app->lb_level);
   add_statistics_table_entry (table, 1, _("Molecule:"), FALSE, &app->lb_name);
-  add_statistics_table_entry (table, 2, _("Score:"), FALSE, &app->lb_score);
-  add_statistics_table_entry (table, 3, _("Time:"), TRUE, &app->clock);
+  add_statistics_table_entry (table, 2, _("Formula:"), FALSE, &app->lb_formula);
+  add_statistics_table_entry (table, 3, _("Score:"), FALSE, &app->lb_score);
+  add_statistics_table_entry (table, 4, _("Time:"), TRUE, &app->clock);
 
   gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (table));
 

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level _name="Butanol">
+<level _name="Butanol" formula="C&lt;sub&gt;4&lt;/sub&gt;H&lt;sub&gt;10&lt;/sub&gt;O">
   <environment>
     <n_rows>15</n_rows>
     <n_columns>15</n_columns>

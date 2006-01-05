@@ -380,6 +380,10 @@ static Level *load_level (gchar *filename)
 	{
 	  prop_value = xmlGetProp (node, "_name");
 	  level->priv->name = g_strdup (prop_value);
+
+	  prop_value = xmlGetProp (node, "formula");
+	  level->priv->formula = g_strdup (prop_value); 
+
 	  node = node->xmlChildrenNode;
 	}
       else

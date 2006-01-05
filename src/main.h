@@ -44,6 +44,7 @@ typedef struct
   GtkWidget *ca_goal;
   GtkWidget *lb_level;
   GtkWidget *lb_name;
+  GtkWidget *lb_formula;
   GtkWidget *lb_score;
   GtkWidget *clock;
 

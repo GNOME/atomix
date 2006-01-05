@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level _name="Glycerin">
+<level _name="Glycerin" formula="C&lt;sub&gt;3&lt;/sub&gt;H&lt;sub&gt;8&lt;/sub&gt;O&lt;sub&gt;3&lt;/sub&gt;">
   <environment>
     <n_rows>15</n_rows>
     <n_columns>13</n_columns>

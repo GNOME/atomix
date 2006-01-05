@@ -84,6 +84,7 @@ static void level_init (Level *level)
   priv = g_new0 (LevelPrivate, 1);
 
   priv->name = NULL;
+  priv->formula = NULL;
   priv->goal = NULL;
   priv->environment = NULL;
   priv->scenario = NULL;
@@ -102,6 +103,8 @@ static void level_finalize (GObject *object)
 
   if (priv->name)
     g_free (priv->name);
+  if (priv->formula)
+    g_free (priv->formula);
   if (priv->goal)
     g_object_unref (priv->goal);
   if (priv->environment)
@@ -130,6 +133,13 @@ gchar *level_get_name (Level *level)
   g_return_val_if_fail (IS_LEVEL (level), NULL);
 
   return level->priv->name;
+}
+
+gchar *level_get_formula (Level *level)
+{
+  g_return_val_if_fail (IS_LEVEL (level), NULL);
+
+  return level->priv->formula;
 }
 
 PlayField *level_get_environment (Level *level)

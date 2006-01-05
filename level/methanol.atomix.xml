@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level _name="Methanol">
+<level _name="Methanol" formula="CH&lt;sub&gt;3&lt;/sub&gt;OH">
   <environment>
     <n_rows>14</n_rows>
     <n_columns>15</n_columns>

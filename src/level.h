@@ -44,7 +44,9 @@ typedef struct {
 
 GType level_get_type (void);
 
-gchar* level_get_name (Level *level);
+gchar *level_get_name (Level *level);
+
+gchar *level_get_formula (Level *level);
 
 PlayField* level_get_environment (Level *level);
 

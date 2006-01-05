@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level _name="Ethylene">
+<level _name="Ethylene" formula="C&lt;sub&gt;2&lt;/sub&gt;H&lt;sub&gt;4&lt;/sub&gt;">
   <environment>
     <n_rows>13</n_rows>
     <n_columns>13</n_columns>

@@ -1,3 +1,11 @@
+2006-01-05  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* level.c, level.h, level-manager.c, level-private.h, main.c, main.h:
+	  modified to read the compound formula from the level files and to
+	  show them on the interface. Closes bug #312603.
+
+	* level/: added formulas to all levels.
+
 2005-12-20  Abel Cheung  <maddog@linuxhall.org>
 
 	* configure.in: Added "fi" "mk" "ml" to ALL_LINGUAS.

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level _name="Propylene">
+<level _name="Propylene" formula="C&lt;sub&gt;3&lt;/sub&gt;H&lt;sub&gt;6&lt;/sub&gt;">
   <environment>
     <n_rows>13</n_rows>
     <n_columns>14</n_columns>

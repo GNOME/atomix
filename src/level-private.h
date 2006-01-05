@@ -25,6 +25,7 @@
 struct _LevelPrivate
 {
   gchar *name;			/* name of the level */
+  gchar *formula;		/* formula of the compound */
   PlayField *environment;
   PlayField *scenario;		/* starting situation */
   PlayField *goal;		/* determines the end of the level */
