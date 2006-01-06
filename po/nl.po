@@ -2,13 +2,13 @@
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Meilof Veeningen <meilof@hotmail.com>, 2001.
 # Marc Jan Hemmes <marc_janh@hotmail.com>, 2003.
-# Tino Meinen <a.t.meinen@chello.nl>, 2005.
+# Tino Meinen <a.t.meinen@chello.nl>, 2005, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-03 21:59+0100\n"
-"PO-Revision-Date: 2005-12-06 18:28+0900\n"
+"POT-Creation-Date: 2006-01-06 13:01+0100\n"
+"PO-Revision-Date: 2006-01-06 17:56+0100\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -192,7 +192,9 @@ msgstr "Niveau '%s' gevonden in: %s "
 
 #: ../src/main.c:126
 msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr "U heeft nog geen score gemaakt. Speel nog even door voordat u hier weer kijkt!"
+msgstr ""
+"U heeft nog geen score gemaakt. Speel nog even door voordat u hier weer "
+"kijkt!"
 
 #: ../src/main.c:173
 msgid "A puzzle game about atoms and molecules"
@@ -201,12 +203,11 @@ msgstr "Een denkspel met atomen en moleculen"
 #: ../src/main.c:177
 msgid "translator-credits"
 msgstr ""
+"Tino Meinen\n"
 "Meilof Veeningen\n"
 "Marc Jan Hemmes\n"
-"Tino Meinen\n"
 "\n"
-"Kijk voor meer informatie op\n"
-"http://nl.gnome.org"
+"Kijk voor meer informatie op http://nl.gnome.org"
 
 #: ../src/main.c:488 ../atomix.desktop.in.h:1
 msgid "Atomix"
@@ -225,27 +226,31 @@ msgid "Do you want to finish the game?"
 msgstr "Weet u zeker dat u dit spel wilt beëindigen?"
 
 #. create statistics frame
-#: ../src/main.c:723
+#: ../src/main.c:728
 msgid "Statistics"
 msgstr "Statistieken"
 
-#: ../src/main.c:729
+#: ../src/main.c:734
 msgid "Level:"
 msgstr "Niveau:"
 
-#: ../src/main.c:730
+#: ../src/main.c:735
 msgid "Molecule:"
 msgstr "Molecuul:"
 
-#: ../src/main.c:731
+#: ../src/main.c:736
+msgid "Formula:"
+msgstr "Formule:"
+
+#: ../src/main.c:737
 msgid "Score:"
 msgstr "Score:"
 
-#: ../src/main.c:732
+#: ../src/main.c:738
 msgid "Time:"
 msgstr "Tijd:"
 
-#: ../src/main.c:772
+#: ../src/main.c:778
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "kan bestand: %s niet vinden."
