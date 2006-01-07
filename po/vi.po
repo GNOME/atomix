@@ -2,15 +2,15 @@
 # Copyright © 2005 Free Software Foundation, Inc.
 # Nguyễn Thái Ngọc Duy <pclouds@gmx.net>, 2002.
 # Clytie Siddall <clytie@riverland.net.au>, 2005.
-#
+# 
 msgid ""
-msgstr ""
-"Project-Id-Version: atomix HEAD\n"
+""
+msgstr "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-19 05:22+0100\n"
-"PO-Revision-Date: 2002-12-19 17:53+1030\n"
+"POT-Creation-Date: 2006-01-07 05:18+0100\n"
+"PO-Revision-Date: 2006-01-07 22:16+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
-"Language-Team: GnomeVI <gnomevi-list@lists.sourceforge.net>\n"
+"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -220,27 +220,31 @@ msgid "Do you want to finish the game?"
 msgstr "Bạn có muốn hoàn tất trò chơi không?"
 
 #.create statistics frame
-#:../src/main.c:723
+#:../src/main.c:728
 msgid "Statistics"
 msgstr "Thống kê"
 
-#:../src/main.c:729
+#:../src/main.c:734
 msgid "Level:"
 msgstr "Cấp độ:"
 
-#:../src/main.c:730
+#:../src/main.c:735
 msgid "Molecule:"
 msgstr "Phân tử:"
 
-#:../src/main.c:731
+#:../src/main.c:736
+msgid "Formula:"
+msgstr "Công thức:"
+
+#:../src/main.c:737
 msgid "Score:"
 msgstr "Điểm:"
 
-#:../src/main.c:732
+#:../src/main.c:738
 msgid "Time:"
 msgstr "Thời gian:"
 
-#:../src/main.c:772
+#:../src/main.c:778
 #,c-format
 msgid "Couldn't find file: %s"
 msgstr "Không thể tìm tập tin: %s"
@@ -257,36 +261,3 @@ msgstr "Tìm thấy sắc thái « %s » trong: %s"
 #:../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Trò chơi trí tuệ về phân tử"
-
-#~ msgid "E_xit"
-#~ msgstr "T_hoát"
-
-#~ msgid "Exit game"
-#~ msgstr "Thoát khỏi trò chơi"
-
-#~ msgid "View game credits"
-#~ msgstr "Xem game credit"
-
-#~ msgid "_About"
-#~ msgstr "_Giới thiệu"
-
-#~ msgid "_Edit"
-#~ msgstr "_Hiệu chỉnh"
-
-#~ msgid "Copyright (C) 1999-2002 Jens Finke"
-#~ msgstr "Copyright (C) 1999-2002 Jens Finke"
-
-#~ msgid "Couldn't create directory: %s"
-#~ msgstr "Không thể tạo thư mục: %s"
-
-#~ msgid "Game Paused"
-#~ msgstr "Trò chơi tạm dừng"
-
-#~ msgid "Game Over"
-#~ msgstr "Kết thúc trò chơi"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Trò chơi trí tuệ về phân tử"
-
-#~ msgid "Atomix Splash"
-#~ msgstr "Atomix Splash"
