@@ -1,13 +1,13 @@
 # atomix ja.po.
-# Copyright (C) 2001-2002, 2005 Free Software Foundation, Inc.
-# Takeshi Aihana <aihana@gnome.gr.jp>, 2001-2002, 2005.
+# Copyright (C) 2001,2002,2005,2006 Free Software Foundation, Inc.
+# Takeshi Aihana <aihana@gnome.gr.jp>, 2001,2002,2005,2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-16 00:48+0900\n"
-"PO-Revision-Date: 2005-11-16 00:48+0900\n"
+"POT-Creation-Date: 2006-01-08 17:31+0900\n"
+"PO-Revision-Date: 2006-01-08 17:30+0900\n"
 "Last-Translator: Takeshi Aihana <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -169,7 +169,7 @@ msgstr "設定(_P)..."
 
 #: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
-msgstr "スコア(_S)..."
+msgstr "得点(_S)..."
 
 #: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
@@ -183,63 +183,67 @@ msgstr "レベル順序記述ファイルが見つかりませんでした。"
 msgid "No level found."
 msgstr "レベルがありません。"
 
-#: ../src/level-manager.c:285
+#: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "レベル '%s' が %s の中にありました"
 
-#: ../src/main.c:127
+#: ../src/main.c:126
 msgid "You have not achieved any scores yet. Play a little before coming back!"
 msgstr "まだ得点を得ていません。終了する前に、もう少し遊んでみて下さい！"
 
-#: ../src/main.c:174
+#: ../src/main.c:173
 msgid "A puzzle game about atoms and molecules"
 msgstr "原子と分子の構造をテーマとしたパズル・ゲームです"
 
-#: ../src/main.c:178
+#: ../src/main.c:177
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <aihana@gnome.gr.jp>\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp"
 
-#: ../src/main.c:492 ../atomix.desktop.in.h:1
+#: ../src/main.c:488 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:503
+#: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "おめでとうございます！ Atomix の全てのレベルをクリアしました。"
 
-#: ../src/main.c:513
+#: ../src/main.c:509
 msgid "Couldn't find at least one level."
 msgstr "一つもレベルが見つかりませんでした。"
 
-#: ../src/main.c:518
+#: ../src/main.c:514
 msgid "Do you want to finish the game?"
 msgstr "本当にこのゲームを終了しても宜しいですか？"
 
 #. create statistics frame
-#: ../src/main.c:727
+#: ../src/main.c:728
 msgid "Statistics"
 msgstr "ゲームの成績"
 
-#: ../src/main.c:733
+#: ../src/main.c:734
 msgid "Level:"
 msgstr "レベル:"
 
-#: ../src/main.c:734
+#: ../src/main.c:735
 msgid "Molecule:"
 msgstr "分子:"
 
-#: ../src/main.c:735
-msgid "Score:"
-msgstr "スコア:"
-
 #: ../src/main.c:736
+msgid "Formula:"
+msgstr "化学式:"
+
+#: ../src/main.c:737
+msgid "Score:"
+msgstr "得点:"
+
+#: ../src/main.c:738
 msgid "Time:"
 msgstr "タイム:"
 
-#: ../src/main.c:776
+#: ../src/main.c:778
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "ファイルが見つかりませんでした: %s"
@@ -248,7 +252,7 @@ msgstr "ファイルが見つかりませんでした: %s"
 msgid "No themes found."
 msgstr "テーマが見つかりませんでした。"
 
-#: ../src/theme-manager.c:194
+#: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "テーマ '%s' が %s の中にありました"
