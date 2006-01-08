@@ -1,15 +1,15 @@
 # translation of gl.po to Galego
 # Galician translation of Atomix game for GNOME.
-# Copyright (C) 2001-2002, 2005 Free Software Foundation, Inc.
+# Copyright (C) 2001-2002, 2005, 2006 Free Software Foundation, Inc.
 # Manuel A. Fernández Montecelo <manuel@sindominio.net>, 2001-2002.
-# Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005.
+# Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-14 23:35+0100\n"
-"PO-Revision-Date: 2005-11-14 23:39+0100\n"
+"POT-Creation-Date: 2006-01-08 22:45+0100\n"
+"PO-Revision-Date: 2006-01-08 22:45+0100\n"
 "Last-Translator: Ignacio Casal Quinteiro <nacho.resa@gmail.com>\n"
 "Language-Team: Galego\n"
 "MIME-Version: 1.0\n"
@@ -178,11 +178,11 @@ msgstr "_Puntuacións ..."
 msgid "_Undo move"
 msgstr "_Desfacer movemento"
 
-#: ../src/level-manager.c:173
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
 msgstr "Non se puido atopar descripción de secuencia de nivel."
 
-#: ../src/level-manager.c:187
+#: ../src/level-manager.c:188
 msgid "No level found."
 msgstr "Non se atopou nivel."
 
@@ -203,49 +203,53 @@ msgstr "Un xogo de crebacabezas sobre átomos e moléculas."
 msgid "translator-credits"
 msgstr "Ignacio Casal Quinteiro  <nacho.resa@gmail.com>"
 
-#: ../src/main.c:491 ../atomix.desktop.in.h:1
+#: ../src/main.c:488 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:502
+#: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "¡Noraboa! Acabaches todos os niveis de Atomix."
 
-#: ../src/main.c:512
+#: ../src/main.c:509
 msgid "Couldn't find at least one level."
 msgstr "Non se puido atopar nin sequera un nivel."
 
-#: ../src/main.c:517
+#: ../src/main.c:514
 msgid "Do you want to finish the game?"
 msgstr "¿Queres rematar o xogo?"
 
 #. create statistics frame
-#: ../src/main.c:726
+#: ../src/main.c:728
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: ../src/main.c:732
+#: ../src/main.c:734
 msgid "Level:"
 msgstr "Nivel:"
 
-#: ../src/main.c:733
+#: ../src/main.c:735
 msgid "Molecule:"
 msgstr "Molécula:"
 
-#: ../src/main.c:734
+#: ../src/main.c:736
+msgid "Formula:"
+msgstr "Fórmula:"
+
+#: ../src/main.c:737
 msgid "Score:"
 msgstr "Puntuación:"
 
-#: ../src/main.c:735
+#: ../src/main.c:738
 msgid "Time:"
 msgstr "Tempo:"
 
-#: ../src/main.c:775
+#: ../src/main.c:778
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Non se puido atopar o ficheiro: %s"
 
-#: ../src/theme-manager.c:134
+#: ../src/theme-manager.c:135
 msgid "No themes found."
 msgstr "Non se atoparon temas."
 
