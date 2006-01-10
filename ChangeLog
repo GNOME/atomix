@@ -1,3 +1,7 @@
+2006-01-10  Abel Cheung  <maddog@linuxhall.org>
+
+	* configure.in: Added "zh_HK" to ALL_LINGUAS.
+
 2006-01-05  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* NEWS: updated.
