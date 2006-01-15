@@ -1,5 +1,3 @@
-## Process this file with automake to produce Makefile.in
-
 SUBDIRS = po src level themes
 
 logodir = $(pkgdatadir)
@@ -21,6 +19,12 @@ EXTRA_DIST = \
 	$(app_in_files) \
 	$(logo_DATA) \
 	$(icon_DATA)
+
+DISTCLEANFILES = \
+	intltool-extract \
+	intltool-merge \
+	intltool-update \
+	$(app_DATA)
 
 @INTLTOOL_DESKTOP_RULE@
 
