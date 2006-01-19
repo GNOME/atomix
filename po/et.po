@@ -1,19 +1,19 @@
 # Atomix'i eesti keele tõlge.
 # Estonian translation of atomix.
 #
-# Copyright (C) 2002, 2005 Free Software Foundation, Inc.
+# Copyright (C) 2002, 2005, 2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the atomix package.
 #
 # Tõivo Leedjärv <toivo@linux.ee>, 2002.
-# Ivar Smolin <okul@linux.ee>, 2005.
+# Ivar Smolin <okul@linux.ee>, 2005, 2006.
 # Jüri Ruut, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-14 13:30+0100\n"
-"PO-Revision-Date: 2005-11-18 23:38+0200\n"
+"POT-Creation-Date: 2006-01-15 13:44+0100\n"
+"PO-Revision-Date: 2006-01-15 15:24+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -181,11 +181,11 @@ msgstr "_Punktid ..."
 msgid "_Undo move"
 msgstr "U_nusta liigutus"
 
-#: ../src/level-manager.c:173
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
 msgstr "Ei leia taseme kirjeldust."
 
-#: ../src/level-manager.c:187
+#: ../src/level-manager.c:188
 msgid "No level found."
 msgstr "Ei leia ühtegi taset."
 
@@ -208,52 +208,56 @@ msgstr "Mõistatus aatomitest ja molekulidest."
 msgid "translator-credits"
 msgstr ""
 "Tõivo Leedjärv <toivo@linux.ee>, 2002.\n"
-"Ivar Smolin <okul@linux.ee>, 2005.\n"
+"Ivar Smolin <okul@linux.ee>, 2005, 2006.\n"
 "Jüri Ruut, 2005."
 
-#: ../src/main.c:491 ../atomix.desktop.in.h:1
+#: ../src/main.c:488 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:502
+#: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Õnnitlused! Sa lõpetasid kõis Atomix tasemed."
 
-#: ../src/main.c:512
+#: ../src/main.c:509
 msgid "Couldn't find at least one level."
 msgstr "Ei leia vähemalt ühte taset."
 
-#: ../src/main.c:517
+#: ../src/main.c:514
 msgid "Do you want to finish the game?"
 msgstr "Kas sa tahad mängu lõpetada?"
 
 #. create statistics frame
-#: ../src/main.c:726
+#: ../src/main.c:728
 msgid "Statistics"
 msgstr "Statistika"
 
-#: ../src/main.c:732
+#: ../src/main.c:734
 msgid "Level:"
 msgstr "Tase:"
 
-#: ../src/main.c:733
+#: ../src/main.c:735
 msgid "Molecule:"
 msgstr "Molekul:"
 
-#: ../src/main.c:734
+#: ../src/main.c:736
+msgid "Formula:"
+msgstr "Valem:"
+
+#: ../src/main.c:737
 msgid "Score:"
 msgstr "Punkte:"
 
-#: ../src/main.c:735
+#: ../src/main.c:738
 msgid "Time:"
 msgstr "Aeg:"
 
-#: ../src/main.c:775
+#: ../src/main.c:778
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Ei leia faili: %s"
 
-#: ../src/theme-manager.c:134
+#: ../src/theme-manager.c:135
 msgid "No themes found."
 msgstr "Ei leia ühtegi teemat."
 
@@ -265,4 +269,3 @@ msgstr "Teema '%s' leitud failist: %s"
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Mõttemäng molekulidest"
-
