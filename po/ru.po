@@ -1,578 +1,259 @@
 # Copyright (C) 2001-2002 Free Software Foundation, Inc.
-# Valek Filippov <frob@df.ru>, 2001-2002.
+# Valek Filippov <frob@df.ru>, 2001-2002, 2006.
 # 	
 msgid ""
 msgstr ""
 "Project-Id-Version: Atomix\n"
-"POT-Creation-Date: 2003-12-03 18:47+0100\n"
-"PO-Revision-Date: 2002-03-01 01:16+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-01-22 13:44+0100\n"
+"PO-Revision-Date: 2006-01-22 21:32+0300\n"
 "Last-Translator: Valek Filippov <frob@df.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: src/atomix-ui.xml.in.h:1
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "пёп╨я│я┐я│п╫п╟я▐ п╨п╦я│п╩п╬я┌п╟"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "п░я├п╣я┌п╬п╫"
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "п▒я┐я┌п╟п╫п╬п╩"
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "п╕п╦п╨п╩п╬п╠я┐я┌п╟п╫"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "п■п╦п╪п╣я┌п╦п╩п╬п╡я▀п╧ я█я└п╦я─"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "п░я├п╣я┌п╟п╩я▄п╢п╣пЁп╦п╢"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "п╜я┌п╟п╫"
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "п╜я┌п╟п╫п╬п╩"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "п╜я┌п╦п╩п╣п╫"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "п⌠п╩п╦я├п╣я─п╦п╫"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "п°п╬п╩п╬я┤п╫п╟я▐ п╨п╦я│п╩п╬я┌п╟"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "п╓п╬я─п╪п╟п╩я▄п╢п╣пЁп╦п╢"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "п°п╣я┌п╟п╫"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "п°п╣я┌п╟п╫п╬п╩"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "п÷я─п╬п©п╟п╫п╟п╩я▄"
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "п÷я─п╬п©п╦п╩п╣п╫"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "п÷п╦я─п╟п╫"
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "я┌я─п╟п╫я│-п▒я┐я┌п╦п╩п╣п╫"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "п▓п╬п╢п╟"
+
+#: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
-msgstr "Продолжить игру"
+msgstr "п÷я─п╬п╢п╬п╩п╤п╦я┌я▄ п╦пЁя─я┐"
 
-#: src/atomix-ui.xml.in.h:2
-msgid "E_xit"
-msgstr "Выйти"
-
-#: src/atomix-ui.xml.in.h:3
+#: ../src/atomix-ui.xml.h:2
 msgid "End a game"
-msgstr "Закончить игру"
+msgstr "п≈п╟п╨п╬п╫я┤п╦я┌я▄ п╦пЁя─я┐"
 
-#: src/atomix-ui.xml.in.h:4
-msgid "Exit game"
-msgstr "Выйти из игры"
-
-#: src/atomix-ui.xml.in.h:5
+#: ../src/atomix-ui.xml.h:3
 msgid "Pause the running game"
-msgstr "Приостановить запущенную игру"
+msgstr "п÷я─п╦п╬я│я┌п╟п╫п╬п╡п╦я┌я▄ п╥п╟п©я┐я┴п╣п╫п╫я┐я▌ п╦пЁя─я┐"
 
-#: src/atomix-ui.xml.in.h:6
+#: ../src/atomix-ui.xml.h:4
 msgid "Reset level"
-msgstr "Сбросить уровень"
+msgstr "п║п╠я─п╬я│п╦я┌я▄ я┐я─п╬п╡п╣п╫я▄"
 
-#: src/atomix-ui.xml.in.h:7
+#: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
-msgstr "Восстановить исходную ситуацию"
+msgstr "п▓п╬я│я│я┌п╟п╫п╬п╡п╦я┌я▄ п╦я│я┘п╬п╢п╫я┐я▌ я│п╦я┌я┐п╟я├п╦я▌"
 
-#: src/atomix-ui.xml.in.h:8
+#: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
-msgstr "Настроить"
+msgstr "п²п╟я│я┌я─п╬п╦я┌я▄"
 
-#: src/atomix-ui.xml.in.h:9
+#: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
-msgstr "Пропустить уровень"
+msgstr "п÷я─п╬п©я┐я│я┌п╦я┌я▄ я┐я─п╬п╡п╣п╫я▄"
 
-#: src/atomix-ui.xml.in.h:10
+#: ../src/atomix-ui.xml.h:8
 msgid "Skip the current level"
-msgstr "Пропустить текущий уровень"
+msgstr "п÷я─п╬п©я┐я│я┌п╦я┌я▄ я┌п╣п╨я┐я┴п╦п╧ я┐я─п╬п╡п╣п╫я▄"
 
-#: src/atomix-ui.xml.in.h:11
+#: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
-msgstr "Запустить новую игру"
+msgstr "п≈п╟п©я┐я│я┌п╦я┌я▄ п╫п╬п╡я┐я▌ п╦пЁя─я┐"
 
-#: src/atomix-ui.xml.in.h:12
+#: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
-msgstr "Отменить последний ход"
+msgstr "п·я┌п╪п╣п╫п╦я┌я▄ п©п╬я│п╩п╣п╢п╫п╦п╧ я┘п╬п╢"
 
-#: src/atomix-ui.xml.in.h:13
-msgid "View game credits"
-msgstr "Информация об авторах"
-
-#: src/atomix-ui.xml.in.h:14
+#: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
-msgstr "Просмотр лучших результатов"
+msgstr "п÷я─п╬я│п╪п╬я┌я─ п╩я┐я┤я┬п╦я┘ я─п╣п╥я┐п╩я▄я┌п╟я┌п╬п╡"
 
-#: src/atomix-ui.xml.in.h:15
-msgid "_About"
-msgstr "О программе"
-
-#: src/atomix-ui.xml.in.h:16
+#: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
-msgstr "Продолжить игру"
+msgstr "п÷я─п╬п╢п╬п╩п╤п╦я┌я▄ п╦пЁя─я┐"
 
-#: src/atomix-ui.xml.in.h:17
-msgid "_Edit"
-msgstr "Правка"
-
-#: src/atomix-ui.xml.in.h:18
+#: ../src/atomix-ui.xml.h:13
 msgid "_End Game"
-msgstr "Завершить игру"
+msgstr "п≈п╟п╡п╣я─я┬п╦я┌я▄ п╦пЁя─я┐"
 
-#: src/atomix-ui.xml.in.h:19
+#: ../src/atomix-ui.xml.h:14
 msgid "_Game"
-msgstr "Игра"
+msgstr "п≤пЁя─п╟"
 
-#: src/atomix-ui.xml.in.h:20
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
 msgid "_Help"
-msgstr "Справка"
+msgstr "п║п©я─п╟п╡п╨п╟"
 
-#: src/atomix-ui.xml.in.h:21
+#: ../src/atomix-ui.xml.h:21
 msgid "_New Game"
-msgstr "Новая игра:"
+msgstr "п²п╬п╡п╟я▐ п╦пЁя─п╟:"
 
-#: src/atomix-ui.xml.in.h:22
+#: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
-msgstr "Приостановить игру:"
+msgstr "п÷я─п╦п╬я│я┌п╟п╫п╬п╡п╦я┌я▄ п╦пЁя─я┐:"
 
-#: src/atomix-ui.xml.in.h:23
+#: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
-msgstr "Настройки..."
+msgstr "п²п╟я│я┌я─п╬п╧п╨п╦..."
 
-#: src/atomix-ui.xml.in.h:24
+#: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
-msgstr "Очки..."
+msgstr "п·я┤п╨п╦..."
 
-#: src/atomix-ui.xml.in.h:25
+#: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
-msgstr "Отменить ход"
+msgstr "п·я┌п╪п╣п╫п╦я┌я▄ я┘п╬п╢"
 
-#: src/level-manager.c:171
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
-msgstr "Не удалось найти описание последовательности уровня"
+msgstr "п²п╣ я┐п╢п╟п╩п╬я│я▄ п╫п╟п╧я┌п╦ п╬п©п╦я│п╟п╫п╦п╣ п©п╬я│п╩п╣п╢п╬п╡п╟я┌п╣п╩я▄п╫п╬я│я┌п╦ я┐я─п╬п╡п╫я▐"
 
-#: src/level-manager.c:185
+#: ../src/level-manager.c:188
 msgid "No level found."
-msgstr "Уровень не найден."
+msgstr "пёя─п╬п╡п╣п╫я▄ п╫п╣ п╫п╟п╧п╢п╣п╫."
 
-#: src/level-manager.c:286
+#: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Найден уровень \"%s\" в: %s"
+msgstr "п²п╟п╧п╢п╣п╫ я┐я─п╬п╡п╣п╫я▄ \"%s\" п╡: %s"
 
-#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr "п▓я▀ п©п╬п╨п╟ п╫п╣ п╫п╟п╠я─п╟п╩п╦ п╫п╦п╨п╟п╨п╦я┘ п╬я┤п╨п╬п╡. п▓п╬п╥п╡я─п╟я┴п╟п╧я┌п╣я│я▄ п╨п╬пЁп╢п╟ п╫п╣п╪п╫п╬пЁп╬ п©п╬п╦пЁя─п╟п╣я┌п╣!"
+
+#: ../src/main.c:173
+msgid "A puzzle game about atoms and molecules"
+msgstr "п⌠п╬п╩п╬п╡п╬п╩п╬п╪п╨п╟ я│ п╟я┌п╬п╪п╟п╪п╦ п╦ п╪п╬п╩п╣п╨я┐п╩п╟п╪п╦"
+
+#: ../src/main.c:177
+msgid "translator-credits"
+msgstr "п▓п╟п╩п╣п╨ п╓п╦п╩п╦п©п©п╬п╡ <frob@df.ru>"
+
+#: ../src/main.c:488 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: src/main.c:145
-msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "Авторское право (С) 1999-2002 Jens Finke"
-
-#: src/main.c:146
-msgid "A mind game about atoms and molecules."
-msgstr "Головоломка с атомами и молекулами"
-
-#: src/main.c:456
+#: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Поздравляю! Вы успешно завершили все уровни Atiomix."
+msgstr "п÷п╬п╥п╢я─п╟п╡п╩я▐я▌! п▓я▀ я┐я│п©п╣я┬п╫п╬ п╥п╟п╡п╣я─я┬п╦п╩п╦ п╡я│п╣ я┐я─п╬п╡п╫п╦ Atiomix."
 
-#: src/main.c:467
+#: ../src/main.c:509
 msgid "Couldn't find at least one level."
-msgstr "Не найден ни один уровень."
+msgstr "п²п╣ п╫п╟п╧п╢п╣п╫ п╫п╦ п╬п╢п╦п╫ я┐я─п╬п╡п╣п╫я▄."
 
-#: src/main.c:472
+#: ../src/main.c:514
 msgid "Do you want to finish the game?"
-msgstr "Хотите завершить игру?"
-
-#: src/main.c:591 src/main.c:597 src/main.c:602
-#, c-format
-msgid "Couldn't create directory: %s"
-msgstr "Не удалось создать каталог: %s"
+msgstr "п╔п╬я┌п╦я┌п╣ п╥п╟п╡п╣я─я┬п╦я┌я▄ п╦пЁя─я┐?"
 
 #. create statistics frame
-#: src/main.c:701
+#: ../src/main.c:728
 msgid "Statistics"
-msgstr "Статистика"
+msgstr "п║я┌п╟я┌п╦я│я┌п╦п╨п╟"
 
-#: src/main.c:707
+#: ../src/main.c:734
 msgid "Level:"
-msgstr "Уровень:"
+msgstr "пёя─п╬п╡п╣п╫я▄:"
 
-#: src/main.c:708
+#: ../src/main.c:735
 msgid "Molecule:"
-msgstr "Молекула:"
+msgstr "п°п╬п╩п╣п╨я┐п╩п╟:"
 
-#: src/main.c:709
+#: ../src/main.c:736
+msgid "Formula:"
+msgstr "п╓п╬я─п╪я┐п╩п╟:"
+
+#: ../src/main.c:737
 msgid "Score:"
-msgstr "Очки:"
+msgstr "п·я┤п╨п╦:"
 
-#: src/main.c:710
+#: ../src/main.c:738
 msgid "Time:"
-msgstr "Время:"
+msgstr "п▓я─п╣п╪я▐:"
 
-#: src/main.c:750
+#: ../src/main.c:778
 #, c-format
 msgid "Couldn't find file: %s"
-msgstr "Не удалось найти файл: %s"
+msgstr "п²п╣ я┐п╢п╟п╩п╬я│я▄ п╫п╟п╧я┌п╦ я└п╟п╧п╩: %s"
 
-#: src/theme-manager.c:141
+#: ../src/theme-manager.c:135
 msgid "No themes found."
-msgstr "Темы не найдены."
+msgstr "п╒п╣п╪я▀ п╫п╣ п╫п╟п╧п╢п╣п╫я▀."
 
-#: src/theme-manager.c:205
+#: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Найдена тема \"%s\" в: %s"
-
-#: atomix.desktop.in.h:2
-msgid "Molecule mind game"
-msgstr "Головоломка с молекулами"
-
-#~ msgid "Atomix Splash"
-#~ msgstr "Заставка Atomix"
-
-#~ msgid "Game Paused"
-#~ msgstr "Игра приостановлена"
-
-#~ msgid "Game Over"
-#~ msgstr "Игра окончена"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Головоломка с молекулами"
-
-#~ msgid "No more undo levels."
-#~ msgstr "Нет больше уровней отката."
-
-#~ msgid "This is the last level. You can't skip any further."
-#~ msgstr "Это последний уровень. Вы не можете проскочить дальше."
-
-#~ msgid "Name:"
-#~ msgstr "Название:"
-
-#, fuzzy
-#~ msgid "XML file %s not found."
-#~ msgstr "Уровень не найден."
-
-#, fuzzy
-#~ msgid "Undo last move. This costs you 5 % of your score."
-#~ msgstr "Отменить последний ход. Это обойдется вам в 5% ваших очков."
-
-#~ msgid "Couldn't find the Atomix manual!"
-#~ msgstr "Не удалось найти руководство Atomix!"
-
-#~ msgid "Do you really want to clear the grid?"
-#~ msgstr "Вы действительно хотите очистить сетку?"
-
-#~ msgid ""
-#~ "There does already a theme with this name exist.\n"
-#~ "So does the dir name."
-#~ msgstr ""
-#~ "Тема с таким названием уже существует.\n"
-#~ "Тоже самое относится к названию каталога."
-
-#~ msgid ""
-#~ "There does already a theme with\n"
-#~ "this name exist."
-#~ msgstr ""
-#~ "Тема с таким названием\n"
-#~ "уже существует."
-
-#~ msgid ""
-#~ "There does already a directory\n"
-#~ "with this name exist."
-#~ msgstr ""
-#~ "Каталог с таким названием\n"
-#~ "уже существует."
-
-#~ msgid "_New File"
-#~ msgstr "Новый файл"
-
-#~ msgid "Grid"
-#~ msgstr "Сетка"
-
-#~ msgid "Grid On/Off"
-#~ msgstr "Сетка вкл./выкл."
-
-#~ msgid "Theme Window"
-#~ msgstr "Окно темы"
-
-#~ msgid "_Clear Grid"
-#~ msgstr "Очистить сетку"
-
-#~ msgid "_Resize Grid"
-#~ msgstr "Изменить размер сетки"
-
-#~ msgid "_Delete Theme"
-#~ msgstr "Удалить тему"
-
-#~ msgid "Atomixed manual"
-#~ msgstr "Руководство Atomixed"
-
-#~ msgid "_Level"
-#~ msgstr "Уровень"
-
-#~ msgid "_Theme"
-#~ msgstr "Тема"
-
-#~ msgid "New"
-#~ msgstr "Новый"
-
-#~ msgid "New File"
-#~ msgstr "Новый файл"
-
-#~ msgid "Open"
-#~ msgstr "Открыть"
-
-#~ msgid "Open File"
-#~ msgstr "Открыть файл"
-
-#~ msgid "Save"
-#~ msgstr "Сохранить"
-
-#~ msgid "Save File"
-#~ msgstr "Сохранить файл"
-
-#~ msgid "Theme Wnd"
-#~ msgstr "Окно темы"
-
-#~ msgid "No."
-#~ msgstr "#"
-
-#~ msgid "Level"
-#~ msgstr "Уровень"
-
-#~ msgid "Goal"
-#~ msgstr "Цель"
-
-#~ msgid "Themename:"
-#~ msgstr "Название темы:"
-
-#~ msgid "Filename:"
-#~ msgstr "Имя файла:"
-
-#~ msgid "Bonuslevel"
-#~ msgstr "Доп.уровень"
-
-#~ msgid "Time"
-#~ msgstr "Время"
-
-#~ msgid "Minutes: "
-#~ msgstr "Минут:"
-
-#~ msgid "Seconds:"
-#~ msgstr "Секунд:"
-
-#~ msgid "Properties"
-#~ msgstr "Свойства"
-
-#~ msgid "Leveleditor"
-#~ msgstr "Редактор уровней"
-
-#~ msgid "Images"
-#~ msgstr "Изображения"
-
-#~ msgid "Connections"
-#~ msgstr "Соединения"
-
-#~ msgid "Moveables"
-#~ msgstr "Перемещаемые"
-
-#~ msgid "Obstacles"
-#~ msgstr "Препятствия"
-
-#~ msgid "Directoryname:"
-#~ msgstr "Название каталога:"
-
-#~ msgid "Background Color:"
-#~ msgstr "Цвет фона:"
-
-#~ msgid "Selector Image:"
-#~ msgstr "Выбор изображения:"
-
-#~ msgid "Browse ..."
-#~ msgstr "Просмотр..."
-
-#~ msgid "Animation Step:"
-#~ msgstr "Шаг анимации:"
-
-#~ msgid "Tile Height:"
-#~ msgstr "Высота клетки:"
-
-#~ msgid "Tile Width:"
-#~ msgstr "Ширина клетки:"
-
-#~ msgid "Themeeditor"
-#~ msgstr "Редактор тем"
-
-#~ msgid "Atom Preview"
-#~ msgstr "Просмотр атома"
-
-#~ msgid "Mouse functions"
-#~ msgstr "Функции мыши"
-
-#~ msgid "Clear"
-#~ msgstr "Очистить"
-
-#~ msgid "Set"
-#~ msgstr "Установить"
-
-#~ msgid "Move"
-#~ msgstr "Переместить"
-
-#~ msgid "Resize Grid"
-#~ msgstr "Изменить размер сетки"
-
-#~ msgid "Current Values"
-#~ msgstr "Текущие значения"
-
-#~ msgid "Rows:"
-#~ msgstr "Строки:"
-
-#~ msgid "Columns:"
-#~ msgstr "Столбцы:"
-
-#~ msgid "New Values"
-#~ msgstr "Новые значения"
-
-#~ msgid "New Level"
-#~ msgstr "Новый уровень"
-
-#~ msgid "Levelname:"
-#~ msgstr "Название уровня:"
-
-#~ msgid "Playfield Size"
-#~ msgstr "Размер игрового поля"
-
-#~ msgid "Goal Size"
-#~ msgstr "Размер цели"
-
-#~ msgid "(C)  1999-2001 Jens Finke"
-#~ msgstr "(C) 1999-2001 Jens Finke"
-
-#~ msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
-#~ msgstr "Atomixed -- редактор уровней и тем для логической игры Atomix."
-
-#~ msgid "Change level name"
-#~ msgstr "Изменить название уровня"
-
-#~ msgid ""
-#~ "There is already a level with the same name. Please choose another\n"
-#~ "name for this level."
-#~ msgstr ""
-#~ "Уровень с таким названием уже существует.\n"
-#~ "Выберите другое название для этого уровня."
-
-#~ msgid "Current Name:"
-#~ msgstr "Текущее название:"
-
-#~ msgid "Add Image"
-#~ msgstr "Добавить изображение"
-
-#~ msgid "Text:"
-#~ msgstr "Текст:"
-
-#~ msgid "Change ID"
-#~ msgstr "Изменить ID"
-
-#~ msgid "Current ID:"
-#~ msgstr "Текущий ID^"
-
-#~ msgid "New ID:"
-#~ msgstr "Новый ID:"
-
-#~ msgid "New Theme"
-#~ msgstr "Новая тема"
-
-#~ msgid "No tile to clear here."
-#~ msgstr "Здесь нет клетки для очистки."
-
-#~ msgid "No tile to move here."
-#~ msgstr "Здесь нет клетки для перемещения."
-
-#~ msgid "Copy Goal"
-#~ msgstr "Скопировать цель"
-
-#~ msgid "Copy the goal into the playfield."
-#~ msgstr "Скопировать цель в игровое поле."
-
-#~ msgid "Clear Grid"
-#~ msgstr "Очистить сетку"
-
-#~ msgid "Clears the whole grid."
-#~ msgstr "Очистить всю сетку."
-
-#~ msgid "Add an image to the list."
-#~ msgstr "Добавить изображение к списку."
-
-#~ msgid "Delete Image"
-#~ msgstr "Удалить изображение"
-
-#~ msgid "Delete selected image(s)."
-#~ msgstr "Удалить выбранные изображения."
-
-#~ msgid "Change the ID of the image."
-#~ msgstr "Изменить ID изображения."
-
-#~ msgid "Press Ctrl+N for a new Game"
-#~ msgstr "Нажмите Ctrl-N для новой игры"
-
-#~ msgid "Atomix manual"
-#~ msgstr "Руководство Atomix"
-
-#~ msgid ""
-#~ "Level not found.\n"
-#~ "Sorry, but the game ends here.\n"
-#~ "\n"
-#~ "(Please make sure you have *.atomix\n"
-#~ "files either in <prefix>/share/atomix/levels\n"
-#~ "or ~/.atomix/levels.)"
-#~ msgstr ""
-#~ "Уровень не найден.\n"
-#~ "Извините, но игра на этом заканчивается.\n"
-#~ "\n"
-#~ "(Убедитесь, что у вас есть файлы *.atomix\n"
-#~ "в <prefix>/share/atomix/levels\n"
-#~ "или ~/.atomix/levels.)"
-
-#~ msgid "Information"
-#~ msgstr "Информация"
-
-#~ msgid "Atomix Next Level"
-#~ msgstr "Следующий уровень Atomix"
-
-#~ msgid "Congratulations! You have successfully finished this level."
-#~ msgstr "Поздравляю! Вы успешно завершили этот уровень."
-
-#~ msgid "Remaining Time:"
-#~ msgstr "Оставшееся время:"
-
-#~ msgid "Are you ready for the next level?"
-#~ msgstr "Вы готовы к следующему уровню?"
-
-#~ msgid "Atomix End"
-#~ msgstr "Конец Atomix"
-
-#~ msgid "Do you want to play again?"
-#~ msgstr "Хотите играть снова?"
-
-#~ msgid "Constraints"
-#~ msgstr "Ограничения"
-
-#~ msgid "enable score and time limit"
-#~ msgstr "включить ограничение времени и очков"
-
-#~ msgid "General"
-#~ msgstr "Общие"
-
-#~ msgid "Keyboard (return and cursor keys)"
-#~ msgstr "Клавиатура (клавиши курсора и перевода каретки)"
-
-#~ msgid "Mouse"
-#~ msgstr "Мышь"
-
-#~ msgid "Mouse Properties"
-#~ msgstr "Свойства мыши"
-
-#~ msgid "hide mouse cursor during dragging"
-#~ msgstr "скрыть курсор мыши при перетаскивании"
-
-#~ msgid "enable lazy dragging"
-#~ msgstr "включить ленивое перетаскивание"
-
-#~ msgid "Sensitivity:"
-#~ msgstr "Чувствительность:"
-
-#~ msgid "high"
-#~ msgstr "высокая"
-
-#~ msgid "low"
-#~ msgstr "низкая"
-
-#~ msgid "Control"
-#~ msgstr "Управление"
-
-#~ msgid "Do you really want to exit the program?"
-#~ msgstr "Вы действительно хотите выйти из программы?"
-
-#~ msgid ""
-#~ "Your time is up! This costs you 10% of your score. \n"
-#~ "More luck next time. \n"
-#~ "\n"
-#~ "Do you want to retry?"
-#~ msgstr ""
-#~ "Ваше время истекло! Это стоит вам 10% ваших очков.\n"
-#~ "Удачи в следующий раз!\n"
-#~ "\n"
-#~ "Хотите повторить?"
-
-#~ msgid ""
-#~ "Sorry your time is up! But this was only\n"
-#~ "a bonus level so go further now."
-#~ msgstr ""
-#~ "Извините, ваше время истекло! Но это был\n"
-#~ "дополнительный уровень, поэтому продолжайте!"
+msgstr "п²п╟п╧п╢п╣п╫п╟ я┌п╣п╪п╟ \"%s\" п╡: %s"
+
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "п⌠п╬п╩п╬п╡п╬п╩п╬п╪п╨п╟ я│ п╪п╬п╩п╣п╨я┐п╩п╟п╪п╦"
