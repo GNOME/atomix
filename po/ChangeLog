@@ -1,3 +1,7 @@
+2006-01-22  Hendrik Brandt  <heb@gnome-de.org>
+
+	* de.po: Updated German translation.
+
 2006-01-22  Nickolay V. Shmyrev <nshmyrev@yandex.ru>
 
 	* ru.po: Updated Russian translation by Valek Filippov.
@@ -82,10 +86,10 @@
 
 2005-12-08  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* nb.po: Updated Norwegian bokmål translation.
+	* nb.po: Updated Norwegian bokmÃ¥l translation.
 	* no.po: Same.
 
-2005-12-06  Žygimantas Beručka  <zygis@gnome.org>
+2005-12-06  Å½ygimantas BeruÄka  <zygis@gnome.org>
 
 	* lt.po: Added Lithuanian translation.
 
@@ -188,7 +192,7 @@
 	* pt_BR.po: Updated, revised and fixed some encoding
 	problems with the Brazilian Portuguese translation
 
-2005-04-23  Estêvão Samuel Procópio <tevaum@ig.com.br>
+2005-04-23  EstÃªvÃ£o Samuel ProcÃ³pio <tevaum@ig.com.br>
 
 	* pt_BR.po: Updated Brazilian Portuguese Translation.
 
@@ -234,10 +238,10 @@
 
 	* nl.po: Translation updated.
 
-2004-05-12  Samúel Jón Gunnarsson  <sammi@techattack.nu>
+2004-05-12  SamÃºel JÃ³n Gunnarsson  <sammi@techattack.nu>
 
 	* is.po:  Added Icelandic translation by
-	Victor Jónsson  <victor@victorjonsson.com>
+	Victor JÃ³nsson  <victor@victorjonsson.com>
 
 2004-04-30  Adam Weinberger  <adamw@gnome.org>
 
@@ -265,7 +269,7 @@
 
 2004-02-27  Priit Laes  <plaes@cvs.gnome.org>
 
-	* et.po: Translation updated by Tõivo Leedjärv.
+	* et.po: Translation updated by TÃµivo LeedjÃ¤rv.
 
 2004-02-26  Vincent van Adrighem  <adrighem@gnome.org>
 
@@ -293,7 +297,7 @@
 
 2003-12-03  Jens Finke  <jens@triq.net>
 
-	* es.po: Updated Spanish translation by �varo Pe� Gonz�ez.
+	* es.po: Updated Spanish translation by ï¿½varo Peï¿½ Gonzï¿½ez.
 
 	* ko.po: New Korean translation by Young nskystars-goo.
 
@@ -326,7 +330,7 @@
 	* it.po: Updated Italian translation by
 	Paolo Sammicheli.
 
-2003-05-06  Danilo Šegan  <dsegan@gmx.net>
+2003-05-06  Danilo Å egan  <dsegan@gmx.net>
 
 	* sr.po, sr@Latn.po: Added Serbian translation by 
 	http://Prevod.org/.
@@ -453,11 +457,11 @@
 
 	* ja.po: Added Japanese Translation.
 
-2002-03-30  T?µivo Leedj?¤rv  <toivo@linux.ee>
+2002-03-30  T?Âµivo Leedj?Â¤rv  <toivo@linux.ee>
 
 	* et.po: Updated Estonian translation.
 
-2002-03-22  T?µivo Leedj?¤rv  <toivo@linux.ee>
+2002-03-22  T?Âµivo Leedj?Â¤rv  <toivo@linux.ee>
 
 	* et.po: Added Estonian translation.
 
@@ -467,11 +471,11 @@
 
 2002-03-04  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* no.po: Updated Norwegian (bokm?¥l) translation.
+	* no.po: Updated Norwegian (bokm?Â¥l) translation.
 
 2002-03-04  Fatih Demir <kabalak@gtranslator.org>
 
-	* tr.po: Committed updated Turkish translation by G?¶rkem.
+	* tr.po: Committed updated Turkish translation by G?Â¶rkem.
 
 2002-03-03  Wang Jian  <lark@linux.net.cn>
 
@@ -559,7 +563,7 @@
 
 2001-12-12  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* no.po: Updated Norwegian (bokm?¥l) translation.
+	* no.po: Updated Norwegian (bokm?Â¥l) translation.
 
 2001-12-12  Stanislav Visnovsky  <visnovsky@nenya.ms.mff.cuni.cz>
 
@@ -583,7 +587,7 @@
 
 2001-12-04  Kjartan Maraas  <kmaraas@gnome.org>
 
-	* no.po: Updated Norwegian (bokm?¥l) translation.
+	* no.po: Updated Norwegian (bokm?Â¥l) translation.
 	* POTFILES.in: Update.
 	
 2001-12-02  Christian Rose  <menthos@menthos.com>
@@ -619,7 +623,7 @@
 
 	* zh_TW.po: New traditional Chinese translation.
 
-2001-11-12  Carlos Perell?³ Mar?­n <carlos@gnome-db.org>
+2001-11-12  Carlos Perell?Â³ Mar?Â­n <carlos@gnome-db.org>
 
 	* da.po, de.po, fr.po, nl.po, no.po, , pl.po, pt.po, ru.po, tr.po:
 	Added from GNOME 1.4 version.
