@@ -1,3 +1,8 @@
+2006-03-04  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* atomix.desktop.in: fixed the categories list and the GNOME
+	  Bugzilla version. Closes bug #329319.
+
 2006-01-15  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* autogen.sh, configure.in, Makefile.am: applied patch from Christian
