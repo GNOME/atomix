@@ -1,6 +1,7 @@
 2006-02-23  Clytie Siddall <clytie@riverland.net.au>
 
-	* ka.po: Added Georgian translation by Gia Shervashidze <giasher@telenet.ge>.
+	* ka.po: Added Georgian translation by Gia Shervashidze
+	  <giasher@telenet.ge>.
 	
 2006-02-15  Gabor Kelemen  <kelemeng@gnome.hu>
 
@@ -8,8 +9,7 @@
 
 2006-01-30  Lukas Novotny  <lukasnov@cvs.gnome.org>
 
- 	* cs.po: Updated Czech translation.
-
+	* cs.po: Updated Czech translation.
 
 2006-01-30  Laurent Dhima  <laurenti@alblinux.net>
 
@@ -51,8 +51,7 @@
 
 2006-01-09  Alexander Shopov  <ash@contact.bg>
 
-	* bg.po: Updated Bulgarian translation by
-	Alexander Shopov <ash@contact.bg>
+	* bg.po: Updated Bulgarian translation.
 
 2006-01-08  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
 

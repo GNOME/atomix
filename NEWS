@@ -1,3 +1,32 @@
+2006-03-11: Released version 2.14.0
+
+	* Fixed list of categories (bug #329319)
+	* Update and cleanup of the build system (bug #327130)
+
+	* New and updated translations:
+	  - Albanian [Laurent Dhima]
+	  - Belarusian [Ales Nyakhaychyk]
+	  - Bulgarian [Alexander Shopov]
+	  - Canadian English [Adam Weinberger]
+	  - Chinese (Hong Kong) [Abel Cheung]
+	  - Chinese (Taiwan) [Abel Cheung]
+	  - Czech [Lukas Novotny]
+	  - Dutch [Tino Meinen]
+	  - Estonian [Ivar Smolin]
+	  - Finnish [Ilkka Tuohela]
+	  - Galician [Ignacio Casal Quinteiro]
+	  - Georgian [Gia Shervashidze]
+	  - German [Hendrik Brandt]
+	  - Gujarati [Ankit Patel]
+	  - Hungarian [Gabor Kelemen]
+	  - Japanese [Takeshi AIHANA]
+	  - Norwegian [Kjartan Maraas]
+	  - Norwegian (bokmål) [Kjartan Maraas]
+	  - Russian [Valek Filippov]
+	  - Serbian [Slobodan D. Sredojevic]
+	  - Spanish [Francisco Javier F. Serrador]
+	  - Vietnamese [Clytie Siddall]
+
 2006-01-05: Released version 2.13.4
 
 	* Include formulas of all compounds in the interface

@@ -1,3 +1,11 @@
+2006-03-11  Guilherme de S. Pastore  <gpastore@gnome.org>
+
+	* po/ChangeLog: fixed some stuff.
+	
+	* NEWS: updated.
+
+	* configure.in: bumped version to 2.14.0.
+
 2006-03-04  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* atomix.desktop.in: fixed the categories list and the GNOME

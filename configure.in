@@ -1,6 +1,6 @@
 AC_PREREQ(2.52)
 
-AC_INIT(atomix, 2.13.4, http://bugzilla.gnome.org/enter_bug.cgi?product=atomix)
+AC_INIT(atomix, 2.14.0, http://bugzilla.gnome.org/enter_bug.cgi?product=atomix)
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 AC_CONFIG_SRCDIR(src/board.c)
 AM_CONFIG_HEADER(config.h)
