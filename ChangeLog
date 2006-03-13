@@ -1,3 +1,7 @@
+2006-03-13  Runa Bhattacharjee <runa@bengalinux.org>
+
+	* configure.in: Added Bengali (bn) to ALL_LINGUAS.
+
 2006-03-11  Guilherme de S. Pastore  <gpastore@gnome.org>
 
 	* po/ChangeLog: fixed some stuff.
