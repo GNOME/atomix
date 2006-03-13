@@ -1,0 +1,261 @@
+# Bangla translation of Atomix.
+# Copyright (C) 2006 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Atomix package.
+# Progga <progga@BengaLinux.Org>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Atomix (GNOME 2.14)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-03-13 02:07+0100\n"
+"PO-Revision-Date: 2006-03-07 21:00+0600\n"
+"Last-Translator: Progga <progga@BengaLinux.Org>\n"
+"Language-Team: Bangla <gnome-translation@BengaLinux.Org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "অ্যাসিটিক এসিড"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "অ্যাসিটোন"
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "বিউটানল"
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "সাইক্লোবিউটেন"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "ডাইমিথাইল ইথার"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "ইথানাল"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "ইথেন"
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "ইথানল"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "ইথিলিন"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "গ্লিসারিন"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "ল্যাকটিক এসিড"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "মিথানাল"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "মিথেন"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "মিথানল"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "প্রোপানাল"
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "প্রোপিলিন"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "পাইরিন"
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "ট্রান্স বিউটিলিন"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "পানি"
+
+#: ../src/atomix-ui.xml.h:1
+msgid "Continue paused game"
+msgstr "স্থগিতকৃত খেলা পুনরায় চালু করো"
+
+#: ../src/atomix-ui.xml.h:2
+msgid "End a game"
+msgstr "খেলা শেষ করো"
+
+#: ../src/atomix-ui.xml.h:3
+msgid "Pause the running game"
+msgstr "চলমান খেলাকে স্থগিত করো"
+
+#: ../src/atomix-ui.xml.h:4
+msgid "Reset level"
+msgstr "দক্ষতা স্তর রিসেট করো"
+
+#: ../src/atomix-ui.xml.h:5
+msgid "Restores start situation"
+msgstr "খেলা আরম্ভের অবস্থায় ফিরে যায়"
+
+#: ../src/atomix-ui.xml.h:6
+msgid "Set preferences"
+msgstr "পছন্দ নির্ধারণ করুন"
+
+#: ../src/atomix-ui.xml.h:7
+msgid "Skip _level"
+msgstr "দক্ষতা স্তর এড়িয়ে যাও (_স)"
+
+#: ../src/atomix-ui.xml.h:8
+msgid "Skip the current level"
+msgstr "বর্তমান দক্ষতা স্তর এড়িয়ে যাও"
+
+#: ../src/atomix-ui.xml.h:9
+msgid "Start a new game"
+msgstr "নতুন খেলা আরম্ভ করো"
+
+#: ../src/atomix-ui.xml.h:10
+msgid "Undo the last move"
+msgstr "সর্বশেষ চাল বাতিল করো"
+
+#: ../src/atomix-ui.xml.h:11
+msgid "View highscores"
+msgstr "সেরা স্কোরগুলো প্রদর্শন করো"
+
+#: ../src/atomix-ui.xml.h:12
+msgid "_Continue game"
+msgstr "খেলা চালিয়ে যাও (_চ)"
+
+#: ../src/atomix-ui.xml.h:13
+msgid "_End Game"
+msgstr "খেলা শেষ করো (_শ)"
+
+#: ../src/atomix-ui.xml.h:14
+msgid "_Game"
+msgstr "খেলা (_খ)"
+
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
+msgid "_Help"
+msgstr "সহায়িকা (_স)"
+
+#: ../src/atomix-ui.xml.h:21
+msgid "_New Game"
+msgstr "নতুন খেলা (_ন)"
+
+#: ../src/atomix-ui.xml.h:22
+msgid "_Pause game"
+msgstr "খেলা স্থগিত করো (_স)"
+
+#: ../src/atomix-ui.xml.h:23
+msgid "_Preferences ..."
+msgstr "পছন্দ ... (_প)"
+
+#: ../src/atomix-ui.xml.h:24
+msgid "_Scores ..."
+msgstr "স্কোর ... (_ক)"
+
+#: ../src/atomix-ui.xml.h:25
+msgid "_Undo move"
+msgstr "চাল বাতিল করো (_ব)"
+
+#: ../src/level-manager.c:174
+msgid "Couldn't find level sequence description."
+msgstr "দক্ষতা স্তরের ক্রম সংক্রান্ত বর্ণনা পাওয়া যায় নি।"
+
+#: ../src/level-manager.c:188
+msgid "No level found."
+msgstr "কোন দক্ষতা স্তর পাওয়া যায় নি।"
+
+#: ../src/level-manager.c:284
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "'%s' দক্ষতা স্তরকে এখানে পাওয়া গিয়েছে: %s"
+
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr "আপনি এখনো কোন স্কোর করতে পারেন নি।  ফিরে আসার পূর্বে আরো কিছু খেলে নিন!"
+
+#: ../src/main.c:173
+msgid "A puzzle game about atoms and molecules"
+msgstr "অণু পরমাণুর ধাঁধা"
+
+#: ../src/main.c:177
+msgid "translator-credits"
+msgstr "অঙ্কুর প্রকল্পের পক্ষে, প্রজ্ঞা [progga@BengaLinux.Org]"
+
+#: ../src/main.c:488 ../atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "অ্যাটোমিক্স"
+
+#: ../src/main.c:499
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "অভিনন্দন! আপনি অ্যাটোমিক্স-এর সবগুলো দক্ষতা স্তর অতিক্রম করেছেন।"
+
+#: ../src/main.c:509
+msgid "Couldn't find at least one level."
+msgstr "কমপক্ষে একটি দক্ষতা স্তর পাওয়া যায় নি।"
+
+#: ../src/main.c:514
+msgid "Do you want to finish the game?"
+msgstr "আপনি কি খেলা শেষ করতে চান?"
+
+#. create statistics frame
+#: ../src/main.c:728
+msgid "Statistics"
+msgstr "পরিসংখ্যান"
+
+#: ../src/main.c:734
+msgid "Level:"
+msgstr "দক্ষতা স্তর:"
+
+#: ../src/main.c:735
+msgid "Molecule:"
+msgstr "অণু:"
+
+#: ../src/main.c:736
+msgid "Formula:"
+msgstr "রাসায়নিক সূত্র:"
+
+#: ../src/main.c:737
+msgid "Score:"
+msgstr "স্কোর:"
+
+#: ../src/main.c:738
+msgid "Time:"
+msgstr "অতিক্রান্ত সময়:"
+
+#: ../src/main.c:778
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "এই ফাইলটি পাওয়া যায় নি: %s"
+
+#: ../src/theme-manager.c:135
+msgid "No themes found."
+msgstr "কোন থিম পাওয়া যায় নি।"
+
+#: ../src/theme-manager.c:193
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "'%s' থিম-কে এখানে পাওয়া গিয়েছে: %s"
+
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "পদার্থের অণু নিয়ে ধাঁধার খেলা"
