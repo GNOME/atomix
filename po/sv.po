@@ -1,6 +1,7 @@
 # Swedish messages for atomix.
-# Copyright (C) 2001, 2002, 2005 Free Software Foundation, Inc.
+# Copyright (C) 2001, 2002, 2005, 2006 Free Software Foundation, Inc.
 # Christian Rose <menthos@menthos.com>, 2001, 2002, 2005.
+# Daniel Nylander <po@danielnylander.se>, 2006.
 #
 # $Id$
 #
@@ -8,10 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-13 21:24+0100\n"
-"PO-Revision-Date: 2005-11-13 21:24+0100\n"
-"Last-Translator: Christian Rose <menthos@menthos.com>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"POT-Creation-Date: 2006-04-12 02:01+0200\n"
+"PO-Revision-Date: 2006-04-12 09:36+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,34 +25,25 @@ msgstr "Ättiksyra"
 msgid "Acetone"
 msgstr "Aceton"
 
-# FIXME:
-# http://bugzilla.gnome.org/show_bug.cgi?id=321365
-#
-#: ../level/buthanol.atomix.xml.h:1
-msgid "Buthanol"
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
 msgstr "Butanol"
 
-# FIXME:
-# http://bugzilla.gnome.org/show_bug.cgi?id=321367
-#
-#: ../level/cyclo-buthane.atomix.xml.h:1
-msgid "Cyclo-Buthane"
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
 msgstr "Cyclobutan"
 
 #: ../level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
 msgstr "Dimetyleter"
 
-# FIXME:
-# http://bugzilla.gnome.org/show_bug.cgi?id=321369
-#
-#: ../level/ethan.atomix.xml.h:1
-msgid "Ethan"
-msgstr "Etan"
-
 #: ../level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
 msgstr "Etanal"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Etan"
 
 #: ../level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
@@ -86,11 +78,8 @@ msgstr "Metanol"
 msgid "Propanal"
 msgstr "Propanal"
 
-# FIXME:
-# http://bugzilla.gnome.org/show_bug.cgi?id=321371
-#
-#: ../level/propylen.atomix.xml.h:1
-msgid "Propylen"
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
 msgstr "Propylen"
 
 # Osäker.
@@ -192,11 +181,11 @@ msgstr "_Poäng..."
 msgid "_Undo move"
 msgstr "_Ångra drag"
 
-#: ../src/level-manager.c:173
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
 msgstr "Kunde inte hitta nivåsekvensbeskrivning."
 
-#: ../src/level-manager.c:187
+#: ../src/level-manager.c:188
 msgid "No level found."
 msgstr "Ingen nivå kunde hittas."
 
@@ -216,52 +205,58 @@ msgstr "Ett pusselspel om atomer och molekyler"
 #: ../src/main.c:177
 msgid "translator-credits"
 msgstr ""
+"Daniel Nylander\n"
 "Christian Rose\n"
-"Skicka synpunkter på översättningen till sv@li.org"
+"Skicka synpunkter på översättningen till tp-sv@listor.tp-sv.se"
 
-#: ../src/main.c:491 ../atomix.desktop.in.h:1
+#: ../src/main.c:488
+#: ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:502
+#: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulerar! Du har slutfört alla nivåer i Atomix."
 
-#: ../src/main.c:512
+#: ../src/main.c:509
 msgid "Couldn't find at least one level."
 msgstr "Kunde inte hitta åtminstone en nivå."
 
-#: ../src/main.c:517
+#: ../src/main.c:514
 msgid "Do you want to finish the game?"
 msgstr "Vill du verkligen avsluta spelet?"
 
 #. create statistics frame
-#: ../src/main.c:726
+#: ../src/main.c:728
 msgid "Statistics"
 msgstr "Statistik"
 
-#: ../src/main.c:732
+#: ../src/main.c:734
 msgid "Level:"
 msgstr "Nivå:"
 
-#: ../src/main.c:733
+#: ../src/main.c:735
 msgid "Molecule:"
 msgstr "Molekyl:"
 
-#: ../src/main.c:734
+#: ../src/main.c:736
+msgid "Formula:"
+msgstr "Formel:"
+
+#: ../src/main.c:737
 msgid "Score:"
 msgstr "Poäng:"
 
-#: ../src/main.c:735
+#: ../src/main.c:738
 msgid "Time:"
 msgstr "Tid:"
 
-#: ../src/main.c:775
+#: ../src/main.c:778
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Kunde inte hitta fil: %s"
 
-#: ../src/theme-manager.c:134
+#: ../src/theme-manager.c:135
 msgid "No themes found."
 msgstr "Inga teman hittades."
 
@@ -274,440 +269,3 @@ msgstr "Hittade temat \"%s\" i: %s"
 msgid "Molecule puzzle game"
 msgstr "Molekylpusselspel"
 
-#~ msgid "Butanol"
-#~ msgstr "Butanol"
-
-#~ msgid "Cyclobutane"
-#~ msgstr "Cyclobutan"
-
-#~ msgid "Ethane"
-#~ msgstr "Etan"
-
-#~ msgid "Acetaldehyde"
-#~ msgstr "Acetaldehyd"
-
-#~ msgid "Glycerine"
-#~ msgstr "Glycerin"
-
-#~ msgid "Formaldehyde"
-#~ msgstr "Formaldehyd"
-
-# Osäker.
-#~ msgid "Propanol"
-#~ msgstr "Propanol"
-
-#~ msgid "Propylene"
-#~ msgstr "Propylen"
-
-#~ msgid "Propene"
-#~ msgstr "Propen"
-
-#~ msgid "Transbutylen"
-#~ msgstr "Transbutylen"
-
-#~ msgid "A puzzle game about atoms and molecules."
-#~ msgstr "Ett pusselspel om atomer och molekyler."
-
-#~ msgid "E_xit"
-#~ msgstr "_Avsluta"
-
-#~ msgid "Exit game"
-#~ msgstr "Avsluta spel"
-
-#~ msgid "View game credits"
-#~ msgstr "Visa tack för spelet"
-
-#~ msgid "_About"
-#~ msgstr "_Om"
-
-#~ msgid "_Edit"
-#~ msgstr "_Redigera"
-
-#~ msgid "Copyright (C) 1999-2002 Jens Finke"
-#~ msgstr "Copyright © 1999-2002 Jens Finke"
-
-#~ msgid "Couldn't create directory: %s"
-#~ msgstr "Kunde inte skapa katalog: %s"
-
-#~ msgid "Atomix Splash"
-#~ msgstr "Atomix-uppstartsskärm"
-
-#~ msgid "Game Paused"
-#~ msgstr "Spelet pausat"
-
-#~ msgid "Game Over"
-#~ msgstr "Spelet är slut"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Molekylminnesspel"
-
-#~ msgid "No more undo levels."
-#~ msgstr "Inga fler ångranivåer."
-
-#~ msgid "This is the last level. You can't skip any further."
-#~ msgstr "Detta är den sista nivån. Du kan inte hoppa över längre."
-
-#~ msgid "Name:"
-#~ msgstr "Namn:"
-
-#~ msgid "Do you really want to clear the grid?"
-#~ msgstr "Vill du verkligen tömma rutnätet?"
-
-#~ msgid ""
-#~ "There does already a theme with this name exist.\n"
-#~ "So does the dir name."
-#~ msgstr ""
-#~ "Det finns redan ett tema med samma namn.\n"
-#~ "Även katalognamnet."
-
-#~ msgid ""
-#~ "There does already a theme with\n"
-#~ "this name exist."
-#~ msgstr ""
-#~ "Det finns redan ett tema med\n"
-#~ "samma namn."
-
-#~ msgid ""
-#~ "There does already a directory\n"
-#~ "with this name exist."
-#~ msgstr ""
-#~ "Det finns redan en katalog med\n"
-#~ "samma namn."
-
-#~ msgid "_New File"
-#~ msgstr "_Ny fil"
-
-#~ msgid "Grid"
-#~ msgstr "Rutnät"
-
-#~ msgid "Grid On/Off"
-#~ msgstr "Rutnät på/av"
-
-#~ msgid "Theme Window"
-#~ msgstr "Temafönster"
-
-#~ msgid "_Clear Grid"
-#~ msgstr "_Töm rutnät"
-
-#~ msgid "_Resize Grid"
-#~ msgstr "_Ändra storlek på rutnät"
-
-#~ msgid "_Delete Theme"
-#~ msgstr "_Ta bort tema"
-
-#~ msgid "Atomixed manual"
-#~ msgstr "Atomixed-manual"
-
-#~ msgid "_Level"
-#~ msgstr "_Nivå"
-
-#~ msgid "_Theme"
-#~ msgstr "_Tema"
-
-#~ msgid "New"
-#~ msgstr "Ny"
-
-#~ msgid "New File"
-#~ msgstr "Ny fil"
-
-#~ msgid "Open"
-#~ msgstr "Öppna"
-
-#~ msgid "Open File"
-#~ msgstr "Öppna fil"
-
-#~ msgid "Save"
-#~ msgstr "Spara"
-
-#~ msgid "Save File"
-#~ msgstr "Spara fil"
-
-#~ msgid "Theme Wnd"
-#~ msgstr "Temafönster"
-
-#~ msgid "No."
-#~ msgstr "Nr."
-
-#~ msgid "Level"
-#~ msgstr "Nivå"
-
-#~ msgid "Goal"
-#~ msgstr "Mål"
-
-#~ msgid "Themename:"
-#~ msgstr "Temanamn:"
-
-#~ msgid "Filename:"
-#~ msgstr "Filnamn:"
-
-#~ msgid "Bonuslevel"
-#~ msgstr "Bonusnivå"
-
-#~ msgid "Time"
-#~ msgstr "Tid"
-
-#~ msgid "Minutes: "
-#~ msgstr "Minuter: "
-
-#~ msgid "Seconds:"
-#~ msgstr "Sekunder:"
-
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"
-
-#~ msgid "Leveleditor"
-#~ msgstr "Nivåredigerare"
-
-#~ msgid "Images"
-#~ msgstr "Bilder"
-
-#~ msgid "Connections"
-#~ msgstr "Anslutningar"
-
-#~ msgid "Moveables"
-#~ msgstr "Flyttbara"
-
-#~ msgid "Obstacles"
-#~ msgstr "Hinder"
-
-#~ msgid "Directoryname:"
-#~ msgstr "Katalognamn:"
-
-#~ msgid "Background Color:"
-#~ msgstr "Bakgrundsfärg:"
-
-#~ msgid "Selector Image:"
-#~ msgstr "Väljarbild:"
-
-#~ msgid "Browse ..."
-#~ msgstr "Bläddra..."
-
-#~ msgid "Animation Step:"
-#~ msgstr "Animationssteg:"
-
-#~ msgid "Tile Height:"
-#~ msgstr "Brickhöjd:"
-
-#~ msgid "Tile Width:"
-#~ msgstr "Brickbredd:"
-
-#~ msgid "Themeeditor"
-#~ msgstr "Temaredigerare"
-
-#~ msgid "Atom Preview"
-#~ msgstr "Atomförhandsgranskning"
-
-#~ msgid "Mouse functions"
-#~ msgstr "Musfunktioner"
-
-#~ msgid "Clear"
-#~ msgstr "Töm"
-
-#~ msgid "Set"
-#~ msgstr "Sätt"
-
-#~ msgid "Move"
-#~ msgstr "Flytta"
-
-#~ msgid "Resize Grid"
-#~ msgstr "Ändra storlek på rutnät"
-
-#~ msgid "Current Values"
-#~ msgstr "Aktuella värden"
-
-#~ msgid "Rows:"
-#~ msgstr "Rader:"
-
-#~ msgid "Columns:"
-#~ msgstr "Kolumner:"
-
-#~ msgid "New Values"
-#~ msgstr "Nya värden"
-
-#~ msgid "New Level"
-#~ msgstr "Ny nivå"
-
-#~ msgid "Levelname:"
-#~ msgstr "Nivånamn:"
-
-#~ msgid "Playfield Size"
-#~ msgstr "Storlek på spelfält"
-
-#~ msgid "Goal Size"
-#~ msgstr "Målstorlek"
-
-#~ msgid "(C)  1999-2001 Jens Finke"
-#~ msgstr "©  1999-2001 Jens Finke"
-
-#~ msgid "Atomixed is the Level-/Themeeditor for the mind game Atomix."
-#~ msgstr "Atomixed är nivå-/temaredigeraren för minnesspelet Atomix."
-
-#~ msgid "Change level name"
-#~ msgstr "Ändra nivånamn"
-
-#~ msgid ""
-#~ "There is already a level with the same name. Please choose another\n"
-#~ "name for this level."
-#~ msgstr ""
-#~ "Det finns redan en nivå med samma namn. Var vänlig och välj ett\n"
-#~ "annat namn på denna nivå."
-
-#~ msgid "Current Name:"
-#~ msgstr "Nuvarande namn:"
-
-#~ msgid "Add Image"
-#~ msgstr "Lägg till bild"
-
-#~ msgid "Text:"
-#~ msgstr "Text:"
-
-#~ msgid "Change ID"
-#~ msgstr "Ändra ID"
-
-#~ msgid "Current ID:"
-#~ msgstr "Nuvarande ID:"
-
-#~ msgid "New ID:"
-#~ msgstr "Nytt ID:"
-
-#~ msgid "New Theme"
-#~ msgstr "Nytt tema"
-
-#~ msgid "No tile to clear here."
-#~ msgstr "Ingen bricka att tömma här."
-
-#~ msgid "No tile to move here."
-#~ msgstr "Ingen bricka att flytta här."
-
-#~ msgid "Copy Goal"
-#~ msgstr "Kopiera mål"
-
-#~ msgid "Copy the goal into the playfield."
-#~ msgstr "Kopiera målet på spelplanen."
-
-#~ msgid "Clear Grid"
-#~ msgstr "Töm rutnät"
-
-#~ msgid "Clears the whole grid."
-#~ msgstr "Tömmer hela rutnätet."
-
-#~ msgid "Add an image to the list."
-#~ msgstr "Lägg till en bild i listan."
-
-#~ msgid "Delete Image"
-#~ msgstr "Ta bort bild"
-
-#~ msgid "Delete selected image(s)."
-#~ msgstr "Ta bort de markerade bilderna."
-
-#~ msgid "Change the ID of the image."
-#~ msgstr "Ändra bildens ID."
-
-#~ msgid "Press Ctrl+N for a new Game"
-#~ msgstr "Tryck Ctrl+N för ett nytt spel"
-
-#~ msgid "Couldn't find the Atomix manual!"
-#~ msgstr "Kunde inte hitta Atomix-manualen!"
-
-#~ msgid "Atomix manual"
-#~ msgstr "Atmomix-manual"
-
-#~ msgid ""
-#~ "Level not found.\n"
-#~ "Sorry, but the game ends here.\n"
-#~ "\n"
-#~ "(Please make sure you have *.atomix\n"
-#~ "files either in <prefix>/share/atomix/levels\n"
-#~ "or ~/.atomix/levels.)"
-#~ msgstr ""
-#~ "Nivån kunde inte hittas.\n"
-#~ "Tyvärr, spelet slutar här.\n"
-#~ "\n"
-#~ "(Var vänlig och försäkra dig om att\n"
-#~ "du har *.atomix-filer i antingen\n"
-#~ "<prefix>/share/atomix/levels eller\n"
-#~ "~/.atomix/levels.)"
-
-#~ msgid "Information"
-#~ msgstr "Information"
-
-#~ msgid "Yet another mind game."
-#~ msgstr "Ännu ett minnesspel."
-
-#~ msgid "Atomix Next Level"
-#~ msgstr "Nästa Atomixnivå"
-
-#~ msgid "Congratulations! You have successfully finished this level."
-#~ msgstr "Gratulerar! Du har slutfört denna nivå."
-
-#~ msgid "Remaining Time:"
-#~ msgstr "Återstående tid:"
-
-#~ msgid "Are you ready for the next level?"
-#~ msgstr "Är du redo för nästa nivå?"
-
-#~ msgid "Atomix End"
-#~ msgstr "Atomix-slut"
-
-#~ msgid "Do you want to play again?"
-#~ msgstr "Vill du spela igen?"
-
-#~ msgid "Constraints"
-#~ msgstr "Restriktioner"
-
-#~ msgid "enable score and time limit"
-#~ msgstr "använd poäng- och tidsgräns"
-
-#~ msgid "General"
-#~ msgstr "Allmänt"
-
-#~ msgid "Keyboard (return and cursor keys)"
-#~ msgstr "Tangentbord (enter- och piltangenter)"
-
-#~ msgid "Mouse"
-#~ msgstr "Mus"
-
-#~ msgid "Mouse Properties"
-#~ msgstr "Musegenskaper"
-
-#~ msgid "hide mouse cursor during dragging"
-#~ msgstr "dölj muspekare under flytt"
-
-#~ msgid "enable lazy dragging"
-#~ msgstr "använd slö flyttning"
-
-#~ msgid "Sensitivity:"
-#~ msgstr "Känslighet:"
-
-#~ msgid "high"
-#~ msgstr "hög"
-
-#~ msgid "low"
-#~ msgstr "låg"
-
-#~ msgid "Control"
-#~ msgstr "Kontroll"
-
-#~ msgid "Do you really want to exit the program?"
-#~ msgstr "Vill du verkligen avsluta programmet?"
-
-#~ msgid ""
-#~ "Your time is up! This costs you 10% of your score. \n"
-#~ "More luck next time. \n"
-#~ "\n"
-#~ "Do you want to retry?"
-#~ msgstr ""
-#~ "Tiden är slut! Detta kostar dig 10% av din poäng.\n"
-#~ "Bätte lycka nästa gång.\n"
-#~ "\n"
-#~ "Vill du försöka igen?"
-
-#~ msgid ""
-#~ "Sorry your time is up! But this was only\n"
-#~ "a bonus level so go further now."
-#~ msgstr ""
-#~ "Ledsen att din tid är ute! Men detta var\n"
-#~ "bara en bonusnivå, så fortsätt nu."
-
-#~ msgid "Undo last move. This costs you 5% of your score."
-#~ msgstr "Ångra senaste flytt. Detta kostar dig 5% av din poäng."
