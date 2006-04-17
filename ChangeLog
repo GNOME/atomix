@@ -1,3 +1,8 @@
+2006-04-17  Kjartan Maraas <kmaraas@gnome.org>
+
+	* configure.in: Remove again.
+	* po/no.po:
+
 2006-03-13  Runa Bhattacharjee <runa@bengalinux.org>
 
 	* configure.in: Added Bengali (bn) to ALL_LINGUAS.
