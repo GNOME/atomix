@@ -1,200 +1,289 @@
 # Catalan translation of atomix.
-# Copyright © 2002 Free Software Foundation, Inc.
+# Copyright © 2002, 2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the atomix package.
 # Gisela Carbonell, 2002.
+# Esteve Blanch Sanmartí, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.9.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-12-26 13:42+0100\n"
-"PO-Revision-Date: 2003-12-26 13:43+0100\n"
-"Last-Translator: Gisela Carbonell\n"
+"POT-Creation-Date: 2006-06-12 10:04+0200\n"
+"PO-Revision-Date: 2006-07-21 04:37+0200\n"
+"Last-Translator: Esteve Blanch Sanmartí <anakinjinn@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/atomix-ui.xml.in.h:1
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Acid acètic"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Acetona"
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "Betanol"
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Ciclobutà"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "Dimetil-Èter"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Etanal"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Età"
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Etanol"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Etilè"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Glicerina"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Àcid làctic"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Metanal"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Metà"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Metanol"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Propanal"
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "Propilè"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "Pirà"
+
+# FIXME
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Transbutilè"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Aigua"
+
+#: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
 msgstr "Continua el joc aturat"
 
-#: src/atomix-ui.xml.in.h:2
-msgid "E_xit"
-msgstr "_Surt"
-
-#: src/atomix-ui.xml.in.h:3
+#: ../src/atomix-ui.xml.h:2
 msgid "End a game"
 msgstr "Finalitza un joc"
 
-#: src/atomix-ui.xml.in.h:4
-msgid "Exit game"
-msgstr "Surt del joc"
-
-#: src/atomix-ui.xml.in.h:5
+#: ../src/atomix-ui.xml.h:3
 msgid "Pause the running game"
 msgstr "Atura el joc en execució"
 
-#: src/atomix-ui.xml.in.h:6
+#: ../src/atomix-ui.xml.h:4
 msgid "Reset level"
 msgstr "Reinicia el nivell"
 
-#: src/atomix-ui.xml.in.h:7
+#: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
 msgstr "Restaura la situació inicial"
 
-#: src/atomix-ui.xml.in.h:8
+#: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
 msgstr "Defineix les preferències"
 
-#: src/atomix-ui.xml.in.h:9
+#: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
 msgstr "Omet el _nivell"
 
-#: src/atomix-ui.xml.in.h:10
+#: ../src/atomix-ui.xml.h:8
 msgid "Skip the current level"
 msgstr "Omet el nivell actual"
 
-#: src/atomix-ui.xml.in.h:11
+#: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
 msgstr "Inicia un joc nou"
 
-#: src/atomix-ui.xml.in.h:12
+#: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
-msgstr "Desfés l'últim  moviment"
+msgstr "Desfés l'últim moviment"
 
-#: src/atomix-ui.xml.in.h:13
-msgid "View game credits"
-msgstr "Visualitza els crèdits del joc"
-
-#: src/atomix-ui.xml.in.h:14
+#: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
 msgstr "Visualitza les puntuacions màximes"
 
-#: src/atomix-ui.xml.in.h:15
-msgid "_About"
-msgstr "_Quant a"
-
-#: src/atomix-ui.xml.in.h:16
+#: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
 msgstr "_Continua el joc"
 
-#: src/atomix-ui.xml.in.h:17
-msgid "_Edit"
-msgstr "_Edita"
-
-#: src/atomix-ui.xml.in.h:18
+#: ../src/atomix-ui.xml.h:13
 msgid "_End Game"
 msgstr "_Finalitza el joc"
 
-#: src/atomix-ui.xml.in.h:19
+#: ../src/atomix-ui.xml.h:14
 msgid "_Game"
 msgstr "_Joc"
 
-#: src/atomix-ui.xml.in.h:20
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: src/atomix-ui.xml.in.h:21
+#: ../src/atomix-ui.xml.h:21
 msgid "_New Game"
 msgstr "Joc _nou"
 
-#: src/atomix-ui.xml.in.h:22
+#: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
 msgstr "_Atura el joc"
 
-#: src/atomix-ui.xml.in.h:23
+#: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
 msgstr "_Preferències ..."
 
-#: src/atomix-ui.xml.in.h:24
+#: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
 msgstr "_Puntuacions ..."
 
-#: src/atomix-ui.xml.in.h:25
+#: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
 msgstr "_Desfés la jugada"
 
-#: src/level-manager.c:171
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
 msgstr "No s'ha trobat la descripció de la seqüència del nivell."
 
-#: src/level-manager.c:185
+#: ../src/level-manager.c:188
 msgid "No level found."
 msgstr "No s'ha trobat cap nivell."
 
-#: src/level-manager.c:286
+#: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "S'ha trobat el nivell '%s' a: %s"
 
-#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr "Encara no s'han registrat marcadors. Jugueu una mica avans de tornar!"
+
+#: ../src/main.c:173
+msgid "A puzzle game about atoms and molecules"
+msgstr "Un puzle sobre àtoms i mol·lècules."
+
+#: ../src/main.c:177
+msgid "translator-credits"
+msgstr ""
+"Gisela Carbonell\n"
+"Esteve Blanch Sanmartí <anakinjinn@gmail.com>"
+
+#: ../src/main.c:488 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: src/main.c:145
-msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "Copyright (C) 1999-2002 Jens Finke"
-
-#: src/main.c:146
-msgid "A mind game about atoms and molecules."
-msgstr "Un joc mental sobre àtoms i mol·lècules."
-
-#: src/main.c:456
+#: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Felicitats! Heu finalitzat tots els nivells de l'Atomix."
 
-#: src/main.c:467
+#: ../src/main.c:509
 msgid "Couldn't find at least one level."
-msgstr "No s'ha trobat ni tan sols un nivell"
+msgstr "No s'ha trobat ni un sol nivell"
 
-#: src/main.c:472
+#: ../src/main.c:514
 msgid "Do you want to finish the game?"
 msgstr "Voleu finalitzar el joc?"
 
-#: src/main.c:591 src/main.c:597 src/main.c:602
-#, c-format
-msgid "Couldn't create directory: %s"
-msgstr "No s'ha pogut crear el directori: %s"
-
 #. create statistics frame
-#: src/main.c:701
+#: ../src/main.c:728
 msgid "Statistics"
 msgstr "Estadístiques"
 
-#: src/main.c:707
+#: ../src/main.c:734
 msgid "Level:"
 msgstr "Nivell:"
 
-#: src/main.c:708
+#: ../src/main.c:735
 msgid "Molecule:"
 msgstr "Mol·lècula:"
 
-#: src/main.c:709
+#: ../src/main.c:736
+msgid "Formula:"
+msgstr "Fórmula:"
+
+#: ../src/main.c:737
 msgid "Score:"
 msgstr "Puntuació:"
 
-#: src/main.c:710
+#: ../src/main.c:738
 msgid "Time:"
 msgstr "Temps:"
 
-#: src/main.c:750
+#: ../src/main.c:778
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "No s'ha pogut localitzar el fitxer: %s"
 
-#: src/theme-manager.c:141
+#: ../src/theme-manager.c:135
 msgid "No themes found."
 msgstr "No s'ha trobat cap tema."
 
-#: src/theme-manager.c:205
+#: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "S'ha trobat el tema '%s' a: %s"
 
-#: atomix.desktop.in.h:2
-msgid "Molecule mind game"
-msgstr "Joc mental de mol·lècules"
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Puzle de mol·lècules"
+
+#~ msgid "E_xit"
+#~ msgstr "_Surt"
+
+#~ msgid "Exit game"
+#~ msgstr "Surt del joc"
+
+#~ msgid "View game credits"
+#~ msgstr "Visualitza els crèdits del joc"
+
+#~ msgid "_About"
+#~ msgstr "_Quant a"
+
+#~ msgid "_Edit"
+#~ msgstr "_Edita"
+
+#~ msgid "Copyright (C) 1999-2002 Jens Finke"
+#~ msgstr "Copyright (C) 1999-2002 Jens Finke"
+
+#~ msgid "Couldn't create directory: %s"
+#~ msgstr "No s'ha pogut crear el directori: %s"
 
 #~ msgid "Atomix Splash"
 #~ msgstr "Presentació de l'Atomix"
