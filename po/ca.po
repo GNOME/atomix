@@ -197,7 +197,7 @@ msgstr "Encara no s'han registrat marcadors. Jugueu una mica abans de tornar!"
 
 #: ../src/main.c:173
 msgid "A puzzle game about atoms and molecules"
-msgstr "Un puzle sobre àtoms i molècules."
+msgstr "Un trencaclosques sobre àtoms i molècules."
 
 #: ../src/main.c:177
 msgid "translator-credits"
@@ -262,5 +262,5 @@ msgstr "S'ha trobat el tema '%s' a: %s"
 
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
-msgstr "Puzle de molècules"
+msgstr "Trencaclosques de molècules"
 
