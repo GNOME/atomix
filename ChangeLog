@@ -1,3 +1,7 @@
+2006-09-01  Abel Cheung  <abel@oaka.org>
+
+	* configure.in: Added 'ka' to ALL_LINGUAS.
+
 2006-04-17  Kjartan Maraas <kmaraas@gnome.org>
 
 	* configure.in: Remove again.
