@@ -168,6 +168,7 @@ static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
     };
 
   dlg = gtk_about_dialog_new ();
+  g_signal_connect (dlg, "response", G_CALLBACK (gtk_widget_destroy), NULL);
   gtk_about_dialog_set_name (GTK_ABOUT_DIALOG(dlg), "Atomix");
   gtk_about_dialog_set_version (GTK_ABOUT_DIALOG(dlg), VERSION);
   gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG(dlg), _("A puzzle game about atoms and molecules"));

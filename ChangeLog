@@ -1,5 +1,10 @@
 2007-01-03  Christian Persch  <chpe@svn.gnome.org>
 
+	* src/main.c: (verb_HelpAbout_cb): Fix about dialogue closing. Bug
+	#336524.
+
+2007-01-03  Christian Persch  <chpe@svn.gnome.org>
+
 	* autogen.sh:
 	* configure.in:
 	* po/LINGUAS:
