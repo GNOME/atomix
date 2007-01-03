@@ -1,11 +1,10 @@
 AC_PREREQ(2.52)
 
 AC_INIT(atomix, 2.14.0, http://bugzilla.gnome.org/enter_bug.cgi?product=atomix)
-AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
-AC_CONFIG_SRCDIR(src/board.c)
-AM_CONFIG_HEADER(config.h)
+AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-bzip2])
 
-AC_PROG_INTLTOOL
+AC_CONFIG_SRCDIR(src/board.c)
+AC_CONFIG_HEADERS([config.h])
 
 AC_ISC_POSIX
 AC_PROG_CC
@@ -13,9 +12,12 @@ AM_PROG_CC_STDC
 AC_HEADER_STDC
 AC_PROG_RANLIB
 
-GNOME_COMPILE_WARNINGS
+GNOME_COMMON_INIT
+GNOME_COMPILE_WARNINGS([maximum])
+GNOME_MAINTAINER_MODE_DEFINES
 
 dnl ================= Requirements =======================
+LIBGTK_REQUIRED=2.6.0
 LIBGNOME_REQUIRED=2.0.1
 LIBGNOMEUI_REQUIRED=2.0.1
 LIBXML_REQUIRED=2.4.23
@@ -28,7 +30,7 @@ dnl ******************************
 dnl pkg-config checks
 dnl ******************************
 
-ATOMIX_MODULES="libgnome-2.0 >= $LIBGNOME_REQUIRED libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED libxml-2.0 >= $LIBXML_REQUIRED gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED libgnomecanvas-2.0 >= $LIBGNOMECANVAS_REQUIRED libbonoboui-2.0 >= $LIBBONOBOUI_REQUIRED"
+ATOMIX_MODULES="gtk+-2.0 >= $LIBGTK_REQUIRED libgnome-2.0 >= $LIBGNOME_REQUIRED libgnomeui-2.0 >= $LIBGNOMEUI_REQUIRED libxml-2.0 >= $LIBXML_REQUIRED gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED libgnomecanvas-2.0 >= $LIBGNOMECANVAS_REQUIRED libbonoboui-2.0 >= $LIBBONOBOUI_REQUIRED"
 #libglade-2.0 >= $LIBGLADE_REQUIRED
 PKG_CHECK_MODULES(ATOMIX, $ATOMIX_MODULES)
 AC_SUBST(ATOMIX_CFLAGS)
@@ -37,16 +39,15 @@ AC_SUBST(ATOMIX_LIBS)
 dnl *******************************
 dnl Internationalization
 dnl ******************************* 
+
+IT_PROG_INTLTOOL([0.35.0])
+
 GETTEXT_PACKAGE=atomix
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE")
 AC_SUBST(GETTEXT_PACKAGE)
 
-dnl Add the languages which your application supports here.
-ALL_LINGUAS="am ar az be bg bn ca cs da de el en_CA en_GB es et fa fi fr ga gl gu he hi hu is it ja ka kn ko lt lv mk ml ms nb nl pa pl pt pt_BR ru sk sl sq sr sr@Latn sv ta tr uk vi wa zh_CN zh_HK zh_TW"
 AM_GLIB_GNU_GETTEXT
 
-EXTRA_WARNING_CFLAGS=" $warning_flags"
-AC_SUBST(EXTRA_WARNING_CFLAGS)
 
 AC_CONFIG_FILES([
 Makefile

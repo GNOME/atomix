@@ -5,7 +5,7 @@ uidir = $(datadir)/gnome-2.0/ui
 INCLUDES = -Wall \
 	-I$(top_srcdir) \
 	$(ATOMIX_CFLAGS) \
-	$(EXTRA_WARNING_CFLAGS) \
+	$(WARN_CFLAGS) \
 	-DDATADIR=\""$(datadir)"\" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DSCORESDIR=\""$(scoredir)"\"

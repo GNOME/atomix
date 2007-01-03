@@ -1,3 +1,11 @@
+2007-01-03  Christian Persch  <chpe@svn.gnome.org>
+
+	* autogen.sh:
+	* configure.in:
+	* po/LINGUAS:
+	* src/Makefile.am: Fix the translations build by updating to
+	po/LINGUAS as per GnomeGoal. Bug #334319.
+
 2006-09-01  Abel Cheung  <abel@oaka.org>
 
 	* configure.in: Added 'ka' to ALL_LINGUAS.
