@@ -1,3 +1,9 @@
+2007-01-10  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* th.po: Added Thai translation by
+	Neutron Soutmun <neo.neutron@gmail.com>.
+	* LINGUAS: Added th.
+
 2007-01-08  Alessio Frusciante  <algol@firenze.linux.it>
 
 	* it.po: Updated Italian translation by

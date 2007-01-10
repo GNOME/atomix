@@ -1,0 +1,262 @@
+# Thai translation of atomix.
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the atomix package.
+#
+# Neutron Soutmun <neo.neutron@gmail.com>, 2007.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-01-11 00:06+0700\n"
+"PO-Revision-Date: 2007-01-11 00:06+0700\n"
+"Last-Translator: Neutron Soutmun <neo.neutron@gmail.com>\n"
+"Language-Team: Thai <l10n@opentle.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "กรดแอซีติก"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "แอซีโตน"
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "บิวทานอล"
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "ไซโคลบิวเทน"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "ไดเมทิล อีเทอร์"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "เอทานัล"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "อีเทน"
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "เอทานอล"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "เอทิลีน"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "กลีเซอริน"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "กรดแลกติก"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "เมทานัล"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "มีเทน"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "เมทานอล"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "โพรพานัล"
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "โพรพิลีน"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "ไพรัน"
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "ทรานส์บิวทิลีน"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "น้ำ"
+
+#: ../src/atomix-ui.xml.h:1
+msgid "Continue paused game"
+msgstr "เล่นเกมที่พักไว้ต่อ"
+
+#: ../src/atomix-ui.xml.h:2
+msgid "End a game"
+msgstr "จบเกม"
+
+#: ../src/atomix-ui.xml.h:3
+msgid "Pause the running game"
+msgstr "พักเกมที่กำลังเล่น"
+
+#: ../src/atomix-ui.xml.h:4
+msgid "Reset level"
+msgstr "ล้างระดับที่เล่น"
+
+#: ../src/atomix-ui.xml.h:5
+msgid "Restores start situation"
+msgstr "คืนสภาพไปยังสถานะเริ่มต้น"
+
+#: ../src/atomix-ui.xml.h:6
+msgid "Set preferences"
+msgstr "ปรับแต่ง"
+
+#: ../src/atomix-ui.xml.h:7
+msgid "Skip _level"
+msgstr "_ข้ามระดับ"
+
+#: ../src/atomix-ui.xml.h:8
+msgid "Skip the current level"
+msgstr "ข้ามระดับปัจจุบัน"
+
+#: ../src/atomix-ui.xml.h:9
+msgid "Start a new game"
+msgstr "เริ่มเกมใหม่"
+
+#: ../src/atomix-ui.xml.h:10
+msgid "Undo the last move"
+msgstr "เรียกคืนการเดินเกมครั้งล่าสุด"
+
+#: ../src/atomix-ui.xml.h:11
+msgid "View highscores"
+msgstr "ดูคะแนนสูงสุด"
+
+#: ../src/atomix-ui.xml.h:12
+msgid "_Continue game"
+msgstr "เ_ล่นต่อ"
+
+#: ../src/atomix-ui.xml.h:13
+msgid "_End Game"
+msgstr "_จบเกม"
+
+#: ../src/atomix-ui.xml.h:14
+msgid "_Game"
+msgstr "เ_กม"
+
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
+msgid "_Help"
+msgstr "_วิธีใช้"
+
+#: ../src/atomix-ui.xml.h:21
+msgid "_New Game"
+msgstr "เกมใ_หม่"
+
+#: ../src/atomix-ui.xml.h:22
+msgid "_Pause game"
+msgstr "_พักเกม"
+
+#: ../src/atomix-ui.xml.h:23
+msgid "_Preferences ..."
+msgstr "ปรับแ_ต่ง ..."
+
+#: ../src/atomix-ui.xml.h:24
+msgid "_Scores ..."
+msgstr "_คะแนน ..."
+
+#: ../src/atomix-ui.xml.h:25
+msgid "_Undo move"
+msgstr "_ย้อนตากลับ"
+
+#: ../src/level-manager.c:174
+msgid "Couldn't find level sequence description."
+msgstr "ไม่พบข้อมูลลำดับของระดับ"
+
+#: ../src/level-manager.c:188
+msgid "No level found."
+msgstr "ไม่พบระดับ"
+
+#: ../src/level-manager.c:284
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "พบระดับ '%s' ใน: %s"
+
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr "คุณยังไม่ได้เล่นเพื่อทำคะแนน เล่นก่อนแล้วค่อยกลับมาใหม่!"
+
+#: ../src/main.c:174
+msgid "A puzzle game about atoms and molecules"
+msgstr "เกมตัวต่ออะตอม และโมเลกุล"
+
+#: ../src/main.c:178
+msgid "translator-credits"
+msgstr "Neutron Soutmun <neo.neutron@gmail.com>"
+
+#: ../src/main.c:489 ../atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "อะตอมมิกซ์"
+
+#: ../src/main.c:500
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "ยินดีด้วย! คุณผ่านอะตอมมิกซ์หมดทุกระดับแล้ว"
+
+#: ../src/main.c:510
+msgid "Couldn't find at least one level."
+msgstr "หาระดับไม่พบอย่างน้อยหนึ่งระดับ"
+
+#: ../src/main.c:515
+msgid "Do you want to finish the game?"
+msgstr "คุณต้องการจะจบเกมเลยหรือไม่?"
+
+#. create statistics frame
+#: ../src/main.c:729
+msgid "Statistics"
+msgstr "สถิติ"
+
+#: ../src/main.c:735
+msgid "Level:"
+msgstr "ระดับ:"
+
+#: ../src/main.c:736
+msgid "Molecule:"
+msgstr "โมเลกุล:"
+
+#: ../src/main.c:737
+msgid "Formula:"
+msgstr "สูตรเคมี:"
+
+#: ../src/main.c:738
+msgid "Score:"
+msgstr "คะแนน:"
+
+#: ../src/main.c:739
+msgid "Time:"
+msgstr "เวลา:"
+
+#: ../src/main.c:779
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "ไม่พบแฟ้ม: %s"
+
+#: ../src/theme-manager.c:135
+msgid "No themes found."
+msgstr "ไม่พบชุดตกแต่ง"
+
+#: ../src/theme-manager.c:193
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "พบชุดตกแต่ง '%s' ใน: %s"
+
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "เกมตัวต่อโมเลกุล"
