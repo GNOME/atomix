@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix.head.pot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-02-12 03:14+0000\n"
+"PO-Revision-Date: 2007-02-12 12:21+0530\n"
+"Last-Translator: sonam pelden <sonaa_peldn@yahoo.com>\n"
+"Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Poedit-Language: Dzongkha\n"
+"X-Poedit-Country: Bhutan\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "ཨེ་སི་ཊིཀ་ཨེ་སིཌི་"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "ཨེ་སི་ཊོན་"
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "བུ་ཊ་ནོལ་"
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "སའི་ཀོལོ་བི་ཊེན་"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "ཌའི་མེ་ཐེལ་ཨི་ཐར་"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "ཨི་ཐེ་ནཱལ་"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "ཨི་ཐེན་"
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "ཨི་ཐ་ནཱོལ་"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "ཨི་ཐའི་ལིནི་"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "ཇིལིསི་རིན་"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "ལེཀ་ཊིཀ་ཨེ་སིཌི་"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "མི་ཐེ་ནཱལ་"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "མི་ཐེན་ནི་"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "མི་ཐཱ་ནོལ་"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "པོར་པ་ནལ་"
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "པོར་པེ་ལིན་"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "པེརེན་"
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "ཊེརནསི་ བུ་ཊ་ལིན་"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "ཆུ་"
+
+#: ../src/atomix-ui.xml.h:1
+msgid "Continue paused game"
+msgstr "ཐེམ་ཡོད་པའི་རྩེདམོ་འཕྲོ་མཐུད་"
+
+#: ../src/atomix-ui.xml.h:2
+msgid "End a game"
+msgstr "རྩེདམོ་མཇུག་བསྡུ་"
+
+#: ../src/atomix-ui.xml.h:3
+msgid "Pause the running game"
+msgstr "ལཱ་འབད་མི་རྩེདམོ་འདི་ཐེམ་"
+
+#: ../src/atomix-ui.xml.h:4
+msgid "Reset level"
+msgstr "གནས་རིམ་སླར་སྒྲིག་"
+
+#: ../src/atomix-ui.xml.h:5
+msgid "Restores start situation"
+msgstr "དུས་སྐབས་འགོ་བཙུགས་སོར་ཆུད་འབད་"
+
+#: ../src/atomix-ui.xml.h:6
+msgid "Set preferences"
+msgstr "དགའ་གདམ་ཚུ་གཞི་སྒྲིག་འབད་"
+
+#: ../src/atomix-ui.xml.h:7
+msgid "Skip _level"
+msgstr "གནས་རིམ་གོམ་འགྱོ་"
+
+#: ../src/atomix-ui.xml.h:8
+msgid "Skip the current level"
+msgstr "ད་ལྟོའི་གནས་རིམ་གོམ་འགྱོ་"
+
+#: ../src/atomix-ui.xml.h:9
+msgid "Start a new game"
+msgstr "རྩེདམོ་གསརཔ་ཅིག་འགོ་བཙུགས་"
+
+#: ../src/atomix-ui.xml.h:10
+msgid "Undo the last move"
+msgstr "མཇུག་གི་སྤོ་བཤུད་འདི་འབད་བཤོལ་"
+
+#: ../src/atomix-ui.xml.h:11
+msgid "View highscores"
+msgstr "སྐུགས་མཐོ་ཤོས་འདི་སྟོན་"
+
+#: ../src/atomix-ui.xml.h:12
+msgid "_Continue game"
+msgstr "རྩེདམོ་འཕྲོ་མཐུད། (_C)"
+
+#: ../src/atomix-ui.xml.h:13
+msgid "_End Game"
+msgstr "རྩེདམོ་མཇུག་བསྡུ། (_E)"
+
+#: ../src/atomix-ui.xml.h:14
+msgid "_Game"
+msgstr "རྩེདམོ། (_G)"
+
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
+msgid "_Help"
+msgstr "གྲོགས་རམ། (_H)"
+
+#: ../src/atomix-ui.xml.h:21
+msgid "_New Game"
+msgstr "རྩེདམོ་གསརཔ། (_N)"
+
+#: ../src/atomix-ui.xml.h:22
+msgid "_Pause game"
+msgstr "རྩེདམོ་ཐེམ། (_P)"
+
+#: ../src/atomix-ui.xml.h:23
+msgid "_Preferences ..."
+msgstr "དགའ་གདམ་ཚུ... (_P)"
+
+#: ../src/atomix-ui.xml.h:24
+msgid "_Scores ..."
+msgstr "སྐུགས་ཚུ... (_S)"
+
+#: ../src/atomix-ui.xml.h:25
+msgid "_Undo move"
+msgstr "སྤོ་བཤུད་འབད་བཤོལ། (_U)"
+
+#: ../src/level-manager.c:174
+msgid "Couldn't find level sequence description."
+msgstr "གནས་རིམ་འབྱུང་རིམ་འགྲེལ་བཤད་ཐོབ་མ་ཚུགས།"
+
+#: ../src/level-manager.c:188
+msgid "No level found."
+msgstr "གནས་རིམ་མ་ཐོབ།"
+
+#: ../src/level-manager.c:284
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "གནས་རིམ་'%s' %s ནང་ཐོབ་ཡོད: "
+
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr "ཁྱོད་ཀྱིས་ད་ལྟོ་སྐུགས་ཅི་ཡང་ཐོབ་མ་ཚུགས། ལོག་མ་འོང་པའི་ཧེ་མ་དུམ་གྲ་ཅིག་རྩེ་ད!"
+
+#: ../src/main.c:174
+msgid "A puzzle game about atoms and molecules"
+msgstr "རྡུལ་ཕྲན་དང་རྡུལ་རྟེན་ཚུ་གི་སྐོར་ལས་སྒྲིག་རྩེད་རྩེདམོ་ཅིག་"
+
+#: ../src/main.c:178
+msgid "translator-credits"
+msgstr "སྐད་བསྒྱུར་པའི་-ངོ་བསྟོད་ཚུ་"
+
+#: ../src/main.c:489
+#: ../atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "ཨེ་ཊོ་མིགསི་"
+
+#: ../src/main.c:500
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "ལེགས་སོ! ཁྱོད་ཀྱིས་ཨེ་ཊོ་མིགསི་གནས་རིམ་ཚུ་ཆ་མཉམ་མཇུག་བསྡུ་ཡོདཔ།"
+
+#: ../src/main.c:510
+msgid "Couldn't find at least one level."
+msgstr "གནས་རིམ་གཅིག་ཡང་ཐོབ་མ་ཚུགས།"
+
+#: ../src/main.c:515
+msgid "Do you want to finish the game?"
+msgstr "ཁྱོད་ཀྱིས་རྩེདམོ་མཇུག་བསྡུ་ནི་ཨིན་ན?"
+
+#. create statistics frame
+#: ../src/main.c:729
+msgid "Statistics"
+msgstr "ཚད་རྩིས་"
+
+#: ../src/main.c:735
+msgid "Level:"
+msgstr "གནས་རིམ:"
+
+#: ../src/main.c:736
+msgid "Molecule:"
+msgstr "རྡུལ་རྟེན:"
+
+#: ../src/main.c:737
+msgid "Formula:"
+msgstr "མན་ངག:"
+
+#: ../src/main.c:738
+msgid "Score:"
+msgstr "སྐུགས:"
+
+#: ../src/main.c:739
+msgid "Time:"
+msgstr "དུས་ཚོད:"
+
+#: ../src/main.c:779
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr "ཡིག་སྣོད་ཐོབ་མ་ཚུགས: %s"
+
+#: ../src/theme-manager.c:135
+msgid "No themes found."
+msgstr "བརྗོད་དོན་ཐོབ་མ་ཚུགས།"
+
+#: ../src/theme-manager.c:193
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "བརྗོད་དོན་ '%s' %sནང་ཐོབ་ཡོདཔ: "
+
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "རྡུལ་རྟེན་སྒྲིག་རྩེད་རྩེདམོ་"
+

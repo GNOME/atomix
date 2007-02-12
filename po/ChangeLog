@@ -1,3 +1,8 @@
+2007-02-12  Pema Geyleg  <pema.geyleg@gmail.com>
+
+	* LINGUAS: Added dz to the list.
+	* dz.po: Added Dzongkha Translation.
+
 2007-01-10  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* th.po: Added Thai translation by
