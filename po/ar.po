@@ -1,167 +1,182 @@
-# Arabic translations for PACKAGE package.
-# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2006.
-#
+# Arabic translations for THIS package.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as THIS package.
+# Automatically generated, 2007.
+# Djihed Afifi <djihed@gmail.com>, 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: Project\n"
+"Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-17 21:14+0000\n"
-"PO-Revision-Date: 2006-11-17 23:57+0100\n"
+"POT-Creation-Date: 2007-04-21 22:52+0100\n"
+"PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language-Team: Arabeyes <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n >= 3 && n <= 10 ? 3 : n >= 11 && n <= 99 ? 4 : 5;\n"
-"X-Poedit-Language: Arabic\n"
 
 #: ../level/aceticacid.atomix.xml.h:1
-#, fuzzy
 msgid "Acetic Acid"
-msgstr "اسِد بانك"
+msgstr ""
 
 #: ../level/acetone.atomix.xml.h:1
+#, fuzzy
 msgid "Acetone"
-msgstr ""
+msgstr "أفعال"
 
 #: ../level/butanol.atomix.xml.h:1
+#, fuzzy
 msgid "Butanol"
-msgstr ""
+msgstr "بوتان"
 
 #: ../level/cyclobutane.atomix.xml.h:1
+#, fuzzy
 msgid "Cyclobutane"
-msgstr ""
+msgstr "استنساخ"
 
 #: ../level/dimethylether.atomix.xml.h:1
+#, fuzzy
 msgid "Dimethyl Ether"
-msgstr ""
+msgstr "القطر"
 
 #: ../level/ethanal.atomix.xml.h:1
+#, fuzzy
 msgid "Ethanal"
-msgstr ""
+msgstr "غانا"
 
 #: ../level/ethane.atomix.xml.h:1
+#, fuzzy
 msgid "Ethane"
-msgstr ""
+msgstr "ايثرنت"
 
 #: ../level/ethanol.atomix.xml.h:1
+#, fuzzy
 msgid "Ethanol"
-msgstr ""
+msgstr "تانجو"
 
 #: ../level/ethylene.atomix.xml.h:1
+#, fuzzy
 msgid "Ethylene"
-msgstr ""
+msgstr "ايثرنت"
 
 #: ../level/glycerin.atomix.xml.h:1
+#, fuzzy
 msgid "Glycerin"
-msgstr ""
+msgstr "جورجي"
 
 #: ../level/lactic-acid.atomix.xml.h:1
 #, fuzzy
 msgid "Lactic Acid"
-msgstr "اسِد بانك"
+msgstr "اسِد الرئيسي"
 
 #: ../level/methanal.atomix.xml.h:1
+#, fuzzy
 msgid "Methanal"
-msgstr ""
+msgstr "ميتال"
 
 #: ../level/methane.atomix.xml.h:1
+#, fuzzy
 msgid "Methane"
-msgstr ""
+msgstr "ميامن"
 
 #: ../level/methanol.atomix.xml.h:1
+#, fuzzy
 msgid "Methanol"
-msgstr ""
+msgstr "ميتال"
 
 #: ../level/propanal.atomix.xml.h:1
+#, fuzzy
 msgid "Propanal"
-msgstr ""
+msgstr "شخصي"
 
+# #-#-#-#-#  gnome-icon-theme.gnome-2-18.ar.po (gnome-icon-theme.gnome-2-16.ar)  #-#-#-#-#
+# 48x48/emblems/emblem-people.icon.in.h:1
 #: ../level/propylene.atomix.xml.h:1
+#, fuzzy
 msgid "Propylene"
-msgstr ""
+msgstr "أناس"
 
 #: ../level/pyran.atomix.xml.h:1
+#, fuzzy
 msgid "Pyran"
-msgstr ""
+msgstr "بارانا"
 
 #: ../level/transbutylen.atomix.xml.h:1
+#, fuzzy
 msgid "Trans Butylen"
-msgstr ""
+msgstr "قابل للترجمة"
 
 #: ../level/water.atomix.xml.h:1
+#, fuzzy
 msgid "Water"
-msgstr ""
+msgstr "الطقس"
 
 #: ../src/atomix-ui.xml.h:1
 #, fuzzy
 msgid "Continue paused game"
-msgstr "بدء لعبةٍ جديدة"
+msgstr "اعداد اللعبة"
 
 #: ../src/atomix-ui.xml.h:2
 #, fuzzy
 msgid "End a game"
-msgstr "إ_نهاء اللعبة الحالية"
+msgstr "أ_نهِ اللعبة"
 
 #: ../src/atomix-ui.xml.h:3
 #, fuzzy
 msgid "Pause the running game"
-msgstr "بدء لعبةٍ جديدة"
+msgstr "إحفظ اللعبة الحالية"
 
 #: ../src/atomix-ui.xml.h:4
 #, fuzzy
 msgid "Reset level"
-msgstr "مستوى واحد"
+msgstr "حدث OnReset"
 
 #: ../src/atomix-ui.xml.h:5
 #, fuzzy
 msgid "Restores start situation"
-msgstr "بدأ خادم بيجل؟"
+msgstr "استعِد الموضع السابق للمؤشّر"
 
 #: ../src/atomix-ui.xml.h:6
 #, fuzzy
 msgid "Set preferences"
-msgstr "اضبط خصائص لوحة مفاتيحك"
+msgstr "تفضيلات أداة الكلام"
 
 #: ../src/atomix-ui.xml.h:7
 #, fuzzy
 msgid "Skip _level"
-msgstr "مستوى واحد"
+msgstr "تخطّي الكل"
 
 #: ../src/atomix-ui.xml.h:8
 #, fuzzy
 msgid "Skip the current level"
-msgstr "اضبط مستوى التكبير في المشهد الحالي"
+msgstr "تخطى المسار الحالي"
 
 #: ../src/atomix-ui.xml.h:9
 #, fuzzy
 msgid "Start a new game"
-msgstr "بدء لعبةٍ جديدة"
+msgstr "ابدأ على صفحة جديدة"
 
 #: ../src/atomix-ui.xml.h:10
 #, fuzzy
 msgid "Undo the last move"
-msgstr "تراجع عن الحركة الأخيرة"
+msgstr "أعِد النقلة اﻷخيرة"
 
 #: ../src/atomix-ui.xml.h:11
 #, fuzzy
 msgid "View highscores"
-msgstr "وضعية _ العرض"
+msgstr "اعرض كأيقونات"
 
 #: ../src/atomix-ui.xml.h:12
 #, fuzzy
 msgid "_Continue game"
-msgstr "اختر لعبة"
+msgstr "_مواصلة"
 
 #: ../src/atomix-ui.xml.h:13
 #, fuzzy
 msgid "_End Game"
-msgstr "إ_نهاء اللعبة الحالية"
+msgstr "أ_نهِ اللعبة"
 
 #: ../src/atomix-ui.xml.h:14
-#, fuzzy
 msgid "_Game"
 msgstr "_لعبة"
 
@@ -173,36 +188,35 @@ msgstr "_لعبة"
 #: ../src/atomix-ui.xml.h:20
 #, fuzzy
 msgid "_Help"
-msgstr "م_ساعدة"
+msgstr "مساعدة"
 
 #: ../src/atomix-ui.xml.h:21
-#, fuzzy
 msgid "_New Game"
 msgstr "_لعبة جديدة"
 
 #: ../src/atomix-ui.xml.h:22
-#, fuzzy
 msgid "_Pause game"
-msgstr "إيقاف اللعبة"
+msgstr "إي_قاف اللعبة"
 
 #: ../src/atomix-ui.xml.h:23
 #, fuzzy
 msgid "_Preferences ..."
-msgstr "الت_فضيلات"
+msgstr "تفضيلات..."
 
 #: ../src/atomix-ui.xml.h:24
 #, fuzzy
 msgid "_Scores ..."
-msgstr "النتائج"
+msgstr "ال_نتائج..."
 
 #: ../src/atomix-ui.xml.h:25
 #, fuzzy
 msgid "_Undo move"
-msgstr "_تراجع عن الحركة الأخيرة"
+msgstr "تراجع"
 
 #: ../src/level-manager.c:174
+#, fuzzy
 msgid "Couldn't find level sequence description."
-msgstr ""
+msgstr "تعذّر وضع وصف."
 
 #: ../src/level-manager.c:188
 #, fuzzy
@@ -218,79 +232,80 @@ msgstr "وجد %d مستخدم فى %s"
 msgid "You have not achieved any scores yet. Play a little before coming back!"
 msgstr ""
 
-#: ../src/main.c:173
+#: ../src/main.c:174
+#, fuzzy
 msgid "A puzzle game about atoms and molecules"
-msgstr ""
+msgstr "تعلم القواسم والمضاعفات."
 
-#: ../src/main.c:177
+#: ../src/main.c:178
 #, fuzzy
 msgid "translator-credits"
-msgstr "Yousef Raffah يوسف رفه (yousef@raffah.com)"
+msgstr "المترجمون:"
 
-#: ../src/main.c:488
-#: ../atomix.desktop.in.h:1
+#: ../src/main.c:489 ../atomix.desktop.in.h:1
+#, fuzzy
 msgid "Atomix"
-msgstr ""
+msgstr "أوموري"
 
-#: ../src/main.c:499
+#: ../src/main.c:500
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr ""
 
-#: ../src/main.c:509
+#: ../src/main.c:510
+#, fuzzy
 msgid "Couldn't find at least one level."
-msgstr ""
+msgstr "لم أستطع العثور أو تحميل الملف "
 
-#: ../src/main.c:514
+#: ../src/main.c:515
 #, fuzzy
 msgid "Do you want to finish the game?"
-msgstr "هل تريد حذف <b>%s</b> نهائيّا؟"
+msgstr "أترغب بإعادة تحميل لملف؟"
 
 #. create statistics frame
-#: ../src/main.c:728
+#: ../src/main.c:729
 #, fuzzy
 msgid "Statistics"
-msgstr "الإحصائيات"
+msgstr "إح_صائيّات"
 
-#: ../src/main.c:734
-#, fuzzy
+#: ../src/main.c:735
 msgid "Level:"
 msgstr "المستوى:"
 
-#: ../src/main.c:735
-msgid "Molecule:"
-msgstr ""
-
 #: ../src/main.c:736
-msgid "Formula:"
-msgstr ""
+#, fuzzy
+msgid "Molecule:"
+msgstr "وِحدة"
 
 #: ../src/main.c:737
 #, fuzzy
+msgid "Formula:"
+msgstr "معادلات"
+
+#: ../src/main.c:738
 msgid "Score:"
 msgstr "النّتيجة:"
 
-#: ../src/main.c:738
-#, fuzzy
+#: ../src/main.c:739
 msgid "Time:"
 msgstr "الوقت:"
 
-#: ../src/main.c:778
+#: ../src/main.c:779
 #, fuzzy, c-format
 msgid "Couldn't find file: %s"
-msgstr "لا يوجد ملف البكسمب '%s'"
+msgstr "تعذّر توقيع لملف: %s"
 
 #: ../src/theme-manager.c:135
 #, fuzzy
 msgid "No themes found."
-msgstr "لم يُعثر على أي جهاز"
+msgstr "لم يُعثر على أي عنصر"
 
 #: ../src/theme-manager.c:193
 #, fuzzy, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "وجد %d مستخدم فى %s"
+msgstr "تعذّر إعادة تسمية '%s': %s"
 
 #: ../atomix.desktop.in.h:2
 #, fuzzy
 msgid "Molecule puzzle game"
-msgstr "بدء لعبةٍ جديدة"
+msgstr "لغز التانغرام"
 
