@@ -1,0 +1,265 @@
+# Occitan translation of atomix.
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the atomix package.
+#
+# Yannig MARCHEGAY (yannig@marchegay.org). 2007
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix 2.14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-04-25 21:27+0200\n"
+"PO-Revision-Date: 2007-04-18 09:30+0200\n"
+"Last-Translator: Yannig MARCHEGAY <yannig@marchegay.org>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr ""
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr ""
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr ""
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr ""
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr ""
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr ""
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr ""
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr ""
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr ""
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr ""
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr ""
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr ""
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr ""
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr ""
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr ""
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr ""
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr ""
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr ""
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Aiga"
+
+#: ../src/atomix-ui.xml.h:1
+msgid "Continue paused game"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:2
+msgid "End a game"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:3
+msgid "Pause the running game"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:4
+msgid "Reset level"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:5
+msgid "Restores start situation"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:6
+msgid "Set preferences"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:7
+msgid "Skip _level"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:8
+msgid "Skip the current level"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:9
+msgid "Start a new game"
+msgstr "Començar una partida nova"
+
+#: ../src/atomix-ui.xml.h:10
+msgid "Undo the last move"
+msgstr "Anullar lo darrièra desplaçament"
+
+#: ../src/atomix-ui.xml.h:11
+msgid "View highscores"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:12
+msgid "_Continue game"
+msgstr "_Contunhar lo jòc"
+
+#: ../src/atomix-ui.xml.h:13
+msgid "_End Game"
+msgstr "_Fin del jòc"
+
+#: ../src/atomix-ui.xml.h:14
+msgid "_Game"
+msgstr "_Jòc"
+
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
+msgid "_Help"
+msgstr "_Ajuda"
+
+#: ../src/atomix-ui.xml.h:21
+msgid "_New Game"
+msgstr "_Jòc nòu"
+
+#: ../src/atomix-ui.xml.h:22
+msgid "_Pause game"
+msgstr ""
+
+#: ../src/atomix-ui.xml.h:23
+msgid "_Preferences ..."
+msgstr "_Preferéncias..."
+
+#: ../src/atomix-ui.xml.h:24
+msgid "_Scores ..."
+msgstr "_Marcas..."
+
+#: ../src/atomix-ui.xml.h:25
+msgid "_Undo move"
+msgstr "_Anullar lo desplaçament"
+
+#: ../src/level-manager.c:174
+msgid "Couldn't find level sequence description."
+msgstr ""
+
+#: ../src/level-manager.c:188
+msgid "No level found."
+msgstr ""
+
+#: ../src/level-manager.c:284
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr ""
+
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr ""
+
+#: ../src/main.c:174
+msgid "A puzzle game about atoms and molecules"
+msgstr ""
+
+#: ../src/main.c:178
+msgid "translator-credits"
+msgstr ""
+"La còla occitana de revirada d'Ubuntu, 2006 - ubuntu-l10n-oci@lists.ubuntu."
+"com"
+
+#: ../src/main.c:489 ../atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
+
+#: ../src/main.c:500
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr ""
+
+#: ../src/main.c:510
+msgid "Couldn't find at least one level."
+msgstr ""
+
+#: ../src/main.c:515
+msgid "Do you want to finish the game?"
+msgstr ""
+
+#. create statistics frame
+#: ../src/main.c:729
+msgid "Statistics"
+msgstr "Estadisticas"
+
+#: ../src/main.c:735
+msgid "Level:"
+msgstr "Nivèl :"
+
+#: ../src/main.c:736
+msgid "Molecule:"
+msgstr ""
+
+#: ../src/main.c:737
+msgid "Formula:"
+msgstr ""
+
+#: ../src/main.c:738
+msgid "Score:"
+msgstr "Marca :"
+
+#: ../src/main.c:739
+msgid "Time:"
+msgstr "Temps :"
+
+#: ../src/main.c:779
+#, c-format
+msgid "Couldn't find file: %s"
+msgstr ""
+
+#: ../src/theme-manager.c:135
+msgid "No themes found."
+msgstr ""
+
+#: ../src/theme-manager.c:193
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr ""
+
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr ""
