@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-05 16:05-0200\n"
+"POT-Creation-Date: 2007-05-19 21:36-0300\n"
 "PO-Revision-Date: 2006-01-05 16:06-0200\n"
 "Last-Translator: Guilherme de S. Pastore <gpastore@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -94,7 +94,7 @@ msgstr "Água"
 
 #: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
-msgstr "_Continuar o jogo pausado"
+msgstr "Continuar o jogo pausado"
 
 #: ../src/atomix-ui.xml.h:2
 msgid "End a game"
@@ -194,58 +194,58 @@ msgstr "Encontrado nível '%s' em %s"
 msgid "You have not achieved any scores yet. Play a little before coming back!"
 msgstr "Você ainda não conseguiu nenhum recorde. Jogue um pouco mais!"
 
-#: ../src/main.c:173
+#: ../src/main.c:174
 msgid "A puzzle game about atoms and molecules"
 msgstr "Um jogo mental sobre átomos e moléculas"
 
-#: ../src/main.c:177
+#: ../src/main.c:178
 msgid "translator-credits"
 msgstr ""
 "Estêvão Samuel Procópio <tevaum@ig.com.br>\n"
 "Guilherme de S. Pastore <gpastore@gnome.org>"
 
-#: ../src/main.c:488 ../atomix.desktop.in.h:1
+#: ../src/main.c:489 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:499
+#: ../src/main.c:500
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Parabéns! Você completou todos os níveis do Atomix."
 
-#: ../src/main.c:509
+#: ../src/main.c:510
 msgid "Couldn't find at least one level."
 msgstr "Não foi possível encontrar pelo menos um nível."
 
-#: ../src/main.c:514
+#: ../src/main.c:515
 msgid "Do you want to finish the game?"
 msgstr "Você deseja terminar o jogo?"
 
 #. create statistics frame
-#: ../src/main.c:728
+#: ../src/main.c:729
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: ../src/main.c:734
+#: ../src/main.c:735
 msgid "Level:"
 msgstr "Nível:"
 
-#: ../src/main.c:735
+#: ../src/main.c:736
 msgid "Molecule:"
 msgstr "Molécula:"
 
-#: ../src/main.c:736
+#: ../src/main.c:737
 msgid "Formula:"
 msgstr "Fórmula:"
 
-#: ../src/main.c:737
+#: ../src/main.c:738
 msgid "Score:"
 msgstr "Pontuação:"
 
-#: ../src/main.c:738
+#: ../src/main.c:739
 msgid "Time:"
 msgstr "Tempo:"
 
-#: ../src/main.c:778
+#: ../src/main.c:779
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Não foi possível encontrar o arquivo %s"
