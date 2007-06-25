@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: atomix 2.14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-25 21:27+0200\n"
-"PO-Revision-Date: 2007-05-09 17:41+0200\n"
+"PO-Revision-Date: 2007-06-25 13:41+0200\n"
 "Last-Translator: Yannig MARCHEGAY <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -249,7 +249,7 @@ msgstr "Temps :"
 #: ../src/main.c:779
 #, c-format
 msgid "Couldn't find file: %s"
-msgstr ""
+msgstr "Impossible de trobar lo fichièr : %s"
 
 #: ../src/theme-manager.c:135
 msgid "No themes found."
