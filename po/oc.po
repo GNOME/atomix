@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: atomix 2.14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-25 21:27+0200\n"
-"PO-Revision-Date: 2007-06-25 13:41+0200\n"
+"PO-Revision-Date: 2007-08-19 16:33+0200\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -127,7 +127,7 @@ msgstr ""
 
 #: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
-msgstr "Començar una partida nova"
+msgstr "Començar una partida novèla"
 
 #: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
