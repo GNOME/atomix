@@ -201,9 +201,7 @@ msgstr ""
 
 #: ../src/main.c:178
 msgid "translator-credits"
-msgstr ""
-"La còla occitana de revirada d'Ubuntu, 2006 - ubuntu-l10n-oci@lists.ubuntu."
-"com"
+msgstr "Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>"
 
 #: ../src/main.c:489 ../atomix.desktop.in.h:1
 msgid "Atomix"
