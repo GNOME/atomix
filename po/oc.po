@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: atomix 2.14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-25 21:27+0200\n"
-"PO-Revision-Date: 2007-08-19 16:33+0200\n"
+"PO-Revision-Date: 2007-09-15 12:40+0200\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
-msgstr ""
+msgstr "Acid acetic"
 
 #: ../level/acetone.atomix.xml.h:1
 msgid "Acetone"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: ../level/butanol.atomix.xml.h:1
 msgid "Butanol"
-msgstr ""
+msgstr "Butanol"
 
 #: ../level/cyclobutane.atomix.xml.h:1
 msgid "Cyclobutane"
-msgstr ""
+msgstr "Ciclobutan"
 
 #: ../level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
-msgstr ""
+msgstr "Etanal"
 
 #: ../level/ethane.atomix.xml.h:1
 msgid "Ethane"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../level/ethylene.atomix.xml.h:1
 msgid "Ethylene"
-msgstr ""
+msgstr "Etilèn"
 
 #: ../level/glycerin.atomix.xml.h:1
 msgid "Glycerin"
@@ -115,11 +115,11 @@ msgstr ""
 
 #: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
-msgstr ""
+msgstr "Definir las preferéncias"
 
 #: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
-msgstr ""
+msgstr "Ignorar lo _nivèl"
 
 #: ../src/atomix-ui.xml.h:8
 msgid "Skip the current level"
@@ -184,7 +184,7 @@ msgstr ""
 
 #: ../src/level-manager.c:188
 msgid "No level found."
-msgstr ""
+msgstr "Cap de nivèl trobat."
 
 #: ../src/level-manager.c:284
 #, c-format
@@ -219,7 +219,7 @@ msgstr ""
 
 #: ../src/main.c:515
 msgid "Do you want to finish the game?"
-msgstr ""
+msgstr "Volètz acabar lo jòc ?"
 
 #. create statistics frame
 #: ../src/main.c:729
@@ -236,7 +236,7 @@ msgstr ""
 
 #: ../src/main.c:737
 msgid "Formula:"
-msgstr ""
+msgstr "Formula :"
 
 #: ../src/main.c:738
 msgid "Score:"
