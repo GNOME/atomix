@@ -1,17 +1,17 @@
 # Hungarian translation of atomix.
-# Copyright (C) 2002-2004, 2006 Free Software Foundation, Inc.
+# Copyright (C) 2002-2004, 2006, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the atomix package.
 #
 # Andras Timar <timar@gnome.hu>, 2002.
 # Laszlo Dvornik <dvornikl@mailbox.hu>, 2004.
 # Gabor Kelemen <kg0021@stud.unideb.hu>, 2004.
-# Gabor Kelemen <kelemeng@gnome.hu>, 2006.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-17 00:45+0100\n"
-"PO-Revision-Date: 2006-11-17 13:50+0100\n"
+"POT-Creation-Date: 2007-01-02 02:08+0000\n"
+"PO-Revision-Date: 2007-11-01 11:52+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
@@ -192,7 +192,7 @@ msgstr "Nincsenek szintek."
 #: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "'%s' szint található ebben: %s"
+msgstr "\"%s\" szint megtalálható ebben: %s"
 
 #: ../src/main.c:126
 msgid "You have not achieved any scores yet. Play a little before coming back!"
@@ -265,9 +265,9 @@ msgstr "Nincs téma."
 #: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "'%s' téma található ebben: %s"
+msgstr "\"%s\" téma megtalálható ebben: %s"
 
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
-msgstr "Molekula kirakós játék"
+msgstr "Molekulakirakós játék"
 
