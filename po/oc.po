@@ -1,21 +1,24 @@
+# translation of oc.po to Occitan
 # Occitan translation of atomix.
 # Copyright (C) 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the atomix package.
 #
 # Yannig MARCHEGAY (yannig@marchegay.org). 2007
-# 
+#
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: atomix 2.14.0\n"
+"Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-25 21:27+0200\n"
-"PO-Revision-Date: 2007-09-15 12:40+0200\n"
-"Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
-"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"PO-Revision-Date: 2007-11-20 14:29+0100\n"
+"Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
+"Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);"
+"Plural-Forms: nplurals=2; plural=(n > 1);X-Generator: KBabel 1.11.4\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
@@ -127,7 +130,7 @@ msgstr ""
 
 #: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
-msgstr "Començar una partida novèla"
+msgstr "Començar una partida nova"
 
 #: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
@@ -201,7 +204,7 @@ msgstr ""
 
 #: ../src/main.c:178
 msgid "translator-credits"
-msgstr "Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>"
+msgstr "Yannig Marchegay (Kokoyaya) <yannig@marchegay.org)"
 
 #: ../src/main.c:489 ../atomix.desktop.in.h:1
 msgid "Atomix"
