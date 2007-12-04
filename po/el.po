@@ -1,227 +1,285 @@
-# Greek translation for atomix.
+# translation of atomix to Greek
 # Copyright (C) 2002 Simos Xenitellis.
+#
 # Simos Xenitellis <simos@hellug.gr>, 2002.
-# 
+# Athanasios Lefteris <alefteris@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: atomix 0.9.3\n"
-"POT-Creation-Date: 2003-12-03 18:47+0100\n"
-"PO-Revision-Date: 2002-02-19 16:49+0000\n"
-"Last-Translator: Simos Xenitellis <simos@hellug.gr>\n"
-"Language-Team: Greek <nls@tux.hellug.gr>\n"
+"Project-Id-Version: el\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-12-03 20:05+0200\n"
+"PO-Revision-Date: 2007-12-03 20:02+0200\n"
+"Last-Translator: Athanasios Lefteris <alefteris@gmail.com>\n"
+"Language-Team: Greek <team@lists.gnome.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Οξικό οξύ"
+
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Ακετόνη"
+
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "Βουτανόλη"
+
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Κυκλοβουτάνιο"
+
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "Διμεθυλαιθέρας"
+
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Αιθανάλη"
+
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Αιθάνιο"
+
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Αιθανόλη"
+
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Αιθυλένιο"
+
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Γλυκερίνη"
+
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Γαλακτικό οξύ"
+
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Μεθανάλη"
+
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Μεθάνιο"
+
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Μεθανόλη"
+
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Προπανάλη"
+
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "Προπυλένιο"
+
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "Πυρράνιο"
+
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Τρανς Βουτυλένιο"
+
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Νερό"
 
 #
-#: src/atomix-ui.xml.in.h:1
+#: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
 msgstr "Συνέχεια σταματημένου παιχνιδιού"
 
 #
-#: src/atomix-ui.xml.in.h:2
-msgid "E_xit"
-msgstr "Έ_ξοδος"
-
-#
-#: src/atomix-ui.xml.in.h:3
+#: ../src/atomix-ui.xml.h:2
 msgid "End a game"
 msgstr "Τερματισμός του παιχνιδιού"
 
-#: src/atomix-ui.xml.in.h:4
-msgid "Exit game"
-msgstr "Έξοδος από το παιχνίδι"
-
 #
-#: src/atomix-ui.xml.in.h:5
+#: ../src/atomix-ui.xml.h:3
 msgid "Pause the running game"
 msgstr "Παύση του παιχνιδιού"
 
 #
-#: src/atomix-ui.xml.in.h:6
+#: ../src/atomix-ui.xml.h:4
 msgid "Reset level"
 msgstr "Επαναρχικοποίηση επιπέδου"
 
-#: src/atomix-ui.xml.in.h:7
+#: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
 msgstr "Επαναφορά αρχικής κατάστασης"
 
-#: src/atomix-ui.xml.in.h:8
+#: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
 msgstr "Ρύθμιση προτιμήσεων"
 
-#: src/atomix-ui.xml.in.h:9
+#: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
-msgstr "Παράκαμψη επι_πέδου:"
+msgstr "Παράκαμψη επι_πέδου"
 
 #
-#: src/atomix-ui.xml.in.h:10
+#: ../src/atomix-ui.xml.h:8
 msgid "Skip the current level"
 msgstr "Παρακάμπτει το τρέχον επίπεδο"
 
 #
-#: src/atomix-ui.xml.in.h:11
+#: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
 msgstr "Εκκίνηση νέου παιχνιδιού"
 
 #
-#: src/atomix-ui.xml.in.h:12
+#: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
 msgstr "Αναίρεση τελευταίας κίνησης"
 
 #
-#: src/atomix-ui.xml.in.h:13
-msgid "View game credits"
-msgstr "Προβολή συνεργατών του παιχνιδιού"
-
-#
-#: src/atomix-ui.xml.in.h:14
+#: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
 msgstr "Προβολή πίνακα βαθμολογίας"
 
-#: src/atomix-ui.xml.in.h:15
-msgid "_About"
-msgstr "_Περί"
-
 #
-#: src/atomix-ui.xml.in.h:16
+#: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
 msgstr "_Συνέχεια παιχνιδιού"
 
 #
-#: src/atomix-ui.xml.in.h:17
-msgid "_Edit"
-msgstr "_Επεξεργασία"
-
-#
-#: src/atomix-ui.xml.in.h:18
+#: ../src/atomix-ui.xml.h:13
 msgid "_End Game"
 msgstr "_Τέλος Παιχνιδιού"
 
 #
-#: src/atomix-ui.xml.in.h:19
+#: ../src/atomix-ui.xml.h:14
 msgid "_Game"
 msgstr "_Παιχνίδι"
 
 #
-#: src/atomix-ui.xml.in.h:20
+#. submenu name="Edit" _label="_Edit">
+#.
+#. <menuitem name="EditPreferences" verb=""/>
+#.
+#. </submenu
+#: ../src/atomix-ui.xml.h:20
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: src/atomix-ui.xml.in.h:21
+#: ../src/atomix-ui.xml.h:21
 msgid "_New Game"
-msgstr "_Νέο Παιχνίδι"
+msgstr "_Νέο παιχνίδι"
 
 #
-#: src/atomix-ui.xml.in.h:22
+#: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
 msgstr "_Παύση παιχνιδιού"
 
 #
-#: src/atomix-ui.xml.in.h:23
+#: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
 msgstr "_Προτιμήσεις ..."
 
 #
-#: src/atomix-ui.xml.in.h:24
+#: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
 msgstr "_Βαθμολογίες ..."
 
 #
-#: src/atomix-ui.xml.in.h:25
+#: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
 msgstr "_Ακύρωση κίνησης"
 
-#: src/level-manager.c:171
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
 msgstr "Δε βρέθηκε περιγραφή ακολουθίας επιπέδου."
 
-#: src/level-manager.c:185
+#: ../src/level-manager.c:188
 msgid "No level found."
 msgstr "Δε βρέθηκαν επίπεδα."
 
-#: src/level-manager.c:286
+#: ../src/level-manager.c:284
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Βρέθηκε επίπεδο '%s' στο: %s"
 
-#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+#: ../src/main.c:126
+msgid "You have not achieved any scores yet. Play a little before coming back!"
+msgstr ""
+"Δεν έχετε επιτύχει κάποια υψηλή βαθμολογία ακόμα. Παίξτε για λίγο, πριν "
+"επιτρέψετε!"
+
+#: ../src/main.c:174
+msgid "A puzzle game about atoms and molecules"
+msgstr "Παιχνίδι σπαζοκεφαλιά με άτομα και μόρια"
+
+#: ../src/main.c:178
+msgid "translator-credits"
+msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME\n"
+"  Σίμος Ξενιτέλλης <simos@gnome.org>\n"
+"\n"
+"Για περισσότερα δείτε http://www.gnome.gr/"
+
+#: ../src/main.c:489 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: src/main.c:145
-msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "Πνευματικά Δικαιώματα (C) 1999-2002 Jens Finke"
-
-#: src/main.c:146
-msgid "A mind game about atoms and molecules."
-msgstr "Παιχνίδι σπαζοκεφαλιά με άτομα και μόρια."
-
 #
-#: src/main.c:456
+#: ../src/main.c:500
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Συγχαρητήρια! Έχετε τερματίσει όλα τα επίπεδα του Atomix."
 
-#: src/main.c:467
+#: ../src/main.c:510
 msgid "Couldn't find at least one level."
 msgstr "Δε μπόρεσε να βρεθεί τουλάχιστον ένα επίπεδο."
 
-#: src/main.c:472
+#: ../src/main.c:515
 msgid "Do you want to finish the game?"
 msgstr "Θέλετε να τερματίσετε το παιχνίδι;"
 
-#: src/main.c:591 src/main.c:597 src/main.c:602
-#, c-format
-msgid "Couldn't create directory: %s"
-msgstr "Aδύνατη η δημιουργία καταλόγου %s"
-
 #. create statistics frame
-#: src/main.c:701
+#: ../src/main.c:729
 msgid "Statistics"
 msgstr "Στατιστικά"
 
-#: src/main.c:707
+#: ../src/main.c:735
 msgid "Level:"
 msgstr "Επίπεδο:"
 
-#: src/main.c:708
+#: ../src/main.c:736
 msgid "Molecule:"
 msgstr "Μόριο:"
 
-#: src/main.c:709
+#: ../src/main.c:737
+msgid "Formula:"
+msgstr "Τύπος:"
+
+#: ../src/main.c:738
 msgid "Score:"
 msgstr "Βαθμολογία:"
 
-#: src/main.c:710
+#: ../src/main.c:739
 msgid "Time:"
 msgstr "Χρόνος:"
 
-#: src/main.c:750
+#: ../src/main.c:779
 #, c-format
 msgid "Couldn't find file: %s"
 msgstr "Αδύνατη η εύρεση του αρχείου: %s"
 
-#: src/theme-manager.c:141
+#: ../src/theme-manager.c:135
 msgid "No themes found."
 msgstr "Δε βρέθηκαν θέματα."
 
-#: src/theme-manager.c:205
+#: ../src/theme-manager.c:193
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Βρέθηκε θέμα '%s' στο: %s"
+msgstr "Βρέθηκε το θέμα '%s' στο: %s"
 
-#: atomix.desktop.in.h:2
-msgid "Molecule mind game"
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
 msgstr "Παιχνίδι σπαζοκεφαλιά μορίων"
-
-#~ msgid "Atomix Splash"
-#~ msgstr "Παφλασμός Atomix"
-
-#~ msgid "Game Paused"
-#~ msgstr "Το Παιχνίδι Σταμάτησε"
-
-#~ msgid "Game Over"
-#~ msgstr "Τέλος Παιγνιδιού"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Παιχνίδι Σπαζοκεφαλιά Μορίων"
