@@ -1,3 +1,8 @@
+2007-12-04  Nikos Charonitakis <nikosx@gmail.com>
+
+	* MAINTAINERS: Added missing Userid which was blocking ChangeLog
+	submmision in /po folder
+
 2007-09-15  Yannig Marchegay <yannig@marchegay.org>
 
         * po/oc.po: Updated Occitan translation2007-01-03  Christian Persch  <chpe@svn.gnome.org>
