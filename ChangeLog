@@ -5,7 +5,9 @@
 
 2007-09-15  Yannig Marchegay <yannig@marchegay.org>
 
-        * po/oc.po: Updated Occitan translation2007-01-03  Christian Persch  <chpe@svn.gnome.org>
+        * po/oc.po: Updated Occitan translation
+	
+2007-01-03  Christian Persch  <chpe@svn.gnome.org>
 
 	R acconfig.h:
 	* configure.in: Fix AC_DEFINE for GETTEXT_PACKAGE.
