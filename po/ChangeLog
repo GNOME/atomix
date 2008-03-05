@@ -1,3 +1,9 @@
+2008-03-05  Inaki Larranaga Murgoitio  <dooteo@euskalgnu.org>
+
+	* LINGUAS: Added " please keep this list sorted alphabetically"
+	* LINGUAS: Added 'eu' (Basque) entry.
+	* eu.po: Add Basque translation.
+
 2007-12-31  Yannig Marchegay <yannig@marchegay.org>
 
 	* oc.po: Updated Occitan translation.
