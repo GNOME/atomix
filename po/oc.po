@@ -10,14 +10,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 15:16+0200\n"
+"POT-Creation-Date: 2008-07-02 08:55+0200\n"
 "PO-Revision-Date: 2008-06-11 11:37+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
@@ -263,4 +263,3 @@ msgstr ""
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr ""
-
