@@ -2,14 +2,14 @@
 # Copyright (C) 2005 Free Software Foundation
 # This file is distributed under the same license as the atomix package.
 # Žygimantas Beručka <zygis@gnome.org>, 2005.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-21 13:26+0200\n"
-"PO-Revision-Date: 2005-12-06 20:24+0200\n"
+"POT-Creation-Date: 2008-07-09 19:24+0300\n"
+"PO-Revision-Date: 2008-07-09 19:24+0300\n"
 "Last-Translator: Žygimantas Beručka <zygis@gnome.org>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -86,7 +86,7 @@ msgstr "Piranas"
 
 #: ../level/transbutylen.atomix.xml.h:1
 msgid "Trans Butylen"
-msgstr "Trans butilenas"
+msgstr "Trans-butilenas"
 
 #: ../level/water.atomix.xml.h:1
 msgid "Water"
@@ -110,7 +110,7 @@ msgstr "Pradėti lygį iš pradžių"
 
 #: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
-msgstr "Atstato pradinę situaciją"
+msgstr "Atkuria pradinę situaciją"
 
 #: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
@@ -130,11 +130,11 @@ msgstr "Pradėti naują žaidimą"
 
 #: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
-msgstr "Atšaukti paskutinį veiksmą"
+msgstr "Atšaukti paskutinį ėjimą"
 
 #: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
-msgstr "Žiūrėti taškus"
+msgstr "Žiūrėti rekordus"
 
 #: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
@@ -146,7 +146,7 @@ msgstr "_Baigti žaidimą"
 
 #: ../src/atomix-ui.xml.h:14
 msgid "_Game"
-msgstr "Ž_aidimas"
+msgstr "_Žaidimas"
 
 #. submenu name="Edit" _label="_Edit">
 #.
@@ -171,11 +171,11 @@ msgstr "N_ustatymai..."
 
 #: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
-msgstr "_Taškai..."
+msgstr "_Rezultatai..."
 
 #: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
-msgstr "_Atšaukti ėjimą"
+msgstr "Atša_ukti ėjimą"
 
 #: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
@@ -217,7 +217,7 @@ msgstr "Nepavyko rasti nė vieno lygio."
 
 #: ../src/main.c:515
 msgid "Do you want to finish the game?"
-msgstr "Ar tikrai nori užbaigti žaidimą?"
+msgstr "Ar tikrai norite užbaigti žaidimą?"
 
 #. create statistics frame
 #: ../src/main.c:729
