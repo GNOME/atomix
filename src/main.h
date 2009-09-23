@@ -20,7 +20,6 @@
 #ifndef _ATOMIX_MAIN_H_
 #define _ATOMIX_MAIN_H_
 
-#include <gnome.h>
 #include <bonobo.h>
 #include "theme-manager.h"
 #include "level-manager.h"

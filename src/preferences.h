@@ -20,8 +20,6 @@
 #ifndef _ATOMIX_PREFERENCES_H_
 #define _ATOMIX_PREFERENCES_H_
 
-#include <gnome.h>
-
 typedef struct _Preferences Preferences;
 
 struct _Preferences

@@ -20,7 +20,7 @@
 #ifndef _ATOMIX_GOAL_VIEW_H_
 #define _ATOMIX_GOAL_VIEW_H_
 
-#include <gnome.h>
+#include <libgnomecanvas/libgnomecanvas.h>
 
 #include "theme.h"
 #include "goal.h"

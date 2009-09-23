@@ -20,7 +20,7 @@
 #ifndef _TILE_H_
 #define _TILE_H_
 
-#include <gnome.h>
+#include <glib-object.h>
 #include <libxml/tree.h>
 
 #define TILE_TYPE        (tile_get_type ())

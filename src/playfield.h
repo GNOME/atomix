@@ -20,7 +20,6 @@
 #ifndef _ATOMIX_PLAY_FIELD_H
 #define _ATOMIX_PLAY_FIELD_H
 
-#include <gnome.h>
 #include <libxml/tree.h>
 #include "tile.h"
 #include "theme.h"

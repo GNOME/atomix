@@ -20,8 +20,8 @@
 #ifndef _ATOMIX_THEME_H_
 #define _ATOMIX_THEME_H_
 
-#include <gnome.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
+#include <gdk/gdk.h>
 #include "tile.h"
 
 

@@ -19,7 +19,6 @@
 #ifndef _ATOMIX_CANVAS_HELPER_H_
 #define _ATOMIX_CANVAS_HELPER_H_
 
-#include <gnome.h>
 #include "theme.h"
 
 void set_background_color (GtkWidget * canvas, GdkColor * color);

@@ -20,9 +20,6 @@
 #ifndef _ATOMIX_LEVEL_H 
 #define _ATOMIX_LEVEL_H 
 
-#include <gnome.h>
-#include "playfield.h"
-
 #define LEVEL_TYPE        (level_get_type ())
 #define LEVEL(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), LEVEL_TYPE, Level))
 #define LEVEL_CLASS(k)    (G_TYPE_CHECK_CLASS_CAST((k), LEVEL_TYPE, LevelClass))

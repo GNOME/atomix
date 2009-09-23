@@ -20,8 +20,6 @@
 #ifndef _ATOMIX_UNDO_H_
 #define _ATOMIX_UNDO_H_
 
-#include <gnome.h>
-
 typedef struct
 {
   GnomeCanvasItem *item;

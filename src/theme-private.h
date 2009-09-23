@@ -20,6 +20,7 @@
 #ifndef _ATOMIX_THEME_PRIVATE_H_
 #define _ATOMIX_THEME_PRIVATE_H_
 
+#include <gdk/gdk.h>
 #include "tile.h"
 
 typedef struct

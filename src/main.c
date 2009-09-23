@@ -19,6 +19,7 @@
 
 #include "config.h"
 
+#include <libgnomeui/gnome-ui-init.h>
 #include <sys/types.h>
 #include <dirent.h>
 #include <sys/stat.h>

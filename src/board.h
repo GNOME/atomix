@@ -20,6 +20,7 @@
 #ifndef _ATOMIX_BOARD_H_
 #define _ATOMIX_BOARD_H_
 
+#include <libgnomecanvas/libgnomecanvas.h>
 #include "theme.h"
 #include "playfield.h"
 #include "goal.h"

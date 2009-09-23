@@ -17,8 +17,9 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#include <gdk/gdkkeysyms.h>
+
 #include "board.h"
-#include <gnome.h>
 #include <math.h>
 #include <unistd.h>
 #include "goal.h"
