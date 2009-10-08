@@ -1,9 +1,9 @@
 # A Slovenian translation file for ATOMIX.
 # Copyright (C) 2002
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the package.
 #
 # Nejc Novak <nejc.novak@guest.arnes.si>, 2002.
-# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2008.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2009.
 #
 msgid ""
 msgstr ""
@@ -12,13 +12,11 @@ msgstr ""
 "POT-Creation-Date: 2007-01-02 02:08+0000\n"
 "PO-Revision-Date: 2008-09-25 20:18+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
-"Language-Team: Slovenian <translation-team-sl@lists.sourceforge.net>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
-"X-Launchpad-Export-Date: 2007-10-05 05:48+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -33,7 +31,7 @@ msgstr "propanon"
 
 #: ../level/butanol.atomix.xml.h:1
 msgid "Butanol"
-msgstr "Butanol"
+msgstr "butanol"
 
 #: ../level/cyclobutane.atomix.xml.h:1
 msgid "Cyclobutane"
@@ -101,7 +99,7 @@ msgstr "voda"
 
 #: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
-msgstr "Nadaljuj zaustavljeno igro"
+msgstr "Nadaljuj z igro"
 
 #: ../src/atomix-ui.xml.h:2
 msgid "End a game"
@@ -109,7 +107,7 @@ msgstr "Končaj igro"
 
 #: ../src/atomix-ui.xml.h:3
 msgid "Pause the running game"
-msgstr "Zaustavi trenutno igro"
+msgstr "Premor igranja"
 
 #: ../src/atomix-ui.xml.h:4
 msgid "Reset level"
@@ -117,7 +115,7 @@ msgstr "Ponastavi raven"
 
 #: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
-msgstr "Vrne na začetni položaj"
+msgstr "Povrne na začetno postavitev"
 
 #: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
@@ -133,7 +131,7 @@ msgstr "Preskoči trenutno raven"
 
 #: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
-msgstr "Začni novo igro"
+msgstr "Nova igra"
 
 #: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
@@ -170,7 +168,7 @@ msgstr "_Nova igra"
 
 #: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
-msgstr "Zaustavi igro"
+msgstr "_Premor igre"
 
 #: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
@@ -199,7 +197,7 @@ msgstr "Najdena raven '%s' v: %s"
 
 #: ../src/main.c:126
 msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr "Niste še dosegli rezultata, ki bi bil vpisan. Najprej igrajte igro."
+msgstr "Rezultata, ki bi bil vpisan, še niste dosegli. Najprej igrajte igro."
 
 #: ../src/main.c:173
 msgid "A puzzle game about atoms and molecules"
@@ -207,7 +205,7 @@ msgstr "Miselna igra z atomi in molekulami"
 
 #: ../src/main.c:177
 msgid "translator-credits"
-msgstr "Nejc Novak <nejc.novak@guest.arnes.si>Matej Urbančič <mateju@svn.gnome.org>"
+msgstr "Nejc Novak <nejc.novak@guest.arnes.si>\nMatej Urbančič <mateju@svn.gnome.org>"
 
 #: ../src/main.c:488
 #: ../atomix.desktop.in.h:1
@@ -216,7 +214,7 @@ msgstr "Atomix"
 
 #: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Čestitke! Končali ste vse stopnje igre Atomix."
+msgstr "Čestitke! Končali ste vse ravni igre Atomix."
 
 #: ../src/main.c:509
 msgid "Couldn't find at least one level."
@@ -274,21 +272,20 @@ msgstr "Miselna molekulska igra"
 #~ msgid "Exit game"
 #~ msgstr "Zapusti igro"
 #~ msgid "View game credits"
-#~ msgstr "O igri"
+#~ msgstr "Podrobnosti o igri"
 #~ msgid "_About"
 #~ msgstr "O igri"
 #~ msgid "_Edit"
 #~ msgstr "Ur_edi"
 #~ msgid "Copyright (C) 1999-2002 Jens Finke"
-#~ msgstr "Pravice pridržane (C) 1999-2002 Jens Finke"
+#~ msgstr "Avtorske pravice (C) 1999-2002 Jens Finke"
 #~ msgid "Couldn't create directory: %s"
-#~ msgstr "Ne morem ustvariti imenika: %s"
+#~ msgstr "Ni mogoče ustvariti mape: %s"
 #~ msgid "Game Paused"
-#~ msgstr "Igra zaustavljena"
+#~ msgstr "Premor igre"
 #~ msgid "Game Over"
 #~ msgstr "Konec igre"
 #~ msgid "Atomix - Molecule Mind Game"
 #~ msgstr "Atomix - Molekulska miselna igra"
 #~ msgid "Atomix Splash"
 #~ msgstr "Atomix Splash"
-
