@@ -19,6 +19,8 @@
 
 #include "config.h"
 
+#include <libgnome/gnome-score.h>
+#include <libgnomeui/gnome-scores.h>
 #include <libgnomeui/gnome-ui-init.h>
 #include <sys/types.h>
 #include <dirent.h>

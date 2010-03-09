@@ -19,6 +19,8 @@
 
 #include "tile.h"
 
+#include <string.h>
+
 #define GPOINTER_TO_QUARK(p)  ((GQuark) (p))
 #define GQUARK_TO_POINTER(p)  ((gpointer) (p))
 

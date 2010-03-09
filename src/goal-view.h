@@ -29,6 +29,6 @@ void goal_view_init (Theme * theme, GnomeCanvas * canvas);
 
 void goal_view_render (Goal * goal);
 
-void goal_view_clear ();
+void goal_view_clear (void);
 
 #endif /* _ATOMIX_GOAL_VIEW_H_ */

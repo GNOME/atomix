@@ -110,7 +110,7 @@ static void render_view (Goal *goal)
   g_object_unref (pf);
 }
 
-void goal_view_clear ()
+void goal_view_clear (void)
 {
   if (item_group)
     gtk_object_destroy (GTK_OBJECT (item_group));

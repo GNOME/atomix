@@ -18,6 +18,8 @@
  */
 #include "playfield.h"
 
+#include <string.h>
+
 Tile *get_tile (PlayField *pf, gint row, gint col);
 void set_tile (PlayField *pf, gint row, gint col, Tile *tile);
 static void read_tile (PlayField *pf, guint row, guint col, xmlNodePtr node);
