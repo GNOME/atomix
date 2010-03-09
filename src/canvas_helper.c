@@ -23,7 +23,7 @@
 void set_background_color (GtkWidget *canvas, GdkColor *color)
 {
   /* try to alloc color */
-  if (gdk_color_alloc (gdk_colormap_get_system (), color))
+  if (gdk_colormap_alloc_color (gdk_colormap_get_system (), color, FALSE, TRUE))
     {
       GtkStyle *style;
       style = gtk_style_copy (gtk_widget_get_style (GTK_WIDGET (canvas)));

@@ -495,7 +495,7 @@ gboolean board_undo_move ()
   anim_data->dest_col = move->src_col;
   selector_data->sel_item = move->item;
 
-  anim_data->timeout_id = gtk_timeout_add (ANIM_TIMEOUT,
+  anim_data->timeout_id = g_timeout_add (ANIM_TIMEOUT,
 					   move_item_anim, anim_data);
   g_free (move);
 
@@ -863,7 +863,7 @@ void move_item (GnomeCanvasItem *item, ItemDirection direc)
       anim_data->dest_row = dest_row;
       anim_data->dest_col = dest_col;
 
-      anim_data->timeout_id = gtk_timeout_add (ANIM_TIMEOUT, move_item_anim,
+      anim_data->timeout_id = g_timeout_add (ANIM_TIMEOUT, move_item_anim,
 					       anim_data);
     }
 }
@@ -918,7 +918,7 @@ static void selector_move_to (SelectorData *data, guint row, guint col)
   g_return_if_fail (data != NULL);
 
   if (data->arrow_show_timeout > -1)
-    gtk_timeout_remove (data->arrow_show_timeout);
+    g_source_remove (data->arrow_show_timeout);
 
   data->arrow_show_timeout = -1;
 
@@ -953,7 +953,7 @@ static void selector_unselect (SelectorData *data)
 static void selector_arrows_hide (SelectorData *data)
 {
   if (data->arrow_show_timeout > -1)
-    gtk_timeout_remove (data->arrow_show_timeout);
+    g_source_remove (data->arrow_show_timeout);
   data->arrow_show_timeout = -1;
   gnome_canvas_item_hide (GNOME_CANVAS_ITEM (data->arrows));
 }
@@ -1061,10 +1061,10 @@ static void selector_arrows_show (SelectorData *data)
   else
     {
       if (data->arrow_show_timeout > -1)
-	gtk_timeout_remove (data->arrow_show_timeout);
+	g_source_remove (data->arrow_show_timeout);
 
       data->arrow_show_timeout =
-	gtk_timeout_add (800, (GtkFunction) show_arrow_group, data);
+	g_timeout_add (800, (GtkFunction) show_arrow_group, data);
     }
 }
 

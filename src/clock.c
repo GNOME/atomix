@@ -65,7 +65,7 @@ static void clock_class_init (ClockClass *klass)
   GtkObjectClass *object_class = (GtkObjectClass *) klass;
 
   object_class->destroy = clock_destroy;
-  parent_class = gtk_type_class (gtk_label_get_type ());
+  parent_class = g_type_class_peek (gtk_label_get_type ());
 }
 
 static void clock_init (Clock *clock)
@@ -146,7 +146,7 @@ void clock_start (Clock *clock)
     return;
 
   clock_set_seconds (clock, clock->stopped);
-  clock->timer_id = gtk_timeout_add (1000 * clock->update_interval,
+  clock->timer_id = g_timeout_add (1000 * clock->update_interval,
 				     clock_timer_callback, clock);
 }
 
@@ -159,6 +159,6 @@ void clock_stop (Clock *clock)
 
   clock->stopped = time (NULL) - clock->seconds;
 
-  gtk_timeout_remove (clock->timer_id);
+  g_source_remove (clock->timer_id);
   clock->timer_id = -1;
 }
