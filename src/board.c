@@ -142,6 +142,7 @@ static void create_background_floor (void)
   GnomeCanvasItem *item;
   int ca_width, ca_height;
   int width, height;
+  GtkAllocation allocation;
 
   quark = g_quark_from_static_string ("floor");
   theme_get_tile_size (board_theme, &tile_width, &tile_height);
@@ -171,8 +172,9 @@ static void create_background_floor (void)
   g_object_unref (pixbuf);
 
   /* center the whole thing */
-  ca_width = GTK_WIDGET (board_canvas)->allocation.width;
-  ca_height = GTK_WIDGET (board_canvas)->allocation.height;
+  gtk_widget_get_allocation (GTK_WIDGET (board_canvas), &allocation);
+  ca_width = allocation.width;
+  ca_height = allocation.height;
 
   width = tile_width * BGR_FLOOR_COLS;
   height = tile_height * BGR_FLOOR_ROWS;
