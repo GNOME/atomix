@@ -19,15 +19,14 @@
 
 #include "config.h"
 
-#include <libgnome/gnome-score.h>
-#include <libgnomeui/gnome-scores.h>
-#include <libgnomeui/gnome-ui-init.h>
 #include <sys/types.h>
 #include <dirent.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <errno.h>
+
+#include "games-runtime.h"
 
 #include "board.h"
 #include "playfield.h"
@@ -65,95 +64,85 @@ static void update_statistics (void);
 static void view_congratulations (void);
 static void calculate_score (void);
 static void log_score (void);
+static void show_scores (gint);
 
 /* ===============================================================
       
              Menu callback  functions 
 
 -------------------------------------------------------------- */
-static void verb_GameNew_cb (BonoboUIComponent *uic, gpointer user_data,
-			     const char *cname)
+static void verb_GameNew_cb (GtkAction * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_NEW);
 }
 
-static void verb_GameEnd_cb (BonoboUIComponent * uic, gpointer user_data,
-			     const char *cname)
+static void verb_GameEnd_cb (GtkAction * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_END);
 }
 
-static void verb_GameSkip_cb (BonoboUIComponent * uic, gpointer user_data,
-			      const char *cname)
+static void verb_GameSkip_cb (GtkAction * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_SKIP);
 }
 
-static void verb_GameReset_cb (BonoboUIComponent * uic, gpointer user_data,
-			       const char *cname)
+static void verb_GameReset_cb (GtkAction * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_RESTART);
 }
 
-static void verb_GamePause_cb (BonoboUIComponent * uic, gpointer user_data,
-			       const char *cname)
+static void verb_GamePause_cb (GtkAction * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_PAUSE);
 }
 
-static void verb_GameContinue_cb (BonoboUIComponent * uic,
-				  gpointer user_data, const char *cname)
+static void verb_GameContinue_cb (GtkAction * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_CONTINUE);
 }
 
-static void verb_GameUndo_cb (BonoboUIComponent * uic, gpointer user_data,
-			      const char *cname)
+static void verb_GameUndo_cb (GtkAction * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_UNDO);
 }
 
-static void verb_GameScores_cb (BonoboUIComponent * uic, gpointer user_data,
-				const char *cname)
+static void verb_GameScores_cb (GtkAction * action, gpointer data)
 {
-  struct stat scores_file;
-
-  stat (SCORESDIR "/atomix.scores", &scores_file);
-
-  if (scores_file.st_size == 0)
-    {
-      GtkWidget *dlg = gtk_message_dialog_new (GTK_WINDOW (app->mainwin),
-					       GTK_DIALOG_MODAL,
-					       GTK_MESSAGE_INFO,
-					       GTK_BUTTONS_CLOSE,
-					       _("You have not achieved any "
-						 "scores yet. Play a little "
-						 "before coming back!"));
-      gtk_dialog_run (GTK_DIALOG (dlg));
-      gtk_widget_destroy (GTK_WIDGET (dlg));
-
-      return;
-    }
-
-  gnome_scores_display ("Atomix", PACKAGE, NULL, 0);
+  show_scores (0);
 }
 
-static void verb_GameExit_cb (BonoboUIComponent * uic, gpointer user_data,
-			      const char *cname)
+static void
+show_scores (gint pos)
+{
+  static GtkWidget *dialog;
+
+  if (dialog == NULL) {
+    dialog = games_scores_dialog_new (GTK_WINDOW (app->mainwin),
+                                      app->highscores, _("Atomix"));
+  }
+
+  if (pos > 0) {
+    games_scores_dialog_set_hilight (GAMES_SCORES_DIALOG (dialog), pos);
+  }
+
+  gtk_window_present (GTK_WINDOW (dialog));
+  gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_widget_hide (dialog);
+}
+
+static void verb_GameExit_cb (GtkAction * action, gpointer data)
 {
   atomix_exit ();
 }
 
-static void verb_EditPreferences_cb (BonoboUIComponent * uic,
-				     gpointer user_data, const char *cname)
+static void verb_EditPreferences_cb (GtkAction * action, gpointer data)
 {
 #if 0
   preferences_show_dialog ();
 #endif
 }
 
-static void verb_HelpAbout_cb (BonoboUIComponent *uic, gpointer user_data,
-			       const char *cname)
+static void verb_HelpAbout_cb (GtkAction * action, gpointer data)
 {
   GtkWidget *dlg;
 
@@ -409,7 +398,6 @@ static void atomix_exit (void)
     g_object_unref (app->tm);
 
   /* quit application */
-  bonobo_object_unref (BONOBO_OBJECT (app->ui_component));
   gtk_widget_destroy (app->mainwin);
 
   gtk_main_quit ();
@@ -483,13 +471,15 @@ static void calculate_score (void)
 
 static void log_score (void)
 {
-  gint position;
+  int pos;
+  GamesScoreValue hiscore;
 
   if (app->score == 0)
     return;
 
-  position = gnome_score_log (app->score, NULL, TRUE);
-  gnome_scores_display (_("Atomix"), PACKAGE, NULL, position);
+  hiscore.plain = app->score;
+  pos = games_scores_add_score (app->highscores, hiscore);
+  show_scores (pos);
 }
 
 static void view_congratulations (void)
@@ -579,7 +569,6 @@ static const CmdEnable not_running[] =
     { "GameUndo",     FALSE },
     { "GamePause",    FALSE },
     { "GameContinue", FALSE },
-    { "EditPreferences", TRUE },
     { NULL, FALSE }
   };
 
@@ -592,7 +581,6 @@ static const CmdEnable running_unmoved[] =
     { "GameUndo",     FALSE },
     { "GamePause",    TRUE  },
     { "GameContinue", FALSE },
-    { "EditPreferences", TRUE },
     { NULL, FALSE }
 };
 
@@ -605,7 +593,6 @@ static const CmdEnable running[] =
     { "GameUndo",     TRUE  },
     { "GamePause",    TRUE  },
     { "GameContinue", FALSE },
-    { "EditPreferences", TRUE },
     { NULL, FALSE }
 };
 
@@ -618,7 +605,6 @@ static const CmdEnable paused[] =
     { "GameUndo",     FALSE },
     { "GamePause",    FALSE },
     { "GameContinue", TRUE  },
-    { "EditPreferences", TRUE },
     { NULL, FALSE }
 };
 
@@ -632,12 +618,13 @@ void update_menu_item_state (void)
   gchar *path;
   gint i;
   const CmdEnable *cmd_list = state_sensitivity[app->state];
+  GtkWidget *widget;
 
   for (i = 0; cmd_list[i].cmd != NULL; i++)
     {
-      path = g_strconcat ("/commands/", cmd_list[i].cmd, NULL);
-      bonobo_ui_component_set_prop (app->ui_component, path, "sensitive",
-				    cmd_list[i].enabled ? "1" : "0", NULL);
+      path = g_strconcat ("/MainMenu/GameMenu/", cmd_list[i].cmd, NULL);
+      widget = gtk_ui_manager_get_widget (app->ui_manager, path);
+      gtk_widget_set_sensitive (widget, cmd_list[i].enabled);
       g_free (path);
     }
 }
@@ -647,24 +634,6 @@ void update_menu_item_state (void)
              GUI creation  functions 
 
 -------------------------------------------------------------- */
-static BonoboUIVerb verbs[] =
-  {
-    BONOBO_UI_VERB ("GameNew", verb_GameNew_cb),
-    BONOBO_UI_VERB ("GameEnd", verb_GameEnd_cb),
-    BONOBO_UI_VERB ("GameSkip", verb_GameSkip_cb),
-    BONOBO_UI_VERB ("GameReset", verb_GameReset_cb),
-    BONOBO_UI_VERB ("GameUndo", verb_GameUndo_cb),
-    BONOBO_UI_VERB ("GamePause", verb_GamePause_cb),
-    BONOBO_UI_VERB ("GameContinue", verb_GameContinue_cb),
-    BONOBO_UI_VERB ("GameScores", verb_GameScores_cb),
-    BONOBO_UI_VERB ("GameExit", verb_GameExit_cb),
-    BONOBO_UI_VERB ("EditPreferences", verb_EditPreferences_cb),
-#if 0
-    BONOBO_UI_VERB ("HelpManual", verb_HelpManual_cb),
-#endif
-    BONOBO_UI_VERB ("HelpAbout", verb_HelpAbout_cb), BONOBO_UI_VERB_END
-  };
-
 static GtkWidget *create_canvas_widget (GtkWidget **canvas)
 {
   GtkWidget *frame;
@@ -752,74 +721,125 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
   return hbox;
 }
 
-static AtomixApp *create_gui (GnomeProgram *prog)
+static AtomixApp *create_gui (void)
 {
   AtomixApp *app;
-  gchar *ui_file = NULL;
-
+  GtkAccelGroup *accel_group;
+  GtkActionGroup *action_group;
+  GtkWidget *vbox;
+  GtkWidget *menubar;
   GtkWidget *content;
 
+  static const GtkActionEntry actions[] = {
+    {"GameMenu", NULL, N_("_Game")},
+    {"HelpMenu", NULL, N_("_Help")},
+    {"GameNew", NULL, N_("New Game"), NULL, NULL, G_CALLBACK (verb_GameNew_cb)},
+    {"GameEnd", NULL, N_("End Game"), NULL, NULL, G_CALLBACK (verb_GameEnd_cb)},
+    {"GameSkip", NULL, N_("Skip Level"), NULL, NULL, G_CALLBACK (verb_GameSkip_cb)},
+    {"GameReset", NULL, N_("Reset Level"), NULL, NULL, G_CALLBACK (verb_GameReset_cb)},
+    {"GameUndo", "gtk-undo", NULL, NULL, NULL, G_CALLBACK (verb_GameUndo_cb)},
+    {"GamePause", NULL, N_("_Pause Game"), NULL, NULL, G_CALLBACK (verb_GamePause_cb)},
+    {"GameContinue", NULL, N_("_Continue Game"), NULL, NULL, G_CALLBACK (verb_GameContinue_cb)},
+    {"GameScores", NULL, N_("_Scores..."), NULL, NULL, G_CALLBACK (verb_GameScores_cb)},
+    {"GameExit", "gtk-quit", NULL, NULL, NULL, G_CALLBACK (verb_GameExit_cb)},
+    {"HelpAbout", NULL, N_("About"), NULL, NULL, G_CALLBACK (verb_HelpAbout_cb)}
+  };
+
+  const char ui_description[] =
+    "<ui>"
+    "  <menubar name='MainMenu'>"
+    "    <menu action='GameMenu'>"
+    "      <menuitem action='GameNew'/>"
+    "      <menuitem action='GameEnd'/>"
+    "      <separator/>"
+    "      <menuitem action='GameSkip'/>"
+    "      <menuitem action='GameReset'/>"
+    "      <menuitem action='GameUndo'/>"
+    "      <menuitem action='GamePause'/>"
+    "      <menuitem action='GameContinue'/>"
+    "      <separator/>"
+    "      <menuitem action='GameScores'/>"
+    "      <separator/>"
+    "      <menuitem action='GameExit'/>"
+    "    </menu>"
+    "    <menu action='HelpMenu'>"
+    "      <menuitem action='HelpAbout'/>"
+    "    </menu>"
+    "  </menubar>"
+    "</ui>";
+
   app = g_new0 (AtomixApp, 1);
-  app->prog = prog;
   app->level = NULL;
 
-  app->mainwin = bonobo_window_new ("atomix", "Atomix");
+  app->mainwin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (app->mainwin), _("Atomix"));
+
   g_signal_connect (G_OBJECT (app->mainwin), "delete_event",
 		    (GCallback) on_app_destroy_event, app);
 
-  app->ui_container =
-    bonobo_ui_engine_get_ui_container (bonobo_window_get_ui_engine
-				       (BONOBO_WINDOW (app->mainwin)));
+  app->ui_manager = gtk_ui_manager_new ();
 
-  app->ui_component = bonobo_ui_component_new ("atomix");
-  bonobo_ui_component_set_container (app->ui_component,
-				     BONOBO_OBJREF (app->ui_container), NULL);
+  action_group = gtk_action_group_new ("MenuActions");
+  gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+  gtk_action_group_add_actions (action_group, actions, G_N_ELEMENTS (actions), NULL);
 
-  /* find xml menu description */
-  ui_file = bonobo_ui_util_get_ui_fname (DATADIR, "atomix-ui.xml");
-  if (ui_file && !g_file_test (ui_file, G_FILE_TEST_EXISTS))
-    {
-      g_error (_("Couldn't find file: %s"), ui_file);
-      return NULL;
-    }
-
-  /* set menus */
-  bonobo_ui_util_set_ui (app->ui_component, "", ui_file, "atomix", NULL);
-  g_free (ui_file);
-
-  bonobo_ui_component_add_verb_list_with_data (app->ui_component, verbs, app);
+  gtk_ui_manager_insert_action_group (app->ui_manager, action_group, 0);
+  gtk_ui_manager_add_ui_from_string (app->ui_manager, ui_description, -1, NULL);
+  accel_group = gtk_ui_manager_get_accel_group (app->ui_manager);
+  gtk_window_add_accel_group (GTK_WINDOW (app->mainwin), accel_group);
 
   /* create window contents */
+  menubar = gtk_ui_manager_get_widget (app->ui_manager, "/MainMenu");
   content = create_mainwin_content (app);
 
   gtk_window_set_default_icon_from_file (g_build_filename (DATADIR,
 							   "pixmaps",
 							   "atomix-icon.png",
 							   NULL),
-					 NULL);
+					 		   NULL);
 
-  gtk_widget_show (GTK_WIDGET (content));
+  vbox = gtk_vbox_new (FALSE, 0);
+  gtk_container_add (GTK_CONTAINER (app->mainwin), vbox);
+  gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (vbox), content, TRUE, TRUE, 0);
 
-  bonobo_window_set_contents (BONOBO_WINDOW (app->mainwin), content);
+  gtk_widget_show_all (GTK_WIDGET (app->mainwin));
 
   return app;
 }
 
 int main (int argc, char *argv[])
 {
-  GnomeProgram *prog;
+  GOptionContext *context;
+  gboolean retval;
+  GError *error = NULL;
 
-  gnome_score_init (PACKAGE);
+  if (!games_runtime_init ("atomix"))
+    return 1;
+
+  context = g_option_context_new (NULL);
+  g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
+  g_option_context_add_group (context, gtk_get_option_group (TRUE));
+
+  retval = g_option_context_parse (context, &argc, &argv, &error);
+  g_option_context_free (context);
+  if (!retval) {
+    g_print ("%s", error->message);
+    g_error_free (error);
+    exit (1);
+  }
+
+  g_set_application_name (_("Atomix"));
 
   bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
-
-  prog = gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
-			     argc, argv, NULL);
-
+  
   /* make a few initalisations here */
-  app = create_gui (prog);
+  app = create_gui ();
+
+  app->highscores = games_scores_new ("Atomix", NULL, 0, NULL, NULL, 0,
+                                       GAMES_SCORES_STYLE_PLAIN_DESCENDING);
 
   game_init ();
 

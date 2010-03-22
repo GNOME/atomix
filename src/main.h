@@ -20,10 +20,15 @@
 #ifndef _ATOMIX_MAIN_H_
 #define _ATOMIX_MAIN_H_
 
-#include <bonobo.h>
+#include <glib.h>
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+#include <libgnomecanvas/libgnomecanvas.h>
 #include "theme-manager.h"
 #include "level-manager.h"
 #include "goal.h"
+#include "games-scores.h"
+#include "games-scores-dialog.h"
 
 typedef enum
 {
@@ -35,10 +40,8 @@ typedef enum
 
 typedef struct
 {
-  GnomeProgram *prog;
   GtkWidget *mainwin;
-  BonoboUIContainer *ui_container;
-  BonoboUIComponent *ui_component;
+  GtkUIManager *ui_manager;
   GtkWidget *ca_matrix;
   GtkWidget *ca_goal;
   GtkWidget *lb_level;
@@ -56,6 +59,7 @@ typedef struct
   Goal *goal;
   gint level_no;
   guint score;
+  GamesScores *highscores;
 } AtomixApp;
 
 void game_level_finished (void);

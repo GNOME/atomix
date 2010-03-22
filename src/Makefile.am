@@ -2,10 +2,10 @@
 scoredir = $(localstatedir)/games
 uidir = $(datadir)/gnome-2.0/ui
 
-INCLUDES = -Wall \
-	-I$(top_srcdir) \
+INCLUDES = -I$(top_srcdir) \
 	$(ATOMIX_CFLAGS) \
 	$(WARN_CFLAGS) \
+	-DPKGDATADIR="\"$(pkgdatadir)\"" \
 	-DDATADIR=\""$(datadir)"\" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DSCORESDIR=\""$(scoredir)"\"
@@ -20,7 +20,17 @@ atomix_SOURCES = \
 	undo.c undo.h \
 	goal.c goal.h \
 	goal-view.c goal-view.h \
-	clock.c clock.h
+	clock.c clock.h \
+	games-debug.c games-debug.h \
+	games-gtk-compat.h \
+	games-profile.c games-profile.h \
+	games-runtime.c games-runtime.h \
+	games-score.c games-score.h \
+	games-scores.c games-scores.h \
+	games-scores-backend.c games-scores-backend.h \
+	games-scores-dialog.c games-scores-dialog.h \
+	games-scores-dialog-private.h \
+	games-show.c games-show.h
 
 atomix_DEPENDENCIES = libatomix.a
 
@@ -60,6 +70,5 @@ level_convert_LDADD = \
 	-L$(top_builddir)/src \
 	$(ATOMIX_LIBS)
 
-ui_DATA = atomix-ui.xml
 EXTRA_DIST = $(ui_DATA)
 
