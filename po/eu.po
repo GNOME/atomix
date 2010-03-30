@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-05 19:20+0100\n"
-"PO-Revision-Date: 2008-03-07 10:33+0100\n"
+"PO-Revision-Date: 2010-03-30 12:00+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -197,7 +197,7 @@ msgstr "Ez duzu punturik lortu oraindik. Jolastu piska bat itzuli aurretik."
 
 #: ../src/main.c:174
 msgid "A puzzle game about atoms and molecules"
-msgstr "Atomo eta molekuei buruzko puzzle-jokoa"
+msgstr "Atomo eta molekulei buruzko puzzle-jokoa"
 
 #: ../src/main.c:178
 msgid "translator-credits"
