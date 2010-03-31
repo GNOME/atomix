@@ -96,8 +96,8 @@ void preferences_show_dialog (void)
 
   pref_xml = glade_xml_new (GLADE_FILE, "dlg_properties", NULL);
   dlg = glade_xml_get_widget (pref_xml, "dlg_properties");
-  gtk_signal_connect (GTK_OBJECT (dlg), "apply",
-		      G_CALLBACK (handle_apply), NULL);
+  g_signal_connect (dlg, "apply",
+                    G_CALLBACK (handle_apply), NULL);
 
   /* get widget */
   radio_keyboard = glade_xml_get_widget (pref_xml, "radio_keyboard");
@@ -140,18 +140,18 @@ void preferences_show_dialog (void)
     }
 
   /* connect widgets with handlers */
-  gtk_signal_connect (GTK_OBJECT (radio_mouse), "toggled",
-		      G_CALLBACK (handle_mouse_ctrl_toggled), dlg);
-  gtk_signal_connect (GTK_OBJECT (radio_keyboard), "toggled",
-		      G_CALLBACK (handle_widget_changed), dlg);
-  gtk_signal_connect (GTK_OBJECT (check_hide_cursor), "toggled",
-		      G_CALLBACK (handle_widget_changed), dlg);
-  gtk_signal_connect (GTK_OBJECT (check_lazy_dragging), "toggled",
-		      G_CALLBACK (handle_widget_changed), dlg);
-  gtk_signal_connect (GTK_OBJECT (check_score_time), "toggled",
-		      G_CALLBACK (handle_global_checkbox_toggled), dlg);
-  gtk_signal_connect (GTK_OBJECT (adjustment), "value-changed",
-		      G_CALLBACK (handle_widget_changed), dlg);
+  g_signal_connect (radio_mouse, "toggled",
+                    G_CALLBACK (handle_mouse_ctrl_toggled), dlg);
+  g_signal_connect (radio_keyboard, "toggled",
+                    G_CALLBACK (handle_widget_changed), dlg);
+  g_signal_connect (check_hide_cursor, "toggled",
+                    G_CALLBACK (handle_widget_changed), dlg);
+  g_signal_connect (check_lazy_dragging, "toggled",
+                    G_CALLBACK (handle_widget_changed), dlg);
+  g_signal_connect (check_score_time, "toggled",
+                    G_CALLBACK (handle_global_checkbox_toggled), dlg);
+  g_signal_connect (adjustment, "value-changed",
+                    G_CALLBACK (handle_widget_changed), dlg);
 
   /* show dialog */
   gtk_widget_show (dlg);
@@ -261,9 +261,11 @@ void handle_global_checkbox_toggled (GtkToggleButton *togglebutton,
 
       gtk_widget_set_sensitive (GTK_WIDGET (frame), FALSE);
 
-      gtk_signal_disconnect_by_func (GTK_OBJECT (togglebutton),
-				     G_CALLBACK
-				     (handle_global_checkbox_toggled), data);
+      g_signal_handlers_disconnect_by_func
+                                 (togglebutton,
+                                  G_CALLBACK (handle_global_checkbox_toggled),
+                                  data);
+
       gtk_toggle_button_set_active (togglebutton,
 				    !gtk_toggle_button_get_active
 				    (togglebutton));

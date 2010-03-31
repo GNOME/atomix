@@ -22,7 +22,6 @@ dnl ================= Requirements =======================
 LIBGTK_REQUIRED=2.12.0
 LIBXML_REQUIRED=2.4.23
 GDK_PIXBUF_REQUIRED=2.0.5
-#LIBGLADE_REQUIRED=2.0.0
 LIBGNOMECANVAS_REQUIRED=2.0.1
 
 dnl ******************************
@@ -30,7 +29,6 @@ dnl pkg-config checks
 dnl ******************************
 
 ATOMIX_MODULES="gtk+-2.0 >= $LIBGTK_REQUIRED libxml-2.0 >= $LIBXML_REQUIRED gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED libgnomecanvas-2.0 >= $LIBGNOMECANVAS_REQUIRED"
-#libglade-2.0 >= $LIBGLADE_REQUIRED
 PKG_CHECK_MODULES(ATOMIX, $ATOMIX_MODULES)
 AC_SUBST(ATOMIX_CFLAGS)
 AC_SUBST(ATOMIX_LIBS)
