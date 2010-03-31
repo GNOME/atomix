@@ -1,20 +1,19 @@
-AC_PREREQ(2.52)
+AC_PREREQ([2.63])
 
-AC_INIT(atomix, 2.14.0, http://bugzilla.gnome.org/enter_bug.cgi?product=atomix)
-AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-bzip2])
+AC_INIT([atomix],[2.14.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=atomix])
+
+AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_SRCDIR([src/board.c])
+AC_CONFIG_MACRO_DIR([m4])
+
+AM_INIT_AUTOMAKE([1.10 foreign no-dist-gzip dist-bzip2])
 
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
-AC_CONFIG_SRCDIR(src/board.c)
-AC_CONFIG_HEADERS([config.h])
-
-AC_ISC_POSIX
+# Check for programs
 AC_PROG_CC
-AM_PROG_CC_STDC
-AC_HEADER_STDC
 AC_PROG_RANLIB
 
-GNOME_COMMON_INIT
 GNOME_COMPILE_WARNINGS([maximum])
 GNOME_MAINTAINER_MODE_DEFINES
 
@@ -35,9 +34,9 @@ AC_SUBST(ATOMIX_LIBS)
 
 dnl *******************************
 dnl Internationalization
-dnl ******************************* 
+dnl *******************************
 
-IT_PROG_INTLTOOL([0.35.0])
+IT_PROG_INTLTOOL([0.40.0])
 
 GETTEXT_PACKAGE=atomix
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"],[Gettext domain])

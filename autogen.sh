@@ -6,7 +6,7 @@ test -z "$srcdir" && srcdir=.
 
 PKG_NAME="Atomix"
 
-(test -f $srcdir/configure.in \
+(test -f $srcdir/configure.ac \
   && test -f $srcdir/ChangeLog \
   && test -f $srcdir/src/level.h) || {
     echo -n "**Error**: Directory "\`$srcdir\'" does not look like the"
@@ -14,9 +14,9 @@ PKG_NAME="Atomix"
     exit 1
 }
 
-
 which gnome-autogen.sh || {
-    echo "You need to install gnome-common from the GNOME SVN"
+    echo "You need to install gnome-common package"
     exit 1
 }
-REQUIRED_AUTOMAKE_VERSION=1.9 USE_GNOME2_MACROS=1 . gnome-autogen.sh
+
+USE_GNOME2_MACROS=1 . gnome-autogen.sh
