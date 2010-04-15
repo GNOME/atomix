@@ -1,16 +1,16 @@
-# A Slovenian translation file for ATOMIX.
+# A Slovenian translation of atomix.
 # Copyright (C) 2002
 # This file is distributed under the same license as the package.
 #
 # Nejc Novak <nejc.novak@guest.arnes.si>, 2002.
-# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2009.
+# Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-02 02:08+0000\n"
-"PO-Revision-Date: 2008-09-25 20:18+0100\n"
+"PO-Revision-Date: 2010-04-15 20:47+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +119,7 @@ msgstr "Povrne na začetno postavitev"
 
 #: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
-msgstr "Določi nastavitve"
+msgstr "Določi možnosti"
 
 #: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
@@ -131,7 +131,7 @@ msgstr "Preskoči trenutno raven"
 
 #: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
-msgstr "Nova igra"
+msgstr "Začni novo igro"
 
 #: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
@@ -139,7 +139,7 @@ msgstr "Razveljavi zadnjo potezo"
 
 #: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
-msgstr "Najboljši razultati"
+msgstr "Najboljši rezultati"
 
 #: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
@@ -147,7 +147,7 @@ msgstr "_Nadaljuj igro"
 
 #: ../src/atomix-ui.xml.h:13
 msgid "_End Game"
-msgstr "Končaj ig_ro"
+msgstr "_Končaj igro"
 
 #: ../src/atomix-ui.xml.h:14
 msgid "_Game"
@@ -172,7 +172,7 @@ msgstr "_Premor igre"
 
 #: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
-msgstr "Nasta_vitve ..."
+msgstr "_Možnosti ..."
 
 #: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
@@ -205,7 +205,9 @@ msgstr "Miselna igra z atomi in molekulami"
 
 #: ../src/main.c:177
 msgid "translator-credits"
-msgstr "Nejc Novak <nejc.novak@guest.arnes.si>\nMatej Urbančič <mateju@svn.gnome.org>"
+msgstr ""
+"Nejc Novak <nejc.novak@guest.arnes.si>\n"
+"Matej Urbančič <mateju@svn.gnome.org>"
 
 #: ../src/main.c:488
 #: ../atomix.desktop.in.h:1
@@ -265,16 +267,16 @@ msgstr "Najdena tema '%s' v: %s"
 
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
-msgstr "Miselna molekulska igra"
+msgstr "Miselna igra z molekulami"
 
 #~ msgid "E_xit"
-#~ msgstr "Iz_hod"
+#~ msgstr "_Končaj"
 #~ msgid "Exit game"
-#~ msgstr "Zapusti igro"
+#~ msgstr "Končaj igro"
 #~ msgid "View game credits"
-#~ msgstr "Podrobnosti o igri"
+#~ msgstr "Zasluge za igro"
 #~ msgid "_About"
-#~ msgstr "O igri"
+#~ msgstr "_O igri"
 #~ msgid "_Edit"
 #~ msgstr "Ur_edi"
 #~ msgid "Copyright (C) 1999-2002 Jens Finke"
@@ -286,6 +288,6 @@ msgstr "Miselna molekulska igra"
 #~ msgid "Game Over"
 #~ msgstr "Konec igre"
 #~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Molekulska miselna igra"
+#~ msgstr "Atomix - miselna igra z molekulami"
 #~ msgid "Atomix Splash"
 #~ msgstr "Atomix Splash"
