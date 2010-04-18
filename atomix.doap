@@ -12,7 +12,7 @@
   <maintainer>
     <foaf:Person>
       <foaf:name>Guilherme de S. Pastore</foaf:name>
-      <foaf:mbox rdf:resource="gpastore@gnome.org" />
+      <foaf:mbox rdf:resource="mailto:gpastore@gnome.org" />
       <gnome:userid>gpastore</gnome:userid>
     </foaf:Person>
   </maintainer>
