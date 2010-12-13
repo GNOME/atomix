@@ -17,10 +17,11 @@ level/propylene.atomix.xml
 level/pyran.atomix.xml
 level/transbutylen.atomix.xml
 level/water.atomix.xml
-src/atomix-ui.xml
 src/board.c
+src/games-runtime.c
+src/games-scores-dialog.c
+src/games-show.c
 src/level-manager.c
 src/main.c
 src/theme-manager.c
 atomix.desktop.in
-
