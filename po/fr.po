@@ -1,17 +1,19 @@
 # French translation of atomix.
-# Copyright (C) 2001-2007 Free Software Foundation, Inc.
+# Copyright (C) 2001-2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the atomix package.
 #
 # Christophe Merlet <christophe@merlet.net>, 2001-2006.
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2006-2007.
+# Claude Paroz <claude@2xlibre.net>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 2.14.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-12 21:56+0100\n"
-"PO-Revision-Date: 2007-02-11 13:10+0100\n"
-"Last-Translator: Jonathan Ernst <jonathan@ernstfamily.ch>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=atomix&component=general\n"
+"POT-Creation-Date: 2010-12-13 20:12+0000\n"
+"PO-Revision-Date: 2010-12-13 21:19+0100\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -93,171 +95,144 @@ msgstr "Trans Butylène"
 msgid "Water"
 msgstr "Eau"
 
-#: ../src/atomix-ui.xml.h:1
-msgid "Continue paused game"
-msgstr "Continuer la partie suspendue"
+#: ../src/games-runtime.c:273
+msgid "Could not show link"
+msgstr "Impossible d'afficher le lien"
 
-#: ../src/atomix-ui.xml.h:2
-msgid "End a game"
-msgstr "Fini un jeu"
+#: ../src/games-scores-dialog.c:113
+msgid "Time"
+msgstr "Date"
 
-#: ../src/atomix-ui.xml.h:3
-msgid "Pause the running game"
-msgstr "Suspendre la partie en cours"
+#. Note that this assumes the default style is plain.
+#: ../src/games-scores-dialog.c:118 ../src/games-scores-dialog.c:545
+msgid "Score"
+msgstr "Score"
 
-#: ../src/atomix-ui.xml.h:4
-msgid "Reset level"
-msgstr "Initialiser le niveau"
+#. Translators: this is for a minutes, seconds time display.
+#: ../src/games-scores-dialog.c:276
+#, c-format
+msgid "%dm %ds"
+msgstr "%dm %ds"
 
-#: ../src/atomix-ui.xml.h:5
-msgid "Restores start situation"
-msgstr "Restore la situation de départ"
+#: ../src/games-scores-dialog.c:437 ../src/main.c:736
+msgid "New Game"
+msgstr "Nouvelle partie"
 
-#: ../src/atomix-ui.xml.h:6
-msgid "Set preferences"
-msgstr "Défini les préférences"
+#: ../src/games-scores-dialog.c:537
+msgid "Name"
+msgstr "Nom"
 
-#: ../src/atomix-ui.xml.h:7
-msgid "Skip _level"
-msgstr "_Passer le niveau"
+#. Empty title shows up as "<unnamed>" on maemo
+#: ../src/games-show.c:151
+msgid "Error"
+msgstr "Erreur"
 
-#: ../src/atomix-ui.xml.h:8
-msgid "Skip the current level"
-msgstr "Saute le niveau en cours"
-
-#: ../src/atomix-ui.xml.h:9
-msgid "Start a new game"
-msgstr "Démarrer un nouveau jeu"
-
-#: ../src/atomix-ui.xml.h:10
-msgid "Undo the last move"
-msgstr "Annule le dernier mouvement"
-
-#: ../src/atomix-ui.xml.h:11
-msgid "View highscores"
-msgstr "Voir les meilleurs scores"
-
-#: ../src/atomix-ui.xml.h:12
-msgid "_Continue game"
-msgstr "_Continuer le jeu"
-
-#: ../src/atomix-ui.xml.h:13
-msgid "_End Game"
-msgstr "_Terminer la partie"
-
-#: ../src/atomix-ui.xml.h:14
-msgid "_Game"
-msgstr "_Jeu"
-
-#. submenu name="Edit" _label="_Edit">
-#.
-#. <menuitem name="EditPreferences" verb=""/>
-#.
-#. </submenu
-#: ../src/atomix-ui.xml.h:20
-msgid "_Help"
-msgstr "Aid_e"
-
-#: ../src/atomix-ui.xml.h:21
-msgid "_New Game"
-msgstr "_Nouveau jeu"
-
-#: ../src/atomix-ui.xml.h:22
-msgid "_Pause game"
-msgstr "_Suspendre le jeu"
-
-#: ../src/atomix-ui.xml.h:23
-msgid "_Preferences ..."
-msgstr "_Préférences..."
-
-#: ../src/atomix-ui.xml.h:24
-msgid "_Scores ..."
-msgstr "_Scores..."
-
-#: ../src/atomix-ui.xml.h:25
-msgid "_Undo move"
-msgstr "_Annuler le mouvement"
-
-#: ../src/level-manager.c:174
+#: ../src/level-manager.c:176
 msgid "Couldn't find level sequence description."
 msgstr "Impossible de trouver le niveau de la description de séquence."
 
-#: ../src/level-manager.c:188
+#: ../src/level-manager.c:190
 msgid "No level found."
 msgstr "Aucun niveau trouvé."
 
-#: ../src/level-manager.c:284
+#: ../src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "A trouvé le niveau « %s » dans : %s"
 
-#: ../src/main.c:126
-msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr ""
-"Vous n'avez pas encore atteint de score. Jouez un petit peu avant de "
-"revenir !"
+#: ../src/main.c:121 ../src/main.c:775 ../src/main.c:832
+#: ../atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
 
-#: ../src/main.c:174
+#: ../src/main.c:166
 msgid "A puzzle game about atoms and molecules"
 msgstr "Un jeu de mémoire sur les atomes et molécules"
 
-#: ../src/main.c:178
+#: ../src/main.c:170
 msgid "translator-credits"
 msgstr ""
 "Christophe Merlet <redfox@redfoxcenter.org>\n"
 "Jonathan Ernst <jonathan@ernstfamily.ch>"
 
-#: ../src/main.c:489 ../atomix.desktop.in.h:1
-msgid "Atomix"
-msgstr "Atomix"
-
-#: ../src/main.c:500
+#: ../src/main.c:493
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Félicitations ! Vous avez fini tous les niveaux d'Atomix."
 
-#: ../src/main.c:510
+#: ../src/main.c:503
 msgid "Couldn't find at least one level."
 msgstr "Impossible de trouver au moins un niveau."
 
-#: ../src/main.c:515
+#: ../src/main.c:508
 msgid "Do you want to finish the game?"
 msgstr "Voulez-vous finir le jeu ?"
 
 #. create statistics frame
-#: ../src/main.c:729
+#: ../src/main.c:701
 msgid "Statistics"
 msgstr "Statistiques"
 
-#: ../src/main.c:735
+#: ../src/main.c:707
 msgid "Level:"
 msgstr "Niveau :"
 
-#: ../src/main.c:736
+#: ../src/main.c:708
 msgid "Molecule:"
 msgstr "Molécule :"
 
-#: ../src/main.c:737
+#: ../src/main.c:709
 msgid "Formula:"
 msgstr "Formule :"
 
-#: ../src/main.c:738
+#: ../src/main.c:710
 msgid "Score:"
 msgstr "Score :"
 
-#: ../src/main.c:739
+#: ../src/main.c:711
 msgid "Time:"
 msgstr "Date :"
 
-#: ../src/main.c:779
-#, c-format
-msgid "Couldn't find file: %s"
-msgstr "Impossible de trouver le fichier : %s"
+#: ../src/main.c:734
+msgid "_Game"
+msgstr "_Jeu"
 
-#: ../src/theme-manager.c:135
+#: ../src/main.c:735
+msgid "_Help"
+msgstr "Aid_e"
+
+#: ../src/main.c:737
+msgid "End Game"
+msgstr "Terminer la partie"
+
+#: ../src/main.c:738
+msgid "Skip Level"
+msgstr "Passer le niveau"
+
+#: ../src/main.c:739
+msgid "Reset Level"
+msgstr "Initialiser le niveau"
+
+#: ../src/main.c:741
+msgid "_Pause Game"
+msgstr "_Suspendre la partie"
+
+#: ../src/main.c:742
+msgid "_Continue Game"
+msgstr "_Continuer la partie"
+
+#: ../src/main.c:743
+msgid "_Scores..."
+msgstr "_Scores..."
+
+#: ../src/main.c:745
+msgid "About"
+msgstr "À propos"
+
+#: ../src/theme-manager.c:136
 msgid "No themes found."
 msgstr "Aucun thème trouvé."
 
-#: ../src/theme-manager.c:193
+#: ../src/theme-manager.c:194
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "A trouvé le thème « %s » dans : %s"
