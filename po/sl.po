@@ -1,18 +1,19 @@
-# A Slovenian translation of atomix.
+# Slovenian translations for atomix.
 # Copyright (C) 2002
-# This file is distributed under the same license as the package.
+# This file is distributed under the same license as the atomix package.
 #
 # Nejc Novak <nejc.novak@guest.arnes.si>, 2002.
 # Matej Urbančič <mateju@svn.gnome.org>, 2007 - 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: atomix\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-02 02:08+0000\n"
-"PO-Revision-Date: 2010-04-15 20:47+0100\n"
+"Project-Id-Version: atomix master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=atomix&component=general\n"
+"POT-Creation-Date: 2010-12-15 17:58+0000\n"
+"PO-Revision-Date: 2010-12-17 20:08+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,186 +98,190 @@ msgstr "trans-buten"
 msgid "Water"
 msgstr "voda"
 
-#: ../src/atomix-ui.xml.h:1
-msgid "Continue paused game"
-msgstr "Nadaljuj z igro"
+#: ../src/games-runtime.c:273
+msgid "Could not show link"
+msgstr "Ni mogoče pokazati povezave"
 
-#: ../src/atomix-ui.xml.h:2
-msgid "End a game"
-msgstr "Končaj igro"
+#: ../src/games-scores-dialog.c:113
+msgid "Time"
+msgstr "Čas"
 
-#: ../src/atomix-ui.xml.h:3
-msgid "Pause the running game"
-msgstr "Premor igranja"
+#. Note that this assumes the default style is plain.
+#: ../src/games-scores-dialog.c:118
+#: ../src/games-scores-dialog.c:545
+msgid "Score"
+msgstr "Rezultat"
 
-#: ../src/atomix-ui.xml.h:4
-msgid "Reset level"
-msgstr "Ponastavi raven"
+#. Translators: this is for a minutes, seconds time display.
+#: ../src/games-scores-dialog.c:276
+#, c-format
+msgid "%dm %ds"
+msgstr "%dm %ds"
 
-#: ../src/atomix-ui.xml.h:5
-msgid "Restores start situation"
-msgstr "Povrne na začetno postavitev"
+#: ../src/games-scores-dialog.c:437
+#: ../src/main.c:736
+msgid "New Game"
+msgstr "Nova igra"
 
-#: ../src/atomix-ui.xml.h:6
-msgid "Set preferences"
-msgstr "Določi možnosti"
+#: ../src/games-scores-dialog.c:537
+msgid "Name"
+msgstr "Ime"
 
-#: ../src/atomix-ui.xml.h:7
-msgid "Skip _level"
-msgstr "Preskoči _raven"
+#. Empty title shows up as "<unnamed>" on maemo
+#: ../src/games-show.c:151
+msgid "Error"
+msgstr "Napaka"
 
-#: ../src/atomix-ui.xml.h:8
-msgid "Skip the current level"
-msgstr "Preskoči trenutno raven"
-
-#: ../src/atomix-ui.xml.h:9
-msgid "Start a new game"
-msgstr "Začni novo igro"
-
-#: ../src/atomix-ui.xml.h:10
-msgid "Undo the last move"
-msgstr "Razveljavi zadnjo potezo"
-
-#: ../src/atomix-ui.xml.h:11
-msgid "View highscores"
-msgstr "Najboljši rezultati"
-
-#: ../src/atomix-ui.xml.h:12
-msgid "_Continue game"
-msgstr "_Nadaljuj igro"
-
-#: ../src/atomix-ui.xml.h:13
-msgid "_End Game"
-msgstr "_Končaj igro"
-
-#: ../src/atomix-ui.xml.h:14
-msgid "_Game"
-msgstr "I_gra"
-
-#. submenu name="Edit" _label="_Edit">
-#.
-#. <menuitem name="EditPreferences" verb=""/>
-#.
-#. </submenu
-#: ../src/atomix-ui.xml.h:20
-msgid "_Help"
-msgstr "Pomo_č"
-
-#: ../src/atomix-ui.xml.h:21
-msgid "_New Game"
-msgstr "_Nova igra"
-
-#: ../src/atomix-ui.xml.h:22
-msgid "_Pause game"
-msgstr "_Premor igre"
-
-#: ../src/atomix-ui.xml.h:23
-msgid "_Preferences ..."
-msgstr "_Možnosti ..."
-
-#: ../src/atomix-ui.xml.h:24
-msgid "_Scores ..."
-msgstr "Re_zultati ..."
-
-#: ../src/atomix-ui.xml.h:25
-msgid "_Undo move"
-msgstr "Razveljavi po_tezo"
-
-#: ../src/level-manager.c:174
+#: ../src/level-manager.c:176
 msgid "Couldn't find level sequence description."
 msgstr "Ni mogoče najti opisa zaporedij ravni."
 
-#: ../src/level-manager.c:188
+#: ../src/level-manager.c:190
 msgid "No level found."
 msgstr "Ni najdenih ravni."
 
-#: ../src/level-manager.c:284
+#: ../src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Najdena raven '%s' v: %s"
+msgstr "Najdena je raven '%s' v: %s"
 
-#: ../src/main.c:126
-msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr "Rezultata, ki bi bil vpisan, še niste dosegli. Najprej igrajte igro."
+#: ../src/main.c:121
+#: ../src/main.c:775
+#: ../src/main.c:832
+#: ../atomix.desktop.in.h:1
+msgid "Atomix"
+msgstr "Atomix"
 
-#: ../src/main.c:173
+#: ../src/main.c:166
 msgid "A puzzle game about atoms and molecules"
 msgstr "Miselna igra z atomi in molekulami"
 
-#: ../src/main.c:177
+#: ../src/main.c:170
 msgid "translator-credits"
 msgstr ""
 "Nejc Novak <nejc.novak@guest.arnes.si>\n"
 "Matej Urbančič <mateju@svn.gnome.org>"
 
-#: ../src/main.c:488
-#: ../atomix.desktop.in.h:1
-msgid "Atomix"
-msgstr "Atomix"
-
-#: ../src/main.c:499
+#: ../src/main.c:493
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Čestitke! Končali ste vse ravni igre Atomix."
 
-#: ../src/main.c:509
+#: ../src/main.c:503
 msgid "Couldn't find at least one level."
 msgstr "Ni mogoče najti niti ene ravni igre."
 
-#: ../src/main.c:514
+#: ../src/main.c:508
 msgid "Do you want to finish the game?"
 msgstr "Ali želite končati igro?"
 
 #. create statistics frame
-#: ../src/main.c:728
+#: ../src/main.c:701
 msgid "Statistics"
 msgstr "Statistika"
 
-#: ../src/main.c:734
+#: ../src/main.c:707
 msgid "Level:"
 msgstr "Raven:"
 
-#: ../src/main.c:735
+#: ../src/main.c:708
 msgid "Molecule:"
 msgstr "Molekula:"
 
-#: ../src/main.c:736
+#: ../src/main.c:709
 msgid "Formula:"
 msgstr "Formula:"
 
-#: ../src/main.c:737
+#: ../src/main.c:710
 msgid "Score:"
 msgstr "Rezultat:"
 
-#: ../src/main.c:738
+#: ../src/main.c:711
 msgid "Time:"
 msgstr "Čas:"
 
-#: ../src/main.c:778
-#, c-format
-msgid "Couldn't find file: %s"
-msgstr "Ni mogoče najti datoteke: %s"
+#: ../src/main.c:734
+msgid "_Game"
+msgstr "I_gra"
 
-#: ../src/theme-manager.c:135
+#: ../src/main.c:735
+msgid "_Help"
+msgstr "Pomo_č"
+
+#: ../src/main.c:737
+msgid "End Game"
+msgstr "Končaj igro"
+
+#: ../src/main.c:738
+msgid "Skip Level"
+msgstr "Preskoči raven"
+
+#: ../src/main.c:739
+msgid "Reset Level"
+msgstr "Ponastavi raven"
+
+#: ../src/main.c:741
+msgid "_Pause Game"
+msgstr "_Premor igre"
+
+#: ../src/main.c:742
+msgid "_Continue Game"
+msgstr "_Nadaljuj igro"
+
+#: ../src/main.c:743
+msgid "_Scores..."
+msgstr "Rezul_tati ..."
+
+#: ../src/main.c:745
+msgid "About"
+msgstr "O programu"
+
+#: ../src/theme-manager.c:136
 msgid "No themes found."
 msgstr "Ni najdenih tem."
 
-#: ../src/theme-manager.c:193
+#: ../src/theme-manager.c:194
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Najdena tema '%s' v: %s"
+msgstr "Najdena je tema '%s' v: %s"
 
 #: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Miselna igra z molekulami"
 
+#~ msgid "Continue paused game"
+#~ msgstr "Nadaljuj z igro"
+#~ msgid "End a game"
+#~ msgstr "Končaj igro"
+#~ msgid "Pause the running game"
+#~ msgstr "Premor igranja"
+#~ msgid "Restores start situation"
+#~ msgstr "Povrne na začetno postavitev"
+#~ msgid "Set preferences"
+#~ msgstr "Določi možnosti"
+#~ msgid "Skip the current level"
+#~ msgstr "Preskoči trenutno raven"
+#~ msgid "Start a new game"
+#~ msgstr "Začni novo igro"
+#~ msgid "Undo the last move"
+#~ msgstr "Razveljavi zadnjo potezo"
+#~ msgid "View highscores"
+#~ msgstr "Najboljši rezultati"
+#~ msgid "_Preferences ..."
+#~ msgstr "_Možnosti ..."
+#~ msgid "_Undo move"
+#~ msgstr "Razveljavi po_tezo"
+#~ msgid ""
+#~ "You have not achieved any scores yet. Play a little before coming back!"
+#~ msgstr ""
+#~ "Rezultata, ki bi bil vpisan, še niste dosegli. Najprej igrajte igro."
+#~ msgid "Couldn't find file: %s"
+#~ msgstr "Ni mogoče najti datoteke: %s"
 #~ msgid "E_xit"
 #~ msgstr "_Končaj"
 #~ msgid "Exit game"
 #~ msgstr "Končaj igro"
 #~ msgid "View game credits"
 #~ msgstr "Zasluge za igro"
-#~ msgid "_About"
-#~ msgstr "_O igri"
 #~ msgid "_Edit"
 #~ msgstr "Ur_edi"
 #~ msgid "Copyright (C) 1999-2002 Jens Finke"
@@ -291,3 +296,4 @@ msgstr "Miselna igra z molekulami"
 #~ msgstr "Atomix - miselna igra z molekulami"
 #~ msgid "Atomix Splash"
 #~ msgstr "Atomix Splash"
+
