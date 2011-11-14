@@ -1,221 +1,335 @@
 # Turkish translation of Atomix.
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # A.Burak Ilgicioglu <ilgici@turk.net>, 2001.
-# Görkem Çetin <gorkem@gelecek.com.tr>, 2002. 
+# Görkem Çetin <gorkem@gelecek.com.tr>, 2002.
+# Muhammet Kara <muhammet.k@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.4.3\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-10 22:33+0300\n"
-"PO-Revision-Date: 2002-03-02 07:34-0500\n"
-"Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=atomix&component=general\n"
+"POT-Creation-Date: 2010-12-13 20:12+0000\n"
+"PO-Revision-Date: 2011-11-14 19:10+0200\n"
+"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-# src/interface.c:35
-#: src/atomix-ui.xml.in.h:1
-msgid "Continue paused game"
-msgstr "Oyuna devam et"
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Asetik Asit"
 
-#: src/atomix-ui.xml.in.h:2
-msgid "E_xit"
-msgstr "Çı_k"
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Aseton"
 
-#: src/atomix-ui.xml.in.h:3
-msgid "End a game"
-msgstr "Oyunu bitir"
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "Bütanol"
 
-#: src/atomix-ui.xml.in.h:4
-msgid "Exit game"
-msgstr "Oyundan çık"
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Siklobütan"
 
-#: src/atomix-ui.xml.in.h:5
-msgid "Pause the running game"
-msgstr "Çalışan oyunu duraklat"
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "Dimetil Eter"
 
-# editor/interface.c:68
-#: src/atomix-ui.xml.in.h:6
-msgid "Reset level"
-msgstr "Seviyeye yeniden başla "
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Etanal"
 
-#: src/atomix-ui.xml.in.h:7
-msgid "Restores start situation"
-msgstr "Başlangıç durumuna getirir"
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Etan"
 
-#: src/atomix-ui.xml.in.h:8
-msgid "Set preferences"
-msgstr "Tercihleri ayarla"
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Etanol"
 
-# src/interface.c:26
-#: src/atomix-ui.xml.in.h:9
-msgid "Skip _level"
-msgstr "Seviyeyi atla"
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Etilen"
 
-# src/interface.c:26
-#: src/atomix-ui.xml.in.h:10
-msgid "Skip the current level"
-msgstr "Şimdi oynanan seviyeyi atla"
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Gliserin"
 
-#: src/atomix-ui.xml.in.h:11
-msgid "Start a new game"
-msgstr "Yeni bir oyuna başla"
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Laktik Asit"
 
-#: src/atomix-ui.xml.in.h:12
-msgid "Undo the last move"
-msgstr "Son hareketi geri al"
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Metanal"
 
-#: src/atomix-ui.xml.in.h:13
-msgid "View game credits"
-msgstr "Oyunu programlayanlar"
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Metan"
 
-#: src/atomix-ui.xml.in.h:14
-msgid "View highscores"
-msgstr "Yüksek puanlar"
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Metanol"
 
-#: src/atomix-ui.xml.in.h:15
-msgid "_About"
-msgstr "_Hakkında"
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Propanal"
 
-# src/interface.c:35
-#: src/atomix-ui.xml.in.h:16
-msgid "_Continue game"
-msgstr "_Oyuna devam et"
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "Propilen"
 
-#: src/atomix-ui.xml.in.h:17
-msgid "_Edit"
-msgstr "_Düzenle"
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "Piran"
 
-#: src/atomix-ui.xml.in.h:18
-msgid "_End Game"
-msgstr "_Oyunu Bitir"
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Trans Bütilen"
 
-# editor/interface.c:461 editor/interface.c:767
-#: src/atomix-ui.xml.in.h:19
-msgid "_Game"
-msgstr "_Oyun"
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Su"
 
-#: src/atomix-ui.xml.in.h:20
-msgid "_Help"
-msgstr "_Yardım"
+#: ../src/games-runtime.c:273
+msgid "Could not show link"
+msgstr "Bağlantı gösterilemedi"
+
+# src/interface.c:347
+#: ../src/games-scores-dialog.c:113
+#| msgid "Time:"
+msgid "Time"
+msgstr "Zaman"
+
+# src/interface.c:337 src/interface.c:523 src/interface.c:641
+#. Note that this assumes the default style is plain.
+#: ../src/games-scores-dialog.c:118 ../src/games-scores-dialog.c:545
+#| msgid "Score:"
+msgid "Score"
+msgstr "Puan"
+
+#. Translators: this is for a minutes, seconds time display.
+#: ../src/games-scores-dialog.c:276
+#, c-format
+msgid "%dm %ds"
+msgstr "%dd %ds"
 
 # editor/interface.c:2030
-#: src/atomix-ui.xml.in.h:21
-msgid "_New Game"
-msgstr "_Yeni Oyun"
+#: ../src/games-scores-dialog.c:437 ../src/main.c:736
+#| msgid "_New Game"
+msgid "New Game"
+msgstr "Yeni Oyun"
 
-# src/interface.c:35
-#: src/atomix-ui.xml.in.h:22
-msgid "_Pause game"
-msgstr "_Oyunu duraklat"
+# editor/interface.c:461 editor/interface.c:767
+#: ../src/games-scores-dialog.c:537
+#| msgid "_Game"
+msgid "Name"
+msgstr "İsim"
 
-#: src/atomix-ui.xml.in.h:23
-msgid "_Preferences ..."
-msgstr "_Tercihler..."
+#. Empty title shows up as "<unnamed>" on maemo
+#: ../src/games-show.c:151
+msgid "Error"
+msgstr "Hata"
 
-#: src/atomix-ui.xml.in.h:24
-msgid "_Scores ..."
-msgstr "_Yüksek puanlar..."
-
-#: src/atomix-ui.xml.in.h:25
-msgid "_Undo move"
-msgstr "Hareketi _geri al"
-
-#: src/level-manager.c:171
+#: ../src/level-manager.c:176
 msgid "Couldn't find level sequence description."
 msgstr "Seviye sıra açıklaması bulunamadı."
 
 # src/main.c:163
-#: src/level-manager.c:185
+#: ../src/level-manager.c:190
 msgid "No level found."
 msgstr "Seviye bulunamadı."
 
-#: src/level-manager.c:286
+#: ../src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "%s seviyesi bulundu: %s"
 
 # editor/interface.c:225
-#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+#: ../src/main.c:121 ../src/main.c:775 ../src/main.c:832
+#: ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-# src/interface.c:457
-#: src/main.c:145
-msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "(C) 1999-2002 Jens Finke"
+#: ../src/main.c:166
+#| msgid "A mind game about atoms and molecules."
+msgid "A puzzle game about atoms and molecules"
+msgstr "Atomlar ve moleküller hakkında bir yapboz oyunu"
 
-#: src/main.c:146
-msgid "A mind game about atoms and molecules."
-msgstr "İçinde atom ve moleküllerin geçtiği bir zeka oyunu."
+#: ../src/main.c:170
+msgid "translator-credits"
+msgstr "Muhammet Kara <muhammet.k@gmail.com>"
 
 # src/interface.c:616
-#: src/main.c:456
+#: ../src/main.c:493
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini başarıyla bitirdiniz."
 
 # editor/callbacks.c:1279
-#: src/main.c:467
+#: ../src/main.c:503
 msgid "Couldn't find at least one level."
 msgstr "Hiç oyun seviyesi bulunamadı."
 
 # src/interface.c:908
-#: src/main.c:472
+#: ../src/main.c:508
 msgid "Do you want to finish the game?"
 msgstr "Gerçekten bu oyundan çıkmak istiyor musunuz? "
 
-# editor/support.c:116 src/support.c:116
-#: src/main.c:591 src/main.c:597 src/main.c:602
-#, c-format
-msgid "Couldn't create directory: %s"
-msgstr "Dizin yaratılamadı: %s"
-
 # src/interface.c:259
 #. create statistics frame
-#: src/main.c:701
+#: ../src/main.c:701
 msgid "Statistics"
 msgstr "İstatistikler"
 
 # src/interface.c:317
-#: src/main.c:707
+#: ../src/main.c:707
 msgid "Level:"
 msgstr "Seviye:"
 
-#: src/main.c:708
+#: ../src/main.c:708
 msgid "Molecule:"
 msgstr "Molekül:"
 
+#: ../src/main.c:709
+msgid "Formula:"
+msgstr "Formül:"
+
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: src/main.c:709
+#: ../src/main.c:710
 msgid "Score:"
 msgstr "Skor:"
 
 # src/interface.c:347
-#: src/main.c:710
+#: ../src/main.c:711
 msgid "Time:"
 msgstr "Zaman:"
 
-# editor/support.c:100 editor/support.c:138 src/support.c:100
-# src/support.c:138
-#: src/main.c:750
-#, c-format
-msgid "Couldn't find file: %s"
-msgstr "Dosya bulunamadı: %s"
+# editor/interface.c:461 editor/interface.c:767
+#: ../src/main.c:734
+msgid "_Game"
+msgstr "_Oyun"
 
-#: src/theme-manager.c:141
+#: ../src/main.c:735
+msgid "_Help"
+msgstr "_Yardım"
+
+#: ../src/main.c:737
+#| msgid "_End Game"
+msgid "End Game"
+msgstr "Oyunu Bitir"
+
+# src/interface.c:26
+#: ../src/main.c:738
+#| msgid "Skip _level"
+msgid "Skip Level"
+msgstr "Seviye Atla"
+
+# editor/interface.c:68
+#: ../src/main.c:739
+#| msgid "Reset level"
+msgid "Reset Level"
+msgstr "Seviyeyi Sıfırla"
+
+# src/interface.c:35
+#: ../src/main.c:741
+#| msgid "_Pause game"
+msgid "_Pause Game"
+msgstr "Oyunu _Duraklat"
+
+# src/interface.c:35
+#: ../src/main.c:742
+#| msgid "_Continue game"
+msgid "_Continue Game"
+msgstr "_Oyuna Devam Et"
+
+#: ../src/main.c:743
+#| msgid "_Scores ..."
+msgid "_Scores..."
+msgstr "_Puanlar..."
+
+#: ../src/main.c:745
+#| msgid "_About"
+msgid "About"
+msgstr "Hakkında"
+
+#: ../src/theme-manager.c:136
 msgid "No themes found."
 msgstr "Tema bulunamadı."
 
-#: src/theme-manager.c:205
+#: ../src/theme-manager.c:194
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "%s teması bulundu: %s"
 
 # src/interface.c:459
-#: atomix.desktop.in.h:2
-msgid "Molecule mind game"
-msgstr "Molekül oyunu"
+#: ../atomix.desktop.in.h:2
+#| msgid "Molecule mind game"
+msgid "Molecule puzzle game"
+msgstr "Molekül yapboz oyunu"
+
+# src/interface.c:35
+#~ msgid "Continue paused game"
+#~ msgstr "Oyuna devam et"
+
+#~ msgid "E_xit"
+#~ msgstr "Çı_k"
+
+#~ msgid "End a game"
+#~ msgstr "Oyunu bitir"
+
+#~ msgid "Exit game"
+#~ msgstr "Oyundan çık"
+
+#~ msgid "Pause the running game"
+#~ msgstr "Çalışan oyunu duraklat"
+
+#~ msgid "Restores start situation"
+#~ msgstr "Başlangıç durumuna getirir"
+
+#~ msgid "Set preferences"
+#~ msgstr "Tercihleri ayarla"
+
+# src/interface.c:26
+#~ msgid "Skip the current level"
+#~ msgstr "Şimdi oynanan seviyeyi atla"
+
+#~ msgid "Start a new game"
+#~ msgstr "Yeni bir oyuna başla"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Son hareketi geri al"
+
+#~ msgid "View game credits"
+#~ msgstr "Oyunu programlayanlar"
+
+#~ msgid "View highscores"
+#~ msgstr "Yüksek puanlar"
+
+#~ msgid "_Edit"
+#~ msgstr "_Düzenle"
+
+#~ msgid "_Preferences ..."
+#~ msgstr "_Tercihler..."
+
+#~ msgid "_Undo move"
+#~ msgstr "Hareketi _geri al"
+
+# src/interface.c:457
+#~ msgid "Copyright (C) 1999-2002 Jens Finke"
+#~ msgstr "(C) 1999-2002 Jens Finke"
+
+# editor/support.c:116 src/support.c:116
+#~ msgid "Couldn't create directory: %s"
+#~ msgstr "Dizin yaratılamadı: %s"
+
+# editor/support.c:100 editor/support.c:138 src/support.c:100
+# src/support.c:138
+#~ msgid "Couldn't find file: %s"
+#~ msgstr "Dosya bulunamadı: %s"
 
 # src/interface.c:108
 #~ msgid "Atomix Splash"
