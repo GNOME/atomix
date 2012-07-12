@@ -1,211 +1,242 @@
-# Copyright (C) 2001-2002 Free Software Foundation, Inc.
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Aktualną wersję tego pliku możesz odnaleźć w repozytorium cvs.gnome.pl
-# (:pserver:anonymous@cvs.gnome.pl:/home/cvs, puste hasło)
+# Aviary.pl
 # Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
-# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas na adres:
-# translators@gnome.pl
+# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
+# gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"POT-Creation-Date: 2003-12-03 18:47+0100\n"
-"PO-Revision-Date: 2002-02-28 17:40+0100\n"
-"Last-Translator: GNOME PL Team <translators@gnome.pl>\n"
-"Language-Team: Polish <pl@li.org>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-13 01:37+0200\n"
+"PO-Revision-Date: 2012-07-13 01:38+0200\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: Poland\n"
 
-#: src/atomix-ui.xml.in.h:1
-msgid "Continue paused game"
-msgstr "Kontynuuje wstrzymaną grę"
+#: ../level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Kwas octowy"
 
-#: src/atomix-ui.xml.in.h:2
-msgid "E_xit"
-msgstr "Za_kończ"
+#: ../level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Aceton"
 
-#: src/atomix-ui.xml.in.h:3
-msgid "End a game"
-msgstr "Kończy grę"
+#: ../level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "Butanol"
 
-#: src/atomix-ui.xml.in.h:4
-msgid "Exit game"
-msgstr "Wychodzi z gry"
+#: ../level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Cyklobutan"
 
-#: src/atomix-ui.xml.in.h:5
-msgid "Pause the running game"
-msgstr "Wstrzymuje uruchomioną grę"
+#: ../level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "Eter dimetylowy"
 
-#: src/atomix-ui.xml.in.h:6
-msgid "Reset level"
-msgstr "Przywróć poziom"
+#: ../level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Acetaldehyd"
 
-#: src/atomix-ui.xml.in.h:7
-msgid "Restores start situation"
-msgstr "Powraca do sytuacji startowej"
+#: ../level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Etanal"
 
-#: src/atomix-ui.xml.in.h:8
-msgid "Set preferences"
-msgstr "Ustawia preferencje"
+#: ../level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Etanol"
 
-#: src/atomix-ui.xml.in.h:9
-msgid "Skip _level"
-msgstr "Po_miń poziom"
+#: ../level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Eten"
 
-#: src/atomix-ui.xml.in.h:10
-msgid "Skip the current level"
-msgstr "Pomija bieżący poziom"
+#: ../level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Gliceryna"
 
-#: src/atomix-ui.xml.in.h:11
-msgid "Start a new game"
-msgstr "Rozpoczyna nową grę"
+#: ../level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Kwas mlekowy"
 
-#: src/atomix-ui.xml.in.h:12
-msgid "Undo the last move"
-msgstr "Cofa ostatni ruch"
+#: ../level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Metanal"
 
-#: src/atomix-ui.xml.in.h:13
-msgid "View game credits"
-msgstr "Wyświetla informacje o twórcach gry"
+#: ../level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Metan"
 
-#: src/atomix-ui.xml.in.h:14
-msgid "View highscores"
-msgstr "Wyświetla najlepsze wyniki"
+#: ../level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Metanol"
 
-#: src/atomix-ui.xml.in.h:15
-msgid "_About"
-msgstr "_Informacje"
+#: ../level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Propanal"
 
-#: src/atomix-ui.xml.in.h:16
-msgid "_Continue game"
-msgstr "K_ontynuuj grę"
+#: ../level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "Propen"
 
-#: src/atomix-ui.xml.in.h:17
-msgid "_Edit"
-msgstr "_Edycja"
+#: ../level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "Piran"
 
-#: src/atomix-ui.xml.in.h:18
-msgid "_End Game"
-msgstr "_Zakończ grę"
+#: ../level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Trans-butylen"
 
-#: src/atomix-ui.xml.in.h:19
-msgid "_Game"
-msgstr "_Gra"
+#: ../level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Woda"
 
-#: src/atomix-ui.xml.in.h:20
-msgid "_Help"
-msgstr "Pomo_c"
+#: ../src/games-runtime.c:273
+msgid "Could not show link"
+msgstr "Nie można wyświetlić odnośnika"
 
-#: src/atomix-ui.xml.in.h:21
-msgid "_New Game"
-msgstr "_Nowa gra"
+#: ../src/games-scores-dialog.c:113
+msgid "Time"
+msgstr "Czas"
 
-#: src/atomix-ui.xml.in.h:22
-msgid "_Pause game"
-msgstr "Ws_trzymaj grę"
+#. Note that this assumes the default style is plain.
+#: ../src/games-scores-dialog.c:118 ../src/games-scores-dialog.c:545
+msgid "Score"
+msgstr "Wynik"
 
-#: src/atomix-ui.xml.in.h:23
-msgid "_Preferences ..."
-msgstr "_Preferencje..."
+#. Translators: this is for a minutes, seconds time display.
+#: ../src/games-scores-dialog.c:276
+#, c-format
+msgid "%dm %ds"
+msgstr "%dm %ds"
 
-#: src/atomix-ui.xml.in.h:24
-msgid "_Scores ..."
-msgstr "_Wyniki ..."
+#: ../src/games-scores-dialog.c:437 ../src/main.c:736
+msgid "New Game"
+msgstr "Nowa gra"
 
-#: src/atomix-ui.xml.in.h:25
-msgid "_Undo move"
-msgstr "_Cofnij ruch"
+#: ../src/games-scores-dialog.c:537
+msgid "Name"
+msgstr "Nazwa"
 
-#: src/level-manager.c:171
+#. Empty title shows up as "<unnamed>" on maemo
+#: ../src/games-show.c:151
+msgid "Error"
+msgstr "Błąd"
+
+#: ../src/level-manager.c:176
 msgid "Couldn't find level sequence description."
-msgstr "Nie można odnaleźć sekwencji opisu poziomu."
+msgstr "Nie można odnaleźć opisu sekwencji poziomu."
 
-#: src/level-manager.c:185
+#: ../src/level-manager.c:190
 msgid "No level found."
 msgstr "Nie odnaleziono poziomu."
 
-#: src/level-manager.c:286
+#: ../src/level-manager.c:286
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Odnaleziono poziom \"%s\" w: %s"
 
-#: src/main.c:118 src/main.c:444 atomix.desktop.in.h:1
+#: ../src/main.c:121 ../src/main.c:775 ../src/main.c:832
+#: ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#: src/main.c:145
-msgid "Copyright (C) 1999-2002 Jens Finke"
-msgstr "Copyright (C) 1999-2002 Jens Finke"
+#: ../src/main.c:166
+msgid "A puzzle game about atoms and molecules"
+msgstr "Gra logiczna o atomach i cząsteczkach"
 
-#: src/main.c:146
-msgid "A mind game about atoms and molecules."
-msgstr "Gra logiczna o atomach i cząsteczkach."
+#: ../src/main.c:170
+msgid "translator-credits"
+msgstr "Aviary.pl <gnomepl@aviary.pl>, 2012"
 
-#: src/main.c:456
+#: ../src/main.c:493
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Gratulacje! Udało ci się zakończyć wszystkie poziomy gry Atomix."
+msgstr "Gratulacje! Udało się ukończyć wszystkie poziomy gry Atomix."
 
-#: src/main.c:467
+#: ../src/main.c:503
 msgid "Couldn't find at least one level."
-msgstr "Nie można odnaleźć przynajmniej jednego poziomu."
+msgstr "Nie można odnaleźć co najmniej jednego poziomu."
 
-#: src/main.c:472
+#: ../src/main.c:508
 msgid "Do you want to finish the game?"
-msgstr "Czy na pewno chcesz zakończyć grę?"
-
-#: src/main.c:591 src/main.c:597 src/main.c:602
-#, c-format
-msgid "Couldn't create directory: %s"
-msgstr "Nie można stworzyć katalogu: %s"
+msgstr "Zakończyć grę?"
 
 #. create statistics frame
-#: src/main.c:701
+#: ../src/main.c:701
 msgid "Statistics"
 msgstr "Statystyki"
 
-#: src/main.c:707
+#: ../src/main.c:707
 msgid "Level:"
 msgstr "Poziom:"
 
-#: src/main.c:708
+#: ../src/main.c:708
 msgid "Molecule:"
 msgstr "Cząsteczka:"
 
-#: src/main.c:709
+#: ../src/main.c:709
+msgid "Formula:"
+msgstr "Wyrażenie:"
+
+#: ../src/main.c:710
 msgid "Score:"
 msgstr "Wynik:"
 
-#: src/main.c:710
+#: ../src/main.c:711
 msgid "Time:"
 msgstr "Czas:"
 
-#: src/main.c:750
-#, c-format
-msgid "Couldn't find file: %s"
-msgstr "Nie można odnaleźć pliku: %s"
+#: ../src/main.c:734
+msgid "_Game"
+msgstr "_Gra"
 
-#: src/theme-manager.c:141
+#: ../src/main.c:735
+msgid "_Help"
+msgstr "Pomo_c"
+
+#: ../src/main.c:737
+msgid "End Game"
+msgstr "Zakończ grę"
+
+#: ../src/main.c:738
+msgid "Skip Level"
+msgstr "Pomiń poziom"
+
+#: ../src/main.c:739
+msgid "Reset Level"
+msgstr "Przywróć poziom"
+
+#: ../src/main.c:741
+msgid "_Pause Game"
+msgstr "_Wstrzymaj grę"
+
+#: ../src/main.c:742
+msgid "_Continue Game"
+msgstr "_Kontynuuj grę"
+
+#: ../src/main.c:743
+msgid "_Scores..."
+msgstr "Wy_niki..."
+
+#: ../src/main.c:745
+msgid "About"
+msgstr "O grze"
+
+#: ../src/theme-manager.c:136
 msgid "No themes found."
 msgstr "Nie odnaleziono motywów."
 
-#: src/theme-manager.c:205
+#: ../src/theme-manager.c:194
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Odnaleziono motyw \"%s\" w: %s"
 
-#: atomix.desktop.in.h:2
-msgid "Molecule mind game"
+#: ../atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
 msgstr "Gra logiczna w układanie cząsteczek"
-
-#~ msgid "Atomix Splash"
-#~ msgstr "Ekran powitalny Atomiksa"
-
-#~ msgid "Game Paused"
-#~ msgstr "Gra wstrzymana"
-
-#~ msgid "Game Over"
-#~ msgstr "Koniec gry"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Gra logiczna w układanie cząsteczek"
