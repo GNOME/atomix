@@ -36,7 +36,8 @@ atomix_DEPENDENCIES = libatomix.a
 
 atomix_LDADD = \
 	libatomix.a \
-	$(ATOMIX_LIBS)
+	$(ATOMIX_LIBS) \
+        -lm
 
 noinst_LIBRARIES = libatomix.a
 
