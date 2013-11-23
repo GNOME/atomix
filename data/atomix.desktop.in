@@ -2,11 +2,12 @@
 _Name=Atomix
 _Comment=Molecule puzzle game
 Exec=atomix
-Icon=atomix-icon.png
+Icon=/usr/share/games/atomix/atomix-logo.png
 Terminal=false
 Type=Application
-Categories=GNOME;GTK;Game;PuzzleGame;
+Categories=GNOME;GTK;Game;LogicGame;
+Keywords=GNOME;game;logic;puzzle;atoms;molecules;sokoban;
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=atomix
 X-GNOME-Bugzilla-Component=atomix
-X-GNOME-Bugzilla-Version=2.13.x
+X-GNOME-Bugzilla-Version=2.14.x
