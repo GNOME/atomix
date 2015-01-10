@@ -597,6 +597,8 @@ static void save_tile (xmlNodePtr parent, Tile *tile)
     case TILE_TYPE_FLOOR:
       type_str = "TILE_TYPE_FLOOR";
       break;
+    default:
+      break;
     }
 
   if (type_str == NULL)
@@ -624,8 +626,6 @@ int main (int argc, char** argv)
   Level *level;
   gchar *src_file = NULL;
   PlayField *npf;
-
-  g_type_init ();
 
   calculate_translation_quark (atom_map);
   calculate_translation_quark (link_map);

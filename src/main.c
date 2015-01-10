@@ -26,8 +26,6 @@
 #include <unistd.h>
 #include <errno.h>
 
-#include "games-runtime.h"
-
 #include "board.h"
 #include "playfield.h"
 #include "main.h"
@@ -813,9 +811,6 @@ int main (int argc, char *argv[])
   GOptionContext *context;
   gboolean retval;
   GError *error = NULL;
-
-  if (!games_runtime_init ("atomix"))
-    return 1;
 
   context = g_option_context_new (NULL);
   g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);

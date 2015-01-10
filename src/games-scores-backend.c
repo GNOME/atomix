@@ -29,7 +29,6 @@
 #include "games-score.h"
 #include "games-scores.h"
 #include "games-scores-backend.h"
-#include "games-runtime.h"
 
 #ifdef ENABLE_SETGID
 #include "games-setgid-io.h"
@@ -92,7 +91,7 @@ games_scores_backend_new (GamesScoreStyle style,
   backend->priv->timestamp = 0;
   backend->priv->style = style;
   backend->scores_list = NULL;
-  backend->priv->filename = g_build_filename (games_runtime_get_directory (GAMES_RUNTIME_SCORES_DIRECTORY),
+  backend->priv->filename = g_build_filename ("/usr/share/",
                                               fullname, NULL);
   g_free (fullname);
 

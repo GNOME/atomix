@@ -24,7 +24,6 @@ atomix_SOURCES = \
 	games-debug.c games-debug.h \
 	games-gtk-compat.h \
 	games-profile.c games-profile.h \
-	games-runtime.c games-runtime.h \
 	games-score.c games-score.h \
 	games-scores.c games-scores.h \
 	games-scores-backend.c games-scores-backend.h \

@@ -8,8 +8,6 @@ int main (void)
   PlayField *cpf;
   Tile *tile;
 
-  g_type_init ();
-
   pf = playfield_new ();
 
   playfield_set_matrix_size (pf, 10, 7);
