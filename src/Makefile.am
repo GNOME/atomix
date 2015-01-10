@@ -24,11 +24,6 @@ atomix_SOURCES = \
 	games-debug.c games-debug.h \
 	games-gtk-compat.h \
 	games-profile.c games-profile.h \
-	games-score.c games-score.h \
-	games-scores.c games-scores.h \
-	games-scores-backend.c games-scores-backend.h \
-	games-scores-dialog.c games-scores-dialog.h \
-	games-scores-dialog-private.h \
 	games-show.c games-show.h
 
 atomix_DEPENDENCIES = libatomix.a

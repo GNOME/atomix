@@ -27,8 +27,6 @@
 #include "theme-manager.h"
 #include "level-manager.h"
 #include "goal.h"
-#include "games-scores.h"
-#include "games-scores-dialog.h"
 
 typedef enum
 {
@@ -59,7 +57,6 @@ typedef struct
   Goal *goal;
   gint level_no;
   guint score;
-  GamesScores *highscores;
 } AtomixApp;
 
 void game_level_finished (void);

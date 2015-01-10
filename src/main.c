@@ -61,8 +61,6 @@ static void game_init (void);
 static void update_statistics (void);
 static void view_congratulations (void);
 static void calculate_score (void);
-static void log_score (void);
-static void show_scores (gint);
 
 /* ===============================================================
       
@@ -102,30 +100,6 @@ static void verb_GameContinue_cb (GtkAction * action, gpointer data)
 static void verb_GameUndo_cb (GtkAction * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_UNDO);
-}
-
-static void verb_GameScores_cb (GtkAction * action, gpointer data)
-{
-  show_scores (0);
-}
-
-static void
-show_scores (gint pos)
-{
-  static GtkWidget *dialog;
-
-  if (dialog == NULL) {
-    dialog = games_scores_dialog_new (GTK_WINDOW (app->mainwin),
-                                      app->highscores, _("Atomix"));
-  }
-
-  if (pos > 0) {
-    games_scores_dialog_set_hilight (GAMES_SCORES_DIALOG (dialog), pos);
-  }
-
-  gtk_window_present (GTK_WINDOW (dialog));
-  gtk_dialog_run (GTK_DIALOG (dialog));
-  gtk_widget_hide (dialog);
 }
 
 static void verb_GameExit_cb (GtkAction * action, gpointer data)
@@ -206,7 +180,6 @@ static void controller_handle_action (GameAction action)
       switch (action)
 	{
 	case GAME_ACTION_END:
-	  log_score ();
 	  level_cleanup_view ();
 	  set_game_not_running_state ();
 	  break;
@@ -233,7 +206,6 @@ static void controller_handle_action (GameAction action)
 	  if (level_manager_is_last_level (app->lm, app->level))
 	    {
 	      view_congratulations ();
-	      log_score ();
 	      level_cleanup_view ();
 	      set_game_not_running_state ();
 	    }
@@ -377,7 +349,6 @@ static void atomix_exit (void)
 
   if (app->state != GAME_STATE_NOT_RUNNING)
     {
-      log_score ();
       set_game_not_running_state ();
     }
 
@@ -465,19 +436,6 @@ static void calculate_score (void)
     app->score = 300 - seconds;
   else
     app->score = app->score * (2 - (seconds / 300));
-}
-
-static void log_score (void)
-{
-  int pos;
-  GamesScoreValue hiscore;
-
-  if (app->score == 0)
-    return;
-
-  hiscore.plain = app->score;
-  pos = games_scores_add_score (app->highscores, hiscore);
-  show_scores (pos);
 }
 
 static void view_congratulations (void)
@@ -738,7 +696,6 @@ static AtomixApp *create_gui (void)
     {"GameUndo", "gtk-undo", NULL, NULL, NULL, G_CALLBACK (verb_GameUndo_cb)},
     {"GamePause", NULL, N_("_Pause Game"), NULL, NULL, G_CALLBACK (verb_GamePause_cb)},
     {"GameContinue", NULL, N_("_Continue Game"), NULL, NULL, G_CALLBACK (verb_GameContinue_cb)},
-    {"GameScores", NULL, N_("_Scores..."), NULL, NULL, G_CALLBACK (verb_GameScores_cb)},
     {"GameExit", "gtk-quit", NULL, NULL, NULL, G_CALLBACK (verb_GameExit_cb)},
     {"HelpAbout", NULL, N_("About"), NULL, NULL, G_CALLBACK (verb_HelpAbout_cb)}
   };
@@ -755,8 +712,6 @@ static AtomixApp *create_gui (void)
     "      <menuitem action='GameUndo'/>"
     "      <menuitem action='GamePause'/>"
     "      <menuitem action='GameContinue'/>"
-    "      <separator/>"
-    "      <menuitem action='GameScores'/>"
     "      <separator/>"
     "      <menuitem action='GameExit'/>"
     "    </menu>"
@@ -832,9 +787,6 @@ int main (int argc, char *argv[])
   
   /* make a few initalisations here */
   app = create_gui ();
-
-  app->highscores = games_scores_new ("Atomix", NULL, 0, NULL, NULL, 0,
-                                       GAMES_SCORES_STYLE_PLAIN_DESCENDING);
 
   game_init ();
 
