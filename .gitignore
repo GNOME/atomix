@@ -7,6 +7,7 @@ autom4te.cache/
 config.guess
 config.h
 config.h.in
+compile
 *~
 config.log
 config.rpath
