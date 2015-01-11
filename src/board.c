@@ -131,6 +131,35 @@ static void selector_arrows_hide (SelectorData *data);
 #define BGR_FLOOR_ROWS 15
 #define BGR_FLOOR_COLS 15
 
+static GnomeCanvasGroup *create_group (GnomeCanvas *canvas, GnomeCanvasGroup *parent)
+{
+  GnomeCanvasGroup *group;
+
+  if (parent == NULL)
+    {
+      parent = gnome_canvas_root (canvas);
+    }
+  group = GNOME_CANVAS_GROUP (gnome_canvas_item_new (parent,
+						     gnome_canvas_group_get_type
+						     (), "x", 0.0, "y", 0.0,
+						     NULL));
+  return group;
+}
+
+static void set_background_color (GtkWidget *canvas, GdkColor *color)
+{
+  /* try to alloc color */
+  if (gdk_colormap_alloc_color (gdk_colormap_get_system (), color, FALSE, TRUE))
+    {
+      GtkStyle *style;
+      style = gtk_style_copy (gtk_widget_get_style (GTK_WIDGET (canvas)));
+
+      /* set new style */
+      style->bg[GTK_STATE_NORMAL] = *color;
+      gtk_widget_set_style (GTK_WIDGET (canvas), style);
+    }
+}
+
 static void create_background_floor (void)
 {
   int row, col;
@@ -422,17 +451,15 @@ static void render_tile (Tile *tile, gint row, gint col)
       group = level_items->obstacles;
       break;
 
-    case TILE_TYPE_FLOOR:
-      group = NULL;		/* level_items->floor; */
-      break;
-
     case TILE_TYPE_SHADOW:
       group = level_items->shadows;
       break;
 
     case TILE_TYPE_UNKNOWN:
+    case TILE_TYPE_FLOOR:
     default:
       group = NULL;
+      break;
     }
 
   if (group != NULL)
