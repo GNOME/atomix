@@ -107,13 +107,6 @@ static void verb_GameExit_cb (GtkAction * action, gpointer data)
   atomix_exit ();
 }
 
-static void verb_EditPreferences_cb (GtkAction * action, gpointer data)
-{
-#if 0
-  preferences_show_dialog ();
-#endif
-}
-
 static void verb_HelpAbout_cb (GtkAction * action, gpointer data)
 {
   GtkWidget *dlg;

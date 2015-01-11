@@ -66,10 +66,8 @@ static void render_view (Goal *goal)
 
   for (row = 0; row < playfield_get_n_rows (pf); row++)
     {
-      printf ("Row  at %d\n", row);
       for (col = 0; col < playfield_get_n_cols (pf); col++)
 	{
-      printf ("Column  at %d\n", col);
 	  tile = playfield_get_tile (pf, row, col);
 	  if (!tile)
 	    continue;
@@ -82,7 +80,6 @@ static void render_view (Goal *goal)
 	      x = col * tile_width * SCALE_FACTOR;
 	      y = row * tile_height * SCALE_FACTOR;
 	      item = create_small_item (x, y, tile);
-          printf ("Atom at %d, %d\n", row, col);
 
 	      break;
 
