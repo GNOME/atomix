@@ -21,8 +21,6 @@ atomix_SOURCES = \
 	goal.c goal.h \
 	goal-view.c goal-view.h \
 	clock.c clock.h \
-	games-debug.c games-debug.h \
-	games-gtk-compat.h \
 	games-profile.c games-profile.h \
 	games-show.c games-show.h
 
