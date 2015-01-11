@@ -38,8 +38,7 @@ struct _GoalPrivate
 };
 
 void goal_print_offset (gpointer ptr, gpointer data);
-GnomeCanvasItem *create_small_item (GnomeCanvasGroup *group,
-				    gdouble x, gdouble y, Tile *tile);
+GtkImage *create_small_item (gdouble x, gdouble y, Tile *tile);
 static gboolean compare_playfield_with_goal (Goal *goal, PlayField *pf,
 					     guint start_row,
 					     guint start_col);

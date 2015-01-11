@@ -42,7 +42,7 @@ void undo_clear (void)
   undo_stack = NULL;
 }
 
-void undo_push_move (GnomeCanvasItem *item, gint src_row, gint src_col,
+void undo_push_move (gpointer item, gint src_row, gint src_col,
 		     gint dest_row, gint dest_col)
 {
   UndoMove *move = g_new0 (UndoMove, 1);

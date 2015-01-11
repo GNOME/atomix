@@ -22,7 +22,7 @@
 
 typedef struct
 {
-  GnomeCanvasItem *item;
+  gpointer item;
   gint src_row;
   gint src_col;
   gint dest_row;
@@ -31,7 +31,7 @@ typedef struct
 
 gboolean undo_exists (void);
 
-void undo_push_move (GnomeCanvasItem * item,
+void undo_push_move (gpointer item,
 		     gint src_row, gint src_col,
 		     gint dest_row, gint dest_col);
 
