@@ -128,18 +128,6 @@ static GtkImage *create_small_item (gdouble x, gdouble y, Tile *tile)
   gtk_widget_show (item);
   gtk_fixed_put (goal_fixed, item, x, y);
 
-//  item = gnome_canvas_item_new (group,
-//				gnome_canvas_pixbuf_get_type (),
-//				"pixbuf", small_pb,
-//				"x", x,
-//				"x_in_pixels", TRUE,
-//				"y", y,
-//				"y_in_pixels", TRUE,
-//				"width",
-//				(gdouble) (gdk_pixbuf_get_width (small_pb)),
-//				"height",
-//				(gdouble) (gdk_pixbuf_get_height (small_pb)),
-//				"anchor", GTK_ANCHOR_NW, NULL);
   g_object_unref (pixbuf);
 
   return GTK_IMAGE (item);
