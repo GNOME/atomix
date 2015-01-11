@@ -12,7 +12,7 @@ INCLUDES = -I$(top_srcdir) \
 
 bin_PROGRAMS = atomix
 
-noinst_PROGRAMS = pf-test level-convert
+noinst_PROGRAMS = pf-test
 
 atomix_SOURCES = \
 	main.c main.h \
@@ -48,17 +48,6 @@ pf_test_SOURCES = \
 	pf-test.c
 
 pf_test_LDADD = \
-	-L$(top_builddir)/src \
-	$(ATOMIX_LIBS)
-
-level_convert_SOURCES = \
-	playfield.h playfield.c \
-	tile.c tile.h \
-	level.c level.h \
-	level-convert.c \
-	theme.c theme.h
-
-level_convert_LDADD = \
 	-L$(top_builddir)/src \
 	$(ATOMIX_LIBS)
 
