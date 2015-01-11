@@ -41,7 +41,7 @@ typedef struct
   GtkWidget *mainwin;
   GtkUIManager *ui_manager;
   GtkWidget *ca_matrix;
-  GtkWidget *ca_goal;
+  GtkWidget *fi_goal;
   GtkWidget *lb_level;
   GtkWidget *lb_name;
   GtkWidget *lb_formula;

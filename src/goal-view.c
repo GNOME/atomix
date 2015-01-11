@@ -18,27 +18,21 @@
  */
 
 #include "goal-view.h"
-#include "canvas_helper.h"
 
-static GnomeCanvas *goal_canvas;
+static GtkFixed *goal_fixed;
 static Theme *goal_theme;
-static GnomeCanvasGroup *item_group;
 
 #define SCALE_FACTOR 0.7
 
-static GnomeCanvasItem *create_small_item (GnomeCanvasGroup *group,
-					   gdouble x, gdouble y, Tile *tile);
+static GtkImage *create_small_item (gdouble x, gdouble y, Tile *tile);
 static void render_view (Goal *goal);
 
-void goal_view_init (Theme *theme, GnomeCanvas *canvas)
+void goal_view_init (Theme *theme, GtkFixed *fixed)
 {
   g_return_if_fail (IS_THEME (theme));
-  g_return_if_fail (GNOME_IS_CANVAS (canvas));
+  g_return_if_fail (GTK_IS_FIXED (fixed));
 
-  set_background_color (GTK_WIDGET (canvas),
-			theme_get_background_color (theme));
-
-  goal_canvas = canvas;
+  goal_fixed = fixed;
   goal_theme = theme;
 }
 
@@ -52,7 +46,7 @@ void goal_view_render (Goal *goal)
 
 static void render_view (Goal *goal)
 {
-  GnomeCanvasItem *item;
+  GtkImage *item;
   PlayField *pf;
   gint row, col;
   gdouble x;
@@ -63,11 +57,8 @@ static void render_view (Goal *goal)
   gint width, height;
 
   g_return_if_fail (IS_GOAL (goal));
-  g_return_if_fail (GNOME_IS_CANVAS (goal_canvas));
+  g_return_if_fail (GTK_IS_FIXED (goal_fixed));
   g_return_if_fail (IS_THEME (goal_theme));
-
-  if (item_group == NULL)
-    item_group = create_group (goal_canvas, NULL);
 
   theme_get_tile_size (goal_theme, &tile_width, &tile_height);
 
@@ -75,8 +66,10 @@ static void render_view (Goal *goal)
 
   for (row = 0; row < playfield_get_n_rows (pf); row++)
     {
+      printf ("Row  at %d\n", row);
       for (col = 0; col < playfield_get_n_cols (pf); col++)
 	{
+      printf ("Column  at %d\n", col);
 	  tile = playfield_get_tile (pf, row, col);
 	  if (!tile)
 	    continue;
@@ -88,7 +81,8 @@ static void render_view (Goal *goal)
 	    case TILE_TYPE_ATOM:
 	      x = col * tile_width * SCALE_FACTOR;
 	      y = row * tile_height * SCALE_FACTOR;
-	      item = create_small_item (item_group, x, y, tile);
+	      item = create_small_item (x, y, tile);
+          printf ("Atom at %d, %d\n", row, col);
 
 	      break;
 
@@ -100,29 +94,25 @@ static void render_view (Goal *goal)
 	  g_object_unref (tile);
 	}
     }
-  set_background_color (GTK_WIDGET (goal_canvas),
-			theme_get_background_color (goal_theme));
-
-  width = tile_width * playfield_get_n_cols (pf) * SCALE_FACTOR;
-  height = tile_height * playfield_get_n_rows (pf) * SCALE_FACTOR;
-  gnome_canvas_set_scroll_region (goal_canvas, 0, 0, width, height);
 
   g_object_unref (pf);
 }
 
-void goal_view_clear (void)
+static void remove_child (GtkWidget *widget, gpointer data)
 {
-  if (item_group)
-    gtk_object_destroy (GTK_OBJECT (item_group));
-  item_group = NULL;
+  gtk_container_remove (GTK_CONTAINER (goal_fixed), widget);
 }
 
-static GnomeCanvasItem *create_small_item (GnomeCanvasGroup *group,
-					   gdouble x, gdouble y, Tile *tile)
+void goal_view_clear (void)
+{
+  gtk_container_forall (GTK_CONTAINER (goal_fixed), remove_child, NULL);
+}
+
+static GtkImage *create_small_item (gdouble x, gdouble y, Tile *tile)
 {
   GdkPixbuf *pixbuf = NULL;
   GdkPixbuf *small_pb = NULL;
-  GnomeCanvasItem *item = NULL;
+  GtkWidget *item = NULL;
 
   g_return_val_if_fail (IS_TILE (tile), NULL);
 
@@ -134,19 +124,23 @@ static GnomeCanvasItem *create_small_item (GnomeCanvasGroup *group,
 				      gdk_pixbuf_get_height (pixbuf) *
 				      SCALE_FACTOR, GDK_INTERP_BILINEAR);
 
-  item = gnome_canvas_item_new (group,
-				gnome_canvas_pixbuf_get_type (),
-				"pixbuf", small_pb,
-				"x", x,
-				"x_in_pixels", TRUE,
-				"y", y,
-				"y_in_pixels", TRUE,
-				"width",
-				(gdouble) (gdk_pixbuf_get_width (small_pb)),
-				"height",
-				(gdouble) (gdk_pixbuf_get_height (small_pb)),
-				"anchor", GTK_ANCHOR_NW, NULL);
+  item = gtk_image_new_from_pixbuf (small_pb);
+  gtk_widget_show (item);
+  gtk_fixed_put (goal_fixed, item, x, y);
+
+//  item = gnome_canvas_item_new (group,
+//				gnome_canvas_pixbuf_get_type (),
+//				"pixbuf", small_pb,
+//				"x", x,
+//				"x_in_pixels", TRUE,
+//				"y", y,
+//				"y_in_pixels", TRUE,
+//				"width",
+//				(gdouble) (gdk_pixbuf_get_width (small_pb)),
+//				"height",
+//				(gdouble) (gdk_pixbuf_get_height (small_pb)),
+//				"anchor", GTK_ANCHOR_NW, NULL);
   g_object_unref (pixbuf);
 
-  return GNOME_CANVAS_ITEM (item);
+  return GTK_IMAGE (item);
 }

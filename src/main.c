@@ -408,7 +408,7 @@ static void game_init ()
   board_init (app->theme, GNOME_CANVAS (app->ca_matrix));
 
   /* init goal */
-  goal_view_init (app->theme, GNOME_CANVAS (app->ca_goal));
+  goal_view_init (app->theme, GTK_FIXED (app->fi_goal));
 
   /* update user visible information */
   app->state = GAME_STATE_NOT_RUNNING;
@@ -603,6 +603,19 @@ static GtkWidget *create_canvas_widget (GtkWidget **canvas)
   return frame;
 }
 
+static GtkWidget *create_goal_widget (GtkWidget **fixed)
+{
+  GtkWidget *frame;
+
+  *fixed = gtk_fixed_new ();
+
+  frame = gtk_frame_new (NULL);
+  gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
+  gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (*fixed));
+
+  return frame;
+}
+
 static void add_statistics_table_entry (GtkWidget *table, gint row,
 					gchar *label_str, gboolean is_clock,
 					GtkWidget **return_widget)
@@ -639,7 +652,7 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
 
   /* create canvas widgets */
   pf = create_canvas_widget (&app->ca_matrix);
-  goal = create_canvas_widget (&app->ca_goal);
+  goal = create_goal_widget (&app->fi_goal);
   gtk_widget_set_size_request (GTK_WIDGET (goal), 180, 50);
 
   /* add playfield canvas to left side */

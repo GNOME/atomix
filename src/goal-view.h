@@ -20,12 +20,12 @@
 #ifndef _ATOMIX_GOAL_VIEW_H_
 #define _ATOMIX_GOAL_VIEW_H_
 
-#include <libgnomecanvas/libgnomecanvas.h>
+#include <gtk/gtk.h>
 
 #include "theme.h"
 #include "goal.h"
 
-void goal_view_init (Theme * theme, GnomeCanvas * canvas);
+void goal_view_init (Theme * theme, GtkFixed * fixed);
 
 void goal_view_render (Goal * goal);
 
