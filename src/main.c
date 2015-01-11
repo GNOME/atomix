@@ -26,7 +26,7 @@
 #include <unistd.h>
 #include <errno.h>
 
-#include "board.h"
+#include "board_gtk.h"
 #include "playfield.h"
 #include "main.h"
 #include "goal.h"
@@ -179,7 +179,7 @@ static void controller_handle_action (GameAction action)
 
 	case GAME_ACTION_PAUSE:
 	  clock_stop (CLOCK (app->clock));
-	  board_hide ();
+	  board_gtk_hide ();
 	  app->state = GAME_STATE_PAUSED;
 	  break;
 
@@ -220,7 +220,7 @@ static void controller_handle_action (GameAction action)
 	case GAME_ACTION_UNDO:
 	  g_assert (app->state != GAME_STATE_RUNNING_UNMOVED);
 
-	  board_undo_move ();
+	  board_gtk_undo_move ();
 	  break;
 
 	default:
@@ -232,7 +232,7 @@ static void controller_handle_action (GameAction action)
       if (action == GAME_ACTION_CONTINUE)
 	{
 	  clock_start (CLOCK(app->clock));
-	  board_show ();
+	  board_gtk_show ();
 	  app->state = (undo_exists())?GAME_STATE_RUNNING:GAME_STATE_RUNNING_UNMOVED;
 	}
       break;
@@ -247,7 +247,7 @@ static void controller_handle_action (GameAction action)
 
 static void set_game_not_running_state (void)
 {
-  board_show_logo (TRUE);
+  board_gtk_show_logo (TRUE);
 
   if (app->level)
     g_object_unref (app->level);
@@ -310,8 +310,8 @@ static void setup_level (void)
   /* init board */
   env_pf = level_get_environment (app->level);
   sce_pf = level_get_scenario (app->level);
-  board_show_logo (FALSE);
-  board_init_level (env_pf, sce_pf, app->goal);
+  board_gtk_show_logo (FALSE);
+  board_gtk_init_level (env_pf, sce_pf, app->goal);
 
   /* init goal */
   goal_view_render (app->goal);
@@ -326,7 +326,7 @@ static void setup_level (void)
 
 static void level_cleanup_view (void)
 {
-  board_clear ();
+  board_gtk_clear ();
   goal_view_clear ();
 
   clock_stop (CLOCK(app->clock));
@@ -345,7 +345,7 @@ static void atomix_exit (void)
       set_game_not_running_state ();
     }
 
-  board_destroy ();
+  board_gtk_destroy ();
 
   if (app->level)
     g_object_unref (app->level);
@@ -370,7 +370,7 @@ static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
 {
   if ((app->state == GAME_STATE_RUNNING) || (app->state == GAME_STATE_RUNNING_UNMOVED))
     {
-      board_handle_key_event (NULL, event, NULL);
+      board_gtk_handle_key_event (NULL, event, NULL);
     }
 
   return TRUE;
@@ -398,7 +398,7 @@ static void game_init ()
   clock_set_seconds (CLOCK(app->clock), 0);
 
   /* init the board */
-  board_init (app->theme, GNOME_CANVAS (app->ca_matrix));
+  board_gtk_init (app->theme, GTK_FIXED (app->fi_matrix));
 
   /* init goal */
   goal_view_init (app->theme, GTK_FIXED (app->fi_goal));
@@ -408,7 +408,7 @@ static void game_init ()
   update_menu_item_state ();
   update_statistics ();
 
-  gtk_widget_grab_focus (GTK_WIDGET (app->ca_matrix));
+  gtk_widget_grab_focus (GTK_WIDGET (app->fi_matrix));
 }
 
 void game_level_finished (void)
@@ -583,7 +583,7 @@ void update_menu_item_state (void)
              GUI creation  functions 
 
 -------------------------------------------------------------- */
-static GtkWidget *create_canvas_widget (GtkWidget **canvas)
+/*static GtkWidget *create_canvas_widget (GtkWidget **canvas)
 {
   GtkWidget *frame;
 
@@ -592,6 +592,19 @@ static GtkWidget *create_canvas_widget (GtkWidget **canvas)
   frame = gtk_frame_new (NULL);
   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
   gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (*canvas));
+
+  return frame;
+}*/
+
+static GtkWidget *create_board_widget (GtkWidget **fixed)
+{
+  GtkWidget *frame;
+
+  *fixed = gtk_fixed_new ();
+
+  frame = gtk_frame_new (NULL);
+  gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
+  gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (*fixed));
 
   return frame;
 }
@@ -644,7 +657,7 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
   GtkWidget *table;
 
   /* create canvas widgets */
-  pf = create_canvas_widget (&app->ca_matrix);
+  pf = create_board_widget (&app->fi_matrix);
   goal = create_goal_widget (&app->fi_goal);
   gtk_widget_set_size_request (GTK_WIDGET (goal), 180, 50);
 
@@ -652,7 +665,7 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
   hbox = gtk_hbox_new (FALSE, 6);
   gtk_container_set_border_width (GTK_CONTAINER (hbox), 6);
   gtk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (pf), TRUE, TRUE, 0);
-  g_signal_connect (G_OBJECT (app->ca_matrix), "key_press_event",
+  g_signal_connect (G_OBJECT (app->fi_matrix), "key_press_event",
 		    G_CALLBACK (on_key_press_event), app);
 
   /* create right window side */
@@ -796,7 +809,8 @@ int main (int argc, char *argv[])
 
   game_init ();
 
-  gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 660, 480);
+  gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 678, 520);
+  gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
   gtk_widget_show (app->mainwin);
 
   gtk_main ();

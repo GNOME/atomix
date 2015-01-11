@@ -17,33 +17,33 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef _ATOMIX_BOARD_H_
-#define _ATOMIX_BOARD_H_
+#ifndef _ATOMIX_BOARD_GTK_H_
+#define _ATOMIX_BOARD_GTK_H_
 
-#include <libgnomecanvas/libgnomecanvas.h>
+#include <gtk/gtk.h>
 #include "theme.h"
 #include "playfield.h"
 #include "goal.h"
 
-void board_init (Theme * theme, gpointer canvas);
+void board_gtk_init (Theme * theme, gpointer canvas);
 
-void board_init_level (PlayField * env, PlayField * sce, Goal * goal);
+void board_gtk_init_level (PlayField * env, PlayField * sce, Goal * goal);
 
-void board_destroy (void);
+void board_gtk_destroy (void);
 
-void board_clear (void);
+void board_gtk_clear (void);
 
-void board_print (void);
+void board_gtk_print (void);
 
-void board_hide (void);
+void board_gtk_hide (void);
 
-void board_show (void);
+void board_gtk_show (void);
 
-gboolean board_undo_move (void);
+gboolean board_gtk_undo_move (void);
 
-void board_show_logo (gboolean visible);
+void board_gtk_show_logo (gboolean visible);
 
-void board_handle_key_event (GObject * canvas, GdkEventKey * event,
+void board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
 			     gpointer data);
 
-#endif /* _ATOMIX_BOARD_H_ */
+#endif /* _ATOMIX_BOARD_GTK_H_ */

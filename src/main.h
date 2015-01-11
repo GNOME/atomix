@@ -39,7 +39,7 @@ typedef struct
 {
   GtkWidget *mainwin;
   GtkUIManager *ui_manager;
-  GtkWidget *ca_matrix;
+  GtkWidget *fi_matrix;
   GtkWidget *fi_goal;
   GtkWidget *lb_level;
   GtkWidget *lb_name;

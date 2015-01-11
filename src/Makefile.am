@@ -16,7 +16,7 @@ noinst_PROGRAMS = pf-test
 
 atomix_SOURCES = \
 	main.c main.h \
-	board.c board.h	\
+	board_gtk.c board_gtk.h	\
 	undo.c undo.h \
 	goal.c goal.h \
 	goal-view.c goal-view.h \
