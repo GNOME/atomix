@@ -25,15 +25,7 @@
 #include "playfield.h"
 #include "goal.h"
 
-enum
-{
-  BOARD_MSG_NONE,
-  BOARD_MSG_GAME_PAUSED,
-  BOARD_MSG_NEW_GAME,
-  BOARD_MSG_GAME_OVER
-};
-
-void board_init (Theme * theme, GnomeCanvas * canvas);
+void board_init (Theme * theme, gpointer canvas);
 
 void board_init_level (PlayField * env, PlayField * sce, Goal * goal);
 
@@ -50,10 +42,6 @@ void board_show (void);
 void board_show_normal_cursor (void);
 
 gboolean board_undo_move (void);
-
-void board_view_message (gint msg_id);
-
-void board_hide_message (gint msg_id);
 
 void board_show_logo (gboolean visible);
 

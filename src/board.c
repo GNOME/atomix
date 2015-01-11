@@ -260,7 +260,7 @@ static void create_logo (void)
   g_object_unref (pixbuf);
 }
 
-void board_init (Theme *theme, GnomeCanvas *canvas)
+void board_init (Theme *theme, gpointer canvas)
 {
   g_return_if_fail (IS_THEME (theme));
   g_return_if_fail (GNOME_IS_CANVAS (canvas));
