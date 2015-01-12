@@ -724,6 +724,7 @@ gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
     return FALSE;
 
   switch (event->keyval) {
+    case GDK_KEY_space:
     case GDK_KEY_Return:
       selector_data->mouse_steering = FALSE;
       if (selector_data->selected)
@@ -742,7 +743,11 @@ gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
           selector_select (selector_data, item);
       }
       break;
-
+    case GDK_KEY_Escape:
+      if (selector_data->selected)
+        /* unselect item, show selector image */
+        selector_unselect (selector_data);
+      break;
     case GDK_KEY_Left:
       selector_data->mouse_steering = FALSE;
       if (!selector_data->selected) {
