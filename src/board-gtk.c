@@ -18,6 +18,7 @@
  */
 
 #include "board-gtk.h"
+#include "main.h"
 
 #define ANIM_TIMEOUT     8     /* time in milliseconds between 
                                two atom movements */
@@ -65,6 +66,7 @@ typedef enum
 
 // FIXME get rid of static variables
 /* Static declarations, to be removed */
+extern AtomixApp *app;
 static GtkFixed *board_canvas = NULL;
 static Theme *board_theme = NULL;
 static PlayField *board_env = NULL;	/* the actual playfield */
@@ -187,9 +189,8 @@ void move_item (GtkWidget *item, ItemDirection direc)
   /* move the item, if the new position is different */
   if (src_row != dest_row || src_col != dest_col) {
     if (!undo_exists())	{
-// TODO change game state and update undo item state
-//    app->state = GAME_STATE_RUNNING;
-//    update_menu_item_state ();
+      app->state = GAME_STATE_RUNNING;
+      update_menu_item_state ();
     }
 
     undo_push_move (item, src_row, src_col, dest_row, dest_col);
@@ -237,8 +238,7 @@ int move_item_anim (void *data) {
 
   if (goal_reached (board_goal, board_sce, anim_data->dest_row,
       anim_data->dest_col)){
-// TODO finish the level
-// game_level_finished ();
+    game_level_finished ();
   } else if (selector_data->selected)
       selector_select (selector_data, selector_data->sel_item);
   return FALSE;
@@ -696,7 +696,57 @@ void board_gtk_show (void)
 
 gboolean board_gtk_undo_move (void)
 {
+  UndoMove *move;
+  gint x_src, y_src, x_dest, y_dest;
+  gint animstep;
+
+  g_return_val_if_fail (board_theme != NULL, FALSE);
+
+  if (anim_data->timeout_id != -1)
     return FALSE;
+
+  move = undo_pop_move ();
+  if (move == NULL)
+    return FALSE;
+
+  playfield_swap_tiles (board_sce,
+                        move->src_row, move->src_col, 
+                        move->dest_row, move->dest_col);
+
+  if (selector_data->selected) {
+    selector_hide (selector_data);
+    selector_move_to (selector_data, move->src_row, move->src_col);
+  }
+
+  convert_to_canvas (board_theme, board_env, move->src_row,
+             move->src_col, &x_src, &y_src);
+  convert_to_canvas (board_theme, board_env, move->dest_row,
+             move->dest_col, &x_dest, &y_dest);
+
+  animstep = theme_get_animstep (board_theme);
+  if (move->src_col == move->dest_col) {
+    anim_data->counter = (gint) (fabs (y_dest - y_src) / animstep);
+    anim_data->x_step = 0;
+    anim_data->y_step = animstep;
+    if (move->src_row < move->dest_row)
+      anim_data->y_step = -(anim_data->y_step);
+  } else {
+    anim_data->counter = (gint) (fabs (x_dest - x_src) / animstep);
+    anim_data->x_step = animstep;
+    anim_data->y_step = 0;
+    if (move->src_col < move->dest_col)
+      anim_data->x_step = -(anim_data->x_step);
+  }
+
+  anim_data->dest_row = move->src_row;
+  anim_data->dest_col = move->src_col;
+  selector_data->sel_item = move->item;
+
+  anim_data->timeout_id = g_timeout_add (ANIM_TIMEOUT,
+                                         move_item_anim, anim_data);
+  g_free (move);
+
+  return TRUE;
 }
 
 void board_gtk_show_logo (gboolean visible)

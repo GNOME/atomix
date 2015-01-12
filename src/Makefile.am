@@ -12,7 +12,7 @@ INCLUDES = -I$(top_srcdir) \
 
 bin_PROGRAMS = atomix
 
-noinst_PROGRAMS = pf-test board-test
+noinst_PROGRAMS = pf-test
 
 atomix_SOURCES = \
 	main.c main.h \
@@ -46,24 +46,6 @@ pf_test_SOURCES = \
 	tile.c tile.h \
 	theme.c theme.h \
 	pf-test.c
-
-board_test_SOURCES = \
-	playfield.h playfield.c \
-	tile.c tile.h \
-	theme.c theme.h \
-    board-gtk.c board-gtk.h	\
-	undo.c undo.h \
-	goal.c goal.h \
-    theme-manager.c theme-manager.h \
-	canvas_helper.c canvas_helper.h \
-	level.c level.h level-private.h \
-	level-manager.c level-manager.h \
-	board-test.c
-
-board_test_LDADD = \
-	-L$(top_builddir)/src \
-    -lm \
-	$(ATOMIX_LIBS)
 
 pf_test_LDADD = \
 	-L$(top_builddir)/src \
