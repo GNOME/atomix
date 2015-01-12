@@ -82,7 +82,7 @@ static SelectorData *selector_data;	/* data about the selector */
 /* Forward declarations of internal functions */
 void board_gtk_render (void);
 static void render_tile (Tile *tile, gint row, gint col);
-GtkImage* create_tile (double x, double y, Tile *tile);
+GtkWidget* create_tile (double x, double y, Tile *tile);
 
 static void selector_move_to (SelectorData *data, guint row, guint col);
 static void selector_unselect (SelectorData *data);
@@ -160,7 +160,7 @@ static SelectorData *selector_create (void)
                     G_CALLBACK (board_handle_arrow_event),
                     GINT_TO_POINTER (RIGHT));
 
-  data->arrow_bottom = gtk_image_new_from_pixbuf (sel_arrows[3]);
+  data->arrow_bottom = gtk_image_new_from_pixbuf (sel_arrows[2]);
 
   g_signal_connect (G_OBJECT (data->arrow_bottom), "event",
                     G_CALLBACK (board_handle_arrow_event),
@@ -260,7 +260,7 @@ void board_gtk_init (Theme * theme, gpointer canvas)
   g_signal_connect (G_OBJECT (canvas), "key_press_event",
                     G_CALLBACK (board_gtk_handle_key_event), NULL);
 
-  //create_background_floor ();
+  create_background_floor ();
   gtk_widget_show_all (GTK_WIDGET(board_canvas));
   selector_data = selector_create ();
 }
@@ -349,9 +349,10 @@ static gboolean show_arrow_group (SelectorData *data)
 
 
 static gboolean board_handle_item_event (GtkWidget *item,
-                                         GdkEvent *event, gpointer data) {
+                                         GdkEventButton *event, gpointer data) {
   gboolean just_unselect;
   guint new_row, new_col;
+
   printf ("Item event\n");
   /* is currently an object moved? */
   if (anim_data->timeout_id != -1)
@@ -378,29 +379,34 @@ static gboolean board_handle_item_event (GtkWidget *item,
   return FALSE;
 }
 
-GtkImage* create_tile (double x, double y,
+GtkWidget* create_tile (double x, double y,
                        Tile *tile)
 {
   GdkPixbuf *pixbuf = NULL;
   GtkWidget *item = NULL;
-
+  GtkWidget *event_box = NULL;
   pixbuf = theme_get_tile_image (board_theme, tile);
 
   item = gtk_image_new_from_pixbuf (pixbuf);
+
+// TODO handle button click
+  if (tile_get_tile_type (tile) == TILE_TYPE_ATOM) {
+    event_box = gtk_event_box_new ();
+    gtk_container_add (GTK_CONTAINER (event_box), item);
+    gtk_widget_show (item);
+    gtk_widget_set_events (event_box, GDK_BUTTON_PRESS_MASK);
+    item = event_box;
+    g_signal_connect (G_OBJECT (item), "button-press-event",
+                      G_CALLBACK (board_handle_item_event), NULL);
+  }
+
   gtk_widget_show (item);
   gtk_fixed_put (GTK_FIXED (board_canvas), item, x, y);
 
   g_object_set_data (G_OBJECT (item), "tile", tile);
 
-// TODO handle button click
-  if (tile_get_tile_type (tile) == TILE_TYPE_ATOM) {
-    printf ("Adding button event handler\n");
-    g_signal_connect (G_OBJECT (item), "event",
-                      G_CALLBACK (board_handle_item_event), NULL);
-  }
-
   board_canvas_items = g_slist_prepend (board_canvas_items, item);
-  return GTK_IMAGE (item);
+  return item;
 }
 
 static void remove_items (GSList **list)
@@ -414,11 +420,6 @@ static void remove_items (GSList **list)
     g_slist_free_1 (to_free);
   }
   
-}
-
-static void level_clear (void)
-{
-  remove_items (&(board_canvas_items));
 }
 
 void board_gtk_init_level (PlayField * base_env, PlayField * sce, Goal * goal)
@@ -436,7 +437,7 @@ void board_gtk_init_level (PlayField * base_env, PlayField * sce, Goal * goal)
   /* reset undo of moves */
   undo_clear ();
 
-  level_clear ();
+  board_gtk_clear ();
 
   /* init board */
   board_env = playfield_generate_environment (base_env, board_theme);
@@ -481,6 +482,7 @@ void board_gtk_destroy (void)
 
 void board_gtk_clear (void)
 {
+   remove_items (&(board_canvas_items));
 }
 
 void board_gtk_print (void)
