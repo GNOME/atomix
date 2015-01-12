@@ -37,7 +37,6 @@ void convert_to_playfield (Theme *theme, PlayField * playfield, gint x, gint y,
   int_x = (guint) ceil (x);
   *col = (int_x / tile_width) - col_offset;
 
-  printf ("%d, %d in coords is %d, %d on playfield\n", x, y, *row, *col); 
 }
 
 void convert_to_canvas (Theme *theme, PlayField * playfield,guint row, guint col,

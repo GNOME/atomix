@@ -84,6 +84,7 @@ static void render_tile (Tile *tile, gint row, gint col);
 GtkWidget* create_tile (double x, double y, Tile *tile);
 void move_item (GtkWidget *item, ItemDirection direc);
 int move_item_anim (void *data);
+static GtkWidget *get_item_by_row_col (gint row, gint col);
 
 static void selector_move_to (SelectorData *data, guint row, guint col);
 static void selector_unselect (SelectorData *data);
@@ -95,6 +96,29 @@ static void selector_arrows_hide (SelectorData *data);
 
 
 /* Function implementations */
+
+static GtkWidget *get_item_by_row_col (gint row, gint col)
+{
+  gint width, height;
+  gint item_point_x, item_point_y;
+  guint item_row, item_col;
+  GSList *list_item = level_items->moveables;
+
+  theme_get_tile_size (board_theme, &width, &height);
+
+  while (list_item != NULL) {
+    gtk_container_child_get (GTK_CONTAINER (board_canvas), list_item->data, "x", &item_point_x, "y", &item_point_y, NULL);
+
+    convert_to_playfield (board_theme, board_env, item_point_x, item_point_y, &item_row, &item_col);
+
+    if (item_col == col && item_row == row)
+      return GTK_WIDGET (list_item->data);
+
+    list_item = g_slist_next (list_item);
+  }
+
+  return NULL;
+}
 
 static void get_row_col_by_item (GtkWidget *item, guint *row, guint *col)
 {
@@ -585,6 +609,7 @@ void board_gtk_init_level (PlayField * base_env, PlayField * sce, Goal * goal)
   col = playfield_get_n_cols (board_env) / 2;
   selector_move_to (selector_data, row, col);
   selector_unselect (selector_data);
+  selector_show (selector_data);
   selector_arrows_hide (selector_data);
   /* render level */
   board_gtk_render ();
@@ -658,10 +683,15 @@ void board_gtk_print (void)
 
 void board_gtk_hide (void)
 {
+  g_slist_foreach (level_items->moveables, (GFunc)gtk_widget_hide, NULL);
+  g_slist_foreach (selector_data->arrows, (GFunc)gtk_widget_hide, NULL);
 }
 
 void board_gtk_show (void)
 {
+  g_slist_foreach (level_items->moveables, (GFunc)gtk_widget_show, NULL);
+  if (undo_exists ())
+    g_slist_foreach (selector_data->arrows, (GFunc)gtk_widget_show, NULL);
 }
 
 gboolean board_gtk_undo_move (void)
@@ -678,9 +708,99 @@ void board_gtk_show_logo (gboolean visible)
 }
 
 gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
-                                 gpointer data)
+                                     gpointer data)
 {
-  printf ("Key in board\n");
+  GtkWidget *item;
+  gint new_row, new_col;
+  Tile *tile;
+
+  g_return_if_fail (selector_data != NULL);
+
+  new_row = selector_data->row;
+  new_col = selector_data->col;
+
+  /* is currently an object moved? */
+  if (anim_data->timeout_id != -1)
+    return FALSE;
+
+  switch (event->keyval) {
+    case GDK_KEY_Return:
+      selector_data->mouse_steering = FALSE;
+      if (selector_data->selected)
+        /* unselect item, show selector image */
+        selector_unselect (selector_data);
+      else {
+        item = get_item_by_row_col (selector_data->row, selector_data->col);
+        if (item == NULL)
+          break;
+        if (g_object_get_data (G_OBJECT (item), "tile") == NULL)
+          break;
+
+        tile = TILE (g_object_get_data (G_OBJECT (item), "tile"));
+
+        if (tile_get_tile_type (tile) == TILE_TYPE_ATOM)
+          selector_select (selector_data, item);
+      }
+      break;
+
+    case GDK_KEY_Left:
+      selector_data->mouse_steering = FALSE;
+      if (!selector_data->selected) {
+        new_col--;
+        if (new_col >= 0) {
+          selector_show (selector_data);
+          selector_move_to (selector_data, new_row, new_col);
+        }
+      } else
+        move_item (selector_data->sel_item, LEFT); /* selector will be
+                                                    moved in this
+                                                    function */
+      break;
+
+    case GDK_KEY_Right:
+      selector_data->mouse_steering = FALSE;
+      if (!selector_data->selected) {
+        new_col++;
+        if (new_col < playfield_get_n_cols (board_env)) {
+          selector_show (selector_data);
+          selector_move_to (selector_data, new_row, new_col);
+        }
+      } else
+        move_item (selector_data->sel_item, RIGHT); /* selector will be
+                                                    moved in this
+                                                    function */
+      break;
+
+    case GDK_KEY_Up:
+      selector_data->mouse_steering = FALSE;
+      if (!selector_data->selected) {
+        new_row--;
+        if (new_row >= 0) {
+          selector_show (selector_data);
+          selector_move_to (selector_data, new_row, new_col);
+        }
+      } else
+        move_item (selector_data->sel_item, UP);  /* selector will be moved
+                                                  in this function */
+      break;
+
+    case GDK_KEY_Down:
+      selector_data->mouse_steering = FALSE;
+      if (!selector_data->selected) {
+        new_row++;
+        if (new_row < playfield_get_n_rows (board_env)) {
+          selector_show (selector_data);
+          selector_move_to (selector_data, new_row, new_col);
+        }
+      } else
+        move_item (selector_data->sel_item, DOWN);  /* selector will be
+                                                    moved in this function */
+      break;
+
+    default:
+      break;
+    }
+
   return FALSE;
 }
 
@@ -813,7 +933,7 @@ static void selector_select (SelectorData *data, GtkWidget *item)
 
   data->selected = TRUE;
   data->sel_item = item;
-  printf ("Selected item at %d, %d\n", x, y);
+
   gtk_widget_hide (data->selector);
   selector_arrows_show (data);
 }
