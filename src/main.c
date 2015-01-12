@@ -619,6 +619,9 @@ static GtkWidget *create_goal_widget (GtkWidget **fixed)
   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
   gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (*fixed));
 
+  gtk_widget_set_halign (GTK_WIDGET (*fixed), GTK_ALIGN_CENTER);
+  gtk_widget_set_valign (GTK_WIDGET (*fixed), GTK_ALIGN_CENTER);
+
   return frame;
 }
 
