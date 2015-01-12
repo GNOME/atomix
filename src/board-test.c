@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 
-#include "board_gtk.h"
+#include "board-gtk.h"
 #include "theme-manager.h"
 #include "level-manager.h"
 

@@ -16,7 +16,7 @@ noinst_PROGRAMS = pf-test board-test
 
 atomix_SOURCES = \
 	main.c main.h \
-	board_gtk.c board_gtk.h	\
+	board-gtk.c board-gtk.h	\
 	undo.c undo.h \
 	goal.c goal.h \
 	goal-view.c goal-view.h \
@@ -51,7 +51,7 @@ board_test_SOURCES = \
 	playfield.h playfield.c \
 	tile.c tile.h \
 	theme.c theme.h \
-    board_gtk.c board_gtk.h	\
+    board-gtk.c board-gtk.h	\
 	undo.c undo.h \
 	goal.c goal.h \
     theme-manager.c theme-manager.h \

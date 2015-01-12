@@ -17,7 +17,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include "board_gtk.h"
+#include "board-gtk.h"
 
 #define ANIM_TIMEOUT     1000	/* time in milliseconds between 
                                two atom movements */
@@ -55,11 +55,6 @@ typedef enum
   LEFT,
   RIGHT
 } ItemDirection;
-
-typedef struct
-{
-  GSList *moveables;
-} LevelItems;
 
 
 // FIXME get rid of static variables
@@ -516,7 +511,6 @@ GtkWidget* create_tile (double x, double y,
 
   item = gtk_image_new_from_pixbuf (pixbuf);
 
-// TODO handle button click
   if (tile_get_tile_type (tile) == TILE_TYPE_ATOM) {
     event_box = gtk_event_box_new ();
     gtk_container_add (GTK_CONTAINER (event_box), item);
@@ -534,19 +528,6 @@ GtkWidget* create_tile (double x, double y,
 
   board_canvas_items = g_slist_prepend (board_canvas_items, item);
   return item;
-}
-
-static void remove_items (GSList **list)
-{
-  GSList *to_free = NULL;
-
-  while (*list != NULL) {
-    to_free = *list;
-    gtk_container_remove (GTK_CONTAINER (board_canvas), GTK_WIDGET ((*list)->data));
-    *list = g_slist_next (*list);
-    g_slist_free_1 (to_free);
-  }
-  
 }
 
 void board_gtk_init_level (PlayField * base_env, PlayField * sce, Goal * goal)
@@ -587,8 +568,6 @@ void board_gtk_init_level (PlayField * base_env, PlayField * sce, Goal * goal)
 
 void board_gtk_destroy (void)
 {
-  g_slist_free_full (board_canvas_items, (GDestroyNotify)gtk_widget_destroy);
-
   if (board_env)
     g_object_unref (board_env);
   if (board_sce)
@@ -611,7 +590,34 @@ void board_gtk_destroy (void)
 
 void board_gtk_clear (void)
 {
-   remove_items (&(board_canvas_items));
+  g_slist_foreach (board_canvas_items, (GFunc) gtk_widget_destroy, NULL);
+  g_slist_free (board_canvas_items);
+  board_canvas_items = NULL;
+
+/* clear board */
+  if (board_env)
+    {
+      g_object_unref (board_env);
+      board_env = NULL;
+    }
+  if (board_sce)
+    {
+      g_object_unref (board_sce);
+      board_sce = NULL;
+    }
+  if (board_goal)
+    {
+      g_object_unref (board_goal);
+      board_goal = NULL;
+    }
+  if (board_shadow)
+    {
+      g_object_unref (board_shadow);
+      board_shadow = NULL;
+    }
+
+  selector_hide (selector_data);
+
 }
 
 void board_gtk_print (void)

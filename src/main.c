@@ -26,7 +26,7 @@
 #include <unistd.h>
 #include <errno.h>
 
-#include "board_gtk.h"
+#include "board-gtk.h"
 #include "playfield.h"
 #include "main.h"
 #include "goal.h"
