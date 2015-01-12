@@ -98,12 +98,19 @@ static void selector_arrows_hide (SelectorData *data);
 static void get_row_col_by_item (GtkWidget *item, guint *row, guint *col)
 {
   gint x, y;
+  gint row_offset, col_offset;
 
   g_return_if_fail (GTK_IS_WIDGET (item));
 
   gtk_container_child_get (GTK_CONTAINER (board_canvas), item, "x", &x, "y", &y, NULL);
 
+  row_offset = BGR_FLOOR_ROWS / 2 - playfield_get_n_rows (board_env) / 2;
+  col_offset = BGR_FLOOR_COLS / 2 - playfield_get_n_cols (board_env) / 2;
+
   convert_to_playfield (board_theme, x, y, row, col);
+
+  *row = *row - row_offset;
+  *col = *col - col_offset; 
 }
 
 static gboolean board_handle_arrow_event (GtkWidget *item,
