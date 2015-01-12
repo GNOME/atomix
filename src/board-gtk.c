@@ -876,9 +876,11 @@ static void selector_move_to (SelectorData *data, guint row, guint col)
 
   convert_to_canvas (board_theme, board_env, row, col, &x, &y);
 
-  gtk_fixed_move (GTK_FIXED (board_canvas), data->selector, x, y);
+  g_object_ref (data->selector);
+  gtk_container_remove (GTK_CONTAINER (board_canvas), data->selector);
+  gtk_fixed_put (GTK_FIXED (board_canvas), data->selector, x, y);
+  g_object_unref (data->selector);
 
-  gtk_fixed_move (GTK_FIXED (board_canvas), data->selector, x, y);
   gtk_fixed_move (GTK_FIXED (board_canvas), data->arrow_left, x - tile_width, y);
   gtk_fixed_move (GTK_FIXED (board_canvas), data->arrow_right, x + tile_width, y);
   gtk_fixed_move (GTK_FIXED (board_canvas), data->arrow_top, x, y - tile_width);
