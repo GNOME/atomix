@@ -20,11 +20,16 @@
 #define _ATOMIX_CANVAS_HELPER_H_
 
 #include "theme.h"
+#include "playfield.h"
 
-void convert_to_playfield (Theme * theme, gdouble x, gdouble y,
+#define BGR_FLOOR_ROWS 15
+#define BGR_FLOOR_COLS 15
+
+
+void convert_to_playfield (Theme * theme, PlayField * playfield, gdouble x, gdouble y,
 			   guint * row, guint * col);
 
-void convert_to_canvas (Theme * theme, guint row, guint col,
+void convert_to_canvas (Theme * theme, PlayField * playfield,guint row, guint col,
 			gint * x, gint * y);
 
 #endif /* _ATOMIX_CANVAS_HELPER_H_ */

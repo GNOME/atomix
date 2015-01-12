@@ -20,28 +20,34 @@
 #include "math.h"
 #include "canvas_helper.h"
 
-void convert_to_playfield (Theme *theme, gdouble x, gdouble y,
+void convert_to_playfield (Theme *theme, PlayField * playfield, gdouble x, gdouble y,
 			   guint *row, guint *col)
 {
   guint int_y, int_x;
   gint tile_width, tile_height;
+  gint row_offset, col_offset;
 
+  row_offset = BGR_FLOOR_ROWS / 2 - playfield_get_n_rows (playfield) / 2;
+  col_offset = BGR_FLOOR_COLS / 2 - playfield_get_n_cols (playfield) / 2;
   theme_get_tile_size (theme, &tile_width, &tile_height);
 
   int_y = (guint) ceil (y);
-  *row = (int_y / tile_height);
+  *row = (int_y / tile_height) - row_offset;
 
   int_x = (guint) ceil (x);
-  *col = (int_x / tile_width);
+  *col = (int_x / tile_width) - col_offset;
 }
 
-void convert_to_canvas (Theme *theme, guint row, guint col,
+void convert_to_canvas (Theme *theme, PlayField * playfield,guint row, guint col,
 			gint *x, gint *y)
 {
   gint tile_width, tile_height;
+  gint row_offset, col_offset;
 
+  row_offset = BGR_FLOOR_ROWS / 2 - playfield_get_n_rows (playfield) / 2;
+  col_offset = BGR_FLOOR_COLS / 2 - playfield_get_n_cols (playfield) / 2;
   theme_get_tile_size (theme, &tile_width, &tile_height);
 
-  *x = col * tile_width;
-  *y = row * tile_height;
+  *x = (col + col_offset) * tile_width;
+  *y = (row + row_offset) * tile_height;
 }

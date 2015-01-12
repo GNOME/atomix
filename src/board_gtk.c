@@ -19,9 +19,6 @@
 
 #include "board_gtk.h"
 
-#define BGR_FLOOR_ROWS 15
-#define BGR_FLOOR_COLS 15
-
 #define ANIM_TIMEOUT     10	/* time in milliseconds between 
                                two atom movements */
 
@@ -98,23 +95,17 @@ static void selector_arrows_hide (SelectorData *data);
 static void get_row_col_by_item (GtkWidget *item, guint *row, guint *col)
 {
   gint x, y;
-  gint row_offset, col_offset;
 
   g_return_if_fail (GTK_IS_WIDGET (item));
 
   gtk_container_child_get (GTK_CONTAINER (board_canvas), item, "x", &x, "y", &y, NULL);
 
-  row_offset = BGR_FLOOR_ROWS / 2 - playfield_get_n_rows (board_env) / 2;
-  col_offset = BGR_FLOOR_COLS / 2 - playfield_get_n_cols (board_env) / 2;
+  convert_to_playfield (board_theme, board_env, x, y, row, col);
 
-  convert_to_playfield (board_theme, x, y, row, col);
-
-  *row = *row - row_offset;
-  *col = *col - col_offset; 
 }
 
 static gboolean board_handle_arrow_event (GtkWidget *item,
-					  GdkEvent *event, gpointer direction)
+					  GdkEventButton *event, gpointer direction)
 {
   /* is currently an object moved? */
   if (anim_data->timeout_id != -1)
@@ -122,6 +113,7 @@ static gboolean board_handle_arrow_event (GtkWidget *item,
 
   if (event->type == GDK_BUTTON_PRESS && selector_data->selected)
     {
+      printf ("move item\n");
       selector_data->mouse_steering = TRUE;
 //      move_item (selector_data->sel_item, GPOINTER_TO_INT (direction));
 
@@ -134,6 +126,7 @@ static gboolean board_handle_arrow_event (GtkWidget *item,
 static SelectorData *selector_create (void)
 {
   SelectorData *data;
+  GtkWidget *image;
   GdkPixbuf *pixbuf;
   GdkPixbuf *sel_arrows[4];
   gint tile_width, tile_height;
@@ -155,29 +148,50 @@ static SelectorData *selector_create (void)
 
   data->selector = gtk_image_new_from_pixbuf (pixbuf);
 
-  data->arrow_top = gtk_image_new_from_pixbuf (sel_arrows[0]);
+  data->arrow_top = gtk_event_box_new ();
 
-  g_signal_connect (G_OBJECT (data->arrow_top), "event",
+  image = gtk_image_new_from_pixbuf (sel_arrows[0]);
+  gtk_widget_show (image);
+  gtk_container_add (GTK_CONTAINER (data->arrow_top), image);
+  gtk_widget_set_events (data->arrow_top, GDK_BUTTON_PRESS_MASK);
+
+  g_signal_connect (G_OBJECT (data->arrow_top), "button-press-event",
                     G_CALLBACK (board_handle_arrow_event),
                     GINT_TO_POINTER (UP));
 
-  data->arrow_right = gtk_image_new_from_pixbuf (sel_arrows[1]);
+  data->arrow_right = gtk_event_box_new ();
 
-  g_signal_connect (G_OBJECT (data->arrow_right), "event",
+  image = gtk_image_new_from_pixbuf (sel_arrows[1]);
+  gtk_widget_show (image);
+  gtk_container_add (GTK_CONTAINER (data->arrow_right), image);
+  gtk_widget_set_events (data->arrow_right, GDK_BUTTON_PRESS_MASK);
+
+  g_signal_connect (G_OBJECT (data->arrow_right), "button-press-event",
                     G_CALLBACK (board_handle_arrow_event),
                     GINT_TO_POINTER (RIGHT));
 
-  data->arrow_bottom = gtk_image_new_from_pixbuf (sel_arrows[2]);
+  data->arrow_bottom = gtk_event_box_new ();
 
-  g_signal_connect (G_OBJECT (data->arrow_bottom), "event",
+  image = gtk_image_new_from_pixbuf (sel_arrows[2]);
+  gtk_widget_show (image);
+  gtk_container_add (GTK_CONTAINER (data->arrow_bottom), image);
+  gtk_widget_set_events (data->arrow_bottom, GDK_BUTTON_PRESS_MASK);
+
+  g_signal_connect (G_OBJECT (data->arrow_bottom), "button-press-event",
                     G_CALLBACK (board_handle_arrow_event),
                     GINT_TO_POINTER (DOWN));
 
-  data->arrow_left = gtk_image_new_from_pixbuf (sel_arrows[3]);
+  data->arrow_left = gtk_event_box_new ();
 
-  g_signal_connect (G_OBJECT (data->arrow_left), "event",
+  image = gtk_image_new_from_pixbuf (sel_arrows[3]);
+  gtk_widget_show (image);
+  gtk_container_add (GTK_CONTAINER (data->arrow_left), image);
+  gtk_widget_set_events (data->arrow_left, GDK_BUTTON_PRESS_MASK);
+
+  g_signal_connect (G_OBJECT (data->arrow_left), "button-press-event",
                     G_CALLBACK (board_handle_arrow_event),
                     GINT_TO_POINTER (LEFT));
+
   gtk_fixed_put (GTK_FIXED (board_canvas), data->selector, 0, 0);
   gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_left, 0, 0);
   gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_right, 0, 0);
@@ -264,9 +278,6 @@ void board_gtk_init (Theme * theme, gpointer canvas)
   /* Canvas setup */
   level_items = g_new0 (LevelItems, 1);
 
-  g_signal_connect (G_OBJECT (canvas), "key_press_event",
-                    G_CALLBACK (board_gtk_handle_key_event), NULL);
-
   create_background_floor ();
   gtk_widget_show_all (GTK_WIDGET(board_canvas));
   selector_data = selector_create ();
@@ -314,7 +325,6 @@ void board_gtk_render () {
 static void render_tile (Tile *tile, gint row, gint col) {
   gboolean create = FALSE;
   TileType type;
-  gint row_offset, col_offset;
   gint x, y;
 
   type = tile_get_tile_type (tile);
@@ -339,9 +349,7 @@ static void render_tile (Tile *tile, gint row, gint col) {
 
 
   if (create) {
-    row_offset = BGR_FLOOR_ROWS / 2 - playfield_get_n_rows (board_env) / 2;
-    col_offset = BGR_FLOOR_COLS / 2 - playfield_get_n_cols (board_env) / 2;
-    convert_to_canvas (board_theme, row + row_offset, col + col_offset, &x, &y);
+    convert_to_canvas (board_theme, board_env, row, col, &x, &y);
     create_tile (x, y, tile);
   }
 }
@@ -513,9 +521,11 @@ void board_gtk_show_logo (gboolean visible)
 {
 }
 
-void board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
+gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
                                  gpointer data)
 {
+  printf ("Key in board\n");
+  return FALSE;
 }
 
 
@@ -523,9 +533,6 @@ static void selector_move_to (SelectorData *data, guint row, guint col)
 {
   int tile_width, tile_height;
   int x, y;
-
-  int row_offset = BGR_FLOOR_ROWS / 2 - playfield_get_n_rows (board_env) / 2;
-  int col_offset = BGR_FLOOR_COLS / 2 - playfield_get_n_cols (board_env) / 2;
 
   g_return_if_fail (data != NULL);
 
@@ -536,7 +543,7 @@ static void selector_move_to (SelectorData *data, guint row, guint col)
 
   theme_get_tile_size (board_theme, &tile_width, &tile_height);
 
-  convert_to_canvas (board_theme, row+row_offset, col+col_offset, &x, &y);
+  convert_to_canvas (board_theme, board_env, row, col, &x, &y);
 
   gtk_fixed_move (GTK_FIXED (board_canvas), data->selector, x, y);
 
