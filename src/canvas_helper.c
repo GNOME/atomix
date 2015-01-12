@@ -36,7 +36,7 @@ void convert_to_playfield (Theme *theme, gdouble x, gdouble y,
 }
 
 void convert_to_canvas (Theme *theme, guint row, guint col,
-			gdouble *x, gdouble *y)
+			gint *x, gint *y)
 {
   gint tile_width, tile_height;
 

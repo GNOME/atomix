@@ -35,6 +35,22 @@ typedef struct
   double y_step;
 } AnimData;
 
+typedef struct
+{
+  guint row;
+  guint col;
+  gboolean selected;
+  gint arrow_show_timeout;
+  gint mouse_steering;
+  GtkWidget *sel_item;
+  GtkWidget *selector;
+  GSList *arrows;
+  GtkWidget *arrow_left;
+  GtkWidget *arrow_right;
+  GtkWidget *arrow_top;
+  GtkWidget *arrow_bottom;
+} SelectorData;
+
 typedef enum
 {
   UP,
@@ -45,10 +61,7 @@ typedef enum
 
 typedef struct
 {
-  GSList *level;
-  GSList *obstacles;
   GSList *moveables;
-  GSList *shadows;
 } LevelItems;
 
 
@@ -63,6 +76,7 @@ static AnimData *anim_data;	/* holds the date for the atom
 static GSList *board_canvas_items = NULL;	/* a list of all used  */
 static Goal *board_goal = NULL;	/* the goal of this level */
 static LevelItems *level_items;	/* references to the level groups */
+static SelectorData *selector_data;	/* data about the selector */
 
 
 /* Forward declarations of internal functions */
@@ -70,8 +84,102 @@ void board_gtk_render (void);
 static void render_tile (Tile *tile, gint row, gint col);
 GtkImage* create_tile (double x, double y, Tile *tile);
 
+static void selector_move_to (SelectorData *data, guint row, guint col);
+static void selector_unselect (SelectorData *data);
+static void selector_select (SelectorData *data, GtkWidget *item);
+static SelectorData *selector_create (void);
+static void selector_hide (SelectorData *data);
+static void selector_show (SelectorData *data);
+static void selector_arrows_hide (SelectorData *data);
+
 
 /* Function implementations */
+
+static void get_row_col_by_item (GtkWidget *item, guint *row, guint *col)
+{
+  gint x, y;
+
+  g_return_if_fail (GTK_IS_WIDGET (item));
+
+  gtk_container_child_get (GTK_CONTAINER (board_canvas), item, "x", &x, "y", &y, NULL);
+
+  convert_to_playfield (board_theme, x, y, row, col);
+}
+
+static gboolean board_handle_arrow_event (GtkWidget *item,
+					  GdkEvent *event, gpointer direction)
+{
+  /* is currently an object moved? */
+  if (anim_data->timeout_id != -1)
+    return FALSE;
+
+  if (event->type == GDK_BUTTON_PRESS && selector_data->selected)
+    {
+      selector_data->mouse_steering = TRUE;
+//      move_item (selector_data->sel_item, GPOINTER_TO_INT (direction));
+
+      return TRUE;
+    }
+
+  return FALSE;
+}
+
+static SelectorData *selector_create (void)
+{
+  SelectorData *data;
+  GdkPixbuf *pixbuf;
+  GdkPixbuf *sel_arrows[4];
+  gint tile_width, tile_height;
+
+  data = g_new0 (SelectorData, 1);
+
+  pixbuf = theme_get_selector_image (board_theme);
+  theme_get_selector_arrow_images (board_theme, &sel_arrows[0]);
+  theme_get_tile_size (board_theme, &tile_width, &tile_height);
+
+  g_return_val_if_fail (pixbuf != NULL, NULL);
+
+  data->row = 0;
+  data->col = 0;
+  data->sel_item = NULL;
+  data->selected = FALSE;
+  data->arrow_show_timeout = -1;
+  data->mouse_steering = FALSE;
+
+  data->selector = gtk_image_new_from_pixbuf (pixbuf);
+
+  data->arrow_top = gtk_image_new_from_pixbuf (sel_arrows[0]);
+
+  g_signal_connect (G_OBJECT (data->arrow_top), "event",
+                    G_CALLBACK (board_handle_arrow_event),
+                    GINT_TO_POINTER (UP));
+
+  data->arrow_right = gtk_image_new_from_pixbuf (sel_arrows[1]);
+
+  g_signal_connect (G_OBJECT (data->arrow_right), "event",
+                    G_CALLBACK (board_handle_arrow_event),
+                    GINT_TO_POINTER (RIGHT));
+
+  data->arrow_bottom = gtk_image_new_from_pixbuf (sel_arrows[3]);
+
+  g_signal_connect (G_OBJECT (data->arrow_bottom), "event",
+                    G_CALLBACK (board_handle_arrow_event),
+                    GINT_TO_POINTER (DOWN));
+
+  data->arrow_left = gtk_image_new_from_pixbuf (sel_arrows[3]);
+
+  g_signal_connect (G_OBJECT (data->arrow_left), "event",
+                    G_CALLBACK (board_handle_arrow_event),
+                    GINT_TO_POINTER (LEFT));
+  gtk_fixed_put (GTK_FIXED (board_canvas), data->selector, 0, 0);
+  gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_left, 0, 0);
+  gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_right, 0, 0);
+  gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_top, 0, 0);
+  gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_bottom, 0, 0);
+
+  return data;
+}
+
 static void create_background_floor (void)
 {
   int row, col;
@@ -152,8 +260,9 @@ void board_gtk_init (Theme * theme, gpointer canvas)
   g_signal_connect (G_OBJECT (canvas), "key_press_event",
                     G_CALLBACK (board_gtk_handle_key_event), NULL);
 
-  create_background_floor ();
+  //create_background_floor ();
   gtk_widget_show_all (GTK_WIDGET(board_canvas));
+  selector_data = selector_create ();
 }
 
 void board_gtk_render () {
@@ -199,7 +308,7 @@ static void render_tile (Tile *tile, gint row, gint col) {
   gboolean create = FALSE;
   TileType type;
   gint row_offset, col_offset;
-  gdouble x, y;
+  gint x, y;
 
   type = tile_get_tile_type (tile);
   switch (type) {
@@ -230,14 +339,51 @@ static void render_tile (Tile *tile, gint row, gint col) {
   }
 }
 
+static gboolean show_arrow_group (SelectorData *data)
+{
+  g_slist_foreach (data->arrows, (GFunc)gtk_widget_show, NULL);
+  data->arrow_show_timeout = -1;
+
+  return FALSE;
+}
+
+
+static gboolean board_handle_item_event (GtkWidget *item,
+                                         GdkEvent *event, gpointer data) {
+  gboolean just_unselect;
+  guint new_row, new_col;
+  printf ("Item event\n");
+  /* is currently an object moved? */
+  if (anim_data->timeout_id != -1)
+    return FALSE;
+
+  if (event->type == GDK_BUTTON_PRESS) {
+    printf ("Button press\n");
+    selector_data->mouse_steering = TRUE;
+    just_unselect = (item == selector_data->sel_item);
+
+    if (selector_data->selected)
+      /* unselect item, show selector image */
+      selector_unselect (selector_data);
+
+    if (!just_unselect) {
+      get_row_col_by_item (item, &new_row, &new_col);
+      selector_move_to (selector_data, new_row, new_col);
+      selector_select (selector_data, item);
+    }
+
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
 GtkImage* create_tile (double x, double y,
                        Tile *tile)
 {
   GdkPixbuf *pixbuf = NULL;
   GtkWidget *item = NULL;
-  TileType type;
 
-  type = tile_get_tile_type (tile);
   pixbuf = theme_get_tile_image (board_theme, tile);
 
   item = gtk_image_new_from_pixbuf (pixbuf);
@@ -247,33 +393,13 @@ GtkImage* create_tile (double x, double y,
   g_object_set_data (G_OBJECT (item), "tile", tile);
 
 // TODO handle button click
-//  if (tile_get_tile_type (tile) == TILE_TYPE_ATOM)
-//    {
-//      g_signal_connect (G_OBJECT (item), "event",
-//			G_CALLBACK (board_handle_item_event), NULL);
-//    }
+  if (tile_get_tile_type (tile) == TILE_TYPE_ATOM) {
+    printf ("Adding button event handler\n");
+    g_signal_connect (G_OBJECT (item), "button-press-event",
+                      G_CALLBACK (board_handle_item_event), NULL);
+  }
 
   board_canvas_items = g_slist_prepend (board_canvas_items, item);
-  switch (type)
-    {
-    case TILE_TYPE_ATOM:
-      level_items->moveables =  g_slist_prepend (level_items->moveables, item);
-      break;
-
-    case TILE_TYPE_WALL:
-      level_items->obstacles = g_slist_prepend (level_items->obstacles, item);
-      break;
-
-    case TILE_TYPE_SHADOW:
-      level_items->shadows = g_slist_prepend (level_items->shadows, item);
-      break;
-
-    case TILE_TYPE_UNKNOWN:
-    case TILE_TYPE_FLOOR:
-    default:
-      break;
-    }
-
   return GTK_IMAGE (item);
 }
 
@@ -292,13 +418,13 @@ static void remove_items (GSList **list)
 
 static void level_clear (void)
 {
-  remove_items (&(level_items->moveables));
-  remove_items (&(level_items->obstacles));
-  remove_items (&(level_items->shadows));
+  remove_items (&(board_canvas_items));
 }
 
 void board_gtk_init_level (PlayField * base_env, PlayField * sce, Goal * goal)
 {
+  gint row, col;
+
   /* init item anim structure */
   anim_data->timeout_id = -1;
   anim_data->counter = 0;
@@ -320,6 +446,13 @@ void board_gtk_init_level (PlayField * base_env, PlayField * sce, Goal * goal)
   /* init goal */
   board_goal = g_object_ref (goal);
 
+  /* init selector */
+  row = playfield_get_n_rows (board_env) / 2;
+  col = playfield_get_n_cols (board_env) / 2;
+  selector_hide (selector_data);
+  selector_move_to (selector_data, row, col);
+  selector_unselect (selector_data);
+
   /* render level */
   board_gtk_render ();
   board_gtk_show ();
@@ -327,6 +460,23 @@ void board_gtk_init_level (PlayField * base_env, PlayField * sce, Goal * goal)
 
 void board_gtk_destroy (void)
 {
+  g_slist_free_full (board_canvas_items, (GDestroyNotify)gtk_widget_destroy);
+
+  if (board_env)
+    g_object_unref (board_env);
+  if (board_sce)
+    g_object_unref (board_sce);
+  if (anim_data)
+    g_free (anim_data);
+
+  undo_clear ();
+
+  if (board_theme)
+    g_object_unref (board_theme);
+
+  if (board_goal)
+    g_object_unref (board_goal);
+
 }
 
 void board_gtk_clear (void)
@@ -357,5 +507,172 @@ void board_gtk_show_logo (gboolean visible)
 void board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
                                  gpointer data)
 {
+}
+
+
+static void selector_move_to (SelectorData *data, guint row, guint col)
+{
+  int tile_width, tile_height;
+  int x, y;
+
+  int row_offset = BGR_FLOOR_ROWS / 2 - playfield_get_n_rows (board_env) / 2;
+  int col_offset = BGR_FLOOR_COLS / 2 - playfield_get_n_cols (board_env) / 2;
+
+  g_return_if_fail (data != NULL);
+
+  if (data->arrow_show_timeout > -1)
+    g_source_remove (data->arrow_show_timeout);
+
+  data->arrow_show_timeout = -1;
+
+  theme_get_tile_size (board_theme, &tile_width, &tile_height);
+
+  convert_to_canvas (board_theme, row+row_offset, col+col_offset, &x, &y);
+
+  gtk_fixed_move (GTK_FIXED (board_canvas), data->selector, x, y);
+
+  gtk_fixed_move (GTK_FIXED (board_canvas), data->selector, x, y);
+  gtk_fixed_move (GTK_FIXED (board_canvas), data->arrow_left, x - tile_width, y);
+  gtk_fixed_move (GTK_FIXED (board_canvas), data->arrow_right, x + tile_width, y);
+  gtk_fixed_move (GTK_FIXED (board_canvas), data->arrow_top, x, y - tile_width);
+  gtk_fixed_move (GTK_FIXED (board_canvas), data->arrow_bottom, x, y + tile_width);
+
+  data->row = row;
+  data->col = col;
+}
+
+static void selector_arrows_show (SelectorData *data)
+{
+  gint r, c;
+  Tile *tile;
+
+  if (board_sce == NULL)
+    {
+      selector_arrows_hide (data);
+      return;
+    }
+
+  r = data->row - 1;
+  c = data->col;
+  if (r >= 0)
+    {
+      tile = playfield_get_tile (board_sce, r, c);
+
+      if (tile == NULL)
+	gtk_widget_show (data->arrow_top);
+
+      else
+	{
+	  gtk_widget_hide (data->arrow_top);
+	  g_object_unref (tile);
+	}
+    }
+
+  r = data->row;
+  c = data->col + 1;
+
+  if (c < playfield_get_n_cols (board_sce))
+    {
+      tile = playfield_get_tile (board_sce, r, c);
+
+      if (tile == NULL)
+	gtk_widget_show (data->arrow_right);
+      else
+	{
+	  gtk_widget_hide (data->arrow_right);
+	  g_object_unref (tile);
+	}
+    }
+
+  r = data->row + 1;
+  c = data->col;
+
+  if (r < playfield_get_n_rows (board_sce))
+    {
+      tile = playfield_get_tile (board_sce, r, c);
+
+      if (tile == NULL)
+	gtk_widget_show (data->arrow_bottom);
+      else
+	{
+	  gtk_widget_hide (data->arrow_bottom);
+	  g_object_unref (tile);
+	}
+    }
+
+  r = data->row;
+  c = data->col - 1;
+
+  if (c >= 0)
+    {
+      tile = playfield_get_tile (board_sce, r, c);
+
+      if (tile == NULL)
+	gtk_widget_show (data->arrow_left);
+
+      else
+	{
+	  gtk_widget_hide (data->arrow_left);
+	  g_object_unref (tile);
+	}
+    }
+
+  if (data->mouse_steering)
+    {
+      show_arrow_group (data);
+    }
+
+  else
+    {
+      if (data->arrow_show_timeout > -1)
+	g_source_remove (data->arrow_show_timeout);
+
+      data->arrow_show_timeout =
+	g_timeout_add (800, (GSourceFunc) show_arrow_group, data);
+    }
+}
+
+static void selector_select (SelectorData *data, GtkWidget *item)
+{
+  g_return_if_fail (data != NULL);
+
+  data->selected = TRUE;
+  data->sel_item = item;
+
+  gtk_widget_hide (data->selector);
+  selector_arrows_show (data);
+}
+
+static void selector_unselect (SelectorData *data)
+{
+  g_return_if_fail (data != NULL);
+
+  data->selected = FALSE;
+  data->sel_item = NULL;
+
+  if (!data->mouse_steering)
+    selector_show (data);
+
+  selector_arrows_hide (data);
+}
+
+static void selector_arrows_hide (SelectorData *data)
+{
+  if (data->arrow_show_timeout > -1)
+    g_source_remove (data->arrow_show_timeout);
+  data->arrow_show_timeout = -1;
+  
+  g_slist_foreach (data->arrows, (GFunc)gtk_widget_hide, NULL);
+}
+
+static void selector_hide (SelectorData *data)
+{
+  gtk_widget_hide (data->selector);
+  selector_arrows_hide (data);
+}
+
+static void selector_show (SelectorData *data)
+{
+  gtk_widget_show (data->selector);
 }
 

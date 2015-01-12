@@ -25,6 +25,6 @@ void convert_to_playfield (Theme * theme, gdouble x, gdouble y,
 			   guint * row, guint * col);
 
 void convert_to_canvas (Theme * theme, guint row, guint col,
-			gdouble * x, gdouble * y);
+			gint * x, gint * y);
 
 #endif /* _ATOMIX_CANVAS_HELPER_H_ */
