@@ -373,7 +373,7 @@ static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
       board_gtk_handle_key_event (NULL, event, NULL);
     }
 
-  return TRUE;
+  return FALSE;
 }
 
 static void game_init ()
@@ -627,14 +627,13 @@ static void add_statistics_table_entry (GtkWidget *table, gint row,
 					GtkWidget **return_widget)
 {
   GtkWidget *label;
-  GtkWidget *lb_align;
   GtkWidget *align;
 
   label = gtk_label_new (label_str);
-  lb_align = gtk_alignment_new (1.0, 0.5, 0.0, 0.0);
-  gtk_container_add (GTK_CONTAINER (lb_align), GTK_WIDGET (label));
-  gtk_table_attach (GTK_TABLE (table), GTK_WIDGET (lb_align),
-		    0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 0);
+  gtk_widget_set_halign (label, GTK_ALIGN_END);
+  gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
+  gtk_grid_attach (GTK_GRID (table), GTK_WIDGET (label),
+                   0, row, 1, 1);
 
   if (is_clock)
     *return_widget = clock_new ();
@@ -642,9 +641,10 @@ static void add_statistics_table_entry (GtkWidget *table, gint row,
     *return_widget = gtk_label_new ("NO CONTENT");
 
   align = gtk_alignment_new (0.0, 0.5, 0.0, 0.0);
-  gtk_container_add (GTK_CONTAINER (align), GTK_WIDGET (*return_widget));
-  gtk_table_attach (GTK_TABLE (table), GTK_WIDGET (align),
-		    1, 2, row, row + 1, GTK_FILL, GTK_FILL, 6, 0);
+  gtk_widget_set_halign (*return_widget, GTK_ALIGN_START);
+  gtk_widget_set_valign (*return_widget, GTK_ALIGN_CENTER);
+  gtk_grid_attach (GTK_GRID (table), *return_widget,
+                   1, row, 1, 1);
 }
 
 static GtkWidget *create_mainwin_content (AtomixApp *app)
@@ -662,7 +662,7 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
   gtk_widget_set_size_request (GTK_WIDGET (goal), 180, 50);
 
   /* add playfield canvas to left side */
-  hbox = gtk_hbox_new (FALSE, 6);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
   gtk_container_set_border_width (GTK_CONTAINER (hbox), 6);
   gtk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (pf), TRUE, TRUE, 0);
   g_signal_connect (G_OBJECT (app->fi_matrix), "key_press_event",
@@ -674,9 +674,9 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
 
   /* create statistics frame */
   frame = gtk_frame_new (_("Statistics"));
-  table = gtk_table_new (4, 2, FALSE);
-  gtk_table_set_row_spacings (GTK_TABLE (table), 6);
-  gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+  table = gtk_grid_new ();
+  gtk_grid_set_row_spacing (GTK_GRID (table), 6);
+  gtk_grid_set_column_spacing (GTK_GRID (table), 6);
   gtk_container_set_border_width (GTK_CONTAINER (table), 6);
 
   add_statistics_table_entry (table, 0, _("Level:"), FALSE, &app->lb_level);

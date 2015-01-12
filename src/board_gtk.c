@@ -372,7 +372,7 @@ static gboolean board_handle_item_event (GtkWidget *item,
       selector_select (selector_data, item);
     }
 
-    return TRUE;
+    return FALSE;
   }
 
   return FALSE;
