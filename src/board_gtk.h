@@ -24,6 +24,8 @@
 #include "theme.h"
 #include "playfield.h"
 #include "goal.h"
+#include "undo.h"
+#include "canvas_helper.h"
 
 void board_gtk_init (Theme * theme, gpointer canvas);
 

@@ -52,17 +52,17 @@ GType clock_get_type (void)
   return object_type;
 }
 
-static void clock_destroy (GtkObject *object)
+static void clock_destroy (GtkWidget *object)
 {
   g_return_if_fail (object != NULL);
 
   clock_stop (CLOCK (object));
-  GTK_OBJECT_CLASS (parent_class)->destroy (object);
+  GTK_WIDGET_CLASS (parent_class)->destroy (object);
 }
 
 static void clock_class_init (ClockClass *klass)
 {
-  GtkObjectClass *object_class = (GtkObjectClass *) klass;
+  GtkWidgetClass *object_class = (GtkWidgetClass *) klass;
 
   object_class->destroy = clock_destroy;
   parent_class = g_type_class_peek (gtk_label_get_type ());
@@ -96,9 +96,7 @@ static gint clock_timer_callback (gpointer data)
 {
   Clock *clock = (Clock *) data;
 
-  GDK_THREADS_ENTER ();
   clock_gen_str (clock);
-  GDK_THREADS_LEAVE ();
 
   return TRUE;
 }

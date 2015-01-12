@@ -669,7 +669,7 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
 		    G_CALLBACK (on_key_press_event), app);
 
   /* create right window side */
-  vbox = gtk_vbox_new (FALSE, 6);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (vbox), FALSE, TRUE, 0);
 
   /* create statistics frame */
@@ -770,7 +770,7 @@ static AtomixApp *create_gui (void)
 							   NULL),
 					 		   NULL);
 
-  vbox = gtk_vbox_new (FALSE, 0);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_container_add (GTK_CONTAINER (app->mainwin), vbox);
   gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), content, TRUE, TRUE, 0);
