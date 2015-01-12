@@ -21,10 +21,12 @@
 #define _ATOMIX_BOARD_GTK_H_
 
 #include <gtk/gtk.h>
+#include <math.h>
 #include "theme.h"
 #include "playfield.h"
 #include "goal.h"
 #include "undo.h"
+#include "main.h"
 #include "canvas_helper.h"
 
 void board_gtk_init (Theme * theme, gpointer canvas);

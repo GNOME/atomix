@@ -20,7 +20,7 @@
 #include "math.h"
 #include "canvas_helper.h"
 
-void convert_to_playfield (Theme *theme, PlayField * playfield, gdouble x, gdouble y,
+void convert_to_playfield (Theme *theme, PlayField * playfield, gint x, gint y,
 			   guint *row, guint *col)
 {
   guint int_y, int_x;
@@ -36,6 +36,8 @@ void convert_to_playfield (Theme *theme, PlayField * playfield, gdouble x, gdoub
 
   int_x = (guint) ceil (x);
   *col = (int_x / tile_width) - col_offset;
+
+  printf ("%d, %d in coords is %d, %d on playfield\n", x, y, *row, *col); 
 }
 
 void convert_to_canvas (Theme *theme, PlayField * playfield,guint row, guint col,

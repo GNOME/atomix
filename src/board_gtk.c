@@ -80,6 +80,8 @@ static SelectorData *selector_data;	/* data about the selector */
 void board_gtk_render (void);
 static void render_tile (Tile *tile, gint row, gint col);
 GtkWidget* create_tile (double x, double y, Tile *tile);
+void move_item (GtkWidget *item, ItemDirection direc);
+int move_item_anim (void *data);
 
 static void selector_move_to (SelectorData *data, guint row, guint col);
 static void selector_unselect (SelectorData *data);
@@ -104,6 +106,152 @@ static void get_row_col_by_item (GtkWidget *item, guint *row, guint *col)
 
 }
 
+void move_item (GtkWidget *item, ItemDirection direc)
+{
+  gint x1, y1;
+  gint new_x1, new_y1;
+  guint src_row, src_col, dest_row, dest_col, tmp_row, tmp_col;
+  gint animstep;
+  Tile *tile;
+  gint tw, th;
+
+  gtk_container_child_get (GTK_CONTAINER (board_canvas), item, "x", &x1, "y", &y1, NULL);
+  theme_get_tile_size (board_theme, &tw, &th);
+  x1 = x1 - (((gint) x1) % tw);	/* I don't have a clue why we must do
+				   this here. */
+  convert_to_playfield (board_theme, board_env, x1, y1, &src_row, &src_col);
+
+  /* find destination row/col */
+  tmp_row = dest_row = src_row;
+  tmp_col = dest_col = src_col;
+
+  printf ("Moving from %d, %d\n", src_row, src_col);
+  while (TRUE)
+    {
+      switch (direc)
+	{
+	case UP:
+	  tmp_row = tmp_row - 1;
+      printf ("Moving up : %d\n", direc);
+
+	  break;
+
+	case DOWN:
+	  tmp_row = tmp_row + 1;
+      printf ("Moving down: %d\n", direc);
+
+	  break;
+
+	case LEFT:
+      printf ("Moving left: %d\n", direc);
+
+	  tmp_col = tmp_col - 1;
+	  break;
+
+	case RIGHT:
+      printf ("Moving right: %d\n", direc);
+
+	  tmp_col = tmp_col + 1;
+	  break;
+	}
+
+      if (tmp_row < 0 || tmp_row >= playfield_get_n_rows (board_sce) ||
+	  tmp_col < 0 || tmp_col >= playfield_get_n_cols (board_sce))
+	break;
+
+      tile = playfield_get_tile (board_sce, tmp_row, tmp_col);
+      if (tile && (tile_get_tile_type (tile) == TILE_TYPE_ATOM ||
+		   tile_get_tile_type (tile) == TILE_TYPE_WALL))
+	{
+	  g_object_unref (tile);
+	  break;
+	}
+
+      dest_row = tmp_row;
+      dest_col = tmp_col;
+      if (tile)
+	g_object_unref (tile);
+    }
+
+  printf ("Moving from (%d, %d) to (%d, %d)\n", src_row, src_col, dest_row, dest_col);
+
+  /* move the item, if the new position is different */
+  if (src_row != dest_row || src_col != dest_col)
+    {
+      printf ("Moving from (%d, %d) to (%d, %d)\n", src_row, src_col, dest_row, dest_col);
+      if (!undo_exists())
+	{
+// TODO change game state and update undo item state
+//	  app->state = GAME_STATE_RUNNING;
+//	  update_menu_item_state ();
+	}
+
+      undo_push_move (item, src_row, src_col, dest_row, dest_col);
+
+      convert_to_canvas (board_theme, board_env, dest_row, dest_col, &new_x1, &new_y1);
+      playfield_swap_tiles (board_sce, src_row, src_col, dest_row, dest_col);
+
+      selector_hide (selector_data);
+      selector_move_to (selector_data, dest_row, dest_col);
+
+      animstep = theme_get_animstep (board_theme);
+      if (direc == UP || direc == DOWN)
+	{
+	  anim_data->counter = (gint) (fabs (new_y1 - y1) / animstep);
+	  anim_data->x_step = 0;
+	  anim_data->y_step = (direc == DOWN) ? animstep : -animstep;
+	}
+      else
+	{
+	  anim_data->counter = (gint) (fabs (new_x1 - x1) / animstep);
+	  anim_data->x_step = (direc == RIGHT) ? animstep : -animstep;
+	  anim_data->y_step = 0;
+	}
+
+      anim_data->dest_row = dest_row;
+      anim_data->dest_col = dest_col;
+
+      anim_data->timeout_id = g_timeout_add (ANIM_TIMEOUT, move_item_anim,
+					       anim_data);
+    }
+}
+
+int move_item_anim (void *data)
+{
+  AnimData *anim_data = (AnimData *) data;
+  gint x, y;
+
+  if (anim_data->counter > 0)
+    {
+      gtk_container_child_get (GTK_CONTAINER (board_canvas), selector_data->sel_item, "x", &x, "y", &y, NULL);
+      gtk_fixed_move (GTK_FIXED (board_canvas), selector_data->sel_item,
+			      x + anim_data->x_step, y + anim_data->y_step);
+      anim_data->counter--;
+
+      return TRUE;
+    }
+
+  else
+    {
+      anim_data->timeout_id = -1;
+
+      if (goal_reached (board_goal, board_sce, anim_data->dest_row,
+			anim_data->dest_col))
+	{
+// TODO finish the level
+//	  game_level_finished ();
+	}
+
+      else
+	{
+	  if (selector_data->selected)
+	    selector_select (selector_data, selector_data->sel_item);
+	}
+
+      return FALSE;
+    }
+}
+
 static gboolean board_handle_arrow_event (GtkWidget *item,
 					  GdkEventButton *event, gpointer direction)
 {
@@ -115,7 +263,7 @@ static gboolean board_handle_arrow_event (GtkWidget *item,
     {
       printf ("move item\n");
       selector_data->mouse_steering = TRUE;
-//      move_item (selector_data->sel_item, GPOINTER_TO_INT (direction));
+      move_item (selector_data->sel_item, GPOINTER_TO_INT (direction));
 
       return TRUE;
     }
@@ -465,10 +613,9 @@ void board_gtk_init_level (PlayField * base_env, PlayField * sce, Goal * goal)
   /* init selector */
   row = playfield_get_n_rows (board_env) / 2;
   col = playfield_get_n_cols (board_env) / 2;
-  selector_hide (selector_data);
   selector_move_to (selector_data, row, col);
   selector_unselect (selector_data);
-
+  selector_arrows_hide (selector_data);
   /* render level */
   board_gtk_render ();
   board_gtk_show ();
@@ -651,10 +798,13 @@ static void selector_arrows_show (SelectorData *data)
 static void selector_select (SelectorData *data, GtkWidget *item)
 {
   g_return_if_fail (data != NULL);
+  gint x, y;
+
+  gtk_container_child_get (GTK_CONTAINER(board_canvas), item, "x", &x, "y", &y, NULL);
 
   data->selected = TRUE;
   data->sel_item = item;
-
+  printf ("Selected item at %d, %d\n", x, y);
   gtk_widget_hide (data->selector);
   selector_arrows_show (data);
 }

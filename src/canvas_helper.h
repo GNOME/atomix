@@ -26,10 +26,10 @@
 #define BGR_FLOOR_COLS 15
 
 
-void convert_to_playfield (Theme * theme, PlayField * playfield, gdouble x, gdouble y,
+void convert_to_playfield (Theme * theme, PlayField * playfield, gint x, gint y,
 			   guint * row, guint * col);
 
-void convert_to_canvas (Theme * theme, PlayField * playfield,guint row, guint col,
+void convert_to_canvas (Theme * theme, PlayField * playfield, guint row, guint col,
 			gint * x, gint * y);
 
 #endif /* _ATOMIX_CANVAS_HELPER_H_ */
