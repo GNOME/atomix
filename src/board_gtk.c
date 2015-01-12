@@ -395,7 +395,7 @@ GtkImage* create_tile (double x, double y,
 // TODO handle button click
   if (tile_get_tile_type (tile) == TILE_TYPE_ATOM) {
     printf ("Adding button event handler\n");
-    g_signal_connect (G_OBJECT (item), "button-press-event",
+    g_signal_connect (G_OBJECT (item), "event",
                       G_CALLBACK (board_handle_item_event), NULL);
   }
 

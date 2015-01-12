@@ -368,6 +368,7 @@ static void atomix_exit (void)
 static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
 				    gpointer user_data)
 {
+  printf ("Key pressed\n");
   if ((app->state == GAME_STATE_RUNNING) || (app->state == GAME_STATE_RUNNING_UNMOVED))
     {
       board_gtk_handle_key_event (NULL, event, NULL);
@@ -665,7 +666,7 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
   gtk_container_set_border_width (GTK_CONTAINER (hbox), 6);
   gtk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (pf), TRUE, TRUE, 0);
-  g_signal_connect (G_OBJECT (app->fi_matrix), "key_press_event",
+  g_signal_connect (G_OBJECT (app->fi_matrix), "key-press-event",
 		    G_CALLBACK (on_key_press_event), app);
 
   /* create right window side */
