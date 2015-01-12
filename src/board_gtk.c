@@ -51,6 +51,7 @@ typedef struct
   GSList *shadows;
 } LevelItems;
 
+
 /* Static declarations, to be removed */
 static GtkFixed *board_canvas = NULL;
 static Theme *board_theme = NULL;
@@ -63,10 +64,12 @@ static GSList *board_canvas_items = NULL;	/* a list of all used  */
 static Goal *board_goal = NULL;	/* the goal of this level */
 static LevelItems *level_items;	/* references to the level groups */
 
+
 /* Forward declarations of internal functions */
 void board_gtk_render (void);
 static void render_tile (Tile *tile, gint row, gint col);
 GtkImage* create_tile (double x, double y, Tile *tile);
+
 
 /* Function implementations */
 static void create_background_floor (void)
@@ -91,14 +94,13 @@ static void create_background_floor (void)
   g_object_unref (tile);
 
   for (row = 0; row < BGR_FLOOR_ROWS; row++)
-    for (col = 0; col < BGR_FLOOR_COLS; col++)
-      {
-	x = col * tile_width;
-	y = row * tile_height;
+    for (col = 0; col < BGR_FLOOR_COLS; col++) {
+      x = col * tile_width;
+      y = row * tile_height;
 
-    item = gtk_image_new_from_pixbuf (pixbuf);
-    gtk_fixed_put (GTK_FIXED (board_canvas), item, x, y);
-      }
+      item = gtk_image_new_from_pixbuf (pixbuf);
+      gtk_fixed_put (GTK_FIXED (board_canvas), item, x, y);
+    }
 
   g_object_unref (pixbuf);
 
@@ -110,20 +112,16 @@ static void create_background_floor (void)
   width = tile_width * BGR_FLOOR_COLS;
   height = tile_height * BGR_FLOOR_ROWS;
 
-  if (width > ca_width)
-    {
-      x = (width / 2) - (ca_width / 2);
-      width = ca_width;
-    }
-  else
+  if (width > ca_width) {
+    x = (width / 2) - (ca_width / 2);
+    width = ca_width;
+  } else
     x = 0;
 
-  if (height > ca_height)
-    {
-      y = (height / 2) - (ca_height / 2);
-      height = ca_height;
-    }
-  else
+  if (height > ca_height) {
+    y = (height / 2) - (ca_height / 2);
+    height = ca_height;
+  } else
     y = 0;
 }
 
@@ -152,14 +150,13 @@ void board_gtk_init (Theme * theme, gpointer canvas)
   level_items = g_new0 (LevelItems, 1);
 
   g_signal_connect (G_OBJECT (canvas), "key_press_event",
-		    G_CALLBACK (board_gtk_handle_key_event), NULL);
+                    G_CALLBACK (board_gtk_handle_key_event), NULL);
 
   create_background_floor ();
   gtk_widget_show_all (GTK_WIDGET(board_canvas));
 }
 
-void board_gtk_render ()
-{
+void board_gtk_render () {
   gint row, col;
   Tile *tile;
 
@@ -168,53 +165,44 @@ void board_gtk_render ()
   /* render one row more than the actual environment because
      of the shadow, which is one row/col larger */
 
-  for (row = 0; row <= playfield_get_n_rows (board_env); row++)
-    {
-      for (col = 0; col <= playfield_get_n_cols (board_env); col++)
-	{
-	  if (row < playfield_get_n_rows (board_env) &&
-	      col < playfield_get_n_cols (board_env))
-	    {
-	      tile = playfield_get_tile (board_sce, row, col);
-	      if (tile != NULL)
-		{
-		  render_tile (tile, row, col);
-		  g_object_unref (tile);
-		}
+  for (row = 0; row <= playfield_get_n_rows (board_env); row++) {
+    for (col = 0; col <= playfield_get_n_cols (board_env); col++) {
+      if (row < playfield_get_n_rows (board_env) &&
+          col < playfield_get_n_cols (board_env)) {
+        tile = playfield_get_tile (board_sce, row, col);
+        if (tile != NULL) {
+          render_tile (tile, row, col);
+          g_object_unref (tile);
+        }
 
-	      tile = playfield_get_tile (board_env, row, col);
+        tile = playfield_get_tile (board_env, row, col);
 
-	      if (tile != NULL)
-		{
-		  render_tile (tile, row, col);
-		  if (tile_get_tile_type (tile) == TILE_TYPE_WALL)
-		    playfield_set_tile (board_sce, row, col, tile);
+        if (tile != NULL) {
+          render_tile (tile, row, col);
+          if (tile_get_tile_type (tile) == TILE_TYPE_WALL)
+            playfield_set_tile (board_sce, row, col, tile);
 
-		  g_object_unref (tile);
-		}
-	    }
+          g_object_unref (tile);
+        }
+      }
 
-	  tile = playfield_get_tile (board_shadow, row, col);
-	  if (tile != NULL)
-	    {
-	      render_tile (tile, row, col);
-	      g_object_unref (tile);
-	    }
-	}
+      tile = playfield_get_tile (board_shadow, row, col);
+      if (tile != NULL) {
+        render_tile (tile, row, col);
+        g_object_unref (tile);
+      }
     }
-
+  }
 }
 
-static void render_tile (Tile *tile, gint row, gint col)
-{
+static void render_tile (Tile *tile, gint row, gint col) {
   gboolean create = FALSE;
   TileType type;
   gint row_offset, col_offset;
   gdouble x, y;
 
   type = tile_get_tile_type (tile);
-  switch (type)
-    {
+  switch (type) {
     case TILE_TYPE_ATOM:
       create = TRUE;
       break;
@@ -231,20 +219,19 @@ static void render_tile (Tile *tile, gint row, gint col)
     case TILE_TYPE_FLOOR:
     default:
       break;
-    }
+  }
 
 
-  if (create)
-    {
-      row_offset = BGR_FLOOR_ROWS / 2 - playfield_get_n_rows (board_env) / 2;
-      col_offset = BGR_FLOOR_COLS / 2 - playfield_get_n_cols (board_env) / 2;
-      convert_to_canvas (board_theme, row + row_offset, col + col_offset, &x, &y);
-      create_tile (x, y, tile);
-    }
+  if (create) {
+    row_offset = BGR_FLOOR_ROWS / 2 - playfield_get_n_rows (board_env) / 2;
+    col_offset = BGR_FLOOR_COLS / 2 - playfield_get_n_cols (board_env) / 2;
+    convert_to_canvas (board_theme, row + row_offset, col + col_offset, &x, &y);
+    create_tile (x, y, tile);
+  }
 }
 
 GtkImage* create_tile (double x, double y,
-			      Tile *tile)
+                       Tile *tile)
 {
   GdkPixbuf *pixbuf = NULL;
   GtkWidget *item = NULL;
@@ -368,7 +355,7 @@ void board_gtk_show_logo (gboolean visible)
 }
 
 void board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
-			     gpointer data)
+                                 gpointer data)
 {
 }
 
