@@ -19,7 +19,7 @@
 
 #include "board_gtk.h"
 
-#define ANIM_TIMEOUT     10	/* time in milliseconds between 
+#define ANIM_TIMEOUT     1000	/* time in milliseconds between 
                                two atom movements */
 
 typedef struct
@@ -62,6 +62,7 @@ typedef struct
 } LevelItems;
 
 
+// FIXME get rid of static variables
 /* Static declarations, to be removed */
 static GtkFixed *board_canvas = NULL;
 static Theme *board_theme = NULL;
@@ -72,7 +73,6 @@ static AnimData *anim_data;	/* holds the date for the atom
                                animation */
 static GSList *board_canvas_items = NULL;	/* a list of all used  */
 static Goal *board_goal = NULL;	/* the goal of this level */
-static LevelItems *level_items;	/* references to the level groups */
 static SelectorData *selector_data;	/* data about the selector */
 
 
@@ -101,7 +101,6 @@ static void get_row_col_by_item (GtkWidget *item, guint *row, guint *col)
   g_return_if_fail (GTK_IS_WIDGET (item));
 
   gtk_container_child_get (GTK_CONTAINER (board_canvas), item, "x", &x, "y", &y, NULL);
-
   convert_to_playfield (board_theme, board_env, x, y, row, col);
 
 }
@@ -117,156 +116,121 @@ void move_item (GtkWidget *item, ItemDirection direc)
 
   gtk_container_child_get (GTK_CONTAINER (board_canvas), item, "x", &x1, "y", &y1, NULL);
   theme_get_tile_size (board_theme, &tw, &th);
-  x1 = x1 - (((gint) x1) % tw);	/* I don't have a clue why we must do
-				   this here. */
   convert_to_playfield (board_theme, board_env, x1, y1, &src_row, &src_col);
 
   /* find destination row/col */
   tmp_row = dest_row = src_row;
   tmp_col = dest_col = src_col;
 
-  printf ("Moving from %d, %d\n", src_row, src_col);
-  while (TRUE)
-    {
-      switch (direc)
-	{
-	case UP:
-	  tmp_row = tmp_row - 1;
-      printf ("Moving up : %d\n", direc);
+  while (TRUE) {
+    switch (direc) {
+      case UP:
+        tmp_row = tmp_row - 1;
+        break;
 
-	  break;
+      case DOWN:
+        tmp_row = tmp_row + 1;
+        break;
 
-	case DOWN:
-	  tmp_row = tmp_row + 1;
-      printf ("Moving down: %d\n", direc);
+      case LEFT:
+        tmp_col = tmp_col - 1;
+        break;
 
-	  break;
-
-	case LEFT:
-      printf ("Moving left: %d\n", direc);
-
-	  tmp_col = tmp_col - 1;
-	  break;
-
-	case RIGHT:
-      printf ("Moving right: %d\n", direc);
-
-	  tmp_col = tmp_col + 1;
-	  break;
-	}
-
-      if (tmp_row < 0 || tmp_row >= playfield_get_n_rows (board_sce) ||
-	  tmp_col < 0 || tmp_col >= playfield_get_n_cols (board_sce))
-	break;
-
-      tile = playfield_get_tile (board_sce, tmp_row, tmp_col);
-      if (tile && (tile_get_tile_type (tile) == TILE_TYPE_ATOM ||
-		   tile_get_tile_type (tile) == TILE_TYPE_WALL))
-	{
-	  g_object_unref (tile);
-	  break;
-	}
-
-      dest_row = tmp_row;
-      dest_col = tmp_col;
-      if (tile)
-	g_object_unref (tile);
+      case RIGHT:
+        tmp_col = tmp_col + 1;
+        break;
     }
 
-  printf ("Moving from (%d, %d) to (%d, %d)\n", src_row, src_col, dest_row, dest_col);
+    if (tmp_row < 0 || tmp_row >= playfield_get_n_rows (board_sce) ||
+        tmp_col < 0 || tmp_col >= playfield_get_n_cols (board_sce))
+      break;
+
+    tile = playfield_get_tile (board_sce, tmp_row, tmp_col);
+    if (tile && (tile_get_tile_type (tile) == TILE_TYPE_ATOM ||
+        tile_get_tile_type (tile) == TILE_TYPE_WALL)) {
+      g_object_unref (tile);
+      break;
+    }
+
+    dest_row = tmp_row;
+    dest_col = tmp_col;
+    if (tile)
+      g_object_unref (tile);
+  }
 
   /* move the item, if the new position is different */
-  if (src_row != dest_row || src_col != dest_col)
-    {
-      printf ("Moving from (%d, %d) to (%d, %d)\n", src_row, src_col, dest_row, dest_col);
-      if (!undo_exists())
-	{
+  if (src_row != dest_row || src_col != dest_col) {
+    if (!undo_exists())	{
 // TODO change game state and update undo item state
-//	  app->state = GAME_STATE_RUNNING;
-//	  update_menu_item_state ();
-	}
-
-      undo_push_move (item, src_row, src_col, dest_row, dest_col);
-
-      convert_to_canvas (board_theme, board_env, dest_row, dest_col, &new_x1, &new_y1);
-      playfield_swap_tiles (board_sce, src_row, src_col, dest_row, dest_col);
-
-      selector_hide (selector_data);
-      selector_move_to (selector_data, dest_row, dest_col);
-
-      animstep = theme_get_animstep (board_theme);
-      if (direc == UP || direc == DOWN)
-	{
-	  anim_data->counter = (gint) (fabs (new_y1 - y1) / animstep);
-	  anim_data->x_step = 0;
-	  anim_data->y_step = (direc == DOWN) ? animstep : -animstep;
-	}
-      else
-	{
-	  anim_data->counter = (gint) (fabs (new_x1 - x1) / animstep);
-	  anim_data->x_step = (direc == RIGHT) ? animstep : -animstep;
-	  anim_data->y_step = 0;
-	}
-
-      anim_data->dest_row = dest_row;
-      anim_data->dest_col = dest_col;
-
-      anim_data->timeout_id = g_timeout_add (ANIM_TIMEOUT, move_item_anim,
-					       anim_data);
+//    app->state = GAME_STATE_RUNNING;
+//    update_menu_item_state ();
     }
+
+    undo_push_move (item, src_row, src_col, dest_row, dest_col);
+
+    convert_to_canvas (board_theme, board_env, dest_row, dest_col, &new_x1, &new_y1);
+    playfield_swap_tiles (board_sce, src_row, src_col, dest_row, dest_col);
+
+    selector_hide (selector_data);
+
+    animstep = theme_get_animstep (board_theme);
+    if (direc == UP || direc == DOWN) {
+      anim_data->counter = (gint) (fabs (new_y1 - y1) / animstep);
+      anim_data->x_step = 0;
+      anim_data->y_step = (direc == DOWN) ? animstep : -animstep;
+    } else {
+      anim_data->counter = (gint) (fabs (new_x1 - x1) / animstep);
+      anim_data->x_step = (direc == RIGHT) ? animstep : -animstep;
+      anim_data->y_step = 0;
+    }
+
+    anim_data->dest_row = dest_row;
+    anim_data->dest_col = dest_col;
+
+    anim_data->timeout_id = g_timeout_add (ANIM_TIMEOUT, move_item_anim,
+                                           anim_data);
+  }
 }
 
-int move_item_anim (void *data)
-{
+int move_item_anim (void *data) {
   AnimData *anim_data = (AnimData *) data;
   gint x, y;
 
-  if (anim_data->counter > 0)
-    {
-      gtk_container_child_get (GTK_CONTAINER (board_canvas), selector_data->sel_item, "x", &x, "y", &y, NULL);
-      gtk_fixed_move (GTK_FIXED (board_canvas), selector_data->sel_item,
-			      x + anim_data->x_step, y + anim_data->y_step);
-      anim_data->counter--;
+  if (anim_data->counter > 0) {
+    gtk_container_child_get (GTK_CONTAINER (board_canvas), 
+                             selector_data->sel_item, "x", &x, "y", &y, NULL);
+    gtk_fixed_move (GTK_FIXED (board_canvas), selector_data->sel_item,
+                    x + anim_data->x_step, y + anim_data->y_step);
+    anim_data->counter--;
 
-      return TRUE;
-    }
+    return TRUE;
+  }
+  // else
+  anim_data->timeout_id = -1;
+  selector_move_to (selector_data, anim_data->dest_row, anim_data->dest_col);
 
-  else
-    {
-      anim_data->timeout_id = -1;
-
-      if (goal_reached (board_goal, board_sce, anim_data->dest_row,
-			anim_data->dest_col))
-	{
+  if (goal_reached (board_goal, board_sce, anim_data->dest_row,
+      anim_data->dest_col)){
 // TODO finish the level
-//	  game_level_finished ();
-	}
-
-      else
-	{
-	  if (selector_data->selected)
-	    selector_select (selector_data, selector_data->sel_item);
-	}
-
-      return FALSE;
-    }
+// game_level_finished ();
+  } else if (selector_data->selected)
+      selector_select (selector_data, selector_data->sel_item);
+  return FALSE;
 }
 
 static gboolean board_handle_arrow_event (GtkWidget *item,
-					  GdkEventButton *event, gpointer direction)
+                                          GdkEventButton *event,
+                                          gpointer direction)
 {
   /* is currently an object moved? */
   if (anim_data->timeout_id != -1)
     return FALSE;
 
-  if (event->type == GDK_BUTTON_PRESS && selector_data->selected)
-    {
-      printf ("move item\n");
-      selector_data->mouse_steering = TRUE;
-      move_item (selector_data->sel_item, GPOINTER_TO_INT (direction));
-
-      return TRUE;
-    }
+  if (event->type == GDK_BUTTON_PRESS && selector_data->selected) {
+    selector_data->mouse_steering = TRUE;
+    move_item (selector_data->sel_item, GPOINTER_TO_INT (direction));
+    return TRUE;
+  }
 
   return FALSE;
 }
@@ -345,7 +309,10 @@ static SelectorData *selector_create (void)
   gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_right, 0, 0);
   gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_top, 0, 0);
   gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_bottom, 0, 0);
-
+  data->arrows = g_slist_prepend (data->arrows, data->arrow_left);
+  data->arrows = g_slist_prepend (data->arrows, data->arrow_right);
+  data->arrows = g_slist_prepend (data->arrows, data->arrow_top);
+  data->arrows = g_slist_prepend (data->arrows, data->arrow_bottom);
   return data;
 }
 
@@ -422,9 +389,6 @@ void board_gtk_init (Theme * theme, gpointer canvas)
   anim_data->y_step = 0.0;
 
   undo_clear ();
-
-  /* Canvas setup */
-  level_items = g_new0 (LevelItems, 1);
 
   create_background_floor ();
   gtk_widget_show_all (GTK_WIDGET(board_canvas));
@@ -634,6 +598,9 @@ void board_gtk_destroy (void)
 
   undo_clear ();
 
+  if (selector_data)
+    g_free (selector_data);
+
   if (board_theme)
     g_object_unref (board_theme);
 
@@ -791,7 +758,7 @@ static void selector_arrows_show (SelectorData *data)
 	g_source_remove (data->arrow_show_timeout);
 
       data->arrow_show_timeout =
-	g_timeout_add (800, (GSourceFunc) show_arrow_group, data);
+	g_timeout_add (1000, (GSourceFunc) show_arrow_group, data);
     }
 }
 
@@ -827,7 +794,7 @@ static void selector_arrows_hide (SelectorData *data)
   if (data->arrow_show_timeout > -1)
     g_source_remove (data->arrow_show_timeout);
   data->arrow_show_timeout = -1;
-  
+  printf ("Hide arrows\n");
   g_slist_foreach (data->arrows, (GFunc)gtk_widget_hide, NULL);
 }
 
