@@ -19,7 +19,7 @@
 
 #include "board-gtk.h"
 
-#define ANIM_TIMEOUT     1000	/* time in milliseconds between 
+#define ANIM_TIMEOUT     8     /* time in milliseconds between 
                                two atom movements */
 
 typedef struct
@@ -48,6 +48,12 @@ typedef struct
   GtkWidget *arrow_bottom;
 } SelectorData;
 
+typedef struct
+{
+  GSList *moveables;
+  GtkWidget *logo;
+} LevelItems;
+
 typedef enum
 {
   UP,
@@ -66,6 +72,7 @@ static PlayField *board_sce = NULL;	/* the actual playfield */
 static PlayField *board_shadow = NULL;	/* the shadow positions */
 static AnimData *anim_data;	/* holds the date for the atom 
                                animation */
+static LevelItems *level_items;
 static GSList *board_canvas_items = NULL;	/* a list of all used  */
 static Goal *board_goal = NULL;	/* the goal of this level */
 static SelectorData *selector_data;	/* data about the selector */
@@ -311,6 +318,23 @@ static SelectorData *selector_create (void)
   return data;
 }
 
+static void create_logo (void)
+{
+  GdkPixbuf *pixbuf;
+  int tile_width, tile_height;
+
+  theme_get_tile_size (board_theme, &tile_width, &tile_height);
+  pixbuf = gdk_pixbuf_new_from_file (DATADIR "/atomix/atomix-logo.png", NULL);
+
+  level_items->logo = gtk_image_new_from_pixbuf (pixbuf);
+  gtk_widget_show (level_items->logo);
+  gtk_fixed_put (GTK_FIXED (board_canvas), level_items->logo,
+                 BGR_FLOOR_COLS * tile_width/2 - gdk_pixbuf_get_width (pixbuf)/2,
+                 BGR_FLOOR_ROWS * tile_height/2 - gdk_pixbuf_get_height (pixbuf)/2);
+
+  g_object_unref (pixbuf);
+}
+
 static void create_background_floor (void)
 {
   int row, col;
@@ -384,8 +408,10 @@ void board_gtk_init (Theme * theme, gpointer canvas)
   anim_data->y_step = 0.0;
 
   undo_clear ();
+  level_items = g_new0 (LevelItems, 1);
 
   create_background_floor ();
+  create_logo ();
   gtk_widget_show_all (GTK_WIDGET(board_canvas));
   selector_data = selector_create ();
 }
@@ -475,13 +501,11 @@ static gboolean board_handle_item_event (GtkWidget *item,
   gboolean just_unselect;
   guint new_row, new_col;
 
-  printf ("Item event\n");
   /* is currently an object moved? */
   if (anim_data->timeout_id != -1)
     return FALSE;
 
   if (event->type == GDK_BUTTON_PRESS) {
-    printf ("Button press\n");
     selector_data->mouse_steering = TRUE;
     just_unselect = (item == selector_data->sel_item);
 
@@ -519,6 +543,7 @@ GtkWidget* create_tile (double x, double y,
     item = event_box;
     g_signal_connect (G_OBJECT (item), "button-press-event",
                       G_CALLBACK (board_handle_item_event), NULL);
+    level_items->moveables = g_slist_prepend (level_items->moveables, item);
   }
 
   gtk_widget_show (item);
@@ -574,6 +599,8 @@ void board_gtk_destroy (void)
     g_object_unref (board_sce);
   if (anim_data)
     g_free (anim_data);
+  if (level_items)
+    g_free (level_items);
 
   undo_clear ();
 
@@ -593,6 +620,9 @@ void board_gtk_clear (void)
   g_slist_foreach (board_canvas_items, (GFunc) gtk_widget_destroy, NULL);
   g_slist_free (board_canvas_items);
   board_canvas_items = NULL;
+
+  g_slist_free (level_items->moveables);
+  level_items->moveables = NULL;
 
 /* clear board */
   if (board_env)
@@ -622,6 +652,8 @@ void board_gtk_clear (void)
 
 void board_gtk_print (void)
 {
+  g_print ("Board:\n");
+  playfield_print (board_env);
 }
 
 void board_gtk_hide (void)
@@ -639,6 +671,10 @@ gboolean board_gtk_undo_move (void)
 
 void board_gtk_show_logo (gboolean visible)
 {
+  if (visible)
+    gtk_widget_show (level_items->logo);
+  else
+    gtk_widget_hide (level_items->logo);
 }
 
 gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
@@ -800,7 +836,6 @@ static void selector_arrows_hide (SelectorData *data)
   if (data->arrow_show_timeout > -1)
     g_source_remove (data->arrow_show_timeout);
   data->arrow_show_timeout = -1;
-  printf ("Hide arrows\n");
   g_slist_foreach (data->arrows, (GFunc)gtk_widget_hide, NULL);
 }
 
