@@ -5,15 +5,27 @@
          xmlns="http://usefulinc.com/ns/doap#">
 
   <name xml:lang="en">atomix</name>
-  <shortdesc xml:lang="en">Mind game - build molecules out of single atoms</shortdesc>
+  <shortdesc xml:lang="en">Build molecules out of single atoms</shortdesc>
+  <description xml:lang="en">Mind game - build molecules out of single atoms</description>
+  <homepage rdf:resource="https://wiki.gnome.org/Apps/Atomix" />
   <download-page rdf:resource="http://download.gnome.org/sources/atomix/" />
+  <mailing-list rdf:resource="http://mail.gnome.org/mailman/listinfo/games-list" />
   <bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=atomix" />
+  <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
+  <programming-language>C</programming-language>
 
   <maintainer>
     <foaf:Person>
       <foaf:name>Guilherme de S. Pastore</foaf:name>
       <foaf:mbox rdf:resource="mailto:gpastore@gnome.org" />
       <gnome:userid>gpastore</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Robert Roth</foaf:name>
+      <foaf:mbox rdf:resource="mailto:robertroth@gnome.org" />
+      <gnome:userid>robertroth</gnome:userid>
     </foaf:Person>
   </maintainer>
 </Project>
