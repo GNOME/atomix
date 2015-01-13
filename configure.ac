@@ -48,8 +48,9 @@ AC_CONFIG_FILES([
 Makefile
 po/Makefile.in
 src/Makefile
-themes/Makefile
-themes/default/Makefile
-level/Makefile])
+data/Makefile
+data/themes/Makefile
+data/themes/default/Makefile
+data/level/Makefile])
 
 AC_OUTPUT
