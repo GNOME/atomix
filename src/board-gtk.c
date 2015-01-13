@@ -188,7 +188,7 @@ void move_item (GtkWidget *item, ItemDirection direc)
 
   /* move the item, if the new position is different */
   if (src_row != dest_row || src_col != dest_col) {
-    if (!undo_exists())	{
+    if (!undo_exists()) {
       app->state = GAME_STATE_RUNNING;
       update_menu_item_state ();
     }
@@ -863,10 +863,22 @@ static void selector_move_to (SelectorData *data, guint row, guint col)
   data->col = col;
 }
 
+static void check_for_arrow (gint r, gint c, GtkWidget *arrow) {
+  Tile *tile;
+
+  tile = playfield_get_tile (board_sce, r, c);
+
+  if (tile == NULL)
+    gtk_widget_show (arrow);
+  else {
+    gtk_widget_hide (arrow);
+    g_object_unref (tile);
+  }
+}
+
 static void selector_arrows_show (SelectorData *data)
 {
   gint r, c;
-  Tile *tile;
 
   if (board_sce == NULL)
     {
@@ -877,81 +889,35 @@ static void selector_arrows_show (SelectorData *data)
   r = data->row - 1;
   c = data->col;
   if (r >= 0)
-    {
-      tile = playfield_get_tile (board_sce, r, c);
-
-      if (tile == NULL)
-	gtk_widget_show (data->arrow_top);
-
-      else
-	{
-	  gtk_widget_hide (data->arrow_top);
-	  g_object_unref (tile);
-	}
-    }
+    check_for_arrow (r, c, data->arrow_top);
 
   r = data->row;
   c = data->col + 1;
 
   if (c < playfield_get_n_cols (board_sce))
-    {
-      tile = playfield_get_tile (board_sce, r, c);
-
-      if (tile == NULL)
-	gtk_widget_show (data->arrow_right);
-      else
-	{
-	  gtk_widget_hide (data->arrow_right);
-	  g_object_unref (tile);
-	}
-    }
+    check_for_arrow (r, c, data->arrow_right);
 
   r = data->row + 1;
   c = data->col;
 
   if (r < playfield_get_n_rows (board_sce))
-    {
-      tile = playfield_get_tile (board_sce, r, c);
-
-      if (tile == NULL)
-	gtk_widget_show (data->arrow_bottom);
-      else
-	{
-	  gtk_widget_hide (data->arrow_bottom);
-	  g_object_unref (tile);
-	}
-    }
+    check_for_arrow (r, c, data->arrow_bottom);
 
   r = data->row;
   c = data->col - 1;
 
   if (c >= 0)
-    {
-      tile = playfield_get_tile (board_sce, r, c);
-
-      if (tile == NULL)
-	gtk_widget_show (data->arrow_left);
-
-      else
-	{
-	  gtk_widget_hide (data->arrow_left);
-	  g_object_unref (tile);
-	}
-    }
+    check_for_arrow (r, c, data->arrow_left);
 
   if (data->mouse_steering)
-    {
-      show_arrow_group (data);
-    }
+    show_arrow_group (data);
+  else {
+    if (data->arrow_show_timeout > -1)
+      g_source_remove (data->arrow_show_timeout);
 
-  else
-    {
-      if (data->arrow_show_timeout > -1)
-	g_source_remove (data->arrow_show_timeout);
-
-      data->arrow_show_timeout =
-	g_timeout_add (1000, (GSourceFunc) show_arrow_group, data);
-    }
+    data->arrow_show_timeout = 
+        g_timeout_add (2000, (GSourceFunc) show_arrow_group, data);
+  }
 }
 
 static void selector_select (SelectorData *data, GtkWidget *item)
