@@ -737,7 +737,7 @@ gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
   gint new_row, new_col;
   Tile *tile;
 
-  g_return_if_fail (selector_data != NULL);
+  g_return_val_if_fail (selector_data != NULL, FALSE);
 
   new_row = selector_data->row;
   new_col = selector_data->col;
