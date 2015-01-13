@@ -261,10 +261,28 @@ static gboolean board_handle_arrow_event (GtkWidget *item,
   return FALSE;
 }
 
+static GtkWidget* create_arrow (SelectorData *data, GdkPixbuf *pixbuf, ItemDirection direction) {
+  GtkWidget *image;
+  GtkWidget *arrow = gtk_event_box_new ();
+
+  image = gtk_image_new_from_pixbuf (pixbuf);
+  gtk_widget_show (image);
+  gtk_container_add (GTK_CONTAINER (arrow), image);
+  gtk_widget_set_events (arrow, GDK_BUTTON_PRESS_MASK);
+
+  g_signal_connect (G_OBJECT (arrow), "button-press-event",
+                    G_CALLBACK (board_handle_arrow_event),
+                    GINT_TO_POINTER (direction));
+
+  data->arrows = g_slist_prepend (data->arrows, arrow);
+  gtk_fixed_put (GTK_FIXED (board_canvas), arrow, 0, 0);
+  g_object_unref (pixbuf);
+  return arrow;
+}
+
 static SelectorData *selector_create (void)
 {
   SelectorData *data;
-  GtkWidget *image;
   GdkPixbuf *pixbuf;
   GdkPixbuf *sel_arrows[4];
   gint tile_width, tile_height;
@@ -285,60 +303,14 @@ static SelectorData *selector_create (void)
   data->mouse_steering = FALSE;
 
   data->selector = gtk_image_new_from_pixbuf (pixbuf);
-
-  data->arrow_top = gtk_event_box_new ();
-
-  image = gtk_image_new_from_pixbuf (sel_arrows[0]);
-  gtk_widget_show (image);
-  gtk_container_add (GTK_CONTAINER (data->arrow_top), image);
-  gtk_widget_set_events (data->arrow_top, GDK_BUTTON_PRESS_MASK);
-
-  g_signal_connect (G_OBJECT (data->arrow_top), "button-press-event",
-                    G_CALLBACK (board_handle_arrow_event),
-                    GINT_TO_POINTER (UP));
-
-  data->arrow_right = gtk_event_box_new ();
-
-  image = gtk_image_new_from_pixbuf (sel_arrows[1]);
-  gtk_widget_show (image);
-  gtk_container_add (GTK_CONTAINER (data->arrow_right), image);
-  gtk_widget_set_events (data->arrow_right, GDK_BUTTON_PRESS_MASK);
-
-  g_signal_connect (G_OBJECT (data->arrow_right), "button-press-event",
-                    G_CALLBACK (board_handle_arrow_event),
-                    GINT_TO_POINTER (RIGHT));
-
-  data->arrow_bottom = gtk_event_box_new ();
-
-  image = gtk_image_new_from_pixbuf (sel_arrows[2]);
-  gtk_widget_show (image);
-  gtk_container_add (GTK_CONTAINER (data->arrow_bottom), image);
-  gtk_widget_set_events (data->arrow_bottom, GDK_BUTTON_PRESS_MASK);
-
-  g_signal_connect (G_OBJECT (data->arrow_bottom), "button-press-event",
-                    G_CALLBACK (board_handle_arrow_event),
-                    GINT_TO_POINTER (DOWN));
-
-  data->arrow_left = gtk_event_box_new ();
-
-  image = gtk_image_new_from_pixbuf (sel_arrows[3]);
-  gtk_widget_show (image);
-  gtk_container_add (GTK_CONTAINER (data->arrow_left), image);
-  gtk_widget_set_events (data->arrow_left, GDK_BUTTON_PRESS_MASK);
-
-  g_signal_connect (G_OBJECT (data->arrow_left), "button-press-event",
-                    G_CALLBACK (board_handle_arrow_event),
-                    GINT_TO_POINTER (LEFT));
-
   gtk_fixed_put (GTK_FIXED (board_canvas), data->selector, 0, 0);
-  gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_left, 0, 0);
-  gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_right, 0, 0);
-  gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_top, 0, 0);
-  gtk_fixed_put (GTK_FIXED (board_canvas), data->arrow_bottom, 0, 0);
-  data->arrows = g_slist_prepend (data->arrows, data->arrow_left);
-  data->arrows = g_slist_prepend (data->arrows, data->arrow_right);
-  data->arrows = g_slist_prepend (data->arrows, data->arrow_top);
-  data->arrows = g_slist_prepend (data->arrows, data->arrow_bottom);
+  g_object_unref (pixbuf);
+
+  data->arrow_top = create_arrow (data, sel_arrows[0], UP);
+  data->arrow_right = create_arrow (data, sel_arrows[1], RIGHT);
+  data->arrow_bottom = create_arrow (data, sel_arrows[2], DOWN);
+  data->arrow_left = create_arrow (data, sel_arrows[3], LEFT);
+
   return data;
 }
 
@@ -626,11 +598,12 @@ void board_gtk_destroy (void)
     g_free (anim_data);
   if (level_items)
     g_free (level_items);
-
   undo_clear ();
 
-  if (selector_data)
+  if (selector_data) {
+    g_slist_free_full (selector_data->arrows, (GDestroyNotify)gtk_widget_destroy);
     g_free (selector_data);
+  }
 
   if (board_theme)
     g_object_unref (board_theme);
