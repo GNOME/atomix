@@ -606,6 +606,9 @@ static GtkWidget *create_board_widget (GtkWidget **fixed)
   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
   gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (*fixed));
 
+  gtk_widget_set_halign (GTK_WIDGET (*fixed), GTK_ALIGN_CENTER);
+  gtk_widget_set_valign (GTK_WIDGET (*fixed), GTK_ALIGN_CENTER);
+
   return frame;
 }
 
@@ -813,7 +816,7 @@ int main (int argc, char *argv[])
   game_init ();
 
   gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 678, 520);
-  gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
+  //gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
   gtk_widget_show (app->mainwin);
 
   gtk_main ();
