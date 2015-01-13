@@ -46,7 +46,6 @@ void goal_view_render (Goal *goal)
 
 static void render_view (Goal *goal)
 {
-  GtkImage *item;
   PlayField *pf;
   gint row, col;
   gdouble x;
@@ -54,7 +53,6 @@ static void render_view (Goal *goal)
   Tile *tile;
   TileType type;
   gint tile_width, tile_height;
-  gint width, height;
 
   g_return_if_fail (IS_GOAL (goal));
   g_return_if_fail (GTK_IS_FIXED (goal_fixed));
@@ -79,7 +77,7 @@ static void render_view (Goal *goal)
 	    case TILE_TYPE_ATOM:
 	      x = col * tile_width * SCALE_FACTOR;
 	      y = row * tile_height * SCALE_FACTOR;
-	      item = create_small_item (x, y, tile);
+	      create_small_item (x, y, tile);
 
 	      break;
 

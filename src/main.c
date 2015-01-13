@@ -583,36 +583,7 @@ void update_menu_item_state (void)
              GUI creation  functions 
 
 -------------------------------------------------------------- */
-/*static GtkWidget *create_canvas_widget (GtkWidget **canvas)
-{
-  GtkWidget *frame;
-
-  *canvas = gnome_canvas_new_aa ();
-
-  frame = gtk_frame_new (NULL);
-  gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
-  gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (*canvas));
-
-  return frame;
-}*/
-
-static GtkWidget *create_board_widget (GtkWidget **fixed)
-{
-  GtkWidget *frame;
-
-  *fixed = gtk_fixed_new ();
-
-  frame = gtk_frame_new (NULL);
-  gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
-  gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (*fixed));
-
-  gtk_widget_set_halign (GTK_WIDGET (*fixed), GTK_ALIGN_CENTER);
-  gtk_widget_set_valign (GTK_WIDGET (*fixed), GTK_ALIGN_CENTER);
-
-  return frame;
-}
-
-static GtkWidget *create_goal_widget (GtkWidget **fixed)
+static GtkWidget *create_fixed_widget (GtkWidget **fixed)
 {
   GtkWidget *frame;
 
@@ -633,7 +604,6 @@ static void add_statistics_table_entry (GtkWidget *table, gint row,
 					GtkWidget **return_widget)
 {
   GtkWidget *label;
-  GtkWidget *align;
 
   label = gtk_label_new (label_str);
   gtk_widget_set_halign (label, GTK_ALIGN_END);
@@ -646,7 +616,6 @@ static void add_statistics_table_entry (GtkWidget *table, gint row,
   else
     *return_widget = gtk_label_new ("NO CONTENT");
 
-  align = gtk_alignment_new (0.0, 0.5, 0.0, 0.0);
   gtk_widget_set_halign (*return_widget, GTK_ALIGN_START);
   gtk_widget_set_valign (*return_widget, GTK_ALIGN_CENTER);
   gtk_grid_attach (GTK_GRID (table), *return_widget,
@@ -663,8 +632,8 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
   GtkWidget *table;
 
   /* create canvas widgets */
-  pf = create_board_widget (&app->fi_matrix);
-  goal = create_goal_widget (&app->fi_goal);
+  pf = create_fixed_widget (&app->fi_matrix);
+  goal = create_fixed_widget (&app->fi_goal);
   gtk_widget_set_size_request (GTK_WIDGET (goal), 180, 50);
 
   /* add playfield canvas to left side */
