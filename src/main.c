@@ -113,6 +113,7 @@ static void verb_HelpAbout_cb (GtkAction * action, gpointer data)
 
   const char *authors[] =
     {
+      "Robert Roth <robert.roth.off@gmail.com>",
       "Guilherme de S. Pastore <gpastore@gnome.org>",
       "Jens Finke <jens@triq.net>",
       NULL
@@ -133,7 +134,7 @@ static void verb_HelpAbout_cb (GtkAction * action, gpointer data)
   gtk_about_dialog_set_authors (GTK_ABOUT_DIALOG(dlg), authors);
   gtk_about_dialog_set_artists (GTK_ABOUT_DIALOG(dlg), artists);
   gtk_about_dialog_set_translator_credits (GTK_ABOUT_DIALOG(dlg), _("translator-credits"));
-
+  gtk_window_set_transient_for (GTK_WINDOW (dlg), GTK_WINDOW (app->mainwin));
   gtk_widget_show (dlg);
 }
 
