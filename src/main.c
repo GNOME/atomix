@@ -130,7 +130,7 @@ static void verb_HelpAbout_cb (GtkAction * action, gpointer data)
   gtk_about_dialog_set_program_name (GTK_ABOUT_DIALOG(dlg), "Atomix");
   gtk_about_dialog_set_version (GTK_ABOUT_DIALOG(dlg), VERSION);
   gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG(dlg), _("A puzzle game about atoms and molecules"));
-  gtk_about_dialog_set_website (GTK_ABOUT_DIALOG(dlg), "http://www.gnome.org/projects/atomix");
+  gtk_about_dialog_set_website (GTK_ABOUT_DIALOG(dlg), "http://wiki.gnome.org/Apps/Atomix");
   gtk_about_dialog_set_authors (GTK_ABOUT_DIALOG(dlg), authors);
   gtk_about_dialog_set_artists (GTK_ABOUT_DIALOG(dlg), artists);
   gtk_about_dialog_set_translator_credits (GTK_ABOUT_DIALOG(dlg), _("translator-credits"));
