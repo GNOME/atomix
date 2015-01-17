@@ -1,3 +1,4 @@
+/* -*- tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* Atomix -- a little puzzle game about atoms and molecules.
  * Copyright (C) 2001 Jens Finke
  * Copyright (C) 2005 Guilherme de S. Pastore
@@ -18,12 +19,7 @@
  */
 
 #include <glib/gi18n.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <dirent.h>
-#include <fcntl.h>
-#include <libxml/parser.h>
-#include <libxml/tree.h>
+#include <glib.h>
 
 #include "theme-manager.h"
 #include "theme-private.h"
@@ -34,18 +30,131 @@ static void search_themes_in_dir (ThemeManager *tm, const gchar *dir_path);
 static void add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath);
 static void add_theme_to_list (gchar *key, gpointer value, GList **list);
 static Theme *load_theme (gchar *theme_dir);
-static void handle_tile_icon_node (Theme *theme, xmlNodePtr node);
 static gchar *lookup_theme_name (gchar *theme_file);
 
 static void theme_manager_class_init (GObjectClass *class);
 static void theme_manager_init (ThemeManager *tm);
 static void theme_manager_finalize (GObject *object);
-static void handle_tile_decor_node (Theme *theme, xmlNodePtr node);
 
 struct _ThemeManagerPrivate
 {
   gboolean initialized;
   GHashTable *themes;
+};
+
+static const gchar* get_attribute_value (const gchar *attribute,
+                                   const gchar **attribute_names,
+                                   const gchar **attribute_values)
+{
+  gint i = 0;
+
+  while (attribute_names[i]) {
+    if (!g_strcmp0 (attribute_names[i], attribute))
+      return attribute_values[i];
+    i++;
+  }
+
+  return NULL;
+}
+
+static void theme_parser_error (GMarkupParseContext *context,
+                                GError *error,
+                                gpointer user_data)
+{
+  g_print ("Error while parsing theme\n");
+}
+
+static void
+theme_parser_start_element (GMarkupParseContext  *context,
+                            const gchar          *element_name,
+                            const gchar         **attribute_names,
+                            const gchar         **attribute_values,
+                            gpointer              user_data,
+                            GError              **error)
+{
+  const gchar *prop_value;
+  Theme *theme = THEME (user_data);
+  ThemePrivate *priv = theme->priv;
+
+  if (!g_strcmp0 (element_name, "theme")) {
+    prop_value = get_attribute_value ("name", attribute_names, attribute_values);
+    priv->name = g_strdup (prop_value);
+  } else if (!g_strcmp0 (element_name, "icon")) {
+    gchar *src;
+    GdkPixbuf *pixbuf;
+    gint alpha = 255;
+
+    src = g_build_filename (theme->priv->path, 
+                            get_attribute_value ("src", attribute_names, attribute_values),
+                            NULL);
+
+    prop_value = get_attribute_value ("alpha", attribute_names, attribute_values);
+
+    if (prop_value != NULL)
+      alpha = CLAMP (atoi (prop_value), 0, 255);
+
+    if (theme->priv->tile_width == 0) {
+      pixbuf = gdk_pixbuf_new_from_file (src, NULL);
+      if (pixbuf != NULL) {
+        theme->priv->tile_width = gdk_pixbuf_get_width (pixbuf);
+        theme->priv->tile_height = gdk_pixbuf_get_height (pixbuf);
+        g_object_unref (pixbuf);
+      }
+    }
+
+    theme_add_image (theme, src, alpha);
+
+    g_free (src);
+  } else if (!g_strcmp0 (element_name, "animstep")) {
+    priv->animstep = atoi (get_attribute_value ("dist", attribute_names, 
+                                                    attribute_values));
+  } else if (!g_strcmp0 (element_name, "bgcolor")) {
+    /* handle background color */
+    prop_value = get_attribute_value ("color", attribute_names, attribute_values);
+    gdk_color_parse (prop_value, &(priv->bg_color));
+  } else if (!g_strcmp0 (element_name, "bgcolor_rgb")) {
+    /* handle rgb color node */
+    prop_value = get_attribute_value ("red", attribute_names, attribute_values);
+    priv->bg_color.red = (atof (prop_value) / 255.0) * 65536;
+    prop_value = get_attribute_value ("blue", attribute_names, attribute_values);
+    priv->bg_color.blue = (atof (prop_value) / 255.0) * 65536;
+    prop_value = get_attribute_value ("green", attribute_names, attribute_values);
+    priv->bg_color.green = (atof (prop_value) / 255.0) * 65536;
+  } else if (!g_strcmp0 (element_name, "decor")) {
+    gchar *src;
+    const gchar *base;
+    GQuark base_id;
+    GQuark decor_id;
+    gint alpha = 255;
+
+    src = g_build_filename (theme->priv->path, 
+                            get_attribute_value ("src", attribute_names, attribute_values),
+                            NULL);
+
+    prop_value = get_attribute_value ("alpha", attribute_names, attribute_values);
+    if (prop_value != NULL) {
+      alpha = CLAMP (atoi (prop_value), 0, 255);
+    }
+
+    decor_id = theme_add_image (theme, src, alpha);
+    g_free (src);
+
+    base = get_attribute_value ("base", attribute_names, attribute_values);
+    if (base == NULL)
+      return;
+
+    base_id = g_quark_from_string (base);
+    theme_add_image_decoration (theme, base_id, decor_id);
+  }
+}
+
+static GMarkupParser theme_parser =
+{
+  theme_parser_start_element,
+  NULL,
+  NULL,
+  NULL,
+  theme_parser_error
 };
 
 GType theme_manager_get_type (void)
@@ -237,184 +346,65 @@ Theme *theme_manager_get_theme (ThemeManager *tm, const gchar *theme_name)
   return theme;
 }
 
+
 static Theme *load_theme (gchar *theme_dir)
 {
-  Theme *theme;
+  Theme *theme = NULL;
   ThemePrivate *priv;
-  gchar *theme_file;
-  gchar *prop_value;
-  xmlDocPtr doc;
-  xmlNodePtr node;
+  gchar *theme_file_path;
+  GFile *theme_file;
+  gchar *theme_contents;
+  gsize theme_length;
+  GMarkupParseContext *parse_context;
 
   g_return_val_if_fail (theme_dir != NULL, NULL);
 
-  theme_file = g_build_filename (theme_dir, "theme", NULL);
+  theme_file_path = g_build_filename (theme_dir, "theme", NULL);
 
-  if (!g_file_test (theme_file, G_FILE_TEST_IS_REGULAR))
+  if (!g_file_test (theme_file_path, G_FILE_TEST_IS_REGULAR))
     {
-      g_warning ("File not found: %s.", theme_file);
-      g_free (theme_file);
+      g_warning ("File not found: %s.", theme_file_path);
+      g_free (theme_file_path);
       return NULL;
     }
 
-  doc = xmlParseFile (theme_file);
-  if (doc == NULL)
-    {
-      g_warning ("Couldn't parse XML file: %s.", theme_file);
-      g_free (theme_file);
-      return NULL;
-    }
+  theme_file = g_file_new_for_path (theme_file_path);
+  if (g_file_load_contents (theme_file, NULL, &theme_contents, &theme_length, NULL, NULL)) {
+    theme = theme_new ();
+    priv = theme->priv;
+    priv->path = g_strdup (theme_dir);
+    parse_context = g_markup_parse_context_new (&theme_parser,
+                                                G_MARKUP_TREAT_CDATA_AS_TEXT,
+                                                theme,
+                                                NULL);
+    g_markup_parse_context_parse (parse_context, theme_contents, theme_length, NULL);
+    g_markup_parse_context_unref (parse_context);
+    g_free (theme_contents);
+  }
 
-  theme = theme_new ();
-  priv = theme->priv;
-  priv->path = g_strdup (theme_dir);
-
-  node = doc->xmlRootNode;
-  while (node != NULL)
-    {
-      if (!g_ascii_strcasecmp (node->name, "theme"))
-	{
-	  /* handle theme node */
-	  priv->name = g_strdup (xmlGetProp (node, "name"));
-	  node = node->xmlChildrenNode;
-	}
-      else
-	{
-	  if (!g_ascii_strcasecmp (node->name, "icon"))
-	    {
-	      handle_tile_icon_node (theme, node);
-	    }
-
-	  else if (!g_ascii_strcasecmp (node->name, "decor"))
-	    {
-	      handle_tile_decor_node (theme, node);
-	    }
-	  else if (!g_ascii_strcasecmp (node->name, "animstep"))
-	    {
-	      priv->animstep = atoi (xmlGetProp (node, "dist"));
-	    }
-	  else if (!g_ascii_strcasecmp (node->name, "bgcolor"))
-	    {
-	      /* handle background color */
-	      prop_value = xmlGetProp (node, "color");
-	      gdk_color_parse (prop_value, &(priv->bg_color));
-	    }
-	  else if (!g_ascii_strcasecmp (node->name, "bgcolor_rgb"))
-	    {
-	      /* handle rgb color node */
-	      prop_value = xmlGetProp (node, "red");
-	      priv->bg_color.red = (atof (prop_value) / 255.0) * 65536;
-	      prop_value = xmlGetProp (node, "green");
-	      priv->bg_color.green = (atof (prop_value) / 255.0) * 65536;
-	      prop_value = xmlGetProp (node, "blue");
-	      priv->bg_color.blue = (atof (prop_value) / 255.0) * 65536;
-	    }
-	  else if (!g_ascii_strcasecmp (node->name, "text"))
-	    {
-	    }
-	  else
-	    {
-	      g_warning ("Unknown theme tag, ignoring <%s>.", node->name);
-	    }
-
-	  node = node->next;
-	}
-    }
-
-  xmlFreeDoc (doc);
+  g_object_unref (theme_file);
 
   return theme;
 }
 
-static void handle_tile_decor_node (Theme *theme, xmlNodePtr node)
-{
-  gchar *src;
-  gchar *base;
-  GQuark base_id;
-  GQuark decor_id;
-  gint alpha = 255;
-
-  g_return_if_fail (IS_THEME (theme));
-
-  src = g_build_filename (theme->priv->path, xmlGetProp (node, "src"), NULL);
-  if (xmlGetProp (node, "alpha") != NULL)
-    {
-      alpha = atoi (xmlGetProp (node, "alpha"));
-      if (alpha < 0)
-	alpha = 0;
-      if (alpha > 255)
-	alpha = 255;
-    }
-
-  decor_id = theme_add_image (theme, src, alpha);
-  g_free (src);
-
-  base = xmlGetProp (node, "base");
-  if (base == NULL)
-    return;
-
-  base_id = g_quark_from_string (base);
-  theme_add_image_decoration (theme, base_id, decor_id);
-}
-
-static void handle_tile_icon_node (Theme *theme, xmlNodePtr node)
-{
-  gchar *src;
-  GdkPixbuf *pixbuf;
-  gint alpha = 255;
-
-  g_return_if_fail (IS_THEME (theme));
-
-  src = g_build_filename (theme->priv->path, xmlGetProp (node, "src"), NULL);
-
-  if (xmlGetProp (node, "alpha") != NULL)
-    {
-      alpha = atoi (xmlGetProp (node, "alpha"));
-      if (alpha < 0)
-	alpha = 0;
-      if (alpha > 255)
-	alpha = 255;
-    }
-
-  if (theme->priv->tile_width == 0)
-    {
-      pixbuf = gdk_pixbuf_new_from_file (src, NULL);
-      if (pixbuf != NULL)
-	{
-	  theme->priv->tile_width = gdk_pixbuf_get_width (pixbuf);
-	  theme->priv->tile_height = gdk_pixbuf_get_height (pixbuf);
-	  g_object_unref (pixbuf);
-	}
-    }
-
-  theme_add_image (theme, src, alpha);
-
-  g_free (src);
-}
-
 static gchar *lookup_theme_name (gchar *theme_file)
 {
-  xmlDocPtr doc;
-  xmlNodePtr node;
   gchar *name = NULL;
+  GFile *file;
+  GFile *folder;
+  Theme *theme = NULL;
+  gchar *theme_path = NULL;
 
-  g_return_val_if_fail (theme_file != NULL, NULL);
-  g_return_val_if_fail (g_file_test (theme_file, G_FILE_TEST_EXISTS), NULL);
+  file = g_file_new_for_path (theme_file);
+  folder = g_file_get_parent (file);
+  theme_path = g_file_get_path (folder);
+  theme = load_theme (theme_path);
 
-  /* read file */
-  doc = xmlParseFile (theme_file);
-  if (doc == NULL)
-    {
-      g_warning ("Couldn't parse theme file: %s", theme_file);
-      return NULL;
-    }
+  name = theme_get_name (theme);
 
-  node = doc->xmlRootNode;
-
-  if (node && !g_ascii_strcasecmp (node->name, "theme"))
-    name = g_strdup (xmlGetProp (node, "name"));
-
-  xmlFreeDoc (doc);
+  g_free (theme_path);
+  g_object_unref (file);
+  g_object_unref (folder);
 
   return name;
 }
