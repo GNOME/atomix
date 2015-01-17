@@ -200,6 +200,7 @@
                             <property name="can_focus">False</property>
                             <property name="border_width">12</property>
                             <property name="column_spacing">6</property>
+                            <property name="row_spacing">4</property>
                             <child>
                               <object class="GtkLabel" id="level_label">
                                 <property name="visible">True</property>
