@@ -1,6 +1,6 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-SUBDIRS = level themes
+SUBDIRS = level themes ui
 
 logodir = $(pkgdatadir)
 logo_DATA = atomix-logo.png

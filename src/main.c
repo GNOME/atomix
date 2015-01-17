@@ -675,6 +675,8 @@ static GtkWidget *create_mainwin_content (AtomixApp *app)
 static AtomixApp *create_gui (void)
 {
   AtomixApp *app;
+  gchar *ui_path;
+  GtkBuilder *builder;
   GtkAccelGroup *accel_group;
   GtkActionGroup *action_group;
   GtkWidget *vbox;
@@ -718,6 +720,12 @@ static AtomixApp *create_gui (void)
 
   app = g_new0 (AtomixApp, 1);
   app->level = NULL;
+
+  ui_path = g_build_filename (PKGDATADIR, "ui", "interface.ui", NULL);
+
+  builder = gtk_builder_new_from_file (ui_path);
+  g_free (ui_path);
+  g_object_unref (builder);
 
   app->mainwin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (app->mainwin), _("Atomix"));
