@@ -51,6 +51,8 @@ src/Makefile
 data/Makefile
 data/themes/Makefile
 data/themes/default/Makefile
-data/level/Makefile])
+data/level/Makefile
+data/ui/Makefile
+])
 
 AC_OUTPUT

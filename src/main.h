@@ -38,6 +38,8 @@ typedef enum
 typedef struct
 {
   GtkWidget *mainwin;
+  GHashTable *actions;
+
   GtkUIManager *ui_manager;
   GtkWidget *fi_matrix;
   GtkWidget *fi_goal;
