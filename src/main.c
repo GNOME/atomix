@@ -67,47 +67,47 @@ static void calculate_score (void);
              Menu callback  functions 
 
 -------------------------------------------------------------- */
-static void verb_GameNew_cb (GtkAction * action, gpointer data)
+static void verb_GameNew_cb (GtkMenuItem * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_NEW);
 }
 
-static void verb_GameEnd_cb (GtkAction * action, gpointer data)
+static void verb_GameEnd_cb (GtkMenuItem * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_END);
 }
 
-static void verb_GameSkip_cb (GtkAction * action, gpointer data)
+static void verb_GameSkip_cb (GtkMenuItem * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_SKIP);
 }
 
-static void verb_GameReset_cb (GtkAction * action, gpointer data)
+static void verb_GameReset_cb (GtkMenuItem * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_RESTART);
 }
 
-static void verb_GamePause_cb (GtkAction * action, gpointer data)
+static void verb_GamePause_cb (GtkMenuItem * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_PAUSE);
 }
 
-static void verb_GameContinue_cb (GtkAction * action, gpointer data)
+static void verb_GameContinue_cb (GtkMenuItem * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_CONTINUE);
 }
 
-static void verb_GameUndo_cb (GtkAction * action, gpointer data)
+static void verb_GameUndo_cb (GtkMenuItem * action, gpointer data)
 {
   controller_handle_action (GAME_ACTION_UNDO);
 }
 
-static void verb_GameExit_cb (GtkAction * action, gpointer data)
+static void verb_GameExit_cb (GtkMenuItem * action, gpointer data)
 {
   atomix_exit ();
 }
 
-static void verb_HelpAbout_cb (GtkAction * action, gpointer data)
+static void verb_HelpAbout_cb (GtkMenuItem * action, gpointer data)
 {
   GtkWidget *dlg;
 
@@ -360,6 +360,9 @@ static void atomix_exit (void)
   if (app->tm)
     g_object_unref (app->tm);
 
+  if (app->actions)
+    g_hash_table_destroy (app->actions);
+
   /* quit application */
   gtk_widget_destroy (app->mainwin);
 
@@ -565,17 +568,14 @@ static const CmdEnable *state_sensitivity[] =
 
 void update_menu_item_state (void)
 {
-  gchar *path;
   gint i;
   const CmdEnable *cmd_list = state_sensitivity[app->state];
   GtkWidget *widget;
 
   for (i = 0; cmd_list[i].cmd != NULL; i++)
     {
-      path = g_strconcat ("/MainMenu/GameMenu/", cmd_list[i].cmd, NULL);
-      widget = gtk_ui_manager_get_widget (app->ui_manager, path);
+      widget = g_hash_table_lookup (app->actions, cmd_list[i].cmd);
       gtk_widget_set_sensitive (widget, cmd_list[i].enabled);
-      g_free (path);
     }
 }
 
@@ -584,169 +584,87 @@ void update_menu_item_state (void)
              GUI creation  functions 
 
 -------------------------------------------------------------- */
-static GtkWidget *create_fixed_widget (GtkWidget **fixed)
-{
-  GtkWidget *frame;
-
-  *fixed = gtk_fixed_new ();
-
-  frame = gtk_frame_new (NULL);
-  gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);
-  gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (*fixed));
-
-  gtk_widget_set_halign (GTK_WIDGET (*fixed), GTK_ALIGN_CENTER);
-  gtk_widget_set_valign (GTK_WIDGET (*fixed), GTK_ALIGN_CENTER);
-
-  return frame;
-}
-
-static void add_statistics_table_entry (GtkWidget *table, gint row,
-					gchar *label_str, gboolean is_clock,
-					GtkWidget **return_widget)
-{
-  GtkWidget *label;
-
-  label = gtk_label_new (label_str);
-  gtk_widget_set_halign (label, GTK_ALIGN_END);
-  gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
-  gtk_grid_attach (GTK_GRID (table), GTK_WIDGET (label),
-                   0, row, 1, 1);
-
-  if (is_clock)
-    *return_widget = clock_new ();
-  else
-    *return_widget = gtk_label_new ("NO CONTENT");
-
-  gtk_widget_set_halign (*return_widget, GTK_ALIGN_START);
-  gtk_widget_set_valign (*return_widget, GTK_ALIGN_CENTER);
-  gtk_grid_attach (GTK_GRID (table), *return_widget,
-                   1, row, 1, 1);
-}
-
-static GtkWidget *create_mainwin_content (AtomixApp *app)
-{
-  GtkWidget *hbox;
-  GtkWidget *vbox;
-  GtkWidget *pf;
-  GtkWidget *goal;
-  GtkWidget *frame;
-  GtkWidget *table;
-
-  /* create canvas widgets */
-  pf = create_fixed_widget (&app->fi_matrix);
-  goal = create_fixed_widget (&app->fi_goal);
-  gtk_widget_set_size_request (GTK_WIDGET (goal), 180, 50);
-
-  /* add playfield canvas to left side */
-  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-  gtk_container_set_border_width (GTK_CONTAINER (hbox), 6);
-  gtk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (pf), TRUE, TRUE, 0);
-  g_signal_connect (G_OBJECT (app->mainwin), "key-press-event",
-		    G_CALLBACK (on_key_press_event), app);
-
-  /* create right window side */
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_box_pack_start (GTK_BOX (hbox), GTK_WIDGET (vbox), FALSE, TRUE, 0);
-
-  /* create statistics frame */
-  frame = gtk_frame_new (_("Statistics"));
-  table = gtk_grid_new ();
-  gtk_grid_set_row_spacing (GTK_GRID (table), 6);
-  gtk_grid_set_column_spacing (GTK_GRID (table), 6);
-  gtk_container_set_border_width (GTK_CONTAINER (table), 6);
-
-  add_statistics_table_entry (table, 0, _("Level:"), FALSE, &app->lb_level);
-  add_statistics_table_entry (table, 1, _("Molecule:"), FALSE, &app->lb_name);
-  add_statistics_table_entry (table, 2, _("Formula:"), FALSE, &app->lb_formula);
-  add_statistics_table_entry (table, 3, _("Score:"), FALSE, &app->lb_score);
-  add_statistics_table_entry (table, 4, _("Time:"), TRUE, &app->clock);
-
-  gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (table));
-
-  /* add frame and goal canvas to left side */
-  gtk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (frame), FALSE, FALSE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (goal), TRUE, TRUE, 0);
-
-  /* show all */
-  gtk_widget_show_all (GTK_WIDGET (hbox));
-  return hbox;
-}
-
 static AtomixApp *create_gui (void)
 {
   AtomixApp *app;
   gchar *ui_path;
   GtkBuilder *builder;
-  GtkAccelGroup *accel_group;
-  GtkActionGroup *action_group;
-  GtkWidget *vbox;
-  GtkWidget *menubar;
-  GtkWidget *content;
-
-  static const GtkActionEntry actions[] = {
-    {"GameMenu", NULL, N_("_Game")},
-    {"HelpMenu", NULL, N_("_Help")},
-    {"GameNew", NULL, N_("New Game"), NULL, NULL, G_CALLBACK (verb_GameNew_cb)},
-    {"GameEnd", NULL, N_("End Game"), NULL, NULL, G_CALLBACK (verb_GameEnd_cb)},
-    {"GameSkip", NULL, N_("Skip Level"), NULL, NULL, G_CALLBACK (verb_GameSkip_cb)},
-    {"GameReset", NULL, N_("Reset Level"), NULL, NULL, G_CALLBACK (verb_GameReset_cb)},
-    {"GameUndo", "gtk-undo", NULL, NULL, NULL, G_CALLBACK (verb_GameUndo_cb)},
-    {"GamePause", NULL, N_("_Pause Game"), NULL, NULL, G_CALLBACK (verb_GamePause_cb)},
-    {"GameContinue", NULL, N_("_Continue Game"), NULL, NULL, G_CALLBACK (verb_GameContinue_cb)},
-    {"GameExit", "gtk-quit", NULL, NULL, NULL, G_CALLBACK (verb_GameExit_cb)},
-    {"HelpAbout", NULL, N_("About"), NULL, NULL, G_CALLBACK (verb_HelpAbout_cb)}
-  };
-
-  const char ui_description[] =
-    "<ui>"
-    "  <menubar name='MainMenu'>"
-    "    <menu action='GameMenu'>"
-    "      <menuitem action='GameNew'/>"
-    "      <menuitem action='GameEnd'/>"
-    "      <separator/>"
-    "      <menuitem action='GameSkip'/>"
-    "      <menuitem action='GameReset'/>"
-    "      <menuitem action='GameUndo'/>"
-    "      <menuitem action='GamePause'/>"
-    "      <menuitem action='GameContinue'/>"
-    "      <separator/>"
-    "      <menuitem action='GameExit'/>"
-    "    </menu>"
-    "    <menu action='HelpMenu'>"
-    "      <menuitem action='HelpAbout'/>"
-    "    </menu>"
-    "  </menubar>"
-    "</ui>";
+  GtkWidget *stats_grid;
+  GtkWidget *time_label;
+  GtkWidget *menu_item;
 
   app = g_new0 (AtomixApp, 1);
   app->level = NULL;
 
+  builder = gtk_builder_new ();
+  
   ui_path = g_build_filename (PKGDATADIR, "ui", "interface.ui", NULL);
-
-  builder = gtk_builder_new_from_file (ui_path);
+  gtk_builder_add_from_file (builder, ui_path, NULL);
   g_free (ui_path);
-  g_object_unref (builder);
 
-  app->mainwin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (app->mainwin), _("Atomix"));
+//  ui_path = g_build_filename (PKGDATADIR, "ui", "menus.ui", NULL);
+//  gtk_builder_add_from_file (builder, ui_path, NULL);
+//  g_free (ui_path);
+
+  app->mainwin = GTK_WIDGET (gtk_builder_get_object (builder, "mainwin"));
+
+  app->actions = g_hash_table_new (NULL, NULL);
+
+  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameNew"));
+  g_hash_table_insert (app->actions, "GameNew", menu_item);
+  g_signal_connect (menu_item, "activate", (GCallback)verb_GameNew_cb, NULL);
+
+  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameEnd"));
+  g_hash_table_insert (app->actions, "GameEnd", menu_item);
+  g_signal_connect (menu_item, "activate", (GCallback)verb_GameEnd_cb, NULL);
+
+  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameSkip"));
+  g_hash_table_insert (app->actions, "GameSkip", menu_item);
+  g_signal_connect (menu_item, "activate", (GCallback)verb_GameSkip_cb, NULL);
+
+  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameReset"));
+  g_hash_table_insert (app->actions, "GameReset", menu_item);
+  g_signal_connect (menu_item, "activate", (GCallback)verb_GameReset_cb, NULL);
+
+  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameUndo"));
+  g_hash_table_insert (app->actions, "GameUndo", menu_item);
+  g_signal_connect (menu_item, "activate", (GCallback)verb_GameUndo_cb, NULL);
+
+  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gamePause"));
+  g_hash_table_insert (app->actions, "GamePause", menu_item);
+  g_signal_connect (menu_item, "activate", (GCallback)verb_GamePause_cb, NULL);
+
+  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameContinue"));
+  g_hash_table_insert (app->actions, "GameContinue", menu_item);
+  g_signal_connect (menu_item, "activate", (GCallback)verb_GameContinue_cb, NULL);
+
+  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameQuit"));
+  g_signal_connect (menu_item, "activate", (GCallback)verb_GameExit_cb, NULL);
+
+  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameAbout"));
+  g_signal_connect (menu_item, "activate", (GCallback)verb_HelpAbout_cb, NULL);
 
   g_signal_connect (G_OBJECT (app->mainwin), "delete_event",
-		    (GCallback) on_app_destroy_event, app);
+                    (GCallback) on_app_destroy_event, app);
 
-  app->ui_manager = gtk_ui_manager_new ();
+  /* create canvas widgets */
+  app->fi_matrix = GTK_WIDGET (gtk_builder_get_object (builder, "game_fixed"));
+  app->fi_goal = GTK_WIDGET (gtk_builder_get_object (builder, "preview_fixed"));
 
-  action_group = gtk_action_group_new ("MenuActions");
-  gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
-  gtk_action_group_add_actions (action_group, actions, G_N_ELEMENTS (actions), NULL);
+  stats_grid = GTK_WIDGET (gtk_builder_get_object (builder, "stats_grid"));
+  time_label = GTK_WIDGET (gtk_builder_get_object (builder, "time_label"));
+  app->clock = clock_new ();
+  gtk_grid_attach_next_to (GTK_GRID (stats_grid), app->clock,
+                           time_label, GTK_POS_RIGHT, 1, 1);
 
-  gtk_ui_manager_insert_action_group (app->ui_manager, action_group, 0);
-  gtk_ui_manager_add_ui_from_string (app->ui_manager, ui_description, -1, NULL);
-  accel_group = gtk_ui_manager_get_accel_group (app->ui_manager);
-  gtk_window_add_accel_group (GTK_WINDOW (app->mainwin), accel_group);
+  /* add playfield canvas to left side */
+  g_signal_connect (G_OBJECT (app->mainwin), "key-press-event",
+		    G_CALLBACK (on_key_press_event), app);
 
-  /* create window contents */
-  menubar = gtk_ui_manager_get_widget (app->ui_manager, "/MainMenu");
-  content = create_mainwin_content (app);
+  app->lb_level = GTK_WIDGET (gtk_builder_get_object (builder, "level_value"));
+  app->lb_name = GTK_WIDGET (gtk_builder_get_object (builder, "molecule_value"));
+  app->lb_formula = GTK_WIDGET (gtk_builder_get_object (builder, "formula_value"));
+  app->lb_score = GTK_WIDGET (gtk_builder_get_object (builder, "score_value"));
 
   gtk_window_set_default_icon_from_file (g_build_filename (DATADIR,
 							   "pixmaps",
@@ -754,13 +672,9 @@ static AtomixApp *create_gui (void)
 							   NULL),
 					 		   NULL);
 
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_container_add (GTK_CONTAINER (app->mainwin), vbox);
-  gtk_box_pack_start (GTK_BOX (vbox), menubar, FALSE, FALSE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox), content, TRUE, TRUE, 0);
-
   gtk_widget_show_all (GTK_WIDGET (app->mainwin));
 
+  g_object_unref (builder);
   return app;
 }
 

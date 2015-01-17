@@ -6,6 +6,7 @@
     <property name="width_request">678</property>
     <property name="height_request">520</property>
     <property name="can_focus">False</property>
+    <property name="border_width">6</property>
     <property name="title" translatable="yes">Atomix</property>
     <child>
       <object class="GtkBox" id="win_content">
@@ -145,13 +146,14 @@
           <object class="GtkBox" id="content_hbox">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="spacing">12</property>
             <child>
               <object class="GtkFrame" id="game_frame">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label_xalign">0</property>
                 <property name="label_yalign">0</property>
-                <property name="shadow_type">in</property>
+                <property name="shadow_type">none</property>
                 <child>
                   <object class="GtkAlignment" id="game_alignment">
                     <property name="visible">True</property>
@@ -160,6 +162,8 @@
                       <object class="GtkFixed" id="game_fixed">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
                       </object>
                     </child>
                   </object>
@@ -179,6 +183,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
+                <property name="spacing">6</property>
                 <child>
                   <object class="GtkFrame" id="stats_frame">
                     <property name="visible">True</property>
@@ -271,6 +276,7 @@
                               <object class="GtkLabel" id="molecule_value">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">empty</property>
                               </object>
                               <packing>
@@ -282,6 +288,7 @@
                               <object class="GtkLabel" id="formula_value">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">empty</property>
                               </object>
                               <packing>
@@ -293,6 +300,7 @@
                               <object class="GtkLabel" id="score_value">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="xalign">0</property>
                                 <property name="label" translatable="yes">empty</property>
                               </object>
                               <packing>
@@ -301,15 +309,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="time_value">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">empty</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">4</property>
-                              </packing>
+                              <placeholder/>
                             </child>
                           </object>
                         </child>
@@ -337,12 +337,16 @@
                     <property name="shadow_type">none</property>
                     <child>
                       <object class="GtkAlignment" id="preview_alignment">
+                        <property name="width_request">180</property>
+                        <property name="height_request">50</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
                           <object class="GtkFixed" id="preview_fixed">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
                           </object>
                         </child>
                       </object>
