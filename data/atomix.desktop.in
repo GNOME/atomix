@@ -2,7 +2,7 @@
 _Name=Atomix
 _Comment=Molecule puzzle game
 Exec=atomix
-Icon=/usr/share/games/atomix/atomix-logo.png
+Icon=atomix-icon
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;Game;LogicGame;
