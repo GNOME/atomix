@@ -159,10 +159,6 @@ void level_manager_init_levels (LevelManager *lm)
   g_return_if_fail (!lm->priv->initialized);
 
   /* load the sequence of the levels */
-  sequence_file = g_build_filename (g_get_home_dir (),
-				    ".atomix", "level", "sequence", NULL);
-  create_level_sequence (lm, sequence_file);
-  g_free (sequence_file);
 
   if (g_list_length (lm->priv->level_seq) == 0)
     {
