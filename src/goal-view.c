@@ -22,7 +22,7 @@
 static GtkFixed *goal_fixed;
 static Theme *goal_theme;
 
-#define SCALE_FACTOR 0.7
+#define SCALE_FACTOR 0.9
 
 static GtkImage *create_small_item (gdouble x, gdouble y, Tile *tile);
 static void render_view (Goal *goal);
