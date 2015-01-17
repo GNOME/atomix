@@ -408,7 +408,7 @@ void theme_get_tile_size (Theme *theme, gint *width, gint *height)
   *height = theme->priv->tile_height;
 }
 
-GdkColor *theme_get_background_color (Theme *theme)
+GdkRGBA *theme_get_background_color (Theme *theme)
 {
   return &(theme->priv->bg_color);
 }

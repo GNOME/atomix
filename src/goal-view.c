@@ -34,6 +34,9 @@ void goal_view_init (Theme *theme, GtkFixed *fixed)
 
   goal_fixed = fixed;
   goal_theme = theme;
+  gdk_window_set_background_rgba (GDK_WINDOW (gtk_widget_get_window (
+                                    gtk_widget_get_parent (GTK_WIDGET (fixed)))), 
+                                  theme_get_background_color (theme));
 }
 
 void goal_view_render (Goal *goal)

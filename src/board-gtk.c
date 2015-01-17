@@ -408,7 +408,11 @@ void board_gtk_init (Theme * theme, gpointer canvas)
 
   create_background_floor ();
   create_logo ();
+  gdk_window_set_background_rgba (GDK_WINDOW (gtk_widget_get_window (
+                                    GTK_WIDGET (gtk_widget_get_parent (canvas)))),
+                                  theme_get_background_color (theme));
   gtk_widget_show_all (GTK_WIDGET(board_canvas));
+
   selector_data = selector_create ();
 }
 

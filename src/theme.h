@@ -53,7 +53,7 @@ GType theme_get_type (void);
 
 GdkPixbuf *theme_get_tile_image (Theme * theme, Tile * tile);
 
-GdkColor *theme_get_background_color (Theme * theme);
+GdkRGBA *theme_get_background_color (Theme * theme);
 
 GdkPixbuf *theme_get_selector_image (Theme * theme);
 
