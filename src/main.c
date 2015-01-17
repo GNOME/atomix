@@ -448,19 +448,6 @@ static void view_congratulations (void)
   gtk_widget_destroy (GTK_WIDGET (dlg));
 }
 
-#if 0
-dlg = gtk_message_dialog_new (GTK_WINDOW (app->mainwin),
-			      GTK_DIALOG_MODAL,
-			      GTK_MESSAGE_ERROR,
-			      GTK_BUTTONS_OK,
-			      "%s", _("Couldn't find at least one level."));
-gtk_dialog_run (GTK_DIALOG (dlg));
-gtk_widget_destroy (GTK_WIDGET (dlg));
-
-
-_("Do you want to finish the game?"));
-#endif
-
 /* ===============================================================
       
              UI update functions

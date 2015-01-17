@@ -273,71 +273,7 @@ void tile_print (Tile *tile)
     }
 
   g_print ("%s ", type_str);
-#if 0
-  g_print ("Tile TYPE: %s  BASE_ID: %i  LINK_IDs: ",
-	   type_str, tile->priv->base_id);
 
-  for (link = 0; link < TILE_LINK_LAST; link++)
-    {
-      if (tile->priv->link_id[link])
-	{
-	  switch (link)
-	    {
-	    case TILE_LINK_LEFT:
-	      g_print ("left, ");
-	      break;
-
-	    case TILE_LINK_RIGHT:
-	      g_print ("right, ");
-	      break;
-
-	    case TILE_LINK_TOP:
-	      g_print ("top, ");
-	      break;
-
-	    case TILE_LINK_BOTTOM:
-	      g_print ("bottom,");
-	      break;
-
-	    case TILE_LINK_TOP_LEFT:
-	      g_print ("top-left, ");
-	      break;
-
-	    case TILE_LINK_TOP_RIGHT:
-	      g_print ("top-right, ");
-	      break;
-
-	    case TILE_LINK_BOTTOM_LEFT:
-	      g_print ("bottom-left, ");
-	      break;
-
-	    case TILE_LINK_BOTTOM_RIGHT:
-	      g_print ("bottom-right, ");
-	      break;
-
-	    case TILE_LINK_LEFT_DOUBLE:
-	      g_print ("left-double, ");
-	      break;
-
-	    case TILE_LINK_RIGHT_DOUBLE:
-	      g_print ("right-double, ");
-	      break;
-
-	    case TILE_LINK_TOP_DOUBLE:
-	      g_print ("top-double, ");
-	      break;
-
-	    case TILE_LINK_BOTTOM_DOUBLE:
-	      g_print ("bottom-double, ");
-	      break;
-
-	    default:
-	      g_print ("Unknown, ");
-	      break;
-	    }
-	}
-    }
-#endif
 }
 
 
@@ -430,41 +366,3 @@ Tile *tile_new_from_xml (xmlNodePtr node)
   return tile;
 }
 
-#if 0
-void tile_save_xml (Tile *tile, xmlNodePtr tile_node)
-{
-  xmlNodePtr child;
-  gchar *str_buffer;
-  gint length;
-  GSList *conn_id;
-  TileType type;
-  gint img_id;
-
-  str_buffer = g_malloc (5 * sizeof (gchar));
-
-  if (tile && tile_node)
-    {
-      /* add tile type */
-      type = tile_get_type (tile);
-      length = g_snprintf (str_buffer, 5, "%i", (gint) type);
-      child = xmlNewChild (tile_node, NULL, "TYPE", str_buffer);
-
-      /* add image id */
-      img_id = tile_get_image_id (tile);
-      length = g_snprintf (str_buffer, 5, "%i", img_id);
-      child = xmlNewChild (tile_node, NULL, "IMG_ID", str_buffer);
-
-      /* add link id */
-      conn_id = tile->conn_ids;
-      while (conn_id)
-	{
-	  gint value = GPOINTER_TO_QUARK (conn_id->data);
-	  length = g_snprintf (str_buffer, 5, "%i", value);
-	  child = xmlNewChild (tile_node, NULL, "CONN_ID", str_buffer);
-	  conn_id = conn_id->next;
-	}
-    }
-
-  g_free (str_buffer);
-}
-#endif

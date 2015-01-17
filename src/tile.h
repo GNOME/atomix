@@ -88,8 +88,4 @@ void tile_print (Tile * tile);
 
 gboolean tile_is_equal (Tile * tile, Tile * comp);
 
-#if 0
-void tile_save_xml (Tile * tile, xmlNodePtr parent);
-#endif
-
 #endif /* _TILE_H */

@@ -82,8 +82,4 @@ PlayField *playfield_generate_environment (PlayField * pf, Theme * theme);
 
 PlayField *playfield_generate_shadow (PlayField * pf);
 
-#if 0
-void playfield_save_xml (PlayField * pf, xmlNodePtr node);
-#endif
-
 #endif /* _ATOMIX_PLAY_FIELD_H */
