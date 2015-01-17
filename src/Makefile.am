@@ -34,6 +34,7 @@ noinst_LIBRARIES = libatomix.a
 
 libatomix_a_SOURCES = \
 	tile.c tile.h \
+	xml-util.c xml-util.h \
 	theme.c theme.h theme-private.h \
 	theme-manager.c theme-manager.h \
 	level.c level.h level-private.h \

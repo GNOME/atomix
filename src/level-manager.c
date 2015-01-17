@@ -27,6 +27,7 @@
 
 #include "level-manager.h"
 #include "level-private.h"
+#include "xml-util.h"
 
 static void search_level_in_dir (LevelManager *lm, gchar *dir_path);
 static gchar *lookup_level_name (gchar *filename);
@@ -114,6 +115,44 @@ LevelManager *level_manager_new (void)
   return lm;
 }
 
+static void sequence_parser_error (GMarkupParseContext *context,
+                                   GError *error,
+                                   gpointer user_data)
+{
+  g_print ("Error while parsing level sequence: %s\n", error->message);
+}
+
+static void
+sequence_parser_start_element (GMarkupParseContext  *context,
+                               const gchar          *element_name,
+                               const gchar         **attribute_names,
+                               const gchar         **attribute_values,
+                               gpointer              user_data,
+                               GError              **error)
+{
+  const gchar *prop_value;
+  LevelManager *lm = LEVEL_MANAGER (user_data);
+  LevelManagerPrivate *priv = lm->priv;
+
+  if (!g_strcmp0 (element_name, "level")) {
+    prop_value = get_attribute_value ("name", attribute_names, attribute_values);
+    lm->priv->level_seq = g_list_append (lm->priv->level_seq, 
+                                         g_strdup (prop_value));
+  } else if (g_strcmp0 (element_name, "levelsequence") && 
+             g_strcmp0 (element_name, "text")) {
+    g_warning ("Ignoring sequence xml tag: %s", element_name);
+  }
+}
+
+static GMarkupParser sequence_parser =
+{
+  sequence_parser_start_element,
+  NULL,
+  NULL,
+  NULL,
+  xml_parser_log_error
+};
+
 static void create_level_sequence (LevelManager *lm, gchar *file)
 {
   xmlDocPtr doc;
@@ -121,33 +160,29 @@ static void create_level_sequence (LevelManager *lm, gchar *file)
 
   g_return_if_fail (IS_LEVEL_MANAGER (lm));
 
-  if (!g_file_test (file, G_FILE_TEST_IS_REGULAR))
-    return;
+  GFile *sequence_file;
+  gchar *sequence_contents;
+  gsize sequence_length;
+  GMarkupParseContext *parse_context;
 
-  doc = xmlParseFile (file);
-  if (doc == NULL)
+  if (!g_file_test (file, G_FILE_TEST_IS_REGULAR))  {
+    g_warning ("File not found: %s.", file);
     return;
+  }
 
-  node = doc->xmlRootNode;
-  if (!g_ascii_strcasecmp (node->name, "levelsequence"))
-    {
-      for (node = node->xmlChildrenNode; node != NULL; node = node->next)
-	{
-	  if (!g_ascii_strcasecmp (node->name, "level"))
-	    {
-	      lm->priv->level_seq = g_list_append (lm->priv->level_seq,
-						   g_strdup (xmlGetProp
-							     (node, "name")));
-	    }
-	  else if (!g_ascii_strcasecmp (node->name, "text"))
-	    {
-	    }
-	  else
-	    {
-	      g_warning ("Ignoring unknown xml tag: %s", node->name);
-	    }
-	}
-    }
+  sequence_file = g_file_new_for_path (file);
+  if (g_file_load_contents (sequence_file, NULL, &sequence_contents, &sequence_length, NULL, NULL)) {
+    parse_context = g_markup_parse_context_new (&sequence_parser,
+                                                G_MARKUP_TREAT_CDATA_AS_TEXT,
+                                                lm,
+                                                NULL);
+    g_markup_parse_context_parse (parse_context, sequence_contents, sequence_length, NULL);
+    g_markup_parse_context_unref (parse_context);
+    g_free (sequence_contents);
+  }
+
+  g_object_unref (sequence_file);
+
 }
 
 void level_manager_init_levels (LevelManager *lm)

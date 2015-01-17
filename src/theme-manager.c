@@ -23,6 +23,7 @@
 
 #include "theme-manager.h"
 #include "theme-private.h"
+#include "xml-util.h"
 
 static GObjectClass *parent_class = NULL;
 
@@ -41,28 +42,6 @@ struct _ThemeManagerPrivate
   gboolean initialized;
   GHashTable *themes;
 };
-
-static const gchar* get_attribute_value (const gchar *attribute,
-                                   const gchar **attribute_names,
-                                   const gchar **attribute_values)
-{
-  gint i = 0;
-
-  while (attribute_names[i]) {
-    if (!g_strcmp0 (attribute_names[i], attribute))
-      return attribute_values[i];
-    i++;
-  }
-
-  return NULL;
-}
-
-static void theme_parser_error (GMarkupParseContext *context,
-                                GError *error,
-                                gpointer user_data)
-{
-  g_print ("Error while parsing theme\n");
-}
 
 static void
 theme_parser_start_element (GMarkupParseContext  *context,
@@ -154,7 +133,7 @@ static GMarkupParser theme_parser =
   NULL,
   NULL,
   NULL,
-  theme_parser_error
+  xml_parser_log_error
 };
 
 GType theme_manager_get_type (void)
