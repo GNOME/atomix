@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-18 00:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
+#: ../data/ui/interface.ui.h:1 ../src/main.c:699
+msgid "Atomix"
+msgstr ""
+
+#: ../data/atomix.appdata.xml.in.h:2
+msgid "Build molecules out of single atoms"
+msgstr ""
+
+#: ../data/atomix.appdata.xml.in.h:3
+msgid ""
+"GNOME Mines is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don't just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+
+#: ../data/atomix.appdata.xml.in.h:4
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
+
+#: ../data/atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr ""
+
+#: ../data/level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr ""
+
+#: ../data/level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr ""
+
+#: ../data/level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr ""
+
+#: ../data/level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr ""
+
+#: ../data/level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr ""
+
+#: ../data/level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr ""
+
+#: ../data/level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr ""
+
+#: ../data/level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr ""
+
+#: ../data/level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr ""
+
+#: ../data/level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr ""
+
+#: ../data/level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr ""
+
+#: ../data/level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr ""
+
+#: ../data/level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr ""
+
+#: ../data/level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr ""
+
+#: ../data/level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr ""
+
+#: ../data/level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr ""
+
+#: ../data/level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr ""
+
+#: ../data/level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr ""
+
+#: ../data/level/water.atomix.xml.h:1
+msgid "Water"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:2
+msgid "_File"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:3
+msgid "_New Game"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:4
+msgid "_End Game"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:5
+msgid "_Skip Level"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:6
+msgid "_Reset Level"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:7
+msgid "_Undo Move"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:8
+msgid "_Pause Game"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:9
+msgid "_Continue Game"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:10
+msgid "_Quit"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:11
+msgid "_Help"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:12
+msgid "_About"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:13
+msgid "Level:"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:14
+msgid "Molecule:"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:15
+msgid "Formula:"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:16
+msgid "Score:"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:17
+msgid "Time:"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:18
+msgid "empty"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:19
+msgid "Statistics"
+msgstr ""
+
+#: ../src/level-manager.c:176
+msgid "Couldn't find level sequence description."
+msgstr ""
+
+#: ../src/level-manager.c:190
+msgid "No level found."
+msgstr ""
+
+#: ../src/level-manager.c:286
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr ""
+
+#: ../src/main.c:132
+msgid "A puzzle game about atoms and molecules"
+msgstr ""
+
+#: ../src/main.c:136
+msgid "translator-credits"
+msgstr ""
+
+#: ../src/main.c:446
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr ""
+
+#: ../src/main.c:456
+msgid "Couldn't find at least one level."
+msgstr ""
+
+#: ../src/main.c:461
+msgid "Do you want to finish the game?"
+msgstr ""
+
+#: ../src/theme-manager.c:245
+msgid "No themes found."
+msgstr ""
+
+#: ../src/theme-manager.c:303
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr ""
