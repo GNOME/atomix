@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015 Robert Roth -->
+<application>
+ <id type="desktop">atomix.desktop</id>
+ <metadata_license>CC0-1.0</metadata_license>
+ <project_license>GPL-2.0+ and CC-BY-SA-3.0</project_license>
+ <_name>Atomix</_name>
+ <_summary>Build molecules out of single atoms</_summary>
+ <description>
+  <_p>
+   GNOME Mines is a puzzle game where your goal is to assemble molecules from compound atoms by moving them on the playfield.
+   However, atoms don't just move wherever you want to move them to, they slide until they hit either a wall or another atom.
+  </_p>
+  <_p>
+   Try to build the molecules as fast as you can on each level to earn a higher score.
+  </_p>
+ </description>
+ <screenshots>
+  <screenshot type="default" width="686" height="557">https://wiki.gnome.org/Apps/Atomix?action=AttachFile&amp;do=get&amp;target=atomix-screenshot.png</screenshot>
+ </screenshots>
+ <url type="homepage">https://wiki.gnome.org/Apps/Atomix</url>
+ <updatecontact>games_list_at_gnome.org</updatecontact>
+ <project_group>GNOME</project_group>
+</application>

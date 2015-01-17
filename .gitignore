@@ -2,7 +2,9 @@ ABOUT-NLS
 Makefile
 Makefile.in
 aclocal.m4
-atomix.desktop
+data/atomix.desktop
+data/atomix.appdata.xml
+data/atomix.appdata.valid
 autom4te.cache/
 config.guess
 config.h
