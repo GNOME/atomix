@@ -42,6 +42,7 @@ po/pt_BR.gmo
 po/quot.sed
 po/remove-potcdate.sin
 po/stamp-it
+po/*.pot
 src/.deps/
 src/Makefile
 src/Makefile.in
