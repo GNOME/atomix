@@ -90,6 +90,7 @@ static void clock_gen_str (Clock *clock)
 
   strftime (timestr, 64, clock->fmt, clock->tm);
   gtk_label_set_text (GTK_LABEL (clock), timestr);
+  gtk_widget_set_halign (GTK_WIDGET (clock), GTK_ALIGN_START);
 }
 
 static gint clock_timer_callback (gpointer data)
