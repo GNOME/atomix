@@ -6,13 +6,15 @@
 # Michal Bukovjan <bukm@centrum.cz>, 2002.
 # Miloslav Trmac <mitr@volny.cz>, 2004.
 # Lukas Novotny <lukasnov@cvs.gnome.org>, 2006.
-# Marek Černocký <marek@manet.cz>, 2010.
+# Marek Černocký <marek@manet.cz>, 2010, 2015.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-03 21:58+0100\n"
-"PO-Revision-Date: 2010-12-15 10:39+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=atomix&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-01-17 23:23+0000\n"
+"PO-Revision-Date: 2015-01-18 18:26+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -20,283 +22,221 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
-#: ../level/aceticacid.atomix.xml.h:1
+#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
+#: ../data/ui/interface.ui.h:1 ../src/main.c:686
+msgid "Atomix"
+msgstr "Atomix"
+
+#: ../data/atomix.appdata.xml.in.h:2
+msgid "Build molecules out of single atoms"
+msgstr "Sestavte molekuly z jednotlivých atomů"
+
+#: ../data/atomix.appdata.xml.in.h:3
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don't just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+"Atomix je logická hra, ve které je cílem sestavit molekuly z jednotlivých "
+"atomů jejich přesouváním po hracím poli. Atomy si ale nemůžete přesouvat, "
+"jak vás napadne. Po udaní směru se samy pohybují, až dokud nenarazí do zdi "
+"nebo do jiného atomu."
+
+#: ../data/atomix.appdata.xml.in.h:4
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
+"Molekuly v jednotlivých úrovních zkuste sestavit co nejrychleji dokážete, "
+"abyste dosáhli vyššího skóre."
+
+#: ../data/atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Logická hra s molekulami"
+
+#: ../data/level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
 msgstr "Kyselina octová"
 
-#: ../level/acetone.atomix.xml.h:1
+#: ../data/level/acetone.atomix.xml.h:1
 msgid "Acetone"
 msgstr "Aceton"
 
-#: ../level/butanol.atomix.xml.h:1
+#: ../data/level/butanol.atomix.xml.h:1
 msgid "Butanol"
 msgstr "Butanol"
 
-#: ../level/cyclobutane.atomix.xml.h:1
+#: ../data/level/cyclobutane.atomix.xml.h:1
 msgid "Cyclobutane"
 msgstr "Cyklobutan"
 
-#: ../level/dimethylether.atomix.xml.h:1
+#: ../data/level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
 msgstr "Dimetyléter"
 
-#: ../level/ethanal.atomix.xml.h:1
+#: ../data/level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
 msgstr "Acetaldehyd"
 
-#: ../level/ethane.atomix.xml.h:1
+#: ../data/level/ethane.atomix.xml.h:1
 msgid "Ethane"
 msgstr "Etan"
 
-#: ../level/ethanol.atomix.xml.h:1
+#: ../data/level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
 msgstr "Etanol"
 
-#: ../level/ethylene.atomix.xml.h:1
+#: ../data/level/ethylene.atomix.xml.h:1
 msgid "Ethylene"
 msgstr "Etylen"
 
-#: ../level/glycerin.atomix.xml.h:1
+#: ../data/level/glycerin.atomix.xml.h:1
 msgid "Glycerin"
 msgstr "Glycerin"
 
-#: ../level/lactic-acid.atomix.xml.h:1
+#: ../data/level/lactic-acid.atomix.xml.h:1
 msgid "Lactic Acid"
 msgstr "Kyselina mléčná"
 
-#: ../level/methanal.atomix.xml.h:1
+#: ../data/level/methanal.atomix.xml.h:1
 msgid "Methanal"
 msgstr "Formaldehyd"
 
-#: ../level/methane.atomix.xml.h:1
+#: ../data/level/methane.atomix.xml.h:1
 msgid "Methane"
 msgstr "Metan"
 
-#: ../level/methanol.atomix.xml.h:1
+#: ../data/level/methanol.atomix.xml.h:1
 msgid "Methanol"
 msgstr "Metylalkohol"
 
-#: ../level/propanal.atomix.xml.h:1
+#: ../data/level/propanal.atomix.xml.h:1
 msgid "Propanal"
 msgstr "Propanal"
 
-#: ../level/propylene.atomix.xml.h:1
+#: ../data/level/propylene.atomix.xml.h:1
 msgid "Propylene"
 msgstr "Propylen"
 
-#: ../level/pyran.atomix.xml.h:1
+#: ../data/level/pyran.atomix.xml.h:1
 msgid "Pyran"
 msgstr "Pyran"
 
-#: ../level/transbutylen.atomix.xml.h:1
+#: ../data/level/transbutylen.atomix.xml.h:1
 msgid "Trans Butylen"
 msgstr "Trans Butylen"
 
-#: ../level/water.atomix.xml.h:1
+#: ../data/level/water.atomix.xml.h:1
 msgid "Water"
 msgstr "Voda"
 
-#: ../src/games-runtime.c:273
-msgid "Could not show link"
-msgstr "Nelze zobrazit odkaz"
+#: ../data/ui/interface.ui.h:2
+msgid "_File"
+msgstr "_Soubor"
 
-#: ../src/games-scores-dialog.c:113
-msgid "Time"
-msgstr "Čas"
+#: ../data/ui/interface.ui.h:3
+msgid "_New Game"
+msgstr "_Nová hra"
 
-#. Note that this assumes the default style is plain.
-#: ../src/games-scores-dialog.c:118 ../src/games-scores-dialog.c:545
-msgid "Score"
-msgstr "Skóre"
+#: ../data/ui/interface.ui.h:4
+msgid "_End Game"
+msgstr "_Konec hry"
 
-#. Translators: this is for a minutes, seconds time display.
-#: ../src/games-scores-dialog.c:276
-#, c-format
-msgid "%dm %ds"
-msgstr "%d min %d sec"
+#: ../data/ui/interface.ui.h:5
+msgid "_Skip Level"
+msgstr "Pře_skočit úroveň"
 
-#: ../src/games-scores-dialog.c:437 ../src/main.c:736
-msgid "New Game"
-msgstr "Nová hra"
+#: ../data/ui/interface.ui.h:6
+msgid "_Reset Level"
+msgstr "Ú_roveň od začátku"
 
-#: ../src/games-scores-dialog.c:537
-msgid "Name"
-msgstr "Jméno"
+#: ../data/ui/interface.ui.h:7
+msgid "_Undo Move"
+msgstr "Tah _zpět"
 
-#. Empty title shows up as "<unnamed>" on maemo
-#: ../src/games-show.c:151
-msgid "Error"
-msgstr "Chyba"
+#: ../data/ui/interface.ui.h:8
+msgid "_Pause Game"
+msgstr "_Pozastavit hru"
 
-#: ../src/level-manager.c:176
+#: ../data/ui/interface.ui.h:9
+msgid "_Continue Game"
+msgstr "Pok_račovat ve hře"
+
+#: ../data/ui/interface.ui.h:10
+msgid "_Quit"
+msgstr "U_končit"
+
+#: ../data/ui/interface.ui.h:11
+msgid "_Help"
+msgstr "_Nápověda"
+
+#: ../data/ui/interface.ui.h:12
+msgid "_About"
+msgstr "O _aplikaci"
+
+#: ../data/ui/interface.ui.h:13
+msgid "Level:"
+msgstr "Úroveň:"
+
+#: ../data/ui/interface.ui.h:14
+msgid "Molecule:"
+msgstr "Molekula:"
+
+#: ../data/ui/interface.ui.h:15
+msgid "Formula:"
+msgstr "Vzorec:"
+
+#: ../data/ui/interface.ui.h:16
+msgid "Score:"
+msgstr "Skóre:"
+
+#: ../data/ui/interface.ui.h:17
+msgid "Time:"
+msgstr "Čas:"
+
+#: ../data/ui/interface.ui.h:18
+msgid "empty"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:19
+msgid "Statistics"
+msgstr "Statistika"
+
+#: ../src/level-manager.c:207
 msgid "Couldn't find level sequence description."
 msgstr "Nelze nalézt popis pořadí úrovní."
 
-#: ../src/level-manager.c:190
+#: ../src/level-manager.c:221
 msgid "No level found."
 msgstr "Nebyla nalezena žádná úroveň."
 
-#: ../src/level-manager.c:286
+#: ../src/level-manager.c:317
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Nalezena úroveň „%s“ v: %s"
 
-#: ../src/main.c:121 ../src/main.c:775 ../src/main.c:832
-#: ../atomix.desktop.in.h:1
-msgid "Atomix"
-msgstr "Atomix"
-
-#: ../src/main.c:166
+#: ../src/main.c:132
 msgid "A puzzle game about atoms and molecules"
 msgstr "Logická hra s atomy a molekulami"
 
-#: ../src/main.c:170
+#: ../src/main.c:136
 msgid "translator-credits"
 msgstr ""
 "Lukáš Novotný <lukasnov@cvs.gnome.org>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: ../src/main.c:493
+#: ../src/main.c:446
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulace! Dokončil jste všechny úrovně hry Atomix."
 
-#: ../src/main.c:503
-msgid "Couldn't find at least one level."
-msgstr "Nebylo možné nalézt alespoň jednu úroveň."
-
-#: ../src/main.c:508
-msgid "Do you want to finish the game?"
-msgstr "Chcete dokončit tuto hru?"
-
-#. create statistics frame
-#: ../src/main.c:701
-msgid "Statistics"
-msgstr "Statistika"
-
-#: ../src/main.c:707
-msgid "Level:"
-msgstr "Úroveň:"
-
-#: ../src/main.c:708
-msgid "Molecule:"
-msgstr "Molekula:"
-
-#: ../src/main.c:709
-msgid "Formula:"
-msgstr "Vzorec:"
-
-#: ../src/main.c:710
-msgid "Score:"
-msgstr "Skóre:"
-
-#: ../src/main.c:711
-msgid "Time:"
-msgstr "Čas:"
-
-#: ../src/main.c:734
-msgid "_Game"
-msgstr "_Hra"
-
-#: ../src/main.c:735
-msgid "_Help"
-msgstr "_Nápověda"
-
-#: ../src/main.c:737
-msgid "End Game"
-msgstr "Ukončit hru"
-
-#: ../src/main.c:738
-msgid "Skip Level"
-msgstr "Přeskočit úroveň"
-
-#: ../src/main.c:739
-msgid "Reset Level"
-msgstr "Vynulovat úroveň"
-
-#: ../src/main.c:741
-msgid "_Pause Game"
-msgstr "_Pozastavit hru"
-
-#: ../src/main.c:742
-msgid "_Continue Game"
-msgstr "Pok_račovat ve hře"
-
-#: ../src/main.c:743
-msgid "_Scores..."
-msgstr "_Skóre…"
-
-#: ../src/main.c:745
-msgid "About"
-msgstr "O _aplikaci"
-
-#: ../src/theme-manager.c:136
+#: ../src/theme-manager.c:224
 msgid "No themes found."
 msgstr "Nebyly nalezeny žádné motivy."
 
-#: ../src/theme-manager.c:194
+#: ../src/theme-manager.c:282
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Nalezen motiv „%s“ v: %s"
-
-#: ../atomix.desktop.in.h:2
-msgid "Molecule puzzle game"
-msgstr "Logická hra s molekulami"
-
-#~ msgid "Continue paused game"
-#~ msgstr "Pokračovat v pozastavené hře"
-
-#~ msgid "End a game"
-#~ msgstr "Ukončit hru"
-
-#~ msgid "Pause the running game"
-#~ msgstr "Pozastavit běžící hru"
-
-#~ msgid "Restores start situation"
-#~ msgstr "Obnoví výchozí situaci"
-
-#~ msgid "Set preferences"
-#~ msgstr "Nastavit volby"
-
-#~ msgid "Skip the current level"
-#~ msgstr "Přeskočí současnou úroveň"
-
-#~ msgid "Start a new game"
-#~ msgstr "Začít novou hru"
-
-#~ msgid "Undo the last move"
-#~ msgstr "Vzít poslední tah zpět"
-
-#~ msgid "View highscores"
-#~ msgstr "Zobrazit nejvyšší skóre"
-
-#~ msgid "_Preferences ..."
-#~ msgstr "Nastav_ení..."
-
-#~ msgid "_Undo move"
-#~ msgstr "Tah _zpět"
-
-#~ msgid ""
-#~ "You have not achieved any scores yet. Play a little before coming back!"
-#~ msgstr "Nemáte dosažené žádné skóre. Před návratem sem si zahrajte pár her!"
-
-#~ msgid "Couldn't find file: %s"
-#~ msgstr "Nelze nalézt soubor: %s"
-
-#~ msgid "E_xit"
-#~ msgstr "_Konec"
-
-#~ msgid "Exit game"
-#~ msgstr "Ukončit hru"
-
-#~ msgid "View game credits"
-#~ msgstr "Zobrazit poděkování autorům hry"
-
-#~ msgid "_Edit"
-#~ msgstr "Ú_pravy"
-
-#~ msgid "Copyright (C) 1999-2002 Jens Finke"
-#~ msgstr "Copyright © 1999-2002 Jens Finke"
-
-#~ msgid "Couldn't create directory: %s"
-#~ msgstr "Nelze vytvořit adresář: %s"
