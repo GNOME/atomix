@@ -1,6 +1,6 @@
 AC_PREREQ([2.63])
 
-AC_INIT([atomix],[2.14.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=atomix])
+AC_INIT([atomix],[3.15.4],[http://bugzilla.gnome.org/enter_bug.cgi?product=atomix])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([src/main.c])
@@ -24,7 +24,6 @@ LIBGTK_REQUIRED=3.14.0
 LIBXML_REQUIRED=2.4.23
 GLIB_REQUIRED=2.36.0
 GDK_PIXBUF_REQUIRED=2.0.5
-dnl.LIBGNOMECANVAS_REQUIRED=2.0.1
 
 dnl ******************************
 dnl pkg-config checks

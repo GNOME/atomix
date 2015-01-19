@@ -1,3 +1,56 @@
+2015-01-15: Release version 3.15.4
+
+    * Fixed obsolete FSF address (bug #721542)
+    * Fixed build problem (bug #711056)
+    * Ported to GTK3 (bug #742827)
+    * Added appstream XML (bug #742886)
+    * Updated desktop file (bug #711056)
+    * Miscapitalized menu items (bug #711056)
+    * About dialog does not close (bug #336524)
+    * Updated website (bug #381360)
+    * Level completion detection fixed (bug #544762)
+    * Removed heavy overlinking (bug #596094)
+
+    * New and updated translations
+      - af, courtesy of F Wolff
+      - ar, courtesy of Djihed Afifi
+      - be, courtesy of Ihar Hrachyshka
+      - bg, courtesy of Alexander Shopov
+      - bn, courtesy of Progga
+      - ca, courtesy of Jordi Mas
+      - cs, courtesy of Marek Černocký
+      - da, courtesy of Joe Hansen
+      - de, courtesy of Mario Blättermann
+      - dz, courtesy of sonam pelden
+      - el, courtesy of Athanasios Lefteris
+      - en_GB, courtesy of Bruce Cowan
+      - eo, courtesy of Kristjan SCHMIDT
+      - es, courtesy of Jorge González
+      - eu, courtesy of Iñaki Larrañaga Murgoitio
+      - fr, courtesy of Claude Paroz
+      - gl, courtesy of Fran Dieguez
+      - he, courtesy of Yaron Shahrabani
+      - hu, courtesy of Gabor Kelemen
+      - id, courtesy of Andika Triwidada
+      - it, courtesy of Paolo Sammicheli
+      - lt, courtesy of Aurimas Černius
+      - lv, courtesy of Rūdofls Mazurs
+      - mk, courtesy of Arangel Angov
+      - ms, courtesy of Hasbullah Bin Pit
+      - oc, courtesy of Yannig Marchegay (Kokoyaya)
+      - pl, courtesy of Piotr Drąg
+      - pt_BR, courtesy of Gabriel F. Vilar
+      - ro, courtesy of Nicolae Antonio
+      - ru, courtesy of Yuri Myasoedov
+      - sk, courtesy of Marcel Telka
+      - sl, courtesy of Matej Urbančič
+      - sr, courtesy of Мирослав Николић
+      - sr@latin, courtesy of Miroslav Nikolić
+      - sv, courtesy of Daniel Nylander
+      - th, courtesy of Neutron Soutmun
+      - tr, courtesy of Muhammet Kara
+      - zh_CN, courtesy of Wang Li
+
 2006-03-11: Released version 2.14.0
 
 	* Fixed list of categories (bug #329319)
