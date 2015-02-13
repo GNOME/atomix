@@ -285,7 +285,6 @@ gboolean theme_apply_decoration (Theme *theme, Tile *tile)
 GdkPixbuf *theme_get_tile_image (Theme *theme, Tile *tile)
 {
   ThemePrivate *priv;
-  TileType type;
   GQuark image_id;
   ThemeImage *ti = NULL;
   GdkPixbuf *underlay_pb = NULL;
@@ -299,7 +298,6 @@ GdkPixbuf *theme_get_tile_image (Theme *theme, Tile *tile)
 
   priv = theme->priv;
 
-  type = tile_get_tile_type (tile);
   image_id = tile_get_base_id (tile);
 
   underlay_pb = create_sub_images (theme, tile, TILE_SUB_UNDERLAY);
