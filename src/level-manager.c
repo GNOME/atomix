@@ -136,8 +136,8 @@ sequence_parser_start_element (GMarkupParseContext  *context,
 
   if (!g_strcmp0 (element_name, "level")) {
     prop_value = get_attribute_value ("name", attribute_names, attribute_values);
-    lm->priv->level_seq = g_list_append (lm->priv->level_seq, 
-                                         g_strdup (prop_value));
+    priv->level_seq = g_list_append (priv->level_seq, 
+                                     g_strdup (prop_value));
   } else if (g_strcmp0 (element_name, "levelsequence") && 
              g_strcmp0 (element_name, "text")) {
     g_warning ("Ignoring sequence xml tag: %s", element_name);
@@ -155,9 +155,6 @@ static GMarkupParser sequence_parser =
 
 static void create_level_sequence (LevelManager *lm, gchar *file)
 {
-  xmlDocPtr doc;
-  xmlNodePtr node;
-
   g_return_if_fail (IS_LEVEL_MANAGER (lm));
 
   GFile *sequence_file;
