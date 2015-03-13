@@ -1,0 +1,234 @@
+# Bosnian translation for bosnianuniversetranslation
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the bosnianuniversetranslation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bosnianuniversetranslation\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=atomix&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-02-27 03:51+0000\n"
+"PO-Revision-Date: 2015-03-02 09:16+0100\n"
+"Last-Translator: Samir Ribić <Unknown>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Launchpad-Export-Date: 2015-02-15 06:17+0000\n"
+
+#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
+#: ../data/ui/interface.ui.h:1 ../src/main.c:686
+msgid "Atomix"
+msgstr "Atomix"
+
+#: ../data/atomix.appdata.xml.in.h:2
+msgid "Build molecules out of single atoms"
+msgstr "Graditi molekule od pojedinih atoma"
+
+#: ../data/atomix.appdata.xml.in.h:3
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don't just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+"Atomix je igra zagonetke gdje je vaš cilj sastaviti molekule iz atoma "
+"komponenti pomičući ih po polju za igru. Ipak, atomi se ne kreću tamo gdje "
+"vi želite, nego klize dok ne udare u zid ili drugi atom."
+
+#: ../data/atomix.appdata.xml.in.h:4
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
+"Pokušajte izgraditi molekule što brže možete na svakom nivou da zaradite "
+"rekord."
+
+#: ../data/atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Igra slaganja molekula"
+
+#: ../data/level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Sirćetna kiselina"
+
+#: ../data/level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Aceton"
+
+#: ../data/level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "Butanol"
+
+#: ../data/level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Ciklo-butan"
+
+#: ../data/level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "Dimetil Eter"
+
+#: ../data/level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Etanal"
+
+#: ../data/level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Etan"
+
+#: ../data/level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Etanol"
+
+#: ../data/level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Etilen"
+
+#: ../data/level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Glicerin"
+
+#: ../data/level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Mliječna kiselina"
+
+#: ../data/level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Metanal"
+
+#: ../data/level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Metan"
+
+#: ../data/level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Metanol"
+
+#: ../data/level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Propanal"
+
+#: ../data/level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "Propilen"
+
+#: ../data/level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "Piren"
+
+#: ../data/level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Trans Butilen"
+
+#: ../data/level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Voda"
+
+#: ../data/ui/interface.ui.h:2
+msgid "_File"
+msgstr "Dato_teka:"
+
+#: ../data/ui/interface.ui.h:3
+msgid "_New Game"
+msgstr "_Nova igra"
+
+#: ../data/ui/interface.ui.h:4
+msgid "_End Game"
+msgstr "_Kraj igre"
+
+#: ../data/ui/interface.ui.h:5
+msgid "_Skip Level"
+msgstr "_Preskoči nivo"
+
+#: ../data/ui/interface.ui.h:6
+msgid "_Reset Level"
+msgstr "_Resetuj nivo"
+
+#: ../data/ui/interface.ui.h:7
+msgid "_Undo Move"
+msgstr "_Poništi potez"
+
+#: ../data/ui/interface.ui.h:8
+msgid "_Pause Game"
+msgstr "_Pauziraj igru"
+
+#: ../data/ui/interface.ui.h:9
+msgid "_Continue Game"
+msgstr "_Nastavi igru"
+
+#: ../data/ui/interface.ui.h:10
+msgid "_Quit"
+msgstr "_Izlaz"
+
+#: ../data/ui/interface.ui.h:11
+msgid "_Help"
+msgstr "_Pomoć"
+
+#: ../data/ui/interface.ui.h:12
+msgid "_About"
+msgstr "_O programu…"
+
+#: ../data/ui/interface.ui.h:13
+msgid "Level:"
+msgstr "Nivo:"
+
+#: ../data/ui/interface.ui.h:14
+msgid "Molecule:"
+msgstr "Molekul:"
+
+#: ../data/ui/interface.ui.h:15
+msgid "Formula:"
+msgstr "Formula:"
+
+#: ../data/ui/interface.ui.h:16
+msgid "Score:"
+msgstr "Rezultat:"
+
+#: ../data/ui/interface.ui.h:17
+msgid "Time:"
+msgstr "Vrijeme:"
+
+#: ../data/ui/interface.ui.h:18
+msgid "empty"
+msgstr "prazno"
+
+#: ../data/ui/interface.ui.h:19
+msgid "Statistics"
+msgstr "Statistika"
+
+#: ../src/level-manager.c:204
+msgid "Couldn't find level sequence description."
+msgstr "Ne mogu pronaći opis redoslijeda nivoa."
+
+#: ../src/level-manager.c:218
+msgid "No level found."
+msgstr "Nivo nije pronađen."
+
+#: ../src/level-manager.c:314
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "Pronađen nivo '%s' u: %s"
+
+#: ../src/main.c:132
+msgid "A puzzle game about atoms and molecules"
+msgstr "Logička slagalica sa atomima i molekulama"
+
+#: ../src/main.c:136
+msgid "translator-credits"
+msgstr "   Samir Ribić https://launchpad.net/~megaribi"
+
+#: ../src/main.c:446
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Čestitamo. Završili ste sve nivoe u igri Atomix."
+
+#: ../src/theme-manager.c:224
+msgid "No themes found."
+msgstr "Tema nije pronađena."
+
+#: ../src/theme-manager.c:282
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "Pronađena tema '%s' u: %s"
