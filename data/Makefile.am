@@ -12,7 +12,9 @@ icon_DATA = atomix-icon.png
 
 appstream_in_files = atomix.appdata.xml.in
 appstream_XML = $(appstream_in_files:.xml.in=.xml)
+
 @APPSTREAM_XML_RULES@
+
 @INTLTOOL_XML_RULE@
 
 appdir = $(datadir)/applications
