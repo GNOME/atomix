@@ -1,3 +1,7 @@
+2015-03-23: Release version 3.16.0
+
+    * Fixed licensing mistake in appdata (bug #746473)
+
 2015-03-16: Release version 3.15.92
 
     * New and updated translations

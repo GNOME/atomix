@@ -1,6 +1,6 @@
 AC_PREREQ([2.63])
 
-AC_INIT([atomix],[3.15.92],[http://bugzilla.gnome.org/enter_bug.cgi?product=atomix])
+AC_INIT([atomix],[3.16.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=atomix])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([src/main.c])
