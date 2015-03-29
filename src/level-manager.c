@@ -115,13 +115,6 @@ LevelManager *level_manager_new (void)
   return lm;
 }
 
-static void sequence_parser_error (GMarkupParseContext *context,
-                                   GError *error,
-                                   gpointer user_data)
-{
-  g_print ("Error while parsing level sequence: %s\n", error->message);
-}
-
 static void
 sequence_parser_start_element (GMarkupParseContext  *context,
                                const gchar          *element_name,
@@ -269,27 +262,15 @@ static void search_level_in_dir (LevelManager *lm, gchar *dir_path)
 
 static gchar *lookup_level_name (gchar *filename)
 {
-  xmlDocPtr doc;
-  xmlNodePtr node;
+
   gchar *name = NULL;
+  Theme *level = NULL;
 
   g_return_val_if_fail (filename != NULL, NULL);
   g_return_val_if_fail (g_file_test (filename, G_FILE_TEST_EXISTS), NULL);
 
-  /* read file */
-  doc = xmlParseFile (filename);
-  if (doc == NULL)
-    {
-      g_warning ("Couldn't parse level file: %s", filename);
-      return NULL;
-    }
-
-  node = doc->xmlRootNode;
-
-  if (node && !g_ascii_strcasecmp (node->name, "level"))
-    name = g_strdup (xmlGetProp (node, "_name"));
-
-  xmlFreeDoc (doc);
+  level = load_level (filename);
+  name = level_get_name (level);
 
   return name;
 }
