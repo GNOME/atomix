@@ -46,6 +46,7 @@ pf_test_SOURCES = \
 	playfield.h playfield.c \
 	tile.c tile.h \
 	theme.c theme.h \
+	xml-util.c xml-util.h \
 	pf-test.c
 
 pf_test_LDADD = \

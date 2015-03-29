@@ -115,6 +115,11 @@ LevelManager *level_manager_new (void)
   return lm;
 }
 
+/*=================================================================
+ 
+  Level_Manager level sequence parsing
+
+  ---------------------------------------------------------------*/
 static void
 sequence_parser_start_element (GMarkupParseContext  *context,
                                const gchar          *element_name,
@@ -141,6 +146,15 @@ static GMarkupParser sequence_parser =
 {
   sequence_parser_start_element,
   NULL,
+  NULL,
+  NULL,
+  xml_parser_log_error
+};
+
+static GMarkupParser level_parser =
+{
+  level_parser_start_element,
+  level_parser_end_element,
   NULL,
   NULL,
   xml_parser_log_error
@@ -364,6 +378,12 @@ static Level *load_level (gchar *filename)
   xmlNodePtr node;
   Level *level = NULL;
   gchar *prop_value;
+  // declarations for markup-based-loading
+  GFile *level_file;
+  gchar *level_contents;
+  gsize level_length;
+  GMarkupParseContext *parse_context;
+  Level *level2 = NULL;
 
   g_return_val_if_fail (filename != NULL, NULL);
 
@@ -373,6 +393,20 @@ static Level *load_level (gchar *filename)
       return NULL;
     }
 
+  // markup-based loading here
+  level_file = g_file_new_for_path (filename);
+  if (g_file_load_contents (level_file, NULL, &level_contents, &level_length, NULL, NULL)) {
+    level2 = level_new ();
+    parse_context = g_markup_parse_context_new (&level_parser,
+                                                G_MARKUP_TREAT_CDATA_AS_TEXT,
+                                                level2,
+                                                NULL);
+    g_markup_parse_context_parse (parse_context, level_contents, level_length, NULL);
+    g_markup_parse_context_unref (parse_context);
+    g_free (level_contents);
+  }
+
+  // xml-based loading starts here
   doc = xmlParseFile (filename);
 
   if (doc == NULL)

@@ -366,3 +366,32 @@ Tile *tile_new_from_xml (xmlNodePtr node)
   return tile;
 }
 
+void
+tile_parser_start_element (GMarkupParseContext  *context,
+                           const gchar          *element_name,
+                           const gchar         **attribute_names,
+                           const gchar         **attribute_values,
+                           gpointer              user_data,
+                           GError              **error)
+{
+//  printf ("tile: text %s\n", element_name);
+}
+
+void
+tile_parser_text (GMarkupParseContext  *context,
+                  const gchar          *text,
+                  gsize                text_len,
+                  gpointer              user_data,
+                  GError              **error)
+{
+//  printf ("tile: text %s\n", text);
+}
+
+void
+tile_parser_end_element (GMarkupParseContext  *context,
+                         const gchar          *element_name,
+                         gpointer              user_data,
+                         GError              **error)
+{
+//  printf ("tile: ending %s\n", element_name);
+}

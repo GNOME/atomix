@@ -17,6 +17,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 #include "playfield.h"
+#include "xml-util.h"
 
 #include <string.h>
 
@@ -817,4 +818,57 @@ PlayField *playfield_generate_shadow (PlayField *pf)
     }
 
   return env_pf;
+}
+
+static GMarkupParser tile_parser =
+{
+  tile_parser_start_element,
+  tile_parser_end_element,
+  tile_parser_text,
+  NULL,
+  xml_parser_log_error
+};
+
+void
+playfield_parser_start_element (GMarkupParseContext  *context,
+                                const gchar          *element_name,
+                                const gchar         **attribute_names,
+                                const gchar         **attribute_values,
+                                gpointer              user_data,
+                                GError              **error)
+{
+  Tile *tile = NULL;
+
+  printf ("playfield: starting %s\n", element_name);
+  if (!g_strcmp0 (element_name, "tile"))
+  {
+    tile = tile_new (TILE_TYPE_UNKNOWN);
+    printf("pushing subparser for tile\n");
+    g_markup_parse_context_push (context, &tile_parser, tile);
+  }
+}
+
+void
+playfield_parser_text (GMarkupParseContext  *context,
+                       const gchar          *text,
+                       gsize                text_len,
+                       gpointer              user_data,
+                       GError              **error)
+{
+  printf ("playfield: text %s\n", text);
+}
+
+void
+playfield_parser_end_element (GMarkupParseContext  *context,
+                              const gchar          *element_name,
+                              gpointer              user_data,
+                              GError              **error)
+{
+  Tile *tile = NULL;
+
+  printf ("playfield: ending %s\n", element_name);
+  if (!g_strcmp0 (element_name, "tile"))
+  {
+    tile = g_markup_parse_context_pop (context);
+  }
 }

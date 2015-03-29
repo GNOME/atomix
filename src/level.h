@@ -53,5 +53,16 @@ PlayField* level_get_scenario (Level *level);
 
 PlayField* level_get_goal (Level *level);
 
-
+void
+level_parser_start_element (GMarkupParseContext  *context,
+                            const gchar          *element_name,
+                            const gchar         **attribute_names,
+                            const gchar         **attribute_values,
+                            gpointer              user_data,
+                            GError              **error);
+void
+level_parser_end_element (GMarkupParseContext  *context,
+                          const gchar          *element_name,
+                          gpointer              user_data,
+                          GError              **error);
 #endif /* _ATOMIX_LEVEL_H */

@@ -24,6 +24,7 @@
 #include <dirent.h>
 
 #include "level.h"
+#include "xml-util.h"
 #include "level-private.h"
 
 static void level_class_init (GObjectClass *class);
@@ -167,5 +168,75 @@ PlayField *level_get_scenario (Level *level)
   g_object_ref (level->priv->scenario);
 
   return level->priv->scenario;
+}
+
+static GMarkupParser playfield_parser =
+{
+  playfield_parser_start_element,
+  playfield_parser_end_element,
+  playfield_parser_text,
+  NULL,
+  xml_parser_log_error
+};
+
+void
+level_parser_start_element (GMarkupParseContext  *context,
+                            const gchar          *element_name,
+                            const gchar         **attribute_names,
+                            const gchar         **attribute_values,
+                            gpointer              user_data,
+                            GError              **error)
+{
+  const gchar *prop_value;
+  Level *level = LEVEL (user_data);
+  PlayField *playfield = NULL;
+
+  printf ("starting %s\n", element_name);
+  if (!g_strcmp0 (element_name, "level"))
+  {
+    prop_value = get_attribute_value ("_name", attribute_names, attribute_values);
+    printf ("Level name is %s, level is %p\n", prop_value, level);
+    level->priv->name = g_strdup (prop_value);
+
+    prop_value = get_attribute_value ("formula", attribute_names, attribute_values);
+    level->priv->formula = g_strdup (prop_value); 
+  } else if (!g_strcmp0 (element_name, "environment") ||
+             !g_strcmp0 (element_name, "goal") ||
+             !g_strcmp0 (element_name, "scenario"))
+  {
+    playfield = playfield_new ();
+    printf("pushind subparser\n");
+    g_markup_parse_context_push (context, &playfield_parser, playfield);
+  }
+  
+}
+
+void
+level_parser_end_element (GMarkupParseContext  *context,
+                          const gchar          *element_name,
+                          gpointer              user_data,
+                          GError              **error)
+{
+  PlayField* playfield = NULL;
+  Level *level = LEVEL (user_data);
+  LevelPrivate *priv = level->priv;
+
+  if (!g_strcmp0 (element_name, "environment") ||
+      !g_strcmp0 (element_name, "goal") ||
+      !g_strcmp0 (element_name, "scenario"))
+  {
+    printf ("ending %s\n", element_name);
+    playfield = g_markup_parse_context_pop (context);
+    if (!g_strcmp0 (element_name, "environment"))
+    {
+      level->priv->environment = playfield;
+    } else if (!g_strcmp0 (element_name, "scenario"))
+    {
+      level->priv->scenario = playfield;
+    } else if (!g_strcmp0 (element_name, "goal"))
+    {
+      level->priv->goal = playfield;
+    }
+  }
 }
 
