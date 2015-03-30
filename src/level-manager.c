@@ -436,18 +436,18 @@ static Level *load_level (gchar *filename)
 	  if (!g_ascii_strcasecmp (node->name, "environment"))
 	    {
 	      level->priv->environment =
-		playfield_new_from_xml (node->xmlChildrenNode);
+		playfield_new_from_xml (node);
 	    }
 
 	  else if (!g_ascii_strcasecmp (node->name, "goal"))
 	    {
 	      level->priv->goal =
-		playfield_new_from_xml (node->xmlChildrenNode);
+		playfield_new_from_xml (node);
 	    }
 	  else if (!g_ascii_strcasecmp (node->name, "scenario"))
 	    {
 	      level->priv->scenario =
-		playfield_new_from_xml (node->xmlChildrenNode);
+		playfield_new_from_xml (node);
 	    }
 	  else if (!g_ascii_strcasecmp (node->name, "text"))
 	    {

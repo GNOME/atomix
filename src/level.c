@@ -190,12 +190,12 @@ level_parser_start_element (GMarkupParseContext  *context,
   const gchar *prop_value;
   Level *level = LEVEL (user_data);
   PlayField *playfield = NULL;
+  guint rows = 0;
+  guint cols = 0;
 
-  printf ("starting %s\n", element_name);
   if (!g_strcmp0 (element_name, "level"))
   {
     prop_value = get_attribute_value ("_name", attribute_names, attribute_values);
-    printf ("Level name is %s, level is %p\n", prop_value, level);
     level->priv->name = g_strdup (prop_value);
 
     prop_value = get_attribute_value ("formula", attribute_names, attribute_values);
@@ -205,7 +205,13 @@ level_parser_start_element (GMarkupParseContext  *context,
              !g_strcmp0 (element_name, "scenario"))
   {
     playfield = playfield_new ();
-    printf("pushind subparser\n");
+    prop_value = get_attribute_value ("n_rows", attribute_names, attribute_values);
+    rows = (guint) atoi (prop_value);
+    prop_value = get_attribute_value ("n_columns", attribute_names, attribute_values);
+    cols = (guint) atoi (prop_value);
+
+    playfield_set_matrix_size (playfield, rows, cols);
+
     g_markup_parse_context_push (context, &playfield_parser, playfield);
   }
   
@@ -219,13 +225,11 @@ level_parser_end_element (GMarkupParseContext  *context,
 {
   PlayField* playfield = NULL;
   Level *level = LEVEL (user_data);
-  LevelPrivate *priv = level->priv;
 
   if (!g_strcmp0 (element_name, "environment") ||
       !g_strcmp0 (element_name, "goal") ||
       !g_strcmp0 (element_name, "scenario"))
   {
-    printf ("ending %s\n", element_name);
     playfield = g_markup_parse_context_pop (context);
     if (!g_strcmp0 (element_name, "environment"))
     {

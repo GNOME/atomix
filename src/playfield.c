@@ -30,6 +30,18 @@ static GObjectClass *parent_class = NULL;
 static void playfield_class_init (GObjectClass *class);
 static void playfield_init (PlayField *pf);
 static void playfield_finalize (GObject *object);
+static void
+position_parser_start_element (GMarkupParseContext  *context,
+                               const gchar          *element_name,
+                               const gchar         **attribute_names,
+                               const gchar         **attribute_values,
+                               gpointer              user_data,
+                               GError              **error);
+static void
+position_parser_end_element (GMarkupParseContext  *context,
+                             const gchar          *element_name,
+                             gpointer              user_data,
+                             GError              **error);
 
 struct _PlayFieldPrivate
 {
@@ -37,6 +49,13 @@ struct _PlayFieldPrivate
   guint n_cols;
   Tile **matrix;
 };
+
+typedef struct
+{
+  guint row;
+  guint col;
+  Tile *tile;
+} TileData;
 
 GType playfield_get_type (void)
 {
@@ -131,6 +150,8 @@ void set_tile (PlayField *pf, gint row, gint col, Tile *new_tile)
 
   g_return_if_fail (IS_PLAYFIELD (pf));
 
+  g_return_if_fail (row < pf->priv->n_rows || col < pf->priv->n_cols);
+
   priv = pf->priv;
 
   tile = get_tile (pf, row, col);
@@ -219,21 +240,21 @@ void playfield_set_matrix_size (PlayField *pf, guint n_rows, guint n_cols)
     {
       // free the left over tiles;
       for (row = 0; row < old_n_rows; row++)
-	{
-	  for (col = 0; col < old_n_cols; col++)
-	    {
-	      Tile *tile = get_tile (pf, row, col);
-	      if (row >= n_rows && tile)
-		g_object_unref (tile);
-	      else if (col >= n_cols && tile)
-		g_object_unref (tile);
-	    }
-	}
+      {
+        for (col = 0; col < old_n_cols; col++)
+        {
+          Tile *tile = get_tile (pf, row, col);
+          if (row >= n_rows && tile)
+            g_object_unref (tile);
+          else if (col >= n_cols && tile)
+            g_object_unref (tile);
+        }
+      }
     }
 
   new_matrix = g_malloc0 (n_rows * n_cols * sizeof (Tile *));
   memcpy (new_matrix, pf->priv->matrix,
-	  old_n_rows * old_n_cols * sizeof (Tile *));
+      old_n_rows * old_n_cols * sizeof (Tile *));
 
   g_free (pf->priv->matrix);
   pf->priv->matrix = new_matrix;
@@ -435,54 +456,30 @@ PlayField *playfield_new_from_xml (xmlNodePtr node)
   PlayField *pf;
   gint row, col;
   gint n_rows, n_cols;
-  gchar *prop_value;
-  gchar *content;
 
   g_return_val_if_fail (node != NULL, NULL);
 
   pf = playfield_new ();
   row = 0;
   col = 0;
-  n_rows = 0;
-  n_cols = 0;
+
+  n_rows = atoi (xmlGetProp (node, "n_rows"));
+  n_cols = atoi (xmlGetProp (node, "n_columns"));
+
+  playfield_set_matrix_size (pf, n_rows, n_cols);
 
   /* reading non empty tiles */
-  for (; node != NULL; node = node->next)
+  for (child_node = node->xmlChildrenNode;
+       child_node != NULL; child_node = child_node->next)
+  {
+    if (!g_ascii_strcasecmp (child_node->name, "position"))
     {
-      if (!g_ascii_strcasecmp (node->name, "n_rows"))
-	{
-	  content = xmlNodeGetContent (node);
-	  n_rows = atoi (content);
-	}
-      else if (!g_ascii_strcasecmp (node->name, "n_columns"))
-	{
-	  content = xmlNodeGetContent (node);
-	  n_cols = atoi (content);
-	  playfield_set_matrix_size (pf, n_rows, n_cols);
-	}
-      else if (!g_ascii_strcasecmp (node->name, "row"))
-	{
-	  prop_value = xmlGetProp (node, "no");
-	  row = atoi (prop_value);
-	  for (child_node = node->xmlChildrenNode;
-	       child_node != NULL; child_node = child_node->next)
-	    {
-	      if (!g_ascii_strcasecmp (child_node->name, "col"))
-		{
-		  prop_value = xmlGetProp (child_node, "no");
-		  col = atoi (prop_value);
-		  read_tile (pf, row, col, child_node->xmlChildrenNode);
-		}
-	    }
-	}
-      else if (!g_ascii_strcasecmp (node->name, "text"))
-	{
-	}
-      else
-	{
-	  g_warning ("Skipping unexpected Tag %s.", node->name);
-	}
+      row = atoi (xmlGetProp (child_node, "row"));
+      col = atoi (xmlGetProp (child_node, "col"));
+      read_tile (pf, row, col, child_node->xmlChildrenNode);
     }
+  }
+
   return pf;
 }
 
@@ -829,6 +826,53 @@ static GMarkupParser tile_parser =
   xml_parser_log_error
 };
 
+static GMarkupParser position_parser =
+{
+  position_parser_start_element,
+  position_parser_end_element,
+  NULL,
+  NULL,
+  xml_parser_log_error
+};
+
+static void
+position_parser_start_element (GMarkupParseContext  *context,
+                               const gchar          *element_name,
+                               const gchar         **attribute_names,
+                               const gchar         **attribute_values,
+                               gpointer              user_data,
+                               GError              **error)
+{
+  Tile *tile = NULL;
+
+  if (!g_strcmp0 (element_name, "tile"))
+  {
+    tile = tile_new (TILE_TYPE_UNKNOWN);
+    g_markup_parse_context_push (context, &tile_parser, tile);
+  } else
+  {
+    printf ("position: starting %s\n", element_name);
+  }
+}
+
+static void
+position_parser_end_element (GMarkupParseContext  *context,
+                             const gchar          *element_name,
+                             gpointer              user_data,
+                             GError              **error)
+{
+  TileData *tile_data = user_data;
+
+
+  if (!g_strcmp0 (element_name, "tile"))
+  {
+    tile_data->tile = g_markup_parse_context_pop (context);
+  } else
+  {
+    printf ("position: ending %s\n", element_name);
+  }
+}
+
 void
 playfield_parser_start_element (GMarkupParseContext  *context,
                                 const gchar          *element_name,
@@ -837,25 +881,38 @@ playfield_parser_start_element (GMarkupParseContext  *context,
                                 gpointer              user_data,
                                 GError              **error)
 {
-  Tile *tile = NULL;
+  TileData *tile_data = NULL;
+  const gchar *current = NULL;
+  gint number = 0;
 
-  printf ("playfield: starting %s\n", element_name);
-  if (!g_strcmp0 (element_name, "tile"))
+  if (!g_strcmp0 (element_name, "position"))
   {
-    tile = tile_new (TILE_TYPE_UNKNOWN);
-    printf("pushing subparser for tile\n");
-    g_markup_parse_context_push (context, &tile_parser, tile);
+    tile_data = g_slice_new (TileData);
+
+    current = get_attribute_value ("row", attribute_names, attribute_values);
+    number = atoi (current);
+    tile_data->row = (guint) number;
+
+    current = get_attribute_value ("col", attribute_names, attribute_values);
+    number = atoi (current);
+    
+    tile_data->col = (guint) number;
+    tile_data->tile = NULL;
+    g_markup_parse_context_push (context, &position_parser, tile_data);
+  } else
+  {
+    printf ("playfield: starting %s\n", element_name);
   }
 }
 
 void
 playfield_parser_text (GMarkupParseContext  *context,
                        const gchar          *text,
-                       gsize                text_len,
+                       gsize                 text_len,
                        gpointer              user_data,
                        GError              **error)
 {
-  printf ("playfield: text %s\n", text);
+  //printf ("playfield: text %s\n", text);
 }
 
 void
@@ -864,11 +921,16 @@ playfield_parser_end_element (GMarkupParseContext  *context,
                               gpointer              user_data,
                               GError              **error)
 {
-  Tile *tile = NULL;
+  PlayField *playfield = user_data;
+  TileData *tile_data = NULL;
 
-  printf ("playfield: ending %s\n", element_name);
-  if (!g_strcmp0 (element_name, "tile"))
+  if (!g_strcmp0 (element_name, "position"))
   {
-    tile = g_markup_parse_context_pop (context);
+    tile_data = g_markup_parse_context_pop (context);
+    playfield_set_tile (playfield, tile_data->row, tile_data->col, tile_data->tile);
+    g_slice_free (TileData, tile_data);
+  } else
+  {
+    printf ("playfield: ending %s\n", element_name);
   }
 }

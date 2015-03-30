@@ -322,25 +322,14 @@ Tile *tile_new_from_xml (xmlNodePtr node)
   g_return_val_if_fail (node != NULL, NULL);
   g_return_val_if_fail (!g_ascii_strcasecmp (node->name, "tile"), NULL);
 
-  tile = NULL;
+  type  = string_to_tile_type (xmlGetProp (node, "type"));
+  tile = tile_new (type);
+  base_id = g_quark_from_string (xmlGetProp (node, "base"));
+  tile_set_base_id (tile, base_id);
 
   for (child = node->xmlChildrenNode; child != NULL; child = child->next)
     {
-      if (!g_ascii_strcasecmp (child->name, "type"))
-	{
-	  g_assert (tile == NULL);
-	  content = xmlNodeGetContent (child);
-	  type = string_to_tile_type (content);
-	  tile = tile_new (type);
-	}
-      else if (!g_ascii_strcasecmp (child->name, "base"))
-	{
-	  g_assert (tile != NULL);
-	  content = xmlNodeGetContent (child);
-	  base_id = g_quark_from_string (content);
-	  tile_set_base_id (tile, base_id);
-	}
-      else if (!g_ascii_strcasecmp (child->name, "underlay"))
+      if (!g_ascii_strcasecmp (child->name, "underlay"))
 	{
 	  g_assert (tile != NULL);
 	  content = xmlNodeGetContent (child);
@@ -380,7 +369,7 @@ tile_parser_start_element (GMarkupParseContext  *context,
 void
 tile_parser_text (GMarkupParseContext  *context,
                   const gchar          *text,
-                  gsize                text_len,
+                  gsize                 text_len,
                   gpointer              user_data,
                   GError              **error)
 {
