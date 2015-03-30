@@ -22,6 +22,9 @@
 
 #include <glib-object.h>
 
+#define GPOINTER_TO_QUARK(p)  ((GQuark) GPOINTER_TO_INT (p))
+#define GQUARK_TO_POINTER(p)  ((gpointer) GINT_TO_POINTER (p))
+
 #define TILE_TYPE        (tile_get_type ())
 #define TILE(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), TILE_TYPE, Tile))
 #define TILE_CLASS(k)    (G_TYPE_CHECK_CLASS_CAST((k), TILE_TYPE, TileClass))

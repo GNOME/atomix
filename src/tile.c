@@ -22,9 +22,6 @@
 #include "tile.h"
 #include "xml-util.h"
 
-#define GPOINTER_TO_QUARK(p)  ((GQuark) (p))
-#define GQUARK_TO_POINTER(p)  ((gpointer) (p))
-
 static GObjectClass *parent_class = NULL;
 
 static void tile_class_init (GObjectClass *class);

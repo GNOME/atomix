@@ -224,7 +224,7 @@ static GdkPixbuf *create_sub_images (Theme *theme, Tile *tile,
 
   for (; elem != NULL; elem = elem->next)
     {
-      ti = g_datalist_id_get_data (&priv->images, (GQuark) elem->data);
+      ti = g_datalist_id_get_data (&priv->images, GPOINTER_TO_QUARK (elem->data));
       if (ti == NULL)
 	continue;
 
@@ -233,7 +233,7 @@ static GdkPixbuf *create_sub_images (Theme *theme, Tile *tile,
 	{
 #ifdef DEBUG
 	  g_warning ("Couldn't load sub image: %s",
-		     g_quark_to_string ((GQuark) elem->data));
+		     g_quark_to_string (GPOINTER_TO_QUARK (elem->data)));
 #endif
 	  continue;
 	}
@@ -275,8 +275,8 @@ gboolean theme_apply_decoration (Theme *theme, Tile *tile)
     return FALSE;
 
   n_decorations = g_slist_length (ti->decorations);
-  decor_id = (GQuark) g_slist_nth_data (ti->decorations,
-					counter++ % n_decorations);
+  decor_id = GPOINTER_TO_QUARK (g_slist_nth_data (ti->decorations,
+					counter++ % n_decorations));
   tile_add_sub_id (tile, decor_id, TILE_SUB_OVERLAY);
 
   return TRUE;
@@ -460,5 +460,5 @@ void theme_add_image_decoration (Theme *theme, GQuark base, GQuark decor)
   if (ti == NULL)
     return;
 
-  ti->decorations = g_slist_append (ti->decorations, (gpointer) decor);
+  ti->decorations = g_slist_append (ti->decorations, GQUARK_TO_POINTER (decor));
 }
