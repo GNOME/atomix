@@ -91,7 +91,7 @@ theme_parser_start_element (GMarkupParseContext  *context,
   } else if (!g_strcmp0 (element_name, "bgcolor")) {
     /* handle background color */
     prop_value = get_attribute_value ("color", attribute_names, attribute_values);
-    gdk_rgba_parse (prop_value, &(priv->bg_color));
+    gdk_rgba_parse (&(priv->bg_color), prop_value);
   } else if (!g_strcmp0 (element_name, "bgcolor_rgb")) {
     /* handle rgb color node */
     prop_value = get_attribute_value ("red", attribute_names, attribute_values);

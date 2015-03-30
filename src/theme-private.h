@@ -42,7 +42,7 @@ struct _ThemePrivate
   gint tile_height;		/* height of each tile */
   gint animstep;		/* number of pixels to move a atom in one 
 				   animation step */
-  GdkColor bg_color;		/* background color */
+  GdkRGBA bg_color;		/* background color */
 
   GData *images;		/* key/data list for all the images */
 };
