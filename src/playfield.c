@@ -23,7 +23,6 @@
 
 Tile *get_tile (PlayField *pf, gint row, gint col);
 void set_tile (PlayField *pf, gint row, gint col, Tile *tile);
-static void read_tile (PlayField *pf, guint row, guint col, xmlNodePtr node);
 
 static GObjectClass *parent_class = NULL;
 
@@ -450,54 +449,6 @@ void playfield_print (PlayField *pf)
   g_print ("\n");
 }
 
-PlayField *playfield_new_from_xml (xmlNodePtr node)
-{
-  xmlNodePtr child_node;
-  PlayField *pf;
-  gint row, col;
-  gint n_rows, n_cols;
-
-  g_return_val_if_fail (node != NULL, NULL);
-
-  pf = playfield_new ();
-  row = 0;
-  col = 0;
-
-  n_rows = atoi (xmlGetProp (node, "n_rows"));
-  n_cols = atoi (xmlGetProp (node, "n_columns"));
-
-  playfield_set_matrix_size (pf, n_rows, n_cols);
-
-  /* reading non empty tiles */
-  for (child_node = node->xmlChildrenNode;
-       child_node != NULL; child_node = child_node->next)
-  {
-    if (!g_ascii_strcasecmp (child_node->name, "position"))
-    {
-      row = atoi (xmlGetProp (child_node, "row"));
-      col = atoi (xmlGetProp (child_node, "col"));
-      read_tile (pf, row, col, child_node->xmlChildrenNode);
-    }
-  }
-
-  return pf;
-}
-
-static void read_tile (PlayField *pf, guint row, guint col, xmlNodePtr node)
-{
-  Tile *tile;
-
-  for (; node != NULL; node = node->next)
-    {
-      if (!g_ascii_strcasecmp (node->name, "tile"))
-	{
-	  tile = tile_new_from_xml (node);
-	  playfield_set_tile (pf, row, col, tile);
-	  g_object_unref (tile);
-	}
-    }
-}
-
 /*=================================================================
 
   Functions for generating playfields from basic level descriptions.
@@ -817,11 +768,17 @@ PlayField *playfield_generate_shadow (PlayField *pf)
   return env_pf;
 }
 
+/*=================================================================
+
+  Functions and structures for parsing playfields from files.
+
+ -----------------------------------------------------------------*/
+
 static GMarkupParser tile_parser =
 {
   tile_parser_start_element,
   tile_parser_end_element,
-  tile_parser_text,
+  NULL,
   NULL,
   xml_parser_log_error
 };
@@ -844,10 +801,15 @@ position_parser_start_element (GMarkupParseContext  *context,
                                GError              **error)
 {
   Tile *tile = NULL;
+  TileType type = TILE_TYPE_UNKNOWN;
+  gint base_id = 0;
 
   if (!g_strcmp0 (element_name, "tile"))
   {
-    tile = tile_new (TILE_TYPE_UNKNOWN);
+    type  = tile_type_from_string (get_attribute_value ("type", attribute_names, attribute_values));
+    tile = tile_new (type);
+    base_id = g_quark_from_string (get_attribute_value ("base", attribute_names, attribute_values));
+    tile_set_base_id (tile, base_id);
     g_markup_parse_context_push (context, &tile_parser, tile);
   } else
   {

@@ -17,9 +17,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include <libxml/parser.h>
-#include <libxml/tree.h>
-
 #include "main.h"
 #include "theme.h"
 #include "goal.h"

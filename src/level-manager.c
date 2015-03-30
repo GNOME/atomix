@@ -22,8 +22,6 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include <fcntl.h>
-#include <libxml/parser.h>
-#include <libxml/tree.h>
 
 #include "level-manager.h"
 #include "level-private.h"
@@ -151,15 +149,6 @@ static GMarkupParser sequence_parser =
   xml_parser_log_error
 };
 
-static GMarkupParser level_parser =
-{
-  level_parser_start_element,
-  level_parser_end_element,
-  NULL,
-  NULL,
-  xml_parser_log_error
-};
-
 static void create_level_sequence (LevelManager *lm, gchar *file)
 {
   g_return_if_fail (IS_LEVEL_MANAGER (lm));
@@ -278,7 +267,7 @@ static gchar *lookup_level_name (gchar *filename)
 {
 
   gchar *name = NULL;
-  Theme *level = NULL;
+  Level *level = NULL;
 
   g_return_val_if_fail (filename != NULL, NULL);
   g_return_val_if_fail (g_file_test (filename, G_FILE_TEST_EXISTS), NULL);
@@ -372,18 +361,28 @@ GList *level_manager_get_available_levels (LevelManager *lm)
   return list;
 }
 
+/*=================================================================
+
+  Level_Manager level parsing
+
+  ---------------------------------------------------------------*/
+
+static GMarkupParser level_parser =
+{
+  level_parser_start_element,
+  level_parser_end_element,
+  NULL,
+  NULL,
+  xml_parser_log_error
+};
+
 static Level *load_level (gchar *filename)
 {
-  xmlDocPtr doc;
-  xmlNodePtr node;
-  Level *level = NULL;
-  gchar *prop_value;
-  // declarations for markup-based-loading
   GFile *level_file;
   gchar *level_contents;
   gsize level_length;
   GMarkupParseContext *parse_context;
-  Level *level2 = NULL;
+  Level *level = NULL;
 
   g_return_val_if_fail (filename != NULL, NULL);
 
@@ -396,73 +395,17 @@ static Level *load_level (gchar *filename)
   // markup-based loading here
   level_file = g_file_new_for_path (filename);
   if (g_file_load_contents (level_file, NULL, &level_contents, &level_length, NULL, NULL)) {
-    level2 = level_new ();
+    level = level_new ();
     parse_context = g_markup_parse_context_new (&level_parser,
                                                 G_MARKUP_TREAT_CDATA_AS_TEXT,
-                                                level2,
+                                                level,
                                                 NULL);
     g_markup_parse_context_parse (parse_context, level_contents, level_length, NULL);
     g_markup_parse_context_unref (parse_context);
     g_free (level_contents);
+    level->priv->file_name = g_path_get_basename (filename);
   }
 
-  // xml-based loading starts here
-  doc = xmlParseFile (filename);
-
-  if (doc == NULL)
-    {
-      g_warning ("XML file %s couldn't be parsed.", filename);
-      return NULL;
-    }
-
-  level = level_new ();
-
-  node = doc->xmlRootNode;
-
-  while (node != NULL)
-    {
-      if (!g_ascii_strcasecmp (node->name, "level"))
-	{
-	  prop_value = xmlGetProp (node, "_name");
-	  level->priv->name = g_strdup (prop_value);
-
-	  prop_value = xmlGetProp (node, "formula");
-	  level->priv->formula = g_strdup (prop_value); 
-
-	  node = node->xmlChildrenNode;
-	}
-      else
-	{
-	  if (!g_ascii_strcasecmp (node->name, "environment"))
-	    {
-	      level->priv->environment =
-		playfield_new_from_xml (node);
-	    }
-
-	  else if (!g_ascii_strcasecmp (node->name, "goal"))
-	    {
-	      level->priv->goal =
-		playfield_new_from_xml (node);
-	    }
-	  else if (!g_ascii_strcasecmp (node->name, "scenario"))
-	    {
-	      level->priv->scenario =
-		playfield_new_from_xml (node);
-	    }
-	  else if (!g_ascii_strcasecmp (node->name, "text"))
-	    {
-	    }
-	  else
-	    {
-	      g_message ("Skipping unknown tag %s.", node->name);
-	    }
-
-	  node = node->next;
-	}
-    }
-  xmlFreeDoc (doc);
-
-  level->priv->file_name = g_path_get_basename (filename);
-
   return level;
+
 }

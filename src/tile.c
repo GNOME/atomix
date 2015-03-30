@@ -17,9 +17,10 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include "tile.h"
-
 #include <string.h>
+
+#include "tile.h"
+#include "xml-util.h"
 
 #define GPOINTER_TO_QUARK(p)  ((GQuark) (p))
 #define GQUARK_TO_POINTER(p)  ((gpointer) (p))
@@ -279,11 +280,11 @@ void tile_print (Tile *tile)
 
 /*=================================================================
  
-  Tile load/save functions
+  Tile load/parse functions
 
   ---------------------------------------------------------------*/
 
-static TileType string_to_tile_type (gchar *str)
+TileType tile_type_from_string (const gchar *str)
 {
   TileType tile_type = TILE_TYPE_UNKNOWN;
   static int prefix_len = 0;
@@ -310,50 +311,31 @@ static TileType string_to_tile_type (gchar *str)
   return tile_type;
 }
 
-Tile *tile_new_from_xml (xmlNodePtr node)
+typedef struct
 {
-  xmlNodePtr child;
-  Tile *tile = NULL;
-  TileType type;
-  GQuark base_id;
-  GQuark sub_id;
-  gchar *content;
+  gchar* text;
+} TextData;
 
-  g_return_val_if_fail (node != NULL, NULL);
-  g_return_val_if_fail (!g_ascii_strcasecmp (node->name, "tile"), NULL);
-
-  type  = string_to_tile_type (xmlGetProp (node, "type"));
-  tile = tile_new (type);
-  base_id = g_quark_from_string (xmlGetProp (node, "base"));
-  tile_set_base_id (tile, base_id);
-
-  for (child = node->xmlChildrenNode; child != NULL; child = child->next)
-    {
-      if (!g_ascii_strcasecmp (child->name, "underlay"))
-	{
-	  g_assert (tile != NULL);
-	  content = xmlNodeGetContent (child);
-	  sub_id = g_quark_from_string (content);
-	  tile_add_sub_id (tile, sub_id, TILE_SUB_UNDERLAY);
-	}
-      else if (!g_ascii_strcasecmp (child->name, "overlay"))
-	{
-	  g_assert (tile != NULL);
-	  content = xmlNodeGetContent (child);
-	  base_id = g_quark_from_string (content);
-	  tile_add_sub_id (tile, base_id, TILE_SUB_OVERLAY);
-	}
-      else if (!g_ascii_strcasecmp (child->name, "text"))
-	{
-	}
-      else
-	{
-	  g_warning ("Skipping unknown tag: %s.", child->name);
-	}
-    }
-
-  return tile;
+static void
+single_tag_parser_text (GMarkupParseContext  *context,
+                        const gchar          *text,
+                        gsize                 text_len,
+                        gpointer              user_data,
+                        GError              **error)
+{
+//  printf ("tile: text %s\n", text);
+  TextData *text_data = user_data;
+  text_data->text = g_strdup(text);
 }
+
+static GMarkupParser text_parser =
+{
+  NULL,
+  NULL,
+  single_tag_parser_text,
+  NULL,
+  xml_parser_log_error
+};
 
 void
 tile_parser_start_element (GMarkupParseContext  *context,
@@ -363,17 +345,15 @@ tile_parser_start_element (GMarkupParseContext  *context,
                            gpointer              user_data,
                            GError              **error)
 {
-//  printf ("tile: text %s\n", element_name);
-}
+  TextData *text_data = NULL;
 
-void
-tile_parser_text (GMarkupParseContext  *context,
-                  const gchar          *text,
-                  gsize                 text_len,
-                  gpointer              user_data,
-                  GError              **error)
-{
-//  printf ("tile: text %s\n", text);
+  if (!g_strcmp0 (element_name, "underlay") || 
+      !g_strcmp0 (element_name, "overlay"))
+  {
+    text_data = g_slice_new (TextData);
+    g_markup_parse_context_push(context, &text_parser, text_data);
+  } else
+    g_print ("tile: starting %s\n", element_name);
 }
 
 void
@@ -382,5 +362,22 @@ tile_parser_end_element (GMarkupParseContext  *context,
                          gpointer              user_data,
                          GError              **error)
 {
-//  printf ("tile: ending %s\n", element_name);
+  TextData *text_data;
+  GQuark sub_id;
+  Tile *tile = user_data;
+
+  if (!g_strcmp0 (element_name, "underlay") || 
+      !g_strcmp0 (element_name, "overlay"))
+  {
+    text_data = g_markup_parse_context_pop (context);
+    sub_id = g_quark_from_string (text_data->text);
+    g_free (text_data->text);
+    g_slice_free (TextData, text_data);
+
+    if (!g_strcmp0 (element_name, "underlay"))
+      tile_add_sub_id (tile, sub_id, TILE_SUB_UNDERLAY);
+    else
+      tile_add_sub_id (tile, sub_id, TILE_SUB_OVERLAY);
+  } else
+    g_print ("tile: ending %s\n", element_name);
 }

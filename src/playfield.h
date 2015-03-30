@@ -20,7 +20,7 @@
 #ifndef _ATOMIX_PLAY_FIELD_H
 #define _ATOMIX_PLAY_FIELD_H
 
-#include <libxml/tree.h>
+#include <stdlib.h>
 #include "tile.h"
 #include "theme.h"
 
@@ -48,8 +48,6 @@ typedef struct
 GType playfield_get_type (void);
 
 PlayField *playfield_new (void);
-
-PlayField *playfield_new_from_xml (xmlNodePtr node);
 
 guint playfield_get_n_rows (PlayField * pf);
 

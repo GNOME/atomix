@@ -20,6 +20,7 @@
 
 #include <glib/gi18n.h>
 #include <glib.h>
+#include <stdlib.h>
 
 #include "theme-manager.h"
 #include "theme-private.h"

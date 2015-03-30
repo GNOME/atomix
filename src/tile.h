@@ -21,7 +21,6 @@
 #define _TILE_H_
 
 #include <glib-object.h>
-#include <libxml/tree.h>
 
 #define TILE_TYPE        (tile_get_type ())
 #define TILE(o)          (G_TYPE_CHECK_INSTANCE_CAST ((o), TILE_TYPE, Tile))
@@ -64,8 +63,6 @@ GType tile_get_type (void);
 
 Tile *tile_new (TileType type);
 
-Tile *tile_new_from_xml (xmlNodePtr node);
-
 Tile *tile_copy (Tile * tile);
 
 GSList *tile_get_sub_ids (Tile * tile, TileSubType sub_type);
@@ -88,6 +85,8 @@ void tile_print (Tile * tile);
 
 gboolean tile_is_equal (Tile * tile, Tile * comp);
 
+TileType tile_type_from_string (const gchar *str);
+
 void
 tile_parser_start_element (GMarkupParseContext  *context,
                            const gchar          *element_name,
@@ -95,13 +94,6 @@ tile_parser_start_element (GMarkupParseContext  *context,
                            const gchar         **attribute_values,
                            gpointer              user_data,
                            GError              **error);
-
-void
-tile_parser_text (GMarkupParseContext  *context,
-                  const gchar          *text,
-                  gsize                text_len,
-                  gpointer              user_data,
-                  GError              **error);
 
 void
 tile_parser_end_element (GMarkupParseContext  *context,
