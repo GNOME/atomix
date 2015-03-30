@@ -575,6 +575,7 @@ static AtomixApp *create_gui (void)
 {
   AtomixApp *app;
   gchar *ui_path;
+  gchar *icon_path;
   GtkBuilder *builder;
   GtkWidget *stats_grid;
   GtkWidget *time_label;
@@ -653,11 +654,13 @@ static AtomixApp *create_gui (void)
   app->lb_formula = GTK_WIDGET (gtk_builder_get_object (builder, "formula_value"));
   app->lb_score = GTK_WIDGET (gtk_builder_get_object (builder, "score_value"));
 
-  gtk_window_set_default_icon_from_file (g_build_filename (DATADIR,
-							   "pixmaps",
-							   "atomix-icon.png",
-							   NULL),
+  icon_path = g_build_filename (DATADIR,
+							    "pixmaps",
+							    "atomix-icon.png",
+							    NULL);
+  gtk_window_set_default_icon_from_file (icon_path,
 					 		   NULL);
+  g_free (icon_path);
 
   gtk_widget_show_all (GTK_WIDGET (app->mainwin));
 

@@ -349,6 +349,8 @@ static Theme *load_theme (gchar *theme_dir)
     }
 
   theme_file = g_file_new_for_path (theme_file_path);
+  g_free (theme_file_path);
+
   if (g_file_load_contents (theme_file, NULL, &theme_contents, &theme_length, NULL, NULL)) {
     theme = theme_new ();
     priv = theme->priv;

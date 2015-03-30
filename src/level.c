@@ -99,7 +99,6 @@ static void level_finalize (GObject *object)
 {
   LevelPrivate *priv;
   Level* level = LEVEL (object);
-
   priv = level->priv;
 
   if (priv->name)

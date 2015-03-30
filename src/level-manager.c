@@ -263,21 +263,6 @@ static void search_level_in_dir (LevelManager *lm, gchar *dir_path)
     }
 }
 
-static gchar *lookup_level_name (gchar *filename)
-{
-
-  gchar *name = NULL;
-  Level *level = NULL;
-
-  g_return_val_if_fail (filename != NULL, NULL);
-  g_return_val_if_fail (g_file_test (filename, G_FILE_TEST_EXISTS), NULL);
-
-  level = load_level (filename);
-  name = level_get_name (level);
-
-  return name;
-}
-
 static void add_level (LevelManager *lm, gchar *levelname, gchar *filename)
 {
   gchar *search_result;
@@ -338,7 +323,7 @@ Level *level_manager_get_next_level (LevelManager *lm, Level *current_level)
     {
       filename = g_hash_table_lookup (lm->priv->levels, levelname);
       if (filename != NULL)
-	level = load_level (filename);
+	    level = load_level (filename);
     }
 
   return level;
@@ -376,6 +361,21 @@ static GMarkupParser level_parser =
   xml_parser_log_error
 };
 
+static gchar *lookup_level_name (gchar *filename)
+{
+
+  gchar *name = NULL;
+  Level *level = NULL;
+
+  g_return_val_if_fail (filename != NULL, NULL);
+  g_return_val_if_fail (g_file_test (filename, G_FILE_TEST_EXISTS), NULL);
+
+  level = load_level (filename);
+  name = level_get_name (level);
+
+  return name;
+}
+
 static Level *load_level (gchar *filename)
 {
   GFile *level_file;
@@ -396,6 +396,7 @@ static Level *load_level (gchar *filename)
   level_file = g_file_new_for_path (filename);
   if (g_file_load_contents (level_file, NULL, &level_contents, &level_length, NULL, NULL)) {
     level = level_new ();
+    level->priv->file_name = g_path_get_basename (filename);
     parse_context = g_markup_parse_context_new (&level_parser,
                                                 G_MARKUP_TREAT_CDATA_AS_TEXT,
                                                 level,
@@ -403,7 +404,6 @@ static Level *load_level (gchar *filename)
     g_markup_parse_context_parse (parse_context, level_contents, level_length, NULL);
     g_markup_parse_context_unref (parse_context);
     g_free (level_contents);
-    level->priv->file_name = g_path_get_basename (filename);
   }
 
   return level;
