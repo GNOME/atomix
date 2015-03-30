@@ -21,7 +21,6 @@ GNOME_MAINTAINER_MODE_DEFINES
 
 dnl ================= Requirements =======================
 LIBGTK_REQUIRED=3.10.0
-LIBXML_REQUIRED=2.4.23
 GLIB_REQUIRED=2.36.0
 GDK_PIXBUF_REQUIRED=2.0.5
 
@@ -29,7 +28,7 @@ dnl ******************************
 dnl pkg-config checks
 dnl ******************************
 
-ATOMIX_MODULES="gtk+-3.0 >= $LIBGTK_REQUIRED libxml-2.0 >= $LIBXML_REQUIRED gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED glib-2.0 >= $GLIB_REQUIRED"
+ATOMIX_MODULES="gtk+-3.0 >= $LIBGTK_REQUIRED gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED glib-2.0 >= $GLIB_REQUIRED"
 PKG_CHECK_MODULES(ATOMIX, $ATOMIX_MODULES)
 AC_SUBST(ATOMIX_CFLAGS)
 AC_SUBST(ATOMIX_LIBS)
