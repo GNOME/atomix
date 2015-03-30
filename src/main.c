@@ -654,6 +654,8 @@ static AtomixApp *create_gui (void)
   app->lb_formula = GTK_WIDGET (gtk_builder_get_object (builder, "formula_value"));
   app->lb_score = GTK_WIDGET (gtk_builder_get_object (builder, "score_value"));
 
+  g_object_unref (builder);
+
   icon_path = g_build_filename (DATADIR,
 							    "pixmaps",
 							    "atomix-icon.png",
@@ -664,7 +666,6 @@ static AtomixApp *create_gui (void)
 
   gtk_widget_show_all (GTK_WIDGET (app->mainwin));
 
-  g_object_unref (builder);
   return app;
 }
 

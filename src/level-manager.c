@@ -101,7 +101,7 @@ static void level_manager_finalize (GObject *object)
 {
   LevelManager *tm = LEVEL_MANAGER (object);
   g_hash_table_destroy (tm->priv->levels);
-
+  g_list_free_full (tm->priv->level_seq, g_free);
   g_free (tm->priv);
   tm->priv = NULL;
 }
