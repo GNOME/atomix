@@ -16,6 +16,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#ifndef _ATOMIX_CLOCK_H_
+#define _ATOMIX_CLOCK_H_
+
 #include <time.h>
 #include <gtk/gtk.h>
 
@@ -49,3 +52,5 @@ void clock_start (Clock *);
 void clock_stop (Clock *);
 
 G_END_DECLS
+
+#endif /* _ATOMIX_CLOCK_H_ */
