@@ -19,7 +19,6 @@
 #ifndef _ATOMIX_CLOCK_H_
 #define _ATOMIX_CLOCK_H_
 
-#include <time.h>
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
@@ -30,12 +29,9 @@ G_BEGIN_DECLS
 typedef struct
 {
   GtkLabel widget;
+  GTimer *timer;
   gint timer_id;
-  gint update_interval;
-  time_t seconds;
-  time_t stopped;
   gchar *fmt;
-  struct tm *tm;
 } Clock;
 
 typedef struct
@@ -46,9 +42,11 @@ typedef struct
 GType clock_get_type (void);
 GtkWidget *clock_new (void);
 void clock_set_format (Clock *, const gchar *);
-void clock_set_seconds (Clock *, time_t);
+void clock_reset (Clock *);
 void clock_set_update_interval (Clock *, gint);
 void clock_start (Clock *);
+void clock_resume (Clock *);
+gint clock_get_elapsed (Clock *);
 void clock_stop (Clock *);
 
 G_END_DECLS

@@ -16,9 +16,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include <time.h>
-#include <gtk/gtk.h>
-#include <string.h>
 #include "clock.h"
 
 static void clock_class_init (ClockClass *klass);
@@ -55,8 +52,9 @@ GType clock_get_type (void)
 static void clock_destroy (GtkWidget *object)
 {
   g_return_if_fail (object != NULL);
+  Clock *clock = CLOCK (object);
+  clock_stop (clock);
 
-  clock_stop (CLOCK (object));
   GTK_WIDGET_CLASS (parent_class)->destroy (object);
 }
 
@@ -71,26 +69,24 @@ static void clock_class_init (ClockClass *klass)
 static void clock_init (Clock *clock)
 {
   clock->timer_id = -1;
-  clock->update_interval = 1;
-  clock->seconds = time (NULL);
-  clock->stopped = 0;
+  clock->timer = NULL;
 }
 
 static void clock_gen_str (Clock *clock)
 {
-  gchar timestr[64];
-  time_t secs;
+  gchar *timestr;
+  gint secs = 0;
+  GDateTime *dtm;
 
-  secs = time (NULL) - clock->seconds;
+  if (clock->timer)
+    secs = g_timer_elapsed (clock->timer, NULL);
 
-  clock->tm->tm_hour = secs / 3600;
-  secs -= clock->tm->tm_hour * 3600;
-  clock->tm->tm_min = secs / 60;
-  clock->tm->tm_sec = secs - clock->tm->tm_min * 60;
+  dtm = g_date_time_new_from_unix_utc (secs);
+  timestr = g_date_time_format (dtm, clock->fmt);
+  g_date_time_unref (dtm);
 
-  strftime (timestr, 64, clock->fmt, clock->tm);
   gtk_label_set_text (GTK_LABEL (clock), timestr);
-  gtk_widget_set_halign (GTK_WIDGET (clock), GTK_ALIGN_START);
+  g_free (timestr);
 }
 
 static gint clock_timer_callback (gpointer data)
@@ -107,9 +103,6 @@ GtkWidget *clock_new ()
   Clock *clock = CLOCK (g_object_new (TYPE_CLOCK, NULL));
 
   clock->fmt = g_strdup ("%H:%M:%S");
-  clock->tm = g_new (struct tm, 1);
-  memset (clock->tm, 0, sizeof (struct tm));
-  clock->update_interval = 1;
 
   clock_gen_str (clock);
 
@@ -125,39 +118,63 @@ void clock_set_format (Clock *clock, const gchar *fmt)
   clock->fmt = g_strdup (fmt);
 }
 
-void clock_set_seconds (Clock *clock, time_t seconds)
+void clock_reset (Clock *clock)
 {
   g_return_if_fail (clock != NULL);
 
-  clock->seconds = time (NULL) - seconds;
-
-  if (clock->timer_id == -1)
-    clock->stopped = seconds;
+  if (clock->timer)
+    g_timer_start (clock->timer);
 
   clock_gen_str (clock);
+}
+
+static void start_timer (Clock *clock)
+{
+  if (clock->timer_id != -1)
+    return;
+
+  clock->timer_id = g_timeout_add_seconds (1, clock_timer_callback, clock);
+}
+
+void clock_resume (Clock *clock)
+{
+  g_return_if_fail (clock != NULL);
+
+  if (clock->timer != NULL)
+    g_timer_continue (clock->timer);
+
+  start_timer (clock);
 }
 
 void clock_start (Clock *clock)
 {
   g_return_if_fail (clock != NULL);
 
-  if (clock->timer_id != -1)
-    return;
+  if (clock->timer)
+    g_timer_destroy (clock->timer);
 
-  clock_set_seconds (clock, clock->stopped);
-  clock->timer_id = g_timeout_add (1000 * clock->update_interval,
-				     clock_timer_callback, clock);
+  clock->timer = g_timer_new ();
+
+  start_timer (clock);
 }
 
 void clock_stop (Clock *clock)
 {
   g_return_if_fail (clock != NULL);
 
+  if (clock->timer)
+    g_timer_stop (clock->timer);
+
   if (clock->timer_id == -1)
     return;
 
-  clock->stopped = time (NULL) - clock->seconds;
-
   g_source_remove (clock->timer_id);
   clock->timer_id = -1;
+}
+
+gint clock_get_elapsed (Clock *clock)
+{
+  if (clock->timer)
+    return g_timer_elapsed (clock->timer, NULL);
+  return 0;
 }

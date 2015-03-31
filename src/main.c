@@ -232,7 +232,7 @@ static void controller_handle_action (GameAction action)
     case GAME_STATE_PAUSED:
       if (action == GAME_ACTION_CONTINUE)
 	{
-	  clock_start (CLOCK(app->clock));
+	  clock_resume (CLOCK(app->clock));
 	  board_gtk_show ();
 	  app->state = (undo_exists())?GAME_STATE_RUNNING:GAME_STATE_RUNNING_UNMOVED;
 	}
@@ -318,7 +318,7 @@ static void setup_level (void)
   goal_view_render (app->goal);
 
   /* init clock */
-  clock_set_seconds (CLOCK(app->clock), 0);
+  clock_reset (CLOCK(app->clock));
   clock_start (CLOCK(app->clock));
 
   g_object_unref (env_pf);
@@ -399,7 +399,7 @@ static void game_init ()
   app->level_no = 0;
   app->score = 0;
   clock_set_format (CLOCK(app->clock), "%M:%S");
-  clock_set_seconds (CLOCK(app->clock), 0);
+  clock_reset (CLOCK(app->clock));
 
   /* init the board */
   board_gtk_init (app->theme, GTK_FIXED (app->fi_matrix));
@@ -422,9 +422,7 @@ void game_level_finished (void)
 
 static void calculate_score (void)
 {
-  gint seconds;
-
-  seconds = time (NULL) - CLOCK(app->clock)->seconds;
+  gint seconds = clock_get_elapsed (CLOCK (app->clock));
 
   if (seconds > 300)
     return;
