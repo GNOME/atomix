@@ -251,7 +251,6 @@ static gboolean board_handle_arrow_event (GtkWidget *item,
   /* is currently an object moved? */
   if (anim_data->timeout_id != -1)
     return FALSE;
-
   if (event->type == GDK_BUTTON_PRESS && selector_data->selected) {
     selector_data->mouse_steering = TRUE;
     move_item (selector_data->sel_item, GPOINTER_TO_INT (direction));
@@ -487,9 +486,14 @@ static void render_tile (Tile *tile, gint row, gint col) {
   }
 }
 
+static void show_sensitive (GtkWidget *widget)
+{
+  gtk_widget_set_visible (widget, gtk_widget_is_sensitive (widget));
+}
+
 static gboolean show_arrow_group (SelectorData *data)
 {
-  g_slist_foreach (data->arrows, (GFunc)gtk_widget_show, NULL);
+  g_slist_foreach (data->arrows, (GFunc)show_sensitive, NULL);
   data->arrow_show_timeout = -1;
 
   return FALSE;
@@ -872,12 +876,10 @@ static void check_for_arrow (gint r, gint c, GtkWidget *arrow) {
 
   tile = playfield_get_tile (board_sce, r, c);
 
-  if (tile == NULL)
-    gtk_widget_show (arrow);
-  else {
-    gtk_widget_hide (arrow);
+  gtk_widget_set_sensitive (arrow, tile == NULL);
+
+  if (tile != NULL)
     g_object_unref (tile);
-  }
 }
 
 static void selector_arrows_show (SelectorData *data)
