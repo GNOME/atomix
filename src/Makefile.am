@@ -15,6 +15,7 @@ bin_PROGRAMS = atomix
 noinst_PROGRAMS = pf-test
 
 atomix_SOURCES = \
+	atomix-application.h \
 	main.c main.h \
 	board-gtk.c board-gtk.h	\
 	undo.c undo.h \
