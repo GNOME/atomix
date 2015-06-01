@@ -127,7 +127,7 @@ static void verb_HelpAbout_cb (GtkMenuItem * action, gpointer data)
 
   dlg = gtk_about_dialog_new ();
   g_signal_connect (dlg, "response", G_CALLBACK (gtk_widget_destroy), NULL);
-  gtk_about_dialog_set_program_name (GTK_ABOUT_DIALOG(dlg), "Atomix");
+  gtk_about_dialog_set_program_name (GTK_ABOUT_DIALOG(dlg), _("Atomix"));
   gtk_about_dialog_set_version (GTK_ABOUT_DIALOG(dlg), VERSION);
   gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG(dlg), _("A puzzle game about atoms and molecules"));
   gtk_about_dialog_set_website (GTK_ABOUT_DIALOG(dlg), "http://wiki.gnome.org/Apps/Atomix");
