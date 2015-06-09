@@ -1,265 +1,267 @@
-# Translation of oc.po to Occitan
 # Occitan translation of atomix.
-# Copyright (C) 2007 Free Software Foundation, Inc.
+# Copyright (C) 2001-2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the atomix package.
-#
-# Yannig Marchegay (yannig@marchegay.org>. 2007
-#
-# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007.
+# 
+# 
+# Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>, 2015.
+# Cédric Valmary (Tot en Òc) <cvalmary@yahoo.fr>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: oc\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-02 08:55+0200\n"
-"PO-Revision-Date: 2008-06-11 11:37+0200\n"
-"Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
-"Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Project-Id-Version: atomix 2.14.0\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=atomix"
+"&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-01-18 17:28+0000\n"
+"PO-Revision-Date: 2015-06-09 09:06+0200\n"
+"Last-Translator: Cédric Valmary (Tot en Òc) <cvalmary@yahoo.fr>\n"
+"Language-Team: www.totenoc.eu\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Virtaal 0.7.0\n"
+"X-Project-Style: gnome\n"
 
-#: ../level/aceticacid.atomix.xml.h:1
-msgid "Acetic Acid"
-msgstr "Acid acetic"
-
-#: ../level/acetone.atomix.xml.h:1
-msgid "Acetone"
-msgstr "Acetona"
-
-#: ../level/butanol.atomix.xml.h:1
-msgid "Butanol"
-msgstr "Butanol"
-
-#: ../level/cyclobutane.atomix.xml.h:1
-msgid "Cyclobutane"
-msgstr "Ciclobutan"
-
-#: ../level/dimethylether.atomix.xml.h:1
-msgid "Dimethyl Ether"
-msgstr ""
-
-#: ../level/ethanal.atomix.xml.h:1
-msgid "Ethanal"
-msgstr "Etanal"
-
-#: ../level/ethane.atomix.xml.h:1
-msgid "Ethane"
-msgstr "Etan"
-
-#: ../level/ethanol.atomix.xml.h:1
-msgid "Ethanol"
-msgstr ""
-
-#: ../level/ethylene.atomix.xml.h:1
-msgid "Ethylene"
-msgstr "Etilèn"
-
-#: ../level/glycerin.atomix.xml.h:1
-msgid "Glycerin"
-msgstr "Glicerina"
-
-#: ../level/lactic-acid.atomix.xml.h:1
-msgid "Lactic Acid"
-msgstr "Acid lactic"
-
-#: ../level/methanal.atomix.xml.h:1
-msgid "Methanal"
-msgstr ""
-
-#: ../level/methane.atomix.xml.h:1
-msgid "Methane"
-msgstr "Metan"
-
-#: ../level/methanol.atomix.xml.h:1
-msgid "Methanol"
-msgstr ""
-
-#: ../level/propanal.atomix.xml.h:1
-msgid "Propanal"
-msgstr ""
-
-#: ../level/propylene.atomix.xml.h:1
-msgid "Propylene"
-msgstr ""
-
-#: ../level/pyran.atomix.xml.h:1
-msgid "Pyran"
-msgstr ""
-
-#: ../level/transbutylen.atomix.xml.h:1
-msgid "Trans Butylen"
-msgstr ""
-
-#: ../level/water.atomix.xml.h:1
-msgid "Water"
-msgstr "Aiga"
-
-#: ../src/atomix-ui.xml.h:1
-msgid "Continue paused game"
-msgstr ""
-
-#: ../src/atomix-ui.xml.h:2
-msgid "End a game"
-msgstr "Acabar un jòc"
-
-#: ../src/atomix-ui.xml.h:3
-msgid "Pause the running game"
-msgstr ""
-
-#: ../src/atomix-ui.xml.h:4
-msgid "Reset level"
-msgstr ""
-
-#: ../src/atomix-ui.xml.h:5
-msgid "Restores start situation"
-msgstr ""
-
-#: ../src/atomix-ui.xml.h:6
-msgid "Set preferences"
-msgstr "Definir las preferéncias"
-
-#: ../src/atomix-ui.xml.h:7
-msgid "Skip _level"
-msgstr "Ignorar lo _nivèl"
-
-#: ../src/atomix-ui.xml.h:8
-msgid "Skip the current level"
-msgstr ""
-
-#: ../src/atomix-ui.xml.h:9
-msgid "Start a new game"
-msgstr "Començar una partida novèla"
-
-#: ../src/atomix-ui.xml.h:10
-msgid "Undo the last move"
-msgstr "Anullar lo darrièra desplaçament"
-
-#: ../src/atomix-ui.xml.h:11
-msgid "View highscores"
-msgstr "Visualizar las melhoras marcas"
-
-#: ../src/atomix-ui.xml.h:12
-msgid "_Continue game"
-msgstr "_Contunhar lo jòc"
-
-#: ../src/atomix-ui.xml.h:13
-msgid "_End Game"
-msgstr "_Fin del jòc"
-
-#: ../src/atomix-ui.xml.h:14
-msgid "_Game"
-msgstr "_Jòc"
-
-#. submenu name="Edit" _label="_Edit">
-#.
-#. <menuitem name="EditPreferences" verb=""/>
-#.
-#. </submenu
-#: ../src/atomix-ui.xml.h:20
-msgid "_Help"
-msgstr "_Ajuda"
-
-#: ../src/atomix-ui.xml.h:21
-msgid "_New Game"
-msgstr "_Jòc novèl"
-
-#: ../src/atomix-ui.xml.h:22
-msgid "_Pause game"
-msgstr ""
-
-#: ../src/atomix-ui.xml.h:23
-msgid "_Preferences ..."
-msgstr "_Preferéncias..."
-
-#: ../src/atomix-ui.xml.h:24
-msgid "_Scores ..."
-msgstr "_Marcas..."
-
-#: ../src/atomix-ui.xml.h:25
-msgid "_Undo move"
-msgstr "_Anullar lo desplaçament"
-
-#: ../src/level-manager.c:174
-msgid "Couldn't find level sequence description."
-msgstr ""
-
-#: ../src/level-manager.c:188
-msgid "No level found."
-msgstr "Cap de nivèl trobat."
-
-#: ../src/level-manager.c:284
-#, c-format
-msgid "Found level '%s' in: %s"
-msgstr ""
-
-#: ../src/main.c:126
-msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr ""
-
-#: ../src/main.c:174
-msgid "A puzzle game about atoms and molecules"
-msgstr ""
-
-#: ../src/main.c:178
-msgid "translator-credits"
-msgstr "Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>"
-
-#: ../src/main.c:489 ../atomix.desktop.in.h:1
+#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
+#: ../data/ui/interface.ui.h:1 ../src/main.c:686
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:500
-msgid "Congratulations! You have finished all Atomix levels."
+#: ../data/atomix.appdata.xml.in.h:2
+msgid "Build molecules out of single atoms"
 msgstr ""
 
-#: ../src/main.c:510
-msgid "Couldn't find at least one level."
+#: ../data/atomix.appdata.xml.in.h:3
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don't just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
 msgstr ""
 
-#: ../src/main.c:515
-msgid "Do you want to finish the game?"
-msgstr "Volètz acabar lo jòc ?"
+#: ../data/atomix.appdata.xml.in.h:4
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
 
-#. create statistics frame
-#: ../src/main.c:729
-msgid "Statistics"
-msgstr "Estadisticas"
+#: ../data/atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Jòc de memòria sus las moleculas"
 
-#: ../src/main.c:735
+#: ../data/level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Acid acetic"
+
+#: ../data/level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Acetòn"
+
+#: ../data/level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "Butanòl"
+
+#: ../data/level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Ciclobutan"
+
+#: ../data/level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "Etèr dimetil"
+
+#: ../data/level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Etanal"
+
+#: ../data/level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Etan"
+
+#: ../data/level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Etanòl"
+
+#: ../data/level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Etilèn"
+
+#: ../data/level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Glicerina"
+
+#: ../data/level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Acid lactic"
+
+#: ../data/level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Metanal"
+
+#: ../data/level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Metan"
+
+#: ../data/level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Metanòl"
+
+#: ../data/level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Propanal"
+
+#: ../data/level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "Propilèn"
+
+#: ../data/level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "Piran"
+
+#: ../data/level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Trans Butilèn"
+
+#: ../data/level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Aiga"
+
+#: ../data/ui/interface.ui.h:2
+msgid "_File"
+msgstr "_Fichièr"
+
+#: ../data/ui/interface.ui.h:3
+#| msgid "New Game"
+msgid "_New Game"
+msgstr "Partida _novèla"
+
+#: ../data/ui/interface.ui.h:4
+#| msgid "End Game"
+msgid "_End Game"
+msgstr "Aca_bar la partida"
+
+#: ../data/ui/interface.ui.h:5
+#| msgid "Skip Level"
+msgid "_Skip Level"
+msgstr "_Passar lo nivèl"
+
+#: ../data/ui/interface.ui.h:6
+#| msgid "Reset Level"
+msgid "_Reset Level"
+msgstr "_Inicializar lo nivèl"
+
+#: ../data/ui/interface.ui.h:7
+msgid "_Undo Move"
+msgstr ""
+
+#: ../data/ui/interface.ui.h:8
+msgid "_Pause Game"
+msgstr "Metre la partida en _pausa"
+
+#: ../data/ui/interface.ui.h:9
+msgid "_Continue Game"
+msgstr "_Contunhar la partida"
+
+#: ../data/ui/interface.ui.h:10
+msgid "_Quit"
+msgstr "_Quitar"
+
+#: ../data/ui/interface.ui.h:11
+msgid "_Help"
+msgstr "A_juda"
+
+#: ../data/ui/interface.ui.h:12
+#| msgid "About"
+msgid "_About"
+msgstr "_A prepaus"
+
+#: ../data/ui/interface.ui.h:13
 msgid "Level:"
 msgstr "Nivèl :"
 
-#: ../src/main.c:736
+#: ../data/ui/interface.ui.h:14
 msgid "Molecule:"
-msgstr "Molecula"
+msgstr "Molecula :"
 
-#: ../src/main.c:737
+#: ../data/ui/interface.ui.h:15
 msgid "Formula:"
 msgstr "Formula :"
 
-#: ../src/main.c:738
+#: ../data/ui/interface.ui.h:16
 msgid "Score:"
 msgstr "Marca :"
 
-#: ../src/main.c:739
+#: ../data/ui/interface.ui.h:17
 msgid "Time:"
-msgstr "Temps :"
+msgstr "Data :"
 
-#: ../src/main.c:779
+#: ../data/ui/interface.ui.h:18
+msgid "empty"
+msgstr "void"
+
+#: ../data/ui/interface.ui.h:19
+msgid "Statistics"
+msgstr "Estatisticas"
+
+#: ../src/level-manager.c:207
+msgid "Couldn't find level sequence description."
+msgstr "Impossible de trobar lo nivèl de la descripcion de sequéncia."
+
+#: ../src/level-manager.c:221
+msgid "No level found."
+msgstr "Cap de nivèl pas trobat."
+
+#: ../src/level-manager.c:317
 #, c-format
-msgid "Couldn't find file: %s"
-msgstr "Impossible de trobar lo fichièr : %s"
+msgid "Found level '%s' in: %s"
+msgstr "A trobat lo nivèl « %s » dins : %s"
 
-#: ../src/theme-manager.c:135
+#: ../src/main.c:132
+msgid "A puzzle game about atoms and molecules"
+msgstr "Un jòc de memòria suls atòms e moleculas"
+
+#: ../src/main.c:136
+msgid "translator-credits"
+msgstr "Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>"
+
+#: ../src/main.c:446
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Felicitacions ! Avètz acabat totes los nivèls d'Atomix."
+
+#: ../src/theme-manager.c:224
 msgid "No themes found."
-msgstr ""
+msgstr "Cap de tèma pas trobat."
 
-#: ../src/theme-manager.c:193
+#: ../src/theme-manager.c:282
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr ""
+msgstr "A trobat lo tèma « %s » dins : %s"
 
-#: ../atomix.desktop.in.h:2
-msgid "Molecule puzzle game"
-msgstr ""
+#~ msgid "Could not show link"
+#~ msgstr "Impossible d'afficher le lien"
+
+#~ msgid "Time"
+#~ msgstr "Date"
+
+#~ msgid "Score"
+#~ msgstr "Score"
+
+#~ msgid "%dm %ds"
+#~ msgstr "%dm %ds"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgid "Error"
+#~ msgstr "Erreur"
+
+#~ msgid "Couldn't find at least one level."
+#~ msgstr "Impossible de trouver au moins un niveau."
+
+#~ msgid "Do you want to finish the game?"
+#~ msgstr "Voulez-vous finir le jeu ?"
+
+#~ msgid "_Game"
+#~ msgstr "_Jeu"
+
+#~ msgid "_Scores..."
+#~ msgstr "_Scores..."
