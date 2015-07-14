@@ -1,249 +1,233 @@
 # Copyright (C) 2001-2002 Free Software Foundation, Inc.
 # Valek Filippov <frob@df.ru>, 2001-2002, 2006.
+# AlexL <loginov.alex.valer@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Atomix\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=atomix&component=general\n"
-"POT-Creation-Date: 2010-12-13 20:12+0000\n"
-"PO-Revision-Date: 2011-05-12 20:26+0300\n"
-"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=atomix&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-07-14 02:54+0000\n"
+"PO-Revision-Date: 2015-07-14 11:57+0300\n"
+"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
 
-#: ../level/aceticacid.atomix.xml.h:1
+#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
+#: ../data/ui/interface.ui.h:1 ../src/main.c:130 ../src/main.c:688
+msgid "Atomix"
+msgstr "Atomix"
+
+#: ../data/atomix.appdata.xml.in.h:2
+msgid "Build molecules out of single atoms"
+msgstr "Построение молекул из простых атомов"
+
+#: ../data/atomix.appdata.xml.in.h:3
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don't just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+"Atomix — это игра-головоломка, в которой нужно собирать молекулы из атомов "
+"путём перемещения их по игровому полю. Однако атомы не так просто "
+"переместить: они двигаются до тех пор, пока они не ударятся о стену или о "
+"другой атом."
+
+#: ../data/atomix.appdata.xml.in.h:4
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
+"Попробуйте построить молекулы так быстро, как сможете. Чем быстрее вы "
+"построите молекулу, тем больше заработаете очков."
+
+#: ../data/atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Головоломка с молекулами"
+
+#: ../data/level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
 msgstr "Уксусная кислота"
 
-#: ../level/acetone.atomix.xml.h:1
+#: ../data/level/acetone.atomix.xml.h:1
 msgid "Acetone"
 msgstr "Ацетон"
 
-#: ../level/butanol.atomix.xml.h:1
+#: ../data/level/butanol.atomix.xml.h:1
 msgid "Butanol"
 msgstr "Бутанол"
 
-#: ../level/cyclobutane.atomix.xml.h:1
+#: ../data/level/cyclobutane.atomix.xml.h:1
 msgid "Cyclobutane"
 msgstr "Циклобутан"
 
-#: ../level/dimethylether.atomix.xml.h:1
+#: ../data/level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
 msgstr "Диметиловый эфир"
 
-#: ../level/ethanal.atomix.xml.h:1
+#: ../data/level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
 msgstr "Ацетальдегид"
 
-#: ../level/ethane.atomix.xml.h:1
+#: ../data/level/ethane.atomix.xml.h:1
 msgid "Ethane"
 msgstr "Этан"
 
-#: ../level/ethanol.atomix.xml.h:1
+#: ../data/level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
 msgstr "Этанол"
 
-#: ../level/ethylene.atomix.xml.h:1
+#: ../data/level/ethylene.atomix.xml.h:1
 msgid "Ethylene"
 msgstr "Этилен"
 
-#: ../level/glycerin.atomix.xml.h:1
+#: ../data/level/glycerin.atomix.xml.h:1
 msgid "Glycerin"
 msgstr "Глицерин"
 
-#: ../level/lactic-acid.atomix.xml.h:1
+#: ../data/level/lactic-acid.atomix.xml.h:1
 msgid "Lactic Acid"
 msgstr "Молочная кислота"
 
-#: ../level/methanal.atomix.xml.h:1
+#: ../data/level/methanal.atomix.xml.h:1
 msgid "Methanal"
 msgstr "Формальдегид"
 
-#: ../level/methane.atomix.xml.h:1
+#: ../data/level/methane.atomix.xml.h:1
 msgid "Methane"
 msgstr "Метан"
 
-#: ../level/methanol.atomix.xml.h:1
+#: ../data/level/methanol.atomix.xml.h:1
 msgid "Methanol"
 msgstr "Метанол"
 
-#: ../level/propanal.atomix.xml.h:1
+#: ../data/level/propanal.atomix.xml.h:1
 msgid "Propanal"
 msgstr "Пропаналь"
 
-#: ../level/propylene.atomix.xml.h:1
+#: ../data/level/propylene.atomix.xml.h:1
 msgid "Propylene"
 msgstr "Пропилен"
 
-#: ../level/pyran.atomix.xml.h:1
+#: ../data/level/pyran.atomix.xml.h:1
 msgid "Pyran"
 msgstr "Пиран"
 
-#: ../level/transbutylen.atomix.xml.h:1
+#: ../data/level/transbutylen.atomix.xml.h:1
 msgid "Trans Butylen"
 msgstr "Транс-Бутилен"
 
-#: ../level/water.atomix.xml.h:1
+#: ../data/level/water.atomix.xml.h:1
 msgid "Water"
 msgstr "Вода"
 
-#: ../src/games-runtime.c:273
-msgid "Could not show link"
-msgstr "Не удалось показывать ссылку"
+#: ../data/ui/interface.ui.h:2
+msgid "_File"
+msgstr "_Файл"
 
-#: ../src/games-scores-dialog.c:113
-#| msgid "Time:"
-msgid "Time"
-msgstr "Время"
+#: ../data/ui/interface.ui.h:3
+msgid "_New Game"
+msgstr "_Новая игра"
 
-#. Note that this assumes the default style is plain.
-#: ../src/games-scores-dialog.c:118
-#: ../src/games-scores-dialog.c:545
-#| msgid "Score:"
-msgid "Score"
-msgstr "Очки"
+#: ../data/ui/interface.ui.h:4
+msgid "_End Game"
+msgstr "_Завершить игру"
 
-#. Translators: this is for a minutes, seconds time display.
-#: ../src/games-scores-dialog.c:276
-#, c-format
-msgid "%dm %ds"
-msgstr "%dm %ds"
+#: ../data/ui/interface.ui.h:5
+msgid "_Skip Level"
+msgstr "_Пропустить уровень"
 
-#: ../src/games-scores-dialog.c:437
-#: ../src/main.c:736
-#| msgid "_New Game"
-msgid "New Game"
-msgstr "Новая игра"
+#: ../data/ui/interface.ui.h:6
+msgid "_Reset Level"
+msgstr "_Сбросить уровень"
 
-#: ../src/games-scores-dialog.c:537
-#| msgid "_Game"
-msgid "Name"
-msgstr "Имя"
+#: ../data/ui/interface.ui.h:7
+msgid "_Undo Move"
+msgstr "_Отменить перемещение"
 
-#. Empty title shows up as "<unnamed>" on maemo
-#: ../src/games-show.c:151
-msgid "Error"
-msgstr "Ошибка"
+#: ../data/ui/interface.ui.h:8
+msgid "_Pause Game"
+msgstr "_Приостановить игру"
 
-#: ../src/level-manager.c:176
+#: ../data/ui/interface.ui.h:9
+msgid "_Continue Game"
+msgstr "_Продолжить игру"
+
+#: ../data/ui/interface.ui.h:10
+msgid "_Quit"
+msgstr "_Завершить"
+
+#: ../data/ui/interface.ui.h:11
+msgid "_Help"
+msgstr "_Справка"
+
+#: ../data/ui/interface.ui.h:12
+msgid "_About"
+msgstr "_О приложении"
+
+#: ../data/ui/interface.ui.h:13
+msgid "Level:"
+msgstr "Уровень:"
+
+#: ../data/ui/interface.ui.h:14
+msgid "Molecule:"
+msgstr "Молекула:"
+
+#: ../data/ui/interface.ui.h:15
+msgid "Formula:"
+msgstr "Формула:"
+
+#: ../data/ui/interface.ui.h:16
+msgid "Score:"
+msgstr "Очки:"
+
+#: ../data/ui/interface.ui.h:17
+msgid "Time:"
+msgstr "Время:"
+
+#: ../data/ui/interface.ui.h:18
+msgid "empty"
+msgstr "пусто"
+
+#: ../data/ui/interface.ui.h:19
+msgid "Statistics"
+msgstr "Статистика"
+
+#: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
 msgstr "Не удалось найти описание последовательности уровня"
 
-#: ../src/level-manager.c:190
+#: ../src/level-manager.c:214
 msgid "No level found."
 msgstr "Уровень не найден."
 
-#: ../src/level-manager.c:286
+#: ../src/level-manager.c:283
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Найден уровень «%s» в: %s"
 
-#: ../src/main.c:121
-#: ../src/main.c:775
-#: ../src/main.c:832
-#: ../atomix.desktop.in.h:1
-msgid "Atomix"
-msgstr "Atomix"
-
-#: ../src/main.c:166
+#: ../src/main.c:132
 msgid "A puzzle game about atoms and molecules"
 msgstr "Головоломка с атомами и молекулами"
 
-#: ../src/main.c:170
+#: ../src/main.c:136
 msgid "translator-credits"
 msgstr "Валек Филиппов <frob@df.ru>"
 
-#: ../src/main.c:493
+#: ../src/main.c:444
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Поздравляю! Вы успешно завершили все уровни Atiomix."
 
-#: ../src/main.c:503
-msgid "Couldn't find at least one level."
-msgstr "Не найден ни один уровень."
-
-#: ../src/main.c:508
-msgid "Do you want to finish the game?"
-msgstr "Хотите завершить игру?"
-
-#. create statistics frame
-#: ../src/main.c:701
-msgid "Statistics"
-msgstr "Статистика"
-
-#: ../src/main.c:707
-msgid "Level:"
-msgstr "Уровень:"
-
-#: ../src/main.c:708
-msgid "Molecule:"
-msgstr "Молекула:"
-
-#: ../src/main.c:709
-msgid "Formula:"
-msgstr "Формула:"
-
-#: ../src/main.c:710
-msgid "Score:"
-msgstr "Очки:"
-
-#: ../src/main.c:711
-msgid "Time:"
-msgstr "Время:"
-
-#: ../src/main.c:734
-msgid "_Game"
-msgstr "Игра"
-
-#: ../src/main.c:735
-msgid "_Help"
-msgstr "Справка"
-
-#: ../src/main.c:737
-#| msgid "_End Game"
-msgid "End Game"
-msgstr "Завершить игру"
-
-#: ../src/main.c:738
-#| msgid "Skip _level"
-msgid "Skip Level"
-msgstr "Пропустить уровень"
-
-#: ../src/main.c:739
-#| msgid "Reset level"
-msgid "Reset Level"
-msgstr "Сбросить уровень"
-
-#: ../src/main.c:741
-#| msgid "_Pause game"
-msgid "_Pause Game"
-msgstr "_Приостановить игру"
-
-#: ../src/main.c:742
-#| msgid "_Continue game"
-msgid "_Continue Game"
-msgstr "_Продолжить игру"
-
-#: ../src/main.c:743
-#| msgid "_Scores ..."
-msgid "_Scores..."
-msgstr "_Очки..."
-
-#: ../src/main.c:745
-msgid "About"
-msgstr "О программе"
-
-#: ../src/theme-manager.c:136
+#: ../src/theme-manager.c:225
 msgid "No themes found."
 msgstr "Темы не найдены."
 
-#: ../src/theme-manager.c:194
+#: ../src/theme-manager.c:283
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Найдена тема \"%s\" в: %s"
-
-#: ../atomix.desktop.in.h:2
-msgid "Molecule puzzle game"
-msgstr "Головоломка с молекулами"
-
