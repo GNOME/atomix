@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-08-13 02:53+0000\n"
-"PO-Revision-Date: 2015-08-13 11:20+0100\n"
+"POT-Creation-Date: 2015-08-13 10:24+0000\n"
+"PO-Revision-Date: 2015-08-13 11:26+0100\n"
 "Last-Translator: Pedro Albuquerque <palbuquerque73@gmail.com>\n"
 "Language-Team: Português <palbuquerque73@gmail.com>\n"
 "Language: pt\n"
@@ -49,7 +49,6 @@ msgstr ""
 "conseguir uma pontuação mias alta."
 
 #: ../data/atomix.desktop.in.h:2
-#, fuzzy
 #| msgid "Molecule mind game"
 msgid "Molecule puzzle game"
 msgstr "Jogo de estratégia molecular"
@@ -115,7 +114,6 @@ msgid "Propanal"
 msgstr "Propanal"
 
 #: ../data/level/propylene.atomix.xml.h:1
-#| msgid "Properties"
 msgid "Propylene"
 msgstr "Propileno"
 
@@ -132,7 +130,6 @@ msgid "Water"
 msgstr "Água"
 
 #: ../data/ui/interface.ui.h:2
-#| msgid "_New File"
 msgid "_File"
 msgstr "_Ficheiro"
 
@@ -145,28 +142,23 @@ msgid "_End Game"
 msgstr "T_erminar jogo"
 
 #: ../data/ui/interface.ui.h:5
-#| msgid "Skip _level"
 msgid "_Skip Level"
 msgstr "_Saltar nível"
 
 #: ../data/ui/interface.ui.h:6
-#| msgid "Reset level"
 msgid "_Reset Level"
 msgstr "_Repor nível"
 
 #: ../data/ui/interface.ui.h:7
-#, fuzzy
 #| msgid "_Undo move"
 msgid "_Undo Move"
 msgstr "_Desfazer jogada"
 
 #: ../data/ui/interface.ui.h:8
-#| msgid "_Pause game"
 msgid "_Pause Game"
 msgstr "_Pausar jogo"
 
 #: ../data/ui/interface.ui.h:9
-#, fuzzy
 #| msgid "_Continue game"
 msgid "_Continue Game"
 msgstr "_Continuar jogo"
@@ -225,10 +217,9 @@ msgid "Found level '%s' in: %s"
 msgstr "Encontrado o nível \"%s\" em: %s"
 
 #: ../src/main.c:132
-#, fuzzy
 #| msgid "A mind game about atoms and molecules."
 msgid "A puzzle game about atoms and molecules"
-msgstr "Um jogo de estratégia sobre átomos e moléculas."
+msgstr "Um jogo de estratégia sobre átomos e moléculas"
 
 #: ../src/main.c:136
 msgid "translator-credits"
