@@ -1,30 +1,32 @@
 # atomix's Portuguese Translation
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002
+# Pedro Albuquerque <palbuquerque73@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-31 02:29+0000\n"
-"PO-Revision-Date: 2015-02-09 00:55+0100\n"
-"Last-Translator: Bruno Ramalhete <bram.512@gmail.com>\n"
-"Language-Team: Portuguese <gnome_pt@yahoogroups.org>\n"
+"POT-Creation-Date: 2015-08-13 10:24+0000\n"
+"PO-Revision-Date: 2015-08-13 11:26+0100\n"
+"Last-Translator: Pedro Albuquerque <palbuquerque73@gmail.com>\n"
+"Language-Team: Português <palbuquerque73@gmail.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:688
+#: ../data/ui/interface.ui.h:1 ../src/main.c:130 ../src/main.c:688
 msgid "Atomix"
 msgstr "Atomix"
 
 #: ../data/atomix.appdata.xml.in.h:2
 msgid "Build molecules out of single atoms"
-msgstr ""
+msgstr "Construir moléculas a partir de átomos simples"
 
 #: ../data/atomix.appdata.xml.in.h:3
 msgid ""
@@ -33,20 +35,26 @@ msgid ""
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
+"O Atomix é um jogo onde o objetivo é montar moléculas de átomos compostos, "
+"movendo-os no campo de jogo. Contudo, os átomos não se movem só para "
+"qualquer lado que queira, eles deslizam até baterem numa parede ou noutro "
+"átomo."
 
 #: ../data/atomix.appdata.xml.in.h:4
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
 msgstr ""
+"Tente construir as moléculas o mais rapidamente possível em cada nível, para "
+"conseguir uma pontuação mias alta."
 
 #: ../data/atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
-msgstr "Jogo de estratégia sobre moléculas"
+msgstr "Jogo de estratégia molecular"
 
 #: ../data/level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
-msgstr "Ácido Acético"
+msgstr "Ácido acético"
 
 #: ../data/level/acetone.atomix.xml.h:1
 msgid "Acetone"
@@ -62,7 +70,7 @@ msgstr "Ciclobutano"
 
 #: ../data/level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
-msgstr "Éter Dimetílico"
+msgstr "Éter dimetílico"
 
 #: ../data/level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
@@ -86,7 +94,7 @@ msgstr "Glicerina"
 
 #: ../data/level/lactic-acid.atomix.xml.h:1
 msgid "Lactic Acid"
-msgstr "Ácido Láctico"
+msgstr "Ácido láctico"
 
 #: ../data/level/methanal.atomix.xml.h:1
 msgid "Methanal"
@@ -114,44 +122,38 @@ msgstr "Pirano"
 
 #: ../data/level/transbutylen.atomix.xml.h:1
 msgid "Trans Butylen"
-msgstr "Trans Butileno"
+msgstr "Transbutileno"
 
 #: ../data/level/water.atomix.xml.h:1
 msgid "Water"
 msgstr "Água"
 
 #: ../data/ui/interface.ui.h:2
-#, fuzzy
 #| msgid "_New File"
 msgid "_File"
-msgstr "_Novo Ficheiro"
+msgstr "_Ficheiro"
 
 #: ../data/ui/interface.ui.h:3
-#, fuzzy
 #| msgid "New Game"
 msgid "_New Game"
-msgstr "Novo Jogo"
+msgstr "_Novo jogo"
 
 #: ../data/ui/interface.ui.h:4
-#, fuzzy
 #| msgid "End Game"
 msgid "_End Game"
-msgstr "Terminar Jogo"
+msgstr "T_erminar jogo"
 
 #: ../data/ui/interface.ui.h:5
-#, fuzzy
 #| msgid "Skip Level"
 msgid "_Skip Level"
-msgstr "Saltar nível"
+msgstr "_Saltar nível"
 
 #: ../data/ui/interface.ui.h:6
-#, fuzzy
 #| msgid "Reset Level"
 msgid "_Reset Level"
-msgstr "Reiniciar nível"
+msgstr "_Repor nível"
 
 #: ../data/ui/interface.ui.h:7
-#, fuzzy
 #| msgid "_Undo move"
 msgid "_Undo Move"
 msgstr "_Desfazer jogada"
@@ -166,14 +168,13 @@ msgstr "_Continuar jogo"
 
 #: ../data/ui/interface.ui.h:10
 msgid "_Quit"
-msgstr ""
+msgstr "_Sair"
 
 #: ../data/ui/interface.ui.h:11
 msgid "_Help"
-msgstr "_Ajuda"
+msgstr "A_Juda"
 
 #: ../data/ui/interface.ui.h:12
-#, fuzzy
 #| msgid "About"
 msgid "_About"
 msgstr "_Sobre"
@@ -188,7 +189,7 @@ msgstr "Molécula:"
 
 #: ../data/ui/interface.ui.h:15
 msgid "Formula:"
-msgstr "Fórmula"
+msgstr "Fórmula:"
 
 #: ../data/ui/interface.ui.h:16
 msgid "Score:"
@@ -200,7 +201,7 @@ msgstr "Tempo:"
 
 #: ../data/ui/interface.ui.h:18
 msgid "empty"
-msgstr ""
+msgstr "vazio"
 
 #: ../data/ui/interface.ui.h:19
 msgid "Statistics"
@@ -208,7 +209,7 @@ msgstr "Estatísticas"
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
-msgstr "Incapaz de encontrar descrição de sequência de níveis."
+msgstr "Impossível encontrar descrição de sequência de níveis."
 
 #: ../src/level-manager.c:214
 msgid "No level found."
@@ -217,15 +218,15 @@ msgstr "Nenhum nível encontrado."
 #: ../src/level-manager.c:283
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Encontrado o nível '%s' em: %s"
+msgstr "Encontrado o nível \"%s\" em: %s"
 
 #: ../src/main.c:132
 msgid "A puzzle game about atoms and molecules"
-msgstr "Um jogo de estratégia sobre átomos e moléculas."
+msgstr "Um jogo de estratégia sobre átomos e moléculas"
 
 #: ../src/main.c:136
 msgid "translator-credits"
-msgstr "tradutor-creditos"
+msgstr "Pedro Albuquerque <palbuquerque73@gmail.com>"
 
 #: ../src/main.c:444
 msgid "Congratulations! You have finished all Atomix levels."
@@ -238,7 +239,7 @@ msgstr "Nenhum tema encontrado."
 #: ../src/theme-manager.c:283
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Encontrado o tema '%s' em: %s"
+msgstr "Encontrado o tema \"%s\" em: %s"
 
 #~ msgid "Couldn't find at least one level."
 #~ msgstr "Incapaz de encontrar pelo menos um nível."
