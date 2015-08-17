@@ -1,3 +1,13 @@
+2015-08-17: Release version 3.17.90
+
+    * New and updated translations
+      - ca, courtesy of Jordi Mas 
+      - lt, courtesy of Mantas Kriaučiūnas 
+      - oc, courtesy of Cédric Valmary (Tot en Òc) 
+      - pt, courtesy of Pedro Albuquerque 
+      - ru, courtesy of Yuri Myasoedov 
+      - tr, courtesy of Kaan Özdinçer 
+
 2015-03-23: Release version 3.16.0
 
     * Fixed licensing mistake in appdata (bug #746473)
