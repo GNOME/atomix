@@ -11,10 +11,10 @@ msgstr ""
 "Project-Id-Version: atomix.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-18 17:28+0000\n"
-"PO-Revision-Date: 2015-01-20 11:13+0100\n"
+"POT-Creation-Date: 2015-08-18 21:00+0000\n"
+"PO-Revision-Date: 2015-08-25 \n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: Spanish <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:686
+#: ../data/ui/interface.ui.h:1 ../src/main.c:127 ../src/main.c:684
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -136,27 +136,22 @@ msgid "_File"
 msgstr "_Archivo"
 
 #: ../data/ui/interface.ui.h:3
-#| msgid "New Game"
 msgid "_New Game"
 msgstr "Juego _nuevo"
 
 #: ../data/ui/interface.ui.h:4
-#| msgid "End Game"
 msgid "_End Game"
 msgstr "Finalizar el ju_ego"
 
 #: ../data/ui/interface.ui.h:5
-#| msgid "Skip Level"
 msgid "_Skip Level"
 msgstr "_Saltar nivel"
 
 #: ../data/ui/interface.ui.h:6
-#| msgid "Reset Level"
 msgid "_Reset Level"
 msgstr "_Reiniciar nivel"
 
 #: ../data/ui/interface.ui.h:7
-#| msgid "_Undo move"
 msgid "_Undo Move"
 msgstr "_Deshacer movimiento"
 
@@ -177,7 +172,6 @@ msgid "_Help"
 msgstr "Ay_uda"
 
 #: ../data/ui/interface.ui.h:12
-#| msgid "About"
 msgid "_About"
 msgstr "A_cerca de"
 
@@ -209,39 +203,43 @@ msgstr "vaciar"
 msgid "Statistics"
 msgstr "Estadísticas"
 
-#: ../src/level-manager.c:207
+#: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
 msgstr "No se puede encontrar secuencia de descripción del nivel"
 
-#: ../src/level-manager.c:221
+#: ../src/level-manager.c:214
 msgid "No level found."
 msgstr "No se encontró ningún nivel."
 
-#: ../src/level-manager.c:317
+#: ../src/level-manager.c:283
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Encontrado nivel «%s» en: %s"
 
-#: ../src/main.c:132
+#: ../src/main.c:129
 msgid "A puzzle game about atoms and molecules"
 msgstr "Un juego de puzles sobre átomos y moléculas"
 
-#: ../src/main.c:136
+#: ../src/main.c:130
+msgid "https://github.com/GNOME/atomix"
+msgstr "https://github.com/GNOME/atomix"
+
+#: ../src/main.c:133
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2015\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2010\n"
 "Francisco Javier F. Serrador <serrador@cvs.gnome.org>"
 
-#: ../src/main.c:446
+#: ../src/main.c:440
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "¡Felicidades! Ha terminado todos los niveles de Atomix."
 
-#: ../src/theme-manager.c:224
+#: ../src/theme-manager.c:225
 msgid "No themes found."
 msgstr "No se encontraron temas."
 
-#: ../src/theme-manager.c:282
+#: ../src/theme-manager.c:283
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Se encontró el tema «%s» en: %s"
