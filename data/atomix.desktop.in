@@ -1,6 +1,7 @@
 [Desktop Entry]
 _Name=Atomix
-_Comment=Molecule puzzle game
+_GenericName=Molecule puzzle game
+_Comment=A puzzle game about atoms and molecules
 Exec=atomix
 Icon=atomix-icon
 Terminal=false
