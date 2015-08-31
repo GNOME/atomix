@@ -1,3 +1,13 @@
+2015-08-31: Release version 3.17.91
+
+    * New and updated translations
+      - el, courtesy of Tom Tryfonidis
+      - es, courtesy of Daniel Mustieles
+      - he, courtesy of Yosef Or Boczko
+      - pt, courtesy of Pedro Albuquerque
+    * Fixed about dialog not showing close button (Olav Vitters)
+    * Website on about dialog should not be translatable (Piotr Drąg)
+
 2015-08-17: Release version 3.17.90
 
     * New and updated translations
