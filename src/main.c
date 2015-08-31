@@ -127,7 +127,7 @@ static void verb_HelpAbout_cb (GtkMenuItem * action, gpointer data)
   					"program-name", _("Atomix"),
   					"version", VERSION,
   					"comments", _("A puzzle game about atoms and molecules"),
-  					"website",_("https://github.com/GNOME/atomix"),
+  					"website", "https://github.com/GNOME/atomix",
   					"authors", authors,
   					"artists", artists,
   					"translator_credits", _("translator-credits"),
