@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-18 21:48+0100\n"
-"PO-Revision-Date: 2015-01-18 21:49+0100\n"
+"POT-Creation-Date: 2015-09-02 02:49+0200\n"
+"PO-Revision-Date: 2015-09-02 02:50+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Poedit-Country: Poland\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:686
+#: ../data/ui/interface.ui.h:1 ../src/main.c:127 ../src/main.c:684
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -204,39 +204,39 @@ msgstr "puste"
 msgid "Statistics"
 msgstr "Statystyki"
 
-#: ../src/level-manager.c:207
+#: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
 msgstr "Nie można odnaleźć opisu sekwencji poziomu."
 
-#: ../src/level-manager.c:221
+#: ../src/level-manager.c:214
 msgid "No level found."
 msgstr "Nie odnaleziono poziomu."
 
-#: ../src/level-manager.c:317
+#: ../src/level-manager.c:283
 #, c-format
 msgid "Found level '%s' in: %s"
-msgstr "Odnaleziono poziom \"%s\" w: %s"
+msgstr "Odnaleziono poziom „%s” w: %s"
 
-#: ../src/main.c:132
+#: ../src/main.c:129
 msgid "A puzzle game about atoms and molecules"
 msgstr "Gra logiczna o atomach i cząsteczkach"
 
-#: ../src/main.c:136
+#: ../src/main.c:133
 msgid "translator-credits"
 msgstr ""
 "Zbigniew Chyla <zbigniew.chyla@gmail.com>, 2002\n"
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2015\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2012-2015"
 
-#: ../src/main.c:446
+#: ../src/main.c:440
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulacje! Udało się ukończyć wszystkie poziomy gry Atomix."
 
-#: ../src/theme-manager.c:224
+#: ../src/theme-manager.c:225
 msgid "No themes found."
 msgstr "Nie odnaleziono motywów."
 
-#: ../src/theme-manager.c:282
+#: ../src/theme-manager.c:283
 #, c-format
 msgid "Found theme '%s' in: %s"
-msgstr "Odnaleziono motyw \"%s\" w: %s"
+msgstr "Odnaleziono motyw „%s” w: %s"
