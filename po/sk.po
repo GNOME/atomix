@@ -2,264 +2,288 @@
 # Copyright (C) 2001, 2002, 2005, 2006 Free Software Foundation, Inc.
 # Stanislav Višňovský <visnovsky@nenya.ms.mff.cuni.cz>, 2001,2002.
 # Marcel Telka <marcel@telka.sk>, 2005, 2006.
+# Dušan Kazik <prescott66@gmail.com>, 2015.
 #
 # $Id$
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-19 21:44+0200\n"
-"PO-Revision-Date: 2006-06-19 21:45+0200\n"
-"Last-Translator: Marcel Telka <marcel@telka.sk>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=atomix&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-09-27 13:19+0000\n"
+"PO-Revision-Date: 2015-10-01 09:56+0200\n"
+"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
 
-#: ../level/aceticacid.atomix.xml.h:1
-msgid "Acetic Acid"
-msgstr "Kyselina octová"
-
-#: ../level/acetone.atomix.xml.h:1
-msgid "Acetone"
-msgstr "Acetón"
-
-#: ../level/butanol.atomix.xml.h:1
-msgid "Butanol"
-msgstr "Butanol"
-
-#: ../level/cyclobutane.atomix.xml.h:1
-msgid "Cyclobutane"
-msgstr "Cyklobután"
-
-#: ../level/dimethylether.atomix.xml.h:1
-msgid "Dimethyl Ether"
-msgstr "Dimetyléter"
-
-#: ../level/ethanal.atomix.xml.h:1
-msgid "Ethanal"
-msgstr "Etanal"
-
-#: ../level/ethane.atomix.xml.h:1
-msgid "Ethane"
-msgstr "Etán"
-
-#: ../level/ethanol.atomix.xml.h:1
-msgid "Ethanol"
-msgstr "Etanol"
-
-#: ../level/ethylene.atomix.xml.h:1
-msgid "Ethylene"
-msgstr "Etylén"
-
-#: ../level/glycerin.atomix.xml.h:1
-msgid "Glycerin"
-msgstr "Glycerín"
-
-#: ../level/lactic-acid.atomix.xml.h:1
-msgid "Lactic Acid"
-msgstr "Kyselina mliečna"
-
-#: ../level/methanal.atomix.xml.h:1
-msgid "Methanal"
-msgstr "Formaldehyd"
-
-#: ../level/methane.atomix.xml.h:1
-msgid "Methane"
-msgstr "Metán"
-
-#: ../level/methanol.atomix.xml.h:1
-msgid "Methanol"
-msgstr "Metanol"
-
-#: ../level/propanal.atomix.xml.h:1
-msgid "Propanal"
-msgstr "Propanal"
-
-#: ../level/propylene.atomix.xml.h:1
-msgid "Propylene"
-msgstr "Propylén"
-
-#: ../level/pyran.atomix.xml.h:1
-msgid "Pyran"
-msgstr "Pyran"
-
-#: ../level/transbutylen.atomix.xml.h:1
-msgid "Trans Butylen"
-msgstr "Butén"
-
-#: ../level/water.atomix.xml.h:1
-msgid "Water"
-msgstr "Voda"
-
-#: ../src/atomix-ui.xml.h:1
-msgid "Continue paused game"
-msgstr "Pokračovať v pozastavenej hre"
-
-#: ../src/atomix-ui.xml.h:2
-msgid "End a game"
-msgstr "Ukončí hru"
-
-#: ../src/atomix-ui.xml.h:3
-msgid "Pause the running game"
-msgstr "Pozastaví bežiacu hru"
-
-#: ../src/atomix-ui.xml.h:4
-msgid "Reset level"
-msgstr "Reštart úrovne"
-
-#: ../src/atomix-ui.xml.h:5
-msgid "Restores start situation"
-msgstr "Obnoví pôvodnú situáciu"
-
-#: ../src/atomix-ui.xml.h:6
-msgid "Set preferences"
-msgstr "Nastaviť"
-
-#: ../src/atomix-ui.xml.h:7
-msgid "Skip _level"
-msgstr "_Preskočiť úroveň"
-
-#: ../src/atomix-ui.xml.h:8
-msgid "Skip the current level"
-msgstr "Preskočí aktuálnu úroveň"
-
-#: ../src/atomix-ui.xml.h:9
-msgid "Start a new game"
-msgstr "Spustí novú hru"
-
-#: ../src/atomix-ui.xml.h:10
-msgid "Undo the last move"
-msgstr "Vráti posledný ťah"
-
-#: ../src/atomix-ui.xml.h:11
-msgid "View highscores"
-msgstr "Zobraziť najvyššie skóre"
-
-#: ../src/atomix-ui.xml.h:12
-msgid "_Continue game"
-msgstr "_Pokračovať v hre"
-
-#: ../src/atomix-ui.xml.h:13
-msgid "_End Game"
-msgstr "_Ukončiť hru"
-
-#: ../src/atomix-ui.xml.h:14
-msgid "_Game"
-msgstr "_Hra"
-
-#. submenu name="Edit" _label="_Edit">
-#.
-#. <menuitem name="EditPreferences" verb=""/>
-#.
-#. </submenu
-#: ../src/atomix-ui.xml.h:20
-msgid "_Help"
-msgstr "_Pomocník"
-
-#: ../src/atomix-ui.xml.h:21
-msgid "_New Game"
-msgstr "_Nová hra"
-
-#: ../src/atomix-ui.xml.h:22
-msgid "_Pause game"
-msgstr "_Zastaviť hru"
-
-#: ../src/atomix-ui.xml.h:23
-msgid "_Preferences ..."
-msgstr "_Nastavenia..."
-
-#: ../src/atomix-ui.xml.h:24
-msgid "_Scores ..."
-msgstr "_Skóre..."
-
-#: ../src/atomix-ui.xml.h:25
-msgid "_Undo move"
-msgstr "_Späť ťah"
-
-#: ../src/level-manager.c:174
-msgid "Couldn't find level sequence description."
-msgstr "Nepodarilo sa nájsť popis sekvencie úrovní."
-
-#: ../src/level-manager.c:188
-msgid "No level found."
-msgstr "Úroveň nenájdená."
-
-#: ../src/level-manager.c:284
-#, c-format
-msgid "Found level '%s' in: %s"
-msgstr "Nájdená úroveň '%s' v: %s"
-
-#: ../src/main.c:126
-msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr ""
-"Nedosiahli ste zatiaľ žiadne skóre. Trochu si zahrajte predtým, ako sa sem "
-"vrátite!"
-
-#: ../src/main.c:173
-msgid "A puzzle game about atoms and molecules"
-msgstr "Skladačková hra s atómami a molekulami"
-
-#: ../src/main.c:177
-msgid "translator-credits"
-msgstr "Marcel Telka <marcel@telka.sk>"
-
-#: ../src/main.c:488 ../atomix.desktop.in.h:1
+#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
+#: ../data/ui/interface.ui.h:1 ../src/main.c:127 ../src/main.c:684
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:499
-msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Blahoželáme! Dokončili ste všetky úrovne Atomix."
+#: ../data/atomix.appdata.xml.in.h:2
+msgid "Build molecules out of single atoms"
+msgstr "Zostavuje molekuly z jednotlivých atómov"
 
-#: ../src/main.c:509
-msgid "Couldn't find at least one level."
-msgstr "Nepodarilo sa nájsť ani jednu úroveň."
+#: ../data/atomix.appdata.xml.in.h:3
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don't just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+"Atomix je hlavolam, pri ktorom je vaším cieľom poskladať molekuly zložené z "
+"atómov ich posúvaním na hracom poli. Avšak atómy nie je možné posúvať kam "
+"chcete. Atómy sa posúvajú až kým nenarazia do steny, alebo do iného atómu."
 
-#: ../src/main.c:514
-msgid "Do you want to finish the game?"
-msgstr "Chcete skončiť hru?"
+#: ../data/atomix.appdata.xml.in.h:4
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
+"Pokúste sa na každej úrovni zostaviť molekuly najrýchlejšie ako viete, aby "
+"ste získali čo najvyššie skóre."
 
-#. create statistics frame
-#: ../src/main.c:728
-msgid "Statistics"
-msgstr "Štatistika"
+#: ../data/atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Skladačková hra s molekulami"
 
-#: ../src/main.c:734
+#: ../data/level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Kyselina octová"
+
+#: ../data/level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Acetón"
+
+#: ../data/level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "Butanol"
+
+#: ../data/level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Cyklobután"
+
+#: ../data/level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "Dimetyléter"
+
+#: ../data/level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Etanal"
+
+#: ../data/level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Etán"
+
+#: ../data/level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Etanol"
+
+#: ../data/level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Etylén"
+
+#: ../data/level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Glycerín"
+
+#: ../data/level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Kyselina mliečna"
+
+#: ../data/level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Formaldehyd"
+
+#: ../data/level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Metán"
+
+#: ../data/level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Metanol"
+
+#: ../data/level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Propanal"
+
+#: ../data/level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "Propylén"
+
+#: ../data/level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "Pyran"
+
+#: ../data/level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Butén"
+
+#: ../data/level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Voda"
+
+#: ../data/ui/interface.ui.h:2
+msgid "_File"
+msgstr "_Súbor"
+
+#: ../data/ui/interface.ui.h:3
+msgid "_New Game"
+msgstr "_Nová hra"
+
+#: ../data/ui/interface.ui.h:4
+msgid "_End Game"
+msgstr "_Ukončiť hru"
+
+#: ../data/ui/interface.ui.h:5
+msgid "_Skip Level"
+msgstr "P_reskočiť úroveň"
+
+#: ../data/ui/interface.ui.h:6
+msgid "_Reset Level"
+msgstr "_Reštartovať úroveň"
+
+#: ../data/ui/interface.ui.h:7
+msgid "_Undo Move"
+msgstr "Vrátiť _späť ťah"
+
+#: ../data/ui/interface.ui.h:8
+msgid "_Pause Game"
+msgstr "_Pozastaviť hru"
+
+#: ../data/ui/interface.ui.h:9
+msgid "_Continue Game"
+msgstr "Pokračovať v _hre"
+
+#: ../data/ui/interface.ui.h:10
+msgid "_Quit"
+msgstr "U_končiť"
+
+#: ../data/ui/interface.ui.h:11
+msgid "_Help"
+msgstr "_Pomocník"
+
+#: ../data/ui/interface.ui.h:12
+msgid "_About"
+msgstr "_O programe"
+
+#: ../data/ui/interface.ui.h:13
 msgid "Level:"
 msgstr "Úroveň:"
 
-#: ../src/main.c:735
+#: ../data/ui/interface.ui.h:14
 msgid "Molecule:"
 msgstr "Molekula:"
 
-#: ../src/main.c:736
+#: ../data/ui/interface.ui.h:15
 msgid "Formula:"
 msgstr "Vzorec:"
 
-#: ../src/main.c:737
+#: ../data/ui/interface.ui.h:16
 msgid "Score:"
 msgstr "Skóre:"
 
-#: ../src/main.c:738
+#: ../data/ui/interface.ui.h:17
 msgid "Time:"
 msgstr "Čas:"
 
-#: ../src/main.c:778
-#, c-format
-msgid "Couldn't find file: %s"
-msgstr "Nepodarilo sa nájsť súbor: %s"
+#: ../data/ui/interface.ui.h:18
+msgid "empty"
+msgstr "prázdne"
 
-#: ../src/theme-manager.c:135
+#: ../data/ui/interface.ui.h:19
+msgid "Statistics"
+msgstr "Štatistika"
+
+#: ../src/level-manager.c:200
+msgid "Couldn't find level sequence description."
+msgstr "Nepodarilo sa nájsť popis sekvencie úrovní."
+
+#: ../src/level-manager.c:214
+msgid "No level found."
+msgstr "Nenašla sa žiadna úroveň."
+
+#: ../src/level-manager.c:283
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "Našla sa úroveň „%s“ v: %s"
+
+#: ../src/main.c:129
+msgid "A puzzle game about atoms and molecules"
+msgstr "Skladačková hra s atómami a molekulami"
+
+#: ../src/main.c:133
+msgid "translator-credits"
+msgstr ""
+"Marcel Telka <marcel@telka.sk>\n"
+"Dušan Kazik <prescott66@gmail.com>"
+
+#: ../src/main.c:440
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Blahoželáme! Dokončili ste všetky úrovne hry Atomix."
+
+#: ../src/theme-manager.c:225
 msgid "No themes found."
 msgstr "Nenájdené žiadne témy."
 
-#: ../src/theme-manager.c:193
+#: ../src/theme-manager.c:283
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Nájdená téma '%s' v:%s"
 
-#: ../atomix.desktop.in.h:2
-msgid "Molecule puzzle game"
-msgstr "Skladačková hra s molekulami"
+#~ msgid "Continue paused game"
+#~ msgstr "Pokračovať v pozastavenej hre"
+
+#~ msgid "End a game"
+#~ msgstr "Ukončí hru"
+
+#~ msgid "Pause the running game"
+#~ msgstr "Pozastaví bežiacu hru"
+
+#~ msgid "Restores start situation"
+#~ msgstr "Obnoví pôvodnú situáciu"
+
+#~ msgid "Set preferences"
+#~ msgstr "Nastaviť"
+
+#~ msgid "Skip the current level"
+#~ msgstr "Preskočí aktuálnu úroveň"
+
+#~ msgid "Start a new game"
+#~ msgstr "Spustí novú hru"
+
+#~ msgid "Undo the last move"
+#~ msgstr "Vráti posledný ťah"
+
+#~ msgid "View highscores"
+#~ msgstr "Zobraziť najvyššie skóre"
+
+#~ msgid "_Game"
+#~ msgstr "_Hra"
+
+#~ msgid "_Preferences ..."
+#~ msgstr "_Nastavenia..."
+
+#~ msgid "_Scores ..."
+#~ msgstr "_Skóre..."
+
+#~ msgid ""
+#~ "You have not achieved any scores yet. Play a little before coming back!"
+#~ msgstr ""
+#~ "Nedosiahli ste zatiaľ žiadne skóre. Trochu si zahrajte predtým, ako sa "
+#~ "sem vrátite!"
+
+#~ msgid "Couldn't find at least one level."
+#~ msgstr "Nepodarilo sa nájsť ani jednu úroveň."
+
+#~ msgid "Do you want to finish the game?"
+#~ msgstr "Chcete skončiť hru?"
+
+#~ msgid "Couldn't find file: %s"
+#~ msgstr "Nepodarilo sa nájsť súbor: %s"
