@@ -21,6 +21,7 @@
 #define _ATOMIX_BOARD_GTK_H_
 
 #include <gtk/gtk.h>
+#include <glib/gi18n.h>
 #include <math.h>
 #include "theme.h"
 #include "playfield.h"
