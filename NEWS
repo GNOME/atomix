@@ -1,3 +1,10 @@
+2015-11-23: Release version 3.19.2
+
+   * New and updated translations
+    - fi, courtesy of Jiri Grönroos 
+    - sk, courtesy of Dušan Kazik 
+   * Show gameplay tips (bug #587868)
+
 2015-09-21: Release version 3.18.0
 
 2015-09-14: Release version 3.17.92
