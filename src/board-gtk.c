@@ -319,25 +319,32 @@ static void create_logo (void)
   int tile_width, tile_height;
   GtkWidget *logo_image;
   GtkWidget *tips_label;
-
+  GtkCssProvider *provider;
+  GtkStyleContext *context;
 
   theme_get_tile_size (board_theme, &tile_width, &tile_height);
   pixbuf = gdk_pixbuf_new_from_file (DATADIR "/atomix/atomix-logo.png", NULL);
 
   level_items->logo = gtk_box_new (GTK_ORIENTATION_VERTICAL, 15);
 
+  context = gtk_widget_get_style_context (level_items->logo);
+  provider = gtk_css_provider_new ();
+  gtk_css_provider_load_from_data (provider, "* {  background-color: rgba(230, 230, 230, 0.6); }", -1, NULL);
+  gtk_style_context_add_provider (context, GTK_STYLE_PROVIDER (provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
   logo_image = gtk_image_new_from_pixbuf (pixbuf);
-  gtk_container_add (GTK_CONTAINER (level_items->logo), logo_image);
+  gtk_widget_set_valign (logo_image, GTK_ALIGN_END);
+  gtk_box_pack_start (GTK_BOX (level_items->logo), logo_image, TRUE, TRUE, 12);
 
   tips_label = gtk_label_new (_("Guide the atoms through the maze to form molecules.\n"
                                 "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
                                 "Be careful, though: an atom keeps moving until it hits a wall.\n"));
-  gtk_container_add (GTK_CONTAINER (level_items->logo), tips_label);
+  gtk_box_pack_start (GTK_BOX (level_items->logo), tips_label, TRUE, TRUE, 12);
+  gtk_widget_set_valign (tips_label, GTK_ALIGN_START);
   gtk_widget_show_all (level_items->logo);
 
   gtk_fixed_put (GTK_FIXED (board_canvas), level_items->logo,
-                 0,
-                 (BGR_FLOOR_ROWS * tile_height - gdk_pixbuf_get_height (pixbuf)) / 3);
+                 0, 0);
+  gtk_widget_set_size_request (level_items->logo, BGR_FLOOR_COLS * tile_width, BGR_FLOOR_ROWS * tile_height);
   gtk_widget_set_size_request (GTK_WIDGET (tips_label), BGR_FLOOR_COLS * tile_width, -1);
   gtk_label_set_justify (GTK_LABEL (tips_label), GTK_JUSTIFY_CENTER);
   gtk_label_set_line_wrap (GTK_LABEL (tips_label), TRUE);
