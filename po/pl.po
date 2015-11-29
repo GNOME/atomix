@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-02 02:49+0200\n"
-"PO-Revision-Date: 2015-09-02 02:50+0200\n"
+"POT-Creation-Date: 2015-11-29 22:27+0100\n"
+"PO-Revision-Date: 2015-11-29 22:28+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -55,6 +55,10 @@ msgstr ""
 #: ../data/atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Gra logiczna w układanie cząsteczek"
+
+#: ../data/atomix.desktop.in.h:3 ../src/main.c:129
+msgid "A puzzle game about atoms and molecules"
+msgstr "Gra logiczna o atomach i cząsteczkach"
 
 #: ../data/level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
@@ -204,6 +208,16 @@ msgstr "puste"
 msgid "Statistics"
 msgstr "Statystyki"
 
+#: ../src/board-gtk.c:338
+msgid ""
+"Guide the atoms through the maze to form molecules.\n"
+"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+"Be careful, though: an atom keeps moving until it hits a wall.\n"
+msgstr ""
+"Należy przeprowadzić atomy przez labirynt, aby stworzyć cząsteczki.\n"
+"Kliknięcie lub klawisze strzałek i Enter zaznaczają atom i go przenoszą.\n"
+"Należy zachować ostrożność: atomy zatrzymują się tylko na ścianach.\n"
+
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
 msgstr "Nie można odnaleźć opisu sekwencji poziomu."
@@ -216,10 +230,6 @@ msgstr "Nie odnaleziono poziomu."
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Odnaleziono poziom „%s” w: %s"
-
-#: ../src/main.c:129
-msgid "A puzzle game about atoms and molecules"
-msgstr "Gra logiczna o atomach i cząsteczkach"
 
 #: ../src/main.c:133
 msgid "translator-credits"
