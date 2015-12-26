@@ -657,15 +657,20 @@ static AtomixApp *create_gui (void)
 static void
 app_activate (GApplication *app_instance, gpointer user_data)
 {
-  /* make a few initalisations here */
-  app = create_gui ();
 
-  game_init ();
+  if (app == NULL) {
+    /* make a few initalisations here */
+    app = create_gui ();
 
-  gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 678, 520);
-  //gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
-  gtk_widget_show (app->mainwin);
-  gtk_application_add_window (GTK_APPLICATION (app_instance), GTK_WINDOW (app->mainwin));
+    game_init ();
+
+    gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 678, 520);
+    //gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
+    gtk_widget_show (app->mainwin);
+    gtk_application_add_window (GTK_APPLICATION (app_instance), GTK_WINDOW (app->mainwin));
+  } else {
+    gtk_window_present (GTK_WINDOW (app->mainwin));
+  }
 }
 
 int main (int argc, char *argv[])
