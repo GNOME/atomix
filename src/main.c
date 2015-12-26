@@ -123,8 +123,10 @@ static void verb_HelpAbout_cb (GtkMenuItem * action, gpointer data)
       NULL
     };
 
+
   gtk_show_about_dialog(GTK_WINDOW(app->mainwin),
   					"program-name", _("Atomix"),
+                    "logo-icon-name", "atomix",
   					"version", VERSION,
   					"comments", _("A puzzle game about atoms and molecules"),
   					"website", "https://github.com/GNOME/atomix",
@@ -362,7 +364,6 @@ static void atomix_exit (void)
   /* quit application */
   gtk_widget_destroy (app->mainwin);
 
-  gtk_main_quit ();
 }
 
 static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
@@ -569,7 +570,6 @@ static AtomixApp *create_gui (void)
 {
   AtomixApp *app;
   gchar *ui_path;
-  gchar *icon_path;
   GtkBuilder *builder;
   GtkWidget *stats_grid;
   GtkWidget *time_label;
@@ -583,10 +583,6 @@ static AtomixApp *create_gui (void)
   ui_path = g_build_filename (PKGDATADIR, "ui", "interface.ui", NULL);
   gtk_builder_add_from_file (builder, ui_path, NULL);
   g_free (ui_path);
-
-//  ui_path = g_build_filename (PKGDATADIR, "ui", "menus.ui", NULL);
-//  gtk_builder_add_from_file (builder, ui_path, NULL);
-//  g_free (ui_path);
 
   app->mainwin = GTK_WIDGET (gtk_builder_get_object (builder, "mainwin"));
 
@@ -650,52 +646,47 @@ static AtomixApp *create_gui (void)
 
   g_object_unref (builder);
 
-  icon_path = g_build_filename (DATADIR,
-							    "pixmaps",
-							    "atomix-icon.png",
-							    NULL);
-  gtk_window_set_default_icon_from_file (icon_path,
-					 		   NULL);
-  g_free (icon_path);
-
   gtk_widget_show_all (GTK_WIDGET (app->mainwin));
 
   return app;
 }
 
+static void
+app_activate (GApplication *app_instance, gpointer user_data)
+{
+
+  if (app == NULL) {
+    /* make a few initalisations here */
+    app = create_gui ();
+
+    game_init ();
+
+    gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 678, 520);
+    //gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
+    gtk_widget_show (app->mainwin);
+    gtk_application_add_window (GTK_APPLICATION (app_instance), GTK_WINDOW (app->mainwin));
+  } else {
+    gtk_window_present (GTK_WINDOW (app->mainwin));
+  }
+}
+
 int main (int argc, char *argv[])
 {
-  GOptionContext *context;
-  gboolean retval;
-  GError *error = NULL;
+  GtkApplication *gtk_app;
 
-  context = g_option_context_new (NULL);
-  g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
-  g_option_context_add_group (context, gtk_get_option_group (TRUE));
-
-  retval = g_option_context_parse (context, &argc, &argv, &error);
-  g_option_context_free (context);
-  if (!retval) {
-    g_print ("%s", error->message);
-    g_error_free (error);
-    exit (1);
-  }
+  int status;
 
   g_set_application_name (_("Atomix"));
 
   bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
-  
-  /* make a few initalisations here */
-  app = create_gui ();
 
-  game_init ();
+  gtk_app = gtk_application_new ("org.gnome.atomix", G_APPLICATION_FLAGS_NONE);
+  g_signal_connect (gtk_app, "activate", G_CALLBACK (app_activate), NULL);
 
-  gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 678, 520);
-  //gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
-  gtk_widget_show (app->mainwin);
+  status = g_application_run (G_APPLICATION (gtk_app), argc, argv);
+  g_object_unref (gtk_app);
 
-  gtk_main ();
-  return 0;
+  return status;
 }

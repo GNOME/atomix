@@ -7,6 +7,7 @@
     <property name="height_request">520</property>
     <property name="can_focus">False</property>
     <property name="border_width">6</property>
+    <property name="icon_name">atomix</property>
     <property name="title" translatable="yes">Atomix</property>
     <child>
       <object class="GtkBox" id="win_content">
