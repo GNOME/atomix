@@ -367,7 +367,6 @@ static void atomix_exit (void)
   /* quit application */
   gtk_widget_destroy (app->mainwin);
 
-  gtk_main_quit ();
 }
 
 static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
