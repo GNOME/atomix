@@ -389,4 +389,52 @@
       </object>
     </child>
   </object>
+  <menu id="app-menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">New Game</attribute>
+        <attribute name="action">win.GameNew</attribute>
+        <attribute name="accel">&lt;Primary&gt;n</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">End Game</attribute>
+        <attribute name="action">win.GameEnd</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Skip Level</attribute>
+        <attribute name="action">win.GameSkip</attribute>
+        <attribute name="accel">&lt;Primary&gt;s</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Reset Level</attribute>
+        <attribute name="action">win.GameReset</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Undo Move</attribute>
+        <attribute name="action">win.GameUndo</attribute>
+        <attribute name="accel">&lt;Primary&gt;z</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Pause Game</attribute>
+        <attribute name="action">win.GamePause</attribute>
+        <attribute name="accel">&lt;Primary&gt;c</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Continue Game</attribute>
+        <attribute name="action">win.GameContinue</attribute>
+        <attribute name="accel">&lt;Primary&gt;c</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">About</attribute>
+        <attribute name="action">app.GameAbout</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Quit</attribute>
+        <attribute name="action">app.GameQuit</attribute>
+        <attribute name="accel">&lt;Primary&gt;q</attribute>
+      </item>
+    </section>
+  </menu>
 </interface>

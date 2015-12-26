@@ -588,20 +588,18 @@ static AtomixApp *create_gui (GApplication *app_instance)
   GtkBuilder *builder;
   GtkWidget *stats_grid;
   GtkWidget *time_label;
-  GtkWidget *menu_bar;
 
   app = g_new0 (AtomixApp, 1);
   app->level = NULL;
+  app->app_instance = app_instance;
 
   builder = gtk_builder_new ();
-  
+
   ui_path = g_build_filename (PKGDATADIR, "ui", "interface.ui", NULL);
   gtk_builder_add_from_file (builder, ui_path, NULL);
   g_free (ui_path);
 
   app->mainwin = GTK_WIDGET (gtk_builder_get_object (builder, "mainwin"));
-
-  app->app_instance = app_instance;
 
   g_signal_connect (G_OBJECT (app->mainwin), "delete_event",
                     (GCallback) on_app_destroy_event, app);
@@ -627,8 +625,13 @@ static AtomixApp *create_gui (GApplication *app_instance)
 
   gtk_widget_show_all (GTK_WIDGET (app->mainwin));
 
-  menu_bar = GTK_WIDGET (gtk_builder_get_object (builder, "menubar"));
-//  gtk_widget_set_visible (menu_bar, !gtk_application_prefers_app_menu (GTK_APPLICATION (app_instance)));
+
+  if (gtk_application_prefers_app_menu (GTK_APPLICATION (app_instance))) {
+    GMenu * menu = G_MENU (gtk_builder_get_object (builder, "app-menu"));
+    gtk_application_set_app_menu (GTK_APPLICATION (app->app_instance), G_MENU_MODEL (menu));
+    GtkWidget *menubar = GTK_WIDGET (gtk_builder_get_object (builder, "menubar"));
+    gtk_widget_set_visible (menubar, FALSE);
+  }
 
   g_object_unref (builder);
 
