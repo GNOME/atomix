@@ -649,8 +649,6 @@ static AtomixApp *create_gui (void)
 
   g_object_unref (builder);
 
-  gtk_window_set_icon_name (GTK_WINDOW (app->mainwin), "atomix");
-
   gtk_widget_show_all (GTK_WIDGET (app->mainwin));
 
   return app;
