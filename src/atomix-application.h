@@ -38,7 +38,7 @@ typedef enum
 typedef struct
 {
   GtkWidget *mainwin;
-  GHashTable *actions;
+  GApplication *app_instance;
 
   GtkWidget *fi_matrix;
   GtkWidget *fi_goal;

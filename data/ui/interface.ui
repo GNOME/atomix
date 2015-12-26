@@ -2,7 +2,7 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
-  <object class="GtkWindow" id="mainwin">
+  <object class="GtkApplicationWindow" id="mainwin">
     <property name="width_request">678</property>
     <property name="height_request">520</property>
     <property name="can_focus">False</property>
@@ -34,7 +34,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_New Game</property>
                         <property name="use_underline">True</property>
-                        <property name="action_name">app.gameNew</property>
+                        <property name="action_name">win.GameNew</property>
                         <accelerator key="n" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
@@ -44,7 +44,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_End Game</property>
                         <property name="use_underline">True</property>
-                        <property name="action_name">app.gameEnd</property>
+                        <property name="action_name">win.GameEnd</property>
                       </object>
                     </child>
                     <child>
@@ -59,7 +59,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Skip Level</property>
                         <property name="use_underline">True</property>
-                        <property name="action_name">app.gameSkip</property>
+                        <property name="action_name">win.GameSkip</property>
                         <accelerator key="s" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
@@ -69,7 +69,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Reset Level</property>
                         <property name="use_underline">True</property>
-                        <property name="action_name">app.gameReset</property>
+                        <property name="action_name">win.GameReset</property>
                       </object>
                     </child>
                     <child>
@@ -78,7 +78,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Undo Move</property>
                         <property name="use_underline">True</property>
-                        <property name="action_name">app.gameUndo</property>
+                        <property name="action_name">win.GameUndo</property>
                         <accelerator key="z" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
@@ -88,7 +88,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Pause Game</property>
                         <property name="use_underline">True</property>
-                        <property name="action_name">app.gamePause</property>
+                        <property name="action_name">win.GamePause</property>
                         <accelerator key="c" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
@@ -98,7 +98,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Continue Game</property>
                         <property name="use_underline">True</property>
-                        <property name="action_name">app.gameContinue</property>
+                        <property name="action_name">win.GameContinue</property>
                         <accelerator key="c" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
@@ -114,7 +114,7 @@
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_Quit</property>
                         <property name="use_underline">True</property>
-                        <property name="action_name">app.gameQuit</property>
+                        <property name="action_name">app.GameQuit</property>
                         <accelerator key="q" signal="activate" modifiers="GDK_CONTROL_MASK"/>
                       </object>
                     </child>
@@ -137,7 +137,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="label" translatable="yes">_About</property>
-			<property name="action_name">app.gameAbout</property>
+			<property name="action_name">app.GameAbout</property>
                         <property name="use_underline">True</property>
                       </object>
                     </child>

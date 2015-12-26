@@ -358,9 +358,6 @@ static void atomix_exit (void)
   if (app->tm)
     g_object_unref (app->tm);
 
-  if (app->actions)
-    g_hash_table_destroy (app->actions);
-
   /* quit application */
   gtk_widget_destroy (app->mainwin);
 
@@ -495,17 +492,22 @@ typedef struct
   gboolean enabled;
 } CmdEnable;
 
+
 static const GActionEntry app_entries[] =
   {
-    { "gameAbout", verb_HelpAbout_cb, NULL, NULL, NULL},
-    { "gameNew", verb_GameNew_cb, NULL, NULL, NULL},
-    { "gameEnd", verb_GameEnd_cb, NULL, NULL, NULL},
-    { "gameSkip", verb_GameSkip_cb, NULL, NULL, NULL},
-    { "gameReset", verb_GameReset_cb, NULL, NULL, NULL},
-    { "gameUndo", verb_GameUndo_cb, NULL, NULL, NULL},
-    { "gamePause", verb_GamePause_cb, NULL, NULL, NULL},
-    { "gameContinue", verb_GameContinue_cb, NULL, NULL, NULL},
-    { "gameQuit", verb_GameExit_cb, NULL, NULL, NULL}
+    { "GameAbout", verb_HelpAbout_cb, NULL, NULL, NULL},
+    { "GameQuit", verb_GameExit_cb, NULL, NULL, NULL}
+  };
+
+static const GActionEntry win_entries[] =
+  {
+    { "GameNew", verb_GameNew_cb, NULL, NULL, NULL},
+    { "GameEnd", verb_GameEnd_cb, NULL, NULL, NULL},
+    { "GameSkip", verb_GameSkip_cb, NULL, NULL, NULL},
+    { "GameReset", verb_GameReset_cb, NULL, NULL, NULL},
+    { "GameUndo", verb_GameUndo_cb, NULL, NULL, NULL},
+    { "GamePause", verb_GamePause_cb, NULL, NULL, NULL},
+    { "GameContinue", verb_GameContinue_cb, NULL, NULL, NULL},
   };
 
 static const CmdEnable not_running[] =
@@ -565,12 +567,12 @@ void update_menu_item_state (void)
 {
   gint i;
   const CmdEnable *cmd_list = state_sensitivity[app->state];
-  GtkWidget *widget;
+  GAction *action;
 
   for (i = 0; cmd_list[i].cmd != NULL; i++)
     {
-      widget = g_hash_table_lookup (app->actions, cmd_list[i].cmd);
-      gtk_widget_set_sensitive (widget, cmd_list[i].enabled);
+      action = g_action_map_lookup_action (G_ACTION_MAP (app->mainwin), cmd_list[i].cmd);
+      g_simple_action_set_enabled (G_SIMPLE_ACTION (action), cmd_list[i].enabled);
     }
 }
 
@@ -586,7 +588,6 @@ static AtomixApp *create_gui (GApplication *app_instance)
   GtkBuilder *builder;
   GtkWidget *stats_grid;
   GtkWidget *time_label;
-  GtkWidget *menu_item;
   GtkWidget *menu_bar;
 
   app = g_new0 (AtomixApp, 1);
@@ -600,28 +601,7 @@ static AtomixApp *create_gui (GApplication *app_instance)
 
   app->mainwin = GTK_WIDGET (gtk_builder_get_object (builder, "mainwin"));
 
-  app->actions = g_hash_table_new (NULL, NULL);
-
-  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameNew"));
-  g_hash_table_insert (app->actions, "GameNew", menu_item);
-
-  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameEnd"));
-  g_hash_table_insert (app->actions, "GameEnd", menu_item);
-
-  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameSkip"));
-  g_hash_table_insert (app->actions, "GameSkip", menu_item);
-
-  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameReset"));
-  g_hash_table_insert (app->actions, "GameReset", menu_item);
-
-  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameUndo"));
-  g_hash_table_insert (app->actions, "GameUndo", menu_item);
-
-  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gamePause"));
-  g_hash_table_insert (app->actions, "GamePause", menu_item);
-
-  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameContinue"));
-  g_hash_table_insert (app->actions, "GameContinue", menu_item);
+  app->app_instance = app_instance;
 
   g_signal_connect (G_OBJECT (app->mainwin), "delete_event",
                     (GCallback) on_app_destroy_event, app);
@@ -661,11 +641,14 @@ app_activate (GApplication *app_instance, gpointer user_data)
 
   if (app == NULL) {
     /* make a few initalisations here */
+    g_action_map_add_action_entries (G_ACTION_MAP (app_instance), app_entries, G_N_ELEMENTS (app_entries), app_instance);
+
     app = create_gui (app_instance);
+    g_action_map_add_action_entries (G_ACTION_MAP (app->mainwin), win_entries, G_N_ELEMENTS (win_entries), app_instance);
 
     game_init ();
-    g_action_map_add_action_entries (G_ACTION_MAP (app_instance), app_entries, G_N_ELEMENTS (app_entries), app_instance);
     gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 678, 520);
+
     //gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
     gtk_widget_show (app->mainwin);
     gtk_application_add_window (GTK_APPLICATION (app_instance), GTK_WINDOW (app->mainwin));
