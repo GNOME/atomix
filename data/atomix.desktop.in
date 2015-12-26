@@ -2,7 +2,7 @@
 _Name=Atomix
 _Comment=Molecule puzzle game
 Exec=atomix
-Icon=atomix-icon
+Icon=atomix
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;Game;LogicGame;
