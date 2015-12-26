@@ -67,47 +67,47 @@ static void calculate_score (void);
              Menu callback  functions 
 
 -------------------------------------------------------------- */
-static void verb_GameNew_cb (GtkMenuItem * action, gpointer data)
+static void verb_GameNew_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
   controller_handle_action (GAME_ACTION_NEW);
 }
 
-static void verb_GameEnd_cb (GtkMenuItem * action, gpointer data)
+static void verb_GameEnd_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
   controller_handle_action (GAME_ACTION_END);
 }
 
-static void verb_GameSkip_cb (GtkMenuItem * action, gpointer data)
+static void verb_GameSkip_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
   controller_handle_action (GAME_ACTION_SKIP);
 }
 
-static void verb_GameReset_cb (GtkMenuItem * action, gpointer data)
+static void verb_GameReset_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
   controller_handle_action (GAME_ACTION_RESTART);
 }
 
-static void verb_GamePause_cb (GtkMenuItem * action, gpointer data)
+static void verb_GamePause_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
   controller_handle_action (GAME_ACTION_PAUSE);
 }
 
-static void verb_GameContinue_cb (GtkMenuItem * action, gpointer data)
+static void verb_GameContinue_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
   controller_handle_action (GAME_ACTION_CONTINUE);
 }
 
-static void verb_GameUndo_cb (GtkMenuItem * action, gpointer data)
+static void verb_GameUndo_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
   controller_handle_action (GAME_ACTION_UNDO);
 }
 
-static void verb_GameExit_cb (GtkMenuItem * action, gpointer data)
+static void verb_GameExit_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
   atomix_exit ();
 }
 
-static void verb_HelpAbout_cb (GtkMenuItem * action, gpointer data)
+static void verb_HelpAbout_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
   const char *authors[] =
     {
@@ -126,7 +126,7 @@ static void verb_HelpAbout_cb (GtkMenuItem * action, gpointer data)
 
   gtk_show_about_dialog(GTK_WINDOW(app->mainwin),
   					"program-name", _("Atomix"),
-                    "logo-icon-name", "atomix",
+					"logo-icon-name", "atomix",
   					"version", VERSION,
   					"comments", _("A puzzle game about atoms and molecules"),
   					"website", "https://github.com/GNOME/atomix",
@@ -495,6 +495,19 @@ typedef struct
   gboolean enabled;
 } CmdEnable;
 
+static const GActionEntry app_entries[] =
+  {
+    { "gameAbout", verb_HelpAbout_cb, NULL, NULL, NULL},
+    { "gameNew", verb_GameNew_cb, NULL, NULL, NULL},
+    { "gameEnd", verb_GameEnd_cb, NULL, NULL, NULL},
+    { "gameSkip", verb_GameSkip_cb, NULL, NULL, NULL},
+    { "gameReset", verb_GameReset_cb, NULL, NULL, NULL},
+    { "gameUndo", verb_GameUndo_cb, NULL, NULL, NULL},
+    { "gamePause", verb_GamePause_cb, NULL, NULL, NULL},
+    { "gameContinue", verb_GameContinue_cb, NULL, NULL, NULL},
+    { "gameQuit", verb_GameExit_cb, NULL, NULL, NULL}
+  };
+
 static const CmdEnable not_running[] =
   {
     { "GameNew",      TRUE  },
@@ -566,7 +579,7 @@ void update_menu_item_state (void)
              GUI creation  functions 
 
 -------------------------------------------------------------- */
-static AtomixApp *create_gui (void)
+static AtomixApp *create_gui (GApplication *app_instance)
 {
   AtomixApp *app;
   gchar *ui_path;
@@ -574,6 +587,7 @@ static AtomixApp *create_gui (void)
   GtkWidget *stats_grid;
   GtkWidget *time_label;
   GtkWidget *menu_item;
+  GtkWidget *menu_bar;
 
   app = g_new0 (AtomixApp, 1);
   app->level = NULL;
@@ -590,37 +604,24 @@ static AtomixApp *create_gui (void)
 
   menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameNew"));
   g_hash_table_insert (app->actions, "GameNew", menu_item);
-  g_signal_connect (menu_item, "activate", (GCallback)verb_GameNew_cb, NULL);
 
   menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameEnd"));
   g_hash_table_insert (app->actions, "GameEnd", menu_item);
-  g_signal_connect (menu_item, "activate", (GCallback)verb_GameEnd_cb, NULL);
 
   menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameSkip"));
   g_hash_table_insert (app->actions, "GameSkip", menu_item);
-  g_signal_connect (menu_item, "activate", (GCallback)verb_GameSkip_cb, NULL);
 
   menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameReset"));
   g_hash_table_insert (app->actions, "GameReset", menu_item);
-  g_signal_connect (menu_item, "activate", (GCallback)verb_GameReset_cb, NULL);
 
   menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameUndo"));
   g_hash_table_insert (app->actions, "GameUndo", menu_item);
-  g_signal_connect (menu_item, "activate", (GCallback)verb_GameUndo_cb, NULL);
 
   menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gamePause"));
   g_hash_table_insert (app->actions, "GamePause", menu_item);
-  g_signal_connect (menu_item, "activate", (GCallback)verb_GamePause_cb, NULL);
 
   menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameContinue"));
   g_hash_table_insert (app->actions, "GameContinue", menu_item);
-  g_signal_connect (menu_item, "activate", (GCallback)verb_GameContinue_cb, NULL);
-
-  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameQuit"));
-  g_signal_connect (menu_item, "activate", (GCallback)verb_GameExit_cb, NULL);
-
-  menu_item = GTK_WIDGET (gtk_builder_get_object (builder, "gameAbout"));
-  g_signal_connect (menu_item, "activate", (GCallback)verb_HelpAbout_cb, NULL);
 
   g_signal_connect (G_OBJECT (app->mainwin), "delete_event",
                     (GCallback) on_app_destroy_event, app);
@@ -644,9 +645,12 @@ static AtomixApp *create_gui (void)
   app->lb_formula = GTK_WIDGET (gtk_builder_get_object (builder, "formula_value"));
   app->lb_score = GTK_WIDGET (gtk_builder_get_object (builder, "score_value"));
 
-  g_object_unref (builder);
-
   gtk_widget_show_all (GTK_WIDGET (app->mainwin));
+
+  menu_bar = GTK_WIDGET (gtk_builder_get_object (builder, "menubar"));
+//  gtk_widget_set_visible (menu_bar, !gtk_application_prefers_app_menu (GTK_APPLICATION (app_instance)));
+
+  g_object_unref (builder);
 
   return app;
 }
@@ -657,10 +661,10 @@ app_activate (GApplication *app_instance, gpointer user_data)
 
   if (app == NULL) {
     /* make a few initalisations here */
-    app = create_gui ();
+    app = create_gui (app_instance);
 
     game_init ();
-
+    g_action_map_add_action_entries (G_ACTION_MAP (app_instance), app_entries, G_N_ELEMENTS (app_entries), app_instance);
     gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 678, 520);
     //gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
     gtk_widget_show (app->mainwin);
