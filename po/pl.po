@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-29 22:27+0100\n"
-"PO-Revision-Date: 2015-11-29 22:28+0100\n"
+"POT-Creation-Date: 2015-12-28 01:01+0100\n"
+"PO-Revision-Date: 2015-12-28 01:02+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Poedit-Country: Poland\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:127 ../src/main.c:684
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Gra logiczna w układanie cząsteczek"
 
-#: ../data/atomix.desktop.in.h:3 ../src/main.c:129
+#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
 msgid "A puzzle game about atoms and molecules"
 msgstr "Gra logiczna o atomach i cząsteczkach"
 
@@ -208,6 +208,42 @@ msgstr "puste"
 msgid "Statistics"
 msgstr "Statystyki"
 
+#: ../data/ui/interface.ui.h:20
+msgid "New Game"
+msgstr "Nowa gra"
+
+#: ../data/ui/interface.ui.h:21
+msgid "End Game"
+msgstr "Zakończ grę"
+
+#: ../data/ui/interface.ui.h:22
+msgid "Skip Level"
+msgstr "Pomiń poziom"
+
+#: ../data/ui/interface.ui.h:23
+msgid "Reset Level"
+msgstr "Przywróć poziom"
+
+#: ../data/ui/interface.ui.h:24
+msgid "Undo Move"
+msgstr "Cofnij ruch"
+
+#: ../data/ui/interface.ui.h:25
+msgid "Pause Game"
+msgstr "Wstrzymaj grę"
+
+#: ../data/ui/interface.ui.h:26
+msgid "Continue Game"
+msgstr "Kontynuuj grę"
+
+#: ../data/ui/interface.ui.h:27
+msgid "About"
+msgstr "O grze"
+
+#: ../data/ui/interface.ui.h:28
+msgid "Quit"
+msgstr "Zakończ"
+
 #: ../src/board-gtk.c:338
 msgid ""
 "Guide the atoms through the maze to form molecules.\n"
@@ -231,14 +267,14 @@ msgstr "Nie odnaleziono poziomu."
 msgid "Found level '%s' in: %s"
 msgstr "Odnaleziono poziom „%s” w: %s"
 
-#: ../src/main.c:133
+#: ../src/main.c:135
 msgid "translator-credits"
 msgstr ""
 "Zbigniew Chyla <zbigniew.chyla@gmail.com>, 2002\n"
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2015\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2012-2015"
 
-#: ../src/main.c:440
+#: ../src/main.c:438
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulacje! Udało się ukończyć wszystkie poziomy gry Atomix."
 
