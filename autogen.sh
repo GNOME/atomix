@@ -4,8 +4,6 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-PKG_NAME="Atomix"
-
 (test -f $srcdir/configure.ac \
   && test -f $srcdir/ChangeLog \
   && test -f $srcdir/src/level.h) || {
@@ -19,4 +17,4 @@ which gnome-autogen.sh || {
     exit 1
 }
 
-USE_GNOME2_MACROS=1 . gnome-autogen.sh
+. gnome-autogen.sh
