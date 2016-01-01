@@ -3,18 +3,19 @@
 # Copyright (C) 1999, 2000, 2001, 2002 Jens Finke.
 # Copyright (C) 2006 Lukas Novotny <lukasnov@cvs.gnome.org>.
 # This file is distributed under the same license as the atomix package.
+#
 # Michal Bukovjan <bukm@centrum.cz>, 2002.
 # Miloslav Trmac <mitr@volny.cz>, 2004.
 # Lukas Novotny <lukasnov@cvs.gnome.org>, 2006.
-# Marek Černocký <marek@manet.cz>, 2010, 2015.
+# Marek Černocký <marek@manet.cz>, 2010, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-11-23 19:50+0000\n"
-"PO-Revision-Date: 2015-11-24 16:24+0100\n"
+"POT-Creation-Date: 2016-01-01 15:57+0000\n"
+"PO-Revision-Date: 2016-01-01 19:59+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -25,7 +26,7 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:127 ../src/main.c:684
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -41,7 +42,7 @@ msgid ""
 "wall or another atom."
 msgstr ""
 "Atomix je logická hra, ve které je cílem sestavit molekuly z jednotlivých "
-"atomů jejich přesouváním po hracím poli. Atomy si ale nemůžete přesouvat, "
+"atomů jejich přesouváním po hracím poli. Atomy ale nemůžete přesouvat, "
 "jak vás napadne. Po udaní směru se samy pohybují, až dokud nenarazí do zdi "
 "nebo do jiného atomu."
 
@@ -50,14 +51,14 @@ msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
 msgstr ""
-"Molekuly v jednotlivých úrovních zkuste sestavit co nejrychleji dokážete, "
+"Molekuly v jednotlivých úrovních se snažte sestavit co nejrychleji dokážete, "
 "abyste dosáhli vyššího skóre."
 
 #: ../data/atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Logická hra s molekulami"
 
-#: ../data/atomix.desktop.in.h:3 ../src/main.c:129
+#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
 msgid "A puzzle game about atoms and molecules"
 msgstr "Logická hra s atomy a molekulami"
 
@@ -209,7 +210,43 @@ msgstr "prázdné"
 msgid "Statistics"
 msgstr "Statistika"
 
-#: ../src/board-gtk.c:332
+#: ../data/ui/interface.ui.h:20
+msgid "New Game"
+msgstr "Nová hra"
+
+#: ../data/ui/interface.ui.h:21
+msgid "End Game"
+msgstr "Konec hry"
+
+#: ../data/ui/interface.ui.h:22
+msgid "Skip Level"
+msgstr "Přeskočit úroveň"
+
+#: ../data/ui/interface.ui.h:23
+msgid "Reset Level"
+msgstr "Úroveň od začátku"
+
+#: ../data/ui/interface.ui.h:24
+msgid "Undo Move"
+msgstr "Tah zpět"
+
+#: ../data/ui/interface.ui.h:25
+msgid "Pause Game"
+msgstr "Pozastavit hru"
+
+#: ../data/ui/interface.ui.h:26
+msgid "Continue Game"
+msgstr "Pokračovat ve hře"
+
+#: ../data/ui/interface.ui.h:27
+msgid "About"
+msgstr "O aplikaci"
+
+#: ../data/ui/interface.ui.h:28
+msgid "Quit"
+msgstr "Ukončit"
+
+#: ../src/board-gtk.c:338
 msgid ""
 "Guide the atoms through the maze to form molecules.\n"
 "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
@@ -232,13 +269,13 @@ msgstr "Nebyla nalezena žádná úroveň."
 msgid "Found level '%s' in: %s"
 msgstr "Nalezena úroveň „%s“ v: %s"
 
-#: ../src/main.c:133
+#: ../src/main.c:135
 msgid "translator-credits"
 msgstr ""
 "Lukáš Novotný <lukasnov@cvs.gnome.org>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: ../src/main.c:440
+#: ../src/main.c:438
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulace! Dokončil jste všechny úrovně hry Atomix."
 
