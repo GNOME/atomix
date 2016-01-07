@@ -5,15 +5,15 @@
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003.
 # Jorge González <jorgegonz@svn.gnome.org>, 2010.
 # 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2015., 2015.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2015., 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-01 03:57+0000\n"
-"PO-Revision-Date: 2015-12-02 15:34+0100\n"
+"POT-Creation-Date: 2016-01-07 03:57+0000\n"
+"PO-Revision-Date: 2016-01-07 11:40+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:127 ../src/main.c:684
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Puzle con moléculas"
 
-#: ../data/atomix.desktop.in.h:3 ../src/main.c:129
+#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
 msgid "A puzzle game about atoms and molecules"
 msgstr "Un juego de puzles sobre átomos y moléculas"
 
@@ -208,6 +208,51 @@ msgstr "vaciar"
 msgid "Statistics"
 msgstr "Estadísticas"
 
+#: ../data/ui/interface.ui.h:20
+#| msgid "_New Game"
+msgid "New Game"
+msgstr "Juego nuevo"
+
+#: ../data/ui/interface.ui.h:21
+#| msgid "_End Game"
+msgid "End Game"
+msgstr "Finalizar el juego"
+
+#: ../data/ui/interface.ui.h:22
+#| msgid "_Skip Level"
+msgid "Skip Level"
+msgstr "Saltar nivel"
+
+#: ../data/ui/interface.ui.h:23
+#| msgid "_Reset Level"
+msgid "Reset Level"
+msgstr "Reiniciar nivel"
+
+#: ../data/ui/interface.ui.h:24
+#| msgid "_Undo Move"
+msgid "Undo Move"
+msgstr "Deshacer movimiento"
+
+#: ../data/ui/interface.ui.h:25
+#| msgid "_Pause Game"
+msgid "Pause Game"
+msgstr "Pausar juego"
+
+#: ../data/ui/interface.ui.h:26
+#| msgid "_Continue Game"
+msgid "Continue Game"
+msgstr "Continuar juego"
+
+#: ../data/ui/interface.ui.h:27
+#| msgid "_About"
+msgid "About"
+msgstr "Acerca de"
+
+#: ../data/ui/interface.ui.h:28
+#| msgid "_Quit"
+msgid "Quit"
+msgstr "Salir"
+
 #: ../src/board-gtk.c:338
 msgid ""
 "Guide the atoms through the maze to form molecules.\n"
@@ -232,14 +277,14 @@ msgstr "No se encontró ningún nivel."
 msgid "Found level '%s' in: %s"
 msgstr "Encontrado nivel «%s» en: %s"
 
-#: ../src/main.c:133
+#: ../src/main.c:135
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2015\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2010\n"
 "Francisco Javier F. Serrador <serrador@cvs.gnome.org>"
 
-#: ../src/main.c:440
+#: ../src/main.c:438
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "¡Felicidades! Ha terminado todos los niveles de Atomix."
 
