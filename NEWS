@@ -1,3 +1,20 @@
+2016-01-18: Release versions 3.19.4
+
+  * New and updated translations
+    - cs, courtesy of Marek Černocký 
+    - de, courtesy of Mario Blättermann 
+    - es, courtesy of Daniel Mustieles 
+    - pl, courtesy of Piotr Drąg 
+    - sr, courtesy of Мирослав Николић 
+    - sr@latin, courtesy of Miroslav Nikolić 
+    - tr, courtesy of Muhammet Kara
+  * Added scalable icon (bug #746471)
+  * Use new icon and GtkApplication (bug #742871) 
+  * Single-instance application
+  * Remove window border
+  * Register window actions
+  * Fixed autogen deprecation warnings
+
 2015-12-14: Release version 3.19.3
 
    * New and updated translations
