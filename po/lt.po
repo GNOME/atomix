@@ -9,18 +9,18 @@ msgstr ""
 "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-18 03:51+0000\n"
-"PO-Revision-Date: 2015-03-15 19:58+0200\n"
+"POT-Creation-Date: 2016-01-07 22:07+0000\n"
+"PO-Revision-Date: 2016-01-08 02:33+0200\n"
 "Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:686
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -50,6 +50,10 @@ msgstr ""
 #: ../data/atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Molekulių galvosūkis"
+
+#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+msgid "A puzzle game about atoms and molecules"
+msgstr "Galvosūkis apie atomus ir molekules"
 
 #: ../data/level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
@@ -199,38 +203,81 @@ msgstr "tuščia"
 msgid "Statistics"
 msgstr "Statistika"
 
-#: ../src/level-manager.c:204
+#: ../data/ui/interface.ui.h:20
+msgid "New Game"
+msgstr "Naujas žaidimas"
+
+#: ../data/ui/interface.ui.h:21
+msgid "End Game"
+msgstr "Baigti žaidimą"
+
+#: ../data/ui/interface.ui.h:22
+msgid "Skip Level"
+msgstr "Praleisti lygį"
+
+#: ../data/ui/interface.ui.h:23
+msgid "Reset Level"
+msgstr "Pradėti lygį iš naujo"
+
+#: ../data/ui/interface.ui.h:24
+msgid "Undo Move"
+msgstr "Atšaukti ėjimą"
+
+#: ../data/ui/interface.ui.h:25
+msgid "Pause Game"
+msgstr "Pristabdyti žaidimą"
+
+#: ../data/ui/interface.ui.h:26
+msgid "Continue Game"
+msgstr "Tęsti žaidimą"
+
+#: ../data/ui/interface.ui.h:27
+msgid "About"
+msgstr "Apie"
+
+#: ../data/ui/interface.ui.h:28
+msgid "Quit"
+msgstr "Išeiti"
+
+#: ../src/board-gtk.c:338
+msgid ""
+"Guide the atoms through the maze to form molecules.\n"
+"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+"Be careful, though: an atom keeps moving until it hits a wall.\n"
+msgstr ""
+"Lydėkite atomus per labirintą, kad suformuotumėte molekules.\n"
+"Spustelėkite arba naudokite krypties klavišus ir Įvedimo klavišą, kad "
+"pasirinktumėte atomą ir jį perkeltumėte.\n"
+"Tačiau būkite atsargūs: atomas juda tol, kol neatsiremia į sieną.\n"
+
+#: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
 msgstr "Nepavyko rasti lygių eilės aprašymo."
 
-#: ../src/level-manager.c:218
+#: ../src/level-manager.c:214
 msgid "No level found."
 msgstr "Lygių nerasta."
 
-#: ../src/level-manager.c:314
+#: ../src/level-manager.c:283
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Rastas lygis „%s“ esantis: %s"
 
-#: ../src/main.c:132
-msgid "A puzzle game about atoms and molecules"
-msgstr "Galvosūkis apie atomus ir molekules"
-
-#: ../src/main.c:136
+#: ../src/main.c:135
 msgid "translator-credits"
 msgstr ""
 "Žygimantas Beručka <zygis@gnome.org>\n"
 "Mantas Kriaučiūnas <mantas@akl.lt>"
 
-#: ../src/main.c:446
+#: ../src/main.c:438
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Sveikiname! Įveikėte visus Atomix lygius."
 
-#: ../src/theme-manager.c:224
+#: ../src/theme-manager.c:225
 msgid "No themes found."
 msgstr "Temų nerasta."
 
-#: ../src/theme-manager.c:282
+#: ../src/theme-manager.c:283
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Rasta tema „%s“ esanti: %s"
