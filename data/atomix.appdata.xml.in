@@ -32,4 +32,5 @@
     <kudo>AppMenu</kudo>
     <kudo>ModernToolkit</kudo>
   </kudos>
+  <translation type="gettext">atomix</translation>
 </component>
