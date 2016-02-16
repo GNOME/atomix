@@ -1,3 +1,10 @@
+2016-02-16: Release versions 3.19.90
+
+  * New and updated translations
+    - lt, courtesy of Aurimas Černius
+  * Updated Appdata to spec version 0.7
+  * Added tag to Appdata
+
 2016-01-18: Release versions 3.19.4
 
   * New and updated translations
