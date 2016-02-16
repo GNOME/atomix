@@ -5,8 +5,8 @@ SUBDIRS = level themes ui
 logodir = $(pkgdatadir)
 logo_DATA = atomix-logo.png
 
-icondir = $(datadir)/icons/hicolor/scalable/apps
-icon_DATA = atomix.svg
+icondir = $(datadir)/icons/hicolor/512x512/apps
+icon_DATA = atomix.png
 
 @INTLTOOL_DESKTOP_RULE@
 
