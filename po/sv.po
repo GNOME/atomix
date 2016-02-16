@@ -1,26 +1,26 @@
 # Swedish messages for atomix.
-# Copyright © 2001, 2002, 2005, 2006, 2015 Free Software Foundation, Inc.
+# Copyright © 2001-2016 Free Software Foundation, Inc.
 # Christian Rose <menthos@menthos.com>, 2001, 2002, 2005.
 # Daniel Nylander <po@danielnylander.se>, 2006.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-18 17:28+0000\n"
-"PO-Revision-Date: 2015-02-10 00:20+0100\n"
+"POT-Creation-Date: 2015-12-26 18:13+0000\n"
+"PO-Revision-Date: 2016-01-26 22:41+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:686
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -50,6 +50,10 @@ msgstr ""
 #: ../data/atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Molekylpusselspel"
+
+#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+msgid "A puzzle game about atoms and molecules"
+msgstr "Ett pusselspel om atomer och molekyler"
 
 #: ../data/level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
@@ -202,24 +206,67 @@ msgstr "tom"
 msgid "Statistics"
 msgstr "Statistik"
 
-#: ../src/level-manager.c:207
+#: ../data/ui/interface.ui.h:20
+msgid "New Game"
+msgstr "Nytt spel"
+
+#: ../data/ui/interface.ui.h:21
+msgid "End Game"
+msgstr "Avsluta spel"
+
+#: ../data/ui/interface.ui.h:22
+msgid "Skip Level"
+msgstr "Hoppa över nivå"
+
+#: ../data/ui/interface.ui.h:23
+msgid "Reset Level"
+msgstr "Återställ nivå"
+
+#: ../data/ui/interface.ui.h:24
+msgid "Undo Move"
+msgstr "Ångra drag"
+
+#: ../data/ui/interface.ui.h:25
+msgid "Pause Game"
+msgstr "Gör paus i spel"
+
+#: ../data/ui/interface.ui.h:26
+msgid "Continue Game"
+msgstr "Fortsätt spel"
+
+#: ../data/ui/interface.ui.h:27
+msgid "About"
+msgstr "Om"
+
+#: ../data/ui/interface.ui.h:28
+msgid "Quit"
+msgstr "Avsluta"
+
+#: ../src/board-gtk.c:338
+msgid ""
+"Guide the atoms through the maze to form molecules.\n"
+"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+"Be careful, though: an atom keeps moving until it hits a wall.\n"
+msgstr ""
+"Guida atomerna genom labyrinten för att bilda molekyler.\n"
+"Klicka, eller använd piltangenterna och Retur för att välja en atom och "
+"flytta den.\n"
+"Men var försiktig, atomer fortsätter röra sig till de träffar en vägg.\n"
+
+#: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
 msgstr "Kunde inte hitta nivåsekvensbeskrivning."
 
-#: ../src/level-manager.c:221
+#: ../src/level-manager.c:214
 msgid "No level found."
 msgstr "Ingen nivå kunde hittas."
 
-#: ../src/level-manager.c:317
+#: ../src/level-manager.c:283
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Hittade nivån ”%s” i: %s"
 
-#: ../src/main.c:132
-msgid "A puzzle game about atoms and molecules"
-msgstr "Ett pusselspel om atomer och molekyler"
-
-#: ../src/main.c:136
+#: ../src/main.c:135
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander\n"
@@ -229,15 +276,15 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: ../src/main.c:446
+#: ../src/main.c:438
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulerar! Du har slutfört alla nivåer i Atomix."
 
-#: ../src/theme-manager.c:224
+#: ../src/theme-manager.c:225
 msgid "No themes found."
 msgstr "Inga teman hittades."
 
-#: ../src/theme-manager.c:282
+#: ../src/theme-manager.c:283
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Hittade temat ”%s” i: %s"
