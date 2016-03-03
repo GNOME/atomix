@@ -1,12 +1,9 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-SUBDIRS = level themes ui
+SUBDIRS = level themes ui icons
 
 logodir = $(pkgdatadir)
 logo_DATA = atomix-logo.png
-
-icondir = $(datadir)/icons/hicolor/512x512/apps
-icon_DATA = atomix.png
 
 @INTLTOOL_DESKTOP_RULE@
 
@@ -24,8 +21,7 @@ app_DATA = $(app_in_files:.desktop.in=.desktop)
 EXTRA_DIST = \
     $(appstream_in_files) \
 	$(app_in_files) \
-	$(logo_DATA) \
-	$(icon_DATA)
+	$(logo_DATA)
 
 CLEANFILES = \
 	$(appstream_XML) \

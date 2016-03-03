@@ -48,6 +48,8 @@ Makefile
 po/Makefile.in
 src/Makefile
 data/Makefile
+data/icons/Makefile
+data/icons/hicolor/Makefile
 data/themes/Makefile
 data/themes/default/Makefile
 data/level/Makefile
