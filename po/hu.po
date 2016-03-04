@@ -6,13 +6,14 @@
 # Laszlo Dvornik <dvornikl at mailbox dot hu>, 2004.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2006, 2007. 2010.
 # Balázs Úr <urbalazs at gmail dot com>, 2015.
+# Balázs Úr <urbalazs@gmail.com>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-18 17:28+0000\n"
-"PO-Revision-Date: 2015-03-01 16:40+0100\n"
+"POT-Creation-Date: 2015-12-26 18:13+0000\n"
+"PO-Revision-Date: 2016-03-04 22:01+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at gmail dot com>\n"
 "Language: \n"
@@ -23,7 +24,7 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:686
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -39,9 +40,9 @@ msgid ""
 "wall or another atom."
 msgstr ""
 "Az Atomix egy kirakós játék, amelynek célja molekulák összerakása az "
-"összetevő atomokból a játékmezőn történő mozgatásukkal. Azonban az atomok nem "
-"csak arra mozognak, amerre mozgatni szeretné azokat, hanem addig csúsznak, "
-"amíg el nem érnek egy falat vagy egy másik atomot."
+"összetevő atomokból a játékmezőn történő mozgatásukkal. Azonban az atomok "
+"nem csak arra mozognak, amerre mozgatni szeretné azokat, hanem addig "
+"csúsznak, amíg el nem érnek egy falat vagy egy másik atomot."
 
 #: ../data/atomix.appdata.xml.in.h:4
 msgid ""
@@ -54,6 +55,10 @@ msgstr ""
 #: ../data/atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Molekulakirakós játék"
+
+#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+msgid "A puzzle game about atoms and molecules"
+msgstr "Egy kirakós játék az atomokról és molekulákról"
 
 #: ../data/level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
@@ -136,22 +141,18 @@ msgid "_File"
 msgstr "_Fájl"
 
 #: ../data/ui/interface.ui.h:3
-#| msgid "New Game"
 msgid "_New Game"
 msgstr "Ú_j játék"
 
 #: ../data/ui/interface.ui.h:4
-#| msgid "End Game"
 msgid "_End Game"
 msgstr "Játék _befejezése"
 
 #: ../data/ui/interface.ui.h:5
-#| msgid "Skip Level"
 msgid "_Skip Level"
 msgstr "Szint _kihagyása"
 
 #: ../data/ui/interface.ui.h:6
-#| msgid "Reset Level"
 msgid "_Reset Level"
 msgstr "Szint vissz_aállítása"
 
@@ -176,7 +177,6 @@ msgid "_Help"
 msgstr "_Súgó"
 
 #: ../data/ui/interface.ui.h:12
-#| msgid "About"
 msgid "_About"
 msgstr "_Névjegy"
 
@@ -208,24 +208,76 @@ msgstr "üres"
 msgid "Statistics"
 msgstr "Statisztika"
 
-#: ../src/level-manager.c:207
+#: ../data/ui/interface.ui.h:20
+#| msgid "_New Game"
+msgid "New Game"
+msgstr "Új játék"
+
+#: ../data/ui/interface.ui.h:21
+#| msgid "_End Game"
+msgid "End Game"
+msgstr "Játék befejezése"
+
+#: ../data/ui/interface.ui.h:22
+#| msgid "_Skip Level"
+msgid "Skip Level"
+msgstr "Szint kihagyása"
+
+#: ../data/ui/interface.ui.h:23
+#| msgid "_Reset Level"
+msgid "Reset Level"
+msgstr "Szint visszaállítása"
+
+#: ../data/ui/interface.ui.h:24
+#| msgid "_Undo Move"
+msgid "Undo Move"
+msgstr "Mozgatás visszavonása"
+
+#: ../data/ui/interface.ui.h:25
+#| msgid "_Pause Game"
+msgid "Pause Game"
+msgstr "Játék szüneteltetése"
+
+#: ../data/ui/interface.ui.h:26
+#| msgid "_Continue Game"
+msgid "Continue Game"
+msgstr "Játék folytatása"
+
+#: ../data/ui/interface.ui.h:27
+#| msgid "_About"
+msgid "About"
+msgstr "Névjegy"
+
+#: ../data/ui/interface.ui.h:28
+#| msgid "_Quit"
+msgid "Quit"
+msgstr "Kilépés"
+
+#: ../src/board-gtk.c:338
+msgid ""
+"Guide the atoms through the maze to form molecules.\n"
+"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+"Be careful, though: an atom keeps moving until it hits a wall.\n"
+msgstr ""
+"Vezesd át az atomokat a labirintuson molekulák kialakításához.\n"
+"Egy atom kiválasztásához és mozgatásához kattints, vagy használd a nyíl és az "
+"Enter billentyűket.\n"
+"Légy óvatos, ugyanis egy atom addig mozog, amíg falnak nem ütközik.\n"
+
+#: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
 msgstr "Nem található a szintsorozat leírása."
 
-#: ../src/level-manager.c:221
+#: ../src/level-manager.c:214
 msgid "No level found."
 msgstr "Nincsenek szintek."
 
-#: ../src/level-manager.c:317
+#: ../src/level-manager.c:283
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "\"%s\" szint megtalálható ebben: %s"
 
-#: ../src/main.c:132
-msgid "A puzzle game about atoms and molecules"
-msgstr "Egy kirakós játék az atomokról és molekulákról"
-
-#: ../src/main.c:136
+#: ../src/main.c:135
 msgid "translator-credits"
 msgstr ""
 "Dvornik László <dvornik@gnome.hu>\n"
@@ -233,15 +285,15 @@ msgstr ""
 "Nyitrai István <sianis@gmail.com>\n"
 "Tímár András <timar@gnome.hu>"
 
-#: ../src/main.c:446
+#: ../src/main.c:438
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulálunk! Túljutott az összes Atomix-szinten."
 
-#: ../src/theme-manager.c:224
+#: ../src/theme-manager.c:225
 msgid "No themes found."
 msgstr "Nincs téma."
 
-#: ../src/theme-manager.c:282
+#: ../src/theme-manager.c:283
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "\"%s\" téma megtalálható ebben: %s"
