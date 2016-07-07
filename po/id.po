@@ -6,249 +6,277 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=atomix&component=general\n"
-"POT-Creation-Date: 2010-12-13 20:12+0000\n"
-"PO-Revision-Date: 2011-01-21 10:37+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=atomix&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-05-19 14:59+0000\n"
+"PO-Revision-Date: 2016-07-07 14:16+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Indonesian\n"
-"X-Poedit-Country: Indonesia\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.8.8\n"
 
-#: ../level/aceticacid.atomix.xml.h:1
+#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
+msgid "Atomix"
+msgstr "Atomix"
+
+#: ../data/atomix.appdata.xml.in.h:2
+msgid "Build molecules out of single atoms"
+msgstr "Bangun molekul dari atom-atom tunggal"
+
+#: ../data/atomix.appdata.xml.in.h:3
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don't just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+"Atomix adalah permainan teka-teki dimana sasaran Anda adalah merakit molekul "
+"dari atom kompon dengen memindah mereka pada bidang permainan. Namun atom-"
+"atom tidak sekedar bergerak ke manapun Anda mau memindah mereka, mereka "
+"meluncur sampai menabrak tembok atau atom lain."
+
+#: ../data/atomix.appdata.xml.in.h:4
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
+"Cobalah membangun molekul secepat mungkin pada setiap tingkat untuk "
+"mendapatkan skor lebih tinggi."
+
+#: ../data/atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Permainan teka-teki molekul"
+
+#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+msgid "A puzzle game about atoms and molecules"
+msgstr "Teka-teki tentang atom dan molekul"
+
+#: ../data/level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
 msgstr "Asam Asetat"
 
-#: ../level/acetone.atomix.xml.h:1
+#: ../data/level/acetone.atomix.xml.h:1
 msgid "Acetone"
 msgstr "Aseton"
 
-#: ../level/butanol.atomix.xml.h:1
+#: ../data/level/butanol.atomix.xml.h:1
 msgid "Butanol"
 msgstr "Butanol"
 
-#: ../level/cyclobutane.atomix.xml.h:1
+#: ../data/level/cyclobutane.atomix.xml.h:1
 msgid "Cyclobutane"
 msgstr "Siklobutana"
 
-#: ../level/dimethylether.atomix.xml.h:1
+#: ../data/level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
 msgstr "Dimetil Eter"
 
-#: ../level/ethanal.atomix.xml.h:1
+#: ../data/level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
 msgstr "Etanal"
 
-#: ../level/ethane.atomix.xml.h:1
+#: ../data/level/ethane.atomix.xml.h:1
 msgid "Ethane"
 msgstr "Etana"
 
-#: ../level/ethanol.atomix.xml.h:1
+#: ../data/level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
 msgstr "Etanol"
 
-#: ../level/ethylene.atomix.xml.h:1
+#: ../data/level/ethylene.atomix.xml.h:1
 msgid "Ethylene"
 msgstr "Etilen"
 
-#: ../level/glycerin.atomix.xml.h:1
+#: ../data/level/glycerin.atomix.xml.h:1
 msgid "Glycerin"
 msgstr "Gliserin"
 
-#: ../level/lactic-acid.atomix.xml.h:1
+#: ../data/level/lactic-acid.atomix.xml.h:1
 msgid "Lactic Acid"
 msgstr "Asam Laktat"
 
-#: ../level/methanal.atomix.xml.h:1
+#: ../data/level/methanal.atomix.xml.h:1
 msgid "Methanal"
 msgstr "Metanal"
 
-#: ../level/methane.atomix.xml.h:1
+#: ../data/level/methane.atomix.xml.h:1
 msgid "Methane"
 msgstr "Metana"
 
-#: ../level/methanol.atomix.xml.h:1
+#: ../data/level/methanol.atomix.xml.h:1
 msgid "Methanol"
 msgstr "Metanol"
 
-#: ../level/propanal.atomix.xml.h:1
+#: ../data/level/propanal.atomix.xml.h:1
 msgid "Propanal"
 msgstr "Propanal"
 
-#: ../level/propylene.atomix.xml.h:1
+#: ../data/level/propylene.atomix.xml.h:1
 msgid "Propylene"
 msgstr "Propilen"
 
-#: ../level/pyran.atomix.xml.h:1
+#: ../data/level/pyran.atomix.xml.h:1
 msgid "Pyran"
 msgstr "Pyran"
 
-#: ../level/transbutylen.atomix.xml.h:1
+#: ../data/level/transbutylen.atomix.xml.h:1
 msgid "Trans Butylen"
 msgstr "Trans Butilen"
 
-#: ../level/water.atomix.xml.h:1
+#: ../data/level/water.atomix.xml.h:1
 msgid "Water"
 msgstr "Air"
 
-#: ../src/games-runtime.c:273
-msgid "Could not show link"
-msgstr "Tak bisa menampilkan taut"
+#: ../data/ui/interface.ui.h:2
+msgid "_File"
+msgstr "_Berkas"
 
-#: ../src/games-scores-dialog.c:113
-#| msgid "Time:"
-msgid "Time"
-msgstr "Waktu"
+#: ../data/ui/interface.ui.h:3
+msgid "_New Game"
+msgstr "Permai_nan Baru"
 
-#. Note that this assumes the default style is plain.
-#: ../src/games-scores-dialog.c:118
-#: ../src/games-scores-dialog.c:545
-#| msgid "Score:"
-msgid "Score"
-msgstr "Nilai"
+#: ../data/ui/interface.ui.h:4
+msgid "_End Game"
+msgstr "Akhiri P_ermainan"
 
-#. Translators: this is for a minutes, seconds time display.
-#: ../src/games-scores-dialog.c:276
-#, c-format
-msgid "%dm %ds"
-msgstr "%dm %dd"
+#: ../data/ui/interface.ui.h:5
+msgid "_Skip Level"
+msgstr "_Lewati Tingkat"
 
-#: ../src/games-scores-dialog.c:437
-#: ../src/main.c:736
-#| msgid "_New Game"
+#: ../data/ui/interface.ui.h:6
+msgid "_Reset Level"
+msgstr "_Reset Tingkat"
+
+#: ../data/ui/interface.ui.h:7
+msgid "_Undo Move"
+msgstr "_Tak Jadi Memindahkan"
+
+#: ../data/ui/interface.ui.h:8
+msgid "_Pause Game"
+msgstr "_Jeda Permainan"
+
+#: ../data/ui/interface.ui.h:9
+msgid "_Continue Game"
+msgstr "_Lanjutkan Permainan"
+
+#: ../data/ui/interface.ui.h:10
+msgid "_Quit"
+msgstr "_Keluar"
+
+#: ../data/ui/interface.ui.h:11
+msgid "_Help"
+msgstr "_Bantuan"
+
+#: ../data/ui/interface.ui.h:12
+msgid "_About"
+msgstr "Ihw_al"
+
+#: ../data/ui/interface.ui.h:13
+msgid "Level:"
+msgstr "Tingkat:"
+
+#: ../data/ui/interface.ui.h:14
+msgid "Molecule:"
+msgstr "Molekul:"
+
+#: ../data/ui/interface.ui.h:15
+msgid "Formula:"
+msgstr "Rumus:"
+
+#: ../data/ui/interface.ui.h:16
+msgid "Score:"
+msgstr "Nilai:"
+
+#: ../data/ui/interface.ui.h:17
+msgid "Time:"
+msgstr "Waktu:"
+
+#: ../data/ui/interface.ui.h:18
+msgid "empty"
+msgstr "kosong"
+
+#: ../data/ui/interface.ui.h:19
+msgid "Statistics"
+msgstr "Statistik"
+
+#: ../data/ui/interface.ui.h:20
 msgid "New Game"
 msgstr "Permainan Baru"
 
-#: ../src/games-scores-dialog.c:537
-#| msgid "_Game"
-msgid "Name"
-msgstr "Nama"
+#: ../data/ui/interface.ui.h:21
+msgid "End Game"
+msgstr "Akhiri Permainan"
 
-#. Empty title shows up as "<unnamed>" on maemo
-#: ../src/games-show.c:151
-msgid "Error"
-msgstr "Galat"
+#: ../data/ui/interface.ui.h:22
+msgid "Skip Level"
+msgstr "Lewati Tingkat"
 
-#: ../src/level-manager.c:176
+#: ../data/ui/interface.ui.h:23
+msgid "Reset Level"
+msgstr "Tata Ulang Tingkat"
+
+#: ../data/ui/interface.ui.h:24
+msgid "Undo Move"
+msgstr "Batalkan Langkah"
+
+#: ../data/ui/interface.ui.h:25
+msgid "Pause Game"
+msgstr "Jeda Bermain"
+
+#: ../data/ui/interface.ui.h:26
+msgid "Continue Game"
+msgstr "Lanjutkan Bermain"
+
+#: ../data/ui/interface.ui.h:27
+msgid "About"
+msgstr "Tentang"
+
+#: ../data/ui/interface.ui.h:28
+msgid "Quit"
+msgstr "Keluar"
+
+#: ../src/board-gtk.c:338
+msgid ""
+"Guide the atoms through the maze to form molecules.\n"
+"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+"Be careful, though: an atom keeps moving until it hits a wall.\n"
+msgstr ""
+"Pandu atom-atom melalui labirin untuk membentuk molekul.\n"
+"Klik atau gunakan tombol panah dan Enter untuk memilih sebuah atom dan "
+"menggerakkannya.\n"
+"Berhati-hatilah, sebuah atom terus bergerak sampai menabrak tembok.\n"
+
+#: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
 msgstr "Tak temukan keterangan urutan tingkat."
 
-#: ../src/level-manager.c:190
+#: ../src/level-manager.c:214
 msgid "No level found."
 msgstr "Tingkat tak ditemukan."
 
-#: ../src/level-manager.c:286
+#: ../src/level-manager.c:283
 #, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Menemukan tingkat '%s' dalam: %s"
 
-#: ../src/main.c:121
-#: ../src/main.c:775
-#: ../src/main.c:832
-#: ../atomix.desktop.in.h:1
-msgid "Atomix"
-msgstr "Atomix"
-
-#: ../src/main.c:166
-msgid "A puzzle game about atoms and molecules"
-msgstr "Teka-teki tentang atom dan molekul"
-
-#: ../src/main.c:170
+#: ../src/main.c:135
 msgid "translator-credits"
-msgstr "Andika Triwidada <andika@gmail.com>, 2009, 2011"
+msgstr "Andika Triwidada <andika@gmail.com>, 2009, 2011, 2016"
 
-#: ../src/main.c:493
+#: ../src/main.c:438
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Selamat! Anda telah menyelesaikan semua tingkat Atomix."
 
-#: ../src/main.c:503
-msgid "Couldn't find at least one level."
-msgstr "Tak temukan paling tidak satu tingkat."
-
-#: ../src/main.c:508
-msgid "Do you want to finish the game?"
-msgstr "Anda ingin mengakhiri permainan?"
-
-#. create statistics frame
-#: ../src/main.c:701
-msgid "Statistics"
-msgstr "Statistik"
-
-#: ../src/main.c:707
-msgid "Level:"
-msgstr "Tingkat:"
-
-#: ../src/main.c:708
-msgid "Molecule:"
-msgstr "Molekul:"
-
-#: ../src/main.c:709
-msgid "Formula:"
-msgstr "Rumus:"
-
-#: ../src/main.c:710
-msgid "Score:"
-msgstr "Nilai:"
-
-#: ../src/main.c:711
-msgid "Time:"
-msgstr "Waktu:"
-
-#: ../src/main.c:734
-msgid "_Game"
-msgstr "_Permainan"
-
-#: ../src/main.c:735
-msgid "_Help"
-msgstr "_Bantuan"
-
-#: ../src/main.c:737
-#| msgid "_End Game"
-msgid "End Game"
-msgstr "Akhiri Permainan"
-
-#: ../src/main.c:738
-#| msgid "Skip _level"
-msgid "Skip Level"
-msgstr "Lewati Tingkat"
-
-#: ../src/main.c:739
-#| msgid "Reset level"
-msgid "Reset Level"
-msgstr "Tata Ulang Tingkat"
-
-#: ../src/main.c:741
-#| msgid "_Pause game"
-msgid "_Pause Game"
-msgstr "_Jeda Permainan"
-
-#: ../src/main.c:742
-#| msgid "_Continue game"
-msgid "_Continue Game"
-msgstr "_Lanjutkan Permainan"
-
-#: ../src/main.c:743
-#| msgid "_Scores ..."
-msgid "_Scores..."
-msgstr "_Nilai..."
-
-#: ../src/main.c:745
-msgid "About"
-msgstr "Tentang"
-
-#: ../src/theme-manager.c:136
+#: ../src/theme-manager.c:225
 msgid "No themes found."
 msgstr "Tak temukan tema."
 
-#: ../src/theme-manager.c:194
+#: ../src/theme-manager.c:283
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Menemukan tema '%s' dalam: %s"
-
-#: ../atomix.desktop.in.h:2
-msgid "Molecule puzzle game"
-msgstr "Permainan teka-teki molekul"
-
