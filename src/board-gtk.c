@@ -325,7 +325,7 @@ static void create_logo (void)
   theme_get_tile_size (board_theme, &tile_width, &tile_height);
   pixbuf = gdk_pixbuf_new_from_file (DATADIR "/atomix/atomix-logo.png", NULL);
 
-  level_items->logo = gtk_box_new (GTK_ORIENTATION_VERTICAL, 15);
+  level_items->logo = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 
   context = gtk_widget_get_style_context (level_items->logo);
   provider = gtk_css_provider_new ();
@@ -335,9 +335,9 @@ static void create_logo (void)
   gtk_widget_set_valign (logo_image, GTK_ALIGN_END);
   gtk_box_pack_start (GTK_BOX (level_items->logo), logo_image, TRUE, TRUE, 12);
 
-  tips_label = gtk_label_new (_("Guide the atoms through the maze to form molecules.\n"
-                                "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-                                "Be careful, though: an atom keeps moving until it hits a wall.\n"));
+  tips_label = gtk_label_new (_("Guide the atoms through the maze to form molecules."
+                                "Click, or use the arrow keys and Enter, to select an atom and move it."
+                                "Be careful, though: an atom keeps moving until it hits a wall."));
   gtk_box_pack_start (GTK_BOX (level_items->logo), tips_label, TRUE, TRUE, 12);
   gtk_widget_set_valign (tips_label, GTK_ALIGN_START);
   gtk_widget_show_all (level_items->logo);
