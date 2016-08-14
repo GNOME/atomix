@@ -3,21 +3,24 @@
 # This file is distributed under the same license as the atomix package.
 # Žygimantas Beručka <zygis@gnome.org>, 2005.
 # Mantas Kriaučiūnas <mantas@akl.lt>, 2015.
+# Aurimas Černius <aurisc4@gmail.com>, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-01-07 22:07+0000\n"
-"PO-Revision-Date: 2016-01-08 02:33+0200\n"
-"Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
-"Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"POT-Creation-Date: 2016-08-13 10:04+0000\n"
+"PO-Revision-Date: 2016-08-14 21:36+0300\n"
+"Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
+"Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
 #: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
@@ -240,15 +243,19 @@ msgid "Quit"
 msgstr "Išeiti"
 
 #: ../src/board-gtk.c:338
+#| msgid ""
+#| "Guide the atoms through the maze to form molecules.\n"
+#| "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+#| "Be careful, though: an atom keeps moving until it hits a wall.\n"
 msgid ""
-"Guide the atoms through the maze to form molecules.\n"
-"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-"Be careful, though: an atom keeps moving until it hits a wall.\n"
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
 msgstr ""
-"Lydėkite atomus per labirintą, kad suformuotumėte molekules.\n"
-"Spustelėkite arba naudokite krypties klavišus ir Įvedimo klavišą, kad "
-"pasirinktumėte atomą ir jį perkeltumėte.\n"
-"Tačiau būkite atsargūs: atomas juda tol, kol neatsiremia į sieną.\n"
+"Lydėkite atomus per labirintą, kad suformuotumėte molekules. Spustelėkite "
+"arba naudokite krypties klavišus ir įvedimo klavišą, kad pasirinktumėte "
+"atomą ir jį perkeltumėte. Tačiau būkite atsargūs: atomas juda tol, kol "
+"neatsiremia į sieną."
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
