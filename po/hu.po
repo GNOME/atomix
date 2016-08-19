@@ -1,19 +1,18 @@
-# Hungarian translation of atomix.
-# Copyright (C) 2002-2004, 2006, 2007, 2010 Free Software Foundation, Inc.
+# Hungarian translation for atomix.
+# Copyright (C) 2002-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the atomix package.
 #
 # Andras Timar <timar at gnome dot hu>, 2002.
 # Laszlo Dvornik <dvornikl at mailbox dot hu>, 2004.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2006, 2007. 2010.
-# Balázs Úr <urbalazs at gmail dot com>, 2015.
-# Balázs Úr <urbalazs@gmail.com>, 2016.
+# Balázs Úr <urbalazs at gmail dot com>, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-26 18:13+0000\n"
-"PO-Revision-Date: 2016-03-04 22:01+0100\n"
+"POT-Creation-Date: 2016-08-13 10:04+0000\n"
+"PO-Revision-Date: 2016-08-19 20:48+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <openscope at gmail dot com>\n"
 "Language: hu\n"
@@ -209,60 +208,55 @@ msgid "Statistics"
 msgstr "Statisztika"
 
 #: ../data/ui/interface.ui.h:20
-#| msgid "_New Game"
 msgid "New Game"
 msgstr "Új játék"
 
 #: ../data/ui/interface.ui.h:21
-#| msgid "_End Game"
 msgid "End Game"
 msgstr "Játék befejezése"
 
 #: ../data/ui/interface.ui.h:22
-#| msgid "_Skip Level"
 msgid "Skip Level"
 msgstr "Szint kihagyása"
 
 #: ../data/ui/interface.ui.h:23
-#| msgid "_Reset Level"
 msgid "Reset Level"
 msgstr "Szint visszaállítása"
 
 #: ../data/ui/interface.ui.h:24
-#| msgid "_Undo Move"
 msgid "Undo Move"
 msgstr "Mozgatás visszavonása"
 
 #: ../data/ui/interface.ui.h:25
-#| msgid "_Pause Game"
 msgid "Pause Game"
 msgstr "Játék szüneteltetése"
 
 #: ../data/ui/interface.ui.h:26
-#| msgid "_Continue Game"
 msgid "Continue Game"
 msgstr "Játék folytatása"
 
 #: ../data/ui/interface.ui.h:27
-#| msgid "_About"
 msgid "About"
 msgstr "Névjegy"
 
 #: ../data/ui/interface.ui.h:28
-#| msgid "_Quit"
 msgid "Quit"
 msgstr "Kilépés"
 
 #: ../src/board-gtk.c:338
+#| msgid ""
+#| "Guide the atoms through the maze to form molecules.\n"
+#| "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+#| "Be careful, though: an atom keeps moving until it hits a wall.\n"
 msgid ""
-"Guide the atoms through the maze to form molecules.\n"
-"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-"Be careful, though: an atom keeps moving until it hits a wall.\n"
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
 msgstr ""
-"Vezesd át az atomokat a labirintuson molekulák kialakításához.\n"
-"Egy atom kiválasztásához és mozgatásához kattints, vagy használd a nyíl és az "
-"Enter billentyűket.\n"
-"Légy óvatos, ugyanis egy atom addig mozog, amíg falnak nem ütközik.\n"
+"Vezesd át az atomokat a labirintuson molekulák kialakításához. Egy atom "
+"kiválasztásához és mozgatásához kattints, vagy használd a nyíl és "
+"az Enter billentyűket. Légy óvatos, ugyanis egy atom addig mozog, amíg falnak "
+"nem ütközik."
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
@@ -283,7 +277,8 @@ msgstr ""
 "Dvornik László <dvornik@gnome.hu>\n"
 "Kelemen Gábor <kelemeng@gnome.hu>\n"
 "Nyitrai István <sianis@gmail.com>\n"
-"Tímár András <timar@gnome.hu>"
+"Tímár András <timar@gnome.hu>\n"
+"Úr Balázs <urbalazs@gmail.com>"
 
 #: ../src/main.c:438
 msgid "Congratulations! You have finished all Atomix levels."
@@ -298,32 +293,3 @@ msgstr "Nincs téma."
 msgid "Found theme '%s' in: %s"
 msgstr "\"%s\" téma megtalálható ebben: %s"
 
-#~ msgid "Could not show link"
-#~ msgstr "Nem lehet megjeleníteni a hivatkozást"
-
-#~ msgid "Time"
-#~ msgstr "Idő"
-
-#~ msgid "Score"
-#~ msgstr "Pontszám"
-
-#~ msgid "%dm %ds"
-#~ msgstr "%dp %ds"
-
-#~ msgid "Name"
-#~ msgstr "Név"
-
-#~ msgid "Error"
-#~ msgstr "Hiba"
-
-#~ msgid "Couldn't find at least one level."
-#~ msgstr "Nincs egy szint sem."
-
-#~ msgid "Do you want to finish the game?"
-#~ msgstr "Befejezi a játékot?"
-
-#~ msgid "_Game"
-#~ msgstr "_Játék"
-
-#~ msgid "_Scores..."
-#~ msgstr "_Pontszámok…"
