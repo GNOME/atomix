@@ -254,7 +254,7 @@ msgid ""
 msgstr ""
 "Proveďte atomy bludištěm, aby vytvořily molekulu. Kliknutím, nebo šipkami a "
 "zmáčknutím Enter, vyberte atom a přesuňte jej. Buďte ale opatrní: atom se "
-"pohybuje, dokud nenarazí na zeď.\n"
+"pohybuje, dokud nenarazí na zeď."
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
