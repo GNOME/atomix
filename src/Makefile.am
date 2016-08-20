@@ -2,13 +2,19 @@
 scoredir = $(localstatedir)/games
 uidir = $(datadir)/gnome-2.0/ui
 
-INCLUDES = -I$(top_srcdir) \
-	$(ATOMIX_CFLAGS) \
-	$(WARN_CFLAGS) \
+AM_CPPFLAGS = \
+	-I$(top_srcdir) \
 	-DPKGDATADIR="\"$(pkgdatadir)\"" \
 	-DDATADIR=\""$(datadir)"\" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DSCORESDIR=\""$(scoredir)"\"
+
+AM_CFLAGS = \
+	$(ATOMIX_CFLAGS) \
+	$(WARN_CFLAGS)
+
+AM_LDFLAGS = \
+	$(WARN_LDFLAGS)
 
 bin_PROGRAMS = atomix
 

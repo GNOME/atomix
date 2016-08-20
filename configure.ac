@@ -2,6 +2,8 @@ AC_PREREQ([2.63])
 
 AC_INIT([atomix],[3.21.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=atomix])
 
+AX_IS_RELEASE([minor-version])
+
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_MACRO_DIR([m4])
@@ -14,10 +16,12 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 AC_PROG_CC
 AC_PROG_RANLIB
 
+AM_PROG_AR
+
+AX_REQUIRE_DEFINED([APPSTREAM_XML])
 APPSTREAM_XML
 
-GNOME_COMPILE_WARNINGS([maximum])
-GNOME_MAINTAINER_MODE_DEFINES
+AX_COMPILER_FLAGS
 
 dnl ================= Requirements =======================
 LIBGTK_REQUIRED=3.10.0

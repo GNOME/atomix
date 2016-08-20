@@ -5,6 +5,7 @@ aclocal.m4
 data/atomix.desktop
 data/atomix.appdata.xml
 data/atomix.appdata.valid
+ar-lib
 autom4te.cache/
 config.guess
 config.h
