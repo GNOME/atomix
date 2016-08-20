@@ -1,15 +1,15 @@
 # Serbian translation of atomix
-# Courtesy of Prevod.org team (http://www.prevod.org/) -- 2003—2015
+# Courtesy of Prevod.org team (http://www.prevod.org/) -- 2003—2016
 # This file is distributed under the same license as the atomix package.
 # Александар Урошевић <urke@gmx.net>, 2003—2006
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2015.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2011—2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=atomix&"
 "keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-26 18:13+0000\n"
-"PO-Revision-Date: 2015-12-28 11:45+0200\n"
+"POT-Creation-Date: 2016-08-13 10:04+0000\n"
+"PO-Revision-Date: 2016-08-20 22:50+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -138,27 +138,22 @@ msgid "_File"
 msgstr "_Датотека"
 
 #: ../data/ui/interface.ui.h:3
-#| msgid "New Game"
 msgid "_New Game"
 msgstr "_Нова игра"
 
 #: ../data/ui/interface.ui.h:4
-#| msgid "End Game"
 msgid "_End Game"
 msgstr "_Крај игре"
 
 #: ../data/ui/interface.ui.h:5
-#| msgid "Skip Level"
 msgid "_Skip Level"
 msgstr "Прескочи _ниво"
 
 #: ../data/ui/interface.ui.h:6
-#| msgid "Reset Level"
 msgid "_Reset Level"
 msgstr "_Поново постави ниво"
 
 #: ../data/ui/interface.ui.h:7
-#| msgid "_Undo move"
 msgid "_Undo Move"
 msgstr "_Опозови потез"
 
@@ -179,7 +174,6 @@ msgid "_Help"
 msgstr "По_моћ"
 
 #: ../data/ui/interface.ui.h:12
-#| msgid "About"
 msgid "_About"
 msgstr "_О игри"
 
@@ -228,17 +222,14 @@ msgid "Reset Level"
 msgstr "Поново постави ниво"
 
 #: ../data/ui/interface.ui.h:24
-#| msgid "_Undo move"
 msgid "Undo Move"
 msgstr "Опозови потез"
 
 #: ../data/ui/interface.ui.h:25
-#| msgid "_Pause Game"
 msgid "Pause Game"
 msgstr "Паузирај игру"
 
 #: ../data/ui/interface.ui.h:26
-#| msgid "_Continue Game"
 msgid "Continue Game"
 msgstr "Настави игру"
 
@@ -251,15 +242,19 @@ msgid "Quit"
 msgstr "Изађи"
 
 #: ../src/board-gtk.c:338
+#| msgid ""
+#| "Guide the atoms through the maze to form molecules.\n"
+#| "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+#| "Be careful, though: an atom keeps moving until it hits a wall.\n"
 msgid ""
-"Guide the atoms through the maze to form molecules.\n"
-"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-"Be careful, though: an atom keeps moving until it hits a wall.\n"
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
 msgstr ""
-"Водите атоме кроз гомилу како би створили молекуле.\n"
-"Притисните тастер миша, или користите тастере стрелица и Унеси, да изаберете "
-"атом и да га преместите.\n"
-"Будите пажљиви, јер: атом наставља да се креће све док не лупи о зид.\n"
+"Водите атоме кроз гомилу како би створили молекуле. Притисните тастер миша, "
+"или користите тастере стрелица и Унеси, да изаберете атом и да га "
+"преместите. Будите пажљиви, јер: атом наставља да се креће све док не лупи о "
+"зид."
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
