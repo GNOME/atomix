@@ -151,12 +151,12 @@ static GMarkupParser sequence_parser =
 
 static void create_level_sequence (LevelManager *lm, gchar *file)
 {
-  g_return_if_fail (IS_LEVEL_MANAGER (lm));
-
   GFile *sequence_file;
   gchar *sequence_contents;
   gsize sequence_length;
   GMarkupParseContext *parse_context;
+
+  g_return_if_fail (IS_LEVEL_MANAGER (lm));
 
   if (!g_file_test (file, G_FILE_TEST_IS_REGULAR))  {
     g_warning ("File not found: %s.", file);

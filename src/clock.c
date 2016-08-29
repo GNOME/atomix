@@ -51,8 +51,9 @@ GType clock_get_type (void)
 
 static void clock_destroy (GtkWidget *object)
 {
-  g_return_if_fail (object != NULL);
   Clock *clock = CLOCK (object);
+
+  g_return_if_fail (object != NULL);
   clock_stop (clock);
 
   GTK_WIDGET_CLASS (parent_class)->destroy (object);
@@ -98,7 +99,7 @@ static gint clock_timer_callback (gpointer data)
   return TRUE;
 }
 
-GtkWidget *clock_new ()
+GtkWidget *clock_new (void)
 {
   Clock *clock = CLOCK (g_object_new (TYPE_CLOCK, NULL));
 

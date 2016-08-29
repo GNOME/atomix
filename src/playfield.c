@@ -22,7 +22,7 @@
 #include <string.h>
 
 Tile *get_tile (PlayField *pf, gint row, gint col);
-void set_tile (PlayField *pf, gint row, gint col, Tile *tile);
+void set_tile (PlayField *pf, guint row, guint col, Tile *tile);
 
 static GObjectClass *parent_class = NULL;
 
@@ -102,7 +102,7 @@ static void playfield_init (PlayField *pf)
 
 static void playfield_finalize (GObject *object)
 {
-  gint row, col;
+  guint row, col;
   PlayField *pf = PLAYFIELD (object);
 
 #ifdef DEBUG
@@ -142,7 +142,7 @@ Tile *get_tile (PlayField *pf, gint row, gint col)
   return priv->matrix[row * priv->n_cols + col];
 }
 
-void set_tile (PlayField *pf, gint row, gint col, Tile *new_tile)
+void set_tile (PlayField *pf, guint row, guint col, Tile *new_tile)
 {
   Tile *tile;
   PlayFieldPrivate *priv;
@@ -218,8 +218,8 @@ void playfield_add_column (PlayField *pf)
 
 void playfield_set_matrix_size (PlayField *pf, guint n_rows, guint n_cols)
 {
-  gint row = 0;
-  gint col = 0;
+  guint row = 0;
+  guint col = 0;
   guint old_n_rows;
   guint old_n_cols;
   Tile **new_matrix;
@@ -264,7 +264,7 @@ void playfield_set_matrix_size (PlayField *pf, guint n_rows, guint n_cols)
 PlayField *playfield_copy (PlayField *pf)
 {
   PlayField *pf_copy = NULL;
-  gint row, col;
+  guint row, col;
   gint matrix_size;
 
   g_return_val_if_fail (IS_PLAYFIELD (pf), NULL);
@@ -289,7 +289,7 @@ void playfield_swap_tiles (PlayField *pf, guint src_row, guint src_col,
 {
   Tile *src_tile;
   Tile *dest_tile;
-  gint n_rows, n_cols;
+  guint n_rows, n_cols;
 
   g_return_if_fail (IS_PLAYFIELD (pf));
 
@@ -336,7 +336,7 @@ Tile *playfield_clear_tile (PlayField *pf, guint row, guint col)
 
 void playfield_clear (PlayField *pf)
 {
-  gint row, col;
+  guint row, col;
 
   g_return_if_fail (IS_PLAYFIELD (pf));
 
@@ -348,12 +348,12 @@ void playfield_clear (PlayField *pf)
 PlayField *playfield_strip (PlayField *pf)
 {
   PlayField *stripped_pf;
-  gint row, col;
-  gint n_rows, n_cols;
-  gint max_row = 0;
-  gint min_row = 10000;
-  gint max_col = 0;
-  gint min_col = 10000;
+  guint row, col;
+  guint n_rows, n_cols;
+  guint max_row = 0;
+  guint min_row = 10000;
+  guint max_col = 0;
+  guint min_col = 10000;
 
   g_return_val_if_fail (IS_PLAYFIELD (pf), NULL);
 
@@ -424,7 +424,7 @@ void playfield_set_tile (PlayField *pf, guint row, guint col, Tile *tile)
 void playfield_print (PlayField *pf)
 {
   PlayFieldPrivate *priv;
-  int row, col;
+  guint row, col;
   Tile *tile;
 
   g_return_if_fail (IS_PLAYFIELD (pf));
@@ -458,7 +458,7 @@ void playfield_print (PlayField *pf)
 typedef struct
 {
   GQuark id;
-  gchar *string;
+  const gchar *string;
 } TranslationItem;
 
 static TranslationItem wall_map[] =
@@ -521,15 +521,11 @@ static const offset env_offset[8] =
     {-1, -1}			/* ENV_TOP_LEFT */
   };
 
-static TileType get_env_tile_type (PlayField *pf, gint row, gint col)
+static TileType get_env_tile_type (PlayField *pf, guint row, guint col)
 {
   Tile *tile;
   TileType type = TILE_TYPE_NONE;
 
-  if (row < 0)
-    return type;
-  if (col < 0)
-    return type;
   if (row >= playfield_get_n_rows (pf))
     return type;
   if (col >= playfield_get_n_cols (pf))
@@ -591,14 +587,14 @@ PlayField *playfield_generate_environment (PlayField *pf, Theme *theme)
 {
   PlayField *env_pf;
   PlayFieldPrivate *priv;
-  gint row, col;
+  guint row, col;
   gint tile_env[8];
   Tile *env_tile;
   Tile *tile = NULL;
   gint n_decor_tiles;
   gint max_try;
-  gint min_wall[2];
-  gint max_wall[2];
+  guint min_wall[2];
+  guint max_wall[2];
 
   g_return_val_if_fail (IS_PLAYFIELD (pf), NULL);
 
@@ -720,7 +716,7 @@ PlayField *playfield_generate_shadow (PlayField *pf)
 {
   PlayField *env_pf;
   PlayFieldPrivate *priv;
-  gint row, col;
+  guint row, col;
   gint tile_env[8];
   Tile *env_tile;
   Tile *tile;

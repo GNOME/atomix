@@ -145,7 +145,7 @@ static int find_tile (gconstpointer p1, gconstpointer p2)
 Goal *goal_new (PlayField *pf)
 {
   Goal *goal;
-  gint row, col;
+  guint row, col;
   Tile *tile;
 
   goal = GOAL (g_object_new (GOAL_TYPE, NULL));
@@ -218,8 +218,8 @@ gboolean goal_reached (Goal *goal, PlayField *pf,
   TileData *td;
   TileData pattern;
   PositionOffset *po;
-  gint start_row;
-  gint start_col;
+  guint start_row;
+  guint start_col;
 
   g_return_val_if_fail (IS_GOAL (goal), FALSE);
   g_return_val_if_fail (goal->priv->index != NULL, FALSE);
@@ -245,8 +245,8 @@ gboolean goal_reached (Goal *goal, PlayField *pf,
       start_row = row_anchor - po->vert;
       start_col = col_anchor - po->horiz;
 
-      if (start_row >= 0 && start_row < playfield_get_n_rows (pf) &&
-	  start_col >= 0 && start_col < playfield_get_n_cols (pf))
+      if (start_row < playfield_get_n_rows (pf) &&
+	  start_col < playfield_get_n_cols (pf))
 	{
 	  comp_res =
 	    compare_playfield_with_goal (goal, pf, start_row, start_col);

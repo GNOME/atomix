@@ -243,7 +243,7 @@ void tile_set_tile_type (Tile *tile, TileType type)
 
 void tile_print (Tile *tile)
 {
-  gchar *type_str;
+  const gchar *type_str;
 
   g_return_if_fail (IS_TILE (tile));
 
@@ -265,6 +265,9 @@ void tile_print (Tile *tile)
       type_str = "FLOR";
       break;
 
+    case TILE_TYPE_SHADOW:
+    case TILE_TYPE_UNKNOWN:
+    case TILE_TYPE_LAST:
     default:
       type_str = "UKWN";
       break;

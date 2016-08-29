@@ -86,7 +86,7 @@ static void render_tile (Tile *tile, gint row, gint col);
 GtkWidget* create_tile (double x, double y, Tile *tile);
 void move_item (GtkWidget *item, ItemDirection direc);
 int move_item_anim (void *data);
-static GtkWidget *get_item_by_row_col (gint row, gint col);
+static GtkWidget *get_item_by_row_col (guint row, guint col);
 
 static void selector_move_to (SelectorData *data, guint row, guint col);
 static void selector_unselect (SelectorData *data);
@@ -99,7 +99,7 @@ static void selector_arrows_hide (SelectorData *data);
 
 /* Function implementations */
 
-static GtkWidget *get_item_by_row_col (gint row, gint col)
+static GtkWidget *get_item_by_row_col (guint row, guint col)
 {
   gint width, height;
   gint item_point_x, item_point_y;
@@ -167,10 +167,12 @@ void move_item (GtkWidget *item, ItemDirection direc)
       case RIGHT:
         tmp_col = tmp_col + 1;
         break;
+      default:
+	break;
     }
 
-    if (tmp_row < 0 || tmp_row >= playfield_get_n_rows (board_sce) ||
-        tmp_col < 0 || tmp_col >= playfield_get_n_cols (board_sce))
+    if (tmp_row >= playfield_get_n_rows (board_sce) ||
+        tmp_col >= playfield_get_n_cols (board_sce))
       break;
 
     tile = playfield_get_tile (board_sce, tmp_row, tmp_col);
@@ -220,7 +222,7 @@ void move_item (GtkWidget *item, ItemDirection direc)
 }
 
 int move_item_anim (void *data) {
-  AnimData *anim_data = (AnimData *) data;
+  //AnimData *anim_data = (AnimData *) data;
   gint x, y;
 
   if (anim_data->counter > 0) {
@@ -437,8 +439,8 @@ void board_gtk_init (Theme * theme, gpointer canvas)
   selector_data = selector_create ();
 }
 
-void board_gtk_render () {
-  gint row, col;
+void board_gtk_render (void) {
+  guint row, col;
   Tile *tile;
 
   g_return_if_fail (board_theme != NULL);
@@ -477,34 +479,24 @@ void board_gtk_render () {
 }
 
 static void render_tile (Tile *tile, gint row, gint col) {
-  gboolean create = FALSE;
   TileType type;
   gint x, y;
 
   type = tile_get_tile_type (tile);
   switch (type) {
     case TILE_TYPE_ATOM:
-      create = TRUE;
-      break;
-
     case TILE_TYPE_WALL:
-      create = TRUE;
-      break;
-
     case TILE_TYPE_SHADOW:
-      create = TRUE;
+      convert_to_canvas (board_theme, board_env, row, col, &x, &y);
+      create_tile (x, y, tile);
       break;
 
     case TILE_TYPE_UNKNOWN:
     case TILE_TYPE_FLOOR:
+    case TILE_TYPE_NONE:
+    case TILE_TYPE_LAST:
     default:
       break;
-  }
-
-
-  if (create) {
-    convert_to_canvas (board_theme, board_env, row, col, &x, &y);
-    create_tile (x, y, tile);
   }
 }
 
@@ -764,7 +756,7 @@ gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
                                      gpointer data)
 {
   GtkWidget *item;
-  gint new_row, new_col;
+  guint new_row, new_col;
   Tile *tile;
 
   g_return_val_if_fail (selector_data != NULL, FALSE);
@@ -805,7 +797,7 @@ gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
       selector_data->mouse_steering = FALSE;
       if (!selector_data->selected) {
         new_col--;
-        if (new_col >= 0) {
+        if (new_col < playfield_get_n_cols (board_env)) {
           selector_show (selector_data);
           selector_move_to (selector_data, new_row, new_col);
         }
@@ -833,7 +825,7 @@ gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
       selector_data->mouse_steering = FALSE;
       if (!selector_data->selected) {
         new_row--;
-        if (new_row >= 0) {
+        if (new_row < playfield_get_n_rows (board_env)) {
           selector_show (selector_data);
           selector_move_to (selector_data, new_row, new_col);
         }
@@ -906,7 +898,7 @@ static void check_for_arrow (gint r, gint c, GtkWidget *arrow) {
 
 static void selector_arrows_show (SelectorData *data)
 {
-  gint r, c;
+  guint r, c;
 
   if (board_sce == NULL)
     {
@@ -916,7 +908,7 @@ static void selector_arrows_show (SelectorData *data)
 
   r = data->row - 1;
   c = data->col;
-  if (r >= 0)
+//  if (r >= 0)
     check_for_arrow (r, c, data->arrow_top);
 
   r = data->row;
@@ -934,7 +926,7 @@ static void selector_arrows_show (SelectorData *data)
   r = data->row;
   c = data->col - 1;
 
-  if (c >= 0)
+//  if (c >= 0)
     check_for_arrow (r, c, data->arrow_left);
 
   if (data->mouse_steering)
@@ -950,9 +942,9 @@ static void selector_arrows_show (SelectorData *data)
 
 static void selector_select (SelectorData *data, GtkWidget *item)
 {
-  g_return_if_fail (data != NULL);
   gint x, y;
 
+  g_return_if_fail (data != NULL);
   gtk_container_child_get (GTK_CONTAINER(board_canvas), item, "x", &x, "y", &y, NULL);
 
   data->selected = TRUE;

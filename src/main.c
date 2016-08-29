@@ -222,6 +222,8 @@ static void controller_handle_action (GameAction action)
 	  board_gtk_undo_move ();
 	  break;
 
+	case GAME_ACTION_NEW:
+	case GAME_ACTION_CONTINUE:
 	default:
 	  break;
 	}
@@ -374,7 +376,7 @@ static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
   return FALSE;
 }
 
-static void game_init ()
+static void game_init (void)
 {
   g_return_if_fail (app != NULL);
 
@@ -488,7 +490,7 @@ static void update_statistics (void)
 
 typedef struct
 {
-  gchar *cmd;
+  const gchar *cmd;
   gboolean enabled;
 } CmdEnable;
 
@@ -583,7 +585,6 @@ void update_menu_item_state (void)
 -------------------------------------------------------------- */
 static AtomixApp *create_gui (GApplication *app_instance)
 {
-  AtomixApp *app;
   gchar *ui_path;
   GtkBuilder *builder;
   GtkWidget *stats_grid;

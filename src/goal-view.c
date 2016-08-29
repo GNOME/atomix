@@ -50,7 +50,7 @@ void goal_view_render (Goal *goal)
 static void render_view (Goal *goal)
 {
   PlayField *pf;
-  gint row, col;
+  guint row, col;
   gdouble x;
   gdouble y;
   Tile *tile;
@@ -86,6 +86,10 @@ static void render_view (Goal *goal)
 
 	    case TILE_TYPE_WALL:
 	    case TILE_TYPE_UNKNOWN:
+	    case TILE_TYPE_NONE:
+	    case TILE_TYPE_FLOOR:
+	    case TILE_TYPE_SHADOW:
+	    case TILE_TYPE_LAST:
 	    default:
 	      break;
 	    }
