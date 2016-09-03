@@ -6,22 +6,22 @@
 # Jens Finke <jens@gnome.org>, 2006.
 # Mario Blättermann <mariobl@gnome.org>, 2010.
 # Wolfgang Stöggl <c72578@yahoo.de>, 2015.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2015.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-30 03:57+0000\n"
-"PO-Revision-Date: 2015-12-30 12:42+0100\n"
+"POT-Creation-Date: 2016-08-13 10:04+0000\n"
+"PO-Revision-Date: 2016-09-03 21:58+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
 #: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
@@ -246,14 +246,14 @@ msgstr "Beenden"
 
 #: ../src/board-gtk.c:338
 msgid ""
-"Guide the atoms through the maze to form molecules.\n"
-"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-"Be careful, though: an atom keeps moving until it hits a wall.\n"
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
 msgstr ""
-"Führen Sie die Atome durch das Labyrinth, um Moleküle zu formen.\n"
-"Klicken Sie oder verwenden sie die Pfeiltasten und die Eingabetaste,\n"
-"um ein Atom auszuwählen und es zu verschieben. Seien Sie vorsichtig,\n"
-"denn Atom bewegt sich weiter, bis es eine Wand erreicht.\n"
+"Führen Sie die Atome durch das Labyrinth, um Moleküle zu formen. Klicken Sie "
+"oder verwenden Sie die Pfeiltasten und die Eingabetaste, um ein Atom "
+"auszuwählen und es zu verschieben. Seien Sie vorsichtig, denn ein Atom "
+"bewegt sich weiter, bis es eine Wand erreicht."
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
@@ -288,4 +288,3 @@ msgstr "Keine Themen gefunden."
 #, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Thema »%s« gefunden in: %s"
-
