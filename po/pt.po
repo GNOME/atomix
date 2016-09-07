@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-05-04 15:01+0000\n"
-"PO-Revision-Date: 2016-05-04 19:26+0100\n"
+"POT-Creation-Date: 2016-08-13 10:04+0000\n"
+"PO-Revision-Date: 2016-09-07 07:04+0100\n"
 "Last-Translator: Tiago Santos <tiagofsantos81@sapo.pt>\n"
 "Language-Team: Português <palbuquerque73@gmail.com>\n"
 "Language: pt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\\n;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
 #: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
@@ -206,59 +206,50 @@ msgid "Statistics"
 msgstr "Estatísticas"
 
 #: ../data/ui/interface.ui.h:20
-#| msgid "_New Game"
 msgid "New Game"
 msgstr "Novo jogo"
 
 #: ../data/ui/interface.ui.h:21
-#| msgid "_End Game"
 msgid "End Game"
 msgstr "Terminar jogo"
 
 #: ../data/ui/interface.ui.h:22
-#| msgid "_Skip Level"
 msgid "Skip Level"
 msgstr "Saltar nível"
 
 #: ../data/ui/interface.ui.h:23
-#| msgid "_Reset Level"
 msgid "Reset Level"
 msgstr "Repor nível"
 
 #: ../data/ui/interface.ui.h:24
-#| msgid "_Undo Move"
 msgid "Undo Move"
 msgstr "Desfazer jogada"
 
 #: ../data/ui/interface.ui.h:25
-#| msgid "_Pause Game"
 msgid "Pause Game"
 msgstr "Pausar jogo"
 
 #: ../data/ui/interface.ui.h:26
-#| msgid "_Continue Game"
 msgid "Continue Game"
 msgstr "Continuar jogo"
 
 #: ../data/ui/interface.ui.h:27
-#| msgid "_About"
 msgid "About"
 msgstr "Sobre"
 
 #: ../data/ui/interface.ui.h:28
-#| msgid "_Quit"
 msgid "Quit"
 msgstr "Sair"
 
 #: ../src/board-gtk.c:338
 msgid ""
-"Guide the atoms through the maze to form molecules.\n"
-"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-"Be careful, though: an atom keeps moving until it hits a wall.\n"
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
 msgstr ""
-"Guie os átomos através do labirinto para formar moléculas.\n"
-"Clique ou use as setas e Enter para selecionar um átomo e movê-lo.\n"
-"Tenha cuidado, um átomo mantén-se em movimento até bater numa parede.\n"
+"Guie os átomos através do labirinto para formar moléculas. Clique ou use as "
+"setas e Enter para selecionar um átomo e movê-lo. Mas tenha cuidado, um "
+"átomo mantém-se em movimento até bater numa parede."
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
@@ -275,8 +266,9 @@ msgstr "Encontrado o nível \"%s\" em: %s"
 
 #: ../src/main.c:135
 msgid "translator-credits"
-msgstr "Pedro Albuquerque <palbuquerque73@gmail.com>"
-"Tiago Santos <tiagofsantos81@sapo.pt>"
+msgstr ""
+"Pedro Albuquerque <palbuquerque73@gmail.com>Tiago Santos "
+"<tiagofsantos81@sapo.pt>"
 
 #: ../src/main.c:438
 msgid "Congratulations! You have finished all Atomix levels."
