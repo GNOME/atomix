@@ -5,14 +5,14 @@
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003.
 # Jorge González <jorgegonz@svn.gnome.org>, 2010.
 # 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2015., 2016.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-01-07 03:57+0000\n"
+"POT-Creation-Date: 2016-08-13 10:04+0000\n"
 "PO-Revision-Date: 2016-01-07 11:40+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
@@ -209,55 +209,51 @@ msgid "Statistics"
 msgstr "Estadísticas"
 
 #: ../data/ui/interface.ui.h:20
-#| msgid "_New Game"
 msgid "New Game"
 msgstr "Juego nuevo"
 
 #: ../data/ui/interface.ui.h:21
-#| msgid "_End Game"
 msgid "End Game"
 msgstr "Finalizar el juego"
 
 #: ../data/ui/interface.ui.h:22
-#| msgid "_Skip Level"
 msgid "Skip Level"
 msgstr "Saltar nivel"
 
 #: ../data/ui/interface.ui.h:23
-#| msgid "_Reset Level"
 msgid "Reset Level"
 msgstr "Reiniciar nivel"
 
 #: ../data/ui/interface.ui.h:24
-#| msgid "_Undo Move"
 msgid "Undo Move"
 msgstr "Deshacer movimiento"
 
 #: ../data/ui/interface.ui.h:25
-#| msgid "_Pause Game"
 msgid "Pause Game"
 msgstr "Pausar juego"
 
 #: ../data/ui/interface.ui.h:26
-#| msgid "_Continue Game"
 msgid "Continue Game"
 msgstr "Continuar juego"
 
 #: ../data/ui/interface.ui.h:27
-#| msgid "_About"
 msgid "About"
 msgstr "Acerca de"
 
 #: ../data/ui/interface.ui.h:28
-#| msgid "_Quit"
 msgid "Quit"
 msgstr "Salir"
 
 #: ../src/board-gtk.c:338
+#, fuzzy
+#| msgid ""
+#| "Guide the atoms through the maze to form molecules.\n"
+#| "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+#| "Be careful, though: an atom keeps moving until it hits a wall.\n"
 msgid ""
-"Guide the atoms through the maze to form molecules.\n"
-"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-"Be careful, though: an atom keeps moving until it hits a wall.\n"
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
 msgstr ""
 "Guíe a los átomos por el laberinto para formar moléculas.\n"
 "Pulse o use las teclas de flechas e Intro para seleccionar un átomo y "
