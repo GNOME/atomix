@@ -3,15 +3,15 @@
 # A.Burak Ilgicioglu <ilgici@turk.net>, 2001.
 # Görkem Çetin <gorkem@gelecek.com.tr>, 2002.
 # Kaan Özdinçer <kaanozdincer@gmail.com>, 2015.
-# Muhammet Kara <muhammetk@gmail.com>, 2011, 2015.
+# Muhammet Kara <muhammetk@gmail.com>, 2011, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.4.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-12-31 15:57+0000\n"
-"PO-Revision-Date: 2015-12-31 22:38+0200\n"
+"POT-Creation-Date: 2016-11-03 14:41+0000\n"
+"PO-Revision-Date: 2016-11-30 23:03+0300\n"
 "Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 # editor/interface.c:225
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:670
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -220,64 +220,59 @@ msgstr "İstatistikler"
 
 # editor/interface.c:2030
 #: ../data/ui/interface.ui.h:20
-#| msgid "_New Game"
 msgid "New Game"
 msgstr "Yeni Oyun"
 
 #: ../data/ui/interface.ui.h:21
-#| msgid "_End Game"
 msgid "End Game"
 msgstr "Oyunu Bitir"
 
 # src/interface.c:26
 #: ../data/ui/interface.ui.h:22
-#| msgid "_Skip Level"
 msgid "Skip Level"
 msgstr "Seviyeyi Atla"
 
 # editor/interface.c:68
 #: ../data/ui/interface.ui.h:23
-#| msgid "_Reset Level"
 msgid "Reset Level"
 msgstr "Seviyeyi Sıfırla"
 
 #: ../data/ui/interface.ui.h:24
-#| msgid "_Undo Move"
 msgid "Undo Move"
 msgstr "Hareketi Geri Al"
 
 # src/interface.c:35
 #: ../data/ui/interface.ui.h:25
-#| msgid "_Pause Game"
 msgid "Pause Game"
 msgstr "Oyunu Duraklat"
 
 # src/interface.c:35
 #: ../data/ui/interface.ui.h:26
-#| msgid "_Continue Game"
 msgid "Continue Game"
 msgstr "Oyuna Devam Et"
 
 #: ../data/ui/interface.ui.h:27
-#| msgid "_About"
 msgid "About"
 msgstr "Hakkında"
 
 #: ../data/ui/interface.ui.h:28
-#| msgid "_Quit"
 msgid "Quit"
 msgstr "Çıkış"
 
-#: ../src/board-gtk.c:338
+#: ../src/board-gtk.c:340
+#| msgid ""
+#| "Guide the atoms through the maze to form molecules.\n"
+#| "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
+#| "Be careful, though: an atom keeps moving until it hits a wall.\n"
 msgid ""
-"Guide the atoms through the maze to form molecules.\n"
-"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-"Be careful, though: an atom keeps moving until it hits a wall.\n"
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
 msgstr ""
-"Molekülleri oluşturmak için atomlara labirentte rehberlik edin.\n"
-"Bir atomu seçmek ve hareket ettirmek için tıklayın ya da ok tuşlarını ve "
-"Enter tuşunu kullanın.\n"
-"Ama dikkatli olun: bir atom duvara çarpana kadar hareket etmeye devam eder.\n"
+"Molekülleri oluşturmak için atomlara labirentte rehberlik edin. Bir atomu "
+"seçmek ve hareket ettirmek için tıklayın ya da ok tuşlarını ve Enter tuşunu "
+"kullanın. Ama dikkatli olun: bir atom duvara çarpana kadar hareket etmeye "
+"devam eder."
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
@@ -296,11 +291,11 @@ msgstr "%s seviyesi bulundu: %s"
 #: ../src/main.c:135
 msgid "translator-credits"
 msgstr ""
-"Muhammet Kara <muhammet.k@gmail.com>\n"
+"Muhammet Kara <muhammetk@gmail.com>\n"
 "Kaan Özdinçer <kaanozdincer@gmail.com>"
 
 # src/interface.c:616
-#: ../src/main.c:438
+#: ../src/main.c:440
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini başarıyla bitirdiniz."
 
