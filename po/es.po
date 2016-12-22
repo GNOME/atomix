@@ -4,7 +4,6 @@
 # Ãlvaro PeÃ±a <alvaropg@mac.com>, 2001.
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003.
 # Jorge González <jorgegonz@svn.gnome.org>, 2010.
-# 
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2015, 2016.
 #
 msgid ""
@@ -12,10 +11,10 @@ msgstr ""
 "Project-Id-Version: atomix.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 10:04+0000\n"
-"PO-Revision-Date: 2016-01-07 11:40+0100\n"
+"POT-Creation-Date: 2016-11-03 14:41+0000\n"
+"PO-Revision-Date: 2016-12-22 12:05+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:670
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -244,8 +243,7 @@ msgstr "Acerca de"
 msgid "Quit"
 msgstr "Salir"
 
-#: ../src/board-gtk.c:338
-#, fuzzy
+#: ../src/board-gtk.c:340
 #| msgid ""
 #| "Guide the atoms through the maze to form molecules.\n"
 #| "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
@@ -255,10 +253,9 @@ msgid ""
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
 "keeps moving until it hits a wall."
 msgstr ""
-"Guíe a los átomos por el laberinto para formar moléculas.\n"
-"Pulse o use las teclas de flechas e Intro para seleccionar un átomo y "
-"moverlo.\n"
-"Tenga cuidado: un átomo se sigue moviendo hasta que encuentra una pared.\n"
+"Guíe a los átomos por el laberinto para formar moléculas. Pulse o use las "
+"teclas de flechas e Intro para seleccionar un átomo y moverlo. Tenga "
+"cuidado: un átomo se sigue moviendo hasta que encuentra una pared."
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
@@ -280,7 +277,7 @@ msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2010\n"
 "Francisco Javier F. Serrador <serrador@cvs.gnome.org>"
 
-#: ../src/main.c:438
+#: ../src/main.c:440
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "¡Felicidades! Ha terminado todos los niveles de Atomix."
 
