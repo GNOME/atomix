@@ -1,15 +1,15 @@
 # Indonesian translation of Atomix
 # Copyright (C) 2009 Atomix' COPYRIGHT HOLDER
 # This file is distributed under the same license as the atomix package.
-# Andika Triwidada <andika@gmail.com>, 2009, 2011.
+# Andika Triwidada <andika@gmail.com>, 2009, 2011, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-05-19 14:59+0000\n"
-"PO-Revision-Date: 2016-07-07 14:16+0700\n"
+"POT-Creation-Date: 2017-02-10 10:51+0000\n"
+"PO-Revision-Date: 2017-02-18 14:49+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
 "Language: id\n"
@@ -17,10 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:670
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -240,16 +240,15 @@ msgstr "Tentang"
 msgid "Quit"
 msgstr "Keluar"
 
-#: ../src/board-gtk.c:338
+#: ../src/board-gtk.c:340
 msgid ""
-"Guide the atoms through the maze to form molecules.\n"
-"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-"Be careful, though: an atom keeps moving until it hits a wall.\n"
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
 msgstr ""
-"Pandu atom-atom melalui labirin untuk membentuk molekul.\n"
-"Klik atau gunakan tombol panah dan Enter untuk memilih sebuah atom dan "
-"menggerakkannya.\n"
-"Berhati-hatilah, sebuah atom terus bergerak sampai menabrak tembok.\n"
+"Pandu atom-atom melalui labirin untuk membentuk molekul. Klik atau gunakan "
+"tombol panah dan Enter untuk memilih sebuah atom dan menggerakkannya. Tapi "
+"hati-hatilah: sebuah atom akan terus bergerak sampai menabrak tembok."
 
 #: ../src/level-manager.c:200
 msgid "Couldn't find level sequence description."
@@ -268,7 +267,7 @@ msgstr "Menemukan tingkat '%s' dalam: %s"
 msgid "translator-credits"
 msgstr "Andika Triwidada <andika@gmail.com>, 2009, 2011, 2016"
 
-#: ../src/main.c:438
+#: ../src/main.c:440
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Selamat! Anda telah menyelesaikan semua tingkat Atomix."
 
