@@ -1,0 +1,280 @@
+# Friulian translation for atomix.
+# Copyright (C) 2017 atomix's COPYRIGHT HOLDER
+# This file is distributed under the same license as the atomix package.
+# Fabio Tomat <f.t.public@gmail.com>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix master\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=atomix&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-03-05 10:19+0000\n"
+"PO-Revision-Date: 2017-04-11 10:52+0200\n"
+"Language-Team: Friulian <fur@li.org>\n"
+"Language: fur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
+"X-Generator: Poedit 1.8.12\n"
+
+#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:670
+msgid "Atomix"
+msgstr "Atomix"
+
+#: ../data/atomix.appdata.xml.in.h:2
+msgid "Build molecules out of single atoms"
+msgstr "Costruî moleculis tacant dai singui atoms"
+
+#: ../data/atomix.appdata.xml.in.h:3
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don't just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+"Atomix al è un berdei dulà che l'obietîf al è chel di meti dongje moleculis "
+"a partî dai atoms, spostantju sore la taule di zûc. Dut câs, i atoms no si "
+"spostin dulà che tu desideris spostâju, a sgliciin fintremai che no petin "
+"intor di un mûr o un altri atom."
+
+#: ../data/atomix.appdata.xml.in.h:4
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
+"Cîr di costruî lis moleculis il plui veloç pussibil a ogni nivel par "
+"vuadagnâ un plui ponts."
+
+#: ../data/atomix.desktop.in.h:2
+msgid "Molecule puzzle game"
+msgstr "Berdei di moleculis"
+
+#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+msgid "A puzzle game about atoms and molecules"
+msgstr "Un berdei cun atoms e moleculis"
+
+#: ../data/level/aceticacid.atomix.xml.h:1
+msgid "Acetic Acid"
+msgstr "Acit acetic"
+
+#: ../data/level/acetone.atomix.xml.h:1
+msgid "Acetone"
+msgstr "Aceton"
+
+#: ../data/level/butanol.atomix.xml.h:1
+msgid "Butanol"
+msgstr "Butanôl"
+
+#: ../data/level/cyclobutane.atomix.xml.h:1
+msgid "Cyclobutane"
+msgstr "Cyclobutan"
+
+#: ../data/level/dimethylether.atomix.xml.h:1
+msgid "Dimethyl Ether"
+msgstr "Dimetil-etar"
+
+#: ../data/level/ethanal.atomix.xml.h:1
+msgid "Ethanal"
+msgstr "Acetaldeide"
+
+#: ../data/level/ethane.atomix.xml.h:1
+msgid "Ethane"
+msgstr "Etan"
+
+#: ../data/level/ethanol.atomix.xml.h:1
+msgid "Ethanol"
+msgstr "Etanôl"
+
+#: ../data/level/ethylene.atomix.xml.h:1
+msgid "Ethylene"
+msgstr "Etilen"
+
+#: ../data/level/glycerin.atomix.xml.h:1
+msgid "Glycerin"
+msgstr "Glicerine"
+
+#: ../data/level/lactic-acid.atomix.xml.h:1
+msgid "Lactic Acid"
+msgstr "Acit latic"
+
+#: ../data/level/methanal.atomix.xml.h:1
+msgid "Methanal"
+msgstr "Metanâl"
+
+#: ../data/level/methane.atomix.xml.h:1
+msgid "Methane"
+msgstr "Metan"
+
+#: ../data/level/methanol.atomix.xml.h:1
+msgid "Methanol"
+msgstr "Metanôl"
+
+#: ../data/level/propanal.atomix.xml.h:1
+msgid "Propanal"
+msgstr "Propanâl"
+
+#: ../data/level/propylene.atomix.xml.h:1
+msgid "Propylene"
+msgstr "Propilen"
+
+#: ../data/level/pyran.atomix.xml.h:1
+msgid "Pyran"
+msgstr "Piran"
+
+#: ../data/level/transbutylen.atomix.xml.h:1
+msgid "Trans Butylen"
+msgstr "Trans-butilen"
+
+#: ../data/level/water.atomix.xml.h:1
+msgid "Water"
+msgstr "Aghe"
+
+#: ../data/ui/interface.ui.h:2
+msgid "_File"
+msgstr "_File"
+
+#: ../data/ui/interface.ui.h:3
+msgid "_New Game"
+msgstr "_Gnove partide"
+
+#: ../data/ui/interface.ui.h:4
+msgid "_End Game"
+msgstr "_Finìs partide"
+
+#: ../data/ui/interface.ui.h:5
+msgid "_Skip Level"
+msgstr "_Salte nivel"
+
+#: ../data/ui/interface.ui.h:6
+msgid "_Reset Level"
+msgstr "_Azere nivel"
+
+#: ../data/ui/interface.ui.h:7
+msgid "_Undo Move"
+msgstr "_Disfe mosse"
+
+#: ../data/ui/interface.ui.h:8
+msgid "_Pause Game"
+msgstr "Partide in _pause"
+
+#: ../data/ui/interface.ui.h:9
+msgid "_Continue Game"
+msgstr "_Continue partide"
+
+#: ../data/ui/interface.ui.h:10
+msgid "_Quit"
+msgstr "_Jes"
+
+#: ../data/ui/interface.ui.h:11
+msgid "_Help"
+msgstr "_Jutori"
+
+#: ../data/ui/interface.ui.h:12
+msgid "_About"
+msgstr "_Informazions"
+
+#: ../data/ui/interface.ui.h:13
+msgid "Level:"
+msgstr "Nivel:"
+
+#: ../data/ui/interface.ui.h:14
+msgid "Molecule:"
+msgstr "Molecule:"
+
+#: ../data/ui/interface.ui.h:15
+msgid "Formula:"
+msgstr "Formule:"
+
+#: ../data/ui/interface.ui.h:16
+msgid "Score:"
+msgstr "Ponts:"
+
+#: ../data/ui/interface.ui.h:17
+msgid "Time:"
+msgstr "Timp:"
+
+#: ../data/ui/interface.ui.h:18
+msgid "empty"
+msgstr "vueit"
+
+#: ../data/ui/interface.ui.h:19
+msgid "Statistics"
+msgstr "Statistichis"
+
+#: ../data/ui/interface.ui.h:20
+msgid "New Game"
+msgstr "Gnove partide"
+
+#: ../data/ui/interface.ui.h:21
+msgid "End Game"
+msgstr "Finìs partide"
+
+#: ../data/ui/interface.ui.h:22
+msgid "Skip Level"
+msgstr "Salte nivel"
+
+#: ../data/ui/interface.ui.h:23
+msgid "Reset Level"
+msgstr "Azere nivel"
+
+#: ../data/ui/interface.ui.h:24
+msgid "Undo Move"
+msgstr "Disfe mosse"
+
+#: ../data/ui/interface.ui.h:25
+msgid "Pause Game"
+msgstr "Met in pause la partide"
+
+#: ../data/ui/interface.ui.h:26
+msgid "Continue Game"
+msgstr "Continue partide"
+
+#: ../data/ui/interface.ui.h:27
+msgid "About"
+msgstr "Informazions"
+
+#: ../data/ui/interface.ui.h:28
+msgid "Quit"
+msgstr "Jes"
+
+#: ../src/board-gtk.c:340
+msgid ""
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
+msgstr ""
+"Vuide i atoms vie pal labirint par formâ moleculis. Fâs clic o dopre i tascj "
+"des frecis e Invie, par selezionâ un atom e spostâlu. Sta atent però: un "
+"atom al continue a movisi fintremai che nol pete intor di un mûr."
+
+#: ../src/level-manager.c:200
+msgid "Couldn't find level sequence description."
+msgstr "Impussibil cjatâ la descrizion de secuence dal nivel."
+
+#: ../src/level-manager.c:214
+msgid "No level found."
+msgstr "Nissun nivel cjatât."
+
+#: ../src/level-manager.c:283
+#, c-format
+msgid "Found level '%s' in: %s"
+msgstr "Cjatât nivel '%s' in: %s"
+
+#: ../src/main.c:135
+msgid "translator-credits"
+msgstr "Fabio Tomat <f.t.public@gmail.com>"
+
+#: ../src/main.c:440
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Congratulazions! O vês finît ducj i nivei di Atomix."
+
+#: ../src/theme-manager.c:225
+msgid "No themes found."
+msgstr "Nissun teme cjatât."
+
+#: ../src/theme-manager.c:283
+#, c-format
+msgid "Found theme '%s' in: %s"
+msgstr "Cjatât teme '%s' in: %s"
