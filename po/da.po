@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
 "product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 10:04+0000\n"
+"POT-Creation-Date: 2017-04-11 08:53+0000\n"
 "PO-Revision-Date: 2016-11-03 15:35+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 
 #: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
+#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:670
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -241,7 +241,7 @@ msgstr "Om"
 msgid "Quit"
 msgstr "Afslut"
 
-#: ../src/board-gtk.c:338
+#: ../src/board-gtk.c:340
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -274,7 +274,7 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/main.c:438
+#: ../src/main.c:440
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tillykke! Du har klaret alle niveauer i Atomix."
 
@@ -315,4 +315,4 @@ msgstr "Fandt temaet '%s' i: %s"
 #~ msgstr "_Spil"
 
 #~ msgid "_Scores..."
-#~ msgstr "_Point..."
+#~ msgstr "_Point …"
