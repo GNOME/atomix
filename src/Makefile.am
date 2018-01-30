@@ -27,8 +27,7 @@ atomix_SOURCES = \
 	undo.c undo.h \
 	goal.c goal.h \
 	goal-view.c goal-view.h \
-	clock.c clock.h \
-	games-show.c games-show.h
+	clock.c clock.h
 
 atomix_DEPENDENCIES = libatomix.a
 
