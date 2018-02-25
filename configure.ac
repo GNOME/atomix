@@ -1,6 +1,6 @@
 AC_PREREQ([2.63])
 
-AC_INIT([atomix],[3.22.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=atomix])
+AC_INIT([atomix],[3.22.0],[https://gitlab.gnome.org/GNOME/atomix/issues/new?issue])
 
 AX_IS_RELEASE([minor-version])
 

@@ -14,10 +14,13 @@ FTP site:
 
 	http://ftp.gnome.org/pub/GNOME/sources/atomix/
 
-If you find any bugs or have any kind of feature requests, please, let me know
-by reporting them on the GNOME bugzilla, either by using bug-buddy or by 
-visiting http://bugzilla.gnome.org.
+If you find any bugs or have any kind of feature requests, please, let us know
+by reporting them on the GNOME gitlab, either by using bug-buddy or by 
+visiting https://gitlab.gnome.org/GNOME/atomix/issues.
 
 --
 Guilherme de S. Pastore
 gpastore@gnome.org
+
+Robert Roth
+robertroth@gnome.org

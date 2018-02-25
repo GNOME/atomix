@@ -111,9 +111,9 @@ static void verb_HelpAbout_cb (GSimpleAction *action, GVariant *variant, gpointe
 {
   const char *authors[] =
     {
-      "Robert Roth <robert.roth.off@gmail.com>",
       "Guilherme de S. Pastore <gpastore@gnome.org>",
       "Jens Finke <jens@triq.net>",
+      "Robert Roth <robert.roth.off@gmail.com>",
       NULL
     };
 
@@ -129,7 +129,7 @@ static void verb_HelpAbout_cb (GSimpleAction *action, GVariant *variant, gpointe
 					"logo-icon-name", "atomix",
   					"version", VERSION,
   					"comments", _("A puzzle game about atoms and molecules"),
-  					"website", "https://github.com/GNOME/atomix",
+					"website", "https://wiki.gnome.org/Apps/Atomix",
   					"authors", authors,
   					"artists", artists,
   					"translator_credits", _("translator-credits"),

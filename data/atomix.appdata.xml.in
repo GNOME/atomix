@@ -24,7 +24,7 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://wiki.gnome.org/Apps/Atomix</url>
-  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=atomix</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/atomix/issues/new?issue</url>
   <url type="donation">http://www.gnome.org/friends/</url>
   <update_contact>games_list_at_gnome.org</update_contact>
   <project_group>GNOME</project_group>
