@@ -41,7 +41,8 @@ dnl *******************************
 dnl Internationalization
 dnl *******************************
 
-IT_PROG_INTLTOOL([0.40.0])
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT([external])
 
 GETTEXT_PACKAGE=atomix
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"],[Gettext domain])

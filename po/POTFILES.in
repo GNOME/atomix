@@ -19,7 +19,7 @@ data/level/propylene.atomix.xml
 data/level/pyran.atomix.xml
 data/level/transbutylen.atomix.xml
 data/level/water.atomix.xml
-[type: gettext/glade]data/ui/interface.ui
+data/ui/interface.ui
 src/board-gtk.c
 src/level-manager.c
 src/main.c

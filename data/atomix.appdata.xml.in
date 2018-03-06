@@ -4,19 +4,19 @@
   <id>atomix.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
-  <_name>Atomix</_name>
-  <_summary>Build molecules out of single atoms</_summary>
+  <name>Atomix</name>
+  <summary>Build molecules out of single atoms</summary>
   <description>
-    <_p>
+    <p>
       Atomix is a puzzle game where your goal is to assemble molecules from
       compound atoms by moving them on the playfield.
       However, atoms don't just move wherever you want to move them to, they
       slide until they hit either a wall or another atom.
-    </_p>
-    <_p>
+    </p>
+    <p>
       Try to build the molecules as fast as you can on each level to earn a
       higher score.
-    </_p>
+    </p>
   </description>
   <screenshots>
     <screenshot height="557" width="686" type="default">
