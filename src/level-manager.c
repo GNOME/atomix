@@ -197,7 +197,7 @@ void level_manager_init_levels (LevelManager *lm)
 
       if (g_list_length (lm->priv->level_seq) == 0)
 	{
-	  g_warning (_("Couldn't find level sequence description."));
+	  g_warning (_("Couldn’t find level sequence description."));
 	}
     }
 
@@ -280,7 +280,7 @@ static void add_level (LevelManager *lm, gchar *levelname, gchar *filename)
 			   g_strdup (levelname), g_strdup (filename));
 
 #ifdef DEBUG
-      g_message (_("Found level '%s' in: %s"), levelname, filename);
+      g_message (_("Found level “%s” in: %s"), levelname, filename);
 #endif
     }
 }

@@ -280,7 +280,7 @@ static void add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath)
 			   g_strdup (themename), g_strdup (dirpath));
 
 #ifdef DEBUG
-      g_message (_("Found theme '%s' in: %s"), themename, dirpath);
+      g_message (_("Found theme “%s” in: %s"), themename, dirpath);
 #endif
     }
 }

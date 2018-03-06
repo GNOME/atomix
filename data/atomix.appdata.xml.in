@@ -10,7 +10,7 @@
     <p>
       Atomix is a puzzle game where your goal is to assemble molecules from
       compound atoms by moving them on the playfield.
-      However, atoms don't just move wherever you want to move them to, they
+      However, atoms don’t just move wherever you want to move them to, they
       slide until they hit either a wall or another atom.
     </p>
     <p>
