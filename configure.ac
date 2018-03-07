@@ -58,6 +58,7 @@ data/icons/hicolor/Makefile
 data/themes/Makefile
 data/themes/default/Makefile
 data/level/Makefile
+data/its/Makefile
 data/ui/Makefile
 ])
 

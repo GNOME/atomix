@@ -6,7 +6,9 @@ DOMAIN = $(PACKAGE)
 # These two variables depend on the location of this directory.
 subdir = po
 top_builddir = ..
- 
+
+XGETTEXT := env GETTEXTDATADIRS="$(top_srcdir)/data/its" $(XGETTEXT)
+
 # These options get passed to xgettext.
 XGETTEXT_OPTIONS = --from-code=UTF-8 --keyword=_ --keyword=N_ --keyword=C_:1c,2 --keyword=NC_:1c,2 --keyword=g_dngettext:2,3 --add-comments
  
