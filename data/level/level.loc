@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+See the gettext documentation for the file format:
+http://www.gnu.org/software/gettext/manual/html_node/Preparing-ITS-Rules.html
+-->
+<locatingRules>
+  <locatingRule name="AtomixLevel" pattern="*.atomix.xml">
+    <documentRule localName="level" target="level.its"/>
+  </locatingRule>
+</locatingRules>
+
