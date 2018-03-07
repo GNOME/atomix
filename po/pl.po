@@ -1,16 +1,16 @@
 # Polish translation for atomix.
-# Copyright © 2002-2016 the atomix authors.
+# Copyright © 2002-2018 the atomix authors.
 # This file is distributed under the same license as the atomix package.
 # Zbigniew Chyla <zbigniew.chyla@gmail.com>, 2002.
-# Piotr Drąg <piotrdrag@gmail.com>, 2012-2016.
-# Aviary.pl <community-poland@mozilla.org>, 2012-2016.
+# Piotr Drąg <piotrdrag@gmail.com>, 2012-2018.
+# Aviary.pl <community-poland@mozilla.org>, 2012-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-16 09:57+0200\n"
-"PO-Revision-Date: 2016-08-16 09:58+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2018-03-07 17:48+0000\n"
+"PO-Revision-Date: 2018-03-07 18:55+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -20,19 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3
+#: data/ui/interface.ui:11 src/main.c:128 src/main.c:670
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../data/atomix.appdata.xml.in.h:2
+#: data/atomix.appdata.xml.in:8
 msgid "Build molecules out of single atoms"
 msgstr "Budowanie cząsteczek z pojedynczych atomów"
 
-#: ../data/atomix.appdata.xml.in.h:3
+#: data/atomix.appdata.xml.in:10
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
-"compound atoms by moving them on the playfield. However, atoms don't just "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
@@ -40,7 +40,7 @@ msgstr ""
 "przesuwanie ich na planszy. Jednakże, atomy nie przemieszczają się w dowolny "
 "sposób, tylko ślizgają się, aż uderzą w ścianę lub inny atom."
 
-#: ../data/atomix.appdata.xml.in.h:4
+#: data/atomix.appdata.xml.in:16
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -48,199 +48,212 @@ msgstr ""
 "Należy budować cząsteczki jak najszybciej na każdym poziomie, aby uzyskać "
 "jak najwyższy wynik."
 
-#: ../data/atomix.desktop.in.h:2
+#: data/atomix.desktop.in:4
 msgid "Molecule puzzle game"
 msgstr "Gra logiczna w układanie cząsteczek"
 
-#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:131
 msgid "A puzzle game about atoms and molecules"
 msgstr "Gra logiczna o atomach i cząsteczkach"
 
-#: ../data/level/aceticacid.atomix.xml.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/atomix.desktop.in:8
+msgid "atomix"
+msgstr "atomix"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr ""
+"gra;gierka;logiczna;łamigłówka;puzzle;puzle;atomy;cząsteczki;molekuły;"
+"sokoban;"
+
+#: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
 msgstr "Kwas octowy"
 
-#: ../data/level/acetone.atomix.xml.h:1
+#: data/level/acetone.atomix.xml.in:2
 msgid "Acetone"
 msgstr "Aceton"
 
-#: ../data/level/butanol.atomix.xml.h:1
+#: data/level/butanol.atomix.xml.in:2
 msgid "Butanol"
 msgstr "Butanol"
 
-#: ../data/level/cyclobutane.atomix.xml.h:1
+#: data/level/cyclobutane.atomix.xml.in:2
 msgid "Cyclobutane"
 msgstr "Cyklobutan"
 
-#: ../data/level/dimethylether.atomix.xml.h:1
+#: data/level/dimethylether.atomix.xml.in:2
 msgid "Dimethyl Ether"
 msgstr "Eter dimetylowy"
 
-#: ../data/level/ethanal.atomix.xml.h:1
+#: data/level/ethanal.atomix.xml.in:2
 msgid "Ethanal"
 msgstr "Acetaldehyd"
 
-#: ../data/level/ethane.atomix.xml.h:1
+#: data/level/ethane.atomix.xml.in:2
 msgid "Ethane"
 msgstr "Etanal"
 
-#: ../data/level/ethanol.atomix.xml.h:1
+#: data/level/ethanol.atomix.xml.in:2
 msgid "Ethanol"
 msgstr "Etanol"
 
-#: ../data/level/ethylene.atomix.xml.h:1
+#: data/level/ethylene.atomix.xml.in:2
 msgid "Ethylene"
 msgstr "Eten"
 
-#: ../data/level/glycerin.atomix.xml.h:1
+#: data/level/glycerin.atomix.xml.in:2
 msgid "Glycerin"
 msgstr "Gliceryna"
 
-#: ../data/level/lactic-acid.atomix.xml.h:1
+#: data/level/lactic-acid.atomix.xml.in:2
 msgid "Lactic Acid"
 msgstr "Kwas mlekowy"
 
-#: ../data/level/methanal.atomix.xml.h:1
+#: data/level/methanal.atomix.xml.in:2
 msgid "Methanal"
 msgstr "Metanal"
 
-#: ../data/level/methane.atomix.xml.h:1
+#: data/level/methane.atomix.xml.in:2
 msgid "Methane"
 msgstr "Metan"
 
-#: ../data/level/methanol.atomix.xml.h:1
+#: data/level/methanol.atomix.xml.in:2
 msgid "Methanol"
 msgstr "Metanol"
 
-#: ../data/level/propanal.atomix.xml.h:1
+#: data/level/propanal.atomix.xml.in:2
 msgid "Propanal"
 msgstr "Propanal"
 
-#: ../data/level/propylene.atomix.xml.h:1
+#: data/level/propylene.atomix.xml.in:2
 msgid "Propylene"
 msgstr "Propen"
 
-#: ../data/level/pyran.atomix.xml.h:1
+#: data/level/pyran.atomix.xml.in:2
 msgid "Pyran"
 msgstr "Piran"
 
-#: ../data/level/transbutylen.atomix.xml.h:1
+#: data/level/transbutylen.atomix.xml.in:2
 msgid "Trans Butylen"
 msgstr "Trans-butylen"
 
-#: ../data/level/water.atomix.xml.h:1
+#: data/level/water.atomix.xml.in:2
 msgid "Water"
 msgstr "Woda"
 
-#: ../data/ui/interface.ui.h:2
+#: data/ui/interface.ui:25
 msgid "_File"
 msgstr "_Plik"
 
-#: ../data/ui/interface.ui.h:3
+#: data/ui/interface.ui:35
 msgid "_New Game"
 msgstr "_Nowa gra"
 
-#: ../data/ui/interface.ui.h:4
+#: data/ui/interface.ui:45
 msgid "_End Game"
 msgstr "_Zakończ grę"
 
-#: ../data/ui/interface.ui.h:5
+#: data/ui/interface.ui:60
 msgid "_Skip Level"
 msgstr "P_omiń poziom"
 
-#: ../data/ui/interface.ui.h:6
+#: data/ui/interface.ui:70
 msgid "_Reset Level"
 msgstr "P_rzywróć poziom"
 
-#: ../data/ui/interface.ui.h:7
+#: data/ui/interface.ui:79
 msgid "_Undo Move"
 msgstr "_Cofnij ruch"
 
-#: ../data/ui/interface.ui.h:8
+#: data/ui/interface.ui:89
 msgid "_Pause Game"
 msgstr "_Wstrzymaj grę"
 
-#: ../data/ui/interface.ui.h:9
+#: data/ui/interface.ui:99
 msgid "_Continue Game"
 msgstr "_Kontynuuj grę"
 
-#: ../data/ui/interface.ui.h:10
+#: data/ui/interface.ui:115
 msgid "_Quit"
 msgstr "Za_kończ"
 
-#: ../data/ui/interface.ui.h:11
+#: data/ui/interface.ui:129
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: ../data/ui/interface.ui.h:12
+#: data/ui/interface.ui:139
 msgid "_About"
-msgstr "_O grze"
+msgstr "_O grze"
 
-#: ../data/ui/interface.ui.h:13
+#: data/ui/interface.ui:219
 msgid "Level:"
 msgstr "Poziom:"
 
-#: ../data/ui/interface.ui.h:14
+#: data/ui/interface.ui:231
 msgid "Molecule:"
 msgstr "Cząsteczka:"
 
-#: ../data/ui/interface.ui.h:15
+#: data/ui/interface.ui:243
 msgid "Formula:"
 msgstr "Wyrażenie:"
 
-#: ../data/ui/interface.ui.h:16
+#: data/ui/interface.ui:255
 msgid "Score:"
 msgstr "Wynik:"
 
-#: ../data/ui/interface.ui.h:17
+#: data/ui/interface.ui:267
 msgid "Time:"
 msgstr "Czas:"
 
-#: ../data/ui/interface.ui.h:18
+#: data/ui/interface.ui:279 data/ui/interface.ui:291 data/ui/interface.ui:303
+#: data/ui/interface.ui:315
 msgid "empty"
 msgstr "puste"
 
-#: ../data/ui/interface.ui.h:19
+#: data/ui/interface.ui:333
 msgid "Statistics"
 msgstr "Statystyki"
 
-#: ../data/ui/interface.ui.h:20
+#: data/ui/interface.ui:395
 msgid "New Game"
 msgstr "Nowa gra"
 
-#: ../data/ui/interface.ui.h:21
+#: data/ui/interface.ui:400
 msgid "End Game"
 msgstr "Zakończ grę"
 
-#: ../data/ui/interface.ui.h:22
+#: data/ui/interface.ui:404
 msgid "Skip Level"
 msgstr "Pomiń poziom"
 
-#: ../data/ui/interface.ui.h:23
+#: data/ui/interface.ui:409
 msgid "Reset Level"
 msgstr "Przywróć poziom"
 
-#: ../data/ui/interface.ui.h:24
+#: data/ui/interface.ui:413
 msgid "Undo Move"
 msgstr "Cofnij ruch"
 
-#: ../data/ui/interface.ui.h:25
+#: data/ui/interface.ui:418
 msgid "Pause Game"
 msgstr "Wstrzymaj grę"
 
-#: ../data/ui/interface.ui.h:26
+#: data/ui/interface.ui:423
 msgid "Continue Game"
 msgstr "Kontynuuj grę"
 
-#: ../data/ui/interface.ui.h:27
+#: data/ui/interface.ui:430
 msgid "About"
 msgstr "O grze"
 
-#: ../data/ui/interface.ui.h:28
+#: data/ui/interface.ui:434
 msgid "Quit"
 msgstr "Zakończ"
 
-#: ../src/board-gtk.c:338
+#: src/board-gtk.c:340
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -250,35 +263,35 @@ msgstr ""
 "Kliknięcie lub klawisze strzałek i Enter zaznaczają atom i go przenoszą. "
 "Należy zachować ostrożność: atomy zatrzymują się tylko na ścianach."
 
-#: ../src/level-manager.c:200
-msgid "Couldn't find level sequence description."
+#: src/level-manager.c:200
+msgid "Couldn’t find level sequence description."
 msgstr "Nie można odnaleźć opisu sekwencji poziomu."
 
-#: ../src/level-manager.c:214
+#: src/level-manager.c:214
 msgid "No level found."
 msgstr "Nie odnaleziono poziomu."
 
-#: ../src/level-manager.c:283
+#: src/level-manager.c:283
 #, c-format
-msgid "Found level '%s' in: %s"
+msgid "Found level “%s” in: %s"
 msgstr "Odnaleziono poziom „%s” w: %s"
 
-#: ../src/main.c:135
+#: src/main.c:135
 msgid "translator-credits"
 msgstr ""
 "Zbigniew Chyla <zbigniew.chyla@gmail.com>, 2002\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2012-2016\n"
-"Aviary.pl <community-poland@mozilla.org>, 2012-2016"
+"Piotr Drąg <piotrdrag@gmail.com>, 2012-2018\n"
+"Aviary.pl <community-poland@mozilla.org>, 2012-2018"
 
-#: ../src/main.c:438
+#: src/main.c:440
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulacje! Udało się ukończyć wszystkie poziomy gry Atomix."
 
-#: ../src/theme-manager.c:225
+#: src/theme-manager.c:225
 msgid "No themes found."
 msgstr "Nie odnaleziono motywów."
 
-#: ../src/theme-manager.c:283
+#: src/theme-manager.c:283
 #, c-format
-msgid "Found theme '%s' in: %s"
+msgid "Found theme “%s” in: %s"
 msgstr "Odnaleziono motyw „%s” w: %s"
