@@ -17,7 +17,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include <glib/gi18n.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <dirent.h>
@@ -197,7 +196,7 @@ void level_manager_init_levels (LevelManager *lm)
 
       if (g_list_length (lm->priv->level_seq) == 0)
 	{
-	  g_warning (_("Couldn’t find level sequence description."));
+	  g_warning ("Couldn’t find level sequence description.");
 	}
     }
 
@@ -211,7 +210,7 @@ void level_manager_init_levels (LevelManager *lm)
   g_free (dir_path);
 
   if (g_hash_table_size (lm->priv->levels) == 0)
-    g_warning (_("No level found."));
+    g_warning ("No level found.");
 
   lm->priv->initialized = TRUE;
 }
@@ -280,7 +279,7 @@ static void add_level (LevelManager *lm, gchar *levelname, gchar *filename)
 			   g_strdup (levelname), g_strdup (filename));
 
 #ifdef DEBUG
-      g_message (_("Found level “%s” in: %s"), levelname, filename);
+      g_message ("Found level “%s” in: %s", levelname, filename);
 #endif
     }
 }

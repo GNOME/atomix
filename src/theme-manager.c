@@ -18,7 +18,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include <glib/gi18n.h>
 #include <glib.h>
 #include <stdlib.h>
 
@@ -222,7 +221,7 @@ void theme_manager_init_themes (ThemeManager *tm)
   g_free (dir_path);
 
   if (g_hash_table_size (tm->priv->themes) == 0)
-    g_warning (_("No themes found."));
+    g_warning ("No themes found.");
 
   tm->priv->initialized = TRUE;
 }
@@ -280,7 +279,7 @@ static void add_theme (ThemeManager *tm, gchar *themename, gchar *dirpath)
 			   g_strdup (themename), g_strdup (dirpath));
 
 #ifdef DEBUG
-      g_message (_("Found theme “%s” in: %s"), themename, dirpath);
+      g_message ("Found theme “%s” in: %s", themename, dirpath);
 #endif
     }
 }

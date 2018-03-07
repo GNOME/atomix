@@ -21,6 +21,4 @@ data/level/transbutylen.atomix.xml.in
 data/level/water.atomix.xml.in
 data/ui/interface.ui
 src/board-gtk.c
-src/level-manager.c
 src/main.c
-src/theme-manager.c
