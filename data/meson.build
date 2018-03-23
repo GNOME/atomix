@@ -1,8 +1,6 @@
 # Icons
 install_subdir('icons',
   install_dir: datadir,
-  exclude_files: [ 'Makefile', 'Makefile.in', 'Makefile.am', 
-                   'hicolor/Makefile', 'hicolor/Makefile.in', 'hicolor/Makefile.am', '.gitignore' ],
 )
 
 # UI files
@@ -12,14 +10,11 @@ install_data('atomix-logo.png',
 
 install_subdir('ui',
   install_dir: pkgdatadir,
-  exclude_files: [ 'Makefile', 'Makefile.in', 'Makefile.am', '.gitignore' ],
 )
 
 # Themes
 install_subdir('themes',
   install_dir: pkgdatadir,
-  exclude_files: [ 'Makefile', 'Makefile.in', 'Makefile.am', 
-                   'default/Makefile', 'default/Makefile.in', 'default/Makefile.am'],
 )
 
 # Desktop file
