@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <menu id="appmenu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">New Game</attribute>
+        <attribute name="action">win.GameNew</attribute>
+        <attribute name="accel">&lt;Primary&gt;n</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Pause/Continue Game</attribute>
+        <attribute name="action">win.GamePause</attribute>
+        <attribute name="accel">&lt;Primary&gt;p</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">End Game</attribute>
+        <attribute name="action">win.GameEnd</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Skip Level</attribute>
+        <attribute name="action">win.LevelSkip</attribute>
+        <attribute name="accel">&lt;Primary&gt;s</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Reset Level</attribute>
+        <attribute name="action">win.LevelReset</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Undo Move</attribute>
+        <attribute name="action">win.GameUndo</attribute>
+        <attribute name="accel">&lt;Primary&gt;z</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">About</attribute>
+        <attribute name="action">app.GameAbout</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Quit</attribute>
+        <attribute name="action">app.GameQuit</attribute>
+        <attribute name="accel">&lt;Primary&gt;q</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

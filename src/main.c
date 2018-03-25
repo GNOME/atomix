@@ -19,13 +19,6 @@
 
 #include "config.h"
 
-#include <sys/types.h>
-#include <dirent.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <errno.h>
-
 #include "board-gtk.h"
 #include "playfield.h"
 #include "main.h"
@@ -89,12 +82,11 @@ static void verb_GameReset_cb (GSimpleAction *action, GVariant *variant, gpointe
 
 static void verb_GamePause_cb (GSimpleAction *action, GVariant *variant, gpointer data)
 {
-  controller_handle_action (GAME_ACTION_PAUSE);
-}
-
-static void verb_GameContinue_cb (GSimpleAction *action, GVariant *variant, gpointer data)
-{
-  controller_handle_action (GAME_ACTION_CONTINUE);
+  if (app->state != GAME_STATE_PAUSED) {
+    controller_handle_action (GAME_ACTION_PAUSE);
+  } else {
+    controller_handle_action (GAME_ACTION_CONTINUE);
+  }
 }
 
 static void verb_GameUndo_cb (GSimpleAction *action, GVariant *variant, gpointer data)
@@ -126,10 +118,10 @@ static void verb_HelpAbout_cb (GSimpleAction *action, GVariant *variant, gpointe
 
   gtk_show_about_dialog(GTK_WINDOW(app->mainwin),
   					"program-name", _("Atomix"),
-					"logo-icon-name", "atomix",
+            "logo-icon-name", "atomix",
   					"version", VERSION,
   					"comments", _("A puzzle game about atoms and molecules"),
-					"website", "https://wiki.gnome.org/Apps/Atomix",
+            "website", "https://wiki.gnome.org/Apps/Atomix",
   					"authors", authors,
   					"artists", artists,
   					"translator_credits", _("translator-credits"),
@@ -155,92 +147,87 @@ static void controller_handle_action (GameAction action)
   switch (app->state)
     {
     case GAME_STATE_NOT_RUNNING:
-      if (action == GAME_ACTION_NEW)
-	{
-	  if (set_next_level ())
-	    {
-	      app->level_no = 1;
-	      app->score = 0;
-	      setup_level ();
-	      app->state = GAME_STATE_RUNNING_UNMOVED;
-	    }
-	}
+      if (action == GAME_ACTION_NEW && set_next_level ())
+	      {
+	        app->level_no = 1;
+	        app->score = 0;
+	        setup_level ();
+	        app->state = GAME_STATE_RUNNING_UNMOVED;
+	      }
       break;
 
     case GAME_STATE_RUNNING_UNMOVED:
     case GAME_STATE_RUNNING:
       switch (action)
-	{
-	case GAME_ACTION_END:
-	  level_cleanup_view ();
-	  set_game_not_running_state ();
-	  break;
-
-	case GAME_ACTION_PAUSE:
-	  clock_stop (CLOCK (app->clock));
-	  board_gtk_hide ();
-	  app->state = GAME_STATE_PAUSED;
-	  break;
-
-	case GAME_ACTION_SKIP:
-	  level_cleanup_view ();
-
-	  if (set_next_level ())
-	    setup_level ();
-
-	  else
-	    set_game_not_running_state ();
-
-	  break;
-
-	case GAME_ACTION_FINISHED:
-	  calculate_score ();
-	  if (level_manager_is_last_level (app->lm, app->level))
 	    {
-	      view_congratulations ();
-	      level_cleanup_view ();
-	      set_game_not_running_state ();
+	      case GAME_ACTION_END:
+	        level_cleanup_view ();
+	        set_game_not_running_state ();
+	        break;
+
+	      case GAME_ACTION_PAUSE:
+	        clock_stop (CLOCK (app->clock));
+	        board_gtk_hide ();
+	        app->state = GAME_STATE_PAUSED;
+	        break;
+
+	      case GAME_ACTION_SKIP:
+	        level_cleanup_view ();
+
+	        if (set_next_level ())
+	          setup_level ();
+	        else
+	          set_game_not_running_state ();
+
+	        break;
+
+	      case GAME_ACTION_FINISHED:
+	        calculate_score ();
+	        if (level_manager_is_last_level (app->lm, app->level))
+	          {
+	            view_congratulations ();
+	            level_cleanup_view ();
+	            set_game_not_running_state ();
+	          }
+	        else
+	          {
+	            level_cleanup_view ();
+	            set_next_level ();
+	            setup_level ();
+	          }
+	        break;
+
+	      case GAME_ACTION_RESTART:
+	        g_assert (app->state != GAME_STATE_RUNNING_UNMOVED);
+
+	        level_cleanup_view ();
+	        setup_level ();
+	        break;
+
+	      case GAME_ACTION_UNDO:
+	        g_assert (app->state != GAME_STATE_RUNNING_UNMOVED);
+
+	        board_gtk_undo_move ();
+	        break;
+
+	      case GAME_ACTION_NEW:
+	      case GAME_ACTION_CONTINUE:
+	      default:
+	        break;
 	    }
-	  else
-	    {
-	      level_cleanup_view ();
-	      set_next_level ();
-	      setup_level ();
-	    }
-	  break;
-
-	case GAME_ACTION_RESTART:
-	  g_assert (app->state != GAME_STATE_RUNNING_UNMOVED);
-
-	  level_cleanup_view ();
-	  setup_level ();
-	  break;
-
-	case GAME_ACTION_UNDO:
-	  g_assert (app->state != GAME_STATE_RUNNING_UNMOVED);
-
-	  board_gtk_undo_move ();
-	  break;
-
-	case GAME_ACTION_NEW:
-	case GAME_ACTION_CONTINUE:
-	default:
-	  break;
-	}
       break;
 
     case GAME_STATE_PAUSED:
       if (action == GAME_ACTION_CONTINUE)
-	{
-	  clock_resume (CLOCK(app->clock));
-	  board_gtk_show ();
-	  app->state = (undo_exists())?GAME_STATE_RUNNING:GAME_STATE_RUNNING_UNMOVED;
-	}
+	      {
+	        clock_resume (CLOCK(app->clock));
+	        board_gtk_show ();
+	        app->state = (undo_exists())?GAME_STATE_RUNNING:GAME_STATE_RUNNING_UNMOVED;
+	      }
       break;
-
     default:
       g_assert_not_reached ();
-    }
+  }
 
   update_menu_item_state ();
   update_statistics ();
@@ -342,9 +329,7 @@ static void atomix_exit (void)
   g_return_if_fail (app != NULL);
 
   if (app->state != GAME_STATE_NOT_RUNNING)
-    {
-      set_game_not_running_state ();
-    }
+    set_game_not_running_state ();
 
   board_gtk_destroy ();
 
@@ -369,9 +354,7 @@ static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
 				    gpointer user_data)
 {
   if ((app->state == GAME_STATE_RUNNING) || (app->state == GAME_STATE_RUNNING_UNMOVED))
-    {
-      return board_gtk_handle_key_event (NULL, event, NULL);
-    }
+    return board_gtk_handle_key_event (NULL, event, NULL);
 
   return FALSE;
 }
@@ -505,22 +488,20 @@ static const GActionEntry win_entries[] =
   {
     { "GameNew", verb_GameNew_cb, NULL, NULL, NULL},
     { "GameEnd", verb_GameEnd_cb, NULL, NULL, NULL},
-    { "GameSkip", verb_GameSkip_cb, NULL, NULL, NULL},
-    { "GameReset", verb_GameReset_cb, NULL, NULL, NULL},
+    { "LevelSkip", verb_GameSkip_cb, NULL, NULL, NULL},
+    { "LevelReset", verb_GameReset_cb, NULL, NULL, NULL},
     { "GameUndo", verb_GameUndo_cb, NULL, NULL, NULL},
     { "GamePause", verb_GamePause_cb, NULL, NULL, NULL},
-    { "GameContinue", verb_GameContinue_cb, NULL, NULL, NULL},
   };
 
 static const CmdEnable not_running[] =
   {
     { "GameNew",      TRUE  },
     { "GameEnd",      FALSE },
-    { "GameSkip",     FALSE },
-    { "GameReset",    FALSE },
+    { "LevelSkip",    FALSE },
+    { "LevelReset",   FALSE },
     { "GameUndo",     FALSE },
     { "GamePause",    FALSE },
-    { "GameContinue", FALSE },
     { NULL, FALSE }
   };
 
@@ -528,11 +509,10 @@ static const CmdEnable running_unmoved[] =
   {
     { "GameNew",      FALSE },
     { "GameEnd",      TRUE  },
-    { "GameSkip",     TRUE  },
-    { "GameReset",    FALSE },
+    { "LevelSkip",    TRUE  },
+    { "LevelReset",   FALSE },
     { "GameUndo",     FALSE },
     { "GamePause",    TRUE  },
-    { "GameContinue", FALSE },
     { NULL, FALSE }
 };
 
@@ -540,11 +520,10 @@ static const CmdEnable running[] =
   {
     { "GameNew",      FALSE },
     { "GameEnd",      TRUE  },
-    { "GameSkip",     TRUE  },
-    { "GameReset",    TRUE  },
+    { "LevelSkip",    TRUE  },
+    { "LevelReset",   TRUE  },
     { "GameUndo",     TRUE  },
     { "GamePause",    TRUE  },
-    { "GameContinue", FALSE },
     { NULL, FALSE }
 };
 
@@ -552,11 +531,10 @@ static const CmdEnable paused[] =
   {
     { "GameNew",      FALSE },
     { "GameEnd",      FALSE },
-    { "GameSkip",     FALSE },
-    { "GameReset",    FALSE },
+    { "LevelSkip",    FALSE },
+    { "LevelReset",   FALSE },
     { "GameUndo",     FALSE },
-    { "GamePause",    FALSE },
-    { "GameContinue", TRUE  },
+    { "GamePause",    TRUE  },
     { NULL, FALSE }
 };
 
@@ -589,6 +567,7 @@ static AtomixApp *create_gui (GApplication *app_instance)
   GtkBuilder *builder;
   GtkWidget *stats_grid;
   GtkWidget *time_label;
+  GtkWidget *headerbar;
 
   app = g_new0 (AtomixApp, 1);
   app->level = NULL;
@@ -597,6 +576,10 @@ static AtomixApp *create_gui (GApplication *app_instance)
   builder = gtk_builder_new ();
 
   ui_path = g_build_filename (PKGDATADIR, "ui", "interface.ui", NULL);
+  gtk_builder_add_from_file (builder, ui_path, NULL);
+  g_free (ui_path);
+
+  ui_path = g_build_filename (PKGDATADIR, "ui", "menu.ui", NULL);
   gtk_builder_add_from_file (builder, ui_path, NULL);
   g_free (ui_path);
 
@@ -626,13 +609,13 @@ static AtomixApp *create_gui (GApplication *app_instance)
 
   gtk_widget_show_all (GTK_WIDGET (app->mainwin));
 
+  headerbar = GTK_WIDGET (gtk_builder_get_object(builder, "headerbar"));
+  gtk_application_add_window (GTK_APPLICATION (app->app_instance), GTK_WINDOW (app->mainwin));
+  gtk_window_set_titlebar (GTK_WINDOW (app->mainwin), headerbar);
+  GMenu * menu = G_MENU (gtk_builder_get_object (builder, "appmenu"));
+  gtk_application_set_app_menu (GTK_APPLICATION (app->app_instance), G_MENU_MODEL (menu));
 
-  if (gtk_application_prefers_app_menu (GTK_APPLICATION (app_instance))) {
-    GMenu * menu = G_MENU (gtk_builder_get_object (builder, "app-menu"));
-    gtk_application_set_app_menu (GTK_APPLICATION (app->app_instance), G_MENU_MODEL (menu));
-//    GtkWidget *menubar = GTK_WIDGET (gtk_builder_get_object (builder, "menubar"));
-//    gtk_widget_set_visible (menubar, FALSE);
-  }
+
 
   g_object_unref (builder);
 
@@ -655,7 +638,6 @@ app_activate (GApplication *app_instance, gpointer user_data)
 
     //gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
     gtk_widget_show (app->mainwin);
-    gtk_application_add_window (GTK_APPLICATION (app_instance), GTK_WINDOW (app->mainwin));
   } else {
     gtk_window_present (GTK_WINDOW (app->mainwin));
   }
