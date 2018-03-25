@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-07 17:48+0000\n"
-"PO-Revision-Date: 2018-03-07 18:55+0100\n"
+"POT-Creation-Date: 2018-03-25 03:22+0000\n"
+"PO-Revision-Date: 2018-03-25 21:08+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -20,8 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3
-#: data/ui/interface.ui:11 src/main.c:128 src/main.c:670
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
+#: src/main.c:655
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Gra logiczna w układanie cząsteczek"
 
-#: data/atomix.desktop.in:5 src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:123
 msgid "A puzzle game about atoms and molecules"
 msgstr "Gra logiczna o atomach i cząsteczkach"
 
@@ -144,112 +144,64 @@ msgstr "Trans-butylen"
 msgid "Water"
 msgstr "Woda"
 
-#: data/ui/interface.ui:25
-msgid "_File"
-msgstr "_Plik"
-
-#: data/ui/interface.ui:35
-msgid "_New Game"
-msgstr "_Nowa gra"
-
-#: data/ui/interface.ui:45
-msgid "_End Game"
-msgstr "_Zakończ grę"
-
-#: data/ui/interface.ui:60
-msgid "_Skip Level"
-msgstr "P_omiń poziom"
-
-#: data/ui/interface.ui:70
-msgid "_Reset Level"
-msgstr "P_rzywróć poziom"
-
-#: data/ui/interface.ui:79
-msgid "_Undo Move"
-msgstr "_Cofnij ruch"
-
-#: data/ui/interface.ui:89
-msgid "_Pause Game"
-msgstr "_Wstrzymaj grę"
-
-#: data/ui/interface.ui:99
-msgid "_Continue Game"
-msgstr "_Kontynuuj grę"
-
-#: data/ui/interface.ui:115
-msgid "_Quit"
-msgstr "Za_kończ"
-
-#: data/ui/interface.ui:129
-msgid "_Help"
-msgstr "Pomo_c"
-
-#: data/ui/interface.ui:139
-msgid "_About"
-msgstr "_O grze"
-
-#: data/ui/interface.ui:219
+#: data/ui/interface.ui:72
 msgid "Level:"
 msgstr "Poziom:"
 
-#: data/ui/interface.ui:231
+#: data/ui/interface.ui:84
 msgid "Molecule:"
 msgstr "Cząsteczka:"
 
-#: data/ui/interface.ui:243
+#: data/ui/interface.ui:96
 msgid "Formula:"
 msgstr "Wyrażenie:"
 
-#: data/ui/interface.ui:255
+#: data/ui/interface.ui:108
 msgid "Score:"
 msgstr "Wynik:"
 
-#: data/ui/interface.ui:267
+#: data/ui/interface.ui:120
 msgid "Time:"
 msgstr "Czas:"
 
-#: data/ui/interface.ui:279 data/ui/interface.ui:291 data/ui/interface.ui:303
-#: data/ui/interface.ui:315
+#: data/ui/interface.ui:132 data/ui/interface.ui:143 data/ui/interface.ui:155
+#: data/ui/interface.ui:167
 msgid "empty"
 msgstr "puste"
 
-#: data/ui/interface.ui:333
+#: data/ui/interface.ui:186
 msgid "Statistics"
 msgstr "Statystyki"
 
-#: data/ui/interface.ui:395
+#: data/ui/menu.ui:7
 msgid "New Game"
 msgstr "Nowa gra"
 
-#: data/ui/interface.ui:400
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Wstrzymaj/kontynuuj grę"
+
+#: data/ui/menu.ui:17
 msgid "End Game"
 msgstr "Zakończ grę"
 
-#: data/ui/interface.ui:404
+#: data/ui/menu.ui:23
 msgid "Skip Level"
 msgstr "Pomiń poziom"
 
-#: data/ui/interface.ui:409
+#: data/ui/menu.ui:28
 msgid "Reset Level"
 msgstr "Przywróć poziom"
 
-#: data/ui/interface.ui:413
+#: data/ui/menu.ui:32
 msgid "Undo Move"
 msgstr "Cofnij ruch"
 
-#: data/ui/interface.ui:418
-msgid "Pause Game"
-msgstr "Wstrzymaj grę"
-
-#: data/ui/interface.ui:423
-msgid "Continue Game"
-msgstr "Kontynuuj grę"
-
-#: data/ui/interface.ui:430
+#: data/ui/menu.ui:39
 msgid "About"
 msgstr "O grze"
 
-#: data/ui/interface.ui:434
+#: data/ui/menu.ui:45
 msgid "Quit"
 msgstr "Zakończ"
 
@@ -263,35 +215,13 @@ msgstr ""
 "Kliknięcie lub klawisze strzałek i Enter zaznaczają atom i go przenoszą. "
 "Należy zachować ostrożność: atomy zatrzymują się tylko na ścianach."
 
-#: src/level-manager.c:200
-msgid "Couldn’t find level sequence description."
-msgstr "Nie można odnaleźć opisu sekwencji poziomu."
-
-#: src/level-manager.c:214
-msgid "No level found."
-msgstr "Nie odnaleziono poziomu."
-
-#: src/level-manager.c:283
-#, c-format
-msgid "Found level “%s” in: %s"
-msgstr "Odnaleziono poziom „%s” w: %s"
-
-#: src/main.c:135
+#: src/main.c:127
 msgid "translator-credits"
 msgstr ""
 "Zbigniew Chyla <zbigniew.chyla@gmail.com>, 2002\n"
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2018\n"
 "Aviary.pl <community-poland@mozilla.org>, 2012-2018"
 
-#: src/main.c:440
+#: src/main.c:423
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulacje! Udało się ukończyć wszystkie poziomy gry Atomix."
-
-#: src/theme-manager.c:225
-msgid "No themes found."
-msgstr "Nie odnaleziono motywów."
-
-#: src/theme-manager.c:283
-#, c-format
-msgid "Found theme “%s” in: %s"
-msgstr "Odnaleziono motyw „%s” w: %s"
