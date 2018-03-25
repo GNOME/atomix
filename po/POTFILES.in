@@ -20,5 +20,6 @@ data/level/pyran.atomix.xml.in
 data/level/transbutylen.atomix.xml.in
 data/level/water.atomix.xml.in
 data/ui/interface.ui
+data/ui/menu.ui
 src/board-gtk.c
 src/main.c
