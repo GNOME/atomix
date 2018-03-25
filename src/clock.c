@@ -76,6 +76,7 @@ static void clock_init (Clock *clock)
 static void clock_gen_str (Clock *clock)
 {
   gchar *timestr;
+  gchar *markup;
   gint secs = 0;
   GDateTime *dtm;
 
@@ -84,10 +85,12 @@ static void clock_gen_str (Clock *clock)
 
   dtm = g_date_time_new_from_unix_utc (secs);
   timestr = g_date_time_format (dtm, clock->fmt);
+  markup = g_strdup_printf("<tt>%s</tt>", timestr);
   g_date_time_unref (dtm);
 
-  gtk_label_set_text (GTK_LABEL (clock), timestr);
+  gtk_label_set_markup (GTK_LABEL (clock), markup);
   g_free (timestr);
+  g_free (markup);
 }
 
 static gint clock_timer_callback (gpointer data)
@@ -106,6 +109,7 @@ GtkWidget *clock_new (void)
   clock->fmt = g_strdup ("%H:%M:%S");
 
   clock_gen_str (clock);
+  gtk_label_set_xalign (GTK_LABEL (clock), 0.0);
 
   return GTK_WIDGET (clock);
 }
