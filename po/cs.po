@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-06 16:30+0000\n"
-"PO-Revision-Date: 2018-03-07 00:43+0100\n"
+"POT-Creation-Date: 2018-03-25 03:22+0000\n"
+"PO-Revision-Date: 2018-03-25 08:37+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -24,8 +24,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Gtranslator 2.91.7\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3
-#: data/ui/interface.ui:11 src/main.c:128 src/main.c:670
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
+#: src/main.c:655
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Logická hra s molekulami"
 
-#: data/atomix.desktop.in:5 src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:123
 msgid "A puzzle game about atoms and molecules"
 msgstr "Logická hra s atomy a molekulami"
 
@@ -71,112 +71,140 @@ msgstr "atomix"
 msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
 msgstr "gnome;hra;hry;logické;hlavolam;atomy;molekuly;sokoban;skladník;"
 
-#: data/ui/interface.ui:25
-msgid "_File"
-msgstr "_Soubor"
+#: data/level/aceticacid.atomix.xml.in:2
+msgid "Acetic Acid"
+msgstr "Kyselina octová"
 
-#: data/ui/interface.ui:35
-msgid "_New Game"
-msgstr "_Nová hra"
+#: data/level/acetone.atomix.xml.in:2
+msgid "Acetone"
+msgstr "Aceton"
 
-#: data/ui/interface.ui:45
-msgid "_End Game"
-msgstr "_Konec hry"
+#: data/level/butanol.atomix.xml.in:2
+msgid "Butanol"
+msgstr "Butanol"
 
-#: data/ui/interface.ui:60
-msgid "_Skip Level"
-msgstr "Pře_skočit úroveň"
+#: data/level/cyclobutane.atomix.xml.in:2
+msgid "Cyclobutane"
+msgstr "Cyklobutan"
 
-#: data/ui/interface.ui:70
-msgid "_Reset Level"
-msgstr "Ú_roveň od začátku"
+#: data/level/dimethylether.atomix.xml.in:2
+msgid "Dimethyl Ether"
+msgstr "Dimetyléter"
 
-#: data/ui/interface.ui:79
-msgid "_Undo Move"
-msgstr "Tah _zpět"
+#: data/level/ethanal.atomix.xml.in:2
+msgid "Ethanal"
+msgstr "Acetaldehyd"
 
-#: data/ui/interface.ui:89
-msgid "_Pause Game"
-msgstr "_Pozastavit hru"
+#: data/level/ethane.atomix.xml.in:2
+msgid "Ethane"
+msgstr "Etan"
 
-#: data/ui/interface.ui:99
-msgid "_Continue Game"
-msgstr "Pok_račovat ve hře"
+#: data/level/ethanol.atomix.xml.in:2
+msgid "Ethanol"
+msgstr "Etanol"
 
-#: data/ui/interface.ui:115
-msgid "_Quit"
-msgstr "U_končit"
+#: data/level/ethylene.atomix.xml.in:2
+msgid "Ethylene"
+msgstr "Etylen"
 
-#: data/ui/interface.ui:129
-msgid "_Help"
-msgstr "_Nápověda"
+#: data/level/glycerin.atomix.xml.in:2
+msgid "Glycerin"
+msgstr "Glycerin"
 
-#: data/ui/interface.ui:139
-msgid "_About"
-msgstr "O _aplikaci"
+#: data/level/lactic-acid.atomix.xml.in:2
+msgid "Lactic Acid"
+msgstr "Kyselina mléčná"
 
-#: data/ui/interface.ui:219
+#: data/level/methanal.atomix.xml.in:2
+msgid "Methanal"
+msgstr "Formaldehyd"
+
+#: data/level/methane.atomix.xml.in:2
+msgid "Methane"
+msgstr "Metan"
+
+#: data/level/methanol.atomix.xml.in:2
+msgid "Methanol"
+msgstr "Metylalkohol"
+
+#: data/level/propanal.atomix.xml.in:2
+msgid "Propanal"
+msgstr "Propanal"
+
+#: data/level/propylene.atomix.xml.in:2
+msgid "Propylene"
+msgstr "Propylen"
+
+#: data/level/pyran.atomix.xml.in:2
+msgid "Pyran"
+msgstr "Pyran"
+
+#: data/level/transbutylen.atomix.xml.in:2
+msgid "Trans Butylen"
+msgstr "Trans Butylen"
+
+#: data/level/water.atomix.xml.in:2
+msgid "Water"
+msgstr "Voda"
+
+#: data/ui/interface.ui:72
 msgid "Level:"
 msgstr "Úroveň:"
 
-#: data/ui/interface.ui:231
+#: data/ui/interface.ui:84
 msgid "Molecule:"
 msgstr "Molekula:"
 
-#: data/ui/interface.ui:243
+#: data/ui/interface.ui:96
 msgid "Formula:"
 msgstr "Vzorec:"
 
-#: data/ui/interface.ui:255
+#: data/ui/interface.ui:108
 msgid "Score:"
 msgstr "Skóre:"
 
-#: data/ui/interface.ui:267
+#: data/ui/interface.ui:120
 msgid "Time:"
 msgstr "Čas:"
 
-#: data/ui/interface.ui:279 data/ui/interface.ui:291 data/ui/interface.ui:303
-#: data/ui/interface.ui:315
+#: data/ui/interface.ui:132 data/ui/interface.ui:143 data/ui/interface.ui:155
+#: data/ui/interface.ui:167
 msgid "empty"
 msgstr "prázdné"
 
-#: data/ui/interface.ui:333
+#: data/ui/interface.ui:186
 msgid "Statistics"
 msgstr "Statistika"
 
-#: data/ui/interface.ui:395
+#: data/ui/menu.ui:7
 msgid "New Game"
 msgstr "Nová hra"
 
-#: data/ui/interface.ui:400
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Pozastavit/pokračovat ve hře"
+
+#: data/ui/menu.ui:17
 msgid "End Game"
 msgstr "Konec hry"
 
-#: data/ui/interface.ui:404
+#: data/ui/menu.ui:23
 msgid "Skip Level"
 msgstr "Přeskočit úroveň"
 
-#: data/ui/interface.ui:409
+#: data/ui/menu.ui:28
 msgid "Reset Level"
 msgstr "Úroveň od začátku"
 
-#: data/ui/interface.ui:413
+#: data/ui/menu.ui:32
 msgid "Undo Move"
 msgstr "Tah zpět"
 
-#: data/ui/interface.ui:418
-msgid "Pause Game"
-msgstr "Pozastavit hru"
-
-#: data/ui/interface.ui:423
-msgid "Continue Game"
-msgstr "Pokračovat ve hře"
-
-#: data/ui/interface.ui:430
+#: data/ui/menu.ui:39
 msgid "About"
 msgstr "O aplikaci"
 
-#: data/ui/interface.ui:434
+#: data/ui/menu.ui:45
 msgid "Quit"
 msgstr "Ukončit"
 
@@ -190,91 +218,12 @@ msgstr ""
 "zmáčknutím Enter, vyberte atom a přesuňte jej. Buďte ale opatrní: atom se "
 "pohybuje, dokud nenarazí na zeď."
 
-#: src/level-manager.c:200
-msgid "Couldn’t find level sequence description."
-msgstr "Nezdařilo se najít popis posloupnosti úrovní."
-
-#: src/level-manager.c:214
-msgid "No level found."
-msgstr "Nebyla nalezena žádná úroveň."
-
-#: src/level-manager.c:283
-#, c-format
-msgid "Found level “%s” in: %s"
-msgstr "Byla nalezena úroveň „%s“ v: %s"
-
-#: src/main.c:135
+#: src/main.c:127
 msgid "translator-credits"
 msgstr ""
 "Lukáš Novotný <lukasnov@cvs.gnome.org>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: src/main.c:440
+#: src/main.c:423
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulace! Dokončil jste všechny úrovně hry Atomix."
-
-#: src/theme-manager.c:225
-msgid "No themes found."
-msgstr "Nebyly nalezeny žádné motivy."
-
-#: src/theme-manager.c:283
-#, c-format
-msgid "Found theme “%s” in: %s"
-msgstr "Byl nalezen motiv „%s“ v: %s"
-
-#~ msgid "Acetic Acid"
-#~ msgstr "Kyselina octová"
-
-#~ msgid "Acetone"
-#~ msgstr "Aceton"
-
-#~ msgid "Butanol"
-#~ msgstr "Butanol"
-
-#~ msgid "Cyclobutane"
-#~ msgstr "Cyklobutan"
-
-#~ msgid "Dimethyl Ether"
-#~ msgstr "Dimetyléter"
-
-#~ msgid "Ethanal"
-#~ msgstr "Acetaldehyd"
-
-#~ msgid "Ethane"
-#~ msgstr "Etan"
-
-#~ msgid "Ethanol"
-#~ msgstr "Etanol"
-
-#~ msgid "Ethylene"
-#~ msgstr "Etylen"
-
-#~ msgid "Glycerin"
-#~ msgstr "Glycerin"
-
-#~ msgid "Lactic Acid"
-#~ msgstr "Kyselina mléčná"
-
-#~ msgid "Methanal"
-#~ msgstr "Formaldehyd"
-
-#~ msgid "Methane"
-#~ msgstr "Metan"
-
-#~ msgid "Methanol"
-#~ msgstr "Metylalkohol"
-
-#~ msgid "Propanal"
-#~ msgstr "Propanal"
-
-#~ msgid "Propylene"
-#~ msgstr "Propylen"
-
-#~ msgid "Pyran"
-#~ msgstr "Pyran"
-
-#~ msgid "Trans Butylen"
-#~ msgstr "Trans Butylen"
-
-#~ msgid "Water"
-#~ msgstr "Voda"
