@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-07 17:48+0000\n"
-"PO-Revision-Date: 2018-03-11 17:31+0100\n"
+"POT-Creation-Date: 2018-03-25 19:10+0000\n"
+"PO-Revision-Date: 2018-03-26 23:02+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3
-#: data/ui/interface.ui:11 src/main.c:128 src/main.c:670
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
+#: src/main.c:655
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -50,13 +50,12 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Molekylpusselspel"
 
-#: data/atomix.desktop.in:5 src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:123
 msgid "A puzzle game about atoms and molecules"
 msgstr "Ett pusselspel om atomer och molekyler"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/atomix.desktop.in:8
-#| msgid "Atomix"
 msgid "atomix"
 msgstr "atomix"
 
@@ -65,191 +64,64 @@ msgstr "atomix"
 msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
 msgstr "GNOME;spel;logik;pussel;atomer;molekyler;sokoban;"
 
-#: data/level/aceticacid.atomix.xml.in:2
-msgid "Acetic Acid"
-msgstr "Ättiksyra"
-
-#: data/level/acetone.atomix.xml.in:2
-msgid "Acetone"
-msgstr "Aceton"
-
-#: data/level/butanol.atomix.xml.in:2
-msgid "Butanol"
-msgstr "Butanol"
-
-#: data/level/cyclobutane.atomix.xml.in:2
-msgid "Cyclobutane"
-msgstr "Cyklobutan"
-
-#: data/level/dimethylether.atomix.xml.in:2
-msgid "Dimethyl Ether"
-msgstr "Dimetyleter"
-
-#: data/level/ethanal.atomix.xml.in:2
-msgid "Ethanal"
-msgstr "Etanal"
-
-#: data/level/ethane.atomix.xml.in:2
-msgid "Ethane"
-msgstr "Etan"
-
-#: data/level/ethanol.atomix.xml.in:2
-msgid "Ethanol"
-msgstr "Etanol"
-
-#: data/level/ethylene.atomix.xml.in:2
-msgid "Ethylene"
-msgstr "Eten"
-
-#: data/level/glycerin.atomix.xml.in:2
-msgid "Glycerin"
-msgstr "Glycerin"
-
-#: data/level/lactic-acid.atomix.xml.in:2
-msgid "Lactic Acid"
-msgstr "Mjölksyra"
-
-#: data/level/methanal.atomix.xml.in:2
-msgid "Methanal"
-msgstr "Metanal"
-
-#: data/level/methane.atomix.xml.in:2
-msgid "Methane"
-msgstr "Metan"
-
-#: data/level/methanol.atomix.xml.in:2
-msgid "Methanol"
-msgstr "Metanol"
-
-# Osäker.
-#: data/level/propanal.atomix.xml.in:2
-msgid "Propanal"
-msgstr "Propanal"
-
-#: data/level/propylene.atomix.xml.in:2
-msgid "Propylene"
-msgstr "Propen"
-
-# Osäker.
-#: data/level/pyran.atomix.xml.in:2
-msgid "Pyran"
-msgstr "Pyran"
-
-# Osäker.
-#: data/level/transbutylen.atomix.xml.in:2
-msgid "Trans Butylen"
-msgstr "Transbuten"
-
-#: data/level/water.atomix.xml.in:2
-msgid "Water"
-msgstr "Vatten"
-
-#: data/ui/interface.ui:25
-msgid "_File"
-msgstr "_Arkiv"
-
-#: data/ui/interface.ui:35
-msgid "_New Game"
-msgstr "_Nytt spel"
-
-#: data/ui/interface.ui:45
-msgid "_End Game"
-msgstr "Av_sluta spel"
-
-#: data/ui/interface.ui:60
-msgid "_Skip Level"
-msgstr "Hoppa över n_ivå"
-
-#: data/ui/interface.ui:70
-msgid "_Reset Level"
-msgstr "Å_terställ nivå"
-
-#: data/ui/interface.ui:79
-msgid "_Undo Move"
-msgstr "_Ångra drag"
-
-#: data/ui/interface.ui:89
-msgid "_Pause Game"
-msgstr "_Gör paus i spel"
-
-#: data/ui/interface.ui:99
-msgid "_Continue Game"
-msgstr "_Fortsätt spel"
-
-#: data/ui/interface.ui:115
-msgid "_Quit"
-msgstr "A_vsluta"
-
-#: data/ui/interface.ui:129
-msgid "_Help"
-msgstr "_Hjälp"
-
-#: data/ui/interface.ui:139
-msgid "_About"
-msgstr "_Om"
-
-#: data/ui/interface.ui:219
+#: data/ui/interface.ui:72
 msgid "Level:"
 msgstr "Nivå:"
 
-#: data/ui/interface.ui:231
+#: data/ui/interface.ui:84
 msgid "Molecule:"
 msgstr "Molekyl:"
 
-#: data/ui/interface.ui:243
+#: data/ui/interface.ui:96
 msgid "Formula:"
 msgstr "Formel:"
 
-#: data/ui/interface.ui:255
+#: data/ui/interface.ui:108
 msgid "Score:"
 msgstr "Poäng:"
 
-#: data/ui/interface.ui:267
+#: data/ui/interface.ui:120
 msgid "Time:"
 msgstr "Tid:"
 
-#: data/ui/interface.ui:279 data/ui/interface.ui:291 data/ui/interface.ui:303
-#: data/ui/interface.ui:315
+#: data/ui/interface.ui:132 data/ui/interface.ui:143 data/ui/interface.ui:155
+#: data/ui/interface.ui:167
 msgid "empty"
 msgstr "tom"
 
-#: data/ui/interface.ui:333
+#: data/ui/interface.ui:186
 msgid "Statistics"
 msgstr "Statistik"
 
-#: data/ui/interface.ui:395
+#: data/ui/menu.ui:7
 msgid "New Game"
 msgstr "Nytt spel"
 
-#: data/ui/interface.ui:400
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Pausa/Fortsätt spel"
+
+#: data/ui/menu.ui:17
 msgid "End Game"
 msgstr "Avsluta spel"
 
-#: data/ui/interface.ui:404
+#: data/ui/menu.ui:23
 msgid "Skip Level"
 msgstr "Hoppa över nivå"
 
-#: data/ui/interface.ui:409
+#: data/ui/menu.ui:28
 msgid "Reset Level"
 msgstr "Återställ nivå"
 
-#: data/ui/interface.ui:413
+#: data/ui/menu.ui:32
 msgid "Undo Move"
 msgstr "Ångra drag"
 
-#: data/ui/interface.ui:418
-msgid "Pause Game"
-msgstr "Gör paus i spel"
-
-#: data/ui/interface.ui:423
-msgid "Continue Game"
-msgstr "Fortsätt spel"
-
-#: data/ui/interface.ui:430
+#: data/ui/menu.ui:39
 msgid "About"
 msgstr "Om"
 
-#: data/ui/interface.ui:434
+#: data/ui/menu.ui:45
 msgid "Quit"
 msgstr "Avsluta"
 
@@ -263,20 +135,7 @@ msgstr ""
 "använd piltangenterna och Retur för att välja en atom och flytta den. Men "
 "var försiktig, atomer fortsätter röra sig till de träffar en vägg."
 
-#: src/level-manager.c:200
-msgid "Couldn’t find level sequence description."
-msgstr "Kunde inte hitta nivåsekvensbeskrivning."
-
-#: src/level-manager.c:214
-msgid "No level found."
-msgstr "Ingen nivå kunde hittas."
-
-#: src/level-manager.c:283
-#, c-format
-msgid "Found level “%s” in: %s"
-msgstr "Hittade nivån ”%s” i: %s"
-
-#: src/main.c:135
+#: src/main.c:127
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander\n"
@@ -286,15 +145,117 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/main.c:440
+#: src/main.c:423
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulerar! Du har slutfört alla nivåer i Atomix."
 
-#: src/theme-manager.c:225
-msgid "No themes found."
-msgstr "Inga teman hittades."
+#~ msgid "Acetic Acid"
+#~ msgstr "Ättiksyra"
 
-#: src/theme-manager.c:283
-#, c-format
-msgid "Found theme “%s” in: %s"
-msgstr "Hittade temat ”%s” i: %s"
+#~ msgid "Acetone"
+#~ msgstr "Aceton"
+
+#~ msgid "Butanol"
+#~ msgstr "Butanol"
+
+#~ msgid "Cyclobutane"
+#~ msgstr "Cyklobutan"
+
+#~ msgid "Dimethyl Ether"
+#~ msgstr "Dimetyleter"
+
+#~ msgid "Ethanal"
+#~ msgstr "Etanal"
+
+#~ msgid "Ethane"
+#~ msgstr "Etan"
+
+#~ msgid "Ethanol"
+#~ msgstr "Etanol"
+
+#~ msgid "Ethylene"
+#~ msgstr "Eten"
+
+#~ msgid "Glycerin"
+#~ msgstr "Glycerin"
+
+#~ msgid "Lactic Acid"
+#~ msgstr "Mjölksyra"
+
+#~ msgid "Methanal"
+#~ msgstr "Metanal"
+
+#~ msgid "Methane"
+#~ msgstr "Metan"
+
+#~ msgid "Methanol"
+#~ msgstr "Metanol"
+
+# Osäker.
+#~ msgid "Propanal"
+#~ msgstr "Propanal"
+
+#~ msgid "Propylene"
+#~ msgstr "Propen"
+
+# Osäker.
+#~ msgid "Pyran"
+#~ msgstr "Pyran"
+
+# Osäker.
+#~ msgid "Trans Butylen"
+#~ msgstr "Transbuten"
+
+#~ msgid "Water"
+#~ msgstr "Vatten"
+
+#~ msgid "_File"
+#~ msgstr "_Arkiv"
+
+#~ msgid "_New Game"
+#~ msgstr "_Nytt spel"
+
+#~ msgid "_End Game"
+#~ msgstr "Av_sluta spel"
+
+#~ msgid "_Skip Level"
+#~ msgstr "Hoppa över n_ivå"
+
+#~ msgid "_Reset Level"
+#~ msgstr "Å_terställ nivå"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_Ångra drag"
+
+#~ msgid "_Pause Game"
+#~ msgstr "_Gör paus i spel"
+
+#~ msgid "_Continue Game"
+#~ msgstr "_Fortsätt spel"
+
+#~ msgid "_Quit"
+#~ msgstr "A_vsluta"
+
+#~ msgid "_Help"
+#~ msgstr "_Hjälp"
+
+#~ msgid "_About"
+#~ msgstr "_Om"
+
+#~ msgid "Pause Game"
+#~ msgstr "Gör paus i spel"
+
+#~ msgid "Couldn’t find level sequence description."
+#~ msgstr "Kunde inte hitta nivåsekvensbeskrivning."
+
+#~ msgid "No level found."
+#~ msgstr "Ingen nivå kunde hittas."
+
+#~ msgid "Found level “%s” in: %s"
+#~ msgstr "Hittade nivån ”%s” i: %s"
+
+#~ msgid "No themes found."
+#~ msgstr "Inga teman hittades."
+
+#~ msgid "Found theme “%s” in: %s"
+#~ msgstr "Hittade temat ”%s” i: %s"
