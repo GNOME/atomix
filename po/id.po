@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-25 19:10+0000\n"
-"PO-Revision-Date: 2018-03-26 19:38+0700\n"
+"POT-Creation-Date: 2018-03-26 21:03+0000\n"
+"PO-Revision-Date: 2018-03-27 08:45+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
 "Language: id\n"
@@ -64,6 +64,82 @@ msgstr "atomix"
 #: data/atomix.desktop.in:13
 msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
 msgstr "GNOME;permainan;logika;teka-teki;atom;molekul;sokoban;"
+
+#: data/level/aceticacid.atomix.xml.in:2
+msgid "Acetic Acid"
+msgstr "Asam Asetat"
+
+#: data/level/acetone.atomix.xml.in:2
+msgid "Acetone"
+msgstr "Aseton"
+
+#: data/level/butanol.atomix.xml.in:2
+msgid "Butanol"
+msgstr "Butanol"
+
+#: data/level/cyclobutane.atomix.xml.in:2
+msgid "Cyclobutane"
+msgstr "Siklobutana"
+
+#: data/level/dimethylether.atomix.xml.in:2
+msgid "Dimethyl Ether"
+msgstr "Dimetil Eter"
+
+#: data/level/ethanal.atomix.xml.in:2
+msgid "Ethanal"
+msgstr "Etanal"
+
+#: data/level/ethane.atomix.xml.in:2
+msgid "Ethane"
+msgstr "Etana"
+
+#: data/level/ethanol.atomix.xml.in:2
+msgid "Ethanol"
+msgstr "Etanol"
+
+#: data/level/ethylene.atomix.xml.in:2
+msgid "Ethylene"
+msgstr "Etilen"
+
+#: data/level/glycerin.atomix.xml.in:2
+msgid "Glycerin"
+msgstr "Gliserin"
+
+#: data/level/lactic-acid.atomix.xml.in:2
+msgid "Lactic Acid"
+msgstr "Asam Laktat"
+
+#: data/level/methanal.atomix.xml.in:2
+msgid "Methanal"
+msgstr "Metanal"
+
+#: data/level/methane.atomix.xml.in:2
+msgid "Methane"
+msgstr "Metana"
+
+#: data/level/methanol.atomix.xml.in:2
+msgid "Methanol"
+msgstr "Metanol"
+
+#: data/level/propanal.atomix.xml.in:2
+msgid "Propanal"
+msgstr "Propanal"
+
+#: data/level/propylene.atomix.xml.in:2
+msgid "Propylene"
+msgstr "Propilen"
+
+#: data/level/pyran.atomix.xml.in:2
+msgid "Pyran"
+msgstr "Pyran"
+
+#: data/level/transbutylen.atomix.xml.in:2
+msgid "Trans Butylen"
+msgstr "Trans Butilen"
+
+#: data/level/water.atomix.xml.in:2
+msgid "Water"
+msgstr "Air"
 
 #: data/ui/interface.ui:72
 msgid "Level:"
