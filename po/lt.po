@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-19 19:17+0000\n"
-"PO-Revision-Date: 2018-03-19 23:02+0200\n"
+"POT-Creation-Date: 2018-03-26 21:03+0000\n"
+"PO-Revision-Date: 2018-04-08 17:40+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -21,8 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3
-#: data/ui/interface.ui:11 src/main.c:128 src/main.c:670
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
+#: src/main.c:655
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -31,11 +31,6 @@ msgid "Build molecules out of single atoms"
 msgstr "Sudėkite įvairias molekules iš atskirų atomų"
 
 #: data/atomix.appdata.xml.in:10
-#| msgid ""
-#| "Atomix is a puzzle game where your goal is to assemble molecules from "
-#| "compound atoms by moving them on the playfield. However, atoms don't just "
-#| "move wherever you want to move them to, they slide until they hit either "
-#| "a wall or another atom."
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
@@ -58,13 +53,12 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Molekulių galvosūkis"
 
-#: data/atomix.desktop.in:5 src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:123
 msgid "A puzzle game about atoms and molecules"
 msgstr "Galvosūkis apie atomus ir molekules"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/atomix.desktop.in:8
-#| msgid "Atomix"
 msgid "atomix"
 msgstr "atomix"
 
@@ -149,112 +143,65 @@ msgstr "Trans-butilenas"
 msgid "Water"
 msgstr "Vanduo"
 
-#: data/ui/interface.ui:25
-msgid "_File"
-msgstr "Ž_aidimas"
-
-#: data/ui/interface.ui:35
-msgid "_New Game"
-msgstr "_Naujas žaidimas"
-
-#: data/ui/interface.ui:45
-msgid "_End Game"
-msgstr "_Baigti žaidimą"
-
-#: data/ui/interface.ui:60
-msgid "_Skip Level"
-msgstr "Pra_leisti lygį"
-
-#: data/ui/interface.ui:70
-msgid "_Reset Level"
-msgstr "_Pradėti lygį iš naujo"
-
-#: data/ui/interface.ui:79
-msgid "_Undo Move"
-msgstr "Atša_ukti ėjimą"
-
-#: data/ui/interface.ui:89
-msgid "_Pause Game"
-msgstr "Pri_stabdyti žaidimą"
-
-#: data/ui/interface.ui:99
-msgid "_Continue Game"
-msgstr "_Tęsti žaidimą"
-
-#: data/ui/interface.ui:115
-msgid "_Quit"
-msgstr "_Išeiti"
-
-#: data/ui/interface.ui:129
-msgid "_Help"
-msgstr "_Žinynas"
-
-#: data/ui/interface.ui:139
-msgid "_About"
-msgstr "_Apie"
-
-#: data/ui/interface.ui:219
+#: data/ui/interface.ui:72
 msgid "Level:"
 msgstr "Lygis:"
 
-#: data/ui/interface.ui:231
+#: data/ui/interface.ui:84
 msgid "Molecule:"
 msgstr "Molekulė:"
 
-#: data/ui/interface.ui:243
+#: data/ui/interface.ui:96
 msgid "Formula:"
 msgstr "Formulė:"
 
-#: data/ui/interface.ui:255
+#: data/ui/interface.ui:108
 msgid "Score:"
 msgstr "Taškai:"
 
-#: data/ui/interface.ui:267
+#: data/ui/interface.ui:120
 msgid "Time:"
 msgstr "Laikas:"
 
-#: data/ui/interface.ui:279 data/ui/interface.ui:291 data/ui/interface.ui:303
-#: data/ui/interface.ui:315
+#: data/ui/interface.ui:132 data/ui/interface.ui:143 data/ui/interface.ui:155
+#: data/ui/interface.ui:167
 msgid "empty"
 msgstr "tuščia"
 
-#: data/ui/interface.ui:333
+#: data/ui/interface.ui:186
 msgid "Statistics"
 msgstr "Statistika"
 
-#: data/ui/interface.ui:395
+#: data/ui/menu.ui:7
 msgid "New Game"
 msgstr "Naujas žaidimas"
 
-#: data/ui/interface.ui:400
+#: data/ui/menu.ui:12
+#| msgid "Continue Game"
+msgid "Pause/Continue Game"
+msgstr "Pristabdyti/tęsti žaidimą"
+
+#: data/ui/menu.ui:17
 msgid "End Game"
 msgstr "Baigti žaidimą"
 
-#: data/ui/interface.ui:404
+#: data/ui/menu.ui:23
 msgid "Skip Level"
 msgstr "Praleisti lygį"
 
-#: data/ui/interface.ui:409
+#: data/ui/menu.ui:28
 msgid "Reset Level"
 msgstr "Pradėti lygį iš naujo"
 
-#: data/ui/interface.ui:413
+#: data/ui/menu.ui:32
 msgid "Undo Move"
 msgstr "Atšaukti ėjimą"
 
-#: data/ui/interface.ui:418
-msgid "Pause Game"
-msgstr "Pristabdyti žaidimą"
-
-#: data/ui/interface.ui:423
-msgid "Continue Game"
-msgstr "Tęsti žaidimą"
-
-#: data/ui/interface.ui:430
+#: data/ui/menu.ui:39
 msgid "About"
 msgstr "Apie"
 
-#: data/ui/interface.ui:434
+#: data/ui/menu.ui:45
 msgid "Quit"
 msgstr "Išeiti"
 
@@ -269,15 +216,51 @@ msgstr ""
 "atomą ir jį perkeltumėte. Tačiau būkite atsargūs: atomas juda tol, kol "
 "neatsiremia į sieną."
 
-#: src/main.c:135
+#: src/main.c:127
 msgid "translator-credits"
 msgstr ""
 "Žygimantas Beručka <zygis@gnome.org>\n"
 "Mantas Kriaučiūnas <mantas@akl.lt>"
 
-#: src/main.c:440
+#: src/main.c:423
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Sveikiname! Įveikėte visus Atomix lygius."
+
+#~ msgid "_File"
+#~ msgstr "Ž_aidimas"
+
+#~ msgid "_New Game"
+#~ msgstr "_Naujas žaidimas"
+
+#~ msgid "_End Game"
+#~ msgstr "_Baigti žaidimą"
+
+#~ msgid "_Skip Level"
+#~ msgstr "Pra_leisti lygį"
+
+#~ msgid "_Reset Level"
+#~ msgstr "_Pradėti lygį iš naujo"
+
+#~ msgid "_Undo Move"
+#~ msgstr "Atša_ukti ėjimą"
+
+#~ msgid "_Pause Game"
+#~ msgstr "Pri_stabdyti žaidimą"
+
+#~ msgid "_Continue Game"
+#~ msgstr "_Tęsti žaidimą"
+
+#~ msgid "_Quit"
+#~ msgstr "_Išeiti"
+
+#~ msgid "_Help"
+#~ msgstr "_Žinynas"
+
+#~ msgid "_About"
+#~ msgstr "_Apie"
+
+#~ msgid "Pause Game"
+#~ msgstr "Pristabdyti žaidimą"
 
 #~ msgid "Couldn't find level sequence description."
 #~ msgstr "Nepavyko rasti lygių eilės aprašymo."
