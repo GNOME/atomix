@@ -4,6 +4,9 @@
     "runtime-version" : "3.28",
     "sdk" : "org.gnome.Sdk",
     "command" : "atomix",
+    "tags" : [
+        "nightly"
+    ],
     "rename-icon" : "atomix.png",
     "rename-desktop-file" : "atomix.desktop",
     "desktop-file-name-prefix" : "(Nightly) ",
@@ -23,6 +26,27 @@
         }
     },
     "modules" : [
+        {
+            "name" : "libgee",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "branch" : "meson",
+                    "url" : "https://gitlab.gnome.org/GNOME/libgee.git"
+                }
+            ]
+        },
+        {
+            "name" : "libgnome-games-support",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "branch" : "master",
+                    "url" : "https://gitlab.gnome.org/GNOME/libgnome-games-support"
+                }
+            ]
+        },
         {
             "name" : "atomix",
             "buildsystem" : "meson",

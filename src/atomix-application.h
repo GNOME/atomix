@@ -22,6 +22,7 @@
 #define _ATOMIX_APPLICATION_H_
 
 #include <gtk/gtk.h>
+#include <libgnome-games-support.h>
 #include "theme-manager.h"
 #include "level-manager.h"
 #include "goal.h"
@@ -57,6 +58,9 @@ typedef struct
   Goal *goal;
   gint level_no;
   guint score;
+
+  GamesScoresContext *high_scores;
+  GamesScoresCategory *current_category;
 } AtomixApp;
 
 #endif /* _ATOMIX_APPLICATION_H_ */

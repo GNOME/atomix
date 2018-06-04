@@ -30,6 +30,7 @@ app_dependencies = [
     gtk_dep,
     glib_dep,
     gdk_pixbuf_dep,
+    libgnome_games_support_dep,
 ]
 
 atomix_lib = static_library('atomix', library_sources,

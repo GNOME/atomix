@@ -18,6 +18,7 @@ itsdir = join_paths(meson.source_root(), 'data')
 gtk_dep = dependency('gtk+-3.0', version: '>= 3.10')
 gdk_pixbuf_dep = dependency('gdk-pixbuf-2.0', version: '>= 2.0.5')
 glib_dep = dependency('glib-2.0', version: '>= 2.36.0')
+libgnome_games_support_dep = dependency('libgnome-games-support-1')
 
 cc = meson.get_compiler('c')
 

@@ -27,6 +27,7 @@
 #include "goal-view.h"
 #include "clock.h"
 #include "undo.h"
+#include <libgnome-games-support.h>
 
 AtomixApp *app;
 
@@ -233,6 +234,20 @@ static void controller_handle_action (GameAction action)
   update_statistics ();
 }
 
+static void
+add_score_cb (GObject *source_object, GAsyncResult *res, gpointer user_data)
+{
+  GamesScoresContext *context = GAMES_SCORES_CONTEXT (source_object);
+  GError *error = NULL;
+
+  games_scores_context_add_score_finish (context, res, &error);
+  if (error != NULL) {
+    g_warning ("Failed to add score: %s", error->message);
+    g_error_free (error);
+  }
+}
+
+
 static void set_game_not_running_state (void)
 {
   board_gtk_show_logo (TRUE);
@@ -242,6 +257,16 @@ static void set_game_not_running_state (void)
 
   if (app->goal)
     g_object_unref (app->goal);
+
+  if (app->score > 0) {
+    games_scores_context_add_score (app->high_scores,
+                                    app->score,
+                                    app->current_category,
+                                    NULL,
+                                    add_score_cb,
+                                    NULL);
+  }
+  games_scores_context_run_dialog (app->high_scores);
 
   app->level = NULL;
   app->goal = NULL;
@@ -556,6 +581,10 @@ void update_menu_item_state (void)
     }
 }
 
+static GamesScoresCategory* get_scores_category(const gchar* category_key, void* user_data)
+{
+  return app->current_category;
+}
 /* ===============================================================
       
              GUI creation  functions 
@@ -584,6 +613,12 @@ static AtomixApp *create_gui (GApplication *app_instance)
   g_free (ui_path);
 
   app->mainwin = GTK_WIDGET (gtk_builder_get_object (builder, "mainwin"));
+
+  app->current_category = games_scores_category_new ("atomix", "Best scores");
+  app->high_scores = games_scores_context_new("atomix", "Best scores",
+                                                GTK_WINDOW (app->mainwin),
+                                                get_scores_category,
+                                                NULL, GAMES_SCORES_STYLE_POINTS_GREATER_IS_BETTER);
 
   g_signal_connect (G_OBJECT (app->mainwin), "delete_event",
                     (GCallback) on_app_destroy_event, app);
@@ -634,6 +669,7 @@ app_activate (GApplication *app_instance, gpointer user_data)
     g_action_map_add_action_entries (G_ACTION_MAP (app_instance), app_entries, G_N_ELEMENTS (app_entries), app_instance);
 
     app = create_gui (app_instance);
+
     g_action_map_add_action_entries (G_ACTION_MAP (app->mainwin), win_entries, G_N_ELEMENTS (win_entries), app_instance);
 
     game_init ();
