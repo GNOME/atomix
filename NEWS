@@ -1,3 +1,14 @@
+2018-06-18: Release version 3.29.3
+
+  * Updated translations
+  * Implemented appmenu (#7)
+  * Handle highscores using libgnome-games-support (#6)
+  * Add flatpak manifest (#11)
+  * Port to Meson
+  * Level names made translatable
+  * Migrated to gettext
+  * Updated bugzilla references to gitlab
+
 2016-09-19: Release version 3.22.0
 
   * Updated translations
