@@ -266,7 +266,6 @@ static void set_game_not_running_state (void)
                                     add_score_cb,
                                     NULL);
   }
-  games_scores_context_run_dialog (app->high_scores);
 
   app->level = NULL;
   app->goal = NULL;
@@ -649,6 +648,11 @@ static AtomixApp *create_gui (GApplication *app_instance)
   gtk_window_set_titlebar (GTK_WINDOW (app->mainwin), headerbar);
   GMenu * menu = G_MENU (gtk_builder_get_object (builder, "app-menu"));
   gtk_application_set_app_menu (GTK_APPLICATION (app->app_instance), G_MENU_MODEL (menu));
+
+///  g_object_set (gtk_widget_get_settings (headerbar),
+//                "gtk-shell-shows-app-menu", FALSE,
+//                NULL);
+
 
   g_object_unref (builder);
 
