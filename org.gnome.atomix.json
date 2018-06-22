@@ -43,7 +43,7 @@
                 {
                     "type" : "git",
                     "branch" : "master",
-                    "url" : "https://gitlab.gnome.org/GNOME/libgnome-games-support"
+                    "url" : "https://gitlab.gnome.org/GNOME/libgnome-games-support.git"
                 }
             ]
         },
