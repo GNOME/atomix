@@ -4,15 +4,14 @@
 # Ãlvaro PeÃ±a <alvaropg@mac.com>, 2001.
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2003.
 # Jorge González <jorgegonz@svn.gnome.org>, 2010.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2015, 2016.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2015, 2016, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-03 14:41+0000\n"
-"PO-Revision-Date: 2016-12-22 12:05+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2018-03-26 21:03+0000\n"
+"PO-Revision-Date: 2018-06-22 09:26+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -22,19 +21,24 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:670
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
+#: src/main.c:655
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../data/atomix.appdata.xml.in.h:2
+#: data/atomix.appdata.xml.in:8
 msgid "Build molecules out of single atoms"
 msgstr "Construir moléculas a partir de átomos sencillos"
 
-#: ../data/atomix.appdata.xml.in.h:3
+#: data/atomix.appdata.xml.in:10
+#| msgid ""
+#| "Atomix is a puzzle game where your goal is to assemble molecules from "
+#| "compound atoms by moving them on the playfield. However, atoms don't just "
+#| "move wherever you want to move them to, they slide until they hit either "
+#| "a wall or another atom."
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
-"compound atoms by moving them on the playfield. However, atoms don't just "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
@@ -43,7 +47,7 @@ msgstr ""
 "átomos no se mueven a donde quiere, sino que se deslizan hasta que "
 "encuentran una pared u otro átomo."
 
-#: ../data/atomix.appdata.xml.in.h:4
+#: data/atomix.appdata.xml.in:16
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -51,203 +55,164 @@ msgstr ""
 "Pruebe a construir las moléculas tan rápido como pueda en cada nivel para "
 "ganar más puntos."
 
-#: ../data/atomix.desktop.in.h:2
+#: data/atomix.desktop.in:4
 msgid "Molecule puzzle game"
 msgstr "Puzle con moléculas"
 
-#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:123
 msgid "A puzzle game about atoms and molecules"
 msgstr "Un juego de puzles sobre átomos y moléculas"
 
-#: ../data/level/aceticacid.atomix.xml.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/atomix.desktop.in:8
+#| msgid "Atomix"
+msgid "atomix"
+msgstr "atomix"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;juego;lógica;puzzle;puzle;átomos;moléculas;sokoban;"
+
+#: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
 msgstr "Ácido acético"
 
-#: ../data/level/acetone.atomix.xml.h:1
+#: data/level/acetone.atomix.xml.in:2
 msgid "Acetone"
 msgstr "Acetona"
 
-#: ../data/level/butanol.atomix.xml.h:1
+#: data/level/butanol.atomix.xml.in:2
 msgid "Butanol"
 msgstr "Butanol"
 
-#: ../data/level/cyclobutane.atomix.xml.h:1
+#: data/level/cyclobutane.atomix.xml.in:2
 msgid "Cyclobutane"
 msgstr "Ciclobutano"
 
-#: ../data/level/dimethylether.atomix.xml.h:1
+#: data/level/dimethylether.atomix.xml.in:2
 msgid "Dimethyl Ether"
 msgstr "Dimetil-éter"
 
-#: ../data/level/ethanal.atomix.xml.h:1
+#: data/level/ethanal.atomix.xml.in:2
 msgid "Ethanal"
 msgstr "Etanal"
 
-#: ../data/level/ethane.atomix.xml.h:1
+#: data/level/ethane.atomix.xml.in:2
 msgid "Ethane"
 msgstr "Etano"
 
-#: ../data/level/ethanol.atomix.xml.h:1
+#: data/level/ethanol.atomix.xml.in:2
 msgid "Ethanol"
 msgstr "Etanol"
 
-#: ../data/level/ethylene.atomix.xml.h:1
+#: data/level/ethylene.atomix.xml.in:2
 msgid "Ethylene"
 msgstr "Etileno"
 
-#: ../data/level/glycerin.atomix.xml.h:1
+#: data/level/glycerin.atomix.xml.in:2
 msgid "Glycerin"
 msgstr "Glicerina"
 
-#: ../data/level/lactic-acid.atomix.xml.h:1
+#: data/level/lactic-acid.atomix.xml.in:2
 msgid "Lactic Acid"
 msgstr "Ácido láctico"
 
-#: ../data/level/methanal.atomix.xml.h:1
+#: data/level/methanal.atomix.xml.in:2
 msgid "Methanal"
 msgstr "Metanal"
 
-#: ../data/level/methane.atomix.xml.h:1
+#: data/level/methane.atomix.xml.in:2
 msgid "Methane"
 msgstr "Metano"
 
-#: ../data/level/methanol.atomix.xml.h:1
+#: data/level/methanol.atomix.xml.in:2
 msgid "Methanol"
 msgstr "Metanol"
 
-#: ../data/level/propanal.atomix.xml.h:1
+#: data/level/propanal.atomix.xml.in:2
 msgid "Propanal"
 msgstr "Propanal"
 
-#: ../data/level/propylene.atomix.xml.h:1
+#: data/level/propylene.atomix.xml.in:2
 msgid "Propylene"
 msgstr "Propileno"
 
-#: ../data/level/pyran.atomix.xml.h:1
+#: data/level/pyran.atomix.xml.in:2
 msgid "Pyran"
 msgstr "Pirano"
 
-#: ../data/level/transbutylen.atomix.xml.h:1
+#: data/level/transbutylen.atomix.xml.in:2
 msgid "Trans Butylen"
 msgstr "Transbutileno"
 
-#: ../data/level/water.atomix.xml.h:1
+#: data/level/water.atomix.xml.in:2
 msgid "Water"
 msgstr "Agua"
 
-#: ../data/ui/interface.ui.h:2
-msgid "_File"
-msgstr "_Archivo"
-
-#: ../data/ui/interface.ui.h:3
-msgid "_New Game"
-msgstr "Juego _nuevo"
-
-#: ../data/ui/interface.ui.h:4
-msgid "_End Game"
-msgstr "Finalizar el ju_ego"
-
-#: ../data/ui/interface.ui.h:5
-msgid "_Skip Level"
-msgstr "_Saltar nivel"
-
-#: ../data/ui/interface.ui.h:6
-msgid "_Reset Level"
-msgstr "_Reiniciar nivel"
-
-#: ../data/ui/interface.ui.h:7
-msgid "_Undo Move"
-msgstr "_Deshacer movimiento"
-
-#: ../data/ui/interface.ui.h:8
-msgid "_Pause Game"
-msgstr "_Pausar juego"
-
-#: ../data/ui/interface.ui.h:9
-msgid "_Continue Game"
-msgstr "_Continuar juego"
-
-#: ../data/ui/interface.ui.h:10
-msgid "_Quit"
-msgstr "_Salir"
-
-#: ../data/ui/interface.ui.h:11
-msgid "_Help"
-msgstr "Ay_uda"
-
-#: ../data/ui/interface.ui.h:12
-msgid "_About"
-msgstr "A_cerca de"
-
-#: ../data/ui/interface.ui.h:13
+#: data/ui/interface.ui:72
 msgid "Level:"
 msgstr "Nivel:"
 
-#: ../data/ui/interface.ui.h:14
+#: data/ui/interface.ui:84
 msgid "Molecule:"
 msgstr "Molécula:"
 
-#: ../data/ui/interface.ui.h:15
+#: data/ui/interface.ui:96
 msgid "Formula:"
 msgstr "Fórmula:"
 
-#: ../data/ui/interface.ui.h:16
+#: data/ui/interface.ui:108
 msgid "Score:"
 msgstr "Puntuación:"
 
-#: ../data/ui/interface.ui.h:17
+#: data/ui/interface.ui:120
 msgid "Time:"
 msgstr "Tiempo:"
 
-#: ../data/ui/interface.ui.h:18
+#: data/ui/interface.ui:132 data/ui/interface.ui:143 data/ui/interface.ui:155
+#: data/ui/interface.ui:167
 msgid "empty"
 msgstr "vaciar"
 
-#: ../data/ui/interface.ui.h:19
+#: data/ui/interface.ui:186
 msgid "Statistics"
 msgstr "Estadísticas"
 
-#: ../data/ui/interface.ui.h:20
+#: data/ui/menu.ui:7
 msgid "New Game"
 msgstr "Juego nuevo"
 
-#: ../data/ui/interface.ui.h:21
+#: data/ui/menu.ui:12
+#| msgid "Continue Game"
+msgid "Pause/Continue Game"
+msgstr "Pausar/continuar el juego"
+
+#: data/ui/menu.ui:17
 msgid "End Game"
 msgstr "Finalizar el juego"
 
-#: ../data/ui/interface.ui.h:22
+#: data/ui/menu.ui:23
 msgid "Skip Level"
 msgstr "Saltar nivel"
 
-#: ../data/ui/interface.ui.h:23
+#: data/ui/menu.ui:28
 msgid "Reset Level"
 msgstr "Reiniciar nivel"
 
-#: ../data/ui/interface.ui.h:24
+#: data/ui/menu.ui:32
 msgid "Undo Move"
 msgstr "Deshacer movimiento"
 
-#: ../data/ui/interface.ui.h:25
-msgid "Pause Game"
-msgstr "Pausar juego"
-
-#: ../data/ui/interface.ui.h:26
-msgid "Continue Game"
-msgstr "Continuar juego"
-
-#: ../data/ui/interface.ui.h:27
+#: data/ui/menu.ui:39
 msgid "About"
 msgstr "Acerca de"
 
-#: ../data/ui/interface.ui.h:28
+#: data/ui/menu.ui:45
 msgid "Quit"
 msgstr "Salir"
 
-#: ../src/board-gtk.c:340
-#| msgid ""
-#| "Guide the atoms through the maze to form molecules.\n"
-#| "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-#| "Be careful, though: an atom keeps moving until it hits a wall.\n"
+#: src/board-gtk.c:340
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -257,38 +222,67 @@ msgstr ""
 "teclas de flechas e Intro para seleccionar un átomo y moverlo. Tenga "
 "cuidado: un átomo se sigue moviendo hasta que encuentra una pared."
 
-#: ../src/level-manager.c:200
-msgid "Couldn't find level sequence description."
-msgstr "No se puede encontrar secuencia de descripción del nivel"
-
-#: ../src/level-manager.c:214
-msgid "No level found."
-msgstr "No se encontró ningún nivel."
-
-#: ../src/level-manager.c:283
-#, c-format
-msgid "Found level '%s' in: %s"
-msgstr "Encontrado nivel «%s» en: %s"
-
-#: ../src/main.c:135
+#: src/main.c:127
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2015\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2010\n"
 "Francisco Javier F. Serrador <serrador@cvs.gnome.org>"
 
-#: ../src/main.c:440
+#: src/main.c:423
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "¡Felicidades! Ha terminado todos los niveles de Atomix."
 
-#: ../src/theme-manager.c:225
-msgid "No themes found."
-msgstr "No se encontraron temas."
+#~ msgid "_File"
+#~ msgstr "_Archivo"
 
-#: ../src/theme-manager.c:283
-#, c-format
-msgid "Found theme '%s' in: %s"
-msgstr "Se encontró el tema «%s» en: %s"
+#~ msgid "_New Game"
+#~ msgstr "Juego _nuevo"
+
+#~ msgid "_End Game"
+#~ msgstr "Finalizar el ju_ego"
+
+#~ msgid "_Skip Level"
+#~ msgstr "_Saltar nivel"
+
+#~ msgid "_Reset Level"
+#~ msgstr "_Reiniciar nivel"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_Deshacer movimiento"
+
+#~ msgid "_Pause Game"
+#~ msgstr "_Pausar juego"
+
+#~ msgid "_Continue Game"
+#~ msgstr "_Continuar juego"
+
+#~ msgid "_Quit"
+#~ msgstr "_Salir"
+
+#~ msgid "_Help"
+#~ msgstr "Ay_uda"
+
+#~ msgid "_About"
+#~ msgstr "A_cerca de"
+
+#~ msgid "Pause Game"
+#~ msgstr "Pausar juego"
+
+#~ msgid "Couldn't find level sequence description."
+#~ msgstr "No se puede encontrar secuencia de descripción del nivel"
+
+#~ msgid "No level found."
+#~ msgstr "No se encontró ningún nivel."
+
+#~ msgid "Found level '%s' in: %s"
+#~ msgstr "Encontrado nivel «%s» en: %s"
+
+#~ msgid "No themes found."
+#~ msgstr "No se encontraron temas."
+
+#~ msgid "Found theme '%s' in: %s"
+#~ msgstr "Se encontró el tema «%s» en: %s"
 
 #~ msgid "https://github.com/GNOME/atomix"
 #~ msgstr "https://github.com/GNOME/atomix"
