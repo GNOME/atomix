@@ -649,9 +649,9 @@ static AtomixApp *create_gui (GApplication *app_instance)
   GMenu * menu = G_MENU (gtk_builder_get_object (builder, "app-menu"));
   gtk_application_set_app_menu (GTK_APPLICATION (app->app_instance), G_MENU_MODEL (menu));
 
-///  g_object_set (gtk_widget_get_settings (headerbar),
-//                "gtk-shell-shows-app-menu", FALSE,
-//                NULL);
+  g_object_set (gtk_widget_get_settings (headerbar),
+                "gtk-shell-shows-app-menu", FALSE,
+                NULL);
 
 
   g_object_unref (builder);
