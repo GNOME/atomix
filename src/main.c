@@ -596,6 +596,7 @@ static AtomixApp *create_gui (GApplication *app_instance)
   GtkWidget *stats_grid;
   GtkWidget *time_label;
   GtkWidget *headerbar;
+  GtkWidget *primary_menu_button;
 
   app = g_new0 (AtomixApp, 1);
   app->level = NULL;
@@ -646,13 +647,10 @@ static AtomixApp *create_gui (GApplication *app_instance)
   headerbar = GTK_WIDGET (gtk_builder_get_object(builder, "headerbar"));
   gtk_application_add_window (GTK_APPLICATION (app->app_instance), GTK_WINDOW (app->mainwin));
   gtk_window_set_titlebar (GTK_WINDOW (app->mainwin), headerbar);
-  GMenu * menu = G_MENU (gtk_builder_get_object (builder, "app-menu"));
-  gtk_application_set_app_menu (GTK_APPLICATION (app->app_instance), G_MENU_MODEL (menu));
+  GMenu * menu = G_MENU (gtk_builder_get_object (builder, "primary-menu"));
 
-  g_object_set (gtk_widget_get_settings (headerbar),
-                "gtk-shell-shows-app-menu", FALSE,
-                NULL);
-
+  primary_menu_button = GTK_WIDGET (gtk_builder_get_object (builder, "primary-menu-button"));
+  gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (primary_menu_button), G_MENU_MODEL (menu));
 
   g_object_unref (builder);
 
