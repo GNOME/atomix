@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-25 03:22+0000\n"
-"PO-Revision-Date: 2018-03-25 08:37+0100\n"
+"POT-Creation-Date: 2018-10-07 02:52+0000\n"
+"PO-Revision-Date: 2018-10-07 16:36+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -24,8 +24,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Gtranslator 2.91.7\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
-#: src/main.c:655
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
+#: src/main.c:690
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Logická hra s molekulami"
 
-#: data/atomix.desktop.in:5 src/main.c:123
+#: data/atomix.desktop.in:5 src/main.c:124
 msgid "A puzzle game about atoms and molecules"
 msgstr "Logická hra s atomy a molekulami"
 
@@ -201,12 +201,8 @@ msgid "Undo Move"
 msgstr "Tah zpět"
 
 #: data/ui/menu.ui:39
-msgid "About"
-msgstr "O aplikaci"
-
-#: data/ui/menu.ui:45
-msgid "Quit"
-msgstr "Ukončit"
+msgid "About Atomix"
+msgstr "O aplikaci Atomix"
 
 #: src/board-gtk.c:340
 msgid ""
@@ -218,12 +214,12 @@ msgstr ""
 "zmáčknutím Enter, vyberte atom a přesuňte jej. Buďte ale opatrní: atom se "
 "pohybuje, dokud nenarazí na zeď."
 
-#: src/main.c:127
+#: src/main.c:128
 msgid "translator-credits"
 msgstr ""
 "Lukáš Novotný <lukasnov@cvs.gnome.org>\n"
 "Marek Černocký <marek@manet.cz>"
 
-#: src/main.c:423
+#: src/main.c:447
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulace! Dokončil jste všechny úrovně hry Atomix."
