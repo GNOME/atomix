@@ -36,16 +36,10 @@
     </section>
     <section>
       <item>
-        <attribute name="label" translatable="yes">About</attribute>
+        <attribute name="label" translatable="yes">About Atomix</attribute>
         <attribute name="action">app.GameAbout</attribute>
-      </item>
-    </section>
-    <section>
-      <item>
-        <attribute name="label" translatable="yes">Quit</attribute>
-        <attribute name="action">app.GameQuit</attribute>
-        <attribute name="accel">&lt;Primary&gt;q</attribute>
       </item>
     </section>
   </menu>
 </interface>
+
