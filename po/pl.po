@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-25 03:22+0000\n"
-"PO-Revision-Date: 2018-03-25 21:08+0100\n"
+"POT-Creation-Date: 2018-10-07 02:52+0000\n"
+"PO-Revision-Date: 2018-10-07 16:39+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -20,8 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
-#: src/main.c:655
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
+#: src/main.c:690
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Gra logiczna w układanie cząsteczek"
 
-#: data/atomix.desktop.in:5 src/main.c:123
+#: data/atomix.desktop.in:5 src/main.c:124
 msgid "A puzzle game about atoms and molecules"
 msgstr "Gra logiczna o atomach i cząsteczkach"
 
@@ -198,12 +198,8 @@ msgid "Undo Move"
 msgstr "Cofnij ruch"
 
 #: data/ui/menu.ui:39
-msgid "About"
+msgid "About Atomix"
 msgstr "O grze"
-
-#: data/ui/menu.ui:45
-msgid "Quit"
-msgstr "Zakończ"
 
 #: src/board-gtk.c:340
 msgid ""
@@ -215,13 +211,13 @@ msgstr ""
 "Kliknięcie lub klawisze strzałek i Enter zaznaczają atom i go przenoszą. "
 "Należy zachować ostrożność: atomy zatrzymują się tylko na ścianach."
 
-#: src/main.c:127
+#: src/main.c:128
 msgid "translator-credits"
 msgstr ""
 "Zbigniew Chyla <zbigniew.chyla@gmail.com>, 2002\n"
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2018\n"
 "Aviary.pl <community-poland@mozilla.org>, 2012-2018"
 
-#: src/main.c:423
+#: src/main.c:447
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulacje! Udało się ukończyć wszystkie poziomy gry Atomix."
