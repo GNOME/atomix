@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-26 21:03+0000\n"
-"PO-Revision-Date: 2018-04-28 06:06-0200\n"
+"POT-Creation-Date: 2018-10-07 20:07+0000\n"
+"PO-Revision-Date: 2018-10-09 03:54-0200\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: Virtaal 1.0.0-beta1\n"
 "X-Project-Style: gnome\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
-#: src/main.c:655
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
+#: src/main.c:688
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Quebra-cabeça com moléculas"
 
-#: data/atomix.desktop.in:5 src/main.c:123
+#: data/atomix.desktop.in:5 src/main.c:124
 msgid "A puzzle game about atoms and molecules"
 msgstr "Um jogo mental sobre átomos e moléculas"
 
@@ -143,32 +143,32 @@ msgstr "Trans-butileno"
 msgid "Water"
 msgstr "Água"
 
-#: data/ui/interface.ui:72
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Nível:"
 
-#: data/ui/interface.ui:84
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Molécula:"
 
-#: data/ui/interface.ui:96
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Fórmula:"
 
-#: data/ui/interface.ui:108
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Pontuação:"
 
-#: data/ui/interface.ui:120
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Tempo:"
 
-#: data/ui/interface.ui:132 data/ui/interface.ui:143 data/ui/interface.ui:155
-#: data/ui/interface.ui:167
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "vazio"
 
-#: data/ui/interface.ui:186
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "Estatísticas"
 
@@ -177,7 +177,6 @@ msgid "New Game"
 msgstr "Novo jogo"
 
 #: data/ui/menu.ui:12
-#| msgid "Continue Game"
 msgid "Pause/Continue Game"
 msgstr "Pausar/Continuar o jogo"
 
@@ -198,12 +197,9 @@ msgid "Undo Move"
 msgstr "Desfazer movimento"
 
 #: data/ui/menu.ui:39
-msgid "About"
-msgstr "Sobre"
-
-#: data/ui/menu.ui:45
-msgid "Quit"
-msgstr "Sair"
+#| msgid "Atomix"
+msgid "About Atomix"
+msgstr "Sobre Atomix"
 
 #: src/board-gtk.c:340
 msgid ""
@@ -215,16 +211,22 @@ msgstr ""
 "teclas de setas e Enter, para selecionar um átomo e movê-lo. Porém, tenha "
 "cuidado: um átomo continua a se mover até acertar a parede."
 
-#: src/main.c:127
+#: src/main.c:128
 msgid "translator-credits"
 msgstr ""
 "Estêvão Samuel Procópio <tevaum@ig.com.br>\n"
 "Guilherme de S. Pastore <gpastore@gnome.org>\n"
 "Rafael Fontenelle <rafaelff@gnome.org>"
 
-#: src/main.c:423
+#: src/main.c:447
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Parabéns! Você completou todos os níveis do Atomix."
+
+#~ msgid "About"
+#~ msgstr "Sobre"
+
+#~ msgid "Quit"
+#~ msgstr "Sair"
 
 #~ msgid "_File"
 #~ msgstr "_Arquivo"
