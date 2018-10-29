@@ -10,18 +10,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-26 21:03+0000\n"
-"PO-Revision-Date: 2018-09-02 19:56+0200\n"
+"POT-Creation-Date: 2018-10-07 20:07+0000\n"
+"PO-Revision-Date: 2018-10-27 16:01+0200\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
-#: src/main.c:655
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
+#: src/main.c:688
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Molekylpuslespil"
 
-#: data/atomix.desktop.in:5 src/main.c:123
+#: data/atomix.desktop.in:5 src/main.c:124
 msgid "A puzzle game about atoms and molecules"
 msgstr "Et puslespil med atomer og molekyler"
 
@@ -144,32 +144,32 @@ msgstr "Trans-butylen"
 msgid "Water"
 msgstr "Vand"
 
-#: data/ui/interface.ui:72
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Bane:"
 
-#: data/ui/interface.ui:84
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Molekyle:"
 
-#: data/ui/interface.ui:96
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Formel:"
 
-#: data/ui/interface.ui:108
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Point:"
 
-#: data/ui/interface.ui:120
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Tid:"
 
-#: data/ui/interface.ui:132 data/ui/interface.ui:143 data/ui/interface.ui:155
-#: data/ui/interface.ui:167
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "tom"
 
-#: data/ui/interface.ui:186
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "Statistik"
 
@@ -198,12 +198,8 @@ msgid "Undo Move"
 msgstr "Fortryd træk"
 
 #: data/ui/menu.ui:39
-msgid "About"
-msgstr "Om"
-
-#: data/ui/menu.ui:45
-msgid "Quit"
-msgstr "Afslut"
+msgid "About Atomix"
+msgstr "Om Atomix"
 
 #: src/board-gtk.c:340
 msgid ""
@@ -215,7 +211,7 @@ msgstr ""
 "piletasterne og Enter, for at vælge et atom og flytte det. Vær forsigtig: Et "
 "atom bevæger sig, indtil det rammer en væg."
 
-#: src/main.c:127
+#: src/main.c:128
 msgid "translator-credits"
 msgstr ""
 "Alan Mortensen, 2016\n"
@@ -225,9 +221,15 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: src/main.c:423
+#: src/main.c:447
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tillykke! Du har klaret alle baner i Atomix."
+
+#~ msgid "About"
+#~ msgstr "Om"
+
+#~ msgid "Quit"
+#~ msgstr "Afslut"
 
 #~ msgid "_File"
 #~ msgstr "_Fil"
