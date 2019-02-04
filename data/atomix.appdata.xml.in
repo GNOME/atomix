@@ -26,10 +26,9 @@
   <url type="homepage">https://wiki.gnome.org/Apps/Atomix</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/atomix/issues/new?issue</url>
   <url type="donation">http://www.gnome.org/friends/</url>
-  <update_contact>games_list_at_gnome.org</update_contact>
+  <update_contact>robert_roth_at_gnome.org</update_contact>
   <project_group>GNOME</project_group>
   <kudos>
-    <kudo>AppMenu</kudo>
     <kudo>ModernToolkit</kudo>
   </kudos>
   <translation type="gettext">atomix</translation>
@@ -58,3 +57,4 @@
   </content_rating>
 
 </component>
+
