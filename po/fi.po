@@ -9,10 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 10:04+0000\n"
-"PO-Revision-Date: 2016-09-04 17:21+0300\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2018-10-07 20:07+0000\n"
+"PO-Revision-Date: 2019-02-10 19:56+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -20,21 +19,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
+#: src/main.c:688
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../data/atomix.appdata.xml.in.h:2
+#: data/atomix.appdata.xml.in:8
 msgid "Build molecules out of single atoms"
 msgstr "Rakenna molekyylejä yksittäisistä atomeista"
 
-#: ../data/atomix.appdata.xml.in.h:3
+#: data/atomix.appdata.xml.in:10
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
-"compound atoms by moving them on the playfield. However, atoms don't just "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
@@ -43,7 +42,7 @@ msgstr ""
 "juuri sinne, minne haluat, vaan ne liukuvat kunnes osuvat seinämään tai "
 "toisiin atomeihin."
 
-#: ../data/atomix.appdata.xml.in.h:4
+#: data/atomix.appdata.xml.in:16
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -51,208 +50,159 @@ msgstr ""
 "Yritä rakentaa molekyylejä mahdollisimman nopeasti jokaisella tasolla "
 "ansaitaksesi huippupisteet."
 
-#: ../data/atomix.desktop.in.h:2
+#: data/atomix.desktop.in:4
 msgid "Molecule puzzle game"
 msgstr "Molekyyliälypeli"
 
-#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:124
 msgid "A puzzle game about atoms and molecules"
 msgstr "Älypeli atomeista ja molekyyleistä"
 
-#: ../data/level/aceticacid.atomix.xml.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/atomix.desktop.in:8
+#| msgid "Atomix"
+msgid "atomix"
+msgstr "atomix"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;game;logic;puzzle;atoms;molecules;sokoban;molekyylit;"
+
+#: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
 msgstr "Etikkahappo"
 
-#: ../data/level/acetone.atomix.xml.h:1
+#: data/level/acetone.atomix.xml.in:2
 msgid "Acetone"
 msgstr "Asetoni"
 
-#: ../data/level/butanol.atomix.xml.h:1
+#: data/level/butanol.atomix.xml.in:2
 msgid "Butanol"
 msgstr "Butanoli"
 
-#: ../data/level/cyclobutane.atomix.xml.h:1
+#: data/level/cyclobutane.atomix.xml.in:2
 msgid "Cyclobutane"
 msgstr "Syklobutaani"
 
-#: ../data/level/dimethylether.atomix.xml.h:1
+#: data/level/dimethylether.atomix.xml.in:2
 msgid "Dimethyl Ether"
 msgstr "Dimetyylieetteri"
 
-#: ../data/level/ethanal.atomix.xml.h:1
+#: data/level/ethanal.atomix.xml.in:2
 msgid "Ethanal"
 msgstr "Asetaldehydi"
 
-#: ../data/level/ethane.atomix.xml.h:1
+#: data/level/ethane.atomix.xml.in:2
 msgid "Ethane"
 msgstr "Etaani"
 
-#: ../data/level/ethanol.atomix.xml.h:1
+#: data/level/ethanol.atomix.xml.in:2
 msgid "Ethanol"
 msgstr "Etanoli"
 
-#: ../data/level/ethylene.atomix.xml.h:1
+#: data/level/ethylene.atomix.xml.in:2
 msgid "Ethylene"
 msgstr "Etyleeni"
 
-#: ../data/level/glycerin.atomix.xml.h:1
+#: data/level/glycerin.atomix.xml.in:2
 msgid "Glycerin"
 msgstr "Glyseriini"
 
-#: ../data/level/lactic-acid.atomix.xml.h:1
+#: data/level/lactic-acid.atomix.xml.in:2
 msgid "Lactic Acid"
 msgstr "Maitohappo"
 
-#: ../data/level/methanal.atomix.xml.h:1
+#: data/level/methanal.atomix.xml.in:2
 msgid "Methanal"
 msgstr "Formaldehydi"
 
-#: ../data/level/methane.atomix.xml.h:1
+#: data/level/methane.atomix.xml.in:2
 msgid "Methane"
 msgstr "Metaani"
 
-#: ../data/level/methanol.atomix.xml.h:1
+#: data/level/methanol.atomix.xml.in:2
 msgid "Methanol"
 msgstr "Metanoli"
 
-#: ../data/level/propanal.atomix.xml.h:1
+#: data/level/propanal.atomix.xml.in:2
 msgid "Propanal"
 msgstr "Propionaldehydi"
 
-#: ../data/level/propylene.atomix.xml.h:1
+#: data/level/propylene.atomix.xml.in:2
 msgid "Propylene"
 msgstr "Propyleeni"
 
-#: ../data/level/pyran.atomix.xml.h:1
+#: data/level/pyran.atomix.xml.in:2
 msgid "Pyran"
 msgstr "Pyraani"
 
-#: ../data/level/transbutylen.atomix.xml.h:1
+#: data/level/transbutylen.atomix.xml.in:2
 msgid "Trans Butylen"
 msgstr "Trans-butyleeni"
 
-#: ../data/level/water.atomix.xml.h:1
+#: data/level/water.atomix.xml.in:2
 msgid "Water"
 msgstr "Vesi"
 
-#: ../data/ui/interface.ui.h:2
-msgid "_File"
-msgstr "_Tiedosto"
-
-#: ../data/ui/interface.ui.h:3
-msgid "_New Game"
-msgstr "_Uusi peli"
-
-#: ../data/ui/interface.ui.h:4
-msgid "_End Game"
-msgstr "_Lopeta peli"
-
-#: ../data/ui/interface.ui.h:5
-msgid "_Skip Level"
-msgstr "Ohita _taso"
-
-#: ../data/ui/interface.ui.h:6
-msgid "_Reset Level"
-msgstr "Aloita taso uu_delleen"
-
-#: ../data/ui/interface.ui.h:7
-msgid "_Undo Move"
-msgstr "_Kumoa siirto"
-
-#: ../data/ui/interface.ui.h:8
-msgid "_Pause Game"
-msgstr "K_eskeytä peli"
-
-#: ../data/ui/interface.ui.h:9
-msgid "_Continue Game"
-msgstr "_Jatka peliä"
-
-#: ../data/ui/interface.ui.h:10
-msgid "_Quit"
-msgstr "_Lopeta"
-
-#: ../data/ui/interface.ui.h:11
-msgid "_Help"
-msgstr "O_hje"
-
-#: ../data/ui/interface.ui.h:12
-msgid "_About"
-msgstr "_Tietoja"
-
-#: ../data/ui/interface.ui.h:13
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Taso:"
 
-#: ../data/ui/interface.ui.h:14
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Molekyyli:"
 
-#: ../data/ui/interface.ui.h:15
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Kaava:"
 
-#: ../data/ui/interface.ui.h:16
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Pisteet:"
 
-#: ../data/ui/interface.ui.h:17
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Aika:"
 
-#: ../data/ui/interface.ui.h:18
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "tyhjä"
 
-#: ../data/ui/interface.ui.h:19
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "Tilasto"
 
-#: ../data/ui/interface.ui.h:20
-#| msgid "_New Game"
+#: data/ui/menu.ui:7
 msgid "New Game"
 msgstr "Uusi peli"
 
-#: ../data/ui/interface.ui.h:21
-#| msgid "_End Game"
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Keskeytä tai jatka peliä"
+
+#: data/ui/menu.ui:17
 msgid "End Game"
 msgstr "Lopeta peli"
 
-#: ../data/ui/interface.ui.h:22
-#| msgid "_Skip Level"
+#: data/ui/menu.ui:23
 msgid "Skip Level"
 msgstr "Ohita taso"
 
-#: ../data/ui/interface.ui.h:23
-#| msgid "_Reset Level"
+#: data/ui/menu.ui:28
 msgid "Reset Level"
 msgstr "Aloita taso uudelleen"
 
-#: ../data/ui/interface.ui.h:24
-#| msgid "_Undo Move"
+#: data/ui/menu.ui:32
 msgid "Undo Move"
 msgstr "Kumoa siirto"
 
-#: ../data/ui/interface.ui.h:25
-#| msgid "_Pause Game"
-msgid "Pause Game"
-msgstr "Keskeytä peli"
+#: data/ui/menu.ui:39
+msgid "About Atomix"
+msgstr "Tietoja - Atomix"
 
-#: ../data/ui/interface.ui.h:26
-#| msgid "_Continue Game"
-msgid "Continue Game"
-msgstr "Jatka peliä"
-
-#: ../data/ui/interface.ui.h:27
-#| msgid "_About"
-msgid "About"
-msgstr "Tietoja"
-
-#: ../data/ui/interface.ui.h:28
-#| msgid "_Quit"
-msgid "Quit"
-msgstr "Lopeta"
-
-#: ../src/board-gtk.c:338
+#: src/board-gtk.c:340
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -262,38 +212,76 @@ msgstr ""
 "käytä nuolinäppäimiä ja Enteriä, valitaksesi atomin ja siirtääksesi sitä. "
 "Ole kuitenkin varovainen, sillä atomi liikkuu kunnes se osuu seinämään."
 
-#: ../src/level-manager.c:200
-msgid "Couldn't find level sequence description."
-msgstr "Tason sarjan kuvausta ei löytynyt."
-
-#: ../src/level-manager.c:214
-msgid "No level found."
-msgstr "Tasoa ei löytynyt."
-
-#: ../src/level-manager.c:283
-#, c-format
-msgid "Found level '%s' in: %s"
-msgstr "Taso '%s' löytyi paikasta: %s"
-
-#: ../src/main.c:135
+#: src/main.c:128
 msgid "translator-credits"
 msgstr ""
 "Lauri Nurmi, 2002.\n"
 "Ilkka Tuohela, 2005.\n"
-"Jiri Grönroos, 2015-2016."
+"Jiri Grönroos, 2015-2019."
 
-#: ../src/main.c:438
+#: src/main.c:447
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Onnittelut! Olet läpäissyt kaikki Atomixin tasot."
 
-#: ../src/theme-manager.c:225
-msgid "No themes found."
-msgstr "Teemoja ei löytynyt."
+#~ msgid "_File"
+#~ msgstr "_Tiedosto"
 
-#: ../src/theme-manager.c:283
-#, c-format
-msgid "Found theme '%s' in: %s"
-msgstr "Teema '%s' löytyi paikasta: %s"
+#~ msgid "_New Game"
+#~ msgstr "_Uusi peli"
+
+#~ msgid "_End Game"
+#~ msgstr "_Lopeta peli"
+
+#~ msgid "_Skip Level"
+#~ msgstr "Ohita _taso"
+
+#~ msgid "_Reset Level"
+#~ msgstr "Aloita taso uu_delleen"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_Kumoa siirto"
+
+#~ msgid "_Pause Game"
+#~ msgstr "K_eskeytä peli"
+
+#~ msgid "_Continue Game"
+#~ msgstr "_Jatka peliä"
+
+#~ msgid "_Quit"
+#~ msgstr "_Lopeta"
+
+#~ msgid "_Help"
+#~ msgstr "O_hje"
+
+#~ msgid "_About"
+#~ msgstr "_Tietoja"
+
+#~| msgid "_Pause Game"
+#~ msgid "Pause Game"
+#~ msgstr "Keskeytä peli"
+
+#~| msgid "_About"
+#~ msgid "About"
+#~ msgstr "Tietoja"
+
+#~| msgid "_Quit"
+#~ msgid "Quit"
+#~ msgstr "Lopeta"
+
+#~ msgid "Couldn't find level sequence description."
+#~ msgstr "Tason sarjan kuvausta ei löytynyt."
+
+#~ msgid "No level found."
+#~ msgstr "Tasoa ei löytynyt."
+
+#~ msgid "Found level '%s' in: %s"
+#~ msgstr "Taso '%s' löytyi paikasta: %s"
+
+#~ msgid "No themes found."
+#~ msgstr "Teemoja ei löytynyt."
+
+#~ msgid "Found theme '%s' in: %s"
+#~ msgstr "Teema '%s' löytyi paikasta: %s"
 
 #~ msgid "Continue paused game"
 #~ msgstr "Jatka pysäytettyä peliä"
