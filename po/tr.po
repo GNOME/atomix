@@ -8,34 +8,33 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix 0.4.3\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-11-03 14:41+0000\n"
-"PO-Revision-Date: 2016-11-30 23:03+0300\n"
-"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2018-10-07 20:07+0000\n"
+"PO-Revision-Date: 2019-01-08 11:45+0200\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-POOTLE-MTIME: 1434042213.000000\n"
 
 # editor/interface.c:225
-#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:670
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
+#: src/main.c:688
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../data/atomix.appdata.xml.in.h:2
+#: data/atomix.appdata.xml.in:8
 msgid "Build molecules out of single atoms"
 msgstr "Molekülleri, atomlardan oluşturun"
 
-#: ../data/atomix.appdata.xml.in.h:3
+#: data/atomix.appdata.xml.in:10
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
-"compound atoms by moving them on the playfield. However, atoms don't just "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
@@ -44,7 +43,7 @@ msgstr ""
 "hareket ettirmek istediğiniz yere hareket etmez, onları bir duvara veya "
 "başka bir atoma tutturmak için kaydırmanız gerekir."
 
-#: ../data/atomix.appdata.xml.in.h:4
+#: data/atomix.appdata.xml.in:16
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -53,217 +52,168 @@ msgstr ""
 "bir şekilde molekülleri oluşturmayı deneyin."
 
 # src/interface.c:459
-#: ../data/atomix.desktop.in.h:2
+#: data/atomix.desktop.in:4
 msgid "Molecule puzzle game"
 msgstr "Molekül yapboz oyunu"
 
-#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:124
 msgid "A puzzle game about atoms and molecules"
 msgstr "Atomlar ve moleküller hakkında bir yapboz oyunu"
 
-#: ../data/level/aceticacid.atomix.xml.h:1
+# editor/interface.c:225
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/atomix.desktop.in:8
+msgid "atomix"
+msgstr "atomix"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;oyun;mantık;bulmaca;atomlar;moleküller;sokoban;"
+
+#: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
 msgstr "Asetik Asit"
 
-#: ../data/level/acetone.atomix.xml.h:1
+#: data/level/acetone.atomix.xml.in:2
 msgid "Acetone"
 msgstr "Aseton"
 
-#: ../data/level/butanol.atomix.xml.h:1
+#: data/level/butanol.atomix.xml.in:2
 msgid "Butanol"
 msgstr "Bütanol"
 
-#: ../data/level/cyclobutane.atomix.xml.h:1
+#: data/level/cyclobutane.atomix.xml.in:2
 msgid "Cyclobutane"
 msgstr "Siklobütan"
 
-#: ../data/level/dimethylether.atomix.xml.h:1
+#: data/level/dimethylether.atomix.xml.in:2
 msgid "Dimethyl Ether"
 msgstr "Dimetil Eter"
 
-#: ../data/level/ethanal.atomix.xml.h:1
+#: data/level/ethanal.atomix.xml.in:2
 msgid "Ethanal"
 msgstr "Etanal"
 
-#: ../data/level/ethane.atomix.xml.h:1
+#: data/level/ethane.atomix.xml.in:2
 msgid "Ethane"
 msgstr "Etan"
 
-#: ../data/level/ethanol.atomix.xml.h:1
+#: data/level/ethanol.atomix.xml.in:2
 msgid "Ethanol"
 msgstr "Etanol"
 
-#: ../data/level/ethylene.atomix.xml.h:1
+#: data/level/ethylene.atomix.xml.in:2
 msgid "Ethylene"
 msgstr "Etilen"
 
-#: ../data/level/glycerin.atomix.xml.h:1
+#: data/level/glycerin.atomix.xml.in:2
 msgid "Glycerin"
 msgstr "Gliserin"
 
-#: ../data/level/lactic-acid.atomix.xml.h:1
+#: data/level/lactic-acid.atomix.xml.in:2
 msgid "Lactic Acid"
 msgstr "Laktik Asit"
 
-#: ../data/level/methanal.atomix.xml.h:1
+#: data/level/methanal.atomix.xml.in:2
 msgid "Methanal"
 msgstr "Metanal"
 
-#: ../data/level/methane.atomix.xml.h:1
+#: data/level/methane.atomix.xml.in:2
 msgid "Methane"
 msgstr "Metan"
 
-#: ../data/level/methanol.atomix.xml.h:1
+#: data/level/methanol.atomix.xml.in:2
 msgid "Methanol"
 msgstr "Metanol"
 
-#: ../data/level/propanal.atomix.xml.h:1
+#: data/level/propanal.atomix.xml.in:2
 msgid "Propanal"
 msgstr "Propanal"
 
-#: ../data/level/propylene.atomix.xml.h:1
+#: data/level/propylene.atomix.xml.in:2
 msgid "Propylene"
 msgstr "Propilen"
 
-#: ../data/level/pyran.atomix.xml.h:1
+#: data/level/pyran.atomix.xml.in:2
 msgid "Pyran"
 msgstr "Piran"
 
-#: ../data/level/transbutylen.atomix.xml.h:1
+#: data/level/transbutylen.atomix.xml.in:2
 msgid "Trans Butylen"
 msgstr "Trans Bütilen"
 
-#: ../data/level/water.atomix.xml.h:1
+#: data/level/water.atomix.xml.in:2
 msgid "Water"
 msgstr "Su"
 
-#: ../data/ui/interface.ui.h:2
-msgid "_File"
-msgstr "_Dosya"
-
-# editor/interface.c:2030
-#: ../data/ui/interface.ui.h:3
-msgid "_New Game"
-msgstr "_Yeni Oyun"
-
-#: ../data/ui/interface.ui.h:4
-msgid "_End Game"
-msgstr "Oyunu _Bitir"
-
-# src/interface.c:26
-#: ../data/ui/interface.ui.h:5
-msgid "_Skip Level"
-msgstr "Seviye _Atla"
-
-# editor/interface.c:68
-#: ../data/ui/interface.ui.h:6
-msgid "_Reset Level"
-msgstr "Seviyeyi _Sıfırla"
-
-#: ../data/ui/interface.ui.h:7
-msgid "_Undo Move"
-msgstr "Hareketi _Geri Al"
-
-# src/interface.c:35
-#: ../data/ui/interface.ui.h:8
-msgid "_Pause Game"
-msgstr "Oyunu _Duraklat"
-
-# src/interface.c:35
-#: ../data/ui/interface.ui.h:9
-msgid "_Continue Game"
-msgstr "_Oyuna Devam Et"
-
-#: ../data/ui/interface.ui.h:10
-msgid "_Quit"
-msgstr "_Çık"
-
-#: ../data/ui/interface.ui.h:11
-msgid "_Help"
-msgstr "_Yardım"
-
-#: ../data/ui/interface.ui.h:12
-msgid "_About"
-msgstr "_Hakkında"
-
 # src/interface.c:317
-#: ../data/ui/interface.ui.h:13
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Seviye:"
 
-#: ../data/ui/interface.ui.h:14
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Molekül:"
 
-#: ../data/ui/interface.ui.h:15
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Formül:"
 
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: ../data/ui/interface.ui.h:16
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Skor:"
 
 # src/interface.c:347
-#: ../data/ui/interface.ui.h:17
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Zaman:"
 
-#: ../data/ui/interface.ui.h:18
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "boş"
 
 # src/interface.c:259
-#: ../data/ui/interface.ui.h:19
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "İstatistikler"
 
 # editor/interface.c:2030
-#: ../data/ui/interface.ui.h:20
+#: data/ui/menu.ui:7
 msgid "New Game"
 msgstr "Yeni Oyun"
 
-#: ../data/ui/interface.ui.h:21
+# src/interface.c:35
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Oyunu Duraklat/Devam Ettir"
+
+#: data/ui/menu.ui:17
 msgid "End Game"
 msgstr "Oyunu Bitir"
 
 # src/interface.c:26
-#: ../data/ui/interface.ui.h:22
+#: data/ui/menu.ui:23
 msgid "Skip Level"
 msgstr "Seviyeyi Atla"
 
 # editor/interface.c:68
-#: ../data/ui/interface.ui.h:23
+#: data/ui/menu.ui:28
 msgid "Reset Level"
 msgstr "Seviyeyi Sıfırla"
 
-#: ../data/ui/interface.ui.h:24
+#: data/ui/menu.ui:32
 msgid "Undo Move"
 msgstr "Hareketi Geri Al"
 
-# src/interface.c:35
-#: ../data/ui/interface.ui.h:25
-msgid "Pause Game"
-msgstr "Oyunu Duraklat"
+# editor/interface.c:225
+#: data/ui/menu.ui:39
+msgid "About Atomix"
+msgstr "Atomix Hakkında"
 
-# src/interface.c:35
-#: ../data/ui/interface.ui.h:26
-msgid "Continue Game"
-msgstr "Oyuna Devam Et"
-
-#: ../data/ui/interface.ui.h:27
-msgid "About"
-msgstr "Hakkında"
-
-#: ../data/ui/interface.ui.h:28
-msgid "Quit"
-msgstr "Çıkış"
-
-#: ../src/board-gtk.c:340
-#| msgid ""
-#| "Guide the atoms through the maze to form molecules.\n"
-#| "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-#| "Be careful, though: an atom keeps moving until it hits a wall.\n"
+#: src/board-gtk.c:340
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -274,39 +224,80 @@ msgstr ""
 "kullanın. Ama dikkatli olun: bir atom duvara çarpana kadar hareket etmeye "
 "devam eder."
 
-#: ../src/level-manager.c:200
-msgid "Couldn't find level sequence description."
-msgstr "Seviye sıra açıklaması bulunamadı."
-
-# src/main.c:163
-#: ../src/level-manager.c:214
-msgid "No level found."
-msgstr "Seviye bulunamadı."
-
-#: ../src/level-manager.c:283
-#, c-format
-msgid "Found level '%s' in: %s"
-msgstr "%s seviyesi bulundu: %s"
-
-#: ../src/main.c:135
+#: src/main.c:128
 msgid "translator-credits"
 msgstr ""
 "Muhammet Kara <muhammetk@gmail.com>\n"
 "Kaan Özdinçer <kaanozdincer@gmail.com>"
 
 # src/interface.c:616
-#: ../src/main.c:440
+#: src/main.c:447
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini başarıyla bitirdiniz."
 
-#: ../src/theme-manager.c:225
-msgid "No themes found."
-msgstr "Tema bulunamadı."
+#~ msgid "_File"
+#~ msgstr "_Dosya"
 
-#: ../src/theme-manager.c:283
-#, c-format
-msgid "Found theme '%s' in: %s"
-msgstr "%s teması bulundu: %s"
+# editor/interface.c:2030
+#~ msgid "_New Game"
+#~ msgstr "_Yeni Oyun"
+
+#~ msgid "_End Game"
+#~ msgstr "Oyunu _Bitir"
+
+# src/interface.c:26
+#~ msgid "_Skip Level"
+#~ msgstr "Seviye _Atla"
+
+# editor/interface.c:68
+#~ msgid "_Reset Level"
+#~ msgstr "Seviyeyi _Sıfırla"
+
+#~ msgid "_Undo Move"
+#~ msgstr "Hareketi _Geri Al"
+
+# src/interface.c:35
+#~ msgid "_Pause Game"
+#~ msgstr "Oyunu _Duraklat"
+
+# src/interface.c:35
+#~ msgid "_Continue Game"
+#~ msgstr "_Oyuna Devam Et"
+
+#~ msgid "_Quit"
+#~ msgstr "_Çık"
+
+#~ msgid "_Help"
+#~ msgstr "_Yardım"
+
+#~ msgid "_About"
+#~ msgstr "_Hakkında"
+
+# src/interface.c:35
+#~ msgid "Pause Game"
+#~ msgstr "Oyunu Duraklat"
+
+#~ msgid "About"
+#~ msgstr "Hakkında"
+
+#~ msgid "Quit"
+#~ msgstr "Çıkış"
+
+#~ msgid "Couldn't find level sequence description."
+#~ msgstr "Seviye sıra açıklaması bulunamadı."
+
+# src/main.c:163
+#~ msgid "No level found."
+#~ msgstr "Seviye bulunamadı."
+
+#~ msgid "Found level '%s' in: %s"
+#~ msgstr "%s seviyesi bulundu: %s"
+
+#~ msgid "No themes found."
+#~ msgstr "Tema bulunamadı."
+
+#~ msgid "Found theme '%s' in: %s"
+#~ msgstr "%s teması bulundu: %s"
 
 #~ msgid "Could not show link"
 #~ msgstr "Bağlantı gösterilemedi"
