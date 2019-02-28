@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-03-26 21:03+0000\n"
-"PO-Revision-Date: 2018-03-27 08:45+0700\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"POT-Creation-Date: 2018-10-07 20:07+0000\n"
+"PO-Revision-Date: 2019-02-28 13:37+0700\n"
+"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: GNOME Indonesian Translation Team <gnome@i15n.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:120
-#: src/main.c:655
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
+#: src/main.c:688
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Permainan teka-teki molekul"
 
-#: data/atomix.desktop.in:5 src/main.c:123
+#: data/atomix.desktop.in:5 src/main.c:124
 msgid "A puzzle game about atoms and molecules"
 msgstr "Teka-teki tentang atom dan molekul"
 
@@ -141,32 +141,32 @@ msgstr "Trans Butilen"
 msgid "Water"
 msgstr "Air"
 
-#: data/ui/interface.ui:72
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Tingkat:"
 
-#: data/ui/interface.ui:84
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Molekul:"
 
-#: data/ui/interface.ui:96
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Rumus:"
 
-#: data/ui/interface.ui:108
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Nilai:"
 
-#: data/ui/interface.ui:120
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Waktu:"
 
-#: data/ui/interface.ui:132 data/ui/interface.ui:143 data/ui/interface.ui:155
-#: data/ui/interface.ui:167
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "kosong"
 
-#: data/ui/interface.ui:186
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "Statistik"
 
@@ -195,12 +195,8 @@ msgid "Undo Move"
 msgstr "Batalkan Langkah"
 
 #: data/ui/menu.ui:39
-msgid "About"
-msgstr "Tentang"
-
-#: data/ui/menu.ui:45
-msgid "Quit"
-msgstr "Keluar"
+msgid "About Atomix"
+msgstr "Tentang Atomix"
 
 #: src/board-gtk.c:340
 msgid ""
@@ -212,10 +208,18 @@ msgstr ""
 "tombol panah dan Enter untuk memilih sebuah atom dan menggerakkannya. Tapi "
 "hati-hatilah: sebuah atom akan terus bergerak sampai menabrak tembok."
 
-#: src/main.c:127
+#: src/main.c:128
 msgid "translator-credits"
-msgstr "Andika Triwidada <andika@gmail.com>, 2009, 2011, 2016, 2018."
+msgstr ""
+"Andika Triwidada <andika@gmail.com>, 2009, 2011, 2016, 2018.\n"
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019."
 
-#: src/main.c:423
+#: src/main.c:447
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Selamat! Anda telah menyelesaikan semua tingkat Atomix."
+
+#~ msgid "About"
+#~ msgstr "Tentang"
+
+#~ msgid "Quit"
+#~ msgstr "Keluar"
