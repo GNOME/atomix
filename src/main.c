@@ -49,8 +49,6 @@ static gboolean set_next_level (void);
 static void setup_level (void);
 static void level_cleanup_view (void);
 static void atomix_exit (void);
-static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
-				    gpointer user_data);
 static void game_init (void);
 static void update_statistics (void);
 static void view_congratulations (void);
@@ -232,6 +230,7 @@ static void controller_handle_action (GameAction action)
 
   update_menu_item_state ();
   update_statistics ();
+  gtk_widget_grab_focus (GTK_WIDGET (app->fi_matrix));
 }
 
 static void
@@ -372,15 +371,6 @@ static void atomix_exit (void)
   /* quit application */
   gtk_widget_destroy (app->mainwin);
 
-}
-
-static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
-				    gpointer user_data)
-{
-  if ((app->state == GAME_STATE_RUNNING) || (app->state == GAME_STATE_RUNNING_UNMOVED))
-    return board_gtk_handle_key_event (NULL, event, NULL);
-
-  return FALSE;
 }
 
 static void game_init (void)
@@ -632,10 +622,6 @@ static AtomixApp *create_gui (GApplication *app_instance)
   app->clock = clock_new ();
   gtk_grid_attach_next_to (GTK_GRID (stats_grid), app->clock,
                            time_label, GTK_POS_RIGHT, 1, 1);
-
-  /* add playfield canvas to left side */
-  g_signal_connect (G_OBJECT (app->mainwin), "key-press-event",
-		    G_CALLBACK (on_key_press_event), app);
 
   app->lb_level = GTK_WIDGET (gtk_builder_get_object (builder, "level_value"));
   app->lb_name = GTK_WIDGET (gtk_builder_get_object (builder, "molecule_value"));

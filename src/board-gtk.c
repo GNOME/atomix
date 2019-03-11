@@ -81,6 +81,8 @@ static SelectorData *selector_data;	/* data about the selector */
 
 
 /* Forward declarations of internal functions */
+static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
+				    gpointer user_data);
 void board_gtk_render (void);
 static void render_tile (Tile *tile, gint row, gint col);
 GtkWidget* create_tile (double x, double y, Tile *tile);
@@ -250,6 +252,7 @@ static gboolean board_handle_arrow_event (GtkWidget *item,
                                           GdkEventButton *event,
                                           gpointer direction)
 {
+  gtk_widget_grab_focus (GTK_WIDGET (board_canvas));
   /* is currently an object moved? */
   if (anim_data->timeout_id != -1)
     return FALSE;
@@ -433,6 +436,10 @@ void board_gtk_init (Theme * theme, gpointer canvas)
   create_logo ();
   gtk_widget_show_all (GTK_WIDGET(board_canvas));
 
+    /* add playfield canvas to left side */
+  g_signal_connect (GTK_WIDGET(board_canvas), "key-press-event",
+		    G_CALLBACK (on_key_press_event), app);
+
   selector_data = selector_create ();
 }
 
@@ -516,6 +523,7 @@ static gboolean board_handle_item_event (GtkWidget *item,
   gboolean just_unselect;
   guint new_row, new_col;
 
+  gtk_widget_grab_focus (GTK_WIDGET (board_canvas));
   /* is currently an object moved? */
   if (anim_data->timeout_id != -1)
     return FALSE;
@@ -851,6 +859,14 @@ gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
   return FALSE;
 }
 
+static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
+				    gpointer user_data)
+{
+  if ((app->state == GAME_STATE_RUNNING) || (app->state == GAME_STATE_RUNNING_UNMOVED))
+    return board_gtk_handle_key_event (NULL, event, NULL);
+
+  return FALSE;
+}
 
 static void selector_move_to (SelectorData *data, guint row, guint col)
 {
