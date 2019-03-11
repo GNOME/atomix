@@ -632,6 +632,16 @@ static AtomixApp *create_gui (GApplication *app_instance)
 
   headerbar = GTK_WIDGET (gtk_builder_get_object(builder, "headerbar"));
   gtk_application_add_window (GTK_APPLICATION (app->app_instance), GTK_WINDOW (app->mainwin));
+
+  const char *new_game_accels[] = {"<Primary>N", NULL};
+  gtk_application_set_accels_for_action (GTK_APPLICATION (app->app_instance), "win.GameNew", new_game_accels);
+  const char *pause_game_accels[] = {"<Primary>P", NULL};
+  gtk_application_set_accels_for_action (GTK_APPLICATION (app->app_instance), "win.GamePause", pause_game_accels);
+  const char *skip_level_accels[] = {"<Primary>S", NULL};
+  gtk_application_set_accels_for_action (GTK_APPLICATION (app->app_instance), "win.LevelSkip", skip_level_accels);
+  const char *undo_move_accels[] = {"<Primary>Z", NULL};
+  gtk_application_set_accels_for_action (GTK_APPLICATION (app->app_instance), "win.GameUndo", undo_move_accels);
+
   gtk_window_set_titlebar (GTK_WINDOW (app->mainwin), headerbar);
   GMenu * menu = G_MENU (gtk_builder_get_object (builder, "primary-menu"));
 
