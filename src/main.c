@@ -373,13 +373,6 @@ static void atomix_exit (void)
 
 }
 
-static void on_menu_toggled (GtkToggleButton *button,
-                             gpointer user_data)
-{
-  if (!gtk_toggle_button_get_active(button))
-    gtk_widget_grab_focus (GTK_WIDGET (app->fi_matrix));
-}
-
 static void game_init (void)
 {
   g_return_if_fail (app != NULL);
@@ -654,9 +647,6 @@ static AtomixApp *create_gui (GApplication *app_instance)
 
   primary_menu_button = GTK_WIDGET (gtk_builder_get_object (builder, "primary-menu-button"));
   gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (primary_menu_button), G_MENU_MODEL (menu));
-
-  g_signal_connect (G_OBJECT (primary_menu_button), "toggled",
-                    (GCallback) on_menu_toggled, app);
 
   g_object_unref (builder);
 
