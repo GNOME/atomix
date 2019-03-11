@@ -6,33 +6,33 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=atomix&"
-"keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-08-13 10:04+0000\n"
-"PO-Revision-Date: 2016-08-20 22:50+0200\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2019-03-11 09:12+0000\n"
+"PO-Revision-Date: 2019-03-11 19:06+0100\n"
+"Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
-"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
+#: src/main.c:688
 msgid "Atomix"
 msgstr "Атомикс"
 
-#: ../data/atomix.appdata.xml.in.h:2
+#: data/atomix.appdata.xml.in:8
 msgid "Build molecules out of single atoms"
 msgstr "Изградите молекуле од појединачних атома"
 
-#: ../data/atomix.appdata.xml.in.h:3
+#: data/atomix.appdata.xml.in:10
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
-"compound atoms by moving them on the playfield. However, atoms don't just "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
@@ -41,7 +41,7 @@ msgstr ""
 "иду тамо где ви желите да их преместите, већ се померају све док не ударе "
 "или у зид или у други атом."
 
-#: ../data/atomix.appdata.xml.in.h:4
+#: data/atomix.appdata.xml.in:16
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -49,203 +49,160 @@ msgstr ""
 "Покушајте да изградите молекуле што брже можете на сваком нивоу да остварите "
 "већи резултат."
 
-#: ../data/atomix.desktop.in.h:2
+#: data/atomix.desktop.in:4
 msgid "Molecule puzzle game"
 msgstr "Логичка слагалица са молекулима"
 
-#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:124
 msgid "A puzzle game about atoms and molecules"
 msgstr "Логичка слагалица са атомима и молекулима"
 
-#: ../data/level/aceticacid.atomix.xml.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/atomix.desktop.in:8
+msgid "atomix"
+msgstr "atomix"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr ""
+"GNOME;game;logic;puzzle;atoms;molecules;sokoban;Гном;игра;логика;слагалица;"
+"атоми;молекули;сокобан;"
+
+#: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
 msgstr "Ацетна киселина"
 
-#: ../data/level/acetone.atomix.xml.h:1
+#: data/level/acetone.atomix.xml.in:2
 msgid "Acetone"
 msgstr "Ацетин"
 
-#: ../data/level/butanol.atomix.xml.h:1
+#: data/level/butanol.atomix.xml.in:2
 msgid "Butanol"
 msgstr "Бутанол"
 
-#: ../data/level/cyclobutane.atomix.xml.h:1
+#: data/level/cyclobutane.atomix.xml.in:2
 msgid "Cyclobutane"
 msgstr "Циклобутан"
 
-#: ../data/level/dimethylether.atomix.xml.h:1
+#: data/level/dimethylether.atomix.xml.in:2
 msgid "Dimethyl Ether"
 msgstr "Диметил Етер"
 
-#: ../data/level/ethanal.atomix.xml.h:1
+#: data/level/ethanal.atomix.xml.in:2
 msgid "Ethanal"
 msgstr "Етанал"
 
-#: ../data/level/ethane.atomix.xml.h:1
+#: data/level/ethane.atomix.xml.in:2
 msgid "Ethane"
 msgstr "Етан"
 
-#: ../data/level/ethanol.atomix.xml.h:1
+#: data/level/ethanol.atomix.xml.in:2
 msgid "Ethanol"
 msgstr "Етанол"
 
-#: ../data/level/ethylene.atomix.xml.h:1
+#: data/level/ethylene.atomix.xml.in:2
 msgid "Ethylene"
 msgstr "Еталин"
 
-#: ../data/level/glycerin.atomix.xml.h:1
+#: data/level/glycerin.atomix.xml.in:2
 msgid "Glycerin"
 msgstr "Глицерин"
 
-#: ../data/level/lactic-acid.atomix.xml.h:1
+#: data/level/lactic-acid.atomix.xml.in:2
 msgid "Lactic Acid"
 msgstr "Млечна киселина"
 
-#: ../data/level/methanal.atomix.xml.h:1
+#: data/level/methanal.atomix.xml.in:2
 msgid "Methanal"
 msgstr "Метанал"
 
-#: ../data/level/methane.atomix.xml.h:1
+#: data/level/methane.atomix.xml.in:2
 msgid "Methane"
 msgstr "Метан"
 
-#: ../data/level/methanol.atomix.xml.h:1
+#: data/level/methanol.atomix.xml.in:2
 msgid "Methanol"
 msgstr "Метанол"
 
-#: ../data/level/propanal.atomix.xml.h:1
+#: data/level/propanal.atomix.xml.in:2
 msgid "Propanal"
 msgstr "Пропанол"
 
-#: ../data/level/propylene.atomix.xml.h:1
+#: data/level/propylene.atomix.xml.in:2
 msgid "Propylene"
 msgstr "Пропилен"
 
-#: ../data/level/pyran.atomix.xml.h:1
+#: data/level/pyran.atomix.xml.in:2
 msgid "Pyran"
 msgstr "Пиран"
 
-#: ../data/level/transbutylen.atomix.xml.h:1
+#: data/level/transbutylen.atomix.xml.in:2
 msgid "Trans Butylen"
 msgstr "Транс-бутелин"
 
-#: ../data/level/water.atomix.xml.h:1
+#: data/level/water.atomix.xml.in:2
 msgid "Water"
 msgstr "Вода"
 
-#: ../data/ui/interface.ui.h:2
-msgid "_File"
-msgstr "_Датотека"
-
-#: ../data/ui/interface.ui.h:3
-msgid "_New Game"
-msgstr "_Нова игра"
-
-#: ../data/ui/interface.ui.h:4
-msgid "_End Game"
-msgstr "_Крај игре"
-
-#: ../data/ui/interface.ui.h:5
-msgid "_Skip Level"
-msgstr "Прескочи _ниво"
-
-#: ../data/ui/interface.ui.h:6
-msgid "_Reset Level"
-msgstr "_Поново постави ниво"
-
-#: ../data/ui/interface.ui.h:7
-msgid "_Undo Move"
-msgstr "_Опозови потез"
-
-#: ../data/ui/interface.ui.h:8
-msgid "_Pause Game"
-msgstr "Паузирај _игру"
-
-#: ../data/ui/interface.ui.h:9
-msgid "_Continue Game"
-msgstr "_Настави игру"
-
-#: ../data/ui/interface.ui.h:10
-msgid "_Quit"
-msgstr "_Изађи"
-
-#: ../data/ui/interface.ui.h:11
-msgid "_Help"
-msgstr "По_моћ"
-
-#: ../data/ui/interface.ui.h:12
-msgid "_About"
-msgstr "_О игри"
-
-#: ../data/ui/interface.ui.h:13
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Ниво:"
 
-#: ../data/ui/interface.ui.h:14
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Молекул:"
 
-#: ../data/ui/interface.ui.h:15
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Формула:"
 
-#: ../data/ui/interface.ui.h:16
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Резултат:"
 
-#: ../data/ui/interface.ui.h:17
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Време:"
 
-#: ../data/ui/interface.ui.h:18
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "празно"
 
-#: ../data/ui/interface.ui.h:19
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "Статистика"
 
-#: ../data/ui/interface.ui.h:20
+#: data/ui/menu.ui:7
 msgid "New Game"
 msgstr "Нова игра"
 
-#: ../data/ui/interface.ui.h:21
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Заустави или настави игру"
+
+#: data/ui/menu.ui:17
 msgid "End Game"
 msgstr "Крај игре"
 
-#: ../data/ui/interface.ui.h:22
+#: data/ui/menu.ui:23
 msgid "Skip Level"
 msgstr "Прескочи ниво"
 
-#: ../data/ui/interface.ui.h:23
+#: data/ui/menu.ui:28
 msgid "Reset Level"
 msgstr "Поново постави ниво"
 
-#: ../data/ui/interface.ui.h:24
+#: data/ui/menu.ui:32
 msgid "Undo Move"
 msgstr "Опозови потез"
 
-#: ../data/ui/interface.ui.h:25
-msgid "Pause Game"
-msgstr "Паузирај игру"
+#: data/ui/menu.ui:39
+msgid "About Atomix"
+msgstr "О Атомиксу"
 
-#: ../data/ui/interface.ui.h:26
-msgid "Continue Game"
-msgstr "Настави игру"
-
-#: ../data/ui/interface.ui.h:27
-msgid "About"
-msgstr "О игри"
-
-#: ../data/ui/interface.ui.h:28
-msgid "Quit"
-msgstr "Изађи"
-
-#: ../src/board-gtk.c:338
-#| msgid ""
-#| "Guide the atoms through the maze to form molecules.\n"
-#| "Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-#| "Be careful, though: an atom keeps moving until it hits a wall.\n"
+#: src/board-gtk.c:340
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -256,39 +213,75 @@ msgstr ""
 "преместите. Будите пажљиви, јер: атом наставља да се креће све док не лупи о "
 "зид."
 
-#: ../src/level-manager.c:200
-msgid "Couldn't find level sequence description."
-msgstr "Не могу пронаћи опис радњи нивоа."
-
-#: ../src/level-manager.c:214
-msgid "No level found."
-msgstr "Ниво није пронађен."
-
-#: ../src/level-manager.c:283
-#, c-format
-msgid "Found level '%s' in: %s"
-msgstr "Пронађен ниво „%s“ у: %s"
-
-#: ../src/main.c:135
+#: src/main.c:128
 msgid "translator-credits"
 msgstr ""
 "Александар Урошевић <urke@gmx.net>\n"
 "Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "\n"
 "http://prevod.org — преводи на српски језик"
 
-#: ../src/main.c:438
+#: src/main.c:447
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Честитам! Прешли сте све нивое Атомикса."
 
-#: ../src/theme-manager.c:225
-msgid "No themes found."
-msgstr "Тема није пронађена."
+#~ msgid "_File"
+#~ msgstr "_Датотека"
 
-#: ../src/theme-manager.c:283
-#, c-format
-msgid "Found theme '%s' in: %s"
-msgstr "Пронађена је тема „%s‟ у: %s"
+#~ msgid "_New Game"
+#~ msgstr "_Нова игра"
+
+#~ msgid "_End Game"
+#~ msgstr "_Крај игре"
+
+#~ msgid "_Skip Level"
+#~ msgstr "Прескочи _ниво"
+
+#~ msgid "_Reset Level"
+#~ msgstr "_Поново постави ниво"
+
+#~ msgid "_Undo Move"
+#~ msgstr "_Опозови потез"
+
+#~ msgid "_Pause Game"
+#~ msgstr "Паузирај _игру"
+
+#~ msgid "_Continue Game"
+#~ msgstr "_Настави игру"
+
+#~ msgid "_Quit"
+#~ msgstr "_Изађи"
+
+#~ msgid "_Help"
+#~ msgstr "По_моћ"
+
+#~ msgid "_About"
+#~ msgstr "_О игри"
+
+#~ msgid "Pause Game"
+#~ msgstr "Паузирај игру"
+
+#~ msgid "About"
+#~ msgstr "О игри"
+
+#~ msgid "Quit"
+#~ msgstr "Изађи"
+
+#~ msgid "Couldn't find level sequence description."
+#~ msgstr "Не могу пронаћи опис радњи нивоа."
+
+#~ msgid "No level found."
+#~ msgstr "Ниво није пронађен."
+
+#~ msgid "Found level '%s' in: %s"
+#~ msgstr "Пронађен ниво „%s“ у: %s"
+
+#~ msgid "No themes found."
+#~ msgstr "Тема није пронађена."
+
+#~ msgid "Found theme '%s' in: %s"
+#~ msgstr "Пронађена је тема „%s‟ у: %s"
 
 #~ msgid "Could not show link"
 #~ msgstr "Не могу да прикажем везицу"
