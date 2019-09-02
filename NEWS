@@ -1,3 +1,9 @@
+2019-09-02: Release version 3.33.92
+
+  * Updated translations
+  * Fixed game keyboard shortcuts
+  * Fixed arrow keys in menu controlling game (#17)
+
 2019-03-11: Release version 3.32.0
 
   * Stable release version bump
