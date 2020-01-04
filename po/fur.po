@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2019-11-01 10:00+0000\n"
-"PO-Revision-Date: 2020-01-02 07:52+0100\n"
+"POT-Creation-Date: 2020-01-02 06:55+0000\n"
+"PO-Revision-Date: 2020-01-04 08:29+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -57,7 +57,7 @@ msgstr "Un berdei cun atoms e moleculis"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/atomix.desktop.in:13
 msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr ""
+msgstr "GNOME;zûc;logjiche;puzzle;atoms;moleculis;sokoban;"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
