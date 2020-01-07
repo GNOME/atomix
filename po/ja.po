@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-08 17:31+0900\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2019-11-01 09:57+0000\n"
 "PO-Revision-Date: 2006-01-08 17:30+0900\n"
 "Last-Translator: Takeshi Aihana <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
@@ -15,249 +15,272 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../level/aceticacid.atomix.xml.h:1
-msgid "Acetic Acid"
-msgstr "酢酸"
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
+#: src/main.c:684
+msgid "Atomix"
+msgstr "Atomix"
 
-#: ../level/acetone.atomix.xml.h:1
-msgid "Acetone"
-msgstr "アセトン"
+#: data/atomix.appdata.xml.in:8
+msgid "Build molecules out of single atoms"
+msgstr ""
 
-#: ../level/butanol.atomix.xml.h:1
-msgid "Butanol"
-msgstr "ブタノール"
+#: data/atomix.appdata.xml.in:10
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
 
-#: ../level/cyclobutane.atomix.xml.h:1
-msgid "Cyclobutane"
-msgstr "シクロブタン"
+#: data/atomix.appdata.xml.in:16
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
 
-#: ../level/dimethylether.atomix.xml.h:1
-msgid "Dimethyl Ether"
-msgstr "ジメチルエーテル"
+#: data/atomix.desktop.in:4
+msgid "Molecule puzzle game"
+msgstr "分子構造のパズル・ゲームです"
 
-#: ../level/ethanal.atomix.xml.h:1
-msgid "Ethanal"
-msgstr "エタナール"
-
-#: ../level/ethane.atomix.xml.h:1
-msgid "Ethane"
-msgstr "エタン"
-
-#: ../level/ethanol.atomix.xml.h:1
-msgid "Ethanol"
-msgstr "エチルアルコール"
-
-#: ../level/ethylene.atomix.xml.h:1
-msgid "Ethylene"
-msgstr "エチレン"
-
-#: ../level/glycerin.atomix.xml.h:1
-msgid "Glycerin"
-msgstr "グリセリン"
-
-#: ../level/lactic-acid.atomix.xml.h:1
-msgid "Lactic Acid"
-msgstr "乳酸"
-
-#: ../level/methanal.atomix.xml.h:1
-msgid "Methanal"
-msgstr "メタナール"
-
-#: ../level/methane.atomix.xml.h:1
-msgid "Methane"
-msgstr "メタン"
-
-#: ../level/methanol.atomix.xml.h:1
-msgid "Methanol"
-msgstr "メタノール"
-
-#: ../level/propanal.atomix.xml.h:1
-msgid "Propanal"
-msgstr "プロパナール"
-
-#: ../level/propylene.atomix.xml.h:1
-msgid "Propylene"
-msgstr "プロピレン"
-
-#: ../level/pyran.atomix.xml.h:1
-msgid "Pyran"
-msgstr "ピラン"
-
-#: ../level/transbutylen.atomix.xml.h:1
-msgid "Trans Butylen"
-msgstr "ブチレン"
-
-#: ../level/water.atomix.xml.h:1
-msgid "Water"
-msgstr "水"
-
-#: ../src/atomix-ui.xml.h:1
-msgid "Continue paused game"
-msgstr "一時停止していたゲームを再開します"
-
-#: ../src/atomix-ui.xml.h:2
-msgid "End a game"
-msgstr "ゲームを終了します"
-
-#: ../src/atomix-ui.xml.h:3
-msgid "Pause the running game"
-msgstr "現在プレイ中のゲームを一時停止します"
-
-#: ../src/atomix-ui.xml.h:4
-msgid "Reset level"
-msgstr "レベルのクリア"
-
-#: ../src/atomix-ui.xml.h:5
-msgid "Restores start situation"
-msgstr "開始時の状態に戻します"
-
-#: ../src/atomix-ui.xml.h:6
-msgid "Set preferences"
-msgstr "設定のセット"
-
-#: ../src/atomix-ui.xml.h:7
-msgid "Skip _level"
-msgstr "レベルのスキップ(_L)"
-
-#: ../src/atomix-ui.xml.h:8
-msgid "Skip the current level"
-msgstr "現在のレベルをスキップします"
-
-#: ../src/atomix-ui.xml.h:9
-msgid "Start a new game"
-msgstr "新しいゲームを開始します"
-
-#: ../src/atomix-ui.xml.h:10
-msgid "Undo the last move"
-msgstr "最後の一手に戻します"
-
-#: ../src/atomix-ui.xml.h:11
-msgid "View highscores"
-msgstr "最高得点を表示します"
-
-#: ../src/atomix-ui.xml.h:12
-msgid "_Continue game"
-msgstr "ゲームの再開(_C)"
-
-#: ../src/atomix-ui.xml.h:13
-msgid "_End Game"
-msgstr "終了(_E)"
-
-#: ../src/atomix-ui.xml.h:14
-msgid "_Game"
-msgstr "ゲーム(_G)"
-
-#. submenu name="Edit" _label="_Edit">
-#.
-#. <menuitem name="EditPreferences" verb=""/>
-#.
-#. </submenu
-#: ../src/atomix-ui.xml.h:20
-msgid "_Help"
-msgstr "ヘルプ(_H)"
-
-#: ../src/atomix-ui.xml.h:21
-msgid "_New Game"
-msgstr "新規(_N)"
-
-#: ../src/atomix-ui.xml.h:22
-msgid "_Pause game"
-msgstr "一時停止(_P)"
-
-#: ../src/atomix-ui.xml.h:23
-msgid "_Preferences ..."
-msgstr "設定(_P)..."
-
-#: ../src/atomix-ui.xml.h:24
-msgid "_Scores ..."
-msgstr "得点(_S)..."
-
-#: ../src/atomix-ui.xml.h:25
-msgid "_Undo move"
-msgstr "アンドゥ(_U)"
-
-#: ../src/level-manager.c:174
-msgid "Couldn't find level sequence description."
-msgstr "レベル順序記述ファイルが見つかりませんでした。"
-
-#: ../src/level-manager.c:188
-msgid "No level found."
-msgstr "レベルがありません。"
-
-#: ../src/level-manager.c:284
-#, c-format
-msgid "Found level '%s' in: %s"
-msgstr "レベル '%s' が %s の中にありました"
-
-#: ../src/main.c:126
-msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr "まだ得点を得ていません。終了する前に、もう少し遊んでみて下さい！"
-
-#: ../src/main.c:173
+#: data/atomix.desktop.in:5 src/main.c:122
 msgid "A puzzle game about atoms and molecules"
 msgstr "原子と分子の構造をテーマとしたパズル・ゲームです"
 
-#: ../src/main.c:177
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr ""
+
+#: data/level/aceticacid.atomix.xml.in:2
+msgid "Acetic Acid"
+msgstr "酢酸"
+
+#: data/level/acetone.atomix.xml.in:2
+msgid "Acetone"
+msgstr "アセトン"
+
+#: data/level/butanol.atomix.xml.in:2
+msgid "Butanol"
+msgstr "ブタノール"
+
+#: data/level/cyclobutane.atomix.xml.in:2
+msgid "Cyclobutane"
+msgstr "シクロブタン"
+
+#: data/level/dimethylether.atomix.xml.in:2
+msgid "Dimethyl Ether"
+msgstr "ジメチルエーテル"
+
+#: data/level/ethanal.atomix.xml.in:2
+msgid "Ethanal"
+msgstr "エタナール"
+
+#: data/level/ethane.atomix.xml.in:2
+msgid "Ethane"
+msgstr "エタン"
+
+#: data/level/ethanol.atomix.xml.in:2
+msgid "Ethanol"
+msgstr "エチルアルコール"
+
+#: data/level/ethylene.atomix.xml.in:2
+msgid "Ethylene"
+msgstr "エチレン"
+
+#: data/level/glycerin.atomix.xml.in:2
+msgid "Glycerin"
+msgstr "グリセリン"
+
+#: data/level/lactic-acid.atomix.xml.in:2
+msgid "Lactic Acid"
+msgstr "乳酸"
+
+#: data/level/methanal.atomix.xml.in:2
+msgid "Methanal"
+msgstr "メタナール"
+
+#: data/level/methane.atomix.xml.in:2
+msgid "Methane"
+msgstr "メタン"
+
+#: data/level/methanol.atomix.xml.in:2
+msgid "Methanol"
+msgstr "メタノール"
+
+#: data/level/propanal.atomix.xml.in:2
+msgid "Propanal"
+msgstr "プロパナール"
+
+#: data/level/propylene.atomix.xml.in:2
+msgid "Propylene"
+msgstr "プロピレン"
+
+#: data/level/pyran.atomix.xml.in:2
+msgid "Pyran"
+msgstr "ピラン"
+
+#: data/level/transbutylen.atomix.xml.in:2
+msgid "Trans Butylen"
+msgstr "ブチレン"
+
+#: data/level/water.atomix.xml.in:2
+msgid "Water"
+msgstr "水"
+
+#: data/ui/interface.ui:101
+msgid "Level:"
+msgstr "レベル:"
+
+#: data/ui/interface.ui:113
+msgid "Molecule:"
+msgstr "分子:"
+
+#: data/ui/interface.ui:125
+msgid "Formula:"
+msgstr "化学式:"
+
+#: data/ui/interface.ui:137
+msgid "Score:"
+msgstr "得点:"
+
+#: data/ui/interface.ui:149
+msgid "Time:"
+msgstr "タイム:"
+
+#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
+#: data/ui/interface.ui:196
+msgid "empty"
+msgstr ""
+
+#: data/ui/interface.ui:215
+msgid "Statistics"
+msgstr "ゲームの成績"
+
+#: data/ui/menu.ui:7
+#, fuzzy
+#| msgid "_New Game"
+msgid "New Game"
+msgstr "新規(_N)"
+
+#: data/ui/menu.ui:12
+#, fuzzy
+#| msgid "_Continue game"
+msgid "Pause/Continue Game"
+msgstr "ゲームの再開(_C)"
+
+#: data/ui/menu.ui:17
+#, fuzzy
+#| msgid "_End Game"
+msgid "End Game"
+msgstr "終了(_E)"
+
+#: data/ui/menu.ui:23
+#, fuzzy
+#| msgid "Skip _level"
+msgid "Skip Level"
+msgstr "レベルのスキップ(_L)"
+
+#: data/ui/menu.ui:28
+#, fuzzy
+#| msgid "Reset level"
+msgid "Reset Level"
+msgstr "レベルのクリア"
+
+#: data/ui/menu.ui:32
+#, fuzzy
+#| msgid "_Undo move"
+msgid "Undo Move"
+msgstr "アンドゥ(_U)"
+
+#: data/ui/menu.ui:39
+#, fuzzy
+#| msgid "Atomix"
+msgid "About Atomix"
+msgstr "Atomix"
+
+#: src/board-gtk.c:343
+msgid ""
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
+msgstr ""
+
+#: src/main.c:126
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <aihana@gnome.gr.jp>\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp"
 
-#: ../src/main.c:488 ../atomix.desktop.in.h:1
-msgid "Atomix"
-msgstr "Atomix"
-
-#: ../src/main.c:499
+#: src/main.c:437
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "おめでとうございます！ Atomix の全てのレベルをクリアしました。"
 
-#: ../src/main.c:509
-msgid "Couldn't find at least one level."
-msgstr "一つもレベルが見つかりませんでした。"
+#~ msgid "Continue paused game"
+#~ msgstr "一時停止していたゲームを再開します"
 
-#: ../src/main.c:514
-msgid "Do you want to finish the game?"
-msgstr "本当にこのゲームを終了しても宜しいですか？"
+#~ msgid "End a game"
+#~ msgstr "ゲームを終了します"
 
-#. create statistics frame
-#: ../src/main.c:728
-msgid "Statistics"
-msgstr "ゲームの成績"
+#~ msgid "Pause the running game"
+#~ msgstr "現在プレイ中のゲームを一時停止します"
 
-#: ../src/main.c:734
-msgid "Level:"
-msgstr "レベル:"
+#~ msgid "Restores start situation"
+#~ msgstr "開始時の状態に戻します"
 
-#: ../src/main.c:735
-msgid "Molecule:"
-msgstr "分子:"
+#~ msgid "Set preferences"
+#~ msgstr "設定のセット"
 
-#: ../src/main.c:736
-msgid "Formula:"
-msgstr "化学式:"
+#~ msgid "Skip the current level"
+#~ msgstr "現在のレベルをスキップします"
 
-#: ../src/main.c:737
-msgid "Score:"
-msgstr "得点:"
+#~ msgid "Start a new game"
+#~ msgstr "新しいゲームを開始します"
 
-#: ../src/main.c:738
-msgid "Time:"
-msgstr "タイム:"
+#~ msgid "Undo the last move"
+#~ msgstr "最後の一手に戻します"
 
-#: ../src/main.c:778
-#, c-format
-msgid "Couldn't find file: %s"
-msgstr "ファイルが見つかりませんでした: %s"
+#~ msgid "View highscores"
+#~ msgstr "最高得点を表示します"
 
-#: ../src/theme-manager.c:135
-msgid "No themes found."
-msgstr "テーマが見つかりませんでした。"
+#~ msgid "_Game"
+#~ msgstr "ゲーム(_G)"
 
-#: ../src/theme-manager.c:193
-#, c-format
-msgid "Found theme '%s' in: %s"
-msgstr "テーマ '%s' が %s の中にありました"
+#~ msgid "_Help"
+#~ msgstr "ヘルプ(_H)"
 
-#: ../atomix.desktop.in.h:2
-msgid "Molecule puzzle game"
-msgstr "分子構造のパズル・ゲームです"
+#~ msgid "_Pause game"
+#~ msgstr "一時停止(_P)"
+
+#~ msgid "_Preferences ..."
+#~ msgstr "設定(_P)..."
+
+#~ msgid "_Scores ..."
+#~ msgstr "得点(_S)..."
+
+#~ msgid "Couldn't find level sequence description."
+#~ msgstr "レベル順序記述ファイルが見つかりませんでした。"
+
+#~ msgid "No level found."
+#~ msgstr "レベルがありません。"
+
+#~ msgid "Found level '%s' in: %s"
+#~ msgstr "レベル '%s' が %s の中にありました"
+
+#~ msgid ""
+#~ "You have not achieved any scores yet. Play a little before coming back!"
+#~ msgstr "まだ得点を得ていません。終了する前に、もう少し遊んでみて下さい！"
+
+#~ msgid "Couldn't find at least one level."
+#~ msgstr "一つもレベルが見つかりませんでした。"
+
+#~ msgid "Do you want to finish the game?"
+#~ msgstr "本当にこのゲームを終了しても宜しいですか？"
+
+#~ msgid "Couldn't find file: %s"
+#~ msgstr "ファイルが見つかりませんでした: %s"
+
+#~ msgid "No themes found."
+#~ msgstr "テーマが見つかりませんでした。"
+
+#~ msgid "Found theme '%s' in: %s"
+#~ msgstr "テーマ '%s' が %s の中にありました"
