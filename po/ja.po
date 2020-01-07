@@ -1,14 +1,15 @@
 # atomix ja.po.
-# Copyright (C) 2001,2002,2005,2006 Free Software Foundation, Inc.
-# Takeshi Aihana <aihana@gnome.gr.jp>, 2001,2002,2005,2006.
+# Copyright (C) 2001, 2002, 2005, 2006, 2020 Free Software Foundation, Inc.
+# Takeshi Aihana <aihana@gnome.gr.jp>, 2001, 2002, 2005, 2006.
+# sicklylife <translation@sicklylife.jp>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
 "POT-Creation-Date: 2019-11-01 09:57+0000\n"
-"PO-Revision-Date: 2006-01-08 17:30+0900\n"
-"Last-Translator: Takeshi Aihana <aihana@gnome.gr.jp>\n"
+"PO-Revision-Date: 2019-01-07 21:30+0900\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +50,7 @@ msgstr "原子と分子の構造をテーマとしたパズル・ゲームです
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/atomix.desktop.in:13
 msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr ""
+msgstr "GNOME;game;logic;puzzle;atoms;molecules;sokoban;ゲーム;ロジック;パズル;原子;分子;倉庫番;"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
@@ -157,46 +158,32 @@ msgid "Statistics"
 msgstr "ゲームの成績"
 
 #: data/ui/menu.ui:7
-#, fuzzy
-#| msgid "_New Game"
 msgid "New Game"
-msgstr "新規(_N)"
+msgstr "新しいゲーム"
 
 #: data/ui/menu.ui:12
-#, fuzzy
-#| msgid "_Continue game"
 msgid "Pause/Continue Game"
-msgstr "ゲームの再開(_C)"
+msgstr "ゲームを一時停止/再開"
 
 #: data/ui/menu.ui:17
-#, fuzzy
-#| msgid "_End Game"
 msgid "End Game"
-msgstr "終了(_E)"
+msgstr "ゲームを終了"
 
 #: data/ui/menu.ui:23
-#, fuzzy
-#| msgid "Skip _level"
 msgid "Skip Level"
-msgstr "レベルのスキップ(_L)"
+msgstr "レベルをスキップ"
 
 #: data/ui/menu.ui:28
-#, fuzzy
-#| msgid "Reset level"
 msgid "Reset Level"
-msgstr "レベルのクリア"
+msgstr "レベルをリセット"
 
 #: data/ui/menu.ui:32
-#, fuzzy
-#| msgid "_Undo move"
 msgid "Undo Move"
-msgstr "アンドゥ(_U)"
+msgstr "移動を元に戻す"
 
 #: data/ui/menu.ui:39
-#, fuzzy
-#| msgid "Atomix"
 msgid "About Atomix"
-msgstr "Atomix"
+msgstr "Atomix について"
 
 #: src/board-gtk.c:343
 msgid ""
@@ -204,16 +191,20 @@ msgid ""
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
 "keeps moving until it hits a wall."
 msgstr ""
+"フィールド内の原子を誘導して分子を形成してください。原子をクリックするか、"
+"矢印キーと Enter キーで選択すると動かせます。原子を動かすと壁にぶつかるまで"
+"止まらないことに注意してください。"
 
 #: src/main.c:126
 msgid "translator-credits"
 msgstr ""
 "相花 毅 <aihana@gnome.gr.jp>\n"
-"日本GNOMEユーザー会 http://www.gnome.gr.jp"
+"日本 GNOME ユーザー会 <http://www.gnome.gr.jp>\n"
+"sicklylife <translation@sicklylife.jp>"
 
 #: src/main.c:437
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "おめでとうございます！ Atomix の全てのレベルをクリアしました。"
+msgstr "おめでとうございます! Atomix のすべてのレベルをクリアしました。"
 
 #~ msgid "Continue paused game"
 #~ msgstr "一時停止していたゲームを再開します"
