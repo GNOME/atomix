@@ -32,7 +32,7 @@ static void theme_init (Theme *theme);
 static void theme_finalize (GObject *object);
 static void destroy_theme_image (gpointer data);
 
-GObjectClass *parent_class;
+static GObjectClass *parent_class;
 
 GType theme_get_type (void)
 {

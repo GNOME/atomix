@@ -31,7 +31,7 @@ static void level_class_init (GObjectClass *class);
 static void level_init (Level *level);
 static void level_finalize (GObject *object);
 
-GObjectClass *parent_class;
+static GObjectClass *parent_class;
 
 /*=================================================================
  
