@@ -6,32 +6,31 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=atomix&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-09 15:58+0000\n"
-"PO-Revision-Date: 2016-03-09 23:42+0200\n"
-"Last-Translator: Yannis Koutsoukos <giankoyt@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2020-09-10 10:51+0000\n"
+"PO-Revision-Date: 2020-10-01 01:45+0300\n"
+"Last-Translator: Efstathios Iosifidis <eiosifidis@gnome.org>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.3\n"
 
-#: ../data/atomix.appdata.xml.in.h:1 ../data/atomix.desktop.in.h:1
-#: ../data/ui/interface.ui.h:1 ../src/main.c:128 ../src/main.c:669
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
+#: src/main.c:684
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../data/atomix.appdata.xml.in.h:2
+#: data/atomix.appdata.xml.in:8
 msgid "Build molecules out of single atoms"
 msgstr "Συνθέσετε μόρια από απλά άτομα"
 
-#: ../data/atomix.appdata.xml.in.h:3
+#: data/atomix.appdata.xml.in:10
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
-"compound atoms by moving them on the playfield. However, atoms don't just "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
@@ -40,274 +39,257 @@ msgstr ""
 "μετακινούνται σε οποιαδήποτε θέση, αλλά ολισθαίνουν μέχρι να χτυπήσουν είτε "
 "ένα τοίχο είτε ένα άλλο άτομο."
 
-#: ../data/atomix.appdata.xml.in.h:4
+#: data/atomix.appdata.xml.in:16
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
 msgstr ""
 "Δοκιμάστε να συνθέσετε τα μόρια όσο γρήγορα μπορείτε σε κάθε επίπεδο για να "
-"κερδίσετε μεγαλύτερη βαθμολογία"
+"κερδίσετε μεγαλύτερη βαθμολογία."
 
-#: ../data/atomix.desktop.in.h:2
+#: data/atomix.desktop.in:4
 msgid "Molecule puzzle game"
 msgstr "Παιχνίδι γρίφου με μόρια"
 
-#: ../data/atomix.desktop.in.h:3 ../src/main.c:131
+#: data/atomix.desktop.in:5 src/main.c:122
 msgid "A puzzle game about atoms and molecules"
 msgstr "Ένα παιχνίδι γρίφου με άτομα και μόρια"
 
-#: ../data/level/aceticacid.atomix.xml.h:1
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;παιχνίδι;λογική;γρίφος;άτομα;μόρια;sokoban;"
+
+#: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
 msgstr "Οξικό οξύ"
 
-#: ../data/level/acetone.atomix.xml.h:1
+#: data/level/acetone.atomix.xml.in:2
 msgid "Acetone"
 msgstr "Ακετόνη"
 
-#: ../data/level/butanol.atomix.xml.h:1
+#: data/level/butanol.atomix.xml.in:2
 msgid "Butanol"
 msgstr "Βουτανόλη"
 
-#: ../data/level/cyclobutane.atomix.xml.h:1
+#: data/level/cyclobutane.atomix.xml.in:2
 msgid "Cyclobutane"
 msgstr "Κυκλοβουτάνιο"
 
-#: ../data/level/dimethylether.atomix.xml.h:1
+#: data/level/dimethylether.atomix.xml.in:2
 msgid "Dimethyl Ether"
 msgstr "Διμεθυλαιθέρας"
 
-#: ../data/level/ethanal.atomix.xml.h:1
+#: data/level/ethanal.atomix.xml.in:2
 msgid "Ethanal"
 msgstr "Αιθανάλη"
 
-#: ../data/level/ethane.atomix.xml.h:1
+#: data/level/ethane.atomix.xml.in:2
 msgid "Ethane"
 msgstr "Αιθάνιο"
 
-#: ../data/level/ethanol.atomix.xml.h:1
+#: data/level/ethanol.atomix.xml.in:2
 msgid "Ethanol"
 msgstr "Αιθανόλη"
 
-#: ../data/level/ethylene.atomix.xml.h:1
+#: data/level/ethylene.atomix.xml.in:2
 msgid "Ethylene"
 msgstr "Αιθυλένιο"
 
-#: ../data/level/glycerin.atomix.xml.h:1
+#: data/level/glycerin.atomix.xml.in:2
 msgid "Glycerin"
 msgstr "Γλυκερίνη"
 
-#: ../data/level/lactic-acid.atomix.xml.h:1
+#: data/level/lactic-acid.atomix.xml.in:2
 msgid "Lactic Acid"
 msgstr "Γαλακτικό οξύ"
 
-#: ../data/level/methanal.atomix.xml.h:1
+#: data/level/methanal.atomix.xml.in:2
 msgid "Methanal"
 msgstr "Μεθανάλη"
 
-#: ../data/level/methane.atomix.xml.h:1
+#: data/level/methane.atomix.xml.in:2
 msgid "Methane"
 msgstr "Μεθάνιο"
 
-#: ../data/level/methanol.atomix.xml.h:1
+#: data/level/methanol.atomix.xml.in:2
 msgid "Methanol"
 msgstr "Μεθανόλη"
 
-#: ../data/level/propanal.atomix.xml.h:1
+#: data/level/propanal.atomix.xml.in:2
 msgid "Propanal"
 msgstr "Προπανάλη"
 
-#: ../data/level/propylene.atomix.xml.h:1
+#: data/level/propylene.atomix.xml.in:2
 msgid "Propylene"
 msgstr "Προπυλένιο"
 
-#: ../data/level/pyran.atomix.xml.h:1
+#: data/level/pyran.atomix.xml.in:2
 msgid "Pyran"
 msgstr "Πυρράνιο"
 
-#: ../data/level/transbutylen.atomix.xml.h:1
+#: data/level/transbutylen.atomix.xml.in:2
 msgid "Trans Butylen"
 msgstr "Τρανς Βουτυλένιο"
 
-#: ../data/level/water.atomix.xml.h:1
+#: data/level/water.atomix.xml.in:2
 msgid "Water"
 msgstr "Νερό"
 
-#: ../data/ui/interface.ui.h:2
-msgid "_File"
-msgstr "_Αρχείο"
-
-#: ../data/ui/interface.ui.h:3
-msgid "_New Game"
-msgstr "_Νέο παιxνίδι"
-
-#
-#: ../data/ui/interface.ui.h:4
-msgid "_End Game"
-msgstr "_Τερματισμός παιχνιδιού"
-
-#: ../data/ui/interface.ui.h:5
-msgid "_Skip Level"
-msgstr "Πα_ράκαμψη επιπέδου"
-
-#
-#: ../data/ui/interface.ui.h:6
-msgid "_Reset Level"
-msgstr "_Επαναφορά επιπέδου"
-
-#
-#: ../data/ui/interface.ui.h:7
-msgid "_Undo Move"
-msgstr "Α_ναίρεση κίνησης"
-
-#
-#: ../data/ui/interface.ui.h:8
-msgid "_Pause Game"
-msgstr "_Παύση παιχνιδιού"
-
-#
-#: ../data/ui/interface.ui.h:9
-msgid "_Continue Game"
-msgstr "Σ_υνέχεια παιχνιδιού"
-
-#: ../data/ui/interface.ui.h:10
-msgid "_Quit"
-msgstr "Έ_ξοδος"
-
-#
-#: ../data/ui/interface.ui.h:11
-msgid "_Help"
-msgstr "_Βοήθεια"
-
-#: ../data/ui/interface.ui.h:12
-msgid "_About"
-msgstr "Π_ερί"
-
-#: ../data/ui/interface.ui.h:13
+#: data/ui/interface.ui:101
 msgid "Level:"
 msgstr "Επίπεδο:"
 
-#: ../data/ui/interface.ui.h:14
+#: data/ui/interface.ui:113
 msgid "Molecule:"
 msgstr "Μόριο:"
 
-#: ../data/ui/interface.ui.h:15
+#: data/ui/interface.ui:125
 msgid "Formula:"
 msgstr "Τύπος:"
 
-#: ../data/ui/interface.ui.h:16
+#: data/ui/interface.ui:137
 msgid "Score:"
 msgstr "Βαθμολογία:"
 
-#: ../data/ui/interface.ui.h:17
+#: data/ui/interface.ui:149
 msgid "Time:"
 msgstr "Χρόνος:"
 
-#: ../data/ui/interface.ui.h:18
+#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
+#: data/ui/interface.ui:196
 msgid "empty"
 msgstr "κενό"
 
-#: ../data/ui/interface.ui.h:19
+#: data/ui/interface.ui:215
 msgid "Statistics"
 msgstr "Στατιστικά"
 
-#: ../data/ui/interface.ui.h:20
-#| msgid "_New Game"
+#: data/ui/menu.ui:7
 msgid "New Game"
 msgstr "Νέο παιxνίδι"
 
 #
-#: ../data/ui/interface.ui.h:21
-#| msgid "_End Game"
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Παύση/Συνέχεια παιχνιδιού"
+
+#
+#: data/ui/menu.ui:17
 msgid "End Game"
 msgstr "Τερματισμός παιχνιδιού"
 
-#: ../data/ui/interface.ui.h:22
-#| msgid "_Skip Level"
+#: data/ui/menu.ui:23
 msgid "Skip Level"
 msgstr "Παράκαμψη επιπέδου"
 
 #
-#: ../data/ui/interface.ui.h:23
-#| msgid "_Reset Level"
+#: data/ui/menu.ui:28
 msgid "Reset Level"
 msgstr "Επαναφορά επιπέδου"
 
 #
-#: ../data/ui/interface.ui.h:24
-#| msgid "_Undo Move"
+#: data/ui/menu.ui:32
 msgid "Undo Move"
 msgstr "Αναίρεση κίνησης"
 
-#
-#: ../data/ui/interface.ui.h:25
-#| msgid "_Pause Game"
-msgid "Pause Game"
-msgstr "Παύση παιχνιδιού"
+#: data/ui/menu.ui:39
+msgid "About Atomix"
+msgstr "Περί Atomix"
 
-#
-#: ../data/ui/interface.ui.h:26
-#| msgid "_Continue Game"
-msgid "Continue Game"
-msgstr "Συνέχεια παιχνιδιού"
-
-#: ../data/ui/interface.ui.h:27
-#| msgid "_About"
-msgid "About"
-msgstr "Περί"
-
-#: ../data/ui/interface.ui.h:28
-#| msgid "_Quit"
-msgid "Quit"
-msgstr "Έξοδος"
-
-#: ../src/board-gtk.c:338
+#: src/board-gtk.c:343
 msgid ""
-"Guide the atoms through the maze to form molecules.\n"
-"Click, or use the arrow keys and Enter, to select an atom and move it.\n"
-"Be careful, though: an atom keeps moving until it hits a wall.\n"
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
 msgstr ""
-"Οδηγήστε τα άτομα μέσα στο λαβύρινθο για να σχηματίσουν μόρια.\n"
-"Κάντε κλικ ή χρησιμοποιήστε τα βελάκια και πατήστε Enter, για να επιλέξετε "
-"ένα άτομο και να το μετακινήσετε.\n"
-"Να προσέχετε όμως: ένα άτομο συνεχίζει να κινείται μέχρι να χτυπήσει έναν "
-"τοίχο.\n"
+"Οδηγήστε τα άτομα μέσα στο λαβύρινθο για να σχηματίσουν μόρια. Κάντε κλικ ή "
+"χρησιμοποιήστε τα βελάκια και πατήστε Enter, για να επιλέξετε ένα άτομο και "
+"να το μετακινήσετε. Να προσέχετε όμως: ένα άτομο συνεχίζει να κινείται μέχρι "
+"να χτυπήσει έναν τοίχο."
 
-#: ../src/level-manager.c:200
-msgid "Couldn't find level sequence description."
-msgstr "Δε βρέθηκε περιγραφή ακολουθίας επιπέδου."
-
-#: ../src/level-manager.c:214
-msgid "No level found."
-msgstr "Δε βρέθηκαν επίπεδα."
-
-#: ../src/level-manager.c:283
-#, c-format
-msgid "Found level '%s' in: %s"
-msgstr "Βρέθηκε επίπεδο '%s' στο: %s"
-
-#: ../src/main.c:135
+#: src/main.c:126
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
 " Σίμος Ξενιτέλλης <simos@gnome.org>\n"
 " Μύρων Αποστολάκης <myapos@yahoo.com>\n"
+" Ευστάθιος Ιωσηφίδης <iosifidis@opensuse.org>\n"
 "\n"
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
 #
-#: ../src/main.c:438
+#: src/main.c:437
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Συγχαρητήρια! Έχετε τερματίσει όλα τα επίπεδα του Atomix."
 
-#: ../src/theme-manager.c:225
-msgid "No themes found."
-msgstr "Δε βρέθηκαν θέματα."
+#~ msgid "_File"
+#~ msgstr "_Αρχείο"
 
-#: ../src/theme-manager.c:283
-#, c-format
-msgid "Found theme '%s' in: %s"
-msgstr "Βρέθηκε το θέμα '%s' στο: %s"
+#~ msgid "_New Game"
+#~ msgstr "_Νέο παιxνίδι"
+
+#
+#~ msgid "_End Game"
+#~ msgstr "_Τερματισμός παιχνιδιού"
+
+#~ msgid "_Skip Level"
+#~ msgstr "Πα_ράκαμψη επιπέδου"
+
+#
+#~ msgid "_Reset Level"
+#~ msgstr "_Επαναφορά επιπέδου"
+
+#
+#~ msgid "_Undo Move"
+#~ msgstr "Α_ναίρεση κίνησης"
+
+#
+#~ msgid "_Pause Game"
+#~ msgstr "_Παύση παιχνιδιού"
+
+#
+#~ msgid "_Continue Game"
+#~ msgstr "Σ_υνέχεια παιχνιδιού"
+
+#~ msgid "_Quit"
+#~ msgstr "Έ_ξοδος"
+
+#
+#~ msgid "_Help"
+#~ msgstr "_Βοήθεια"
+
+#~ msgid "_About"
+#~ msgstr "Π_ερί"
+
+#
+#~| msgid "_Pause Game"
+#~ msgid "Pause Game"
+#~ msgstr "Παύση παιχνιδιού"
+
+#~| msgid "_About"
+#~ msgid "About"
+#~ msgstr "Περί"
+
+#~| msgid "_Quit"
+#~ msgid "Quit"
+#~ msgstr "Έξοδος"
+
+#~ msgid "Couldn't find level sequence description."
+#~ msgstr "Δε βρέθηκε περιγραφή ακολουθίας επιπέδου."
+
+#~ msgid "No level found."
+#~ msgstr "Δε βρέθηκαν επίπεδα."
+
+#~ msgid "Found level '%s' in: %s"
+#~ msgstr "Βρέθηκε επίπεδο '%s' στο: %s"
+
+#~ msgid "No themes found."
+#~ msgstr "Δε βρέθηκαν θέματα."
+
+#~ msgid "Found theme '%s' in: %s"
+#~ msgstr "Βρέθηκε το θέμα '%s' στο: %s"
 
 #~ msgid "https://github.com/GNOME/atomix"
 #~ msgstr "https://github.com/GNOME/atomix"
