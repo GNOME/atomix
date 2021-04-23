@@ -1,0 +1,211 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2020-09-30 22:46+0000\n"
+"PO-Revision-Date: 2021-04-23 23:58+0545\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ne\n"
+
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
+#: src/main.c:684
+msgid "Atomix"
+msgstr "एटोमिक्स"
+
+#: data/atomix.appdata.xml.in:8
+msgid "Build molecules out of single atoms"
+msgstr "एकल परमाणुबाट अणु निर्माण गर्नुहोस्"
+
+#: data/atomix.appdata.xml.in:10
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+"एटोमिक्स एउटा पजल खेल हो जहाँ तपाईंको लक्ष्य अणुहरूलाई खेल मैदानमा सारेर यौगिक परमाणुबाट "
+"अणुहरू एकत्रित गर्नु हो। तथापि, परमाणुहरू तपाईँले जहाँ सार्न चाहनुहुन्छ त्यहीं सर्दैनन्, तिनीहरू "
+"भित्ता वा कुनै परमाणुमा नहिर्काएसम्म स्लाइड हुन्छन्।"
+
+#: data/atomix.appdata.xml.in:16
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
+"उच्च प्राप्ताङ्क प्राप्त गर्न तपाईँले प्रत्येक तहमा सकेसम्म छिटो अणुहरू निर्माण गर्ने प्रयास "
+"गर्नुहोस् ।"
+
+#: data/atomix.desktop.in:4
+msgid "Molecule puzzle game"
+msgstr "अणु पजल खेल"
+
+#: data/atomix.desktop.in:5 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "परमाणु र अणुको बारेमा एउटा पजल खेल"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "जिनोम;खेल;तर्क;पजल;परमाणु;अणु;सोकोबान;"
+
+#: data/level/aceticacid.atomix.xml.in:2
+msgid "Acetic Acid"
+msgstr "एसेटिक एसिड"
+
+#: data/level/acetone.atomix.xml.in:2
+msgid "Acetone"
+msgstr "एसिटोन"
+
+#: data/level/butanol.atomix.xml.in:2
+msgid "Butanol"
+msgstr "बुतानोल"
+
+#: data/level/cyclobutane.atomix.xml.in:2
+msgid "Cyclobutane"
+msgstr "साइक्लोब्युटेन"
+
+#: data/level/dimethylether.atomix.xml.in:2
+msgid "Dimethyl Ether"
+msgstr "डिमिथेल ईथर"
+
+#: data/level/ethanal.atomix.xml.in:2
+msgid "Ethanal"
+msgstr "इथानल"
+
+#: data/level/ethane.atomix.xml.in:2
+msgid "Ethane"
+msgstr "इथेन"
+
+#: data/level/ethanol.atomix.xml.in:2
+msgid "Ethanol"
+msgstr "इथेनोल"
+
+#: data/level/ethylene.atomix.xml.in:2
+msgid "Ethylene"
+msgstr "इथाइलिन"
+
+#: data/level/glycerin.atomix.xml.in:2
+msgid "Glycerin"
+msgstr "ग्लिसिरिन"
+
+#: data/level/lactic-acid.atomix.xml.in:2
+msgid "Lactic Acid"
+msgstr "ल्याक्टिक एसिड"
+
+#: data/level/methanal.atomix.xml.in:2
+msgid "Methanal"
+msgstr "मेथानल"
+
+#: data/level/methane.atomix.xml.in:2
+msgid "Methane"
+msgstr "मिथेन"
+
+#: data/level/methanol.atomix.xml.in:2
+msgid "Methanol"
+msgstr "मिथेनोल"
+
+#: data/level/propanal.atomix.xml.in:2
+msgid "Propanal"
+msgstr "प्रोपेनल"
+
+#: data/level/propylene.atomix.xml.in:2
+msgid "Propylene"
+msgstr "प्रोपाइलेन"
+
+#: data/level/pyran.atomix.xml.in:2
+msgid "Pyran"
+msgstr "Pyran"
+
+#: data/level/transbutylen.atomix.xml.in:2
+msgid "Trans Butylen"
+msgstr "ट्रान्स ब्युटिलेन"
+
+#: data/level/water.atomix.xml.in:2
+msgid "Water"
+msgstr "पानी"
+
+#: data/ui/interface.ui:101
+msgid "Level:"
+msgstr "तह:"
+
+#: data/ui/interface.ui:113
+msgid "Molecule:"
+msgstr "अणु:"
+
+#: data/ui/interface.ui:125
+msgid "Formula:"
+msgstr "सूत्र:"
+
+#: data/ui/interface.ui:137
+msgid "Score:"
+msgstr "प्राप्ताङ्क:"
+
+#: data/ui/interface.ui:149
+msgid "Time:"
+msgstr "समय:"
+
+#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
+#: data/ui/interface.ui:196
+msgid "empty"
+msgstr "खाली"
+
+#: data/ui/interface.ui:215
+msgid "Statistics"
+msgstr "तथ्याङ्क"
+
+#: data/ui/menu.ui:7
+msgid "New Game"
+msgstr "नयाँ खेल"
+
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "खेल पज गर्नुहोस्/जारी राख्नुहोस्"
+
+#: data/ui/menu.ui:17
+msgid "End Game"
+msgstr "खेल अन्त्य गर्नुहोस्"
+
+#: data/ui/menu.ui:23
+msgid "Skip Level"
+msgstr "फड्काउनुहोस्"
+
+#: data/ui/menu.ui:28
+msgid "Reset Level"
+msgstr "स्तर रिसेट गर्नुहोस्"
+
+#: data/ui/menu.ui:32
+msgid "Undo Move"
+msgstr "पूर्वस्थितिमा फर्काउनुहोस्"
+
+#: data/ui/menu.ui:39
+msgid "About Atomix"
+msgstr "एटोमिक्सका बारेमा"
+
+#: src/board-gtk.c:343
+msgid ""
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
+msgstr ""
+"अणु हरू बनाउन परमाणुलाई भूलभुलैयामा डोऱ्याउनुहोस्। परमाणु चयन गर्न र सार्नका लागि, वाण "
+"कुञ्जी हरू क्लिक गर्नुहोस् वा प्रयोग गर्नुहोस् र प्रविष्ट गर्नुहोस् । तथापि, होसियार हुनुहोस्: "
+"परमाणुले भित्तामा नहिर्काएसम्म चलहल गरिरहन्छ।."
+
+#: src/main.c:126
+msgid "translator-credits"
+msgstr "Pawan Chitrakar <chautari@gmail.com>"
+
+#: src/main.c:437
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "बधाइ छ! तपाईँले सबै एटोमिक्स स्तर समाप्त गर्नुभयो ।"
