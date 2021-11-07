@@ -70,7 +70,7 @@ msgstr "Betanol"
 
 #: ../data/level/cyclobutane.atomix.xml.h:1
 msgid "Cyclobutane"
-msgstr "Ciclebutà"
+msgstr "Ciclobutà"
 
 #: ../data/level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
@@ -247,8 +247,8 @@ msgid ""
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
 "keeps moving until it hits a wall."
 msgstr ""
-"Guia dels àtoms a través del laberint per formar molècules. Feu clic o "
-"utilitzeu les tecles de fletxa i Enter per seleccionar un àtom i moure'l. "
+"Guia dels àtoms a través del laberint per a formar molècules. Feu clic o "
+"utilitzeu les tecles de fletxa i Retorn per a seleccionar un àtom i moure'l. "
 "Aneu amb compte, ja que: un àtom segueix movent-se fins que xoca amb una "
 "paret."
 
