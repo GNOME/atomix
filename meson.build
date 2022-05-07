@@ -21,6 +21,7 @@ glib_dep = dependency('glib-2.0', version: '>= 2.36.0')
 libgnome_games_support_dep = dependency('libgnome-games-support-1')
 
 cc = meson.get_compiler('c')
+libm_dep = cc.find_library('m', required : false)
 
 conf = configuration_data()
 
