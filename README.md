@@ -1,4 +1,4 @@
-#Atomix
+# Atomix
 
 Atomix is a puzzle game in which you have to build full molecules, from simple
 inorganic ones in the first levels to extremely complex organic ones in the
