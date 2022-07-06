@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-10-07 20:07+0000\n"
+"POT-Creation-Date: 2022-05-15 06:42+0000\n"
 "PO-Revision-Date: 2018-10-16 21:35+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.1.1\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
-#: src/main.c:688
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
+#: src/main.c:684
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -50,14 +50,9 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Molekylpusselspel"
 
-#: data/atomix.desktop.in:5 src/main.c:124
+#: data/atomix.desktop.in:5 src/main.c:122
 msgid "A puzzle game about atoms and molecules"
 msgstr "Ett pusselspel om atomer och molekyler"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/atomix.desktop.in:8
-msgid "atomix"
-msgstr "atomix"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/atomix.desktop.in:13
@@ -143,32 +138,32 @@ msgstr "Transbuten"
 msgid "Water"
 msgstr "Vatten"
 
-#: data/ui/interface.ui:99
+#: data/ui/interface.ui:101
 msgid "Level:"
 msgstr "Nivå:"
 
-#: data/ui/interface.ui:111
+#: data/ui/interface.ui:113
 msgid "Molecule:"
 msgstr "Molekyl:"
 
-#: data/ui/interface.ui:123
+#: data/ui/interface.ui:125
 msgid "Formula:"
 msgstr "Formel:"
 
-#: data/ui/interface.ui:135
+#: data/ui/interface.ui:137
 msgid "Score:"
 msgstr "Poäng:"
 
-#: data/ui/interface.ui:147
+#: data/ui/interface.ui:149
 msgid "Time:"
 msgstr "Tid:"
 
-#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
-#: data/ui/interface.ui:194
+#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
+#: data/ui/interface.ui:196
 msgid "empty"
 msgstr "tom"
 
-#: data/ui/interface.ui:213
+#: data/ui/interface.ui:215
 msgid "Statistics"
 msgstr "Statistik"
 
@@ -200,7 +195,7 @@ msgstr "Ångra drag"
 msgid "About Atomix"
 msgstr "Om Atomix"
 
-#: src/board-gtk.c:340
+#: src/board-gtk.c:343
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -210,7 +205,7 @@ msgstr ""
 "använd piltangenterna och Retur för att välja en atom och flytta den. Men "
 "var försiktig, atomer fortsätter röra sig till de träffar en vägg."
 
-#: src/main.c:128
+#: src/main.c:126
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander\n"
@@ -220,63 +215,6 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/main.c:447
+#: src/main.c:437
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Gratulerar! Du har slutfört alla nivåer i Atomix."
-
-#~ msgid "About"
-#~ msgstr "Om"
-
-#~ msgid "Quit"
-#~ msgstr "Avsluta"
-
-#~ msgid "_File"
-#~ msgstr "_Arkiv"
-
-#~ msgid "_New Game"
-#~ msgstr "_Nytt spel"
-
-#~ msgid "_End Game"
-#~ msgstr "Av_sluta spel"
-
-#~ msgid "_Skip Level"
-#~ msgstr "Hoppa över n_ivå"
-
-#~ msgid "_Reset Level"
-#~ msgstr "Å_terställ nivå"
-
-#~ msgid "_Undo Move"
-#~ msgstr "_Ångra drag"
-
-#~ msgid "_Pause Game"
-#~ msgstr "_Gör paus i spel"
-
-#~ msgid "_Continue Game"
-#~ msgstr "_Fortsätt spel"
-
-#~ msgid "_Quit"
-#~ msgstr "A_vsluta"
-
-#~ msgid "_Help"
-#~ msgstr "_Hjälp"
-
-#~ msgid "_About"
-#~ msgstr "_Om"
-
-#~ msgid "Pause Game"
-#~ msgstr "Gör paus i spel"
-
-#~ msgid "Couldn’t find level sequence description."
-#~ msgstr "Kunde inte hitta nivåsekvensbeskrivning."
-
-#~ msgid "No level found."
-#~ msgstr "Ingen nivå kunde hittas."
-
-#~ msgid "Found level “%s” in: %s"
-#~ msgstr "Hittade nivån ”%s” i: %s"
-
-#~ msgid "No themes found."
-#~ msgstr "Inga teman hittades."
-
-#~ msgid "Found theme “%s” in: %s"
-#~ msgstr "Hittade temat ”%s” i: %s"
