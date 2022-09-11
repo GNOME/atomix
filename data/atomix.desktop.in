@@ -10,7 +10,3 @@ Type=Application
 Categories=GNOME;GTK;Game;LogicGame;
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=GNOME;game;logic;puzzle;atoms;molecules;sokoban;
-X-GNOME-Bugzilla-Bugzilla=GNOME
-X-GNOME-Bugzilla-Product=atomix
-X-GNOME-Bugzilla-Component=atomix
-X-GNOME-Bugzilla-Version=2.14.x
