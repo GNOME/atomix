@@ -1,5 +1,8 @@
 # Turkish translation of Atomix.
 # Copyright (C) 2001 Free Software Foundation, Inc.
+# Copyright (C) 2011-2022 Atomix's COPYRIGHT HOLDER
+# This file is distributed under the same license as the accerciser package.
+#
 # A.Burak Ilgicioglu <ilgici@turk.net>, 2001.
 # Görkem Çetin <gorkem@gelecek.com.tr>, 2002.
 # Kaan Özdinçer <kaanozdincer@gmail.com>, 2015.
@@ -7,9 +10,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: atomix 0.4.3\n"
+"Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-10-07 20:07+0000\n"
+"POT-Creation-Date: 2022-07-25 18:55+0000\n"
 "PO-Revision-Date: 2019-01-08 11:45+0200\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
@@ -22,8 +25,8 @@ msgstr ""
 "X-POOTLE-MTIME: 1434042213.000000\n"
 
 # editor/interface.c:225
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
-#: src/main.c:688
+#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
+#: src/main.c:684
 msgid "Atomix"
 msgstr "Atomix"
 
@@ -56,15 +59,9 @@ msgstr ""
 msgid "Molecule puzzle game"
 msgstr "Molekül yapboz oyunu"
 
-#: data/atomix.desktop.in:5 src/main.c:124
+#: data/atomix.desktop.in:5 src/main.c:122
 msgid "A puzzle game about atoms and molecules"
 msgstr "Atomlar ve moleküller hakkında bir yapboz oyunu"
-
-# editor/interface.c:225
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/atomix.desktop.in:8
-msgid "atomix"
-msgstr "atomix"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/atomix.desktop.in:13
@@ -148,35 +145,35 @@ msgid "Water"
 msgstr "Su"
 
 # src/interface.c:317
-#: data/ui/interface.ui:99
+#: data/ui/interface.ui:101
 msgid "Level:"
 msgstr "Seviye:"
 
-#: data/ui/interface.ui:111
+#: data/ui/interface.ui:113
 msgid "Molecule:"
 msgstr "Molekül:"
 
-#: data/ui/interface.ui:123
+#: data/ui/interface.ui:125
 msgid "Formula:"
 msgstr "Formül:"
 
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: data/ui/interface.ui:135
+#: data/ui/interface.ui:137
 msgid "Score:"
 msgstr "Skor:"
 
 # src/interface.c:347
-#: data/ui/interface.ui:147
+#: data/ui/interface.ui:149
 msgid "Time:"
 msgstr "Zaman:"
 
-#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
-#: data/ui/interface.ui:194
+#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
+#: data/ui/interface.ui:196
 msgid "empty"
 msgstr "boş"
 
 # src/interface.c:259
-#: data/ui/interface.ui:213
+#: data/ui/interface.ui:215
 msgid "Statistics"
 msgstr "İstatistikler"
 
@@ -213,7 +210,7 @@ msgstr "Hareketi Geri Al"
 msgid "About Atomix"
 msgstr "Atomix Hakkında"
 
-#: src/board-gtk.c:340
+#: src/board-gtk.c:343
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -224,189 +221,14 @@ msgstr ""
 "kullanın. Ama dikkatli olun: bir atom duvara çarpana kadar hareket etmeye "
 "devam eder."
 
-#: src/main.c:128
+#: src/main.c:126
 msgid "translator-credits"
 msgstr ""
 "Muhammet Kara <muhammetk@gmail.com>\n"
 "Kaan Özdinçer <kaanozdincer@gmail.com>"
 
 # src/interface.c:616
-#: src/main.c:447
+#: src/main.c:437
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini başarıyla bitirdiniz."
 
-#~ msgid "_File"
-#~ msgstr "_Dosya"
-
-# editor/interface.c:2030
-#~ msgid "_New Game"
-#~ msgstr "_Yeni Oyun"
-
-#~ msgid "_End Game"
-#~ msgstr "Oyunu _Bitir"
-
-# src/interface.c:26
-#~ msgid "_Skip Level"
-#~ msgstr "Seviye _Atla"
-
-# editor/interface.c:68
-#~ msgid "_Reset Level"
-#~ msgstr "Seviyeyi _Sıfırla"
-
-#~ msgid "_Undo Move"
-#~ msgstr "Hareketi _Geri Al"
-
-# src/interface.c:35
-#~ msgid "_Pause Game"
-#~ msgstr "Oyunu _Duraklat"
-
-# src/interface.c:35
-#~ msgid "_Continue Game"
-#~ msgstr "_Oyuna Devam Et"
-
-#~ msgid "_Quit"
-#~ msgstr "_Çık"
-
-#~ msgid "_Help"
-#~ msgstr "_Yardım"
-
-#~ msgid "_About"
-#~ msgstr "_Hakkında"
-
-# src/interface.c:35
-#~ msgid "Pause Game"
-#~ msgstr "Oyunu Duraklat"
-
-#~ msgid "About"
-#~ msgstr "Hakkında"
-
-#~ msgid "Quit"
-#~ msgstr "Çıkış"
-
-#~ msgid "Couldn't find level sequence description."
-#~ msgstr "Seviye sıra açıklaması bulunamadı."
-
-# src/main.c:163
-#~ msgid "No level found."
-#~ msgstr "Seviye bulunamadı."
-
-#~ msgid "Found level '%s' in: %s"
-#~ msgstr "%s seviyesi bulundu: %s"
-
-#~ msgid "No themes found."
-#~ msgstr "Tema bulunamadı."
-
-#~ msgid "Found theme '%s' in: %s"
-#~ msgstr "%s teması bulundu: %s"
-
-#~ msgid "Could not show link"
-#~ msgstr "Bağlantı gösterilemedi"
-
-# src/interface.c:347
-#~| msgid "Time:"
-#~ msgid "Time"
-#~ msgstr "Zaman"
-
-# src/interface.c:337 src/interface.c:523 src/interface.c:641
-#~| msgid "Score:"
-#~ msgid "Score"
-#~ msgstr "Puan"
-
-#~ msgid "%dm %ds"
-#~ msgstr "%dd %ds"
-
-# editor/interface.c:461 editor/interface.c:767
-#~| msgid "_Game"
-#~ msgid "Name"
-#~ msgstr "İsim"
-
-#~ msgid "Error"
-#~ msgstr "Hata"
-
-# editor/callbacks.c:1279
-#~ msgid "Couldn't find at least one level."
-#~ msgstr "Hiç oyun seviyesi bulunamadı."
-
-# src/interface.c:908
-#~ msgid "Do you want to finish the game?"
-#~ msgstr "Gerçekten bu oyundan çıkmak istiyor musunuz? "
-
-# editor/interface.c:461 editor/interface.c:767
-#~ msgid "_Game"
-#~ msgstr "_Oyun"
-
-#~| msgid "_Scores ..."
-#~ msgid "_Scores..."
-#~ msgstr "_Puanlar..."
-
-# src/interface.c:35
-#~ msgid "Continue paused game"
-#~ msgstr "Oyuna devam et"
-
-#~ msgid "E_xit"
-#~ msgstr "Çı_k"
-
-#~ msgid "End a game"
-#~ msgstr "Oyunu bitir"
-
-#~ msgid "Exit game"
-#~ msgstr "Oyundan çık"
-
-#~ msgid "Pause the running game"
-#~ msgstr "Çalışan oyunu duraklat"
-
-#~ msgid "Restores start situation"
-#~ msgstr "Başlangıç durumuna getirir"
-
-#~ msgid "Set preferences"
-#~ msgstr "Tercihleri ayarla"
-
-# src/interface.c:26
-#~ msgid "Skip the current level"
-#~ msgstr "Şimdi oynanan seviyeyi atla"
-
-#~ msgid "Start a new game"
-#~ msgstr "Yeni bir oyuna başla"
-
-#~ msgid "Undo the last move"
-#~ msgstr "Son hareketi geri al"
-
-#~ msgid "View game credits"
-#~ msgstr "Oyunu programlayanlar"
-
-#~ msgid "View highscores"
-#~ msgstr "Yüksek puanlar"
-
-#~ msgid "_Edit"
-#~ msgstr "_Düzenle"
-
-#~ msgid "_Preferences ..."
-#~ msgstr "_Tercihler..."
-
-# src/interface.c:457
-#~ msgid "Copyright (C) 1999-2002 Jens Finke"
-#~ msgstr "(C) 1999-2002 Jens Finke"
-
-# editor/support.c:116 src/support.c:116
-#~ msgid "Couldn't create directory: %s"
-#~ msgstr "Dizin yaratılamadı: %s"
-
-# editor/support.c:100 editor/support.c:138 src/support.c:100
-# src/support.c:138
-#~ msgid "Couldn't find file: %s"
-#~ msgstr "Dosya bulunamadı: %s"
-
-# src/interface.c:108
-#~ msgid "Atomix Splash"
-#~ msgstr "Atomix Başlangıç Ekranı"
-
-# src/board.c:202
-#~ msgid "Game Paused"
-#~ msgstr "Oyun Duraklatıldı"
-
-# src/board.c:204
-#~ msgid "Game Over"
-#~ msgstr "Oyun Bitti"
-
-#~ msgid "Atomix - Molecule Mind Game"
-#~ msgstr "Atomix - Moleküler Zeka Oyunu "
