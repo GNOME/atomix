@@ -9,25 +9,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2021-09-16 16:49+0000\n"
-"PO-Revision-Date: 2022-02-03 09:39+0800\n"
-"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"POT-Creation-Date: 2022-09-11 07:26+0000\n"
+"PO-Revision-Date: 2022-11-08 10:18+0800\n"
+"Last-Translator: liulitchi <xingzuo88@qq.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 41.0\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
 #: src/main.c:684
 msgid "Atomix"
-msgstr "Atomix"
+msgstr "原子组合"
 
 #: data/atomix.appdata.xml.in:8
 msgid "Build molecules out of single atoms"
-msgstr "用单个原子构建出分子"
+msgstr "用原子构建出分子"
 
 #: data/atomix.appdata.xml.in:10
 msgid ""
@@ -36,14 +36,15 @@ msgid ""
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
-"Atomix 是以从原子群通过在游玩区域移动它们来聚合成分子为目标的解密游戏。然而原"
-"子并不会完全移动到您的指定位置，它们会在撞到墙壁或另一个原子前一直滑动。"
+"原子组合（Atomix） 是一款解谜游戏。玩家的目标是通过在游戏区移动各原子来合成分"
+"子。不过原子并不会完全移动到你想指定的位置，除非前面有墙壁或其它原子挡路，否"
+"则它们会一直运动。"
 
 #: data/atomix.appdata.xml.in:16
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
-msgstr "尝试在每个关卡中尽可能快地构建分子以此来获得更高的分数。"
+msgstr "在每个关卡里尽快地构建起分子，以此获得高分。"
 
 #: data/atomix.desktop.in:4
 msgid "Molecule puzzle game"
@@ -51,7 +52,7 @@ msgstr "分子智力游戏"
 
 #: data/atomix.desktop.in:5 src/main.c:122
 msgid "A puzzle game about atoms and molecules"
-msgstr "原子和分子的智力游戏"
+msgstr "一款智力游戏，将原子合成为分子"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/atomix.desktop.in:13
@@ -138,7 +139,7 @@ msgstr "水"
 
 #: data/ui/interface.ui:101
 msgid "Level:"
-msgstr "级别："
+msgstr "关卡："
 
 #: data/ui/interface.ui:113
 msgid "Molecule:"
@@ -146,7 +147,7 @@ msgstr "分子："
 
 #: data/ui/interface.ui:125
 msgid "Formula:"
-msgstr "公式："
+msgstr "分子式："
 
 #: data/ui/interface.ui:137
 msgid "Score:"
@@ -154,7 +155,7 @@ msgstr "得分："
 
 #: data/ui/interface.ui:149
 msgid "Time:"
-msgstr "时间："
+msgstr "耗时："
 
 #: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
 #: data/ui/interface.ui:196
@@ -163,7 +164,7 @@ msgstr "清空"
 
 #: data/ui/interface.ui:215
 msgid "Statistics"
-msgstr "统计"
+msgstr "统计数据"
 
 #: data/ui/menu.ui:7
 msgid "New Game"
@@ -171,19 +172,19 @@ msgstr "新建游戏"
 
 #: data/ui/menu.ui:12
 msgid "Pause/Continue Game"
-msgstr "暂停/继续游戏"
+msgstr "暂停或继续游戏"
 
 #: data/ui/menu.ui:17
 msgid "End Game"
-msgstr "终止游戏"
+msgstr "结束游戏"
 
 #: data/ui/menu.ui:23
 msgid "Skip Level"
-msgstr "跳级"
+msgstr "跳过本关"
 
 #: data/ui/menu.ui:28
 msgid "Reset Level"
-msgstr "重置本级别"
+msgstr "重置本关"
 
 #: data/ui/menu.ui:32
 msgid "Undo Move"
@@ -191,7 +192,7 @@ msgstr "撤消移动"
 
 #: data/ui/menu.ui:39
 msgid "About Atomix"
-msgstr "关于Atomix"
+msgstr "关于原子组合"
 
 #: src/board-gtk.c:343
 msgid ""
@@ -199,8 +200,8 @@ msgid ""
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
 "keeps moving until it hits a wall."
 msgstr ""
-"引导原子穿过迷宫形成分子。单击或使用方向键和 Enter 键选择一个原子并移动它。注"
-"意：原子在撞到墙之前会一直移动。"
+"引导原子穿过迷宫组合成分子。单击或使用方向键或回车键选取一个原子，而后移动"
+"它。注意：原子不会在半路停下，会一直运动至撞墙。"
 
 #: src/main.c:126
 msgid "translator-credits"
@@ -208,11 +209,12 @@ msgstr ""
 "Wang Li <charlesw1234@163.com>, 2002.\n"
 "Abel Cheung <maddog@linux.org.hk>, 2001.\n"
 "YunQiang Su <wzssyqa@gmail.com>, 2010.\n"
-"Zhou Nan <zhounan@nfschina.com>, 2021."
+"Zhou Nan <zhounan@nfschina.com>, 2021.\n"
+"lumingzh <lumingzh@qq.com>, 2022."
 
 #: src/main.c:437
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "恭喜！你已完成所有 Atomix 级别。"
+msgstr "恭喜！你已完成所有的原子组合关卡。"
 
 #~ msgid "_File"
 #~ msgstr "文件(_F)"
