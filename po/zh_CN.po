@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
 "POT-Creation-Date: 2022-09-11 07:26+0000\n"
-"PO-Revision-Date: 2022-11-08 10:18+0800\n"
+"PO-Revision-Date: 2022-11-09 21:14+0800\n"
 "Last-Translator: liulitchi <xingzuo88@qq.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
 #: src/main.c:684
 msgid "Atomix"
-msgstr "原子组合"
+msgstr "原子结合"
 
 #: data/atomix.appdata.xml.in:8
 msgid "Build molecules out of single atoms"
@@ -36,7 +36,7 @@ msgid ""
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
-"原子组合（Atomix） 是一款解谜游戏。玩家的目标是通过在游戏区移动各原子来合成分"
+"原子结合（Atomix） 是一款解谜游戏。玩家的目标是通过在游戏区移动各原子来合成分"
 "子。不过原子并不会完全移动到你想指定的位置，除非前面有墙壁或其它原子挡路，否"
 "则它们会一直运动。"
 
@@ -188,11 +188,11 @@ msgstr "重置本关"
 
 #: data/ui/menu.ui:32
 msgid "Undo Move"
-msgstr "撤消移动"
+msgstr "撤消"
 
 #: data/ui/menu.ui:39
 msgid "About Atomix"
-msgstr "关于原子组合"
+msgstr "关于原子结合"
 
 #: src/board-gtk.c:343
 msgid ""
@@ -214,7 +214,7 @@ msgstr ""
 
 #: src/main.c:437
 msgid "Congratulations! You have finished all Atomix levels."
-msgstr "恭喜！你已完成所有的原子组合关卡。"
+msgstr "恭喜！你已完成所有的关卡。"
 
 #~ msgid "_File"
 #~ msgstr "文件(_F)"
