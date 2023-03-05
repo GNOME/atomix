@@ -1,5 +1,5 @@
 project('atomix', ['c'],
-  version: '3.34.0',
+  version: '44.rc',
   meson_version: '>= 0.41',
   license: 'GPLv2+',
 )
