@@ -9,7 +9,7 @@
   <description xml:lang="en">Mind game - build molecules out of single atoms</description>
   <homepage rdf:resource="https://wiki.gnome.org/Apps/Atomix" />
   <download-page rdf:resource="http://download.gnome.org/sources/atomix/" />
-  <mailing-list rdf:resource="http://mail.gnome.org/mailman/listinfo/games-list" />
+  <support-forum rdf:resource="https://discourse.gnome.org/tag/games" />
   <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/atomix/issues" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
   <programming-language>C</programming-language>
@@ -18,7 +18,7 @@
     <foaf:Person>
       <foaf:name>Guilherme de S. Pastore</foaf:name>
       <foaf:mbox rdf:resource="mailto:gpastore@gnome.org" />
-      <gnome:userid>gpastore</gnome:userid>
+<!--      <gnome:userid>gpastore</gnome:userid> -->
     </foaf:Person>
   </maintainer>
   <maintainer>
