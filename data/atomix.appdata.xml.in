@@ -25,7 +25,9 @@
   </screenshots>
   <url type="homepage">https://wiki.gnome.org/Apps/Atomix</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/atomix/issues/new?issue</url>
-  <url type="donation">http://www.gnome.org/friends/</url>
+  <url type="donation">https://www.gnome.org/donate/</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/GNOME/atomix/</url>
+  <url type="translate">https://l10n.gnome.org/module/atomix/</url>
   <update_contact>robert_roth_at_gnome.org</update_contact>
   <project_group>GNOME</project_group>
   <kudos>
@@ -36,17 +38,21 @@
   <content_rating type="oars-1.1" />
   <releases>
     <release version="44.0" date="2023-03-17" type="stable">
+      <description>
       <p>Overview of changes in atomix 44.0</p>
       <ul>
         <li>Stable release version bump</li>
       </ul>
+      </description>
     </release>
     <release version="44~rc" date="2023-03-05" type="development">
+      <description>
       <p>Overview of changes in atomix 44.rc</p>
       <ul>
         <li>Updated translations</li>
         <li>Fixed build issues</li>
       </ul>
+      </description>
     </release>
     <release version="3.34" date="2019-09-09" />
     <release version="3.33" date="2019-09-02" />
