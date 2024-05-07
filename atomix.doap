@@ -24,7 +24,7 @@
   <maintainer>
     <foaf:Person>
       <foaf:name>Robert Roth</foaf:name>
-      <foaf:mbox rdf:resource="mailto:robertroth@gnome.org" />
+      <foaf:mbox rdf:resource="mailto:robert.roth.off@gmail.com" />
       <gnome:userid>robertroth</gnome:userid>
     </foaf:Person>
   </maintainer>
