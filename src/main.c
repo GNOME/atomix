@@ -117,7 +117,7 @@ static void verb_HelpAbout_cb (GSimpleAction *action, GVariant *variant, gpointe
 
   gtk_show_about_dialog(GTK_WINDOW(app->mainwin),
                         "program-name", _("Atomix"),
-                        "logo-icon-name", "atomix",
+                        "logo-icon-name", APP_ID,
                         "version", VERSION,
                         "comments", _("A puzzle game about atoms and molecules"),
                         "website", "https://wiki.gnome.org/Apps/Atomix",
@@ -643,6 +643,7 @@ static AtomixApp *create_gui (GApplication *app_instance)
   gtk_application_set_accels_for_action (GTK_APPLICATION (app->app_instance), "win.GameUndo", undo_move_accels);
 
   gtk_window_set_titlebar (GTK_WINDOW (app->mainwin), headerbar);
+  gtk_window_set_default_icon_name(APP_ID);
   GMenu * menu = G_MENU (gtk_builder_get_object (builder, "primary-menu"));
 
   primary_menu_button = GTK_WIDGET (gtk_builder_get_object (builder, "primary-menu-button"));
@@ -687,7 +688,7 @@ int main (int argc, char *argv[])
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
-  gtk_app = gtk_application_new ("org.gnome.atomix", G_APPLICATION_DEFAULT_FLAGS);
+  gtk_app = gtk_application_new (APP_ID, G_APPLICATION_DEFAULT_FLAGS);
   g_signal_connect (gtk_app, "activate", G_CALLBACK (app_activate), NULL);
 
   status = g_application_run (G_APPLICATION (gtk_app), argc, argv);

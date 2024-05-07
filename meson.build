@@ -1,18 +1,29 @@
 project('atomix', ['c'],
   version: '47.alpha',
-  meson_version: '>= 0.41',
+  meson_version: '>= 0.57',
   license: 'GPLv2+',
 )
 
 gnome = import('gnome')
 i18n = import('i18n')
 
+if get_option('development')
+  app_id = 'org.gnome.Atomix.Devel'
+  name_prefix = '(Nightly) '
+  vcs_tag = run_command('git', 'rev-parse', '--short', 'HEAD').stdout().strip()
+  version_suffix = '-@0@'.format (vcs_tag)
+else
+  app_id = 'org.gnome.Atomix'
+  name_prefix = ''
+  version_suffix = ''
+endif
+
 localedir = join_paths(get_option('prefix'), get_option('localedir'))
 datadir = join_paths (get_option ('prefix'), get_option ('datadir'))
 pkgdatadir = join_paths (datadir, 'atomix')
 
-podir = join_paths(meson.source_root(), 'po')
-itsdir = join_paths(meson.source_root(), 'data')
+podir = join_paths(meson.project_source_root(), 'po')
+itsdir = join_paths(meson.project_source_root(), 'data')
 # Dependencies
 
 gtk_dep = dependency('gtk+-3.0', version: '>= 3.10')
@@ -25,9 +36,13 @@ libm_dep = cc.find_library('m', required : false)
 
 conf = configuration_data()
 
-conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+conf.set_quoted('APP_ID', app_id)
 conf.set_quoted('PACKAGE_URL', 'https://wiki.gnome.org/Apps/Atomix')
-conf.set_quoted('VERSION', meson.project_version())
+conf.set_quoted('NAME_PREFIX', name_prefix)
+conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+conf.set_quoted('VERSION', meson.project_version() + version_suffix)
+conf.set10('DEVELOPMENT_BUILD', get_option('development'))
+
 
 config_h_inc = include_directories('.')
 

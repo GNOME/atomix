@@ -18,27 +18,50 @@ install_subdir('themes',
 )
 
 # Desktop file
-desktop = 'atomix.desktop'
-
-# Desktop file
-i18n.merge_file(
-  input: desktop + '.in',
-  output: desktop,
-  type: 'desktop',
-  po_dir: podir,
-  install: true,
-  install_dir: join_paths(datadir, 'applications'),
+desktop_file_in_config = configuration_data()
+desktop_file_in_config.set('app_id', app_id)
+desktop_file_in = configure_file(
+          input: 'org.gnome.Atomix.desktop.in',
+         output: '@0@.desktop.in'.format(app_id),
+  configuration: desktop_file_in_config,
 )
+
+desktop_file = i18n.merge_file(
+        input: desktop_file_in,
+       output: '@0@.desktop'.format(app_id),
+         type: 'desktop',
+       po_dir: podir,
+      install: true,
+  install_dir: join_paths(get_option('datadir'), 'applications')
+)
+
 
 # Appdata
-appdata = 'atomix.appdata.xml'
-
-i18n.merge_file(
-  input: appdata + '.in',
-  output: appdata,
-  po_dir: podir,
-  install: true,
-  install_dir: join_paths(datadir, 'metainfo')
+appconf = configuration_data()
+appconf.set('app_id', app_id)
+appstream_file_in = configure_file(
+          input: 'org.gnome.Atomix.appdata.xml.in',
+         output: '@0@.appdata.xml.in'.format(app_id),
+  configuration: appconf,
 )
+
+appstream_file = i18n.merge_file(
+          input: appstream_file_in,
+         output: '@0@.appdata.xml'.format(app_id),
+         po_dir: podir,
+        install: true,
+    install_dir: join_paths(get_option('datadir'), 'metainfo')
+)
+
+# Validate Appdata
+appstreamcli = find_program('appstreamcli', required: false)
+if (appstreamcli.found())
+  test('Validating appdata',
+    appstreamcli,
+    args: ['validate', '--no-net', appstream_file],
+    workdir: meson.current_build_dir()
+  )
+endif
+
 
 subdir('level')

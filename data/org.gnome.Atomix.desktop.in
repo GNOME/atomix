@@ -4,7 +4,8 @@ GenericName=Molecule puzzle game
 Comment=A puzzle game about atoms and molecules
 Exec=atomix
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-Icon=atomix
+Icon=@app_id@
+StartupWMClass=atomix
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;Game;LogicGame;
