@@ -271,7 +271,7 @@ static GtkWidget* create_arrow (SelectorData *data, GdkPixbuf *pixbuf, ItemDirec
   GtkWidget *arrow = gtk_event_box_new ();
 
   image = gtk_image_new_from_pixbuf (pixbuf);
-  gtk_widget_show (image);
+  gtk_widget_set_visible (image, TRUE);
   gtk_container_add (GTK_CONTAINER (arrow), image);
   gtk_widget_set_events (arrow, GDK_BUTTON_PRESS_MASK);
 
@@ -563,7 +563,7 @@ GtkWidget* create_tile (double x, double y,
   if (tile_get_tile_type (tile) == TILE_TYPE_ATOM) {
     event_box = gtk_event_box_new ();
     gtk_container_add (GTK_CONTAINER (event_box), item);
-    gtk_widget_show (item);
+    gtk_widget_set_visible (item, TRUE);
     gtk_widget_set_events (event_box, GDK_BUTTON_PRESS_MASK);
     item = event_box;
     g_signal_connect (G_OBJECT (item), "button-press-event",
@@ -571,7 +571,7 @@ GtkWidget* create_tile (double x, double y,
     level_items->moveables = g_slist_prepend (level_items->moveables, item);
   }
 
-  gtk_widget_show (item);
+  gtk_widget_set_visible (item, TRUE);
   gtk_fixed_put (GTK_FIXED (board_canvas), item, x, y);
 
   g_object_set_data (G_OBJECT (item), "tile", tile);
@@ -753,10 +753,7 @@ gboolean board_gtk_undo_move (void)
 
 void board_gtk_show_logo (gboolean visible)
 {
-  if (visible)
-    gtk_widget_show (level_items->logo);
-  else
-    gtk_widget_hide (level_items->logo);
+  gtk_widget_set_visible (level_items->logo, visible);
 }
 
 gboolean board_gtk_handle_key_event (GObject * canvas, guint keyval,
@@ -965,7 +962,7 @@ static void selector_select (SelectorData *data, GtkWidget *item)
   data->selected = TRUE;
   data->sel_item = item;
 
-  gtk_widget_hide (data->selector);
+  gtk_widget_set_visible (data->selector, FALSE);
   selector_arrows_show (data);
 }
 
@@ -992,12 +989,12 @@ static void selector_arrows_hide (SelectorData *data)
 
 static void selector_hide (SelectorData *data)
 {
-  gtk_widget_hide (data->selector);
+  gtk_widget_set_visible (data->selector, FALSE);
   selector_arrows_hide (data);
 }
 
 static void selector_show (SelectorData *data)
 {
-  gtk_widget_show (data->selector);
+  gtk_widget_set_visible (data->selector, TRUE);
 }
 

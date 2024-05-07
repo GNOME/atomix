@@ -124,7 +124,7 @@ static GtkImage *create_small_item (gdouble x, gdouble y, Tile *tile)
 				      SCALE_FACTOR, GDK_INTERP_BILINEAR);
 
   item = gtk_image_new_from_pixbuf (small_pb);
-  gtk_widget_show (item);
+  gtk_widget_set_visible (item, TRUE);
   gtk_fixed_put (goal_fixed, item, x, y);
 
   g_object_unref (pixbuf);

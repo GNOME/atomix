@@ -457,7 +457,7 @@ static void update_statistics (void)
       gtk_label_set_text (GTK_LABEL (app->lb_name), "");
       gtk_label_set_text (GTK_LABEL (app->lb_formula), "");
       gtk_label_set_text (GTK_LABEL (app->lb_score), "");
-      gtk_widget_hide (GTK_WIDGET (app->clock));
+      gtk_widget_set_visible (GTK_WIDGET (app->clock), FALSE);
     }
   else
     {
@@ -479,7 +479,7 @@ static void update_statistics (void)
       gtk_label_set_text (GTK_LABEL (app->lb_score), str_buffer);
 
       /* show clock */
-      gtk_widget_show (GTK_WIDGET (app->clock));
+      gtk_widget_set_visible (GTK_WIDGET (app->clock), TRUE);
 
       g_free (str_buffer);
     }
@@ -628,7 +628,7 @@ static AtomixApp *create_gui (GApplication *app_instance)
   app->lb_formula = GTK_WIDGET (gtk_builder_get_object (builder, "formula_value"));
   app->lb_score = GTK_WIDGET (gtk_builder_get_object (builder, "score_value"));
 
-  gtk_widget_show_all (GTK_WIDGET (app->mainwin));
+  gtk_window_present (GTK_WINDOW (app->mainwin));
 
   headerbar = GTK_WIDGET (gtk_builder_get_object(builder, "headerbar"));
   gtk_application_add_window (GTK_APPLICATION (app->app_instance), GTK_WINDOW (app->mainwin));
@@ -643,7 +643,7 @@ static AtomixApp *create_gui (GApplication *app_instance)
   gtk_application_set_accels_for_action (GTK_APPLICATION (app->app_instance), "win.GameUndo", undo_move_accels);
 
   gtk_window_set_titlebar (GTK_WINDOW (app->mainwin), headerbar);
-  gtk_window_set_default_icon_name(APP_ID);
+  gtk_window_set_default_icon_name (APP_ID);
   GMenu * menu = G_MENU (gtk_builder_get_object (builder, "primary-menu"));
 
   primary_menu_button = GTK_WIDGET (gtk_builder_get_object (builder, "primary-menu-button"));
@@ -670,7 +670,7 @@ app_activate (GApplication *app_instance, gpointer user_data)
     gtk_widget_set_size_request (GTK_WIDGET (app->mainwin), 678, 520);
 
     //gtk_window_set_resizable (GTK_WINDOW (app->mainwin), FALSE);
-    gtk_widget_show (app->mainwin);
+    gtk_widget_set_visible (app->mainwin, TRUE);
   } else {
     gtk_window_present (GTK_WINDOW (app->mainwin));
   }
