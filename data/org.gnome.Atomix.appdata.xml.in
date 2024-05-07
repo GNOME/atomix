@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2015 Robert Roth -->
-<component type="desktop">
-  <id>atomix.desktop</id>
+<component type="desktop-application">
+  <id>org.gnome.Atomix.desktop</id>
+  <launchable type="desktop-id">org.gnome.Atomix.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>Atomix</name>
@@ -23,6 +24,9 @@
       <image>https://wiki.gnome.org/Apps/Atomix?action=AttachFile&amp;do=get&amp;target=atomix-screenshot.png</image>
     </screenshot>
   </screenshots>
+  <developer id="org.gnome">
+    <name>The GNOME Project</name>
+  </developer>
   <url type="homepage">https://wiki.gnome.org/Apps/Atomix</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/atomix/issues/new?issue</url>
   <url type="donation">https://www.gnome.org/donate/</url>
@@ -55,23 +59,16 @@
       </description>
     </release>
     <release version="3.34" date="2019-09-09" />
-    <release version="3.33" date="2019-09-02" />
-    <release version="3.32" date="2019-04-08" />
-    <release version="3.31" date="2019-03-05" />
-    <release version="3.30" date="2019-05-16" />
-    <release version="3.29" date="2018-06-18" />
+    <release version="3.32" date="2019-03-11" />
+    <release version="3.30" date="2018-09-03" />
     <release version="3.22" date="2016-09-19" />
-    <release version="3.21" date="2016-09-12" />
-    <release version="3.20" date="2019-05-16" />
-    <release version="3.19" date="2019-05-16" />
+    <release version="3.20" date="2016-03-22" />
     <release version="3.18" date="2015-09-21" />
-    <release version="3.17" date="2015-09-14" />
-    <release version="3.16" date="2019-05-16" />
-    <release version="3.15" date="2015-03-16" />
-    <release version="2.14" date="2019-05-16" />
-    <release version="2.13" date="2009-07-14" />
-    <release version="1.2" date="2009-07-14" />
-    <release version="0.4" date="2019-05-16" />
+    <release version="3.16" date="2015-03-23" />
+    <release version="2.14" date="2006-03-11" />
+    <release version="1.2.4" date="2005-11-14" />
+    <release version="1.0" date="2003-12-03" />
+    <release version="0.9.0" date="2001-11-27" />
   </releases>
 </component>
 

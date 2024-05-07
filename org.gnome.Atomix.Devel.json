@@ -1,5 +1,5 @@
 {
-    "app-id" : "org.gnome.atomix",
+    "app-id" : "org.gnome.Atomix",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "46",
     "sdk" : "org.gnome.Sdk",
@@ -7,9 +7,6 @@
     "tags" : [
         "nightly"
     ],
-    "rename-icon" : "atomix",
-    "rename-desktop-file" : "atomix.desktop",
-    "rename-appdata-file" : "atomix.appdata.xml",
     "desktop-file-name-prefix" : "(Nightly) ",
     "finish-args" : [
         "--share=ipc",
