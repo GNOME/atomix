@@ -21,6 +21,7 @@
 
 static GtkFixed *goal_fixed;
 static Theme *goal_theme;
+static GSList *goal_items = NULL;
 
 #define SCALE_FACTOR 0.9
 
@@ -104,7 +105,9 @@ static void remove_child (GtkWidget *widget, gpointer data)
 
 void goal_view_clear (void)
 {
-  gtk_container_forall (GTK_CONTAINER (goal_fixed), remove_child, NULL);
+  g_slist_foreach (goal_items, (GFunc) remove_child, NULL);
+  g_slist_free (goal_items);
+  goal_items = NULL;
 }
 
 static GtkImage *create_small_item (gdouble x, gdouble y, Tile *tile)
@@ -125,6 +128,7 @@ static GtkImage *create_small_item (gdouble x, gdouble y, Tile *tile)
 
   item = gtk_image_new_from_pixbuf (small_pb);
   gtk_widget_set_visible (item, TRUE);
+  goal_items = g_slist_prepend (goal_items, item);
   gtk_fixed_put (goal_fixed, item, x, y);
 
   g_object_unref (pixbuf);
