@@ -106,21 +106,12 @@ GtkWidget *clock_new (void)
 {
   Clock *clock = CLOCK (g_object_new (TYPE_CLOCK, NULL));
 
-  clock->fmt = g_strdup ("%H:%M:%S");
+  clock->fmt = g_strdup ("%M:%S");
 
   clock_gen_str (clock);
   gtk_label_set_xalign (GTK_LABEL (clock), 0.0);
 
   return GTK_WIDGET (clock);
-}
-
-void clock_set_format (Clock *clock, const gchar *fmt)
-{
-  g_return_if_fail (clock != NULL);
-  g_return_if_fail (fmt != NULL);
-
-  g_free (clock->fmt);
-  clock->fmt = g_strdup (fmt);
 }
 
 void clock_reset (Clock *clock)

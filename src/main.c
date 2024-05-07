@@ -391,7 +391,6 @@ static void game_init (void)
   app->level = NULL;
   app->level_no = 0;
   app->score = 0;
-  clock_set_format (CLOCK(app->clock), "%M:%S");
   clock_reset (CLOCK(app->clock));
 
   /* init the board */

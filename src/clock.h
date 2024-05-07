@@ -41,9 +41,7 @@ typedef struct
 
 GType clock_get_type (void);
 GtkWidget *clock_new (void);
-void clock_set_format (Clock *, const gchar *);
 void clock_reset (Clock *);
-void clock_set_update_interval (Clock *, gint);
 void clock_start (Clock *);
 void clock_resume (Clock *);
 gint clock_get_elapsed (Clock *);
