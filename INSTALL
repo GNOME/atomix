@@ -1,0 +1,9 @@
+Local steps for install and build
+* configure the build using `meson configure build`
+* run the build using `ninja -C build install`
+* if dependency is missing, install dependency and rerun the build
+* run the application using `build/src/atomix`
+
+Local flatpak steps for install and build
+* build the flatpak using `flatpak-builder --install --user atomix org.gnome.Atomix.Devel.json --force-clean`
+* run the flatpak application using `flatpak run org.gnome.Atomix`
