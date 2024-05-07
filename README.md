@@ -25,4 +25,4 @@ Guilherme de S. Pastore
 gpastore@gnome.org
 
 Robert Roth
-robertroth@gnome.org
+robert.roth.off@gmail.com
