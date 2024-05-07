@@ -1,23 +1,21 @@
 {
     "app-id" : "org.gnome.atomix",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.28",
+    "runtime-version" : "46",
     "sdk" : "org.gnome.Sdk",
     "command" : "atomix",
     "tags" : [
         "nightly"
     ],
-    "rename-icon" : "atomix.png",
+    "rename-icon" : "atomix",
     "rename-desktop-file" : "atomix.desktop",
+    "rename-appdata-file" : "atomix.appdata.xml",
     "desktop-file-name-prefix" : "(Nightly) ",
     "finish-args" : [
         "--share=ipc",
-        "--socket=x11",
-        "--socket=wayland",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--socket=fallback-x11",
+        "--socket=pulseaudio",
+        "--socket=wayland"
     ],
     "build-options" : {
         "cflags" : "-O2 -g",
@@ -27,22 +25,12 @@
     },
     "modules" : [
         {
-            "name" : "libgee",
+            "name" : "libgnome-games-support",
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "git",
-                    "branch" : "meson",
-                    "url" : "https://gitlab.gnome.org/GNOME/libgee.git"
-                }
-            ]
-        },
-        {
-            "name" : "libgnome-games-support",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "branch" : "master",
+                    "branch" : "games-1-8",
                     "url" : "https://gitlab.gnome.org/GNOME/libgnome-games-support.git"
                 }
             ]
