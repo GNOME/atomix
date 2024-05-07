@@ -26,7 +26,7 @@ podir = join_paths(meson.project_source_root(), 'po')
 itsdir = join_paths(meson.project_source_root(), 'data')
 # Dependencies
 
-gtk_dep = dependency('gtk+-3.0', version: '>= 3.10')
+gtk_dep = dependency('gtk+-3.0', version: '>= 3.24')
 gdk_pixbuf_dep = dependency('gdk-pixbuf-2.0', version: '>= 2.0.5')
 glib_dep = dependency('glib-2.0', version: '>= 2.36.0')
 libgnome_games_support_dep = dependency('libgnome-games-support-1')

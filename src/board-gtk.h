@@ -47,7 +47,4 @@ gboolean board_gtk_undo_move (void);
 
 void board_gtk_show_logo (gboolean visible);
 
-gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
-			     gpointer data);
-
 #endif /* _ATOMIX_BOARD_GTK_H_ */

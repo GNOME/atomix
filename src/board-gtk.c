@@ -78,11 +78,12 @@ static LevelItems *level_items;
 static GSList *board_canvas_items = NULL;	/* a list of all used  */
 static Goal *board_goal = NULL;	/* the goal of this level */
 static SelectorData *selector_data;	/* data about the selector */
+static GtkEventController *key_controller = NULL; /* keyboard interaction handler */
 
 
 /* Forward declarations of internal functions */
-static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
-				    gpointer user_data);
+static gboolean on_key_press_event (GtkEventController *self, guint keyval, guint keycode,
+                                    GdkModifierType *state, gpointer user_data);
 void board_gtk_render (void);
 static void render_tile (Tile *tile, gint row, gint col);
 GtkWidget* create_tile (double x, double y, Tile *tile);
@@ -437,8 +438,9 @@ void board_gtk_init (Theme * theme, gpointer canvas)
   gtk_widget_show_all (GTK_WIDGET(board_canvas));
 
     /* add playfield canvas to left side */
-  g_signal_connect (GTK_WIDGET(board_canvas), "key-press-event",
-		    G_CALLBACK (on_key_press_event), app);
+  key_controller = gtk_event_controller_key_new (GTK_WIDGET (board_canvas));
+  g_signal_connect (GTK_EVENT_CONTROLLER(key_controller), "key-pressed",
+                    G_CALLBACK (on_key_press_event), app);
 
   selector_data = selector_create ();
 }
@@ -757,7 +759,7 @@ void board_gtk_show_logo (gboolean visible)
     gtk_widget_hide (level_items->logo);
 }
 
-gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
+gboolean board_gtk_handle_key_event (GObject * canvas, guint keyval,
                                      gpointer data)
 {
   GtkWidget *item;
@@ -773,7 +775,7 @@ gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
   if (anim_data->timeout_id != -1)
     return FALSE;
 
-  switch (event->keyval) {
+  switch (keyval) {
     case GDK_KEY_space:
     case GDK_KEY_Return:
       selector_data->mouse_steering = FALSE;
@@ -859,11 +861,11 @@ gboolean board_gtk_handle_key_event (GObject * canvas, GdkEventKey * event,
   return FALSE;
 }
 
-static gboolean on_key_press_event (GObject *widget, GdkEventKey *event,
-				    gpointer user_data)
+static gboolean on_key_press_event (GtkEventController *self, guint keyval, guint keycode,
+                                    GdkModifierType *state, gpointer user_data)
 {
   if ((app->state == GAME_STATE_RUNNING) || (app->state == GAME_STATE_RUNNING_UNMOVED))
-    return board_gtk_handle_key_event (NULL, event, NULL);
+    return board_gtk_handle_key_event (NULL, keyval, NULL);
 
   return FALSE;
 }
