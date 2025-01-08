@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Atomix",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "46",
+    "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
     "command" : "atomix",
     "tags" : [
