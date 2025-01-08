@@ -15,7 +15,7 @@ flatpak:
     MANIFEST_PATH: "org.gnome.Atomix.Devel.json"
     APP_ID: "org.gnome.Atomix.Devel"
     RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
-    BUNDLE: "swell-foop-nightly.flatpak"
+    BUNDLE: "atomix-nightly.flatpak"
   extends: '.flatpak'
 
 nightly:
