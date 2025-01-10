@@ -18,247 +18,247 @@ msgstr "Project-Id-Version: atomix HEAD\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "X-Generator: LocFactoryEditor 1.5.1b\n"
 
-#:../level/aceticacid.atomix.xml.h:1
+#: ../level/aceticacid.atomix.xml.h:1
 msgid "Acetic Acid"
 msgstr "Axit axetic"
 
-#:../level/acetone.atomix.xml.h:1
+#: ../level/acetone.atomix.xml.h:1
 msgid "Acetone"
 msgstr "Axetôn"
 
-#:../level/butanol.atomix.xml.h:1
+#: ../level/butanol.atomix.xml.h:1
 msgid "Butanol"
 msgstr "Butanola"
 
-#:../level/cyclobutane.atomix.xml.h:1
+#: ../level/cyclobutane.atomix.xml.h:1
 msgid "Cyclobutane"
 msgstr "Xiclôbutan"
 
-#:../level/dimethylether.atomix.xml.h:1
+#: ../level/dimethylether.atomix.xml.h:1
 msgid "Dimethyl Ether"
 msgstr "Ête metyla đôi"
 
-#:../level/ethanal.atomix.xml.h:1
+#: ../level/ethanal.atomix.xml.h:1
 msgid "Ethanal"
 msgstr "Etanan"
 
-#:../level/ethane.atomix.xml.h:1
+#: ../level/ethane.atomix.xml.h:1
 msgid "Ethane"
 msgstr "Etan"
 
-#:../level/ethanol.atomix.xml.h:1
+#: ../level/ethanol.atomix.xml.h:1
 msgid "Ethanol"
 msgstr "Etanola"
 
-#:../level/ethylene.atomix.xml.h:1
+#: ../level/ethylene.atomix.xml.h:1
 msgid "Ethylene"
 msgstr "Etylen"
 
-#:../level/glycerin.atomix.xml.h:1
+#: ../level/glycerin.atomix.xml.h:1
 msgid "Glycerin"
 msgstr "Glyxerin"
 
-#:../level/lactic-acid.atomix.xml.h:1
+#: ../level/lactic-acid.atomix.xml.h:1
 msgid "Lactic Acid"
 msgstr "Acit lactic"
 
-#:../level/methanal.atomix.xml.h:1
+#: ../level/methanal.atomix.xml.h:1
 msgid "Methanal"
 msgstr "Metanan"
 
-#:../level/methane.atomix.xml.h:1
+#: ../level/methane.atomix.xml.h:1
 msgid "Methane"
 msgstr "Metan"
 
-#:../level/methanol.atomix.xml.h:1
+#: ../level/methanol.atomix.xml.h:1
 msgid "Methanol"
 msgstr "Metanola"
 
-#:../level/propanal.atomix.xml.h:1
+#: ../level/propanal.atomix.xml.h:1
 msgid "Propanal"
 msgstr "Prôpanan"
 
-#:../level/propylene.atomix.xml.h:1
+#: ../level/propylene.atomix.xml.h:1
 msgid "Propylene"
 msgstr "Prôpylen"
 
-#:../level/pyran.atomix.xml.h:1
+#: ../level/pyran.atomix.xml.h:1
 msgid "Pyran"
 msgstr "Pyran"
 
-#:../level/transbutylen.atomix.xml.h:1
+#: ../level/transbutylen.atomix.xml.h:1
 msgid "Trans Butylen"
 msgstr "Butylen qua"
 
-#:../level/water.atomix.xml.h:1
+#: ../level/water.atomix.xml.h:1
 msgid "Water"
 msgstr "Nước"
 
-#:../src/atomix-ui.xml.h:1
+#: ../src/atomix-ui.xml.h:1
 msgid "Continue paused game"
 msgstr "Tiếp tục chơi"
 
-#:../src/atomix-ui.xml.h:2
+#: ../src/atomix-ui.xml.h:2
 msgid "End a game"
 msgstr "Kết thúc trò chơi"
 
-#:../src/atomix-ui.xml.h:3
+#: ../src/atomix-ui.xml.h:3
 msgid "Pause the running game"
 msgstr "Tạm dừng trò chơi"
 
-#:../src/atomix-ui.xml.h:4
+#: ../src/atomix-ui.xml.h:4
 msgid "Reset level"
 msgstr "Đặt lại cấp độ"
 
-#:../src/atomix-ui.xml.h:5
+#: ../src/atomix-ui.xml.h:5
 msgid "Restores start situation"
 msgstr "Phục hồi vị trí ban đầu"
 
-#:../src/atomix-ui.xml.h:6
+#: ../src/atomix-ui.xml.h:6
 msgid "Set preferences"
 msgstr "Thiết lập thông số"
 
-#:../src/atomix-ui.xml.h:7
+#: ../src/atomix-ui.xml.h:7
 msgid "Skip _level"
 msgstr "Bỏ qua _cấp độ"
 
-#:../src/atomix-ui.xml.h:8
+#: ../src/atomix-ui.xml.h:8
 msgid "Skip the current level"
 msgstr "Bỏ qua cấp độ này"
 
-#:../src/atomix-ui.xml.h:9
+#: ../src/atomix-ui.xml.h:9
 msgid "Start a new game"
 msgstr "Bắt đầu chơi"
 
-#:../src/atomix-ui.xml.h:10
+#: ../src/atomix-ui.xml.h:10
 msgid "Undo the last move"
 msgstr "Hoàn lại lần đi cuối"
 
-#:../src/atomix-ui.xml.h:11
+#: ../src/atomix-ui.xml.h:11
 msgid "View highscores"
 msgstr "Xem điểm cao"
 
-#:../src/atomix-ui.xml.h:12
+#: ../src/atomix-ui.xml.h:12
 msgid "_Continue game"
 msgstr "_Tiếp tục chơi"
 
-#:../src/atomix-ui.xml.h:13
+#: ../src/atomix-ui.xml.h:13
 msgid "_End Game"
 msgstr "_Kết thúc trò chơi"
 
-#:../src/atomix-ui.xml.h:14
+#: ../src/atomix-ui.xml.h:14
 msgid "_Game"
 msgstr "_Trò chơi"
 
-#.submenu name="Edit" _label="_Edit">
-#.
-#.<menuitem name="EditPreferences" verb=""/>
-#.
-#.</submenu
-#:../src/atomix-ui.xml.h:20
+#: submenu name="Edit" _label="_Edit">
+#: 
+#: <menuitem name="EditPreferences" verb=""/>
+#: 
+#: </submenu
+#: ../src/atomix-ui.xml.h:20
 msgid "_Help"
 msgstr "Trợ _giúp"
 
-#:../src/atomix-ui.xml.h:21
+#: ../src/atomix-ui.xml.h:21
 msgid "_New Game"
 msgstr "Trò chơi _mới"
 
-#:../src/atomix-ui.xml.h:22
+#: ../src/atomix-ui.xml.h:22
 msgid "_Pause game"
 msgstr "Tạm _dừng trò chơi"
 
-#:../src/atomix-ui.xml.h:23
+#: ../src/atomix-ui.xml.h:23
 msgid "_Preferences ..."
 msgstr "_Thông số..."
 
-#:../src/atomix-ui.xml.h:24
+#: ../src/atomix-ui.xml.h:24
 msgid "_Scores ..."
 msgstr "Đ_iểm..."
 
-#:../src/atomix-ui.xml.h:25
+#: ../src/atomix-ui.xml.h:25
 msgid "_Undo move"
 msgstr "_Hoàn lại nước đi"
 
-#:../src/level-manager.c:174
+#: ../src/level-manager.c:174
 msgid "Couldn't find level sequence description."
 msgstr "Không thể tìm chuỗi mô tả cấp độ."
 
-#:../src/level-manager.c:188
+#: ../src/level-manager.c:188
 msgid "No level found."
 msgstr "Không tìm thấy cấp độ."
 
-#:../src/level-manager.c:284
-#,c-format
+#: ../src/level-manager.c:284
+#, c-format
 msgid "Found level '%s' in: %s"
 msgstr "Tìm thấy cấp độ « %s » trong: %s"
 
-#:../src/main.c:126
+#: ../src/main.c:126
 msgid "You have not achieved any scores yet. Play a little before coming back!"
 msgstr "Bạn chưa được điểm nào. Chơi nữa nhé trước khi trở về!"
 
-#:../src/main.c:173
+#: ../src/main.c:173
 msgid "A puzzle game about atoms and molecules"
 msgstr "Trò chơi trí tuệ về nguyên tử và phân tử"
 
-#:../src/main.c:177
+#: ../src/main.c:177
 msgid "translator-credits"
 msgstr "Nhóm Việt hóa Gnome <gnomevi-list@lists.sourceforge.net>"
 
-#:../src/main.c:488 ../atomix.desktop.in.h:1
+#: ../src/main.c:488 ../atomix.desktop.in.h:1
 msgid "Atomix"
 msgstr "Atomix"
 
-#:../src/main.c:499
+#: ../src/main.c:499
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Xin chúc mừng! Bạn đã hoàn tất mọi cấp độ của Atomix."
 
-#:../src/main.c:509
+#: ../src/main.c:509
 msgid "Couldn't find at least one level."
 msgstr "Không thể tìm thấy cấp độ nào cả."
 
-#:../src/main.c:514
+#: ../src/main.c:514
 msgid "Do you want to finish the game?"
 msgstr "Bạn có muốn hoàn tất trò chơi không?"
 
-#.create statistics frame
-#:../src/main.c:728
+#: create statistics frame
+#: ../src/main.c:728
 msgid "Statistics"
 msgstr "Thống kê"
 
-#:../src/main.c:734
+#: ../src/main.c:734
 msgid "Level:"
 msgstr "Cấp độ:"
 
-#:../src/main.c:735
+#: ../src/main.c:735
 msgid "Molecule:"
 msgstr "Phân tử:"
 
-#:../src/main.c:736
+#: ../src/main.c:736
 msgid "Formula:"
 msgstr "Công thức:"
 
-#:../src/main.c:737
+#: ../src/main.c:737
 msgid "Score:"
 msgstr "Điểm:"
 
-#:../src/main.c:738
+#: ../src/main.c:738
 msgid "Time:"
 msgstr "Thời gian:"
 
-#:../src/main.c:778
-#,c-format
+#: ../src/main.c:778
+#, c-format
 msgid "Couldn't find file: %s"
 msgstr "Không thể tìm tập tin: %s"
 
-#:../src/theme-manager.c:135
+#: ../src/theme-manager.c:135
 msgid "No themes found."
 msgstr "Không tìm thấy sắc thái."
 
-#:../src/theme-manager.c:193
-#,c-format
+#: ../src/theme-manager.c:193
+#, c-format
 msgid "Found theme '%s' in: %s"
 msgstr "Tìm thấy sắc thái « %s » trong: %s"
 
-#:../atomix.desktop.in.h:2
+#: ../atomix.desktop.in.h:2
 msgid "Molecule puzzle game"
 msgstr "Trò chơi trí tuệ về phân tử"
