@@ -15,6 +15,7 @@ flatpak:
   variables:
     MANIFEST_PATH: "org.gnome.Atomix.Devel.json"
     APP_ID: "org.gnome.Atomix.Devel"
+    BRANCH: "main"
     RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
   extends: '.flatpak'
 
