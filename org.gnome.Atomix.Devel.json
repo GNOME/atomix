@@ -38,7 +38,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "branch" : "master",
+                    "branch" : "main",
                     "url" : "https://gitlab.gnome.org/GNOME/atomix.git"
                 }
             ]
