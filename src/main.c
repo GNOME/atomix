@@ -642,7 +642,6 @@ static AtomixApp *create_gui (GApplication *app_instance)
   gtk_application_set_accels_for_action (GTK_APPLICATION (app->app_instance), "win.GameUndo", undo_move_accels);
 
   gtk_window_set_titlebar (GTK_WINDOW (app->mainwin), headerbar);
-  gtk_window_set_default_icon_name (APP_ID);
   GMenu * menu = G_MENU (gtk_builder_get_object (builder, "primary-menu"));
 
   primary_menu_button = GTK_WIDGET (gtk_builder_get_object (builder, "primary-menu-button"));
@@ -682,6 +681,8 @@ int main (int argc, char *argv[])
   int status;
 
   g_set_application_name (_("Atomix"));
+  g_set_prgname (APP_ID);
+  gtk_window_set_default_icon_name (APP_ID);
 
   bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
