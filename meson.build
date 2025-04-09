@@ -21,6 +21,7 @@ endif
 localedir = join_paths(get_option('prefix'), get_option('localedir'))
 datadir = join_paths (get_option ('prefix'), get_option ('datadir'))
 pkgdatadir = join_paths (datadir, 'atomix')
+bindir = join_paths (get_option ('prefix'), get_option ('bindir'))
 
 podir = join_paths(meson.project_source_root(), 'po')
 itsdir = join_paths(meson.project_source_root(), 'data')

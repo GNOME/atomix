@@ -17,6 +17,21 @@ install_subdir('themes',
   install_dir: pkgdatadir,
 )
 
+
+# D-Bus service file
+service_conf = configuration_data()
+service_conf.set('app_id', app_id)
+service_conf.set('bindir', bindir)
+
+configure_file(
+          input: '@0@.service.in'.format(app_id),
+         output: '@0@.service'.format(app_id),
+        install: true,
+    install_dir: join_paths(datadir, 'dbus-1', 'services'),
+  configuration: service_conf
+)
+
+
 # Desktop file
 desktop_file_in_config = configuration_data()
 desktop_file_in_config.set('app_id', app_id)
