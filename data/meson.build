@@ -24,7 +24,7 @@ service_conf.set('app_id', app_id)
 service_conf.set('bindir', bindir)
 
 configure_file(
-          input: '@0@.service.in'.format(app_id),
+          input: 'org.gnome.Atomix.service.in',
          output: '@0@.service'.format(app_id),
         install: true,
     install_dir: join_paths(datadir, 'dbus-1', 'services'),
