@@ -1,5 +1,5 @@
-data/org.gnome.Atomix.appdata.xml.in
 data/org.gnome.Atomix.desktop.in
+data/org.gnome.Atomix.metainfo.xml.in
 data/level/aceticacid.atomix.xml.in
 data/level/acetone.atomix.xml.in
 data/level/butanol.atomix.xml.in

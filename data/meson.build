@@ -51,27 +51,27 @@ desktop_file = i18n.merge_file(
 )
 
 
-# Appdata
+# Metainfo
 appconf = configuration_data()
 appconf.set('app_id', app_id)
 appstream_file_in = configure_file(
-          input: 'org.gnome.Atomix.appdata.xml.in',
-         output: '@0@.appdata.xml.in'.format(app_id),
+          input: 'org.gnome.Atomix.metainfo.xml.in',
+         output: '@0@.metainfo.xml.in'.format(app_id),
   configuration: appconf,
 )
 
 appstream_file = i18n.merge_file(
           input: appstream_file_in,
-         output: '@0@.appdata.xml'.format(app_id),
+         output: '@0@.metainfo.xml'.format(app_id),
          po_dir: podir,
         install: true,
     install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
-# Validate Appdata
+# Validate Metainfo
 appstreamcli = find_program('appstreamcli', required: false)
 if (appstreamcli.found())
-  test('Validating appdata',
+  test('Validating metainfo',
     appstreamcli,
     args: ['validate', '--no-net', appstream_file],
     workdir: meson.current_build_dir()
