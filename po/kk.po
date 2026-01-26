@@ -1,0 +1,212 @@
+# Kazakh translation for atomix.
+# Copyright (C) 2026 atomix's COPYRIGHT HOLDER
+# This file is distributed under the same license as the atomix package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-01-26 19:59+0500\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <Kazakh>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
+msgid "Atomix"
+msgstr "Atomix"
+
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Молекулалық жұмбақ ойыны"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Атомдар мен молекулалар туралы жұмбақ ойын"
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;ойын;логика;жұмбақ;атомдар;молекулалар;сокобан;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
+msgid "Build molecules out of single atoms"
+msgstr "Жеке атомдардан молекулалар құрастыру"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:11
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+"Atomix — бұл ойын алаңында атомдарды жылжыту арқылы олардан молекулаларды "
+"құрастыру болып табылатын жұмбақ ойыны. Алайда, атомдар сіз қалаған жерге "
+"ғана жылжымайды, олар қабырғаға немесе басқа атомға тірелгенше сырғи береді."
+
+#: data/org.gnome.Atomix.metainfo.xml.in:17
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a "
+"higher score."
+msgstr ""
+"Жоғары ұпай жинау үшін әр деңгейде молекулаларды мүмкіндігінше тез "
+"құрастыруға тырысыңыз."
+
+#: data/level/aceticacid.atomix.xml.in:2
+msgid "Acetic Acid"
+msgstr "Сірке қышқылы"
+
+#: data/level/acetone.atomix.xml.in:2
+msgid "Acetone"
+msgstr "Ацетон"
+
+#: data/level/butanol.atomix.xml.in:2
+msgid "Butanol"
+msgstr "Бутанол"
+
+#: data/level/cyclobutane.atomix.xml.in:2
+msgid "Cyclobutane"
+msgstr "Циклобутан"
+
+#: data/level/dimethylether.atomix.xml.in:2
+msgid "Dimethyl Ether"
+msgstr "Диметил эфирі"
+
+#: data/level/ethanal.atomix.xml.in:2
+msgid "Ethanal"
+msgstr "Этаналь"
+
+#: data/level/ethane.atomix.xml.in:2
+msgid "Ethane"
+msgstr "Этан"
+
+#: data/level/ethanol.atomix.xml.in:2
+msgid "Ethanol"
+msgstr "Этанол"
+
+#: data/level/ethylene.atomix.xml.in:2
+msgid "Ethylene"
+msgstr "Этилен"
+
+#: data/level/glycerin.atomix.xml.in:2
+msgid "Glycerin"
+msgstr "Глицерин"
+
+#: data/level/lactic-acid.atomix.xml.in:2
+msgid "Lactic Acid"
+msgstr "Сүт қышқылы"
+
+#: data/level/methanal.atomix.xml.in:2
+msgid "Methanal"
+msgstr "Метанал"
+
+#: data/level/methane.atomix.xml.in:2
+msgid "Methane"
+msgstr "Метан"
+
+#: data/level/methanol.atomix.xml.in:2
+msgid "Methanol"
+msgstr "Метанол"
+
+#: data/level/propanal.atomix.xml.in:2
+msgid "Propanal"
+msgstr "Пропанал"
+
+#: data/level/propylene.atomix.xml.in:2
+msgid "Propylene"
+msgstr "Пропилен"
+
+#: data/level/pyran.atomix.xml.in:2
+msgid "Pyran"
+msgstr "Пиран"
+
+#: data/level/transbutylen.atomix.xml.in:2
+msgid "Trans Butylen"
+msgstr "Транс бутилен"
+
+#: data/level/water.atomix.xml.in:2
+msgid "Water"
+msgstr "Су"
+
+#: data/ui/interface.ui:99
+msgid "Level:"
+msgstr "Деңгей:"
+
+#: data/ui/interface.ui:111
+msgid "Molecule:"
+msgstr "Молекула:"
+
+#: data/ui/interface.ui:123
+msgid "Formula:"
+msgstr "Формула:"
+
+#: data/ui/interface.ui:135
+msgid "Score:"
+msgstr "Ұпай:"
+
+#: data/ui/interface.ui:147
+msgid "Time:"
+msgstr "Уақыт:"
+
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
+msgid "empty"
+msgstr "бос"
+
+#: data/ui/interface.ui:213
+msgid "Statistics"
+msgstr "Статистика"
+
+#: data/ui/menu.ui:7
+msgid "New Game"
+msgstr "Жаңа ойын"
+
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Ойынды аялдату/жалғастыру"
+
+#: data/ui/menu.ui:17
+msgid "End Game"
+msgstr "Ойынды аяқтау"
+
+#: data/ui/menu.ui:23
+msgid "Skip Level"
+msgstr "Деңгейді өткізіп жіберу"
+
+#: data/ui/menu.ui:28
+msgid "Reset Level"
+msgstr "Деңгейді тастау"
+
+#: data/ui/menu.ui:32
+msgid "Undo Move"
+msgstr "Қадамды болдырмау"
+
+#: data/ui/menu.ui:39
+msgid "About Atomix"
+msgstr "Atomix туралы"
+
+#: src/board-gtk.c:344
+msgid ""
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
+msgstr ""
+"Молекулаларды құрастыру үшін атомдарды лабиринт арқылы бағыттаңыз. Атомды "
+"таңдап, оны жылжыту үшін шертіңіз немесе бағдарша пернелерін және Enter "
+"пернесін пайдаланыңыз. Абай болыңыз: атом қабырғаға тірелгенше қозғала "
+"береді."
+
+#: src/main.c:126
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: src/main.c:436
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Құттықтаймыз! Сіз Atomix-тің барлық деңгейлерін аяқтадыңыз."
