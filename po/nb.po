@@ -1,13 +1,13 @@
 # Norwegian (bokmål) translation of atomix.
 # Copyright (C) 2001 Free Software Foundation, Inc.
-# Kjartan Maraas <kmaraas@gnome.org>, 2001-2005.
+# Kjartan Maraas <kmaraas@gnome.org>, 2001-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-23 11:22+0100\n"
-"PO-Revision-Date: 2006-01-23 11:22+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-06-04 17:46+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -15,248 +15,186 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: ../level/aceticacid.atomix.xml.h:1
-msgid "Acetic Acid"
-msgstr "Syrlig syre"
-
-#: ../level/acetone.atomix.xml.h:1
-msgid "Acetone"
-msgstr "Aceton"
-
-#: ../level/butanol.atomix.xml.h:1
-msgid "Butanol"
-msgstr "Butanol"
-
-#: ../level/cyclobutane.atomix.xml.h:1
-msgid "Cyclobutane"
-msgstr "Syklobutan"
-
-#: ../level/dimethylether.atomix.xml.h:1
-msgid "Dimethyl Ether"
-msgstr "Dimetyl eter"
-
-#: ../level/ethanal.atomix.xml.h:1
-msgid "Ethanal"
-msgstr "Etanal"
-
-#: ../level/ethane.atomix.xml.h:1
-msgid "Ethane"
-msgstr "Etan"
-
-#: ../level/ethanol.atomix.xml.h:1
-msgid "Ethanol"
-msgstr "Etanol"
-
-#: ../level/ethylene.atomix.xml.h:1
-msgid "Ethylene"
-msgstr "Etylen"
-
-#: ../level/glycerin.atomix.xml.h:1
-msgid "Glycerin"
-msgstr "Glyserin"
-
-#: ../level/lactic-acid.atomix.xml.h:1
-msgid "Lactic Acid"
-msgstr "Laktisk syre"
-
-#: ../level/methanal.atomix.xml.h:1
-msgid "Methanal"
-msgstr "Metanal"
-
-#: ../level/methane.atomix.xml.h:1
-msgid "Methane"
-msgstr "Metan"
-
-#: ../level/methanol.atomix.xml.h:1
-msgid "Methanol"
-msgstr "Metanol"
-
-#: ../level/propanal.atomix.xml.h:1
-msgid "Propanal"
-msgstr "Propanal"
-
-#: ../level/propylene.atomix.xml.h:1
-msgid "Propylene"
-msgstr "Propylen"
-
-#: ../level/pyran.atomix.xml.h:1
-msgid "Pyran"
-msgstr "Pyran"
-
-#: ../level/transbutylen.atomix.xml.h:1
-msgid "Trans Butylen"
-msgstr "Trans butylen"
-
-#: ../level/water.atomix.xml.h:1
-msgid "Water"
-msgstr "Vann"
-
-#: ../src/atomix-ui.xml.h:1
-msgid "Continue paused game"
-msgstr "Fortsett pauset spill"
-
-#: ../src/atomix-ui.xml.h:2
-msgid "End a game"
-msgstr "Avslutt et spill"
-
-#: ../src/atomix-ui.xml.h:3
-msgid "Pause the running game"
-msgstr "Pause et kjørende spill"
-
-#: ../src/atomix-ui.xml.h:4
-msgid "Reset level"
-msgstr "Nullstill nivå"
-
-#: ../src/atomix-ui.xml.h:5
-msgid "Restores start situation"
-msgstr "Gå tilbake til utgangspunktet"
-
-#: ../src/atomix-ui.xml.h:6
-msgid "Set preferences"
-msgstr "Sett brukervalg"
-
-#: ../src/atomix-ui.xml.h:7
-msgid "Skip _level"
-msgstr "Hopp _over nivå"
-
-#: ../src/atomix-ui.xml.h:8
-msgid "Skip the current level"
-msgstr "Hopp over aktivt nivå"
-
-#: ../src/atomix-ui.xml.h:9
-msgid "Start a new game"
-msgstr "Start et nytt spill"
-
-#: ../src/atomix-ui.xml.h:10
-msgid "Undo the last move"
-msgstr "Angre forrige trekk"
-
-#: ../src/atomix-ui.xml.h:11
-msgid "View highscores"
-msgstr "Vis poengsummer"
-
-#: ../src/atomix-ui.xml.h:12
-msgid "_Continue game"
-msgstr "_Fortsett spill"
-
-#: ../src/atomix-ui.xml.h:13
-msgid "_End Game"
-msgstr "_Avslutt spill"
-
-#: ../src/atomix-ui.xml.h:14
-msgid "_Game"
-msgstr "_Spill"
-
-#. submenu name="Edit" _label="_Edit">
-#.
-#. <menuitem name="EditPreferences" verb=""/>
-#.
-#. </submenu
-#: ../src/atomix-ui.xml.h:20
-msgid "_Help"
-msgstr "_Hjelp"
-
-#: ../src/atomix-ui.xml.h:21
-msgid "_New Game"
-msgstr "_Nytt spill:"
-
-#: ../src/atomix-ui.xml.h:22
-msgid "_Pause game"
-msgstr "_Pause spill"
-
-#: ../src/atomix-ui.xml.h:23
-msgid "_Preferences ..."
-msgstr "_Brukervalg..."
-
-#: ../src/atomix-ui.xml.h:24
-msgid "_Scores ..."
-msgstr "_Poeng..."
-
-#: ../src/atomix-ui.xml.h:25
-msgid "_Undo move"
-msgstr "_Angre trekk"
-
-#: ../src/level-manager.c:174
-msgid "Couldn't find level sequence description."
-msgstr "Kunne ikke finne beskrivelse av nivåsekvens."
-
-#: ../src/level-manager.c:188
-msgid "No level found."
-msgstr "Ingen nivåer funnet."
-
-#: ../src/level-manager.c:284
-#, c-format
-msgid "Found level '%s' in: %s"
-msgstr "Fant nivå «%s» i: %s"
-
-#: ../src/main.c:126
-msgid "You have not achieved any scores yet. Play a little before coming back!"
-msgstr ""
-"Du har ikke fått noen poeng ennå. Spill litt mer før du sjekker på nytt!"
-
-#: ../src/main.c:173
-msgid "A puzzle game about atoms and molecules"
-msgstr "Et puslespill som handler om atomer og molekyler"
-
-#: ../src/main.c:177
-msgid "translator-credits"
-msgstr "Kjartan Maraas <kmaraasgnome.org>"
-
-#: ../src/main.c:488 ../atomix.desktop.in.h:1
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "Atomix"
 
-#: ../src/main.c:499
-msgid "Congratulations! You have finished all Atomix levels."
-msgstr "Gratulerer! Du har fullført alle nivåer i Atomix."
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Puslespill med molekyler"
 
-#: ../src/main.c:509
-msgid "Couldn't find at least one level."
-msgstr "Kunne ikke finne minst ett nivå."
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Et puslespill som handler om atomer og molekyler"
 
-#: ../src/main.c:514
-msgid "Do you want to finish the game?"
-msgstr "Vil du avslutte dette spillet?"
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;spill;logikk;puslespill;atomer;molekyler;sokoban;"
 
-#. create statistics frame
-#: ../src/main.c:728
-msgid "Statistics"
-msgstr "Statistikk"
+#: data/org.gnome.Atomix.metainfo.xml.in:9
+msgid "Build molecules out of single atoms"
+msgstr "Bygg molekyler med enkeltatomer"
 
-#: ../src/main.c:734
+#: data/org.gnome.Atomix.metainfo.xml.in:11
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr "Atomix er et puslespill hvor målet er å sette sammen molekyler fra enkeltatomer ved å flytte dem på spillbrettet. Atomene flytter seg ikke bare dit du vil flytte dem. De glir til de treffer en vegg eller et annet atom."
+
+#: data/org.gnome.Atomix.metainfo.xml.in:17
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr "Prøv å bygg molekyler så raskt du kan på hvert nivå for å få mer poeng."
+
+#: data/level/aceticacid.atomix.xml.in:2
+msgid "Acetic Acid"
+msgstr "Syrlig syre"
+
+#: data/level/acetone.atomix.xml.in:2
+msgid "Acetone"
+msgstr "Aceton"
+
+#: data/level/butanol.atomix.xml.in:2
+msgid "Butanol"
+msgstr "Butanol"
+
+#: data/level/cyclobutane.atomix.xml.in:2
+msgid "Cyclobutane"
+msgstr "Syklobutan"
+
+#: data/level/dimethylether.atomix.xml.in:2
+msgid "Dimethyl Ether"
+msgstr "Dimetyl eter"
+
+#: data/level/ethanal.atomix.xml.in:2
+msgid "Ethanal"
+msgstr "Etanal"
+
+#: data/level/ethane.atomix.xml.in:2
+msgid "Ethane"
+msgstr "Etan"
+
+#: data/level/ethanol.atomix.xml.in:2
+msgid "Ethanol"
+msgstr "Etanol"
+
+#: data/level/ethylene.atomix.xml.in:2
+msgid "Ethylene"
+msgstr "Etylen"
+
+#: data/level/glycerin.atomix.xml.in:2
+msgid "Glycerin"
+msgstr "Glyserin"
+
+#: data/level/lactic-acid.atomix.xml.in:2
+msgid "Lactic Acid"
+msgstr "Laktisk syre"
+
+#: data/level/methanal.atomix.xml.in:2
+msgid "Methanal"
+msgstr "Metanal"
+
+#: data/level/methane.atomix.xml.in:2
+msgid "Methane"
+msgstr "Metan"
+
+#: data/level/methanol.atomix.xml.in:2
+msgid "Methanol"
+msgstr "Metanol"
+
+#: data/level/propanal.atomix.xml.in:2
+msgid "Propanal"
+msgstr "Propanal"
+
+#: data/level/propylene.atomix.xml.in:2
+msgid "Propylene"
+msgstr "Propylen"
+
+#: data/level/pyran.atomix.xml.in:2
+msgid "Pyran"
+msgstr "Pyran"
+
+#: data/level/transbutylen.atomix.xml.in:2
+msgid "Trans Butylen"
+msgstr "Trans butylen"
+
+#: data/level/water.atomix.xml.in:2
+msgid "Water"
+msgstr "Vann"
+
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Nivå:"
 
-#: ../src/main.c:735
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Molekyl:"
 
-#: ../src/main.c:736
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Formel:"
 
-#: ../src/main.c:737
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Poeng:"
 
-#: ../src/main.c:738
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Tid:"
 
-#: ../src/main.c:778
-#, c-format
-msgid "Couldn't find file: %s"
-msgstr "Kunne ikke finne fil: %s"
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
+msgid "empty"
+msgstr "tom"
 
-#: ../src/theme-manager.c:135
-msgid "No themes found."
-msgstr "Ingen tema funnet."
+#: data/ui/interface.ui:213
+msgid "Statistics"
+msgstr "Statistikk"
 
-#: ../src/theme-manager.c:193
-#, c-format
-msgid "Found theme '%s' in: %s"
-msgstr "Fant tema «%s» i: %s"
+#: data/ui/menu.ui:7
+msgid "New Game"
+msgstr "Nytt spill"
 
-#: ../atomix.desktop.in.h:2
-msgid "Molecule puzzle game"
-msgstr "Puslespill med molekyler"
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Pause/fortsett spill"
+
+#: data/ui/menu.ui:17
+msgid "End Game"
+msgstr "Avslutt spill"
+
+#: data/ui/menu.ui:23
+msgid "Skip Level"
+msgstr "Hopp over nivå"
+
+#: data/ui/menu.ui:28
+msgid "Reset Level"
+msgstr "Nullstill nivå"
+
+#: data/ui/menu.ui:32
+msgid "Undo Move"
+msgstr "Angre trekk"
+
+#: data/ui/menu.ui:39
+msgid "About Atomix"
+msgstr "Om Atomix"
+
+#: src/board-gtk.c:344
+msgid ""
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
+msgstr "Flytt atomene gjennom labyrinten for å lage molekyler. Klikk, eller bruk piltastene og linjeskift for å velge et atom og flytte det. Vær forsiktig - atomene fortsetter å bevege seg til de treffer en vegg."
+
+#: src/main.c:126
+msgid "translator-credits"
+msgstr "Kjartan Maraas <kmaraasgnome.org>"
+
+#: src/main.c:436
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Gratulerer! Du har fullført alle nivåer i Atomix."
