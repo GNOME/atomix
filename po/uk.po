@@ -3,13 +3,13 @@
 #
 # Yuriy Syrota <rasta@renome.rovno.ua>, 2001.
 # Mykola Tkach <Stuartlittle1970@gmail.com>, 2013.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020.
+# SPDX-FileCopyrightText: 2020, 2026 Yuri Chornoivan <yurchor@ukr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2019-09-02 20:18+0000\n"
-"PO-Revision-Date: 2020-03-25 09:09+0200\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-08-10 15:23+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -18,51 +18,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
 "=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.03.70\n"
+"X-Generator: Lokalize 25.12.1\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
-#: src/main.c:684
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "Атомікс"
 
-#: data/atomix.appdata.xml.in:8
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Гра-головоломка з молекулами"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Гра з атомами і молекулами."
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr ""
+"GNOME;game;logic;puzzle;atoms;molecules;sokoban;гноме;гном;ґном;ґноме;гра;лог"
+"іка;логічна;головломка;атоми;атом;молекула;молекули;сокобан;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
 msgid "Build molecules out of single atoms"
 msgstr "Збирання молекул із окремих атомів"
 
-#: data/atomix.appdata.xml.in:10
+#: data/org.gnome.Atomix.metainfo.xml.in:11
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
-"«Атомікс» — гра-головоломка, у якій вашою метою є збирання молекул із"
-" атомів-складників шляхом пересування атомів ігровим полем. Втім, атоми тут"
-" рухаються не так, як вам заманеться — почавши рух, вони ковзають полем, аж"
-" доки не зіткнуться зі стіною або іншим атомом."
+"«Атомікс» — гра-головоломка, у якій вашою метою є збирання молекул із атомів-"
+"складників шляхом пересування атомів ігровим полем. Втім, атоми тут "
+"рухаються не так, як вам заманеться — почавши рух, вони ковзають полем, аж "
+"доки не зіткнуться зі стіною або іншим атомом."
 
-#: data/atomix.appdata.xml.in:16
+#: data/org.gnome.Atomix.metainfo.xml.in:17
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
 msgstr ""
-"Чим швидше ви збиратимете молекули на кожному з рівнів, тим кращим буде ваш"
-" результат."
+"Чим швидше ви збиратимете молекули на кожному з рівнів, тим кращим буде ваш "
+"результат."
 
-#: data/atomix.desktop.in:4
-msgid "Molecule puzzle game"
-msgstr "Гра-головоломка з молекулами"
-
-#: data/atomix.desktop.in:5 src/main.c:122
-msgid "A puzzle game about atoms and molecules"
-msgstr "Гра з атомами і молекулами."
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/atomix.desktop.in:13
-msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr ""
-"GNOME;game;logic;puzzle;atoms;molecules;sokoban;гноме;гном;ґном;ґноме;гра;логі"
-"ка;логічна;головломка;атоми;атом;молекула;молекули;сокобан;"
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "Проєкт GNOME"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
@@ -140,32 +144,32 @@ msgstr "Транс-бутилен"
 msgid "Water"
 msgstr "Вода"
 
-#: data/ui/interface.ui:101
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Рівень:"
 
-#: data/ui/interface.ui:113
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Молекула:"
 
-#: data/ui/interface.ui:125
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Формула:"
 
-#: data/ui/interface.ui:137
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Результат:"
 
-#: data/ui/interface.ui:149
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Час:"
 
-#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
-#: data/ui/interface.ui:196
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "порожньо"
 
-#: data/ui/interface.ui:215
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "Статистика"
 
@@ -174,7 +178,6 @@ msgid "New Game"
 msgstr "Нова гра"
 
 #: data/ui/menu.ui:12
-#| msgid "_Continue Game"
 msgid "Pause/Continue Game"
 msgstr "Призупинити/продовжити гру"
 
@@ -195,25 +198,24 @@ msgid "Undo Move"
 msgstr "Скасувати хід"
 
 #: data/ui/menu.ui:39
-#| msgid "Atomix"
 msgid "About Atomix"
 msgstr "Про Атомікс"
 
-#: src/board-gtk.c:343
+#: src/board-gtk.c:344
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
 "keeps moving until it hits a wall."
 msgstr ""
-"Проведіть атоми лабіринтом, щоб створити з них молекулу. Щоб позначити атом і"
-" почати його рухати, клацніть на ньому або наведіть на нього курсор за"
-" допомогою клавіш зі стрілками і натисніть Enter. Зважайте на те, що почавши"
-" рух, атом рухатиметься, аж доки його не зупинить стіна або інший атом."
+"Проведіть атоми лабіринтом, щоб створити з них молекулу. Щоб позначити атом "
+"і почати його рухати, клацніть на ньому або наведіть на нього курсор за "
+"допомогою клавіш зі стрілками і натисніть Enter. Зважайте на те, що почавши "
+"рух, атом рухатиметься, аж доки його не зупинить стіна або інший атом."
 
 #: src/main.c:126
 msgid "translator-credits"
 msgstr "Mykola Tkach <Stuartlittle1970@gmail.com>"
 
-#: src/main.c:437
+#: src/main.c:436
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Вітаю! Ви пройшли всі рівні Atomix."
