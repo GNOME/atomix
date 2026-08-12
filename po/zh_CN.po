@@ -3,63 +3,67 @@
 #  Zhou Nan <zhounan@nfschina.com>, 2021
 #  Wang Li <charlesw1234@163.com>, 2002
 #    Derived from translation from Abel Cheung <maddog@linux.org.hk>, 2001.
-# lumingzh <lumingzh@qq.com>, 2022.
+# lumingzh <lumingzh@qq.com>, 2022-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2022-09-11 07:26+0000\n"
-"PO-Revision-Date: 2022-11-09 21:14+0800\n"
-"Last-Translator: liulitchi <xingzuo88@qq.com>\n"
-"Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-08-12 08:53+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Gtranslator 50.0\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
-#: src/main.c:684
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "原子结合"
 
-#: data/atomix.appdata.xml.in:8
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "分子智力游戏"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "一款智力游戏，将原子合成为分子"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr ""
+"GNOME;game;logic;puzzle;atoms;molecules;sokoban;游戏;逻辑;拼图;原子;分子;推箱"
+"子;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
 msgid "Build molecules out of single atoms"
 msgstr "用原子构建出分子"
 
-#: data/atomix.appdata.xml.in:10
+#: data/org.gnome.Atomix.metainfo.xml.in:11
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
 "move wherever you want to move them to, they slide until they hit either a "
 "wall or another atom."
 msgstr ""
-"原子结合（Atomix） 是一款解谜游戏。玩家的目标是通过在游戏区移动各原子来合成分"
-"子。不过原子并不会完全移动到你想指定的位置，除非前面有墙壁或其它原子挡路，否"
-"则它们会一直运动。"
+"原子结合是一款解谜游戏。玩家的目标是通过在游戏区移动各原子来合成分子。不过原"
+"子并不会完全移动到你想指定的位置，除非前面有墙壁或其他原子挡路，否则它们会一"
+"直运动。"
 
-#: data/atomix.appdata.xml.in:16
+#: data/org.gnome.Atomix.metainfo.xml.in:17
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
 msgstr "在每个关卡里尽快地构建起分子，以此获得高分。"
 
-#: data/atomix.desktop.in:4
-msgid "Molecule puzzle game"
-msgstr "分子智力游戏"
-
-#: data/atomix.desktop.in:5 src/main.c:122
-msgid "A puzzle game about atoms and molecules"
-msgstr "一款智力游戏，将原子合成为分子"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/atomix.desktop.in:13
-msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr ""
-"GNOME;game;logic;puzzle;atoms;molecules;sokoban;游戏;逻辑;拼图;原子;分子;推箱"
-"子;"
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "GNOME 项目"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
@@ -137,38 +141,38 @@ msgstr "反式丁烯"
 msgid "Water"
 msgstr "水"
 
-#: data/ui/interface.ui:101
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "关卡："
 
-#: data/ui/interface.ui:113
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "分子："
 
-#: data/ui/interface.ui:125
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "分子式："
 
-#: data/ui/interface.ui:137
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "得分："
 
-#: data/ui/interface.ui:149
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "耗时："
 
-#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
-#: data/ui/interface.ui:196
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "清空"
 
-#: data/ui/interface.ui:215
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "统计数据"
 
 #: data/ui/menu.ui:7
 msgid "New Game"
-msgstr "新建游戏"
+msgstr "新游戏"
 
 #: data/ui/menu.ui:12
 msgid "Pause/Continue Game"
@@ -194,7 +198,7 @@ msgstr "撤消"
 msgid "About Atomix"
 msgstr "关于原子结合"
 
-#: src/board-gtk.c:343
+#: src/board-gtk.c:344
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -210,9 +214,9 @@ msgstr ""
 "Abel Cheung <maddog@linux.org.hk>, 2001.\n"
 "YunQiang Su <wzssyqa@gmail.com>, 2010.\n"
 "Zhou Nan <zhounan@nfschina.com>, 2021.\n"
-"lumingzh <lumingzh@qq.com>, 2022."
+"lumingzh <lumingzh@qq.com>, 2022-2026."
 
-#: src/main.c:437
+#: src/main.c:436
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "恭喜！你已完成所有的关卡。"
 
