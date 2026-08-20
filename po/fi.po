@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-10-07 20:07+0000\n"
-"PO-Revision-Date: 2019-02-10 19:56+0200\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-08-20 15:13+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -19,18 +19,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
-#: src/main.c:688
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "Atomix"
 
-#: data/atomix.appdata.xml.in:8
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Molekyyliälypeli"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Älypeli atomeista ja molekyyleistä"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;game;logic;puzzle;atoms;molecules;sokoban;molekyylit;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
 msgid "Build molecules out of single atoms"
 msgstr "Rakenna molekyylejä yksittäisistä atomeista"
 
-#: data/atomix.appdata.xml.in:10
+#: data/org.gnome.Atomix.metainfo.xml.in:11
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
@@ -42,7 +55,7 @@ msgstr ""
 "juuri sinne, minne haluat, vaan ne liukuvat kunnes osuvat seinämään tai "
 "toisiin atomeihin."
 
-#: data/atomix.appdata.xml.in:16
+#: data/org.gnome.Atomix.metainfo.xml.in:17
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -50,24 +63,9 @@ msgstr ""
 "Yritä rakentaa molekyylejä mahdollisimman nopeasti jokaisella tasolla "
 "ansaitaksesi huippupisteet."
 
-#: data/atomix.desktop.in:4
-msgid "Molecule puzzle game"
-msgstr "Molekyyliälypeli"
-
-#: data/atomix.desktop.in:5 src/main.c:124
-msgid "A puzzle game about atoms and molecules"
-msgstr "Älypeli atomeista ja molekyyleistä"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/atomix.desktop.in:8
-#| msgid "Atomix"
-msgid "atomix"
-msgstr "atomix"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/atomix.desktop.in:13
-msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr "GNOME;game;logic;puzzle;atoms;molecules;sokoban;molekyylit;"
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "Gnome-projekti"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
@@ -202,7 +200,7 @@ msgstr "Kumoa siirto"
 msgid "About Atomix"
 msgstr "Tietoja - Atomix"
 
-#: src/board-gtk.c:340
+#: src/board-gtk.c:344
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -212,16 +210,20 @@ msgstr ""
 "käytä nuolinäppäimiä ja Enteriä, valitaksesi atomin ja siirtääksesi sitä. "
 "Ole kuitenkin varovainen, sillä atomi liikkuu kunnes se osuu seinämään."
 
-#: src/main.c:128
+#: src/main.c:126
 msgid "translator-credits"
 msgstr ""
 "Lauri Nurmi, 2002.\n"
 "Ilkka Tuohela, 2005.\n"
-"Jiri Grönroos, 2015-2019."
+"Jiri Grönroos, 2015-2026."
 
-#: src/main.c:447
+#: src/main.c:436
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Onnittelut! Olet läpäissyt kaikki Atomixin tasot."
+
+#~| msgid "Atomix"
+#~ msgid "atomix"
+#~ msgstr "atomix"
 
 #~ msgid "_File"
 #~ msgstr "_Tiedosto"
