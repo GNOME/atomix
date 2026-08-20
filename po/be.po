@@ -6,58 +6,55 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2022-07-25 18:55+0000\n"
-"PO-Revision-Date: 2023-01-05 15:44+0300\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-08-20 15:39+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
-#: src/main.c:684
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8 src/main.c:119
+#: src/main.c:683
 msgid "Atomix"
 msgstr "Atomix"
 
-#: data/atomix.appdata.xml.in:8
-msgid "Build molecules out of single atoms"
-msgstr "Будуйце малекулы з асобных атамаў"
-
-#: data/atomix.appdata.xml.in:10
-msgid ""
-"Atomix is a puzzle game where your goal is to assemble molecules from "
-"compound atoms by moving them on the playfield. However, atoms don’t just "
-"move wherever you want to move them to, they slide until they hit either a "
-"wall or another atom."
-msgstr ""
-"Atomix - гэта галаваломкі, дзе трэба перамяшчаць па гульнявым полі атамы, "
-"каб сабраць з іх малекулы. Аднак атамы нельга проста перамясціць куды "
-"захочаш, яны працягваюць рух, пакуль не трапяць у сцяну або ў іншы атам."
-
-#: data/atomix.appdata.xml.in:16
-msgid ""
-"Try to build the molecules as fast as you can on each level to earn a higher "
-"score."
-msgstr ""
-"На кожным узроўні імкніцеся пабудаваць малекулы як мага хутчэй, каб зарабіць "
-"больш ачкоў."
-
-#: data/atomix.desktop.in:4
+#: data/org.gnome.Atomix.desktop.in:3
 msgid "Molecule puzzle game"
 msgstr "Галаваломка з малекуламі"
 
-#: data/atomix.desktop.in:5 src/main.c:122
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
 msgid "A puzzle game about atoms and molecules"
 msgstr "Галаваломка з атамамі і малекуламі"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/atomix.desktop.in:13
+#: data/org.gnome.Atomix.desktop.in:13
 msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;game;logic;puzzle;atoms;molecules;sokoban;лагічная;гульня;логіка;галаваломка;сакабан;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
+msgid "Build molecules out of single atoms"
+msgstr "Будуйце малекулы з асобных атамаў"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:11
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from compound atoms by moving "
+"them on the playfield. However, atoms don’t just move wherever you want to move them to, they "
+"slide until they hit either a wall or another atom."
 msgstr ""
-"GNOME;game;logic;puzzle;atoms;molecules;sokoban;лагічная;гульня;логіка;"
-"галаваломка;сакабан;"
+"Atomix — гэта галаваломкі, дзе трэба перамяшчаць па гульнявым полі атамы, каб сабраць з іх "
+"малекулы. Аднак атамы нельга проста перамясціць куды захочаш, яны працягваюць рух, пакуль не "
+"трапяць у сцяну або ў іншы атам."
+
+#: data/org.gnome.Atomix.metainfo.xml.in:17
+msgid "Try to build the molecules as fast as you can on each level to earn a higher score."
+msgstr "На кожным узроўні імкніцеся пабудаваць малекулы як мага хутчэй, каб зарабіць больш ачкоў."
+
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "Праект GNOME"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
@@ -135,32 +132,32 @@ msgstr "Трансбутылен"
 msgid "Water"
 msgstr "Вада"
 
-#: data/ui/interface.ui:101
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Узровень:"
 
-#: data/ui/interface.ui:113
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Малекула:"
 
-#: data/ui/interface.ui:125
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Формула:"
 
-#: data/ui/interface.ui:137
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Лік:"
 
-#: data/ui/interface.ui:149
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Час:"
 
-#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
-#: data/ui/interface.ui:196
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "пуста"
 
-#: data/ui/interface.ui:215
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "Статыстыка"
 
@@ -192,15 +189,14 @@ msgstr "Адрабіць ход"
 msgid "About Atomix"
 msgstr "Пра Atomix"
 
-#: src/board-gtk.c:343
+#: src/board-gtk.c:344
 msgid ""
-"Guide the atoms through the maze to form molecules. Click, or use the arrow "
-"keys and Enter, to select an atom and move it. Be careful, though: an atom "
-"keeps moving until it hits a wall."
+"Guide the atoms through the maze to form molecules. Click, or use the arrow keys and Enter, to "
+"select an atom and move it. Be careful, though: an atom keeps moving until it hits a wall."
 msgstr ""
-"Правядзіце атамы праз лабірынт, каб утварыць малекулы. Выкарыстоўвайце мыш "
-"або клавішы са стрэлкамі і Enter, каб выбраць атам і перамясціць яго. "
-"Будзьце ўважлівы, атам працягвае рух, пакуль не трапіць у сцяну."
+"Правядзіце атамы праз лабірынт, каб утварыць малекулы. Выкарыстоўвайце мыш або клавішы са "
+"стрэлкамі і Enter, каб выбраць атам і перамясціць яго. Будзьце ўважлівы, атам працягвае рух, "
+"пакуль не трапіць у сцяну."
 
 #: src/main.c:126
 msgid "translator-credits"
@@ -208,7 +204,7 @@ msgstr ""
 "Алесь Няхайчык <nab@mail.by>\n"
 "Ігар Грачышка <ihar.hrachyshka@gmail.com>"
 
-#: src/main.c:437
+#: src/main.c:436
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Віншуем! Вы паспяхова скончылі ўсе ўзроўні Atomix."
 
