@@ -9,28 +9,41 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-10-07 20:07+0000\n"
-"PO-Revision-Date: 2018-11-25 18:07+0200\n"
-"Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-08-30 13:50+0300\n"
+"Last-Translator: Aurimas Černius <aurimas.cernius@mailo.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 3.30.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
-#: src/main.c:688
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "Atomix"
 
-#: data/atomix.appdata.xml.in:8
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Molekulių galvosūkis"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Galvosūkis apie atomus ir molekules"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;žaidimas;logika;galvosūkis;atomai;molekulės;sokoban;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
 msgid "Build molecules out of single atoms"
 msgstr "Sudėkite įvairias molekules iš atskirų atomų"
 
-#: data/atomix.appdata.xml.in:10
+#: data/org.gnome.Atomix.metainfo.xml.in:11
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
@@ -41,7 +54,7 @@ msgstr ""
 "juos stumdant lauke. Tačiau atomai nejuda jums panorėjus, jie slenka iki "
 "atsitrenkia į sieną arba vienas į kitą."
 
-#: data/atomix.appdata.xml.in:16
+#: data/org.gnome.Atomix.metainfo.xml.in:17
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -49,23 +62,9 @@ msgstr ""
 "Bandykite sudaryti molekules kiek galima greičiau kiekvienam lygiui ir "
 "gaukite daugiau taškų."
 
-#: data/atomix.desktop.in:4
-msgid "Molecule puzzle game"
-msgstr "Molekulių galvosūkis"
-
-#: data/atomix.desktop.in:5 src/main.c:124
-msgid "A puzzle game about atoms and molecules"
-msgstr "Galvosūkis apie atomus ir molekules"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/atomix.desktop.in:8
-msgid "atomix"
-msgstr "atomix"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/atomix.desktop.in:13
-msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr "GNOME;žaidimas;logika;galvosūkis;atomai;molekulės;sokoban;"
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "GNOME projektas"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
@@ -197,11 +196,10 @@ msgid "Undo Move"
 msgstr "Atšaukti ėjimą"
 
 #: data/ui/menu.ui:39
-#| msgid "Atomix"
 msgid "About Atomix"
 msgstr "Apie Atomix"
 
-#: src/board-gtk.c:340
+#: src/board-gtk.c:344
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -212,15 +210,19 @@ msgstr ""
 "atomą ir jį perkeltumėte. Tačiau būkite atsargūs: atomas juda tol, kol "
 "neatsiremia į sieną."
 
-#: src/main.c:128
+#: src/main.c:126
 msgid "translator-credits"
 msgstr ""
 "Žygimantas Beručka <zygis@gnome.org>\n"
-"Mantas Kriaučiūnas <mantas@akl.lt>"
+"Mantas Kriaučiūnas <mantas@akl.lt>\n"
+"Aurimas Černius <aurimas.cernius@mailo.com>"
 
-#: src/main.c:447
+#: src/main.c:436
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Sveikiname! Įveikėte visus Atomix lygius."
+
+#~ msgid "atomix"
+#~ msgstr "atomix"
 
 #~ msgid "About"
 #~ msgstr "Apie"
