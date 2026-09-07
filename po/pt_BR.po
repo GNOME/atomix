@@ -4,32 +4,47 @@
 # Estêvão Samuel Procópio <tevaum@ig.com.br>, 2005.
 # Guilherme de S. Pastore <gpastore@gnome.org>, 2005.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2015, 2016, 2018.
+# Juliano de Souza Camargo <julianosc@pm.me>, 2026.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2018-10-07 20:07+0000\n"
-"PO-Revision-Date: 2018-10-09 03:54-0200\n"
-"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
-"Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-09-07 16:28-0300\n"
+"Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
+"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Virtaal 1.0.0-beta1\n"
+"X-Generator: Gtranslator 50.0\n"
 "X-Project-Style: gnome\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:121
-#: src/main.c:688
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "Atomix"
 
-#: data/atomix.appdata.xml.in:8
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Quebra-cabeça com moléculas"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Um jogo mental sobre átomos e moléculas"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;jogo;lógica;quebra-cabeça;átomos;moléculas;sokoban;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
 msgid "Build molecules out of single atoms"
 msgstr "Construa moléculas a partir de átomos"
 
-#: data/atomix.appdata.xml.in:10
+#: data/org.gnome.Atomix.metainfo.xml.in:11
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
@@ -41,7 +56,7 @@ msgstr ""
 "se movem para onde você quiser, e sim deslizam até acertar uma parede ou um "
 "outro átomo."
 
-#: data/atomix.appdata.xml.in:16
+#: data/org.gnome.Atomix.metainfo.xml.in:17
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -49,23 +64,9 @@ msgstr ""
 "Tente construir as moléculas o mais rápido que você puder em cada nível para "
 "obter a melhor pontuação."
 
-#: data/atomix.desktop.in:4
-msgid "Molecule puzzle game"
-msgstr "Quebra-cabeça com moléculas"
-
-#: data/atomix.desktop.in:5 src/main.c:124
-msgid "A puzzle game about atoms and molecules"
-msgstr "Um jogo mental sobre átomos e moléculas"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/atomix.desktop.in:8
-msgid "atomix"
-msgstr "atomix"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/atomix.desktop.in:13
-msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr "GNOME;jogo;lógica;quebra-cabeça;átomos;moléculas;sokoban;"
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "O projeto GNOME"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
@@ -197,11 +198,10 @@ msgid "Undo Move"
 msgstr "Desfazer movimento"
 
 #: data/ui/menu.ui:39
-#| msgid "Atomix"
 msgid "About Atomix"
 msgstr "Sobre Atomix"
 
-#: src/board-gtk.c:340
+#: src/board-gtk.c:344
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -211,16 +211,20 @@ msgstr ""
 "teclas de setas e Enter, para selecionar um átomo e movê-lo. Porém, tenha "
 "cuidado: um átomo continua a se mover até acertar a parede."
 
-#: src/main.c:128
+#: src/main.c:126
 msgid "translator-credits"
 msgstr ""
 "Estêvão Samuel Procópio <tevaum@ig.com.br>\n"
 "Guilherme de S. Pastore <gpastore@gnome.org>\n"
-"Rafael Fontenelle <rafaelff@gnome.org>"
+"Rafael Fontenelle <rafaelff@gnome.org>\n"
+"Juliano de Souza Camargo <julianosc@pm.me>"
 
-#: src/main.c:447
+#: src/main.c:436
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Parabéns! Você completou todos os níveis do Atomix."
+
+#~ msgid "atomix"
+#~ msgstr "atomix"
 
 #~ msgid "About"
 #~ msgstr "Sobre"
