@@ -1,17 +1,17 @@
 # Bulgarian translation of atomix.
 # Copyright (C) 2004 Rostislav Raykov <zbrox@i-space.org>.
-# Copyright (C) 2025 Alexander Shopov <ash@kambanaria.org>.
+# Copyright (C) 2025, 2026 Alexander Shopov <ash@kambanaria.org>.
 # twlvnn kraftwerk <kraft_werk@tutanota.com>.
 # This file is distributed under the same license as the atomix package.
 # Rostislav Raykov <zbrox@i-space.org>, 2004.
-# Alexander Shopov <ash@kambanaria.bg>, 2005.
+# Alexander Shopov <ash@kambanaria.bg>, 2005, 2025, 2026.
 # twlvnn kraftwerk <kraft_werk@tutanota.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2025-02-10 16:05+0000\n"
-"PO-Revision-Date: 2025-03-08 07:45+0100\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-09-09 16:35+0200\n"
 "Last-Translator: Alexander Shopov <ash@contact.bg>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -21,16 +21,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 3.5\n"
 
-#: data/org.gnome.Atomix.appdata.xml.in:8 data/org.gnome.Atomix.desktop.in:3
-#: src/main.c:119 src/main.c:684
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "Atomix"
 
-#: data/org.gnome.Atomix.appdata.xml.in:9
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Загадки с молекули"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Загадка с атоми и молекули"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;game;logic;puzzle;atoms;molecules;sokoban;игра;логика;пъзел;атоми;молекули;сокобан;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
 msgid "Build molecules out of single atoms"
 msgstr "Изградете молекули от отделни атоми"
 
-#: data/org.gnome.Atomix.appdata.xml.in:11
+#: data/org.gnome.Atomix.metainfo.xml.in:11
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
@@ -41,7 +54,7 @@ msgstr ""
 "атоми, като ги движите по игралното поле. Атомите обаче не просто се движат "
 "там, където искате, а се плъзгат, докато не се ударят в стена или друг атом."
 
-#: data/org.gnome.Atomix.appdata.xml.in:17
+#: data/org.gnome.Atomix.metainfo.xml.in:17
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -49,18 +62,9 @@ msgstr ""
 "Опитайте се да изградите молекулите възможно най-бързо на всяко ниво, за да "
 "спечелите по-висок резултат."
 
-#: data/org.gnome.Atomix.desktop.in:4
-msgid "Molecule puzzle game"
-msgstr "Загадки с молекули"
-
-#: data/org.gnome.Atomix.desktop.in:5 src/main.c:122
-msgid "A puzzle game about atoms and molecules"
-msgstr "Загадка с атоми и молекули"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Atomix.desktop.in:14
-msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr "GNOME;game;logic;puzzle;atoms;molecules;sokoban;игра;логика;пъзел;атоми;молекули;сокобан;"
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "Проектът на GNOME"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
