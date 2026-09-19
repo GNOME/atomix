@@ -6,35 +6,49 @@
 # A.Burak Ilgicioglu <ilgici@turk.net>, 2001.
 # Görkem Çetin <gorkem@gelecek.com.tr>, 2002.
 # Kaan Özdinçer <kaanozdincer@gmail.com>, 2015.
-# Muhammet Kara <muhammetk@gmail.com>, 2011, 2015, 2016.
+# Muhammet Kara <muhammetk@gmail.com>, 2011-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2023-04-28 14:39+0000\n"
-"PO-Revision-Date: 2024-05-10 22:31+0300\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
-"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-09-20 01:33+0300\n"
+"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.3\n"
+"X-Generator: Gtranslator 49.0\n"
 "X-POOTLE-MTIME: 1434042213.000000\n"
 
 # editor/interface.c:225
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
-#: src/main.c:684
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "Atomix"
 
-#: data/atomix.appdata.xml.in:8
+# src/interface.c:459
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Molekül yapboz oyunu"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Atomlar ve moleküller hakkında bir yapboz oyunu"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;game;logic;puzzle;atoms;molecules;sokoban;oyun;mantık;bulmaca;atomlar;moleküller;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
 msgid "Build molecules out of single atoms"
 msgstr "Molekülleri, atomlardan oluşturun"
 
-#: data/atomix.appdata.xml.in:10
+#: data/org.gnome.Atomix.metainfo.xml.in:11
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
@@ -46,7 +60,7 @@ msgstr ""
 "hareket ettirmek istediğiniz yere hareket etmez, onları bir duvara veya "
 "başka bir atoma tutturmak için kaydırmanız gerekir."
 
-#: data/atomix.appdata.xml.in:16
+#: data/org.gnome.Atomix.metainfo.xml.in:17
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -54,21 +68,9 @@ msgstr ""
 "Her bir seviyede, yüksek bir puan kazanmak için, yapabildiğiniz kadar hızlı "
 "bir şekilde molekülleri oluşturmayı deneyin."
 
-# src/interface.c:459
-#: data/atomix.desktop.in:4
-msgid "Molecule puzzle game"
-msgstr "Molekül yapboz oyunu"
-
-#: data/atomix.desktop.in:5 src/main.c:122
-msgid "A puzzle game about atoms and molecules"
-msgstr "Atomlar ve moleküller hakkında bir yapboz oyunu"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/atomix.desktop.in:13
-msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr ""
-"GNOME;game;logic;puzzle;atoms;molecules;sokoban;oyun;mantık;bulmaca;atomlar;"
-"moleküller;"
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "GNOME Projesi"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
@@ -147,35 +149,35 @@ msgid "Water"
 msgstr "Su"
 
 # src/interface.c:317
-#: data/ui/interface.ui:101
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "Seviye:"
 
-#: data/ui/interface.ui:113
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "Molekül:"
 
-#: data/ui/interface.ui:125
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "Formül:"
 
 # src/interface.c:337 src/interface.c:523 src/interface.c:641
-#: data/ui/interface.ui:137
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "Skor:"
 
 # src/interface.c:347
-#: data/ui/interface.ui:149
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "Zaman:"
 
-#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
-#: data/ui/interface.ui:196
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "boş"
 
 # src/interface.c:259
-#: data/ui/interface.ui:215
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "İstatistikler"
 
@@ -212,7 +214,7 @@ msgstr "Hareketi Geri Al"
 msgid "About Atomix"
 msgstr "Atomix Hakkında"
 
-#: src/board-gtk.c:343
+#: src/board-gtk.c:344
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -230,6 +232,6 @@ msgstr ""
 "Kaan Özdinçer <kaanozdincer@gmail.com>"
 
 # src/interface.c:616
-#: src/main.c:437
+#: src/main.c:436
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "Tebrikler! Tüm Atomix seviyelerini başarıyla bitirdiniz."
