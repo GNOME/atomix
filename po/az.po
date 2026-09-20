@@ -1,32 +1,46 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Ramal Rəhimov <jhonaluman@gmail.com>, 2025.
+# Azerbaijani translation for atomix.
+# Copyright (C) 2026 atomix's COPYRIGHT HOLDER
+# This file is distributed under the same license as the atomix package.
+# Ramal Rəhimov <jhoaluman@gmail.com>, 2026.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: atomix\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2025-05-12 14:14+0000\n"
-"PO-Revision-Date: 2025-06-04 01:46+0400\n"
-"Last-Translator: Ramal Rəhimov <jhonaluman@gmail.com>\n"
-"Language-Team: Azerbaijani <az@li.org>\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-09-20 17:40+0300\n"
+"Last-Translator: Ramal Rəhimov <jhoaluman@gmail.com>\n"
+"Language-Team: Azerbaijani <contact@azelinux.com>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Google Antigravity / Gtranslator\n"
 
-#: data/org.gnome.Atomix.appdata.xml.in:8 data/org.gnome.Atomix.desktop.in:3
-#: src/main.c:119 src/main.c:684
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "Atomix"
 
-#: data/org.gnome.Atomix.appdata.xml.in:9
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Molekul tapmaca oyunu"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Atomlar və molekullar haqqında tapmaca oyunu"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;oyun;məntiq;tapmaca;atomlar;molekullar;sokoban;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
 msgid "Build molecules out of single atoms"
 msgstr "Tək atomlardan molekullar qurun"
 
-#: data/org.gnome.Atomix.appdata.xml.in:11
+#: data/org.gnome.Atomix.metainfo.xml.in:11
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
@@ -38,7 +52,7 @@ msgstr ""
 "istədiyiniz yerə hərəkət etmir, onlar bir divara və ya başqa bir atoma "
 "dəyənə qədər sürüşürlər."
 
-#: data/org.gnome.Atomix.appdata.xml.in:17
+#: data/org.gnome.Atomix.metainfo.xml.in:17
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -46,22 +60,13 @@ msgstr ""
 "Hər səviyyədə molekulları mümkün qədər tez qurmağa çalışın ki, daha yüksək "
 "bal qazanasınız."
 
-#: data/org.gnome.Atomix.desktop.in:4
-msgid "Molecule puzzle game"
-msgstr "Molekul tapmaca oyunu"
-
-#: data/org.gnome.Atomix.desktop.in:5 src/main.c:122
-msgid "A puzzle game about atoms and molecules"
-msgstr "Atomlar və molekullar haqqında tapmaca oyunu"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Atomix.desktop.in:14
-msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr "GNOME;oyun;mantıq;tapmaca;atomlar;molekullar;sokoban;"
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "GNOME Layihəsi"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
-msgstr "Asetik Turşu"
+msgstr "Sirkə turşusu"
 
 #: data/level/acetone.atomix.xml.in:2
 msgid "Acetone"
@@ -73,11 +78,11 @@ msgstr "Butanol"
 
 #: data/level/cyclobutane.atomix.xml.in:2
 msgid "Cyclobutane"
-msgstr "Siklobutane"
+msgstr "Siklobutan"
 
 #: data/level/dimethylether.atomix.xml.in:2
 msgid "Dimethyl Ether"
-msgstr "Dimetil Eter"
+msgstr "Dimetil efiri"
 
 #: data/level/ethanal.atomix.xml.in:2
 msgid "Ethanal"
@@ -101,7 +106,7 @@ msgstr "Gliserin"
 
 #: data/level/lactic-acid.atomix.xml.in:2
 msgid "Lactic Acid"
-msgstr "Laktik Turşu"
+msgstr "Süd turşusu"
 
 #: data/level/methanal.atomix.xml.in:2
 msgid "Methanal"
@@ -129,7 +134,7 @@ msgstr "Piran"
 
 #: data/level/transbutylen.atomix.xml.in:2
 msgid "Trans Butylen"
-msgstr "Trans Butilen"
+msgstr "Trans-butilen"
 
 #: data/level/water.atomix.xml.in:2
 msgid "Water"
@@ -170,27 +175,27 @@ msgstr "Yeni Oyun"
 
 #: data/ui/menu.ui:12
 msgid "Pause/Continue Game"
-msgstr "Oyunu Dayandır/Davam Et"
+msgstr "Oyuna fasilə ver / Davam et"
 
 #: data/ui/menu.ui:17
 msgid "End Game"
-msgstr "Oyunu Bitir"
+msgstr "Oyunu bitir"
 
 #: data/ui/menu.ui:23
 msgid "Skip Level"
-msgstr "Səviyyəni Atla"
+msgstr "Səviyyəni ötür"
 
 #: data/ui/menu.ui:28
 msgid "Reset Level"
-msgstr "Səviyyəni Sıfırla"
+msgstr "Səviyyəni sıfırla"
 
 #: data/ui/menu.ui:32
 msgid "Undo Move"
-msgstr "Hərəkəti Geri Al"
+msgstr "Gedişi geri al"
 
 #: data/ui/menu.ui:39
 msgid "About Atomix"
-msgstr "Atomix Haqqında"
+msgstr "Atomix haqqında"
 
 #: src/board-gtk.c:344
 msgid ""
@@ -198,14 +203,14 @@ msgid ""
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
 "keeps moving until it hits a wall."
 msgstr ""
-"Atomları labirintdən keçirərək molekullar yaratmağa yönəldin. Atomu seçmək və "
-"hərəkət etdirmək üçün klikləyin və ya ox düymələri və Enter düyməsindən "
+"Atomları labirintdən keçirərək molekullar yaratmağa yönəldin. Atomu seçmək "
+"və hərəkət etdirmək üçün klikləyin və ya ox düymələri və Enter düyməsindən "
 "istifadə edin. Diqqətli olun: atom bir divara dəyənə qədər hərəkət etməyə "
 "davam edir."
 
 #: src/main.c:126
 msgid "translator-credits"
-msgstr "Ramal Rəhimov <jhonaluman@gmail.com>"
+msgstr "Ramal Rəhimov <jhoaluman@gmail.com>"
 
 #: src/main.c:436
 msgid "Congratulations! You have finished all Atomix levels."
