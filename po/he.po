@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atomix.txt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
-"POT-Creation-Date: 2021-04-23 18:15+0000\n"
-"PO-Revision-Date: 2022-02-08 16:18+0200\n"
+"POT-Creation-Date: 2025-07-15 06:54+0000\n"
+"PO-Revision-Date: 2026-09-30 09:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
@@ -17,18 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural= (n!=1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/atomix.appdata.xml.in:7 data/atomix.desktop.in:3 src/main.c:119
-#: src/main.c:684
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
 msgid "Atomix"
 msgstr "אטומיקס"
 
-#: data/atomix.appdata.xml.in:8
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "משחק פאזל מולקולי"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "משחק חשיבה על אטומים ומולקולות"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "‫GNOME;גנום;נום;לוגיקה;פאזל;תצרף;אטומים;אטום;מולקולות;מולקולה;סוקובן;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
 msgid "Build molecules out of single atoms"
 msgstr "בניית מולקולות מאטומים בודדים"
 
-#: data/atomix.appdata.xml.in:10
+#: data/org.gnome.Atomix.metainfo.xml.in:11
 msgid ""
 "Atomix is a puzzle game where your goal is to assemble molecules from "
 "compound atoms by moving them on the playfield. However, atoms don’t just "
@@ -39,7 +52,7 @@ msgstr ""
 "הזזתם על לוח המשחק. אולם, אטומים לא זזים רק למקום שברצונך להזיז אותם, הם "
 "נעים עד שהם פוגשים בקיר או באטום אחר."
 
-#: data/atomix.appdata.xml.in:16
+#: data/org.gnome.Atomix.metainfo.xml.in:17
 msgid ""
 "Try to build the molecules as fast as you can on each level to earn a higher "
 "score."
@@ -47,18 +60,9 @@ msgstr ""
 "יש לנסות לבנות מולקולות מהר ככל האפשר בכל שלב על מנת להשיג מספר נקודות גדול "
 "יותר."
 
-#: data/atomix.desktop.in:4
-msgid "Molecule puzzle game"
-msgstr "משחק פאזל מולקולי"
-
-#: data/atomix.desktop.in:5 src/main.c:122
-msgid "A puzzle game about atoms and molecules"
-msgstr "משחק חשיבה על אטומים ומולקולות"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/atomix.desktop.in:13
-msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
-msgstr "‫GNOME;גנום;נום;לוגיקה;פאזל;תצרף;אטומים;אטום;מולקולות;מולקולה;סוקובן;"
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "מיזם GNOME"
 
 #: data/level/aceticacid.atomix.xml.in:2
 msgid "Acetic Acid"
@@ -136,32 +140,32 @@ msgstr "טראנס בוטילן"
 msgid "Water"
 msgstr "מים"
 
-#: data/ui/interface.ui:101
+#: data/ui/interface.ui:99
 msgid "Level:"
 msgstr "שלב:"
 
-#: data/ui/interface.ui:113
+#: data/ui/interface.ui:111
 msgid "Molecule:"
 msgstr "מולקולה:"
 
-#: data/ui/interface.ui:125
+#: data/ui/interface.ui:123
 msgid "Formula:"
 msgstr "נוסחה:"
 
-#: data/ui/interface.ui:137
+#: data/ui/interface.ui:135
 msgid "Score:"
 msgstr "תוצאה:"
 
-#: data/ui/interface.ui:149
+#: data/ui/interface.ui:147
 msgid "Time:"
 msgstr "זמן:"
 
-#: data/ui/interface.ui:161 data/ui/interface.ui:172 data/ui/interface.ui:184
-#: data/ui/interface.ui:196
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
 msgid "empty"
 msgstr "ריק"
 
-#: data/ui/interface.ui:215
+#: data/ui/interface.ui:213
 msgid "Statistics"
 msgstr "סטטיסטיקה"
 
@@ -193,7 +197,7 @@ msgstr "ביטול מהלך"
 msgid "About Atomix"
 msgstr "על אטומיקס"
 
-#: src/board-gtk.c:343
+#: src/board-gtk.c:344
 msgid ""
 "Guide the atoms through the maze to form molecules. Click, or use the arrow "
 "keys and Enter, to select an atom and move it. Be careful, though: an atom "
@@ -211,7 +215,7 @@ msgstr ""
 "Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "יוסף אור בוצ׳קו <yoseforb@gnome.org>"
 
-#: src/main.c:437
+#: src/main.c:436
 msgid "Congratulations! You have finished all Atomix levels."
 msgstr "ברכות! סיימת את כל שלבי אטומיקס."
 
