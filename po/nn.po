@@ -1,0 +1,214 @@
+# Norwegian Nynorsk translation for atomix.
+# Copyright (C) 2026 atomix's COPYRIGHT HOLDER
+# This file is distributed under the same license as the atomix package.
+# Roy-Magne Mo <rmo@sunnmore.net>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: atomix main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/atomix/issues\n"
+"POT-Creation-Date: 2026-10-06 21:01+0000\n"
+"PO-Revision-Date: 2026-10-10 17:30+0200\n"
+"Last-Translator: Roy-Magne Mo <rmo@sunnmore.net>\n"
+"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/org.gnome.Atomix.desktop.in:2 data/org.gnome.Atomix.metainfo.xml.in:8
+#: src/main.c:119 src/main.c:683
+msgid "Atomix"
+msgstr "Atomix"
+
+#: data/org.gnome.Atomix.desktop.in:3
+msgid "Molecule puzzle game"
+msgstr "Molekylpuslespel"
+
+#: data/org.gnome.Atomix.desktop.in:4 src/main.c:122
+msgid "A puzzle game about atoms and molecules"
+msgstr "Eit puslespel om atom og molekyl"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Atomix.desktop.in:13
+msgid "GNOME;game;logic;puzzle;atoms;molecules;sokoban;"
+msgstr "GNOME;spel;logikk;puslespel;oppgåve;atom;molekyl;sokoban;"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:9
+msgid "Build molecules out of single atoms"
+msgstr "Bygg molekyl av enkeltatom"
+
+#: data/org.gnome.Atomix.metainfo.xml.in:11
+msgid ""
+"Atomix is a puzzle game where your goal is to assemble molecules from "
+"compound atoms by moving them on the playfield. However, atoms don’t just "
+"move wherever you want to move them to, they slide until they hit either a "
+"wall or another atom."
+msgstr ""
+"Atomix er eit puslespel der målet er å setje saman molekyl av atom ved å "
+"flytte dei rundt på spelebrettet. Atoma flyttar seg likevel ikkje berre dit "
+"du vil. Dei glir til dei støyter mot ein vegg eller eit anna atom."
+
+#: data/org.gnome.Atomix.metainfo.xml.in:17
+msgid ""
+"Try to build the molecules as fast as you can on each level to earn a higher "
+"score."
+msgstr ""
+"Prøv å byggje molekyla så raskt du kan på kvart nivå, for å få høgare "
+"poengsum."
+
+#: data/org.gnome.Atomix.metainfo.xml.in:28
+msgid "The GNOME Project"
+msgstr "GNOME-prosjektet"
+
+#: data/level/aceticacid.atomix.xml.in:2
+msgid "Acetic Acid"
+msgstr "Eddiksyre"
+
+#: data/level/acetone.atomix.xml.in:2
+msgid "Acetone"
+msgstr "Aceton"
+
+#: data/level/butanol.atomix.xml.in:2
+msgid "Butanol"
+msgstr "Butanol"
+
+#: data/level/cyclobutane.atomix.xml.in:2
+msgid "Cyclobutane"
+msgstr "Syklobutan"
+
+#: data/level/dimethylether.atomix.xml.in:2
+msgid "Dimethyl Ether"
+msgstr "Dimetyleter"
+
+#: data/level/ethanal.atomix.xml.in:2
+msgid "Ethanal"
+msgstr "Etanal"
+
+#: data/level/ethane.atomix.xml.in:2
+msgid "Ethane"
+msgstr "Etan"
+
+#: data/level/ethanol.atomix.xml.in:2
+msgid "Ethanol"
+msgstr "Etanol"
+
+#: data/level/ethylene.atomix.xml.in:2
+msgid "Ethylene"
+msgstr "Etylen"
+
+#: data/level/glycerin.atomix.xml.in:2
+msgid "Glycerin"
+msgstr "Glyserin"
+
+#: data/level/lactic-acid.atomix.xml.in:2
+msgid "Lactic Acid"
+msgstr "Mjølkesyre"
+
+#: data/level/methanal.atomix.xml.in:2
+msgid "Methanal"
+msgstr "Metanal"
+
+#: data/level/methane.atomix.xml.in:2
+msgid "Methane"
+msgstr "Metan"
+
+#: data/level/methanol.atomix.xml.in:2
+msgid "Methanol"
+msgstr "Metanol"
+
+#: data/level/propanal.atomix.xml.in:2
+msgid "Propanal"
+msgstr "Propanal"
+
+#: data/level/propylene.atomix.xml.in:2
+msgid "Propylene"
+msgstr "Propylen"
+
+#: data/level/pyran.atomix.xml.in:2
+msgid "Pyran"
+msgstr "Pyran"
+
+#: data/level/transbutylen.atomix.xml.in:2
+msgid "Trans Butylen"
+msgstr "Trans-butylen"
+
+#: data/level/water.atomix.xml.in:2
+msgid "Water"
+msgstr "Vatn"
+
+#: data/ui/interface.ui:99
+msgid "Level:"
+msgstr "Nivå:"
+
+#: data/ui/interface.ui:111
+msgid "Molecule:"
+msgstr "Molekyl:"
+
+#: data/ui/interface.ui:123
+msgid "Formula:"
+msgstr "Formel:"
+
+#: data/ui/interface.ui:135
+msgid "Score:"
+msgstr "Poengsum:"
+
+#: data/ui/interface.ui:147
+msgid "Time:"
+msgstr "Tid:"
+
+#: data/ui/interface.ui:159 data/ui/interface.ui:170 data/ui/interface.ui:182
+#: data/ui/interface.ui:194
+msgid "empty"
+msgstr "tom"
+
+#: data/ui/interface.ui:213
+msgid "Statistics"
+msgstr "Statistikk"
+
+#: data/ui/menu.ui:7
+msgid "New Game"
+msgstr "Nytt spel"
+
+#: data/ui/menu.ui:12
+msgid "Pause/Continue Game"
+msgstr "Pause/hald fram spelet"
+
+#: data/ui/menu.ui:17
+msgid "End Game"
+msgstr "Avslutt spelet"
+
+#: data/ui/menu.ui:23
+msgid "Skip Level"
+msgstr "Hopp over nivå"
+
+#: data/ui/menu.ui:28
+msgid "Reset Level"
+msgstr "Tilbakestill nivå"
+
+#: data/ui/menu.ui:32
+msgid "Undo Move"
+msgstr "Angre trekk"
+
+#: data/ui/menu.ui:39
+msgid "About Atomix"
+msgstr "Om Atomix"
+
+#: src/board-gtk.c:344
+msgid ""
+"Guide the atoms through the maze to form molecules. Click, or use the arrow "
+"keys and Enter, to select an atom and move it. Be careful, though: an atom "
+"keeps moving until it hits a wall."
+msgstr ""
+"Led atoma gjennom labyrinten for å danne molekyl. Klikk, eller bruk "
+"piltastane og Enter, for å velje eit atom og flytte det. Pass på, for eit "
+"atom held fram til det treffer ein vegg."
+
+#: src/main.c:126
+msgid "translator-credits"
+msgstr "Roy-Magne Mo <rmo@sunnmore.net>"
+
+#: src/main.c:436
+msgid "Congratulations! You have finished all Atomix levels."
+msgstr "Gratulerer! Du har fullført alle nivåa i Atomix."
